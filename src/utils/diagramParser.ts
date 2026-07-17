@@ -1,81 +1,90 @@
-import type { CurveShape, DiagramSpec, LiteralSection } from '../types/diagram';
+import type { CurveShape, DiagramSpec, StructuredLiteral } from '../types/diagram';
 
 const ASCII_CHARS = /[│┌┐└┘├┤┬┴┼─═╱\\|_]/;
-const EQ_CHARS = /[=∪∩×÷±∑∫]|\\|\^|\blog\b|\bln\b|\bexp\b/i;
+const FORMULA_CHARS = /[=∪∩×÷±∑∫]|\\|\^|\blog\b|\bln\b|\bexp\b|→.*=|\(\d+,\s*\d+\)/i;
 
 function footnotes(lines: string[], exclude: RegExp[] = []): string[] {
   return lines.filter((l) => l.trim() && !exclude.some((re) => re.test(l)));
 }
 
-function parseLiteralSections(rawLines: string[]): LiteralSection[] {
-  const sections: LiteralSection[] = [];
-  let asciiBuf: string[] = [];
-  let eqBuf: string[] = [];
-  let textBuf: string[] = [];
+function isTitleLine(line: string): boolean {
+  const t = line.trim();
+  if (t.length > 70 || /=/.test(t)) return false;
+  if (ASCII_CHARS.test(t)) return false;
+  if (/^[A-Z]{2,}(\s+[A-Z]{2,})+$/.test(t)) return false;
+  return /^[A-Za-z0-9\s{}(),.:+\-^×÷∪∩\\∑∫_]+$/.test(t);
+}
 
-  const flushAscii = () => {
-    if (asciiBuf.length) {
-      sections.push({ kind: 'ascii', lines: [...asciiBuf] });
-      asciiBuf = [];
-    }
+function parsePipelineLine(line: string): string[] | null {
+  if (!/→/.test(line)) return null;
+  const nodes = line
+    .split(/→/)
+    .map((p) => p.replace(/[─\-_|·\[\]()]/g, ' ').replace(/\s+/g, ' ').trim())
+    .filter((p) => p.length > 0);
+  if (nodes.length < 2) return null;
+  if (nodes.some((n) => n.length > 28)) return null;
+  if (nodes.some((n) => /\b(each|may|one|the|if|not|same|input|output)\b/i.test(n))) return null;
+  return nodes;
+}
+
+function parseChipLine(line: string): string[] | null {
+  const pairs = line.match(/\(\d+,\s*\d+\)/g);
+  if (pairs && pairs.length >= 2) return pairs;
+
+  const tokens = line.trim().split(/\s+/).filter(Boolean);
+  if (tokens.length >= 3 && tokens.every((t) => /^[A-Z0-9]{1,6}$/.test(t))) return tokens;
+  if (tokens.length >= 3 && tokens.every((t) => /^[A-Z]{2,4}$/.test(t))) return tokens;
+  return null;
+}
+
+function parseStructuredLiteral(rawLines: string[]): StructuredLiteral {
+  const content: StructuredLiteral = {
+    figure: [],
+    formulas: [],
+    pipelines: [],
+    chips: [],
+    notes: [],
   };
-  const flushEq = () => {
-    if (eqBuf.length) {
-      sections.push({ kind: 'equation', lines: [...eqBuf] });
-      eqBuf = [];
-    }
-  };
-  const flushText = () => {
-    if (textBuf.length) {
-      sections.push({ kind: 'text', lines: [...textBuf] });
-      textBuf = [];
-    }
-  };
-  const flushAll = () => {
-    flushAscii();
-    flushEq();
-    flushText();
-  };
+
+  let titleSet = false;
 
   for (const line of rawLines) {
-    if (!line.trim()) {
-      flushAll();
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+
+    if (!titleSet && isTitleLine(trimmed)) {
+      content.title = trimmed;
+      titleSet = true;
       continue;
     }
+    titleSet = true;
 
-    if (/→/.test(line)) {
-      const nodes = line
-        .split(/→/)
-        .map((p) => p.replace(/[─\-_|·\[\]()]/g, ' ').replace(/\s+/g, ' ').trim())
-        .filter((p) => p.length > 0);
-      if (nodes.length >= 2) {
-        flushAll();
-        sections.push({ kind: 'pipeline', nodes });
-        continue;
-      }
+    const pipeline = parsePipelineLine(trimmed);
+    if (pipeline) {
+      content.pipelines.push(pipeline);
+      continue;
     }
 
     if (ASCII_CHARS.test(line)) {
-      flushEq();
-      flushText();
-      asciiBuf.push(line);
+      content.figure.push(line);
       continue;
     }
 
-    if (EQ_CHARS.test(line)) {
-      flushAscii();
-      flushText();
-      eqBuf.push(line.trim());
+    const chips = parseChipLine(trimmed);
+    if (chips) {
+      content.chips.push(...chips);
       continue;
     }
 
-    flushAscii();
-    flushEq();
-    textBuf.push(line.trim());
+    if (FORMULA_CHARS.test(trimmed) || /^[A-Z]\s*[=∪∩\\]/.test(trimmed)) {
+      content.formulas.push(trimmed);
+      continue;
+    }
+
+    content.notes.push(trimmed);
   }
 
-  flushAll();
-  return sections.length ? sections : [{ kind: 'text', lines: rawLines.filter((l) => l.trim()) }];
+  return content;
 }
 
 function parseSetOps(rawLines: string[], lines: string[]): DiagramSpec | null {
@@ -234,7 +243,7 @@ export function parseDiagram(text: string): DiagramSpec {
 
   return {
     type: 'literal',
-    sections: parseLiteralSections(rawLines),
+    content: parseStructuredLiteral(rawLines),
     source: text,
   };
 }

@@ -1,4 +1,5 @@
-import type { DiagramSpec, LiteralSection } from '../../types/diagram';
+import type { ReactNode } from 'react';
+import type { DiagramSpec } from '../../types/diagram';
 import {
   D,
   DiagramCanvas,
@@ -8,56 +9,81 @@ import {
   parseSetElements,
 } from './DiagramPrimitives';
 
-function LiteralView({ spec }: { spec: Extract<DiagramSpec, { type: 'literal' }> }) {
+function DiagramZone({ label, children }: { label: string; children: ReactNode }) {
+  if (children == null || children === false) return null;
   return (
-    <div className="diagram-literal-wrap">
-      {spec.sections.map((section, i) => (
-        <LiteralSectionView key={i} section={section} />
-      ))}
-    </div>
+    <section className="diagram-zone">
+      <h4 className="diagram-zone-label">{label}</h4>
+      <div className="diagram-zone-body">{children}</div>
+    </section>
   );
 }
 
-function LiteralSectionView({ section }: { section: LiteralSection }) {
-  switch (section.kind) {
-    case 'ascii':
-      return (
-        <pre className="diagram-ascii" aria-label="Diagram illustration">
-          {section.lines.join('\n')}
-        </pre>
-      );
-    case 'equation':
-      return (
-        <div className="diagram-formula-grid">
-          {section.lines.map((line, i) => (
-            <div key={i} className="diagram-formula-card">
-              {line}
+function LiteralView({ spec }: { spec: Extract<DiagramSpec, { type: 'literal' }> }) {
+  const c = spec.content;
+
+  return (
+    <div className="diagram-structured">
+      {c.title && <h3 className="diagram-structured-title">{c.title}</h3>}
+
+      {c.figure.length > 0 && (
+        <DiagramZone label="Figure">
+          <pre className="diagram-ascii" aria-label="Diagram figure">
+            {c.figure.join('\n')}
+          </pre>
+        </DiagramZone>
+      )}
+
+      {c.formulas.length > 0 && (
+        <DiagramZone label="Definitions & results">
+          <ol className="diagram-formula-list">
+            {c.formulas.map((f, i) => (
+              <li key={i}>
+                <code>{f}</code>
+              </li>
+            ))}
+          </ol>
+        </DiagramZone>
+      )}
+
+      {c.pipelines.length > 0 && (
+        <DiagramZone label="Flow">
+          {c.pipelines.map((nodes, i) => (
+            <div key={i} className="diagram-literal-pipeline">
+              {nodes.map((node, j) => (
+                <div key={j} className="diagram-literal-pipeline-step">
+                  <div className="diagram-flow-node">{node}</div>
+                  {j < nodes.length - 1 && <div className="diagram-flow-arrow">→</div>}
+                </div>
+              ))}
             </div>
           ))}
-        </div>
-      );
-    case 'pipeline':
-      return (
-        <div className="diagram-literal-pipeline">
-          {section.nodes.map((node, i) => (
-            <div key={i} className="diagram-literal-pipeline-step">
-              <div className="diagram-flow-node">{node}</div>
-              {i < section.nodes.length - 1 && <div className="diagram-flow-arrow">→</div>}
-            </div>
-          ))}
-        </div>
-      );
-    case 'text':
-      return (
-        <ul className="diagram-literal-text">
-          {section.lines.map((line, i) => (
-            <li key={i}>{line}</li>
-          ))}
-        </ul>
-      );
-    default:
-      return null;
-  }
+        </DiagramZone>
+      )}
+
+      {c.chips.length > 0 && (
+        <DiagramZone label="Examples">
+          <div className="diagram-chip-row">
+            {c.chips.map((chip, i) => (
+              <span key={`${chip}-${i}`} className="diagram-chip">
+                {chip}
+              </span>
+            ))}
+          </div>
+        </DiagramZone>
+      )}
+
+      {c.notes.length > 0 && (
+        <DiagramZone label="Notes">
+          <ul className="diagram-note-list">
+            {c.notes.map((note, i) => (
+              <li key={i}>{note}</li>
+            ))}
+          </ul>
+        </DiagramZone>
+      )}
+    </div>
+  );
 }
 
 function VennView({ spec }: { spec: Extract<DiagramSpec, { type: 'venn' }> }) {
@@ -111,46 +137,68 @@ function SetOpsView({ spec }: { spec: Extract<DiagramSpec, { type: 'setOps' }> }
   const shared = elemsA.filter((e) => elemsB.includes(e));
 
   const results = [
-    spec.union && { label: 'A ∪ B', value: spec.union },
-    spec.intersection && { label: 'A ∩ B', value: spec.intersection },
-    spec.diffA && { label: 'A \\ B', value: spec.diffA },
-    spec.diffB && { label: 'B \\ A', value: spec.diffB },
+    spec.union && { label: 'Union', value: spec.union },
+    spec.intersection && { label: 'Intersection', value: spec.intersection },
+    spec.diffA && { label: 'Difference A \\ B', value: spec.diffA },
+    spec.diffB && { label: 'Difference B \\ A', value: spec.diffB },
   ].filter(Boolean) as { label: string; value: string }[];
 
   return (
-    <div className="diagram-setops-wrap">
-      <div className="diagram-setops-header">
-        <div className="diagram-set-bubble diagram-set-a">
-          <span className="diagram-set-label">A = {spec.setA}</span>
-          <div className="diagram-set-chips">
-            {elemsA.map((el) => (
-              <span key={el} className={shared.includes(el) ? 'diagram-chip shared' : 'diagram-chip'}>
-                {el}
-              </span>
-            ))}
+    <div className="diagram-structured">
+      <DiagramZone label="Sets">
+        <div className="diagram-setops-header">
+          <div className="diagram-set-bubble diagram-set-a">
+            <span className="diagram-set-label">A = {spec.setA}</span>
+            <div className="diagram-set-chips">
+              {elemsA.map((el) => (
+                <span key={el} className={shared.includes(el) ? 'diagram-chip shared' : 'diagram-chip'}>
+                  {el}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="diagram-set-bubble diagram-set-b">
+            <span className="diagram-set-label">B = {spec.setB}</span>
+            <div className="diagram-set-chips">
+              {elemsB.map((el) => (
+                <span key={el} className={shared.includes(el) ? 'diagram-chip shared' : 'diagram-chip'}>
+                  {el}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="diagram-set-bubble diagram-set-b">
-          <span className="diagram-set-label">B = {spec.setB}</span>
-          <div className="diagram-set-chips">
-            {elemsB.map((el) => (
-              <span key={el} className={shared.includes(el) ? 'diagram-chip shared' : 'diagram-chip'}>
-                {el}
-              </span>
+      </DiagramZone>
+
+      {results.length > 0 && (
+        <DiagramZone label="Definitions & results">
+          <ol className="diagram-formula-list">
+            {results.map((r) => (
+              <li key={r.label}>
+                <code>
+                  <strong>{r.label}:</strong> {r.value}
+                </code>
+              </li>
             ))}
-          </div>
-        </div>
-      </div>
-      <div className="diagram-result-grid">
-        {results.map((r) => (
-          <div key={r.label} className="diagram-result-card">
-            <span className="diagram-result-label">{r.label}</span>
-            <span className="diagram-result-value">{r.value}</span>
-          </div>
-        ))}
-      </div>
-      {spec.cartesian && <p className="diagram-caption">{spec.cartesian}</p>}
-      <Footnotes lines={spec.footnotes} />
+          </ol>
+        </DiagramZone>
+      )}
+
+      {spec.cartesian && (
+        <DiagramZone label="Notes">
+          <p className="diagram-zone-note">{spec.cartesian}</p>
+        </DiagramZone>
+      )}
+
+      {spec.footnotes.length > 0 && (
+        <DiagramZone label="Notes">
+          <ul className="diagram-note-list">
+            {spec.footnotes.map((n, i) => (
+              <li key={i}>{n}</li>
+            ))}
+          </ul>
+        </DiagramZone>
+      )}
     </div>
   );
 }

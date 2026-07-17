@@ -10,17 +10,21 @@ export type CurveShape =
   | 'sine'
   | 'flat';
 
-export type LiteralSection =
-  | { kind: 'ascii'; lines: string[] }
-  | { kind: 'equation'; lines: string[] }
-  | { kind: 'pipeline'; nodes: string[] }
-  | { kind: 'text'; lines: string[] };
+/** Structured layout: figure → formulas → flow → notes (never interleaved). */
+export type StructuredLiteral = {
+  title?: string;
+  figure: string[];
+  formulas: string[];
+  pipelines: string[][];
+  chips: string[];
+  notes: string[];
+};
 
 /** Renders the curriculum diagram text faithfully — no invented data. */
 export type DiagramSpec =
   | {
       type: 'literal';
-      sections: LiteralSection[];
+      content: StructuredLiteral;
       source: string;
     }
   | {

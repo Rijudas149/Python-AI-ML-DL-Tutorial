@@ -3582,6 +3582,87 @@ body {
   color: var(--text-primary);
 }
 
+.diagram-structured {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.diagram-structured-title {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.diagram-zone {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  overflow: hidden;
+}
+
+.diagram-zone-label {
+  margin: 0;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--study);
+  background: rgba(16, 185, 129, 0.1);
+  border-bottom: 1px solid var(--border);
+}
+
+.diagram-zone-body {
+  padding: 0.85rem 1rem;
+}
+
+.diagram-formula-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.diagram-formula-list li {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.5);
+  border-left: 3px solid var(--study);
+}
+
+.diagram-formula-list code {
+  font-family: 'JetBrains Mono', 'Cambria Math', serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.diagram-note-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.diagram-note-list li {
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(16, 185, 129, 0.05);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
 .diagram-literal-wrap {
   display: flex;
   flex-direction: column;
@@ -3590,17 +3671,17 @@ body {
 
 .diagram-ascii {
   margin: 0;
-  padding: 1rem 1.1rem;
-  border-radius: 12px;
-  background: var(--code-bg);
-  border: 1px solid var(--border);
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px dashed rgba(16, 185, 129, 0.35);
   font-family: 'JetBrains Mono', 'Consolas', monospace;
-  font-size: 0.82rem;
-  line-height: 1.35;
-  color: var(--study);
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: #6ee7b7;
   overflow-x: auto;
   white-space: pre;
-  tab-size: 2;
+  text-align: center;
 }
 
 .diagram-literal-text {
@@ -3628,7 +3709,20 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
+}
+
+.diagram-literal-pipeline + .diagram-literal-pipeline {
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
+}
+
+.diagram-zone-note {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 .diagram-literal-pipeline-step {
