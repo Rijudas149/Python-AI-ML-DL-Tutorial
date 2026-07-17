@@ -2,8 +2,6 @@
 
 A web-based learning app covering **Python** (basics to advanced), **Machine Learning**, **Deep Learning**, and **AI/GenAI** — with theory, runnable code, exercises, and curated references from Stanford, MIT, Oxford, and arXiv.
 
-Inspired by the Learn section of [SQL_Teacher](../SQL_Teacher) and [Unix_Teacher](../Unix_Teacher).
-
 ## Quick start
 
 ```bash
