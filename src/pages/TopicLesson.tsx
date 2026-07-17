@@ -51,7 +51,7 @@ function applyTopicState(
 const SectionContent = memo(function SectionContent({ section }: { section: LessonSection }) {
   const showPseudoCode =
     section.pseudoCode &&
-    !isRedundantPseudoCode(section.pseudoCode, section.keyPoints);
+    !isRedundantPseudoCode(section.pseudoCode, section.keyPoints, section.formulas);
 
   return (
     <div className="lesson-flow">

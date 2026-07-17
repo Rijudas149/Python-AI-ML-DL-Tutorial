@@ -1,6 +1,32 @@
-/** True when pseudoCode only repeats keyPoints (numbered list duplicate). */
-export function isRedundantPseudoCode(pseudoCode: string, keyPoints?: string[]): boolean {
-  if (!pseudoCode.trim() || !keyPoints?.length) return false;
+function normalizeStudyLines(text: string): string {
+  return text
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .join('\n');
+}
+
+/** True when pseudoCode only repeats keyPoints or the formulas panel. */
+export function isRedundantPseudoCode(
+  pseudoCode: string,
+  keyPoints?: string[],
+  formulas?: string[],
+): boolean {
+  if (!pseudoCode.trim()) return false;
+
+  const body = normalizeStudyLines(
+    pseudoCode
+      .split('\n')
+      .slice(1)
+      .join('\n'),
+  );
+
+  if (formulas?.length) {
+    const formulaBlock = normalizeStudyLines(formulas.join('\n'));
+    if (body === formulaBlock) return true;
+  }
+
+  if (!keyPoints?.length) return false;
 
   const numbered = pseudoCode
     .split('\n')

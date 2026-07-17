@@ -77,7 +77,9 @@ function LiteralView({ spec }: { spec: Extract<DiagramSpec, { type: 'literal' }>
         <DiagramZone label="Notes">
           <ul className="diagram-note-list">
             {c.notes.map((note, i) => (
-              <li key={i}>{note}</li>
+              <li key={i}>
+                <MathFormula formula={note} display={false} />
+              </li>
             ))}
           </ul>
         </DiagramZone>

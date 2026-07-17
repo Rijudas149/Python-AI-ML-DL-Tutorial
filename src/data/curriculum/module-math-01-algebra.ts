@@ -26,6 +26,7 @@ Set-builder notation {x ∈ ℝ | x > 0} defines infinite sets compactly and app
             `P(A) = {S | S ⊆ A}`
           ],
           diagram: `Universal Set U
+    │   │ A │  │ B │  │
     │     │ A∩B│   │
     │  A only  B only│
     A∪B = entire shaded
@@ -120,7 +121,9 @@ In ML, domain might be feature vectors ℝⁿ and codomain class labels or ℝ f
           ],
           diagram: `Domain A          Codomain B
    │ 1 │──────────────→│ a │
+   │ 2 │──┐            │ b │
    │ 3 │──┼───────────→│ c │
+   │ 4 │──┘            └───┘
    Each input → ONE output
    Multiple inputs may map to same output
    (not injective if 2,3 → same y)`,
@@ -277,6 +280,7 @@ Implicit functions like x²+y²=1 define curves. Parametric form (x(t), y(t)) de
           ],
           diagram: `y
         │   ╱  f(x)=2x+1
+    ────┼──────── x
    Domain: all x where defined
    Range: {f(x) : x ∈ domain}
    Vertical line test:
@@ -528,6 +532,7 @@ In ML, log-likelihood sums log probabilities for numerical stability. Cross-entr
    ln maps (0,∞) → (−∞,∞)
         y
         │    ╱ ln(x)
+   ─────┼───── x
         1`,
           keyPoints: [
             `Logs are inverse of exponentials`,
@@ -607,7 +612,9 @@ Radioactive decay and cooling follow exponentials. Log-linear plots reveal expon
           ],
           diagram: `N(t)=N₀·e^(kt)
    k>0: growth ↗
+   ──────── t
    k<0: decay ↘
+     ──────── t
    Half-life: 50% remaining`,
           keyPoints: [
             `e is the natural growth base`,
@@ -841,6 +848,7 @@ Riemann sums approximate integrals as ∑f(x_i)Δx. Sigma notation compactly exp
           diagram: `∑_{k=1}^5 k = 1+2+3+4+5 = 15
    Sigma notation:
         n
+       \\   a_k
        /__
        k=1
    Expands to explicit sum
@@ -882,6 +890,7 @@ Cosine annealing schedules LR smoothly. Convergence rate: linear (error × c eac
             `Fixed point: x* = g(x*)`
           ],
           diagram: `Loss vs epoch:
+   L │
      │ ╲___ plateau
      └────────── epoch
    Good: steady decrease
@@ -988,6 +997,9 @@ FFT uses complex exponentials to decompose signals. Some RNN stability analysis 
           ],
           diagram: `Im
          │    · z=a+bi
+         │  ╱ |b
+    ─────┼────┼── Re
+         │    a
    |z| = distance from origin`,
           keyPoints: [
             `i² = −1 extends real algebra`,

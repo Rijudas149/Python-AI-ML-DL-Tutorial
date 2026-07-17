@@ -25,7 +25,9 @@ Column vs row vectors matter for matrix multiplication conventions. A **vector s
           ],
           diagram: `2D vector v = (3, 4)
         y
+        │    ╱ v
         │  ╱ |v|=5
+   ─────┼────── x
    tail at origin, head at (3,4)`,
           keyPoints: [
             `Vectors are ordered tuples`,
@@ -65,6 +67,7 @@ Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes
             `d(u,v) = ||u − v||₂`
           ],
           diagram: `||v|| = length of arrow
+      ╱  | 4
     /____|___
        3
    ||v|| = √(3²+4²) = 5`,
@@ -252,6 +255,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           ],
           diagram: `u · v = |u||v|cosθ
         v
+     ╱_____ u
    θ=0: cos=1, max dot
    θ=90: cos=0, dot=0`,
           keyPoints: [
@@ -333,6 +337,8 @@ Cross product less common in standard ML but appears in geometric deep learning 
             `Area = ||u × v||`
           ],
           diagram: `u × v points up from plane
+      v ╱
+      ╱  u
      /____
    × = outward normal
    right-hand rule:

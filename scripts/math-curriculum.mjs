@@ -1763,8 +1763,8 @@ export const MATH_MODULES = [
             content: "lim_{x→a} f(x) = L means f(x) gets arbitrarily close to L as x approaches a — the limit need not equal f(a). **One-sided limits** x→a⁻ and x→a⁺ must agree for the two-sided limit to exist. **Limits at infinity** describe horizontal asymptotes and long-run behavior. The ε-δ definition makes this precise: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits are the foundation for derivatives and integrals.",
             formulas: [
               "lim_{x→a} f(x) = L",
-              "lim exists ⇔ lim⁻ = lim⁺",
-              "lim_{x→∞} f(x) (horizontal asymptote)",
+              "lim_{x→a} f(x) exists ⇔ lim_{x→a⁻} f(x) = lim_{x→a⁺} f(x)",
+              "lim_{x→∞} f(x) = L (horizontal asymptote y = L)",
               "ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε"
             ],
             diagram: "   f(x) near a:\n\n        L ─ ─ ─ ─ ─ target\n          ·  ·\n        ·    ·  f(x)\n          ·\n        ────┼──── x\n            a\n\n   lim_{x→a} f(x) = L",

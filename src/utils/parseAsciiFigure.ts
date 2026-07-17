@@ -131,7 +131,7 @@ function parseLimitFigure(lines: string[]): FigureSpec | null {
   const blob = lines.join('\n');
   const hasLimitContext = /near\s+a|f\(x\)|x→a|lim_|target|indeterminate|l.?h[oô]pital/i.test(blob);
   const hasHorizontalL = /\bL\s*[─\-]|target/i.test(blob);
-  const hasAxisMarker = /[┼─┼]/.test(blob) && /\ba\b/.test(blob);
+  const hasAxisMarker = /[┼─═]/.test(blob) && /\ba\b/.test(blob);
   if (!hasLimitContext || !hasHorizontalL || !hasAxisMarker) return null;
 
   const titleLine = lines.find((l) => /near|f\(x\)|limit|l.?h[oô]pital/i.test(l));

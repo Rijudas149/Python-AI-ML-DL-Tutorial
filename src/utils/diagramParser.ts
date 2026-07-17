@@ -11,6 +11,15 @@ function footnotes(lines: string[], exclude: RegExp[] = []): string[] {
   );
 }
 
+function isDiagramCaptionFragment(line: string): boolean {
+  const t = line.trim();
+  if (/^lim_\{/.test(t) || /=/.test(t) || /→/.test(t)) return false;
+  if (/^[·\s]+f\s*\(\s*x\s*\)$/i.test(t)) return true;
+  if (/^[a-z]$/i.test(t)) return true;
+  if (/^L\s+target$/i.test(t)) return true;
+  return /^[·\s.]{0,6}[a-z](\(\s*x\s*\))?$/i.test(t) && t.length <= 12;
+}
+
 function isTitleLine(line: string): boolean {
   const t = line.trim();
   if (t.length > 70 || /=/.test(t)) return false;
@@ -88,7 +97,7 @@ function parseStructuredLiteral(rawLines: string[]): StructuredLiteral {
       continue;
     }
 
-    if (!isDecorativeDiagramLine(trimmed)) {
+    if (!isDecorativeDiagramLine(trimmed) && !isDiagramCaptionFragment(trimmed)) {
       content.notes.push(trimmed);
     }
   }

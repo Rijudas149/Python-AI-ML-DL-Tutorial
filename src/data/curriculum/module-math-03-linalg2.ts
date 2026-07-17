@@ -68,7 +68,8 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           ],
           diagram: `columns of A span shape:
       v2
-      │╱ area = |det A|`,
+      │╱ area = |det A|
+      └──── v1`,
           keyPoints: [
             `Columns as spanning vectors`,
             `Zero volume → dependent columns`,

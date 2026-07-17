@@ -9,10 +9,13 @@ export function isDecorativeDiagramLine(line: string): boolean {
   if (/^see formulas above\.?$/i.test(t)) return true;
   if (/^·\s*·\s*·/.test(t)) return true;
 
-  const withoutBox = t.replace(BOX_CHARS, '').replace(/\s+/g, '');
-  if (withoutBox.length === 0) return true;
-  if (withoutBox.length <= 2 && /[│└┌┐┘─═╱\\]/.test(t)) return true;
+  const withoutBox = t.replace(BOX_CHARS, ' ').replace(/\s+/g, ' ').trim();
+  if (!withoutBox) return true;
 
+  // Keep axis labels, formulas, and any line with meaningful text/math.
+  if (/[A-Za-z0-9=_{}→∞]/.test(withoutBox)) return false;
+
+  if (withoutBox.length <= 2 && /[│└┌┐┘─═╱\\]/.test(t)) return true;
   return false;
 }
 

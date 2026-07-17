@@ -165,7 +165,9 @@ function convertLim(text: string): string {
       const cleaned = normalizeSpaces(sub.replace(/→/g, ' \\to '));
       return `\\lim_{${cleaned}}`;
     })
-    .replace(/\blim\s+exists\b/gi, '\\lim \\text{exists}')
+    .replace(/\blim⁻\b/g, '\\lim_{x \\to a^-}')
+    .replace(/\blim⁺\b/g, '\\lim_{x \\to a^+}')
+    .replace(/\blim\s+exists\b/gi, '\\lim \\text{ exists}')
     .replace(/(?<!\\)\blim\b/g, '\\lim');
 }
 
@@ -276,7 +278,7 @@ export function toLatex(formula: string): string {
   }
 
   if (note) {
-    parts.push(arrowNote ? `\\to ${formatNote(note)}` : formatNote(note));
+    parts.push(arrowNote ? ` \\to ${formatNote(note)}` : ` ${formatNote(note)}`);
   }
 
   return normalizeSpaces(parts.join(' '));

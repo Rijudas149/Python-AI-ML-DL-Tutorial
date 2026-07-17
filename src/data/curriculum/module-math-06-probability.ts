@@ -24,6 +24,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
             `P(A∪B) = P(A)+P(B)−P(A∩B)`
           ],
           diagram: `Ω sample space
+   │  A    B         │
    │ ┌──┐ overlap    │
    P(A∪B) = P(A)+P(B)−P(A∩B)`,
           keyPoints: [
@@ -458,6 +459,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           diagram: `discrete PMF bar chart:
    P(X)
    │ ██ ██
+   └──┴──┴── X
    0  1  2
    continuous PDF curve area=1`,
           keyPoints: [
@@ -717,6 +719,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
             `Multivariate: (x−μ)ᵀΣ⁻¹(x−μ)`
           ],
           diagram: `Normal bell curve:
+   ──────────── x
         μ`,
           keyPoints: [
             `Gaussian central in statistics`,

@@ -67,6 +67,7 @@ Cross-entropy convex in logits; MSE convex in linear params. Connecting this the
           ],
           diagram: `convex f:
    chord above graph
+        ╱ f
    ──── chord below endpoints`,
           keyPoints: [
             `Tangent lies below for convex`,

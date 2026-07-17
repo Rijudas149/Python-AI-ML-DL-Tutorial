@@ -63,7 +63,9 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           ],
           diagram: `boxplot:
    max ─┬─
+   Q3  ─┤
    med ─┤ box
+   Q1  ─┤
    min ─┴─ outliers ·`,
           keyPoints: [
             `n−1 for unbiased sample var`,
@@ -102,6 +104,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
             `Percentile robust to extremes`
           ],
           diagram: `CDF F(x)
+   0 ──────────────── 1
         ↑ Q(0.95)
    95% below this value`,
           keyPoints: [

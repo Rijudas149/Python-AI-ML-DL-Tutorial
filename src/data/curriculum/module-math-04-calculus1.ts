@@ -18,13 +18,14 @@ export const moduleMath04Topics: Topic[] = [
 Limits are the foundation for derivatives and integrals.`,
           formulas: [
             `lim_{x→a} f(x) = L`,
-            `lim exists ⇔ lim⁻ = lim⁺`,
-            `lim_{x→∞} f(x) (horizontal asymptote)`,
+            `lim_{x→a} f(x) exists ⇔ lim_{x→a⁻} f(x) = lim_{x→a⁺} f(x)`,
+            `lim_{x→∞} f(x) = L (horizontal asymptote y = L)`,
             `ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε`
           ],
           diagram: `f(x) near a:
         L ─ ─ ─ ─ ─ target
         ·    ·  f(x)
+        ────┼──── x
             a
    lim_{x→a} f(x) = L`,
           keyPoints: [
@@ -42,8 +43,8 @@ print("f(x):", f(x))`,
           pseudoCode: `Limit Definition
 
 lim_{x→a} f(x) = L
-lim exists ⇔ lim⁻ = lim⁺
-lim_{x→∞} f(x) (horizontal asymptote)
+lim_{x→a} f(x) exists ⇔ lim_{x→a⁻} f(x) = lim_{x→a⁺} f(x)
+lim_{x→∞} f(x) = L (horizontal asymptote y = L)
 ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε`
         },
         {
@@ -103,6 +104,7 @@ Always verify conditions; the rule can fail if derivatives oscillate without a l
           diagram: `L'Hôpital for 0/0 at a:
         L ─ ─ ─ ─ ─ limit of f/g
         ·    ·  f(x)/g(x)
+        ────┼──── x
             a
    lim f/g = lim f'/g'`,
           keyPoints: [
@@ -178,7 +180,9 @@ Softmax limit as temperature T→0 approaches argmax. Sigmoid limit x→±∞ gi
             `λ→∞: ridge → zero solution`
           ],
           diagram: `loss vs iteration:
+   L │╲
      │     ────→ lim L*
+     └──────────── t
    convergence = limit behavior`,
           keyPoints: [
             `Optimization seeks limiting minimum`,
@@ -288,6 +292,7 @@ Autodiff computes derivatives algorithmically.`,
         f(x)
       ╱ | rise
      ╱  |/run = slope
+    ────┼── x
         h→0`,
           keyPoints: [
             `Derivative = instantaneous rate`,
@@ -408,6 +413,7 @@ ReLU non-differentiable at 0 but subgradient methods work. Understanding derivat
           ],
           diagram: `loss surface (2 params):
         ╱╲  saddle
+       ╱  ╲╱╲
       ╱ valley╲
      local min`,
           keyPoints: [
@@ -553,7 +559,9 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
             `(1/g)' = −g'/g²`
           ],
           diagram: `(fg)': two terms
-       ├── product → f'g + fg'`,
+   f ──┐
+       ├── product → f'g + fg'
+   g ──┘`,
           keyPoints: [
             `Product rule two-term split`,
             `Quotient for ratios`,
@@ -1029,6 +1037,7 @@ Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate. Connecting this 
           diagram: `PDF normalization:
    area under p(x) = 1
    p(x)
+   └──┴───┴── x
    total area = 1`,
           keyPoints: [
             `PDF must integrate to 1`,

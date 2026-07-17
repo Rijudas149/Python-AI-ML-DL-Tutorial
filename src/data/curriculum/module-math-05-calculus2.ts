@@ -27,7 +27,8 @@ Autodiff computes all partials efficiently via reverse accumulation.`,
    fix y=y₀ → curve in x
    ∂f/∂x = slope along x
         z
-       ╱│ slice at y₀`,
+       ╱│ slice at y₀
+     ╱──┼── x`,
           keyPoints: [
             `Hold other vars constant`,
             `Gradient stacks all partials`,
@@ -68,7 +69,8 @@ Moving −η∇L decreases loss first-order. In 2D, visualize gradient arrows on
           diagram: `contour map + gradient:
       ╭──╮  → ∇f points outward
      ╱    ╲    from center min
-    │  ·   │   at min: ∇f=0`,
+    │  ·   │   at min: ∇f=0
+      ╰──╯`,
           keyPoints: [
             `Gradient perpendicular to contours`,
             `Descent opposite gradient`,
@@ -948,7 +950,8 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           diagram: `convex: line segment above graph
       f(b) ·
            ╲
-    f(a) ·  ╲___ chord below graph`,
+    f(a) ·  ╲___ chord below graph
+         a────b`,
           keyPoints: [
             `Convex ⇒ no spurious local min`,
             `H PSD characterizes smooth convex`,
