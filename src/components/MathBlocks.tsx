@@ -1,3 +1,7 @@
+import { useMemo } from 'react';
+import { parseDiagram } from '../utils/diagramParser';
+import { MathDiagramView } from './diagrams/MathDiagramView';
+
 interface FormulaListProps {
   formulas: string[];
 }
@@ -27,13 +31,17 @@ interface DiagramBlockProps {
 }
 
 export function DiagramBlock({ diagram, title = 'Visual Diagram' }: DiagramBlockProps) {
+  const spec = useMemo(() => parseDiagram(diagram), [diagram]);
+
   return (
     <section className="lesson-panel lesson-panel-diagram">
       <div className="lesson-panel-label">
         <span className="lesson-panel-icon">📊</span>
         {title}
       </div>
-      <pre className="math-diagram">{diagram}</pre>
+      <div className="math-diagram-visual">
+        <MathDiagramView spec={spec} />
+      </div>
     </section>
   );
 }
