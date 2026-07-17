@@ -11,7 +11,11 @@ export const module07Topics: Topic[] = [
         {
           id: `series`,
           title: `Series`,
-          content: `Series is labeled 1D array. Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.`,
+          content: `Series is labeled 1D array.
+
+Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.
+
+**Series** in the context of **Series & DataFrames**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 s = pd.Series([10, 20, 30], index=["a", "b", "c"])
@@ -26,12 +30,23 @@ dtype: int64`,
             `Index enables label-based access`,
             `Automatic alignment on operations`,
             `Series is column of DataFrame`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Series
+
+Checklist:
+  1. Series has data and index
+  2. Index enables label-based access
+  3. Automatic alignment on operations
+  4. Series is column of DataFrame`
         },
         {
           id: `dataframe`,
           title: `DataFrame Creation`,
-          content: `From dict of lists, CSV, JSON, SQL. Columns are Series. .head(), .info(), .describe() for exploration.`,
+          content: `From dict of lists, CSV, JSON, SQL.
+
+Columns are Series. .head(), .info(), .describe() for exploration.
+
+**DataFrame Creation** in the context of **Series & DataFrames**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -54,12 +69,23 @@ max    35.000000  95.000000`,
             `describe() gives numeric summary`,
             `info() shows dtypes and non-null counts`,
             `read_csv most common ingestion method`
-          ]
+          ],
+          pseudoCode: `CONCEPT: DataFrame Creation
+
+Checklist:
+  1. DataFrame is primary pandas structure
+  2. describe() gives numeric summary
+  3. info() shows dtypes and non-null counts
+  4. read_csv most common ingestion method`
         },
         {
           id: `selection`,
           title: `Column & Row Selection`,
-          content: `df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j]. Avoid chained indexing.`,
+          content: `df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j].
+
+Avoid chained indexing.
+
+**Column & Row Selection** in the context of **Series & DataFrames**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"A": [1,2,3], "B": [4,5,6], "C": [7,8,9]})
@@ -72,18 +98,34 @@ print(df.loc[0:1, ["A", "C"]])`,
             `loc is label-based inclusive`,
             `iloc is integer-based exclusive on stop`,
             `Avoid df[df.A > 0]["B"] chained indexing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Column & Row Selection
+
+Checklist:
+  1. Single brackets for column, double for multiple
+  2. loc is label-based inclusive
+  3. iloc is integer-based exclusive on stop
+  4. Avoid df[df.A > 0]["B"] chained indexing`
         },
         {
           id: `dtypes`,
           title: `Data Types`,
-          content: `object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.`,
+          content: `object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.
+
+**Data Types** in the context of **Series & DataFrames**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           keyPoints: [
             `category dtype saves memory for repeated strings`,
             `Parse dates early with to_datetime`,
             `Downcast numeric types to save memory`,
             `String dtype (StringDtype) in modern pandas`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Data Types
+
+Checklist:
+  1. category dtype saves memory for repeated strings
+  2. Parse dates early with to_datetime
+  3. Downcast numeric types to save memory
+  4. String dtype (StringDtype) in modern pandas`
         }
       ],
       exercises: [
@@ -151,7 +193,11 @@ print(df[df["score"] > 86])`,
         {
           id: `boolean`,
           title: `Boolean Filtering`,
-          content: `df[df["col"] > value], combine with & | ~. Parentheses required: \`(df.A > 0) & (df.B < 10)\`.`,
+          content: `df[df["col"] > value], combine with & | ~.
+
+Parentheses required: \`(df.A > 0) & (df.B < 10)\`.
+
+**Boolean Filtering** in the context of **Indexing, Filtering & Selection**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"age": [22, 35, 45, 28], "salary": [50000, 80000, 95000, 60000]})
@@ -164,12 +210,23 @@ print(df[(df["age"] > 25) & (df["salary"] > 55000)])`,
             `Wrap each condition in parentheses`,
             `isin() for membership tests`,
             `query() method for readable filters`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Boolean Filtering
+
+Checklist:
+  1. Use & not and for element-wise logic
+  2. Wrap each condition in parentheses
+  3. isin() for membership tests
+  4. query() method for readable filters`
         },
         {
           id: `query`,
           title: `query() Method`,
-          content: `df.query("age > 25 and salary > 55000") — cleaner for complex filters. Use @ for external variables.`,
+          content: `df.query("age > 25 and salary > 55000") — cleaner for complex filters.
+
+Use @ for external variables.
+
+**query() Method** in the context of **Indexing, Filtering & Selection**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"x": [1, 5, 3, 8], "y": [2, 4, 6, 10]})
@@ -182,12 +239,21 @@ print(df.query("x > 2 and y < 10"))`,
             `@var references Python variable`,
             `Often faster for large DataFrames`,
             `Column names with spaces need backticks`
-          ]
+          ],
+          pseudoCode: `CONCEPT: query() Method
+
+Checklist:
+  1. query uses expression strings
+  2. @var references Python variable
+  3. Often faster for large DataFrames
+  4. Column names with spaces need backticks`
         },
         {
           id: `assign`,
           title: `assign() & apply()`,
-          content: `assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.`,
+          content: `assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.
+
+**assign() & apply()** in the context of **Indexing, Filtering & Selection**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"a": [1, 2, 3], "b": [4, 5, 6]})
@@ -202,12 +268,21 @@ print(df)`,
             `Lambda x refers to DataFrame`,
             `Vectorized ops beat apply() for speed`,
             `map() for element-wise dict/Series lookup`
-          ]
+          ],
+          pseudoCode: `CONCEPT: assign() & apply()
+
+Checklist:
+  1. assign returns new DataFrame — chainable
+  2. Lambda x refers to DataFrame
+  3. Vectorized ops beat apply() for speed
+  4. map() for element-wise dict/Series lookup`
         },
         {
           id: `sort`,
           title: `Sorting & Ranking`,
-          content: `sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.`,
+          content: `sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.
+
+**Sorting & Ranking** in the context of **Indexing, Filtering & Selection**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"name": ["Bob", "Alice", "Charlie"], "score": [87, 95, 92]})
@@ -217,7 +292,14 @@ print(df.sort_values("score", ascending=False))`,
             `rank handles ties with method parameter`,
             `nlargest efficient for top-k`,
             `Stable sort preserves equal element order`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sorting & Ranking
+
+Checklist:
+  1. sort_values for column sorting
+  2. rank handles ties with method parameter
+  3. nlargest efficient for top-k
+  4. Stable sort preserves equal element order`
         }
       ],
       exercises: [
@@ -285,7 +367,11 @@ print(df.assign(double=lambda x: x["value"] * 2))`,
         {
           id: `groupby`,
           title: `groupby Basics`,
-          content: `df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate. Multiple columns: groupby(["a","b"]).`,
+          content: `df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate.
+
+Multiple columns: groupby(["a","b"]).
+
+**groupby Basics** in the context of **GroupBy & Aggregations**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -302,12 +388,21 @@ Name: salary, dtype: float64`,
             `as_index=False keeps group columns`,
             `agg accepts dict or list of functions`,
             `size() counts rows per group`
-          ]
+          ],
+          pseudoCode: `CONCEPT: groupby Basics
+
+Checklist:
+  1. groupby is split-apply-combine
+  2. as_index=False keeps group columns
+  3. agg accepts dict or list of functions
+  4. size() counts rows per group`
         },
         {
           id: `agg`,
           title: `Multiple Aggregations`,
-          content: `.agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).`,
+          content: `.agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).
+
+**Multiple Aggregations** in the context of **GroupBy & Aggregations**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"group": ["A","A","B","B"], "val": [10, 20, 30, 40]})
@@ -321,12 +416,21 @@ B           30       40  35.0`,
             `Multiple functions per column`,
             `transform() returns same shape as input`,
             `filter() filters groups by condition`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Multiple Aggregations
+
+Checklist:
+  1. Named aggregations produce clean column names
+  2. Multiple functions per column
+  3. transform() returns same shape as input
+  4. filter() filters groups by condition`
         },
         {
           id: `pivot`,
           title: `pivot_table & crosstab`,
-          content: `pivot_table for multidimensional summaries. pd.crosstab for frequency tables.`,
+          content: `pivot_table for multidimensional summaries. pd.crosstab for frequency tables.
+
+**pivot_table & crosstab** in the context of **GroupBy & Aggregations**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -340,18 +444,36 @@ print(pd.pivot_table(df, values="sales", index="date", columns="product", aggfun
             `crosstab for categorical frequency analysis`,
             `margins=True adds row/column totals`,
             `melt() is inverse of pivot`
-          ]
+          ],
+          pseudoCode: `CONCEPT: pivot_table & crosstab
+
+Checklist:
+  1. pivot_table handles duplicates via aggfunc
+  2. crosstab for categorical frequency analysis
+  3. margins=True adds row/column totals
+  4. melt() is inverse of pivot`
         },
         {
           id: `window`,
           title: `Rolling & Expanding Windows`,
-          content: `rolling(window).mean() for moving averages. expanding() for cumulative stats. Essential for time series.`,
+          content: `rolling(window).mean() for moving averages. expanding() for cumulative stats.
+
+Essential for time series.
+
+**Rolling & Expanding Windows** in the context of **GroupBy & Aggregations**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           keyPoints: [
             `rolling for sliding window statistics`,
             `expanding for cumulative metrics`,
             `ewm for exponential weighted`,
             `shift() for lag features in ML`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Rolling & Expanding Windows
+
+Checklist:
+  1. rolling for sliding window statistics
+  2. expanding for cumulative metrics
+  3. ewm for exponential weighted
+  4. shift() for lag features in ML`
         }
       ],
       exercises: [
@@ -419,7 +541,11 @@ print(df.groupby("dept").agg(avg_score=("score", "mean")))`,
         {
           id: `merge`,
           title: `merge Operations`,
-          content: `pd.merge(left, right, on="key", how="inner|outer|left|right"). SQL-like joins on column values.`,
+          content: `pd.merge(left, right, on="key", how="inner|outer|left|right").
+
+SQL-like joins on column values.
+
+**merge Operations** in the context of **Merging, Joining & Reshaping**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 orders = pd.DataFrame({"id": [1, 2], "product_id": [101, 102]})
@@ -433,12 +559,21 @@ print(pd.merge(orders, products, on="product_id"))`,
             `left join keeps all left rows`,
             `validate="one_to_many" catches bad joins`,
             `indicator=True shows join source`
-          ]
+          ],
+          pseudoCode: `CONCEPT: merge Operations
+
+Checklist:
+  1. inner join keeps matching rows only
+  2. left join keeps all left rows
+  3. validate="one_to_many" catches bad joins
+  4. indicator=True shows join source`
         },
         {
           id: `concat`,
           title: `concat & append`,
-          content: `pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.`,
+          content: `pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.
+
+**concat & append** in the context of **Merging, Joining & Reshaping**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df1 = pd.DataFrame({"A": [1, 2]})
@@ -454,29 +589,54 @@ print(pd.concat([df1, df2], ignore_index=True))`,
             `join="outer" handles different columns`,
             `keys parameter creates hierarchical index`,
             `Prefer concat over deprecated append`
-          ]
+          ],
+          pseudoCode: `CONCEPT: concat & append
+
+Checklist:
+  1. concat for same-structure DataFrames
+  2. join="outer" handles different columns
+  3. keys parameter creates hierarchical index
+  4. Prefer concat over deprecated append`
         },
         {
           id: `reshape`,
           title: `melt & pivot`,
-          content: `melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.`,
+          content: `melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.
+
+**melt & pivot** in the context of **Merging, Joining & Reshaping**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           keyPoints: [
             `melt essential for tidy data format`,
             `Tidy data: one row per observation`,
             `stack/unstack for MultiIndex manipulation`,
             `get_dummies for one-hot encoding`
-          ]
+          ],
+          pseudoCode: `CONCEPT: melt & pivot
+
+Checklist:
+  1. melt essential for tidy data format
+  2. Tidy data: one row per observation
+  3. stack/unstack for MultiIndex manipulation
+  4. get_dummies for one-hot encoding`
         },
         {
           id: `join-index`,
           title: `Index-based Joins`,
-          content: `df1.join(df2, on="key") or join on index. set_index before join for index alignment.`,
+          content: `df1.join(df2, on="key") or join on index. set_index before join for index alignment.
+
+**Index-based Joins** in the context of **Merging, Joining & Reshaping**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           keyPoints: [
             `Set index for repeated join operations`,
             `join method on DataFrame uses indexes`,
             `align indices before arithmetic operations`,
             `reindex for explicit index alignment`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Index-based Joins
+
+Checklist:
+  1. Set index for repeated join operations
+  2. join method on DataFrame uses indexes
+  3. align indices before arithmetic operations
+  4. reindex for explicit index alignment`
         }
       ],
       exercises: [
@@ -546,7 +706,11 @@ print(pd.concat([df1, df2]))`,
         {
           id: `missing`,
           title: `Handling Missing Data`,
-          content: `isna(), notna(), dropna(), fillna(). interpolate() for gap filling. Missingness patterns matter for ML.`,
+          content: `isna(), notna(), dropna(), fillna(). interpolate() for gap filling.
+
+Missingness patterns matter for ML.
+
+**Handling Missing Data** in the context of **Missing Data & Time Series**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -561,12 +725,21 @@ print(df.fillna({"A": df["A"].mean(), "B": 0}))`,
             `Understand MCAR, MAR, MNAR missingness`,
             `fillna with mean/median/mode or model-based`,
             `isna().sum() counts missing per column`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Handling Missing Data
+
+Checklist:
+  1. Never drop all missing blindly in ML
+  2. Understand MCAR, MAR, MNAR missingness
+  3. fillna with mean/median/mode or model-based
+  4. isna().sum() counts missing per column`
         },
         {
           id: `datetime`,
           title: `Datetime Operations`,
-          content: `pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.`,
+          content: `pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.
+
+**Datetime Operations** in the context of **Missing Data & Time Series**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -580,29 +753,56 @@ print(df.resample("MS").mean())`,
             `dt accessor extracts date components`,
             `resample for time-based aggregation`,
             `shift/lag for time series features`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Datetime Operations
+
+Checklist:
+  1. to_datetime parses various formats
+  2. dt accessor extracts date components
+  3. resample for time-based aggregation
+  4. shift/lag for time series features`
         },
         {
           id: `tz`,
           title: `Timezones`,
-          content: `tz_localize and tz_convert for timezone-aware datetimes. Critical for global data pipelines.`,
+          content: `tz_localize and tz_convert for timezone-aware datetimes.
+
+Critical for global data pipelines.
+
+**Timezones** in the context of **Missing Data & Time Series**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           keyPoints: [
             `Store UTC, convert for display`,
             `tz_localize assigns timezone`,
             `tz_convert changes timezone`,
             `Ambiguous times during DST transitions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Timezones
+
+Checklist:
+  1. Store UTC, convert for display
+  2. tz_localize assigns timezone
+  3. tz_convert changes timezone
+  4. Ambiguous times during DST transitions`
         },
         {
           id: `ts-features`,
           title: `Time Series Features for ML`,
-          content: `Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.`,
+          content: `Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.
+
+**Time Series Features for ML** in the context of **Missing Data & Time Series**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           keyPoints: [
             `Lag features capture temporal dependencies`,
             `Rolling windows for local trends`,
             `Seasonal patterns need explicit encoding`,
             `Train/test split must respect time order`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Time Series Features for ML
+
+Checklist:
+  1. Lag features capture temporal dependencies
+  2. Rolling windows for local trends
+  3. Seasonal patterns need explicit encoding
+  4. Train/test split must respect time order`
         }
       ],
       exercises: [

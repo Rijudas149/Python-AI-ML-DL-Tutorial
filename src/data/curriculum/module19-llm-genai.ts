@@ -25,7 +25,14 @@ Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabl
             `Open weights: LLaMA, Mistral, Qwen enable local deployment`,
             `Multimodal: GPT-4V, Gemini process images too`,
             `Context windows growing: 128K-1M tokens`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LLM Landscape
+
+Checklist:
+  1. Frontier models from OpenAI, Anthropic, Google
+  2. Open weights: LLaMA, Mistral, Qwen enable local deployment
+  3. Multimodal: GPT-4V, Gemini process images too
+  4. Context windows growing: 128K-1M tokens`
         },
         {
           id: `capabilities`,
@@ -40,12 +47,25 @@ Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabl
             `Hallucination: confident but incorrect outputs`,
             `Tool use and RAG mitigate knowledge gaps`,
             `Reasoning improves with chain-of-thought`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Capabilities & Limitations
+
+Checklist:
+  1. LLMs predict likely text not verified facts
+  2. Hallucination: confident but incorrect outputs
+  3. Tool use and RAG mitigate knowledge gaps
+  4. Reasoning improves with chain-of-thought`
         },
         {
           id: `tokens`,
           title: `Token Economics`,
-          content: `Pricing by input/output tokens. Context window limits. Tokenization affects cost and effective context usage.`,
+          content: `Pricing by input/output tokens.
+
+Context window limits.
+
+Tokenization affects cost and effective context usage.
+
+**Token Economics** in the context of **Large Language Models Overview**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `# Rough token estimate: 1 token ≈ 4 characters in English
 # "Hello world" ≈ 2 tokens
 # GPT-4 pricing varies by model tier
@@ -57,18 +77,38 @@ print(f"Approx tokens: {len(text) // 4}")`,
             `Input + output tokens both billed`,
             `Longer context = higher cost and latency`,
             `Count tokens before API calls`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Token Economics
+
+Checklist:
+  1. Tokens not words — subword units
+  2. Input + output tokens both billed
+  3. Longer context = higher cost and latency
+  4. Count tokens before API calls`
         },
         {
           id: `eval`,
           title: `LLM Evaluation`,
-          content: `MMLU, HumanEval, MT-Bench benchmarks. Custom eval sets for domain tasks. LLM-as-judge for subjective quality.`,
+          content: `MMLU, HumanEval, MT-Bench benchmarks.
+
+Custom eval sets for domain tasks.
+
+LLM-as-judge for subjective quality.
+
+**LLM Evaluation** in the context of **Large Language Models Overview**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `No single benchmark captures all capabilities`,
             `HumanEval for code generation quality`,
             `Build domain-specific eval sets`,
             `Automated eval with stronger model as judge`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LLM Evaluation
+
+Checklist:
+  1. No single benchmark captures all capabilities
+  2. HumanEval for code generation quality
+  3. Build domain-specific eval sets
+  4. Automated eval with stronger model as judge`
         }
       ],
       exercises: [
@@ -132,7 +172,11 @@ print(f"Approx tokens: {len(text) // 4}")`,
         {
           id: `basics`,
           title: `Prompt Structure`,
-          content: `System message (role/behavior) + user message (task) + optional examples. Clear, specific instructions outperform vague requests.`,
+          content: `System message (role/behavior) + user message (task) + optional examples.
+
+Clear, specific instructions outperform vague requests.
+
+**Prompt Structure** in the context of **Prompt Engineering**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `prompt = """System: You are a Python tutor. Explain concepts simply.
 
 User: Explain list comprehensions with an example.
@@ -144,12 +188,23 @@ print(len(prompt))`,
             `Be specific about format, length, tone`,
             `Include examples for complex formats (few-shot)`,
             `Iterate and refine prompts empirically`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Prompt Structure
+
+Checklist:
+  1. System prompt sets behavior and constraints
+  2. Be specific about format, length, tone
+  3. Include examples for complex formats (few-shot)
+  4. Iterate and refine prompts empirically`
         },
         {
           id: `cot`,
           title: `Chain-of-Thought (CoT)`,
-          content: `Add "Let's think step by step" or demonstrate reasoning steps. Dramatically improves math and logic performance.`,
+          content: `Add "Let's think step by step" or demonstrate reasoning steps.
+
+Dramatically improves math and logic performance.
+
+**Chain-of-Thought (CoT)** in the context of **Prompt Engineering**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `prompt = "Q: A store has 23 apples. They buy 6 boxes of 12 apples. How many now?\\nA: Let's think step by step.\\n23 + (6 * 12) = 23 + 72 = 95\\n\\nQ: ..."
 print("CoT improves reasoning")`,
           output: `CoT improves reasoning`,
@@ -158,29 +213,58 @@ print("CoT improves reasoning")`,
             `Few-shot CoT: provide reasoning examples`,
             `Self-consistency: sample multiple chains, majority vote`,
             `Tree-of-thought for complex planning`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Chain-of-Thought (CoT)
+
+Checklist:
+  1. Zero-shot CoT: add "think step by step"
+  2. Few-shot CoT: provide reasoning examples
+  3. Self-consistency: sample multiple chains, majority vote
+  4. Tree-of-thought for complex planning`
         },
         {
           id: `few-shot`,
           title: `Few-Shot Learning`,
-          content: `Provide 2-5 input-output examples in prompt. Model learns pattern without weight updates. Example selection matters.`,
+          content: `Provide 2-5 input-output examples in prompt.
+
+Model learns pattern without weight updates.
+
+Example selection matters.
+
+**Few-Shot Learning** in the context of **Prompt Engineering**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Examples should be diverse and representative`,
             `Order of examples affects performance`,
             `More examples help up to a point`,
             `Dynamic example retrieval from database`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Few-Shot Learning
+
+Checklist:
+  1. Examples should be diverse and representative
+  2. Order of examples affects performance
+  3. More examples help up to a point
+  4. Dynamic example retrieval from database`
         },
         {
           id: `advanced-prompt`,
           title: `Advanced Techniques`,
-          content: `ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.`,
+          content: `ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.
+
+**Advanced Techniques** in the context of **Prompt Engineering**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `JSON mode ensures parseable output`,
             `Prompt chaining breaks complex tasks into steps`,
             `ReAct interleaves reasoning and tool calls`,
             `Test prompts systematically with eval sets`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Advanced Techniques
+
+Checklist:
+  1. JSON mode ensures parseable output
+  2. Prompt chaining breaks complex tasks into steps
+  3. ReAct interleaves reasoning and tool calls
+  4. Test prompts systematically with eval sets`
         }
       ],
       exercises: [
@@ -246,7 +330,9 @@ print("step by step" in q)`,
         {
           id: `rag-arch`,
           title: `RAG Architecture`,
-          content: `Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.`,
+          content: `Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.
+
+**RAG Architecture** in the context of **RAG (Retrieval Augmented Generation)**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           pseudoCode: `query = user_question
 chunks = vector_db.search(embed(query), top_k=5)
 context = join(chunks)
@@ -262,7 +348,11 @@ answer = llm.generate(prompt)`,
         {
           id: `embeddings-rag`,
           title: `Embeddings for Retrieval`,
-          content: `Embed documents and queries with embedding model (OpenAI, sentence-transformers). Store in vector DB (Pinecone, Chroma, FAISS).`,
+          content: `Embed documents and queries with embedding model (OpenAI, sentence-transformers).
+
+Store in vector DB (Pinecone, Chroma, FAISS).
+
+**Embeddings for Retrieval** in the context of **RAG (Retrieval Augmented Generation)**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -274,29 +364,60 @@ print(embeddings.shape)`,
             `Chunk documents 256-512 tokens typically`,
             `Metadata filtering narrows search space`,
             `Re-rank retrieved results with cross-encoder`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Embeddings for Retrieval
+
+Checklist:
+  1. Choose embedding model matching domain
+  2. Chunk documents 256-512 tokens typically
+  3. Metadata filtering narrows search space
+  4. Re-rank retrieved results with cross-encoder`
         },
         {
           id: `chunking`,
           title: `Document Chunking`,
-          content: `Split documents into retrievable chunks. Recursive character splitting, semantic chunking. Overlap preserves context at boundaries.`,
+          content: `Split documents into retrievable chunks.
+
+Recursive character splitting, semantic chunking.
+
+Overlap preserves context at boundaries.
+
+**Document Chunking** in the context of **RAG (Retrieval Augmented Generation)**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Too small chunks lose context`,
             `Too large chunks dilute relevance`,
             `10-20% overlap between chunks common`,
             `Parent-child chunking for hierarchical retrieval`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Document Chunking
+
+Checklist:
+  1. Too small chunks lose context
+  2. Too large chunks dilute relevance
+  3. 10-20% overlap between chunks common
+  4. Parent-child chunking for hierarchical retrieval`
         },
         {
           id: `eval-rag`,
           title: `Evaluating RAG Systems`,
-          content: `Retrieval metrics: recall@k, MRR. Generation metrics: faithfulness, relevance, answer correctness. RAGAS framework.`,
+          content: `Retrieval metrics: recall@k, MRR.
+
+Generation metrics: faithfulness, relevance, answer correctness.
+
+**Evaluating RAG Systems** in the context of **RAG (Retrieval Augmented Generation)**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Evaluate retrieval and generation separately`,
             `Faithfulness: answer grounded in retrieved context`,
             `RAGAS automated RAG evaluation`,
             `Human eval for production quality assurance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Evaluating RAG Systems
+
+Checklist:
+  1. Evaluate retrieval and generation separately
+  2. Faithfulness: answer grounded in retrieved context
+  3. RAGAS automated RAG evaluation
+  4. Human eval for production quality assurance`
         }
       ],
       exercises: [
@@ -361,18 +482,35 @@ print(steps)`,
         {
           id: `finetune`,
           title: `Full Fine-Tuning`,
-          content: `Update all model weights on domain dataset. Expensive — requires significant GPU memory. Best for large domain shift.`,
+          content: `Update all model weights on domain dataset.
+
+Expensive — requires significant GPU memory.
+
+Best for large domain shift.
+
+**Full Fine-Tuning** in the context of **Fine-tuning & LoRA**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Requires labeled instruction-response pairs`,
             `Risk of catastrophic forgetting`,
             `Multi-GPU needed for 7B+ models`,
             `Learning rate much smaller than pretraining`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Full Fine-Tuning
+
+Checklist:
+  1. Requires labeled instruction-response pairs
+  2. Risk of catastrophic forgetting
+  3. Multi-GPU needed for 7B+ models
+  4. Learning rate much smaller than pretraining`
         },
         {
           id: `lora`,
           title: `LoRA (Low-Rank Adaptation)`,
-          content: `Freeze base model, add low-rank decomposition matrices to attention layers. Trains ~0.1% of parameters. PEFT standard.`,
+          content: `Freeze base model, add low-rank decomposition matrices to attention layers.
+
+Trains ~0.1% of parameters.
+
+**LoRA (Low-Rank Adaptation)** in the context of **Fine-tuning & LoRA**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `# LoRA concept: W' = W + BA where B is d×r, A is r×d, r << d
 # r=8 or r=16 typical rank
 # Only train A and B matrices
@@ -383,29 +521,60 @@ print("LoRA: W + B@A with low rank r")`,
             `Target q_proj, v_proj in attention layers`,
             `QLoRA: 4-bit quantized base + LoRA adapters`,
             `Merge adapters into base for deployment`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LoRA (Low-Rank Adaptation)
+
+Checklist:
+  1. LoRA rank r controls capacity vs efficiency
+  2. Target q_proj, v_proj in attention layers
+  3. QLoRA: 4-bit quantized base + LoRA adapters
+  4. Merge adapters into base for deployment`
         },
         {
           id: `instruction`,
           title: `Instruction Tuning`,
-          content: `Fine-tune on (instruction, response) pairs. Alpaca, Dolly datasets. Aligns model to follow user instructions.`,
+          content: `Fine-tune on (instruction, response) pairs.
+
+Alpaca, Dolly datasets.
+
+Aligns model to follow user instructions.
+
+**Instruction Tuning** in the context of **Fine-tuning & LoRA**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Instruction format: ### Instruction / ### Response`,
             `Quality over quantity for instruction data`,
             `Covers diverse task types`,
             `Foundation for chat model behavior`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Instruction Tuning
+
+Checklist:
+  1. Instruction format: ### Instruction / ### Response
+  2. Quality over quantity for instruction data
+  3. Covers diverse task types
+  4. Foundation for chat model behavior`
         },
         {
           id: `rlhf`,
           title: `RLHF & DPO`,
-          content: `Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO. DPO simpler alternative without reward model.`,
+          content: `Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO.
+
+DPO simpler alternative without reward model.
+
+**RLHF & DPO** in the context of **Fine-tuning & LoRA**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `RLHF makes models helpful and harmless`,
             `Reward model trained on human preference comparisons`,
             `PPO fine-tunes against reward model`,
             `DPO direct preference optimization — simpler pipeline`
-          ]
+          ],
+          pseudoCode: `CONCEPT: RLHF & DPO
+
+Checklist:
+  1. RLHF makes models helpful and harmless
+  2. Reward model trained on human preference comparisons
+  3. PPO fine-tunes against reward model
+  4. DPO direct preference optimization — simpler pipeline`
         }
       ],
       exercises: [
@@ -469,7 +638,11 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `agents`,
           title: `LLM Agent Architecture`,
-          content: `Agent loop: observe → think → act (tool call) → observe result → repeat. LangChain, LlamaIndex frameworks.`,
+          content: `Agent loop: observe → think → act (tool call) → observe result → repeat.
+
+LangChain, LlamaIndex frameworks.
+
+**LLM Agent Architecture** in the context of **Agents & Tool Use**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           pseudoCode: `WHILE not done:
     thought = llm.reason(observation, goal)
     IF thought.requires_action:
@@ -487,7 +660,13 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `tools`,
           title: `Function Calling / Tool Use`,
-          content: `Define tools with name, description, parameters (JSON schema). Model selects tool and arguments. OpenAI function calling, Anthropic tool use.`,
+          content: `Define tools with name, description, parameters (JSON schema).
+
+Model selects tool and arguments.
+
+OpenAI function calling, Anthropic tool use.
+
+**Function Calling / Tool Use** in the context of **Agents & Tool Use**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `tools = [{
     "name": "search",
     "description": "Search the web for information",
@@ -500,29 +679,60 @@ print(tools[0]["name"])`,
             `JSON schema defines valid parameters`,
             `Execute tool and return result to model`,
             `Multiple tools enable complex workflows`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Function Calling / Tool Use
+
+Checklist:
+  1. Clear tool descriptions critical for selection
+  2. JSON schema defines valid parameters
+  3. Execute tool and return result to model
+  4. Multiple tools enable complex workflows`
         },
         {
           id: `frameworks`,
           title: `Agent Frameworks`,
-          content: `LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG. AutoGen: multi-agent conversations. CrewAI: role-based agents.`,
+          content: `LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG.
+
+AutoGen: multi-agent conversations. CrewAI: role-based agents.
+
+**Agent Frameworks** in the context of **Agents & Tool Use**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `LangChain most popular orchestration framework`,
             `LlamaIndex optimized for data-connected apps`,
             `Multi-agent: specialized agents collaborate`,
             `Evaluate agent reliability before production`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Agent Frameworks
+
+Checklist:
+  1. LangChain most popular orchestration framework
+  2. LlamaIndex optimized for data-connected apps
+  3. Multi-agent: specialized agents collaborate
+  4. Evaluate agent reliability before production`
         },
         {
           id: `safety`,
           title: `Agent Safety`,
-          content: `Sandbox tool execution. Validate tool inputs. Limit permissions. Human-in-the-loop for high-stakes actions.`,
+          content: `Sandbox tool execution.
+
+Validate tool inputs.
+
+Human-in-the-loop for high-stakes actions.
+
+**Agent Safety** in the context of **Agents & Tool Use**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Never give agents unrestricted system access`,
             `Validate and sanitize tool inputs/outputs`,
             `Human approval for irreversible actions`,
             `Monitor agent trajectories for unexpected behavior`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Agent Safety
+
+Checklist:
+  1. Never give agents unrestricted system access
+  2. Validate and sanitize tool inputs/outputs
+  3. Human approval for irreversible actions
+  4. Monitor agent trajectories for unexpected behavior`
         }
       ],
       exercises: [

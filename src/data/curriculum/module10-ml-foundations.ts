@@ -11,18 +11,29 @@ export const module10Topics: Topic[] = [
         {
           id: `pipeline`,
           title: `The ML Workflow`,
-          content: `1. Define problem 2. Collect data 3. EDA 4. Feature engineering 5. Model selection 6. Train 7. Evaluate 8. Deploy 9. Monitor.`,
+          content: `Feature engineering 5.
+
+**The ML Workflow** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Start with problem definition not algorithms`,
             `Data quality determines ceiling performance`,
             `Always hold out test set until final evaluation`,
             `Iterate between EDA and feature engineering`
-          ]
+          ],
+          pseudoCode: `CONCEPT: The ML Workflow
+
+Checklist:
+  1. Start with problem definition not algorithms
+  2. Data quality determines ceiling performance
+  3. Always hold out test set until final evaluation
+  4. Iterate between EDA and feature engineering`
         },
         {
           id: `split`,
           title: `train_test_split`,
-          content: `Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).`,
+          content: `Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).
+
+**train_test_split** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -38,12 +49,23 @@ print(len(X_train), len(X_test))`,
             `stratify preserves class proportions`,
             `random_state for reproducibility`,
             `Typical split: 70-80% train, 20-30% test`
-          ]
+          ],
+          pseudoCode: `CONCEPT: train_test_split
+
+Checklist:
+  1. Never train on test data — data leakage
+  2. stratify preserves class proportions
+  3. random_state for reproducibility
+  4. Typical split: 70-80% train, 20-30% test`
         },
         {
           id: `preprocessing`,
           title: `Preprocessing Pipeline`,
-          content: `StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model. Prevents leakage by fitting on train only.`,
+          content: `StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model.
+
+Prevents leakage by fitting on train only.
+
+**Preprocessing Pipeline** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -59,18 +81,36 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
             `Pipeline ensures consistent train/test processing`,
             `ColumnTransformer for mixed feature types`,
             `Preprocessing choices affect model performance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Preprocessing Pipeline
+
+Checklist:
+  1. Fit preprocessor on training data only
+  2. Pipeline ensures consistent train/test processing
+  3. ColumnTransformer for mixed feature types
+  4. Preprocessing choices affect model performance`
         },
         {
           id: `baseline`,
           title: `Baseline Models`,
-          content: `Always establish baseline before complex models. Mean predictor for regression, majority class for classification. Beat baseline first.`,
+          content: `Always establish baseline before complex models.
+
+Mean predictor for regression, majority class for classification.
+
+**Baseline Models** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `DummyClassifier/DummyRegressor for baselines`,
             `Baseline sets minimum acceptable performance`,
             `Simple models often competitive with complex ones`,
             `Occams razor — prefer simpler when equal performance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Baseline Models
+
+Checklist:
+  1. DummyClassifier/DummyRegressor for baselines
+  2. Baseline sets minimum acceptable performance
+  3. Simple models often competitive with complex ones
+  4. Occams razor — prefer simpler when equal performance`
         }
       ],
       exercises: [
@@ -141,7 +181,11 @@ print(len(pipe.steps))`,
         {
           id: `linear-reg`,
           title: `Linear Regression`,
-          content: `ŷ = wᵀx + b. Minimizes MSE. sklearn: LinearRegression(). Closed-form or iterative solution.`,
+          content: `Minimizes MSE. sklearn: LinearRegression().
+
+Closed-form or iterative solution.
+
+**Linear Regression** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.linear_model import LinearRegression
 import numpy as np
 
@@ -155,12 +199,23 @@ print(model.coef_[0], model.intercept_)`,
             `Interpretable coefficients`,
             `Sensitive to outliers — use HuberRegressor`,
             `Ridge/Lasso add regularization`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Linear Regression
+
+Checklist:
+  1. Assumes linear relationship
+  2. Interpretable coefficients
+  3. Sensitive to outliers — use HuberRegressor
+  4. Ridge/Lasso add regularization`
         },
         {
           id: `logistic`,
           title: `Logistic Regression`,
-          content: `Predicts P(y=1|x) via sigmoid: σ(wᵀx). Despite name, is classification algorithm. sklearn: LogisticRegression().`,
+          content: `Predicts P(y=1|x) via sigmoid: σ(wᵀx).
+
+Despite name, is classification algorithm. sklearn: LogisticRegression().
+
+**Logistic Regression** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.linear_model import LogisticRegression
 import numpy as np
 
@@ -174,12 +229,23 @@ print(clf.predict([[2.5], [3.5]]))`,
             `Uses cross-entropy loss internally`,
             `Works well with linearly separable data`,
             `C parameter controls regularization strength`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Logistic Regression
+
+Checklist:
+  1. Outputs probabilities not just labels
+  2. Uses cross-entropy loss internally
+  3. Works well with linearly separable data
+  4. C parameter controls regularization strength`
         },
         {
           id: `sigmoid`,
           title: `Sigmoid & Softmax`,
-          content: `Sigmoid: σ(z) = 1/(1+e⁻ᶻ). Maps to (0,1). Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.`,
+          content: `Sigmoid: σ(z) = 1/(1+e⁻ᶻ).
+
+Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.
+
+**Sigmoid & Softmax** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `import numpy as np
 
 def sigmoid(z):
@@ -192,18 +258,38 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
             `Softmax outputs sum to 1`,
             `Decision boundary at 0.5 for binary`,
             `Logistic regression learns linear decision boundary`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sigmoid & Softmax
+
+Checklist:
+  1. Sigmoid squashes to probability range
+  2. Softmax outputs sum to 1
+  3. Decision boundary at 0.5 for binary
+  4. Logistic regression learns linear decision boundary`
         },
         {
           id: `interpret`,
           title: `Interpretability`,
-          content: `Coefficients show feature importance and direction. Odds ratio = e^coefficient. SHAP values for individual predictions.`,
+          content: `Coefficients show feature importance and direction.
+
+Odds ratio = e^coefficient.
+
+SHAP values for individual predictions.
+
+**Interpretability** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Positive coefficient increases log-odds of class 1`,
             `Feature scaling needed for coefficient comparison`,
             `Regularization shrinks coefficients toward zero`,
             `Linear models preferred when interpretability required`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Interpretability
+
+Checklist:
+  1. Positive coefficient increases log-odds of class 1
+  2. Feature scaling needed for coefficient comparison
+  3. Regularization shrinks coefficients toward zero
+  4. Linear models preferred when interpretability required`
         }
       ],
       exercises: [
@@ -271,7 +357,13 @@ print(sigmoid(0))`,
         {
           id: `dt`,
           title: `Decision Trees`,
-          content: `Split data by feature thresholds maximizing information gain. Non-parametric, handles non-linear relationships. Prone to overfitting.`,
+          content: `Split data by feature thresholds maximizing information gain.
+
+Non-parametric, handles non-linear relationships.
+
+Prone to overfitting.
+
+**Decision Trees** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
@@ -285,12 +377,23 @@ print(clf.score(X, y))`,
             `Handles mixed feature types naturally`,
             `Prone to overfitting without constraints`,
             `Fully interpretable — can visualize tree`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Decision Trees
+
+Checklist:
+  1. max_depth controls complexity
+  2. Handles mixed feature types naturally
+  3. Prone to overfitting without constraints
+  4. Fully interpretable — can visualize tree`
         },
         {
           id: `rf`,
           title: `Random Forests`,
-          content: `Ensemble of trees on bootstrap samples with random feature subsets. Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).`,
+          content: `Ensemble of trees on bootstrap samples with random feature subsets.
+
+Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).
+
+**Random Forests** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 
@@ -303,29 +406,58 @@ print(rf.score(X, y))`,
             `n_estimators more trees = lower variance`,
             `feature_importances_ for feature ranking`,
             `OOB score estimates generalization without validation set`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Random Forests
+
+Checklist:
+  1. Bagging reduces overfitting vs single tree
+  2. n_estimators more trees = lower variance
+  3. feature_importances_ for feature ranking
+  4. OOB score estimates generalization without validation set`
         },
         {
           id: `hyperparams`,
           title: `Tree Hyperparameters`,
-          content: `max_depth, min_samples_split, min_samples_leaf, max_features. Tune with GridSearchCV or RandomizedSearchCV.`,
+          content: `max_depth, min_samples_split, min_samples_leaf, max_features.
+
+Tune with GridSearchCV or RandomizedSearchCV.
+
+**Tree Hyperparameters** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `max_depth most impactful hyperparameter`,
             `min_samples_leaf prevents tiny leaves`,
             `max_features introduces randomness in RF`,
             `Pruning via cost-complexity parameter ccp_alpha`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Tree Hyperparameters
+
+Checklist:
+  1. max_depth most impactful hyperparameter
+  2. min_samples_leaf prevents tiny leaves
+  3. max_features introduces randomness in RF
+  4. Pruning via cost-complexity parameter ccp_alpha`
         },
         {
           id: `when`,
           title: `When to Use Trees`,
-          content: `Tabular data, mixed types, non-linear relationships, feature interactions. Often top performer with gradient boosting.`,
+          content: `Tabular data, mixed types, non-linear relationships, feature interactions.
+
+Often top performer with gradient boosting.
+
+**When to Use Trees** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Trees excel on structured/tabular data`,
             `Less effective on raw images/text without features`,
             `XGBoost/LightGBM often win Kaggle tabular`,
             `Random Forest good default before tuning`
-          ]
+          ],
+          pseudoCode: `CONCEPT: When to Use Trees
+
+Checklist:
+  1. Trees excel on structured/tabular data
+  2. Less effective on raw images/text without features
+  3. XGBoost/LightGBM often win Kaggle tabular
+  4. Random Forest good default before tuning`
         }
       ],
       exercises: [
@@ -397,7 +529,13 @@ print(len(rf.feature_importances_))`,
         {
           id: `classification`,
           title: `Classification Metrics`,
-          content: `Accuracy: correct/total. Precision: TP/(TP+FP). Recall: TP/(TP+FN). F1: harmonic mean of precision and recall.`,
+          content: `Accuracy: correct/total.
+
+Precision: TP/(TP+FP).
+
+F1: harmonic mean of precision and recall.
+
+**Classification Metrics** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.metrics import classification_report
 
 y_true = [0, 1, 1, 0, 1, 1, 0, 0]
@@ -416,23 +554,49 @@ weighted avg      0.714     0.714     0.714         7`,
             `Precision: of predicted positives, how many correct`,
             `Recall: of actual positives, how many found`,
             `F1 balances precision and recall`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Classification Metrics
+
+Checklist:
+  1. Accuracy misleading for imbalanced classes
+  2. Precision: of predicted positives, how many correct
+  3. Recall: of actual positives, how many found
+  4. F1 balances precision and recall`
         },
         {
           id: `roc`,
           title: `ROC-AUC`,
-          content: `ROC plots TPR vs FPR at various thresholds. AUC = area under curve. 0.5 = random, 1.0 = perfect. Threshold-independent metric.`,
+          content: `ROC plots TPR vs FPR at various thresholds.
+
+AUC = area under curve. 0.5 = random, 1.0 = perfect.
+
+Threshold-independent metric.
+
+**ROC-AUC** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `AUC measures ranking quality of predictions`,
             `Good for imbalanced binary classification`,
             `Choose threshold based on business cost`,
             `PR curve better for highly imbalanced data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ROC-AUC
+
+Checklist:
+  1. AUC measures ranking quality of predictions
+  2. Good for imbalanced binary classification
+  3. Choose threshold based on business cost
+  4. PR curve better for highly imbalanced data`
         },
         {
           id: `regression`,
           title: `Regression Metrics`,
-          content: `MSE, RMSE, MAE, R². MAE robust to outliers. R² = 1 - SS_res/SS_tot. Negative R² means worse than mean predictor.`,
+          content: `MAE robust to outliers.
+
+R² = 1 - SS_res/SS_tot.
+
+Negative R² means worse than mean predictor.
+
+**Regression Metrics** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
@@ -447,18 +611,36 @@ print(round(r2_score(y_true, y_pred), 3))`,
             `RMSE in same units as target`,
             `R² proportion of variance explained`,
             `Use domain-appropriate metrics`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Regression Metrics
+
+Checklist:
+  1. MSE penalizes large errors more than MAE
+  2. RMSE in same units as target
+  3. R² proportion of variance explained
+  4. Use domain-appropriate metrics`
         },
         {
           id: `confusion`,
           title: `Confusion Matrix`,
-          content: `2×2 (or n×n) table of predicted vs actual. Derive all classification metrics from it.`,
+          content: `2×2 (or n×n) table of predicted vs actual.
+
+Derive all classification metrics from it.
+
+**Confusion Matrix** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `TN, FP, FN, TP for binary case`,
             `Normalize for class imbalance visualization`,
             `Multi-class extends to n×n matrix`,
             `Cost-sensitive learning weights error types differently`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Confusion Matrix
+
+Checklist:
+  1. TN, FP, FN, TP for binary case
+  2. Normalize for class imbalance visualization
+  3. Multi-class extends to n×n matrix
+  4. Cost-sensitive learning weights error types differently`
         }
       ],
       exercises: [
@@ -524,7 +706,13 @@ print(round(mean_squared_error([1,2,3], [1.1, 2.2, 2.8]), 3))`,
         {
           id: `kfold`,
           title: `K-Fold Cross-Validation`,
-          content: `Split data into k folds. Train on k-1, validate on 1. Repeat k times. cross_val_score reports mean ± std.`,
+          content: `Split data into k folds.
+
+Train on k-1, validate on 1.
+
+Repeat k times. cross_val_score reports mean ± std.
+
+**K-Fold Cross-Validation** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -538,12 +726,23 @@ print(round(scores.mean(), 3), round(scores.std(), 3))`,
             `StratifiedKFold for classification`,
             `Mean score estimates generalization`,
             `Std indicates stability across folds`
-          ]
+          ],
+          pseudoCode: `CONCEPT: K-Fold Cross-Validation
+
+Checklist:
+  1. cv=5 or cv=10 common choices
+  2. StratifiedKFold for classification
+  3. Mean score estimates generalization
+  4. Std indicates stability across folds`
         },
         {
           id: `gridsearch`,
           title: `GridSearchCV`,
-          content: `Exhaustive search over hyperparameter grid with cross-validation. Returns best params and score.`,
+          content: `Exhaustive search over hyperparameter grid with cross-validation.
+
+Returns best params and score.
+
+**GridSearchCV** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.datasets import load_iris
@@ -558,12 +757,21 @@ print(grid.best_params_)`,
             `RandomizedSearchCV for large spaces`,
             `Nested CV for unbiased performance estimate`,
             `Never tune on test set`
-          ]
+          ],
+          pseudoCode: `CONCEPT: GridSearchCV
+
+Checklist:
+  1. Search space size affects compute cost
+  2. RandomizedSearchCV for large spaces
+  3. Nested CV for unbiased performance estimate
+  4. Never tune on test set`
         },
         {
           id: `pipeline-cv`,
           title: `Pipeline + CV Together`,
-          content: `Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.`,
+          content: `Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.
+
+**Pipeline + CV Together** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
@@ -579,18 +787,36 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
             `Each fold fits scaler on train fold only`,
             `Same pipeline used for final model training`,
             `joblib.dump saves fitted pipeline`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Pipeline + CV Together
+
+Checklist:
+  1. Pipeline + CV prevents preprocessing leakage
+  2. Each fold fits scaler on train fold only
+  3. Same pipeline used for final model training
+  4. joblib.dump saves fitted pipeline`
         },
         {
           id: `nested`,
           title: `Nested Cross-Validation`,
-          content: `Outer loop for evaluation, inner loop for hyperparameter tuning. Unbiased estimate of generalization.`,
+          content: `Outer loop for evaluation, inner loop for hyperparameter tuning.
+
+Unbiased estimate of generalization.
+
+**Nested Cross-Validation** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Outer CV estimates model performance`,
             `Inner CV selects hyperparameters`,
             `Prevents optimistic bias from tuning on same data`,
             `Computationally expensive but rigorous`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Nested Cross-Validation
+
+Checklist:
+  1. Outer CV estimates model performance
+  2. Inner CV selects hyperparameters
+  3. Prevents optimistic bias from tuning on same data
+  4. Computationally expensive but rigorous`
         }
       ],
       exercises: [

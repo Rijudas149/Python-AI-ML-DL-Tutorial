@@ -30,7 +30,14 @@ def test_add():
             `One logical behavior per test function`,
             `Tests must be deterministic and independent`,
             `Naming test_* enables automatic discovery`
-          ]
+          ],
+          pseudoCode: `CONCEPT: pytest Fundamentals
+
+Checklist:
+  1. Use plain assert — pytest rewrites failures richly
+  2. One logical behavior per test function
+  3. Tests must be deterministic and independent
+  4. Naming test_* enables automatic discovery`
         },
         {
           id: `fixtures`,
@@ -54,7 +61,14 @@ def test_index(sample_list, idx, val):
             `parametrize documents input/output cases explicitly`,
             `conftest.py centralizes shared fixtures`,
             `Choose fixture scope to balance speed vs isolation`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Fixtures & Parametrize
+
+Checklist:
+  1. Fixtures replace repetitive setup code
+  2. parametrize documents input/output cases explicitly
+  3. conftest.py centralizes shared fixtures
+  4. Choose fixture scope to balance speed vs isolation`
         },
         {
           id: `unittest-mock`,
@@ -80,7 +94,14 @@ def test_fetch(mock_get):
             `Mocks verify both return values and call patterns`,
             `unittest.TestCase still valid; pytest is often preferred`,
             `Do not mock the function you are testing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: unittest & Mocking
+
+Checklist:
+  1. Patch at the import site used by code under test
+  2. Mocks verify both return values and call patterns
+  3. unittest.TestCase still valid; pytest is often preferred
+  4. Do not mock the function you are testing`
         },
         {
           id: `coverage-ci`,
@@ -98,7 +119,14 @@ Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_ba
             `CI gates prevent merging broken code`,
             `Separate fast unit from slow integration tests`,
             `Mirror source layout in tests/ directory`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Coverage & CI Integration
+
+Checklist:
+  1. Coverage highlights untested branches
+  2. CI gates prevent merging broken code
+  3. Separate fast unit from slow integration tests
+  4. Mirror source layout in tests/ directory`
         }
       ],
       exercises: [
@@ -193,7 +221,14 @@ Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if susp
             `Step vs next controls function entry`,
             `pytest --pdb stops at assertion failures`,
             `Remove breakpoints before committing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Interactive Debugging with pdb
+
+Checklist:
+  1. breakpoint() is the modern pdb entry point
+  2. Step vs next controls function entry
+  3. pytest --pdb stops at assertion failures
+  4. Remove breakpoints before committing`
         },
         {
           id: `logging`,
@@ -224,7 +259,14 @@ print(process(5))`,
             `Use __name__ for hierarchical logger names`,
             `Lazy % formatting avoids string work when disabled`,
             `Never log secrets or PII at INFO level`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Structured Logging
+
+Checklist:
+  1. Log levels filter noise in production
+  2. Use __name__ for hierarchical logger names
+  3. Lazy % formatting avoids string work when disabled
+  4. Never log secrets or PII at INFO level`
         },
         {
           id: `tracebacks`,
@@ -248,7 +290,14 @@ keys: ['a']`,
             `Exception chaining preserves original cause`,
             `Inspect locals at failure line in pdb`,
             `Reproduce with minimal input before fixing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Reading Tracebacks
+
+Checklist:
+  1. Read traceback from bottom exception upward
+  2. Exception chaining preserves original cause
+  3. Inspect locals at failure line in pdb
+  4. Reproduce with minimal input before fixing`
         },
         {
           id: `debug-tools`,
@@ -263,7 +312,14 @@ Maintain a debugging checklist: reproduce reliably, bisect git history (\`git bi
             `Add regression test for every bug fixed`,
             `git bisect finds introducing commit`,
             `Production errors need structured logs + traces`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Debug Tools & Practices
+
+Checklist:
+  1. Always reproduce before attempting fixes
+  2. Add regression test for every bug fixed
+  3. git bisect finds introducing commit
+  4. Production errors need structured logs + traces`
         }
       ],
       exercises: [
@@ -363,7 +419,14 @@ asyncio.run(main())`,
             `asyncio.run is the standard entry point`,
             `sleep(0) yields to other tasks`,
             `CPU-bound code blocks the entire loop`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Coroutines & Event Loop
+
+Checklist:
+  1. async def creates coroutines; await drives them
+  2. asyncio.run is the standard entry point
+  3. sleep(0) yields to other tasks
+  4. CPU-bound code blocks the entire loop`
         },
         {
           id: `gather-tasks`,
@@ -390,7 +453,14 @@ asyncio.run(main())`,
             `Tasks enable background work while awaiting others`,
             `Always set timeouts on external I/O`,
             `Semaphore prevents resource exhaustion`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Tasks, gather & Timeouts
+
+Checklist:
+  1. gather runs coroutines concurrently on one thread
+  2. Tasks enable background work while awaiting others
+  3. Always set timeouts on external I/O
+  4. Semaphore prevents resource exhaustion`
         },
         {
           id: `aiohttp`,
@@ -415,7 +485,14 @@ async def fetch_title():
             `async with ensures connection cleanup`,
             `Check resp.status before parsing body`,
             `Combine with Semaphore for polite concurrency`
-          ]
+          ],
+          pseudoCode: `CONCEPT: aiohttp HTTP Basics
+
+Checklist:
+  1. One ClientSession per application lifecycle
+  2. async with ensures connection cleanup
+  3. Check resp.status before parsing body
+  4. Combine with Semaphore for polite concurrency`
         },
         {
           id: `async-pitfalls`,
@@ -439,7 +516,14 @@ print(asyncio.run(bad()))`,
             `Un-awaited coroutines do not run`,
             `asyncio is for I/O concurrency not CPU parallelism`,
             `Use to_thread or ProcessPool for blocking/CPU work`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Async Anti-Patterns
+
+Checklist:
+  1. Blocking calls freeze all coroutines on the loop
+  2. Un-awaited coroutines do not run
+  3. asyncio is for I/O concurrency not CPU parallelism
+  4. Use to_thread or ProcessPool for blocking/CPU work`
         }
       ],
       exercises: [
@@ -536,7 +620,14 @@ print(id_match.group(1) if id_match else None)`,
             `search scans entire string; match anchors at start`,
             `compile() amortizes parsing cost in loops`,
             `group(1) returns first capturing parenthesis`
-          ]
+          ],
+          pseudoCode: `CONCEPT: re Module Basics
+
+Checklist:
+  1. Prefer raw strings for regex patterns
+  2. search scans entire string; match anchors at start
+  3. compile() amortizes parsing cost in loops
+  4. group(1) returns first capturing parenthesis`
         },
         {
           id: `patterns`,
@@ -557,7 +648,14 @@ print(valid)`,
             `Non-capturing groups improve performance`,
             `Word boundaries prevent partial matches`,
             `Email regex is illustrative—not RFC-complete`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Common Pattern Building Blocks
+
+Checklist:
+  1. Validate patterns against edge cases
+  2. Non-capturing groups improve performance
+  3. Word boundaries prevent partial matches
+  4. Email regex is illustrative—not RFC-complete`
         },
         {
           id: `flags-groups`,
@@ -578,7 +676,14 @@ for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
             `Named groups clarify extraction code`,
             `finditer scales better than findall on huge files`,
             `VERBOSE allows comments in complex patterns`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Flags & Extraction
+
+Checklist:
+  1. MULTILINE changes anchor behavior
+  2. Named groups clarify extraction code
+  3. finditer scales better than findall on huge files
+  4. VERBOSE allows comments in complex patterns`
         },
         {
           id: `regex-caveats`,
@@ -593,7 +698,14 @@ Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on lon
             `Watch catastrophic backtracking on evil input`,
             `str.split/strip often beats regex for simple tasks`,
             `Unit test regex with representative samples`
-          ]
+          ],
+          pseudoCode: `CONCEPT: When Not to Use Regex
+
+Checklist:
+  1. Do not parse HTML/XML with regex alone
+  2. Watch catastrophic backtracking on evil input
+  3. str.split/strip often beats regex for simple tasks
+  4. Unit test regex with representative samples`
         }
       ],
       exercises: [
@@ -677,7 +789,14 @@ Multiprocessing spawns separate interpreters—each with its own GIL—enabling 
             `I/O-bound tasks still benefit from threads`,
             `multiprocessing bypasses GIL with separate processes`,
             `NumPy/C extensions may release GIL in C code`
-          ]
+          ],
+          pseudoCode: `CONCEPT: The Global Interpreter Lock
+
+Checklist:
+  1. GIL limits parallel CPU-bound threads in CPython
+  2. I/O-bound tasks still benefit from threads
+  3. multiprocessing bypasses GIL with separate processes
+  4. NumPy/C extensions may release GIL in C code`
         },
         {
           id: `threading`,
@@ -701,7 +820,14 @@ print(results)`,
             `Protect shared mutable state with locks`,
             `queue.Queue is thread-safe for handoff`,
             `Daemon threads exit when main exits`
-          ]
+          ],
+          pseudoCode: `CONCEPT: threading Module
+
+Checklist:
+  1. ThreadPoolExecutor simplifies thread pools
+  2. Protect shared mutable state with locks
+  3. queue.Queue is thread-safe for handoff
+  4. Daemon threads exit when main exits`
         },
         {
           id: `multiprocessing`,
@@ -725,7 +851,14 @@ if __name__ == "__main__":
             `Pickle requirement limits shared objects`,
             `Pool.map is simple for embarrassingly parallel maps`,
             `Prefer executors over raw Process for clarity`
-          ]
+          ],
+          pseudoCode: `CONCEPT: multiprocessing Module
+
+Checklist:
+  1. Processes have higher startup cost than threads
+  2. Pickle requirement limits shared objects
+  3. Pool.map is simple for embarrassingly parallel maps
+  4. Prefer executors over raw Process for clarity`
         },
         {
           id: `choosing`,
@@ -740,7 +873,14 @@ Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O co
             `Do not mix models without clear boundaries`,
             `Measure speedup—overhead can dominate small tasks`,
             `Document thread/process safety of shared resources`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Choosing a Concurrency Model
+
+Checklist:
+  1. Match model to bottleneck: I/O vs CPU
+  2. Do not mix models without clear boundaries
+  3. Measure speedup—overhead can dominate small tasks
+  4. Document thread/process safety of shared resources`
         }
       ],
       exercises: [

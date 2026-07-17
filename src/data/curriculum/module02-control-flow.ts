@@ -11,9 +11,13 @@ export const module02Topics: Topic[] = [
         {
           id: `if-basic`,
           title: `if Statements`,
-          content: `The \`if\` statement executes a block when its condition is **truthy**. Python treats empty collections, zero, None, and empty strings as falsy.
+          content: `The \`if\` statement executes a block when its condition is **truthy**.
 
-Indentation (4 spaces) defines blocks — no braces required.`,
+Python treats empty collections, zero, None, and empty strings as falsy.
+
+Indentation (4 spaces) defines blocks — no braces required.
+
+**if Statements** in the context of **Conditionals (if/elif/else)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `score = 85
 if score >= 60:
     print("Pass")
@@ -25,12 +29,25 @@ else:
             `Truthy/falsy evaluation drives conditionals`,
             `else is optional`,
             `Use elif for multiple branches`
-          ]
+          ],
+          pseudoCode: `CONCEPT: if Statements
+
+Checklist:
+  1. Indentation defines code blocks
+  2. Truthy/falsy evaluation drives conditionals
+  3. else is optional
+  4. Use elif for multiple branches`
         },
         {
           id: `elif`,
           title: `elif Chains`,
-          content: `Chain conditions with \`elif\` (else-if). Only the first true branch executes. Order matters — put specific conditions first.`,
+          content: `Chain conditions with \`elif\` (else-if).
+
+Only the first true branch executes.
+
+Order matters — put specific conditions first.
+
+**elif Chains** in the context of **Conditionals (if/elif/else)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `grade = 72
 if grade >= 90:
     letter = "A"
@@ -47,12 +64,23 @@ print(letter)`,
             `Order conditions from specific to general`,
             `else catches all remaining cases`,
             `Avoid deep nesting — refactor to functions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: elif Chains
+
+Checklist:
+  1. Only one branch executes
+  2. Order conditions from specific to general
+  3. else catches all remaining cases
+  4. Avoid deep nesting — refactor to functions`
         },
         {
           id: `ternary`,
           title: `Ternary & Match-Case`,
-          content: `Ternary: \`x if condition else y\`. Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.`,
+          content: `Ternary: \`x if condition else y\`.
+
+Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.
+
+**Ternary & Match-Case** in the context of **Conditionals (if/elif/else)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `n = 4
 parity = "even" if n % 2 == 0 else "odd"
 
@@ -67,12 +95,23 @@ match parity:
             `match/case replaces long elif chains`,
             `Pattern matching supports destructuring`,
             `Use match for type-based dispatch`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Ternary & Match-Case
+
+Checklist:
+  1. Ternary keeps simple assignments concise
+  2. match/case replaces long elif chains
+  3. Pattern matching supports destructuring
+  4. Use match for type-based dispatch`
         },
         {
           id: `guard`,
           title: `Guard Clauses`,
-          content: `Return early with **guard clauses** instead of deep nesting. Improves readability in validation logic.`,
+          content: `Return early with **guard clauses** instead of deep nesting.
+
+Improves readability in validation logic.
+
+**Guard Clauses** in the context of **Conditionals (if/elif/else)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           pseudoCode: `FUNCTION process(data):
     IF data is None: RETURN
     IF not valid(data): RETURN
@@ -163,7 +202,11 @@ print(m)`,
         {
           id: `for-loop`,
           title: `for Loops`,
-          content: `\`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges. Use \`range(n)\` for counting loops.`,
+          content: `\`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges.
+
+Use \`range(n)\` for counting loops.
+
+**for Loops** in the context of **Loops (for/while)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `total = 0
 for i in range(1, 6):
     total += i
@@ -174,12 +217,23 @@ print(total)`,
             `range(start, stop, step) generates numbers`,
             `Never modify list while iterating`,
             `enumerate() gives index and value`
-          ]
+          ],
+          pseudoCode: `CONCEPT: for Loops
+
+Checklist:
+  1. for loops iterate iterables directly
+  2. range(start, stop, step) generates numbers
+  3. Never modify list while iterating
+  4. enumerate() gives index and value`
         },
         {
           id: `while-loop`,
           title: `while Loops`,
-          content: `\`while condition:\` repeats until condition is falsy. Ensure the loop variable changes to avoid infinite loops.`,
+          content: `\`while condition:\` repeats until condition is falsy.
+
+Ensure the loop variable changes to avoid infinite loops.
+
+**while Loops** in the context of **Loops (for/while)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `n, count = 10, 0
 while n > 1:
     n //= 2
@@ -191,12 +245,21 @@ print(f"Divided {count} times")`,
             `Always ensure loop termination`,
             `break exits loop immediately`,
             `continue skips to next iteration`
-          ]
+          ],
+          pseudoCode: `CONCEPT: while Loops
+
+Checklist:
+  1. while for unknown iteration count
+  2. Always ensure loop termination
+  3. break exits loop immediately
+  4. continue skips to next iteration`
         },
         {
           id: `loop-else`,
           title: `else, break, continue`,
-          content: `Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.`,
+          content: `Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.
+
+**else, break, continue** in the context of **Loops (for/while)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `for n in [2, 4, 6, 7, 8]:
     if n % 2 != 0:
         print(f"Found odd: {n}")
@@ -209,12 +272,23 @@ else:
             `break exits innermost loop only`,
             `continue skips rest of iteration body`,
             `Use for-else for search patterns`
-          ]
+          ],
+          pseudoCode: `CONCEPT: else, break, continue
+
+Checklist:
+  1. else on loops is rarely used but powerful
+  2. break exits innermost loop only
+  3. continue skips rest of iteration body
+  4. Use for-else for search patterns`
         },
         {
           id: `nested`,
           title: `Nested Loops & zip`,
-          content: `Nest loops for 2D iteration. Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.`,
+          content: `Nest loops for 2D iteration.
+
+Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.
+
+**Nested Loops & zip** in the context of **Loops (for/while)**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `names = ["Alice", "Bob"]
 scores = [95, 87]
 for name, score in zip(names, scores):
@@ -226,7 +300,14 @@ Bob: 87`,
             `Nested loops can be O(n²) — watch performance`,
             `itertools.product for Cartesian products`,
             `List comprehensions often replace simple nested loops`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Nested Loops & zip
+
+Checklist:
+  1. zip pairs elements from iterables
+  2. Nested loops can be O(n²) — watch performance
+  3. itertools.product for Cartesian products
+  4. List comprehensions often replace simple nested loops`
         }
       ],
       exercises: [
@@ -297,7 +378,11 @@ print(total)`,
         {
           id: `def-basic`,
           title: `Defining Functions`,
-          content: `Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`. **Docstrings** document behavior.`,
+          content: `Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`.
+
+**Docstrings** document behavior.
+
+**Defining Functions** in the context of **Functions & Parameters**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def area(radius):
     """Calculate circle area."""
     return 3.14159 * radius ** 2
@@ -309,12 +394,23 @@ print(area(5))`,
             `Docstrings appear in help()`,
             `return exits immediately`,
             `Functions should do one thing well`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Defining Functions
+
+Checklist:
+  1. Functions are first-class objects
+  2. Docstrings appear in help()
+  3. return exits immediately
+  4. Functions should do one thing well`
         },
         {
           id: `params`,
           title: `Parameter Types`,
-          content: `Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict). Order: positional, defaults, *args, keyword-only, **kwargs.`,
+          content: `Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict).
+
+Order: positional, defaults, *args, keyword-only, **kwargs.
+
+**Parameter Types** in the context of **Functions & Parameters**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def greet(name, greeting="Hello", *tags, **meta):
     print(greeting, name, tags, meta)
 
@@ -325,12 +421,23 @@ greet("Alice", "Hi", "admin", role="dev")`,
             `Never use mutable defaults like []`,
             `*args collects extra positional args`,
             `**kwargs collects extra keyword args`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Parameter Types
+
+Checklist:
+  1. Default args evaluated once at definition
+  2. Never use mutable defaults like []
+  3. *args collects extra positional args
+  4. **kwargs collects extra keyword args`
         },
         {
           id: `unpack`,
           title: `Unpacking Arguments`,
-          content: `Unpack iterables with \`*\`: \`func(*args)\`. Unpack dicts with \`**\`: \`func(**kwargs)\`.`,
+          content: `Unpack iterables with \`*\`: \`func(*args)\`.
+
+Unpack dicts with \`**\`: \`func(**kwargs)\`.
+
+**Unpacking Arguments** in the context of **Functions & Parameters**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def add(a, b, c):
     return a + b + c
 
@@ -342,18 +449,38 @@ print(add(*nums))`,
             `** unpacks dicts into keyword args`,
             `Useful for forwarding arguments`,
             `Python 3.8+ positional-only with /`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Unpacking Arguments
+
+Checklist:
+  1. * unpacks sequences into positional args
+  2. ** unpacks dicts into keyword args
+  3. Useful for forwarding arguments
+  4. Python 3.8+ positional-only with /`
         },
         {
           id: `pure`,
           title: `Pure Functions & Side Effects`,
-          content: `Pure functions: same input → same output, no side effects. Prefer pure functions for testability. Side effects: I/O, mutation, global state.`,
+          content: `Pure functions: same input → same output, no side effects.
+
+Prefer pure functions for testability.
+
+Side effects: I/O, mutation, global state.
+
+**Pure Functions & Side Effects** in the context of **Functions & Parameters**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Pure functions are easier to test and reason about`,
             `Separate computation from I/O`,
             `Avoid global mutable state`,
             `Use return values instead of printing inside logic`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Pure Functions & Side Effects
+
+Checklist:
+  1. Pure functions are easier to test and reason about
+  2. Separate computation from I/O
+  3. Avoid global mutable state
+  4. Use return values instead of printing inside logic`
         }
       ],
       exercises: [
@@ -430,7 +557,11 @@ print(factorial(5))`,
         {
           id: `legb`,
           title: `LEGB Scope Rule`,
-          content: `Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in. Use \`global\` and \`nonlocal\` to modify outer bindings.`,
+          content: `Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in.
+
+Use \`global\` and \`nonlocal\` to modify outer bindings.
+
+**LEGB Scope Rule** in the context of **Scope, Closures & Lambda**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `x = "global"
 
 def outer():
@@ -448,12 +579,23 @@ print(outer())`,
             `global modifies module-level names`,
             `nonlocal modifies enclosing function names`,
             `Avoid global state when possible`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LEGB Scope Rule
+
+Checklist:
+  1. LEGB determines name lookup order
+  2. global modifies module-level names
+  3. nonlocal modifies enclosing function names
+  4. Avoid global state when possible`
         },
         {
           id: `closures`,
           title: `Closures`,
-          content: `A **closure** captures variables from enclosing scope. Enables factory functions and decorators.`,
+          content: `A **closure** captures variables from enclosing scope.
+
+Enables factory functions and decorators.
+
+**Closures** in the context of **Scope, Closures & Lambda**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def make_multiplier(n):
     def multiply(x):
         return x * n
@@ -467,12 +609,23 @@ print(times3(7))`,
             `Closures enable partial application`,
             `Foundation for decorators`,
             `Captured variables are late-binding`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Closures
+
+Checklist:
+  1. Inner functions remember enclosing variables
+  2. Closures enable partial application
+  3. Foundation for decorators
+  4. Captured variables are late-binding`
         },
         {
           id: `lambda`,
           title: `Lambda Functions`,
-          content: `\`lambda args: expression\` creates anonymous one-line functions. Use for short callbacks; prefer def for anything complex.`,
+          content: `\`lambda args: expression\` creates anonymous one-line functions.
+
+Use for short callbacks; prefer def for anything complex.
+
+**Lambda Functions** in the context of **Scope, Closures & Lambda**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `pairs = [(3, "c"), (1, "a"), (2, "b")]
 sorted_pairs = sorted(pairs, key=lambda x: x[0])
 print(sorted_pairs)`,
@@ -482,12 +635,23 @@ print(sorted_pairs)`,
             `Common as key= argument to sorted/map/filter`,
             `Prefer def for named reusable functions`,
             `No statements allowed in lambda body`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Lambda Functions
+
+Checklist:
+  1. Lambda limited to single expression
+  2. Common as key= argument to sorted/map/filter
+  3. Prefer def for named reusable functions
+  4. No statements allowed in lambda body`
         },
         {
           id: `higher`,
           title: `Higher-Order Functions`,
-          content: `Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`. Functional style complements loops.`,
+          content: `Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`.
+
+Functional style complements loops.
+
+**Higher-Order Functions** in the context of **Scope, Closures & Lambda**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `nums = [1, 2, 3, 4, 5]
 evens = list(filter(lambda x: x % 2 == 0, nums))
 squares = list(map(lambda x: x**2, evens))
@@ -498,7 +662,14 @@ print(squares)`,
             `List comprehensions often replace map/filter`,
             `Higher-order functions enable composition`,
             `functools.reduce for folding`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Higher-Order Functions
+
+Checklist:
+  1. map/filter return iterators in Python 3
+  2. List comprehensions often replace map/filter
+  3. Higher-order functions enable composition
+  4. functools.reduce for folding`
         }
       ],
       exercises: [
@@ -567,7 +738,11 @@ print(sorted(words, key=lambda w: len(w)))`,
         {
           id: `list-comp`,
           title: `List Comprehensions`,
-          content: `Syntax: \`[expr for item in iterable if condition]\`. Concise, readable, and often faster than equivalent loops.`,
+          content: `Syntax: \`[expr for item in iterable if condition]\`.
+
+Concise, readable, and often faster than equivalent loops.
+
+**List Comprehensions** in the context of **Comprehensions & Iterators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `squares = [x**2 for x in range(10) if x % 2 == 0]
 print(squares)`,
           output: `[0, 4, 16, 36, 64]`,
@@ -576,12 +751,25 @@ print(squares)`,
             `Filter with trailing if clause`,
             `Nested comprehensions for 2D structures`,
             `Dont sacrifice readability for brevity`
-          ]
+          ],
+          pseudoCode: `CONCEPT: List Comprehensions
+
+Checklist:
+  1. Comprehensions are Pythonic for transformations
+  2. Filter with trailing if clause
+  3. Nested comprehensions for 2D structures
+  4. Dont sacrifice readability for brevity`
         },
         {
           id: `dict-set-comp`,
           title: `Dict & Set Comprehensions`,
-          content: `Dict: \`{k: v for ...}\`. Set: \`{expr for ...}\`. Powerful for building lookup tables.`,
+          content: `Dict: \`{k: v for ...}\`.
+
+Set: \`{expr for ...}\`.
+
+Powerful for building lookup tables.
+
+**Dict & Set Comprehensions** in the context of **Comprehensions & Iterators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `words = ["apple", "banana", "cherry"]
 lengths = {w: len(w) for w in words}
 unique_lens = {len(w) for w in words}
@@ -592,12 +780,23 @@ print(lengths, unique_lens)`,
             `Set comprehensions deduplicate automatically`,
             `Use for invertible transformations`,
             `Generator expressions use () for lazy evaluation`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Dict & Set Comprehensions
+
+Checklist:
+  1. Dict comprehensions build mappings
+  2. Set comprehensions deduplicate automatically
+  3. Use for invertible transformations
+  4. Generator expressions use () for lazy evaluation`
         },
         {
           id: `generators`,
           title: `Generator Expressions`,
-          content: `\`(expr for x in iter)\` creates a lazy generator. Memory-efficient for large datasets — values computed on demand.`,
+          content: `\`(expr for x in iter)\` creates a lazy generator.
+
+Memory-efficient for large datasets — values computed on demand.
+
+**Generator Expressions** in the context of **Comprehensions & Iterators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `gen = (x**2 for x in range(1000000))
 print(next(gen), next(gen), next(gen))`,
           output: `0 1 4`,
@@ -606,12 +805,21 @@ print(next(gen), next(gen), next(gen))`,
             `Memory O(1) regardless of range size`,
             `Exhausted generators cannot restart`,
             `Use for pipeline processing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Generator Expressions
+
+Checklist:
+  1. Generators yield one value at a time
+  2. Memory O(1) regardless of range size
+  3. Exhausted generators cannot restart
+  4. Use for pipeline processing`
         },
         {
           id: `iterators`,
           title: `Iterator Protocol`,
-          content: `Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.`,
+          content: `Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.
+
+**Iterator Protocol** in the context of **Comprehensions & Iterators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `it = iter([10, 20, 30])
 print(next(it), next(it))`,
           output: `10 20`,
@@ -620,7 +828,14 @@ print(next(it), next(it))`,
             `for loops use iterator protocol internally`,
             `Custom classes can implement __iter__/__next__`,
             `itertools module provides rich iterators`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Iterator Protocol
+
+Checklist:
+  1. All iterables implement __iter__
+  2. for loops use iterator protocol internally
+  3. Custom classes can implement __iter__/__next__
+  4. itertools module provides rich iterators`
         }
       ],
       exercises: [

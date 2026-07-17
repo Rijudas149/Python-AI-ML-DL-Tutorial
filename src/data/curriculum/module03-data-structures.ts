@@ -11,7 +11,13 @@ export const module03Topics: Topic[] = [
         {
           id: `list-ops`,
           title: `List Operations`,
-          content: `Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.`,
+          content: `Lists are dynamic arrays.
+
+Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`.
+
+Slicing creates copies.
+
+**List Operations** in the context of **Lists & Tuples**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `nums = [3, 1, 4, 1, 5]
 nums.append(9)
 nums.sort()
@@ -24,12 +30,25 @@ print(nums[1:4])`,
             `sort() modifies in place; sorted() returns new list`,
             `Slicing [start:stop:step] never includes stop index`,
             `Use copy() or list() for shallow copies`
-          ]
+          ],
+          pseudoCode: `CONCEPT: List Operations
+
+Checklist:
+  1. Lists are mutable ordered sequences
+  2. sort() modifies in place; sorted() returns new list
+  3. Slicing [start:stop:step] never includes stop index
+  4. Use copy() or list() for shallow copies`
         },
         {
           id: `tuples`,
           title: `Tuples`,
-          content: `Tuples are immutable sequences. Use for fixed collections: coordinates, DB records. Tuple unpacking: \`a, b = (1, 2)\`.`,
+          content: `Tuples are immutable sequences.
+
+Use for fixed collections: coordinates, DB records.
+
+Tuple unpacking: \`a, b = (1, 2)\`.
+
+**Tuples** in the context of **Lists & Tuples**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `point = (10, 20)
 x, y = point
 print(f"({x}, {y})")
@@ -39,23 +58,47 @@ print(f"({x}, {y})")
             `Use for heterogeneous fixed data`,
             `Unpacking works with any iterable`,
             `Single-element tuple needs trailing comma: (1,)`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Tuples
+
+Checklist:
+  1. Tuples are immutable — hashable if elements are
+  2. Use for heterogeneous fixed data
+  3. Unpacking works with any iterable
+  4. Single-element tuple needs trailing comma: (1,)`
         },
         {
           id: `list-perf`,
           title: `Performance Considerations`,
-          content: `Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.`,
+          content: `Append is O(1) amortized.
+
+Insert at front is O(n).
+
+For frequent front inserts, use \`collections.deque\`.
+
+**Performance Considerations** in the context of **Lists & Tuples**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Choose data structure based on access patterns`,
             `deque for queue operations`,
             `Lists for general-purpose ordered storage`,
             `Profile before optimizing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Performance Considerations
+
+Checklist:
+  1. Choose data structure based on access patterns
+  2. deque for queue operations
+  3. Lists for general-purpose ordered storage
+  4. Profile before optimizing`
         },
         {
           id: `nested`,
           title: `Nested Structures`,
-          content: `Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.`,
+          content: `Lists of lists, tuples of dicts — common in data processing.
+
+Access with chained indexing: \`matrix[1][2]\`.
+
+**Nested Structures** in the context of **Lists & Tuples**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `matrix = [[1,2,3],[4,5,6],[7,8,9]]
 print(matrix[1][2])
 print([row[0] for row in matrix])`,
@@ -66,7 +109,14 @@ print([row[0] for row in matrix])`,
             `List comprehensions flatten or transform nested data`,
             `Copy carefully — nested lists share references`,
             `Consider numpy arrays for numeric matrices`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Nested Structures
+
+Checklist:
+  1. Nested structures model grids and tables
+  2. List comprehensions flatten or transform nested data
+  3. Copy carefully — nested lists share references
+  4. Consider numpy arrays for numeric matrices`
         }
       ],
       exercises: [
@@ -133,7 +183,11 @@ print(nums.index(max(nums)))`,
         {
           id: `dict-basics`,
           title: `Dictionary Fundamentals`,
-          content: `Dicts map keys to values. Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`. Access: \`d[key]\` or \`d.get(key, default)\`.`,
+          content: `Dicts map keys to values. Keys must be hashable (immutable).
+
+Create with \`{}\` or \`dict()\`. Access: \`d[key]\` or \`d.get(key, default)\`.
+
+**Dictionary Fundamentals** in the context of **Dictionaries & Sets**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `user = {"name": "Alice", "age": 30, "role": "admin"}
 print(user["name"])
 print(user.get("email", "N/A"))`,
@@ -144,12 +198,23 @@ N/A`,
             `Use get() to avoid KeyError`,
             `keys(), values(), items() for iteration`,
             `Dict comprehensions build dicts concisely`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Dictionary Fundamentals
+
+Checklist:
+  1. Dicts preserve insertion order (Python 3.7+)
+  2. Use get() to avoid KeyError
+  3. keys(), values(), items() for iteration
+  4. Dict comprehensions build dicts concisely`
         },
         {
           id: `sets`,
           title: `Sets`,
-          content: `Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.`,
+          content: `Sets store unique elements with O(1) membership test.
+
+Operations: union \`|\`, intersection \`&\`, difference \`-\`.
+
+**Sets** in the context of **Dictionaries & Sets**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
 print(a & b)
@@ -161,12 +226,21 @@ print(a | b)`,
             `Fast membership testing with in`,
             `frozenset is immutable/hashable`,
             `Use sets for deduplication and set math`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sets
+
+Checklist:
+  1. Sets eliminate duplicates
+  2. Fast membership testing with in
+  3. frozenset is immutable/hashable
+  4. Use sets for deduplication and set math`
         },
         {
           id: `defaultdict`,
           title: `defaultdict & Counter`,
-          content: `\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.`,
+          content: `\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.
+
+**defaultdict & Counter** in the context of **Dictionaries & Sets**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from collections import Counter
 words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
 counts = Counter(words)
@@ -177,12 +251,23 @@ print(counts.most_common(2))`,
             `most_common(n) returns top n items`,
             `defaultdict avoids manual key existence checks`,
             `Use Counter for text and categorical analysis`
-          ]
+          ],
+          pseudoCode: `CONCEPT: defaultdict & Counter
+
+Checklist:
+  1. Counter is a dict subclass for counting
+  2. most_common(n) returns top n items
+  3. defaultdict avoids manual key existence checks
+  4. Use Counter for text and categorical analysis`
         },
         {
           id: `dict-merge`,
           title: `Merging & Updating Dicts`,
-          content: `Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`. Update in place: \`d.update(other)\`.`,
+          content: `Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`.
+
+Update in place: \`d.update(other)\`.
+
+**Merging & Updating Dicts** in the context of **Dictionaries & Sets**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `defaults = {"lr": 0.01, "epochs": 10}
 overrides = {"epochs": 50}
 config = {**defaults, **overrides}
@@ -193,7 +278,14 @@ print(config)`,
             `Use for config and kwargs merging`,
             `Deep merge requires custom logic`,
             `Dict union operator | available in 3.9+`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Merging & Updating Dicts
+
+Checklist:
+  1. Later keys override earlier in merge
+  2. Use for config and kwargs merging
+  3. Deep merge requires custom logic
+  4. Dict union operator | available in 3.9+`
         }
       ],
       exercises: [
@@ -261,7 +353,11 @@ print(inverted)`,
         {
           id: `stack`,
           title: `Stack (LIFO)`,
-          content: `Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.`,
+          content: `Use list \`.append()\` and \`.pop()\` for stack.
+
+Last in, first out — used in parsing, undo, DFS.
+
+**Stack (LIFO)** in the context of **Stacks, Queues & Deque**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `stack = []
 stack.append(1)
 stack.append(2)
@@ -275,12 +371,23 @@ print(stack)`,
             `O(1) operations at list end`,
             `Used in recursion and graph DFS`,
             `deque also supports append/pop`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Stack (LIFO)
+
+Checklist:
+  1. append/pop from end implements stack
+  2. O(1) operations at list end
+  3. Used in recursion and graph DFS
+  4. deque also supports append/pop`
         },
         {
           id: `queue`,
           title: `Queue (FIFO)`,
-          content: `Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).`,
+          content: `Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations.
+
+Never use list.pop(0) — O(n).
+
+**Queue (FIFO)** in the context of **Stacks, Queues & Deque**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from collections import deque
 q = deque(["task1", "task2"])
 q.append("task3")
@@ -293,12 +400,21 @@ deque(['task2', 'task3'])`,
             `FIFO for BFS and task scheduling`,
             `list.pop(0) is O(n) — avoid for queues`,
             `queue.Queue is thread-safe alternative`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Queue (FIFO)
+
+Checklist:
+  1. deque provides O(1) appendleft/popleft
+  2. FIFO for BFS and task scheduling
+  3. list.pop(0) is O(n) — avoid for queues
+  4. queue.Queue is thread-safe alternative`
         },
         {
           id: `deque-features`,
           title: `deque Advanced Features`,
-          content: `deque supports maxlen for bounded buffers, rotation, and double-ended operations.`,
+          content: `deque supports maxlen for bounded buffers, rotation, and double-ended operations.
+
+**deque Advanced Features** in the context of **Stacks, Queues & Deque**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from collections import deque
 recent = deque(maxlen=3)
 for x in [1, 2, 3, 4, 5]:
@@ -310,18 +426,36 @@ print(list(recent))`,
             `Automatic eviction of oldest items`,
             `rotate(n) shifts elements circularly`,
             `Ideal for rolling statistics`
-          ]
+          ],
+          pseudoCode: `CONCEPT: deque Advanced Features
+
+Checklist:
+  1. maxlen creates sliding window buffer
+  2. Automatic eviction of oldest items
+  3. rotate(n) shifts elements circularly
+  4. Ideal for rolling statistics`
         },
         {
           id: `applications`,
           title: `Real-World Applications`,
-          content: `Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.`,
+          content: `Stacks: expression evaluation, browser history.
+
+Queues: job schedulers, BFS traversal, streaming pipelines.
+
+**Real-World Applications** in the context of **Stacks, Queues & Deque**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Match data structure to algorithm needs`,
             `BFS uses queue, DFS uses stack`,
             `Priority queues use heapq module`,
             `Consider thread safety for concurrent queues`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Checklist:
+  1. Match data structure to algorithm needs
+  2. BFS uses queue, DFS uses stack
+  3. Priority queues use heapq module
+  4. Consider thread safety for concurrent queues`
         }
       ],
       exercises: [
@@ -401,7 +535,11 @@ print(processed)`,
         {
           id: `sorting`,
           title: `Sorting in Python`,
-          content: `\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).`,
+          content: `\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place.
+
+Timsort algorithm — O(n log n).
+
+**Sorting in Python** in the context of **Sorting & Searching**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `data = [3, 1, 4, 1, 5, 9]
 print(sorted(data))
 print(sorted(data, reverse=True))`,
@@ -412,12 +550,21 @@ print(sorted(data, reverse=True))`,
             `key=function customizes sort criteria`,
             `Stable sort preserves equal element order`,
             `Timsort exploits partially sorted input`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sorting in Python
+
+Checklist:
+  1. sorted() preserves original list
+  2. key=function customizes sort criteria
+  3. Stable sort preserves equal element order
+  4. Timsort exploits partially sorted input`
         },
         {
           id: `custom-sort`,
           title: `Custom Sort Keys`,
-          content: `Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.`,
+          content: `Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.
+
+**Custom Sort Keys** in the context of **Sorting & Searching**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `students = [("Alice", 95), ("Bob", 87), ("Charlie", 95)]
 by_grade = sorted(students, key=lambda s: (-s[1], s[0]))
 print(by_grade)`,
@@ -427,12 +574,23 @@ print(by_grade)`,
             `Negate numeric key for descending`,
             `itemgetter is faster than lambda for simple access`,
             `Sort once, reuse for repeated queries`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Custom Sort Keys
+
+Checklist:
+  1. Tuple keys enable multi-criteria sort
+  2. Negate numeric key for descending
+  3. itemgetter is faster than lambda for simple access
+  4. Sort once, reuse for repeated queries`
         },
         {
           id: `search`,
           title: `Linear & Binary Search`,
-          content: `Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.`,
+          content: `Binary search: O(log n) on sorted data.
+
+Use \`bisect\` module for insertion points.
+
+**Linear & Binary Search** in the context of **Sorting & Searching**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `import bisect
 sorted_list = [1, 3, 5, 7, 9]
 idx = bisect.bisect_left(sorted_list, 5)
@@ -443,18 +601,36 @@ print(idx)`,
             `bisect finds insertion position`,
             `bisect_left vs bisect_right for duplicates`,
             `Use set/dict for O(1) lookup when possible`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Linear & Binary Search
+
+Checklist:
+  1. Binary search requires sorted data
+  2. bisect finds insertion position
+  3. bisect_left vs bisect_right for duplicates
+  4. Use set/dict for O(1) lookup when possible`
         },
         {
           id: `complexity`,
           title: `Big-O Basics`,
-          content: `Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.`,
+          content: `Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic.
+
+Choose algorithms wisely.
+
+**Big-O Basics** in the context of **Sorting & Searching**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Big-O describes growth rate, not exact time`,
             `Nested loops often imply O(n²)`,
             `Hash lookups are average O(1)`,
             `Sorting dominates many pipeline costs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Big-O Basics
+
+Checklist:
+  1. Big-O describes growth rate, not exact time
+  2. Nested loops often imply O(n²)
+  3. Hash lookups are average O(1)
+  4. Sorting dominates many pipeline costs`
         }
       ],
       exercises: [
@@ -522,7 +698,11 @@ print(lst)`,
         {
           id: `namedtuple`,
           title: `namedtuple`,
-          content: `Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.`,
+          content: `Creates tuple subclasses with named fields.
+
+Lightweight alternative to classes for data records.
+
+**namedtuple** in the context of **Collections Module**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from collections import namedtuple
 Point = namedtuple("Point", ["x", "y"])
 p = Point(3, 4)
@@ -533,12 +713,21 @@ print(p.x, p.y)`,
             `Named access improves readability`,
             `Use _replace for modified copies`,
             `dataclass is modern alternative`
-          ]
+          ],
+          pseudoCode: `CONCEPT: namedtuple
+
+Checklist:
+  1. Immutable like regular tuples
+  2. Named access improves readability
+  3. Use _replace for modified copies
+  4. dataclass is modern alternative`
         },
         {
           id: `chainmap`,
           title: `ChainMap`,
-          content: `ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.`,
+          content: `ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.
+
+**ChainMap** in the context of **Collections Module**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from collections import ChainMap
 defaults = {"color": "blue", "size": "M"}
 user = {"color": "red"}
@@ -550,23 +739,43 @@ print(config["color"], config["size"])`,
             `Useful for layered configuration`,
             `Does not merge — searches sequentially`,
             `Modifications affect first dict in chain`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ChainMap
+
+Checklist:
+  1. First dict in chain takes precedence
+  2. Useful for layered configuration
+  3. Does not merge — searches sequentially
+  4. Modifications affect first dict in chain`
         },
         {
           id: `ordered`,
           title: `OrderedDict & Modern Dicts`,
-          content: `OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).`,
+          content: `OrderedDict once guaranteed order; standard dict now preserves order.
+
+OrderedDict still useful for move_to_end and popitem(last=False).
+
+**OrderedDict & Modern Dicts** in the context of **Collections Module**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Regular dict preserves insertion order since 3.7`,
             `OrderedDict for LRU cache patterns`,
             `move_to_end for reordering`,
             `Consider functools.lru_cache for caching`
-          ]
+          ],
+          pseudoCode: `CONCEPT: OrderedDict & Modern Dicts
+
+Checklist:
+  1. Regular dict preserves insertion order since 3.7
+  2. OrderedDict for LRU cache patterns
+  3. move_to_end for reordering
+  4. Consider functools.lru_cache for caching`
         },
         {
           id: `heapq`,
           title: `heapq — Priority Queues`,
-          content: `heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.`,
+          content: `heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.
+
+**heapq — Priority Queues** in the context of **Collections Module**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `import heapq
 heap = []
 for val in [5, 3, 8, 1]:
@@ -578,7 +787,14 @@ print(heapq.heappop(heap))`,
             `heappush/heappop are O(log n)`,
             `heapify converts list to heap in O(n)`,
             `Use for top-k and scheduling problems`
-          ]
+          ],
+          pseudoCode: `CONCEPT: heapq — Priority Queues
+
+Checklist:
+  1. Min-heap — smallest element first
+  2. heappush/heappop are O(log n)
+  3. heapify converts list to heap in O(n)
+  4. Use for top-k and scheduling problems`
         }
       ],
       exercises: [

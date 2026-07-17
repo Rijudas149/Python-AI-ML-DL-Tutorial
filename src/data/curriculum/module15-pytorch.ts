@@ -11,7 +11,11 @@ export const module15Topics: Topic[] = [
         {
           id: `tensor-basics`,
           title: `Creating Tensors`,
-          content: `torch.tensor(), torch.zeros(), torch.randn(). Similar to NumPy but with GPU support and autograd.`,
+          content: `torch.tensor(), torch.zeros(), torch.randn().
+
+Similar to NumPy but with GPU support and autograd.
+
+**Creating Tensors** in the context of **PyTorch Tensors**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 
 a = torch.tensor([1.0, 2.0, 3.0])
@@ -24,12 +28,23 @@ print(a.dtype, b.shape, c.device)`,
             `dtype and device are tensor properties`,
             `torch.float32 default for DL`,
             `GPU tensors on cuda device`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Creating Tensors
+
+Checklist:
+  1. Tensors analogous to NumPy ndarrays
+  2. dtype and device are tensor properties
+  3. torch.float32 default for DL
+  4. GPU tensors on cuda device`
         },
         {
           id: `ops`,
           title: `Tensor Operations`,
-          content: `Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose. In-place ops suffixed with _.`,
+          content: `Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose.
+
+In-place ops suffixed with _.
+
+**Tensor Operations** in the context of **PyTorch Tensors**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 
 a = torch.randn(3, 4)
@@ -44,12 +59,21 @@ torch.Size([3, 4])`,
             `Broadcasting rules same as NumPy`,
             `Avoid in-place ops on tensors with grad`,
             `torch.einsum for complex tensor operations`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Tensor Operations
+
+Checklist:
+  1. @ operator for matrix multiply
+  2. Broadcasting rules same as NumPy
+  3. Avoid in-place ops on tensors with grad
+  4. torch.einsum for complex tensor operations`
         },
         {
           id: `numpy-bridge`,
           title: `NumPy Interoperability`,
-          content: `tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.`,
+          content: `tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.
+
+**NumPy Interoperability** in the context of **PyTorch Tensors**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import numpy as np
 
@@ -63,12 +87,21 @@ print(np_back)`,
             `GPU tensors must .cpu() before .numpy()`,
             `Convert dtype explicitly when needed`,
             `Use tensor for all DL computations`
-          ]
+          ],
+          pseudoCode: `CONCEPT: NumPy Interoperability
+
+Checklist:
+  1. Zero-copy between NumPy and CPU tensors
+  2. GPU tensors must .cpu() before .numpy()
+  3. Convert dtype explicitly when needed
+  4. Use tensor for all DL computations`
         },
         {
           id: `device`,
           title: `Device Management`,
-          content: `torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).`,
+          content: `torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).
+
+**Device Management** in the context of **PyTorch Tensors**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -79,7 +112,14 @@ print(x.device)`,
             `Check cuda availability before GPU use`,
             `MPS device for Apple Silicon`,
             `torch.cuda.empty_cache() frees GPU memory`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Device Management
+
+Checklist:
+  1. Always move model AND data to same device
+  2. Check cuda availability before GPU use
+  3. MPS device for Apple Silicon
+  4. torch.cuda.empty_cache() frees GPU memory`
         }
       ],
       exercises: [
@@ -145,7 +185,9 @@ print((torch.randn(2,3) @ torch.randn(3,4)).shape)`,
         {
           id: `grad`,
           title: `requires_grad & backward`,
-          content: `Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.`,
+          content: `Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.
+
+**requires_grad & backward** in the context of **Autograd & Computational Graphs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 
 x = torch.tensor(3.0, requires_grad=True)
@@ -158,23 +200,47 @@ print(x.grad)  # dy/dx = 2x + 2 = 8`,
             `backward() only on scalar loss`,
             `retain_graph=True for multiple backward passes`,
             `detach() stops gradient flow`
-          ]
+          ],
+          pseudoCode: `CONCEPT: requires_grad & backward
+
+Checklist:
+  1. Gradients accumulate — zero with optimizer.zero_grad()
+  2. backward() only on scalar loss
+  3. retain_graph=True for multiple backward passes
+  4. detach() stops gradient flow`
         },
         {
           id: `graph`,
           title: `Computational Graph`,
-          content: `PyTorch builds dynamic graph during forward pass. Nodes are tensors, edges are operations. Graph freed after backward by default.`,
+          content: `PyTorch builds dynamic graph during forward pass.
+
+Nodes are tensors, edges are operations.
+
+Graph freed after backward by default.
+
+**Computational Graph** in the context of **Autograd & Computational Graphs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Dynamic graph: rebuilt each forward pass`,
             `Enables Python control flow in models`,
             `Contrast with TensorFlow static graphs (1.x)`,
             `torch.no_grad() disables graph for inference`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Computational Graph
+
+Checklist:
+  1. Dynamic graph: rebuilt each forward pass
+  2. Enables Python control flow in models
+  3. Contrast with TensorFlow static graphs (1.x)
+  4. torch.no_grad() disables graph for inference`
         },
         {
           id: `leaf`,
           title: `Leaf Tensors & Parameters`,
-          content: `Leaf tensors are graph roots (parameters, inputs). Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.`,
+          content: `Leaf tensors are graph roots (parameters, inputs).
+
+Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.
+
+**Leaf Tensors & Parameters** in the context of **Autograd & Computational Graphs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 
@@ -186,18 +252,36 @@ print(layer.weight.is_leaf)`,
             `Non-leaf tensor gradients not retained by default`,
             `Register buffers for non-trainable state (BN stats)`,
             `model.parameters() yields all trainable params`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Leaf Tensors & Parameters
+
+Checklist:
+  1. nn.Parameter automatically requires_grad
+  2. Non-leaf tensor gradients not retained by default
+  3. Register buffers for non-trainable state (BN stats)
+  4. model.parameters() yields all trainable params`
         },
         {
           id: `higher`,
           title: `Higher-Order Gradients`,
-          content: `create_graph=True enables second derivatives. Used in meta-learning and some GAN training.`,
+          content: `create_graph=True enables second derivatives.
+
+Used in meta-learning and some GAN training.
+
+**Higher-Order Gradients** in the context of **Autograd & Computational Graphs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Second-order for Hessian-vector products`,
             `Meta-learning (MAML) uses higher-order grads`,
             `Expensive — rarely needed in standard training`,
             `torch.autograd.grad for explicit gradient computation`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Higher-Order Gradients
+
+Checklist:
+  1. Second-order for Hessian-vector products
+  2. Meta-learning (MAML) uses higher-order grads
+  3. Expensive — rarely needed in standard training
+  4. torch.autograd.grad for explicit gradient computation`
         }
       ],
       exercises: [
@@ -265,7 +349,9 @@ print(nn.Linear(5, 3).weight.requires_grad)`,
         {
           id: `module`,
           title: `nn.Module Basics`,
-          content: `Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.`,
+          content: `Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.
+
+**nn.Module Basics** in the context of **Building NN with nn.Module**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 
@@ -288,23 +374,45 @@ print(model(torch.randn(5, 10)).shape)`,
             `Define layers in __init__ not forward`,
             `forward() defines computation graph`,
             `Sequential chains layers cleanly`
-          ]
+          ],
+          pseudoCode: `CONCEPT: nn.Module Basics
+
+Checklist:
+  1. super().__init__() required in __init__
+  2. Define layers in __init__ not forward
+  3. forward() defines computation graph
+  4. Sequential chains layers cleanly`
         },
         {
           id: `layers`,
           title: `Common Layers`,
-          content: `nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d. Activation: nn.ReLU, nn.GELU, nn.Softmax.`,
+          content: `nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d.
+
+Activation: nn.ReLU, nn.GELU, nn.Softmax.
+
+**Common Layers** in the context of **Building NN with nn.Module**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Linear: fully connected layer`,
             `Conv2d: spatial feature extraction`,
             `Embedding: lookup table for tokens`,
             `BatchNorm1d/2d for normalization`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Common Layers
+
+Checklist:
+  1. Linear: fully connected layer
+  2. Conv2d: spatial feature extraction
+  3. Embedding: lookup table for tokens
+  4. BatchNorm1d/2d for normalization`
         },
         {
           id: `loss-opt`,
           title: `Loss Functions & Optimizers`,
-          content: `nn.CrossEntropyLoss (includes softmax). nn.MSELoss. Optimizers: torch.optim.SGD, Adam, AdamW.`,
+          content: `nn.CrossEntropyLoss (includes softmax). nn.MSELoss.
+
+Optimizers: torch.optim.SGD, Adam, AdamW.
+
+**Loss Functions & Optimizers** in the context of **Building NN with nn.Module**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -324,18 +432,36 @@ print(round(loss.item(), 4))`,
             `zero_grad before backward prevents accumulation`,
             `Adam default optimizer for most tasks`,
             `AdamW decouples weight decay from Adam`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Loss Functions & Optimizers
+
+Checklist:
+  1. CrossEntropyLoss expects raw logits not softmax
+  2. zero_grad before backward prevents accumulation
+  3. Adam default optimizer for most tasks
+  4. AdamW decouples weight decay from Adam`
         },
         {
           id: `save`,
           title: `Saving & Loading Models`,
-          content: `torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)). Save optimizer state for resume.`,
+          content: `torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)).
+
+Save optimizer state for resume.
+
+**Saving & Loading Models** in the context of **Building NN with nn.Module**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `state_dict saves learned parameters only`,
             `Save full checkpoint: model + optimizer + epoch`,
             `model.eval() before inference`,
             `torch.load with map_location for CPU loading`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Saving & Loading Models
+
+Checklist:
+  1. state_dict saves learned parameters only
+  2. Save full checkpoint: model + optimizer + epoch
+  3. model.eval() before inference
+  4. torch.load with map_location for CPU loading`
         }
       ],
       exercises: [
@@ -402,7 +528,11 @@ print(sum(p.numel() for p in nn.Linear(10, 5).parameters()))`,
         {
           id: `dataset`,
           title: `Dataset & DataLoader`,
-          content: `torch.utils.data.Dataset defines __len__ and __getitem__. DataLoader batches, shuffles, and parallelizes loading.`,
+          content: `torch.utils.data.Dataset defines __len__ and __getitem__.
+
+DataLoader batches, shuffles, and parallelizes loading.
+
+**Dataset & DataLoader** in the context of **DataLoaders & Training Loops**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 from torch.utils.data import Dataset, DataLoader
 
@@ -423,12 +553,23 @@ print(batch_x.shape, batch_y.shape)`,
             `num_workers for parallel data loading`,
             `pin_memory=True speeds GPU transfer`,
             `Custom Dataset for any data source`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Dataset & DataLoader
+
+Checklist:
+  1. DataLoader handles batching and shuffling
+  2. num_workers for parallel data loading
+  3. pin_memory=True speeds GPU transfer
+  4. Custom Dataset for any data source`
         },
         {
           id: `loop`,
           title: `Training Loop Pattern`,
-          content: `Standard loop: for epoch → for batch → forward → loss → backward → step → log. Validate after each epoch.`,
+          content: `Standard loop: for epoch → for batch → forward → loss → backward → step → log.
+
+Validate after each epoch.
+
+**Training Loop Pattern** in the context of **DataLoaders & Training Loops**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 
@@ -449,29 +590,58 @@ print("Pattern defined")`,
             `model.eval() + torch.no_grad() for validation`,
             `Track metrics per epoch not per batch average`,
             `Set seed for reproducibility`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Training Loop Pattern
+
+Checklist:
+  1. model.train() enables dropout/BN training mode
+  2. model.eval() + torch.no_grad() for validation
+  3. Track metrics per epoch not per batch average
+  4. Set seed for reproducibility`
         },
         {
           id: `transforms`,
           title: `Transforms & Augmentation`,
-          content: `torchvision.transforms for image preprocessing. Compose chains transforms. RandomHorizontalFlip, Normalize, ToTensor.`,
+          content: `torchvision.transforms for image preprocessing.
+
+Compose chains transforms.
+
+RandomHorizontalFlip, Normalize, ToTensor.
+
+**Transforms & Augmentation** in the context of **DataLoaders & Training Loops**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `ToTensor converts PIL to [C,H,W] float [0,1]`,
             `Normalize with dataset mean/std`,
             `Apply augmentation only to training set`,
             `torchvision.datasets includes MNIST, CIFAR, ImageNet`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Transforms & Augmentation
+
+Checklist:
+  1. ToTensor converts PIL to [C,H,W] float [0,1]
+  2. Normalize with dataset mean/std
+  3. Apply augmentation only to training set
+  4. torchvision.datasets includes MNIST, CIFAR, ImageNet`
         },
         {
           id: `scheduler`,
           title: `Learning Rate Schedulers`,
-          content: `StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.`,
+          content: `StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.
+
+**Learning Rate Schedulers** in the context of **DataLoaders & Training Loops**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Cosine annealing popular for vision training`,
             `Warmup stabilizes transformer training`,
             `ReduceLROnPlateau reacts to val metric`,
             `Log learning rate alongside loss`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Learning Rate Schedulers
+
+Checklist:
+  1. Cosine annealing popular for vision training
+  2. Warmup stabilizes transformer training
+  3. ReduceLROnPlateau reacts to val metric
+  4. Log learning rate alongside loss`
         }
       ],
       exercises: [
@@ -539,7 +709,11 @@ print(steps)`,
         {
           id: `cuda`,
           title: `CUDA Training`,
-          content: `Move model and batches to GPU. Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.`,
+          content: `Move model and batches to GPU.
+
+Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.
+
+**CUDA Training** in the context of **GPU Training & Mixed Precision**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -551,12 +725,23 @@ print(model(x).device)`,
             `Gradient accumulation simulates larger batches`,
             `DataParallel for multi-GPU (prefer DistributedDataParallel)`,
             `Clear cache between experiments`
-          ]
+          ],
+          pseudoCode: `CONCEPT: CUDA Training
+
+Checklist:
+  1. Batch size limited by GPU memory
+  2. Gradient accumulation simulates larger batches
+  3. DataParallel for multi-GPU (prefer DistributedDataParallel)
+  4. Clear cache between experiments`
         },
         {
           id: `amp`,
           title: `Automatic Mixed Precision`,
-          content: `torch.cuda.amp.autocast + GradScaler. FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.`,
+          content: `torch.cuda.amp.autocast + GradScaler.
+
+FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.
+
+**Automatic Mixed Precision** in the context of **GPU Training & Mixed Precision**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 
 scaler = torch.cuda.amp.GradScaler(enabled=torch.cuda.is_available())
@@ -566,29 +751,58 @@ print("GradScaler ready")`,
             `GradScaler prevents gradient underflow`,
             `Minimal code change for significant speedup`,
             `BF16 on A100+ avoids some FP16 issues`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Automatic Mixed Precision
+
+Checklist:
+  1. autocast runs ops in FP16 where safe
+  2. GradScaler prevents gradient underflow
+  3. Minimal code change for significant speedup
+  4. BF16 on A100+ avoids some FP16 issues`
         },
         {
           id: `compile`,
           title: `torch.compile (PyTorch 2.0)`,
-          content: `model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.`,
+          content: `model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.
+
+**torch.compile (PyTorch 2.0)** in the context of **GPU Training & Mixed Precision**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `PyTorch 2.0+ feature`,
             `Up to 30%+ speedup on compatible models`,
             `First run slower due to compilation`,
             `May not work with all dynamic models`
-          ]
+          ],
+          pseudoCode: `CONCEPT: torch.compile (PyTorch 2.0)
+
+Checklist:
+  1. PyTorch 2.0+ feature
+  2. Up to 30%+ speedup on compatible models
+  3. First run slower due to compilation
+  4. May not work with all dynamic models`
         },
         {
           id: `distributed`,
           title: `Distributed Training Preview`,
-          content: `DistributedDataParallel (DDP) for multi-GPU. Horovod, DeepSpeed for multi-node. Essential for large model training.`,
+          content: `DistributedDataParallel (DDP) for multi-GPU.
+
+Horovod, DeepSpeed for multi-node.
+
+Essential for large model training.
+
+**Distributed Training Preview** in the context of **GPU Training & Mixed Precision**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `DDP preferred over DataParallel`,
             `Each GPU gets batch slice, syncs gradients`,
             `DeepSpeed ZeRO reduces memory for large models`,
             `FSDP for fully sharded data parallel`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Distributed Training Preview
+
+Checklist:
+  1. DDP preferred over DataParallel
+  2. Each GPU gets batch slice, syncs gradients
+  3. DeepSpeed ZeRO reduces memory for large models
+  4. FSDP for fully sharded data parallel`
         }
       ],
       exercises: [

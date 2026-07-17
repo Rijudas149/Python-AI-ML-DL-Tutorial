@@ -27,7 +27,14 @@ print(np.round(res.x, 2))`,
             `Provide analytic Jacobian when available`,
             `Check convergence flag res.success`,
             `Plot objective surface for 2D intuition`
-          ]
+          ],
+          pseudoCode: `CONCEPT: scipy.optimize
+
+Checklist:
+  1. Good x0 critical for nonlinear optimization
+  2. Provide analytic Jacobian when available
+  3. Check convergence flag res.success
+  4. Plot objective surface for 2D intuition`
         },
         {
           id: `integrate`,
@@ -46,7 +53,14 @@ print(round(val, 3), err < 1e-8)`,
             `odeint for dynamical systems models`,
             `Transform improper integrals when possible`,
             `Compare with Monte Carlo for validation`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Integration & ODEs
+
+Checklist:
+  1. quad returns estimate and error bound
+  2. odeint for dynamical systems models
+  3. Transform improper integrals when possible
+  4. Compare with Monte Carlo for validation`
         },
         {
           id: `interpolate`,
@@ -68,7 +82,14 @@ print(float(f(1.5)))`,
             `Never extrapolate blindly beyond data support`,
             `griddata for unstructured spatial data`,
             `Visualize interpolant against raw points`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Interpolation
+
+Checklist:
+  1. Choose spline order based on smoothness needs
+  2. Never extrapolate blindly beyond data support
+  3. griddata for unstructured spatial data
+  4. Visualize interpolant against raw points`
         },
         {
           id: `scipy-ecosystem`,
@@ -83,7 +104,14 @@ Reproducibility: fix random seeds in stochastic routines and document numerical 
             `Vectorize where possible before Python loops`,
             `Document units and coordinate systems`,
             `Benchmark against analytical solutions when known`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SciPy in the Stack
+
+Checklist:
+  1. SciPy functions expect ndarray inputs
+  2. Vectorize where possible before Python loops
+  3. Document units and coordinate systems
+  4. Benchmark against analytical solutions when known`
         }
       ],
       exercises: [
@@ -167,16 +195,25 @@ print(minimize(lambda x: (x[0]-3)**2, [0]).x[0])`,
             `p-value is not effect size`,
             `Failure to reject ≠ prove null`,
             `Report confidence intervals alongside tests`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Null & Alternative Hypotheses
+
+Checklist:
+  1. Pre-register α to avoid p-hacking
+  2. p-value is not effect size
+  3. Failure to reject ≠ prove null
+  4. Report confidence intervals alongside tests`
         },
         {
           id: `ttest`,
           title: `t-Tests`,
           content: `\`scipy.stats.ttest_ind(a, b)\` compares means of two independent samples (Welch variant by default). **\`ttest_rel\`** for paired samples. Assumptions: approximate normality or large n; similar variance for classic equal-variance test.
 
-Check with Q-Q plots and report effect size (Cohen's d).
+Check with Q-Q plots and report effect size (Cohen's d). **Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
 
-**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "t-Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+When studying "t-Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**t-Tests** in the context of **Hypothesis Testing**: Apply this section on a small sample dataset before scaling up. Run the example, inspect the output, and use the takeaways as a checklist for your own analysis workflows.`,
           example: `from scipy import stats
 import numpy as np
 a = np.random.normal(0, 1, 100)
@@ -189,7 +226,14 @@ print(stat > 0, 0 <= p <= 1)`,
             `Large samples invoke CLT for normality relaxation`,
             `Multiple testing inflates false positives—use Bonferroni/FDR`,
             `Always visualize group distributions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: t-Tests
+
+Checklist:
+  1. Welch t-test robust to unequal variances
+  2. Large samples invoke CLT for normality relaxation
+  3. Multiple testing inflates false positives—use Bonferroni/FDR
+  4. Always visualize group distributions`
         },
         {
           id: `chisq`,
@@ -210,7 +254,14 @@ print(dof, expected.shape)`,
             `Low expected counts invalidate approximation`,
             `Cramér's V measures association strength`,
             `Residual analysis finds which cells deviate`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Chi-Square Tests
+
+Checklist:
+  1. chi2_contingency returns expected cell counts
+  2. Low expected counts invalidate approximation
+  3. Cramér's V measures association strength
+  4. Residual analysis finds which cells deviate`
         },
         {
           id: `pvalue-interpret`,
@@ -225,7 +276,14 @@ print(dof, expected.shape)`,
             `Power analysis plans sample size ex ante`,
             `Preregister analysis plans in research`,
             `Replication validates surprising findings`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Interpreting Results Responsibly
+
+Checklist:
+  1. Effect size and CI matter more than p alone
+  2. Power analysis plans sample size ex ante
+  3. Preregister analysis plans in research
+  4. Replication validates surprising findings`
         }
       ],
       exercises: [
@@ -315,7 +373,14 @@ print(abs(np.mean(samples)) < 0.1)`,
             `ppf inverts cdf for confidence intervals`,
             `Match distribution to data generating process`,
             `Heavy tails need t or stable distributions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Random Variables in scipy.stats
+
+Checklist:
+  1. rvs requires random_state for reproducibility
+  2. ppf inverts cdf for confidence intervals
+  3. Match distribution to data generating process
+  4. Heavy tails need t or stable distributions`
         },
         {
           id: `fit`,
@@ -336,7 +401,14 @@ print(abs(mu - 5) < 0.5)`,
             `KS test sensitive to large n`,
             `Consider log-normal for positive skewed data`,
             `Mixture models for multimodal data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Fitting Distributions
+
+Checklist:
+  1. Visual fit assessment mandatory
+  2. KS test sensitive to large n
+  3. Consider log-normal for positive skewed data
+  4. Mixture models for multimodal data`
         },
         {
           id: `sampling`,
@@ -356,7 +428,14 @@ print(len(boot_means))`,
             `Bootstrap CIs avoid normality assumptions`,
             `Sample size drives uncertainty not population size alone`,
             `Use default_rng not legacy np.random.seed only`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sampling Strategies
+
+Checklist:
+  1. Stratify on key categorical variables
+  2. Bootstrap CIs avoid normality assumptions
+  3. Sample size drives uncertainty not population size alone
+  4. Use default_rng not legacy np.random.seed only`
         },
         {
           id: `clt`,
@@ -371,7 +450,14 @@ For proportions, use binomial or normal approx with care when np(1-p) small.
             `Finite variance assumption matters`,
             `Rate of convergence depends on underlying distribution`,
             `Use exact tests when approximations fail`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Central Limit Theorem
+
+Checklist:
+  1. CLT applies to sample means not individual draws
+  2. Finite variance assumption matters
+  3. Rate of convergence depends on underlying distribution
+  4. Use exact tests when approximations fail`
         }
       ],
       exercises: [
@@ -461,7 +547,14 @@ print(round(model.params["x"], 2))`,
             `Add constant or use formula intercept implicitly`,
             `Plot residuals vs fitted values`,
             `Multicollinearity inflates coefficient variance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: OLS Linear Regression
+
+Checklist:
+  1. Inspect model.summary() for inference tables
+  2. Add constant or use formula intercept implicitly
+  3. Plot residuals vs fitted values
+  4. Multicollinearity inflates coefficient variance`
         },
         {
           id: `logistic`,
@@ -481,7 +574,14 @@ print(len(res.params))`,
             `Perfect separation causes infinite coefficients`,
             `Regularized logistic via sklearn for prediction focus`,
             `Report confidence intervals on odds ratios`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Logistic Regression
+
+Checklist:
+  1. Logit coefficients are on log-odds scale
+  2. Perfect separation causes infinite coefficients
+  3. Regularized logistic via sklearn for prediction focus
+  4. Report confidence intervals on odds ratios`
         },
         {
           id: `diagnostics`,
@@ -496,7 +596,14 @@ Transform targets (log) or use GLMs when residuals show systematic patterns.
             `Cross-validation for predictive performance`,
             `Partial regression plots explain individual features`,
             `Document preprocessing inside CV pipeline`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Regression Diagnostics
+
+Checklist:
+  1. Robust SE when variance not constant
+  2. Cross-validation for predictive performance
+  3. Partial regression plots explain individual features
+  4. Document preprocessing inside CV pipeline`
         },
         {
           id: `inference-vs-pred`,
@@ -511,7 +618,14 @@ Publishing requires reporting limitations, data collection, and missing data han
             `Regularization biases coefficients but improves prediction`,
             `Causal claims need causal designs not regression alone`,
             `Reproducible notebooks pin library versions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Inference vs Prediction
+
+Checklist:
+  1. Coefficients answer "what if x increases by 1?"
+  2. Regularization biases coefficients but improves prediction
+  3. Causal claims need causal designs not regression alone
+  4. Reproducible notebooks pin library versions`
         }
       ],
       exercises: [
@@ -605,7 +719,14 @@ print(round(mean, 2))`,
             `More data dominates prior (likelihood swamps prior)`,
             `Posterior is a distribution not a point`,
             `Conjugate updates are analytically tractable`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Bayes' Theorem
+
+Checklist:
+  1. Prior should be justified not arbitrary
+  2. More data dominates prior (likelihood swamps prior)
+  3. Posterior is a distribution not a point
+  4. Conjugate updates are analytically tractable`
         },
         {
           id: `priors`,
@@ -620,7 +741,14 @@ Avoid improper priors unless you understand measure theory implications. Documen
             `Hierarchical priors pool information across groups`,
             `Prior predictive checks simulate plausible data`,
             `Regularization in ML relates to Gaussian priors`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Choosing Priors
+
+Checklist:
+  1. Sensitivity analysis builds stakeholder trust
+  2. Hierarchical priors pool information across groups
+  3. Prior predictive checks simulate plausible data
+  4. Regularization in ML relates to Gaussian priors`
         },
         {
           id: `mcmc`,
@@ -635,7 +763,14 @@ Computation cost limits model complexity—start simple, add hierarchy increment
             `Longer chains or reparameterization help`,
             `MCMC uncertainty includes Monte Carlo error`,
             `Variational Bayes faster but biased`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sampling the Posterior
+
+Checklist:
+  1. R-hat > 1.01 suggests poor mixing
+  2. Longer chains or reparameterization help
+  3. MCMC uncertainty includes Monte Carlo error
+  4. Variational Bayes faster but biased`
         },
         {
           id: `bayes-ml`,
@@ -650,7 +785,14 @@ Calibration plots compare predicted probabilities to observed frequencies—crit
             `Ensembles approximate Bayesian model averaging loosely`,
             `Conformal prediction offers distribution-free intervals`,
             `Bayes complements not replaces frequentist tools`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Bayesian ML Connections
+
+Checklist:
+  1. Uncertainty quantification aids risk-sensitive decisions
+  2. Ensembles approximate Bayesian model averaging loosely
+  3. Conformal prediction offers distribution-free intervals
+  4. Bayes complements not replaces frequentist tools`
         }
       ],
       exercises: [

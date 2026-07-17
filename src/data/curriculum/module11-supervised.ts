@@ -11,7 +11,13 @@ export const module11Topics: Topic[] = [
         {
           id: `poly`,
           title: `Polynomial Regression`,
-          content: `Add polynomial features: x, x², x³. PolynomialFeatures(degree=2). Captures non-linear relationships with linear model.`,
+          content: `Add polynomial features: x, x², x³.
+
+PolynomialFeatures(degree=2).
+
+Captures non-linear relationships with linear model.
+
+**Polynomial Regression** in the context of **Regression Techniques**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import Pipeline
@@ -27,12 +33,25 @@ print(round(pipe.predict([[5]])[0], 1))`,
             `High degree causes overfitting`,
             `Always use regularization with high degree`,
             `Works with multiple features — explosion of terms`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Polynomial Regression
+
+Checklist:
+  1. PolynomialFeatures generates interaction terms
+  2. High degree causes overfitting
+  3. Always use regularization with high degree
+  4. Works with multiple features — explosion of terms`
         },
         {
           id: `ridge-lasso`,
           title: `Ridge & Lasso`,
-          content: `Ridge (L2): shrinks coefficients. Lasso (L1): drives some to zero — feature selection. ElasticNet combines both.`,
+          content: `Ridge (L2): shrinks coefficients.
+
+Lasso (L1): drives some to zero — feature selection.
+
+ElasticNet combines both.
+
+**Ridge & Lasso** in the context of **Regression Techniques**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.linear_model import Ridge, Lasso
 import numpy as np
 
@@ -46,29 +65,58 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
             `Ridge keeps all features with small weights`,
             `Lasso performs automatic feature selection`,
             `ElasticNet best when many correlated features`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Ridge & Lasso
+
+Checklist:
+  1. alpha controls regularization strength
+  2. Ridge keeps all features with small weights
+  3. Lasso performs automatic feature selection
+  4. ElasticNet best when many correlated features`
         },
         {
           id: `assumptions`,
           title: `Linear Regression Assumptions`,
-          content: `Linearity, independence, homoscedasticity, normality of residuals. Violations affect inference not always prediction.`,
+          content: `Linearity, independence, homoscedasticity, normality of residuals.
+
+Violations affect inference not always prediction.
+
+**Linear Regression Assumptions** in the context of **Regression Techniques**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Check residual plots for patterns`,
             `Heteroscedasticity: use weighted least squares`,
             `Multicollinearity inflates coefficient variance`,
             `Outliers disproportionately affect OLS`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Linear Regression Assumptions
+
+Checklist:
+  1. Check residual plots for patterns
+  2. Heteroscedasticity: use weighted least squares
+  3. Multicollinearity inflates coefficient variance
+  4. Outliers disproportionately affect OLS`
         },
         {
           id: `robust`,
           title: `Robust Regression`,
-          content: `HuberRegressor, RANSAC for outlier resistance. Quantile regression for conditional quantiles.`,
+          content: `HuberRegressor, RANSAC for outlier resistance.
+
+Quantile regression for conditional quantiles.
+
+**Robust Regression** in the context of **Regression Techniques**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Huber loss transitions from L2 to L1 for outliers`,
             `RANSAC fits to inlier consensus`,
             `Quantile regression for uncertainty bounds`,
             `Use when data has significant outliers`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Robust Regression
+
+Checklist:
+  1. Huber loss transitions from L2 to L1 for outliers
+  2. RANSAC fits to inlier consensus
+  3. Quantile regression for uncertainty bounds
+  4. Use when data has significant outliers`
         }
       ],
       exercises: [
@@ -135,7 +183,13 @@ print(Ridge(1.0).fit([[1],[2]], [1,2]).predict([[3]])[0])`,
         {
           id: `knn`,
           title: `K-Nearest Neighbors`,
-          content: `Classify by majority vote of k nearest training points. Lazy learner — no training phase. Scale features first!`,
+          content: `Classify by majority vote of k nearest training points.
+
+Lazy learner — no training phase.
+
+Scale features first!
+
+**K-Nearest Neighbors** in the context of **Classification Algorithms**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
@@ -150,12 +204,25 @@ print(pipe.score(X, y))`,
             `Always scale features for KNN`,
             `Slow prediction for large datasets`,
             `Use ball_tree or kd_tree for efficiency`
-          ]
+          ],
+          pseudoCode: `CONCEPT: K-Nearest Neighbors
+
+Checklist:
+  1. k too small: overfitting, too large: underfitting
+  2. Always scale features for KNN
+  3. Slow prediction for large datasets
+  4. Use ball_tree or kd_tree for efficiency`
         },
         {
           id: `naive-bayes`,
           title: `Naive Bayes`,
-          content: `P(y|x) ∝ P(y)ΠP(xᵢ|y). Assumes feature independence. GaussianNB, MultinomialNB, BernoulliNB variants.`,
+          content: `P(y|x) ∝ P(y)ΠP(xᵢ|y).
+
+Assumes feature independence.
+
+GaussianNB, MultinomialNB, BernoulliNB variants.
+
+**Naive Bayes** in the context of **Classification Algorithms**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_iris
 
@@ -167,29 +234,60 @@ print(clf.predict_proba(X[:3]).round(2))`,
             `Works well with small data`,
             `Independence assumption rarely true but works`,
             `MultinomialNB for text classification`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Naive Bayes
+
+Checklist:
+  1. Fast training and prediction
+  2. Works well with small data
+  3. Independence assumption rarely true but works
+  4. MultinomialNB for text classification`
         },
         {
           id: `multiclass`,
           title: `Multi-class Strategies`,
-          content: `One-vs-Rest (OvR): k binary classifiers. One-vs-One (OvO): k(k-1)/2 classifiers. Softmax for neural networks.`,
+          content: `One-vs-Rest (OvR): k binary classifiers.
+
+One-vs-One (OvO): k(k-1)/2 classifiers.
+
+Softmax for neural networks.
+
+**Multi-class Strategies** in the context of **Classification Algorithms**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `OvR default in sklearn for SVM, LR`,
             `OvO used by SVC with probability`,
             `Softmax ensures probabilities sum to 1`,
             `Multi-class metrics: macro vs weighted avg`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Multi-class Strategies
+
+Checklist:
+  1. OvR default in sklearn for SVM, LR
+  2. OvO used by SVC with probability
+  3. Softmax ensures probabilities sum to 1
+  4. Multi-class metrics: macro vs weighted avg`
         },
         {
           id: `imbalanced`,
           title: `Imbalanced Classification`,
-          content: `SMOTE oversampling, class_weight parameter, threshold tuning. Focus on recall for minority class when costly to miss.`,
+          content: `SMOTE oversampling, class_weight parameter, threshold tuning.
+
+Focus on recall for minority class when costly to miss.
+
+**Imbalanced Classification** in the context of **Classification Algorithms**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `class_weight="balanced" adjusts loss`,
             `SMOTE generates synthetic minority samples`,
             `Adjust decision threshold for precision/recall tradeoff`,
             `Use PR-AUC not accuracy for imbalanced data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Imbalanced Classification
+
+Checklist:
+  1. class_weight="balanced" adjusts loss
+  2. SMOTE generates synthetic minority samples
+  3. Adjust decision threshold for precision/recall tradeoff
+  4. Use PR-AUC not accuracy for imbalanced data`
         }
       ],
       exercises: [
@@ -260,7 +358,13 @@ print(GaussianNB().fit(X, y).predict_proba(X[:1])[0].sum())`,
         {
           id: `svm-linear`,
           title: `Linear SVM`,
-          content: `Finds hyperplane maximizing margin between classes. Support vectors are critical training points. C parameter trades margin vs misclassification.`,
+          content: `Finds hyperplane maximizing margin between classes.
+
+Support vectors are critical training points.
+
+C parameter trades margin vs misclassification.
+
+**Linear SVM** in the context of **Support Vector Machines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.svm import SVC
 import numpy as np
 
@@ -274,12 +378,23 @@ print(clf.n_support_)`,
             `C large: narrow margin, fewer errors`,
             `C small: wide margin, more errors allowed`,
             `Only support vectors affect decision boundary`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Linear SVM
+
+Checklist:
+  1. Maximum margin principle
+  2. C large: narrow margin, fewer errors
+  3. C small: wide margin, more errors allowed
+  4. Only support vectors affect decision boundary`
         },
         {
           id: `kernel`,
           title: `Kernel Trick`,
-          content: `Map to higher dimensions without explicit computation. RBF (Gaussian) most popular: K(x,x') = exp(-γ||x-x'||²).`,
+          content: `Map to higher dimensions without explicit computation.
+
+RBF (Gaussian) most popular: K(x,x') = exp(-γ||x-x'||²).
+
+**Kernel Trick** in the context of **Support Vector Machines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.svm import SVC
 from sklearn.datasets import make_moons
 
@@ -291,29 +406,58 @@ print(clf.score(X, y))`,
             `RBF kernel handles non-linear boundaries`,
             `gamma controls influence radius of each point`,
             `Linear kernel for high-dimensional sparse text data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Kernel Trick
+
+Checklist:
+  1. Kernel trick avoids explicit high-D mapping
+  2. RBF kernel handles non-linear boundaries
+  3. gamma controls influence radius of each point
+  4. Linear kernel for high-dimensional sparse text data`
         },
         {
           id: `svc-params`,
           title: `SVM Hyperparameters`,
-          content: `C, kernel, gamma, degree. GridSearchCV essential. probability=True enables predict_proba (slower).`,
+          content: `C, kernel, gamma, degree.
+
+GridSearchCV essential. probability=True enables predict_proba (slower).
+
+**SVM Hyperparameters** in the context of **Support Vector Machines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Scale features before SVM — critical`,
             `gamma too high: overfitting to support vectors`,
             `LinearSVC faster for linear case on large data`,
             `NuSVM alternative parameterization`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SVM Hyperparameters
+
+Checklist:
+  1. Scale features before SVM — critical
+  2. gamma too high: overfitting to support vectors
+  3. LinearSVC faster for linear case on large data
+  4. NuSVM alternative parameterization`
         },
         {
           id: `svr`,
           title: `Support Vector Regression`,
-          content: `SVR for regression. Epsilon-insensitive loss ignores errors within ε tube. Kernel trick applies to regression too.`,
+          content: `Epsilon-insensitive loss ignores errors within ε tube.
+
+Kernel trick applies to regression too.
+
+**Support Vector Regression** in the context of **Support Vector Machines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `SVR finds tube containing most points`,
             `epsilon controls tube width`,
             `Less common than RF/XGBoost for tabular regression`,
             `Effective in high-dimensional spaces`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Support Vector Regression
+
+Checklist:
+  1. SVR finds tube containing most points
+  2. epsilon controls tube width
+  3. Less common than RF/XGBoost for tabular regression
+  4. Effective in high-dimensional spaces`
         }
       ],
       exercises: [
@@ -384,7 +528,13 @@ print(clf.support_vectors_.shape[0])`,
         {
           id: `gbm`,
           title: `Gradient Boosting Concept`,
-          content: `Sequentially add trees correcting previous errors. Each tree fits negative gradient of loss. Learning_rate shrinks each contribution.`,
+          content: `Sequentially add trees correcting previous errors.
+
+Each tree fits negative gradient of loss.
+
+Learning_rate shrinks each contribution.
+
+**Gradient Boosting Concept** in the context of **Gradient Boosting (XGBoost/LightGBM)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           pseudoCode: `model = initial prediction
 FOR t in 1..T:
     compute residuals/gradients
@@ -400,7 +550,9 @@ FOR t in 1..T:
         {
           id: `xgboost`,
           title: `XGBoost`,
-          content: `Optimized gradient boosting with regularization, parallel tree construction, handling missing values. xgboost.XGBClassifier().`,
+          content: `Optimized gradient boosting with regularization, parallel tree construction, handling missing values. xgboost.XGBClassifier().
+
+**XGBoost** in the context of **Gradient Boosting (XGBoost/LightGBM)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from xgboost import XGBClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import cross_val_score
@@ -414,29 +566,56 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
             `Handles missing values natively`,
             `early_stopping_rounds prevents overfitting`,
             `GPU acceleration available`
-          ]
+          ],
+          pseudoCode: `CONCEPT: XGBoost
+
+Checklist:
+  1. L1/L2 regularization on leaf weights
+  2. Handles missing values natively
+  3. early_stopping_rounds prevents overfitting
+  4. GPU acceleration available`
         },
         {
           id: `lightgbm`,
           title: `LightGBM & CatBoost`,
-          content: `LightGBM: leaf-wise growth, faster on large data. CatBoost: handles categoricals natively, ordered boosting.`,
+          content: `LightGBM: leaf-wise growth, faster on large data.
+
+CatBoost: handles categoricals natively, ordered boosting.
+
+**LightGBM & CatBoost** in the context of **Gradient Boosting (XGBoost/LightGBM)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `LightGBM faster than XGBoost on large datasets`,
             `CatBoost best for high-cardinality categoricals`,
             `All three dominate tabular ML competitions`,
             `Feature importance from gain or split count`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LightGBM & CatBoost
+
+Checklist:
+  1. LightGBM faster than XGBoost on large datasets
+  2. CatBoost best for high-cardinality categoricals
+  3. All three dominate tabular ML competitions
+  4. Feature importance from gain or split count`
         },
         {
           id: `tuning-gbm`,
           title: `Tuning Gradient Boosting`,
-          content: `Key params: n_estimators, learning_rate, max_depth, subsample, colsample_bytree, reg_alpha/lambda.`,
+          content: `Key params: n_estimators, learning_rate, max_depth, subsample, colsample_bytree, reg_alpha/lambda.
+
+**Tuning Gradient Boosting** in the context of **Gradient Boosting (XGBoost/LightGBM)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Start with defaults then tune learning_rate + n_estimators`,
             `Lower learning_rate with more trees often better`,
             `subsample and colsample add randomness`,
             `Use early stopping on validation set`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Tuning Gradient Boosting
+
+Checklist:
+  1. Start with defaults then tune learning_rate + n_estimators
+  2. Lower learning_rate with more trees often better
+  3. subsample and colsample add randomness
+  4. Use early stopping on validation set`
         }
       ],
       exercises: [
@@ -506,18 +685,33 @@ print(clf.n_estimators)`,
         {
           id: `bagging`,
           title: `Bagging & Boosting`,
-          content: `Bagging (Bootstrap Aggregating): parallel training on random subsets, average/vote. Boosting: sequential error correction.`,
+          content: `Bagging (Bootstrap Aggregating): parallel training on random subsets, average/vote.
+
+Boosting: sequential error correction.
+
+**Bagging & Boosting** in the context of **Ensemble Methods**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Bagging reduces variance (Random Forest)`,
             `Boosting reduces bias (XGBoost)`,
             `Both reduce overfitting vs single model`,
             `Combining diverse models improves robustness`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Bagging & Boosting
+
+Checklist:
+  1. Bagging reduces variance (Random Forest)
+  2. Boosting reduces bias (XGBoost)
+  3. Both reduce overfitting vs single model
+  4. Combining diverse models improves robustness`
         },
         {
           id: `voting`,
           title: `Voting & Stacking`,
-          content: `VotingClassifier: hard vote (majority) or soft vote (average probabilities). StackingClassifier: meta-learner on base model predictions.`,
+          content: `VotingClassifier: hard vote (majority) or soft vote (average probabilities).
+
+StackingClassifier: meta-learner on base model predictions.
+
+**Voting & Stacking** in the context of **Ensemble Methods**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.ensemble import VotingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -533,29 +727,58 @@ print(round(vote.score(X, y), 3))`,
             `Stacking learns optimal combination`,
             `Diverse base models improve ensemble`,
             `Stacking can overfit — use CV for meta-features`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Voting & Stacking
+
+Checklist:
+  1. Soft voting usually better than hard
+  2. Stacking learns optimal combination
+  3. Diverse base models improve ensemble
+  4. Stacking can overfit — use CV for meta-features`
         },
         {
           id: `blending`,
           title: `Blending Strategies`,
-          content: `Simple average of model predictions often competitive. Weighted average by validation performance.`,
+          content: `Simple average of model predictions often competitive.
+
+Weighted average by validation performance.
+
+**Blending Strategies** in the context of **Ensemble Methods**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Equal weight averaging is strong baseline`,
             `Weight by validation AUC or log-loss`,
             `Blending simpler than stacking`,
             `Kaggle solutions often ensemble 5-10 models`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Blending Strategies
+
+Checklist:
+  1. Equal weight averaging is strong baseline
+  2. Weight by validation AUC or log-loss
+  3. Blending simpler than stacking
+  4. Kaggle solutions often ensemble 5-10 models`
         },
         {
           id: `diversity`,
           title: `Ensemble Diversity`,
-          content: `Ensembles work when models make different errors. Diversity from: different algorithms, features, data subsets, random seeds.`,
+          content: `Ensembles work when models make different errors.
+
+Diversity from: different algorithms, features, data subsets, random seeds.
+
+**Ensemble Diversity** in the context of **Ensemble Methods**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Identical models add no value`,
             `Decorrelate errors for maximum benefit`,
             `Random feature subsets in RF create diversity`,
             `Cross-validation stacking prevents overfitting`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Ensemble Diversity
+
+Checklist:
+  1. Identical models add no value
+  2. Decorrelate errors for maximum benefit
+  3. Random feature subsets in RF create diversity
+  4. Cross-validation stacking prevents overfitting`
         }
       ],
       exercises: [

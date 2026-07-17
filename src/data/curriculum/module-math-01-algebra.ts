@@ -11,7 +11,13 @@ export const moduleMath01Topics: Topic[] = [
         {
           id: `sets-intro`,
           title: `Sets and Membership`,
-          content: `A **set** is an unordered collection of distinct objects. We write A = {1, 2, 3} and x ∈ A means x belongs to A. The empty set ∅ contains no elements. Subsets satisfy A ⊆ B when every element of A is in B. The **power set** P(A) is the set of all subsets; |P(A)| = 2^|A|. In data science, feature sets, label sets, and train/validation splits are all set-theoretic. Venn diagrams visualize unions and intersections. Countable vs uncountable sets matter when discussing discrete vs continuous random variables. Set-builder notation {x ∈ ℝ | x > 0} defines infinite sets compactly and appears in constraint definitions for optimization.`,
+          content: `A **set** is an unordered collection of distinct objects. We write A = {1, 2, 3} and x ∈ A means x belongs to A. The empty set ∅ contains no elements.
+
+Subsets satisfy A ⊆ B when every element of A is in B. The **power set** P(A) is the set of all subsets; |P(A)| = 2^|A|. In data science, feature sets, label sets, and train/validation splits are all set-theoretic.
+
+Venn diagrams visualize unions and intersections. Countable vs uncountable sets matter when discussing discrete vs continuous random variables. Set-builder notation {x ∈ ℝ | x > 0} defines infinite sets compactly and appears in constraint definitions for optimization.
+
+**Sets and Membership** in the context of **Set Theory & Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `A ∪ B = {x | x ∈ A or x ∈ B}`,
             `A ∩ B = {x | x ∈ A and x ∈ B}`,
@@ -46,12 +52,45 @@ print("A ∩ B:", A & B)
 print("|A|:", len(A))`,
           output: `A ∪ B: {1, 2, 3, 4}
 A ∩ B: {2, 3}
-|A|: 3`
+|A|: 3`,
+          pseudoCode: `CONCEPT: Sets and Membership
+
+Key relationships:
+  A ∪ B = {x | x ∈ A or x ∈ B}
+  A ∩ B = {x | x ∈ A and x ∈ B}
+  A^c = {x ∈ U | x ∉ A}
+  |A ∪ B| = |A| + |B| − |A ∩ B|
+  P(A) = {S | S ⊆ A}
+
+Diagram (summary):
+  Universal Set U
+  ┌─────────────────┐
+  │   ┌───┐  ┌───┐  │
+  │   │ A │  │ B │  │
+  │   │ ┌─┼──┼─┐ │  │
+  │   └─┼──┼─┘ │  │
+  │     │ A∩B│   │
+  │     └───┘   │
+  │  A only  B only│
+  └─────────────────┘
+
+Checklist:
+  1. ∈ tests membership; ⊆ tests subset
+  2. Union/intersection follow De Morgan laws
+  3. Inclusion-exclusion prevents double counting
+  4. Power set grows exponentially
+  5. Sets formalize sample spaces in probability`
         },
         {
           id: `sets-ops`,
           title: `Set Operations in Practice`,
-          content: `**Union** A ∪ B collects all elements from either set. **Intersection** A ∩ B keeps shared elements. **Difference** A \\ B removes B from A. **Symmetric difference** A △ B = (A ∪ B) \\ (A ∩ B). Cartesian product A × B = {(a,b) | a∈A, b∈B} pairs every element; |A×B| = |A|·|B|. These operations underpin SQL JOIN logic, multi-index combinations, and joint distributions. De Morgan: (A∪B)^c = A^c∩B^c. Disjoint sets have A∩B = ∅. A **partition** of U splits the universe into non-overlapping subsets whose union is U—used in stratified sampling and cross-validation folds.`,
+          content: `**Union** A ∪ B collects all elements from either set. **Intersection** A ∩ B keeps shared elements. **Difference** A \\ B removes B from A.
+
+**Symmetric difference** A △ B = (A ∪ B) \\ (A ∩ B). Cartesian product A × B = {(a,b) | a∈A, b∈B} pairs every element; |A×B| = |A|·|B|. These operations underpin SQL JOIN logic, multi-index combinations, and joint distributions.
+
+De Morgan: (A∪B)^c = A^c∩B^c. Disjoint sets have A∩B = ∅. A **partition** of U splits the universe into non-overlapping subsets whose union is U—used in stratified sampling and cross-validation folds.
+
+**Set Operations in Practice** in the context of **Set Theory & Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `A \\ B = {x | x ∈ A, x ∉ B}`,
             `A △ B = (A ∪ B) \\ (A ∩ B)`,
@@ -86,12 +125,45 @@ print("intersect:", np.intersect1d(A,B))
 print("A only:", np.setdiff1d(A,B))`,
           output: `union: [1 2 3 4 5]
 intersect: [3]
-A only: [1 2]`
+A only: [1 2]`,
+          pseudoCode: `CONCEPT: Set Operations in Practice
+
+Key relationships:
+  A \\ B = {x | x ∈ A, x ∉ B}
+  A △ B = (A ∪ B) \\ (A ∩ B)
+  |A × B| = |A| · |B|
+  (A ∪ B)^c = A^c ∩ B^c
+  Partition: ∪ P_i = U, P_i ∩ P_j = ∅ for i≠j
+
+Diagram (summary):
+  A = {1,2,3}     B = {3,4,5}
+  A ∪ B = {1,2,3,4,5}
+  A ∩ B = {3}
+  A \\ B = {1,2}
+  B \\ A = {4,5}
+  A × B (ordered pairs):
+  (1,3) (1,4) (1,5)
+  (2,3) (2,4) (2,5)
+  (3,3) (3,4) (3,5)
+  → 3 × 3 = 9 pairs
+
+Checklist:
+  1. Difference is not commutative
+  2. Cartesian product size multiplies
+  3. De Morgan helps simplify complements
+  4. Partitions enable stratified splits
+  5. Set ops mirror Boolean logic`
         },
         {
           id: `sets-functions`,
           title: `Sets as Function Domains`,
-          content: `A **function** f: A → B maps each input in domain A to exactly one output in codomain B. The **image** f(A) = {f(x) | x∈A} ⊆ B. **Preimage** f⁻¹(S) = {x | f(x)∈S}. Injective (one-to-one): f(x₁)=f(x₂)⇒x₁=x₂. Surjective (onto): ∀y∈B, ∃x∈A with f(x)=y. Bijective functions are invertible. In ML, domain might be feature vectors ℝⁿ and codomain class labels or ℝ for regression. Restricting domain to training set prevents extrapolation errors. Understanding preimages defines level sets and decision boundaries geometrically.`,
+          content: `A **function** f: A → B maps each input in domain A to exactly one output in codomain B. The **image** f(A) = {f(x) | x∈A} ⊆ B. **Preimage** f⁻¹(S) = {x | f(x)∈S}.
+
+Injective (one-to-one): f(x₁)=f(x₂)⇒x₁=x₂. Surjective (onto): ∀y∈B, ∃x∈A with f(x)=y. Bijective functions are invertible.
+
+In ML, domain might be feature vectors ℝⁿ and codomain class labels or ℝ for regression. Restricting domain to training set prevents extrapolation errors. Understanding preimages defines level sets and decision boundaries geometrically.
+
+**Sets as Function Domains** in the context of **Set Theory & Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `f: A → B maps each a ∈ A to f(a) ∈ B`,
             `Im(f) = {f(x) | x ∈ domain}`,
@@ -122,12 +194,47 @@ A = np.array([-2,-1,0,1,2])
 print("image:", np.unique(f(A)))
 print("preimage of {4}:", A[f(A)==4])`,
           output: `image: [0 1 4]
-preimage of {4}: [-2  2]`
+preimage of {4}: [-2  2]`,
+          pseudoCode: `CONCEPT: Sets as Function Domains
+
+Key relationships:
+  f: A → B maps each a ∈ A to f(a) ∈ B
+  Im(f) = {f(x) | x ∈ domain}
+  Injective: f(x₁) = f(x₂) ⇒ x₁ = x₂
+  Surjective: ∀ y ∈ B, ∃ x: f(x) = y
+  Bijective ⇔ invertible function exists
+
+Diagram (summary):
+  Domain A          Codomain B
+  ┌───┐               ┌───┐
+  │ 1 │──────────────→│ a │
+  │ 2 │──┐            │ b │
+  │ 3 │──┼───────────→│ c │
+  │ 4 │──┘            └───┘
+  └───┘
+  Each input → ONE output
+  Multiple inputs may map to same output
+  (not injective if 2,3 → same y)
+
+Checklist:
+  1. Functions require unique outputs per input
+  2. Image may be smaller than codomain
+  3. Injectivity matters for invertible transforms
+  4. Preimages define decision boundaries
+  5. Domain restrictions affect model validity`
         },
         {
           id: `sets-counting`,
           title: `Counting & Cardinality`,
-          content: `**Cardinality** |S| counts elements in finite sets. The **multiplication principle**: if task 1 has m ways and task 2 has n ways, combined tasks have m·n ways—explains |A×B|. **Permutations** P(n,k) = n!/(n−k)! when order matters. **Combinations** C(n,k) = n!/(k!(n−k)!) when order is irrelevant. Binomial coefficients appear in probability mass functions and the binomial theorem. Inclusion-exclusion generalizes to multiple overlapping sets. These formulas drive hyperparameter grid sizes, k-fold splits, and sampling without replacement in bootstrap methods.`,
+          content: `**Cardinality** |S| counts elements in finite sets. The **multiplication principle**: if task 1 has m ways and task 2 has n ways, combined tasks have m·n ways—explains |A×B|.
+
+**Permutations** P(n,k) = n!/(n−k)! when order matters. **Combinations** C(n,k) = n!/(k!(n−k)!) when order is irrelevant.
+
+Binomial coefficients appear in probability mass functions and the binomial theorem. Inclusion-exclusion generalizes to multiple overlapping sets.
+
+These formulas drive hyperparameter grid sizes, k-fold splits, and sampling without replacement in bootstrap methods.
+
+**Counting & Cardinality** in the context of **Set Theory & Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `P(n,k) = n! / (n−k)!`,
             `C(n,k) = n! / (k!(n−k)!)`,
@@ -161,7 +268,32 @@ print("P(10,3):", perm(n,k))
 print("2^10:", sum(comb(10,i) for i in range(11)))`,
           output: `C(10,3): 120
 P(10,3): 720
-2^10: 1024`
+2^10: 1024`,
+          pseudoCode: `CONCEPT: Counting & Cardinality
+
+Key relationships:
+  P(n,k) = n! / (n−k)!
+  C(n,k) = n! / (k!(n−k)!)
+  C(n,k) = C(n, n−k)
+  ∑_{k=0}^n C(n,k) = 2^n
+  |A ∪ B ∪ C| uses inclusion-exclusion
+
+Diagram (summary):
+  Choose 3 from {A,B,C,D}
+  Combinations C(4,3)=4:
+  ABC  ABD  ACD  BCD
+  Permutations P(4,3)=24:
+  ABC ACB BAC BCA ...
+  n=4, k=3
+  C(4,3) = 4!/(3!·1!) = 4
+  P(4,3) = 4!/1! = 24
+
+Checklist:
+  1. Combinations ignore order
+  2. Permutations count ordered arrangements
+  3. Binomial coeffs appear in Bernoulli trials
+  4. Multiplication principle for pipelines
+  5. Inclusion-exclusion for overlapping events`
         }
       ],
       exercises: [
@@ -241,7 +373,13 @@ print(len(A)+len(B)-len(A&B))`,
         {
           id: `fn-basics`,
           title: `Function Definition & Notation`,
-          content: `A real function f: D → ℝ assigns each x in domain D a unique output f(x). The **range** is the set of actual outputs. **Piecewise** functions define different rules on intervals. Even functions satisfy f(−x)=f(x); odd satisfy f(−x)=−f(x). Polynomials, exponentials, and rationals form the building blocks of loss landscapes. Vertical line test: any vertical line crosses graph at most once. Implicit functions like x²+y²=1 define curves. Parametric form (x(t), y(t)) describes trajectories in dynamical systems and animation of optimization paths.`,
+          content: `A real function f: D → ℝ assigns each x in domain D a unique output f(x). The **range** is the set of actual outputs. **Piecewise** functions define different rules on intervals.
+
+Even functions satisfy f(−x)=f(x); odd satisfy f(−x)=−f(x). Polynomials, exponentials, and rationals form the building blocks of loss landscapes. Vertical line test: any vertical line crosses graph at most once.
+
+Implicit functions like x²+y²=1 define curves. Parametric form (x(t), y(t)) describes trajectories in dynamical systems and animation of optimization paths.
+
+**Function Definition & Notation** in the context of **Functions & Graphs**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `f(x) = ax + b (linear)`,
             `f(x) = ax² + bx + c (quadratic)`,
@@ -276,12 +414,45 @@ print("range sample:", f)
 print("min,max:", f.min(), f.max())`,
           output: `f(-1)= -1
 range sample: [-5 -3 -1  1  3  5  7]
-min,max: -5 7`
+min,max: -5 7`,
+          pseudoCode: `CONCEPT: Function Definition & Notation
+
+Key relationships:
+  f(x) = ax + b (linear)
+  f(x) = ax² + bx + c (quadratic)
+  f(−x) = f(x) ⇒ even; f(−x) = −f(x) ⇒ odd
+  Range ⊆ codomain; image = actual outputs
+  (f∘g)(x) = f(g(x))
+
+Diagram (summary):
+  y
+  │    ╱
+  │   ╱  f(x)=2x+1
+  │  ╱
+  │ ╱
+  ────┼──────── x
+  │
+  Domain: all x where defined
+  Range: {f(x) : x ∈ domain}
+  Vertical line test:
+
+Checklist:
+  1. Each input maps to exactly one output
+  2. Domain restrictions prevent undefined ops
+  3. Composition chains transformations
+  4. Even/odd symmetry simplifies integrals
+  5. Range may differ from codomain`
         },
         {
           id: `fn-types`,
           title: `Common Function Families`,
-          content: `**Linear** f(x)=mx+b has constant slope m. **Quadratic** ax²+bx+c opens up/down; vertex at x=−b/(2a). **Exponential** a·bˣ grows/decays; base e appears in continuous compounding and softmax. **Logarithmic** inverse of exponential; compresses large ranges. **Sigmoid** σ(x)=1/(1+e^(−x)) maps ℝ→(0,1) for probabilities. **ReLU** max(0,x) dominates deep networks. Rational functions have vertical asymptotes where denominator vanishes. Choosing the right family guides feature transforms and activation design in neural architectures.`,
+          content: `**Linear** f(x)=mx+b has constant slope m. **Quadratic** ax²+bx+c opens up/down; vertex at x=−b/(2a). **Exponential** a·bˣ grows/decays; base e appears in continuous compounding and softmax.
+
+**Logarithmic** inverse of exponential; compresses large ranges. **Sigmoid** σ(x)=1/(1+e^(−x)) maps ℝ→(0,1) for probabilities. **ReLU** max(0,x) dominates deep networks.
+
+Rational functions have vertical asymptotes where denominator vanishes. Choosing the right family guides feature transforms and activation design in neural architectures.
+
+**Common Function Families** in the context of **Functions & Graphs**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `σ(x) = 1 / (1 + e^(−x))`,
             `ReLU(x) = max(0, x)`,
@@ -314,12 +485,45 @@ relu = np.maximum(0,x)
 print("sigmoid:", np.round(sigmoid,3))
 print("relu:", relu)`,
           output: `sigmoid: [0.119 0.5   0.881]
-relu: [0. 0. 2.]`
+relu: [0. 0. 2.]`,
+          pseudoCode: `CONCEPT: Common Function Families
+
+Key relationships:
+  σ(x) = 1 / (1 + e^(−x))
+  ReLU(x) = max(0, x)
+  e^(a+b) = e^a · e^b
+  log_b(x) = ln(x) / ln(b)
+  Quadratic vertex: x = −b / (2a)
+
+Diagram (summary):
+  Linear      Quadratic     Sigmoid
+  ╱           ∪            S-curve
+  ╱          ╱ ╲           ___───
+  ╱          ╱   ╲         ╱
+  ────────   ────────      ────────
+  constant   one turn    bounded (0,1)
+  slope      min/max
+  ReLU: flat then ramp
+  ___╱
+  ╱
+
+Checklist:
+  1. Linear models = affine transforms
+  2. Sigmoid squashes to probabilities
+  3. ReLU enables sparse activations
+  4. Exponentials model growth/decay
+  5. Log transforms skewed data`
         },
         {
           id: `fn-compose`,
           title: `Composition & Inverse`,
-          content: `**Composition** (f∘g)(x)=f(g(x)) applies g then f. Order matters: f∘g ≠ g∘f generally. Identity I(x)=x satisfies f∘I=f. **Inverse** f⁻¹ satisfies f(f⁻¹(x))=x and f⁻¹(f(x))=x when f is bijective. ln and exp are inverses. In neural nets, layers compose: h=L_k∘...∘L_1. Chain rule (calculus) differentiates compositions. For invertible flows, log-det Jacobian tracks volume change. Finding inverses analytically is key to normalizing flows, inverse transforms for predictions, and understanding encoder-decoder architectures.`,
+          content: `**Composition** (f∘g)(x)=f(g(x)) applies g then f. Order matters: f∘g ≠ g∘f generally. Identity I(x)=x satisfies f∘I=f.
+
+**Inverse** f⁻¹ satisfies f(f⁻¹(x))=x and f⁻¹(f(x))=x when f is bijective. ln and exp are inverses. In neural nets, layers compose: h=L_k∘...∘L_1. Chain rule (calculus) differentiates compositions.
+
+For invertible flows, log-det Jacobian tracks volume change. Finding inverses analytically is key to normalizing flows, inverse transforms for predictions, and understanding encoder-decoder architectures.
+
+**Composition & Inverse** in the context of **Functions & Graphs**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `(f ∘ g)(x) = f(g(x))`,
             `f ∘ f⁻¹ = f⁻¹ ∘ f = I`,
@@ -352,12 +556,43 @@ x = 3
 print("f(g(3)):", f(g(x)))
 print("g(f(3)):", g(f(x)))`,
           output: `f(g(3)): 16
-g(f(3)): 10`
+g(f(3)): 10`,
+          pseudoCode: `CONCEPT: Composition & Inverse
+
+Key relationships:
+  (f ∘ g)(x) = f(g(x))
+  f ∘ f⁻¹ = f⁻¹ ∘ f = I
+  (f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹ (reverse order)
+  Bijective ⇔ invertible on domain
+  Chain: d/dx f(g(x)) = f'(g(x))·g'(x)
+
+Diagram (summary):
+  x ──g──→ g(x) ──f──→ f(g(x))
+  (f∘g): apply g first, then f
+  Inverse reverses arrows:
+  x ←─f⁻¹─ y ←─g⁻¹─ z
+  f(g(x))
+  ↓ g
+  ↓ f
+  output
+
+Checklist:
+  1. Composition order is critical
+  2. Inverses undo transformations
+  3. Only bijections have true inverses
+  4. Neural nets are deep compositions
+  5. Inverse order reverses on composition`
         },
         {
           id: `fn-transforms`,
           title: `Functional Transforms in ML`,
-          content: `Feature transforms map raw inputs to spaces where models learn easier. **Standardization** z=(x−μ)/σ centers and scales. **Min-max** maps to [0,1]. **Log1p** handles count data. **Box-Cox** stabilizes variance. Kernel tricks implicitly map to high-D via φ(x) without computing φ. Activation functions are pointwise nonlinear transforms. Invertible transforms enable density estimation. Always track whether transforms applied at train time must be reused at inference with saved μ, σ parameters to avoid train-serve skew and incorrect predictions in production.`,
+          content: `Feature transforms map raw inputs to spaces where models learn easier. **Standardization** z=(x−μ)/σ centers and scales. **Min-max** maps to [0,1].
+
+**Log1p** handles count data. **Box-Cox** stabilizes variance. Kernel tricks implicitly map to high-D via φ(x) without computing φ.
+
+Activation functions are pointwise nonlinear transforms. Invertible transforms enable density estimation. Always track whether transforms applied at train time must be reused at inference with saved μ, σ parameters to avoid train-serve skew and incorrect predictions in production.
+
+**Functional Transforms in ML** in the context of **Functions & Graphs**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `z = (x − μ) / σ`,
             `x_norm = (x − min) / (max − min)`,
@@ -389,7 +624,33 @@ z = (x - mu) / sigma
 print("mu:", mu, "sigma:", sigma)
 print("z:", np.round(z,2))`,
           output: `mu: 30.0 sigma: 14.142...
-z: [-1.41 -0.71  0.    0.71  1.41]`
+z: [-1.41 -0.71  0.    0.71  1.41]`,
+          pseudoCode: `CONCEPT: Functional Transforms in ML
+
+Key relationships:
+  z = (x − μ) / σ
+  x_norm = (x − min) / (max − min)
+  log1p(x) = ln(1 + x)
+  K(x,x') = ⟨φ(x), φ(x')⟩
+  Inverse transform for predictions in original units
+
+Diagram (summary):
+  Raw x ──transform──→ z ──model──→ ŷ
+  │
+  save μ, σ
+  │
+  inference: same μ, σ
+  Without inverse:
+  predictions in wrong scale!
+  │
+  │  · · ·
+
+Checklist:
+  1. Fit transforms on training data only
+  2. Store params for deployment
+  3. Log handles heavy tails
+  4. Kernels avoid explicit φ
+  5. Inverse restores interpretability`
         }
       ],
       exercises: [
@@ -469,7 +730,13 @@ print("g(f(5)):", g(f(5)))`,
         {
           id: `log-def`,
           title: `Logarithm Definition`,
-          content: `For b>0, b≠1, **log_b(x)** is the exponent y such that b^y = x. Equivalently: b^(log_b(x)) = x. **Natural log** ln(x)=log_e(x) where e≈2.71828. Domain: x>0. log_b(1)=0, log_b(b)=1. Logarithms convert multiplication to addition: log(ab)=log(a)+log(b). Division becomes subtraction; powers become multiplication. In ML, log-likelihood sums log probabilities for numerical stability. Cross-entropy uses log of predicted probabilities. Log scale visualizes data spanning orders of magnitude in plots and dashboards.`,
+          content: `For b>0, b≠1, **log_b(x)** is the exponent y such that b^y = x. Equivalently: b^(log_b(x)) = x. **Natural log** ln(x)=log_e(x) where e≈2.71828.
+
+Domain: x>0. log_b(1)=0, log_b(b)=1. Logarithms convert multiplication to addition: log(ab)=log(a)+log(b). Division becomes subtraction; powers become multiplication.
+
+In ML, log-likelihood sums log probabilities for numerical stability. Cross-entropy uses log of predicted probabilities. Log scale visualizes data spanning orders of magnitude in plots and dashboards.
+
+**Logarithm Definition** in the context of **Logarithms & Exponentials**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `b^y = x ⇔ y = log_b(x)`,
             `ln(x) = log_e(x); e ≈ 2.71828`,
@@ -504,12 +771,45 @@ x = np.array([1, np.e, np.e**2])
 print("ln(x):", np.round(np.log(x),3))
 print("exp(ln(5)):", np.exp(np.log(5)))`,
           output: `ln(x): [0.    1.    2.   ]
-exp(ln(5)): 5.0`
+exp(ln(5)): 5.0`,
+          pseudoCode: `CONCEPT: Logarithm Definition
+
+Key relationships:
+  b^y = x ⇔ y = log_b(x)
+  ln(x) = log_e(x); e ≈ 2.71828
+  log_b(xy) = log_b(x) + log_b(y)
+  log_b(x^n) = n·log_b(x)
+  Change of base: log_b(x) = ln(x) / ln(b)
+
+Diagram (summary):
+  b^y = x
+  y = log_b(x)
+  Example: 2^3 = 8
+  log_2(8) = 3
+  ln maps (0,∞) → (−∞,∞)
+  y
+  │    ╱ ln(x)
+  │   ╱
+  │  ╱
+  ─────┼───── x
+
+Checklist:
+  1. Logs are inverse of exponentials
+  2. Product rule enables log-sum tricks
+  3. ln is standard in calculus/ML
+  4. Domain strictly positive
+  5. Log-likelihood replaces products with sums`
         },
         {
           id: `log-rules`,
           title: `Logarithm Rules & Identities`,
-          content: `Key identities: log_b(x/y)=log_b(x)−log_b(y). log_b(1)=0. log_b(b)=1. **Change of base** log_b(x)=ln(x)/ln(b). ln(e^x)=x for all x; e^(ln(x))=x for x>0. Logarithmic differentiation handles products of functions. In information theory, −log(p) measures surprise in bits (base 2) or nats (base e). **Log-sum-exp** trick: ln(∑e^a_i)=max(a)+ln(∑e^(a_i−max)) prevents overflow in softmax denominators. Never take log of zero or negative numbers without complex extension.`,
+          content: `Key identities: log_b(x/y)=log_b(x)−log_b(y). log_b(1)=0. log_b(b)=1. **Change of base** log_b(x)=ln(x)/ln(b). ln(e^x)=x for all x; e^(ln(x))=x for x>0.
+
+Logarithmic differentiation handles products of functions. In information theory, −log(p) measures surprise in bits (base 2) or nats (base e).
+
+**Log-sum-exp** trick: ln(∑e^a_i)=max(a)+ln(∑e^(a_i−max)) prevents overflow in softmax denominators. Never take log of zero or negative numbers without complex extension.
+
+**Logarithm Rules & Identities** in the context of **Logarithms & Exponentials**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `log(x/y) = log(x) − log(y)`,
             `ln(e^x) = x`,
@@ -538,12 +838,44 @@ exp(ln(5)): 5.0`
 a = np.array([1000., 1001., 999.])
 stable = np.max(a) + np.log(np.sum(np.exp(a - np.max(a))))
 print("log-sum-exp:", stable)`,
-          output: `log-sum-exp: 1001.313...`
+          output: `log-sum-exp: 1001.313...`,
+          pseudoCode: `CONCEPT: Logarithm Rules & Identities
+
+Key relationships:
+  log(x/y) = log(x) − log(y)
+  ln(e^x) = x
+  e^(ln x) = x for x > 0
+  ln∑e^a = max(a) + ln∑e^(a−max(a))
+  −log(p) = self-information
+
+Diagram (summary):
+  log(ab) = log(a) + log(b)
+  log(a/b) = log(a) - log(b)
+  log(a^n) = n·log(a)
+  Softmax stability:
+  exp(1000) → overflow
+  subtract max before exp:
+  exp(a_i - max(a))
+  │
+  │  · · ·
+
+Checklist:
+  1. Product→sum prevents underflow
+  2. Log-sum-exp stabilizes softmax
+  3. Change of base for any log
+  4. −log p measures information content
+  5. Domain x>0 for real logs`
         },
         {
           id: `exp-models`,
           title: `Exponential Growth & Decay`,
-          content: `Exponential model N(t)=N₀·e^(kt): k>0 growth, k<0 decay. **Half-life** t_{1/2}=ln(2)/|k|. Continuous compounding A=Pe^(rt). Softmax converts logits z to probabilities p_i=e^z_i/∑e^z_j. Temperature scaling divides logits by T before softmax. Learning rate schedules often use exponential decay η_t=η₀·γ^t. Radioactive decay and cooling follow exponentials. Log-linear plots reveal exponential trends as straight lines. Doubling time = ln(2)/k for growth processes.`,
+          content: `Exponential model N(t)=N₀·e^(kt): k>0 growth, k<0 decay. **Half-life** t_{1/2}=ln(2)/|k|. Continuous compounding A=Pe^(rt).
+
+Softmax converts logits z to probabilities p_i=e^z_i/∑e^z_j. Temperature scaling divides logits by T before softmax. Learning rate schedules often use exponential decay η_t=η₀·γ^t.
+
+Radioactive decay and cooling follow exponentials. Log-linear plots reveal exponential trends as straight lines. Doubling time = ln(2)/k for growth processes.
+
+**Exponential Growth & Decay** in the context of **Logarithms & Exponentials**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `N(t) = N₀ · e^(kt)`,
             `Half-life: t_{1/2} = ln(2) / |k|`,
@@ -579,12 +911,45 @@ print("softmax:", np.round(p,3))
 t = np.linspace(0,5,6)
 print("decay:", np.round(np.exp(-0.5*t),3))`,
           output: `softmax: [0.09  0.245 0.665]
-decay: [1.    0.607 0.368 0.223 0.135 0.082]`
+decay: [1.    0.607 0.368 0.223 0.135 0.082]`,
+          pseudoCode: `CONCEPT: Exponential Growth & Decay
+
+Key relationships:
+  N(t) = N₀ · e^(kt)
+  Half-life: t_{1/2} = ln(2) / |k|
+  Softmax: p_i = e^z_i / ∑_j e^z_j
+  A = P · e^(rt)
+  η_t = η₀ · γ^t (LR decay)
+
+Diagram (summary):
+  N(t)=N₀·e^(kt)
+  k>0: growth ↗
+  ╱
+  ╱
+  ╱
+  ──────── t
+  k<0: decay ↘
+  \\
+  \\
+  ──────── t
+
+Checklist:
+  1. e is the natural growth base
+  2. Softmax uses exponentials normalized
+  3. Half-life from decay constant k
+  4. Log-scale linearizes exponentials
+  5. LR decay is exponential in steps`
         },
         {
           id: `log-ml`,
           title: `Logs in Machine Learning`,
-          content: `**Log-likelihood** ℓ=∑log p(x_i|θ) replaces ∏p for stability. **Cross-entropy** H(p,q)=−∑p log q measures divergence from true p. Binary CE: −[y log ŷ+(1−y)log(1−ŷ)]. Log loss penalizes confident wrong predictions heavily. **Logit** is inverse sigmoid: logit(p)=ln(p/(1−p)). BCEWithLogitsLoss fuses sigmoid+log for numeric safety. Perplexity exp(average NLL) evaluates language models. Always clip probabilities away from 0 and 1 before log to avoid −∞ gradients during backpropagation.`,
+          content: `**Log-likelihood** ℓ=∑log p(x_i|θ) replaces ∏p for stability. **Cross-entropy** H(p,q)=−∑p log q measures divergence from true p. Binary CE: −[y log ŷ+(1−y)log(1−ŷ)].
+
+Log loss penalizes confident wrong predictions heavily. **Logit** is inverse sigmoid: logit(p)=ln(p/(1−p)). BCEWithLogitsLoss fuses sigmoid+log for numeric safety.
+
+Perplexity exp(average NLL) evaluates language models. Always clip probabilities away from 0 and 1 before log to avoid −∞ gradients during backpropagation.
+
+**Logs in Machine Learning** in the context of **Logarithms & Exponentials**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `ℓ = ∑_i log p(x_i | θ)`,
             `H(p,q) = −∑ p(x) log q(x)`,
@@ -614,7 +979,32 @@ y = np.array([1.,0.,1.])
 yhat = np.clip(np.array([0.9,0.2,0.7]),1e-7,1-1e-7)
 bce = -(y*np.log(yhat)+(1-y)*np.log(1-yhat))
 print("BCE:", np.round(bce,3), "mean:", np.round(bce.mean(),3))`,
-          output: `BCE: [0.105 1.609 0.357] mean: 0.691`
+          output: `BCE: [0.105 1.609 0.357] mean: 0.691`,
+          pseudoCode: `CONCEPT: Logs in Machine Learning
+
+Key relationships:
+  ℓ = ∑_i log p(x_i | θ)
+  H(p,q) = −∑ p(x) log q(x)
+  BCE = −[y log ŷ + (1−y) log(1−ŷ)]
+  logit(p) = ln(p / (1−p))
+  Perplexity = exp(−(1/N)∑ log p)
+
+Diagram (summary):
+  Wrong confident prediction:
+  ŷ=0.99, y=0 → −log(0.01) ≈ 4.6
+  ŷ=0.6, y=0  → −log(0.4)  ≈ 0.9
+  Log penalizes hubris!
+  clip ŷ to [ε, 1−ε] before log
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Log turns products to sums
+  2. CE is standard classification loss
+  3. Logit links probs to linear models
+  4. Clip before log avoids −∞
+  5. Perplexity uses exp of avg NLL`
         }
       ],
       exercises: [
@@ -691,7 +1081,15 @@ print(np.round(p,4))`,
         {
           id: `seq-arith`,
           title: `Arithmetic Sequences`,
-          content: `An **arithmetic sequence** has constant difference d: a_n = a₁ + (n−1)d. Sum of first n terms: S_n = n/2 · (2a₁ + (n−1)d) = n/2 · (a₁ + a_n). Used in linear schedules (add constant each step) and evenly spaced grids. In gradient descent with fixed step, parameter updates form arithmetic progression in gradient direction magnitude when gradient is constant. Indexing from 0: a_n = a₀ + n·d. Finite differences of linear sequences are constant. Warmup schedules often increase learning rate arithmetically before cosine decay.`,
+          content: `An **arithmetic sequence** has constant difference d: a_n = a₁ + (n−1)d. Sum of first n terms: S_n = n/2 · (2a₁ + (n−1)d) = n/2 · (a₁ + a_n).
+
+Used in linear schedules (add constant each step) and evenly spaced grids. In gradient descent with fixed step, parameter updates form arithmetic progression in gradient direction magnitude when gradient is constant.
+
+Indexing from 0: a_n = a₀ + n·d. Finite differences of linear sequences are constant.
+
+Warmup schedules often increase learning rate arithmetically before cosine decay.
+
+**Arithmetic Sequences** in the context of **Sequences & Series**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `a_n = a₁ + (n−1)d`,
             `d = a_{n+1} − a_n`,
@@ -722,12 +1120,45 @@ a = a1 + np.arange(n)*d
 print("terms:", a)
 print("sum:", a.sum(), "formula:", n*(a1+a[-1])/2)`,
           output: `terms: [ 2  5  8 11 14]
-sum: 40 formula: 40.0`
+sum: 40 formula: 40.0`,
+          pseudoCode: `CONCEPT: Arithmetic Sequences
+
+Key relationships:
+  a_n = a₁ + (n−1)d
+  d = a_{n+1} − a_n
+  S_n = n(a₁ + a_n) / 2
+  S_n = n(2a₁ + (n−1)d) / 2
+  Linear schedule: x_n = x₀ + n·Δ
+
+Diagram (summary):
+  a_n = 2, 5, 8, 11, 14 ...
+  d = 3
+  n:  1   2   3   4   5
+  │   │   │   │   │
+  2   5   8  11  14
+  └──+3─+3─+3─+3──
+  S_5 = 5/2·(2+14) = 40
+  │
+
+Checklist:
+  1. Constant difference defines arithmetic
+  2. Sum formula is O(1) not loop
+  3. Linear LR warmup is arithmetic
+  4. Grid search steps often arithmetic
+  5. Index carefully: 0 vs 1 based`
         },
         {
           id: `seq-geom`,
           title: `Geometric Sequences`,
-          content: `**Geometric sequence**: a_n = a₁·r^(n−1) with ratio r. Sum (r≠1): S_n = a₁(1−r^n)/(1−r). Infinite sum converges if |r|<1: S_∞ = a₁/(1−r). Exponential decay weights in EMA: s_t = β·s_{t−1}+(1−β)·x_t resembles geometric weighting of past observations. Learning rate decay η·γ^t is geometric. Ratio test for series convergence compares |a_{n+1}/a_n|. Compound interest multiplies by (1+r) each period—geometric growth familiar from finance.`,
+          content: `**Geometric sequence**: a_n = a₁·r^(n−1) with ratio r. Sum (r≠1): S_n = a₁(1−r^n)/(1−r).
+
+Infinite sum converges if |r|<1: S_∞ = a₁/(1−r). Exponential decay weights in EMA: s_t = β·s_{t−1}+(1−β)·x_t resembles geometric weighting of past observations.
+
+Learning rate decay η·γ^t is geometric. Ratio test for series convergence compares |a_{n+1}/a_n|.
+
+Compound interest multiplies by (1+r) each period—geometric growth familiar from finance.
+
+**Geometric Sequences** in the context of **Sequences & Series**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `a_n = a₁ · r^(n−1)`,
             `S_n = a₁(1 − r^n) / (1 − r), r ≠ 1`,
@@ -758,12 +1189,42 @@ a = a1 * r**np.arange(n)
 print("terms:", a)
 print("sum:", a.sum(), "limit:", a1/(1-r))`,
           output: `terms: [8.  4.  2.  1.  0.5]
-sum: 15.5 limit: 16.0`
+sum: 15.5 limit: 16.0`,
+          pseudoCode: `CONCEPT: Geometric Sequences
+
+Key relationships:
+  a_n = a₁ · r^(n−1)
+  S_n = a₁(1 − r^n) / (1 − r), r ≠ 1
+  S_∞ = a₁ / (1 − r) if |r| < 1
+  EMA: s_t = β s_{t−1} + (1−β) x_t
+  LR: η_t = η₀ · γ^t
+
+Diagram (summary):
+  r = 1/2: 8, 4, 2, 1, 0.5 ...
+  each term × r
+  8 → 4 → 2 → 1 → 0.5
+  |r|<1: sum converges
+  S∞ = 8/(1-0.5) = 16
+  r>1: diverges
+  │
+
+Checklist:
+  1. Ratio r multiplies each term
+  2. |r|<1 needed for infinite sum
+  3. EMA uses geometric smoothing
+  4. LR geometric decay common
+  5. Geometric ↔ exponential link`
         },
         {
           id: `seq-series`,
           title: `Series & Sigma Notation`,
-          content: `**Series** ∑_{k=1}^n a_k sums sequence terms. **Telescoping** series cancel intermediate terms. **Harmonic** H_n=∑_{k=1}^n 1/k diverges slowly. **Geometric series** ∑r^k converges for |r|<1. Partial sums track training loss over epochs. Big-O analysis sums operation counts. Riemann sums approximate integrals as ∑f(x_i)Δx. Sigma notation compactly expresses batch loss (1/m)∑L_i. Rearranging absolutely convergent series is safe; conditional convergence requires caution in theoretical analysis.`,
+          content: `**Series** ∑_{k=1}^n a_k sums sequence terms. **Telescoping** series cancel intermediate terms. **Harmonic** H_n=∑_{k=1}^n 1/k diverges slowly.
+
+**Geometric series** ∑r^k converges for |r|<1. Partial sums track training loss over epochs. Big-O analysis sums operation counts.
+
+Riemann sums approximate integrals as ∑f(x_i)Δx. Sigma notation compactly expresses batch loss (1/m)∑L_i. Rearranging absolutely convergent series is safe; conditional convergence requires caution in theoretical analysis.
+
+**Series & Sigma Notation** in the context of **Sequences & Series**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `∑_{k=1}^n a_k = a_1 + a_2 + ... + a_n`,
             `∑_{k=0}^∞ r^k = 1/(1−r), |r|<1`,
@@ -794,12 +1255,44 @@ k = np.arange(1,6)
 print("sum k:", k.sum())
 print("geom:", np.sum(0.5**np.arange(10)))`,
           output: `sum k: 15
-geom: 1.998...`
+geom: 1.998...`,
+          pseudoCode: `CONCEPT: Series & Sigma Notation
+
+Key relationships:
+  ∑_{k=1}^n a_k = a_1 + a_2 + ... + a_n
+  ∑_{k=0}^∞ r^k = 1/(1−r), |r|<1
+  Batch loss: L = (1/m) ∑_{i=1}^m L_i
+  H_n = ∑_{k=1}^n 1/k ~ ln(n)
+  Riemann: ∫f ≈ ∑ f(x_i) Δx
+
+Diagram (summary):
+  ∑_{k=1}^5 k = 1+2+3+4+5 = 15
+  Sigma notation:
+  n
+  ___
+  \\   a_k
+  /__
+  k=1
+  Expands to explicit sum
+  Compact for proofs & code
+
+Checklist:
+  1. Sigma notation standard in papers
+  2. Partial sums monitor convergence
+  3. Batch loss is mean over sum
+  4. Geometric series closed form key
+  5. Harmonic series diverges`
         },
         {
           id: `seq-ml`,
           title: `Sequences in Optimization`,
-          content: `Iterative algorithms produce **parameter sequences** θ₀, θ₁, ... converging to θ*. **Fixed-point** iteration x_{n+1}=g(x_n). Cauchy criterion: terms get closer: |a_{n+1}−a_n|→0. Monotonic bounded sequences converge. Early stopping when validation loss sequence stops improving. Momentum accumulates velocity sequence. Cosine annealing schedules LR smoothly. Convergence rate: linear (error × c each step) vs quadratic (Newton). Plotting loss sequences diagnoses training health and guides hyperparameter tuning.`,
+          content: `Iterative algorithms produce **parameter sequences** θ₀, θ₁, ... converging to θ*. **Fixed-point** iteration x_{n+1}=g(x_n). Cauchy criterion: terms get closer: |a_{n+1}−a_n|→0.
+
+Monotonic bounded sequences converge. Early stopping when validation loss sequence stops improving. Momentum accumulates velocity sequence.
+
+Cosine annealing schedules LR smoothly. Convergence rate: linear (error × c each step) vs quadratic (Newton). Plotting loss sequences diagnoses training health and guides hyperparameter tuning.
+
+**Sequences in Optimization** in the context of **Sequences & Series**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `θ_{t+1} = θ_t − η ∇L(θ_t)`,
             `Momentum: v_t = β v_{t−1} + ∇L`,
@@ -828,7 +1321,33 @@ geom: 1.998...`
 loss = np.array([2.0,1.2,0.8,0.65,0.63,0.62,0.621])
 improve = np.diff(loss)
 print("improvements:", np.round(improve,3))`,
-          output: `improvements: [-0.8  -0.4  -0.15 -0.02  -0.01  0.001]`
+          output: `improvements: [-0.8  -0.4  -0.15 -0.02  -0.01  0.001]`,
+          pseudoCode: `CONCEPT: Sequences in Optimization
+
+Key relationships:
+  θ_{t+1} = θ_t − η ∇L(θ_t)
+  Momentum: v_t = β v_{t−1} + ∇L
+  Cosine LR: η_t = η_min + ½(η_max−η_min)(1+cos(πt/T))
+  Early stop when val loss plateaus
+  Fixed point: x* = g(x*)
+
+Diagram (summary):
+  Loss vs epoch:
+  L │
+  │╲
+  │ ╲___ plateau
+  │     ─────
+  └────────── epoch
+  Good: steady decrease
+  Bad: oscillate / diverge
+  │
+
+Checklist:
+  1. Monitor sequences not single points
+  2. Early stopping prevents overfit
+  3. Schedule LR along iteration index
+  4. Momentum smooths update sequence
+  5. Convergence needs patience + tuning`
         }
       ],
       exercises: [
@@ -906,7 +1425,15 @@ print(1/(1-0.5))`,
         {
           id: `cx-basics`,
           title: `Complex Number Basics`,
-          content: `A **complex number** z = a + bi where i² = −1. Real part Re(z)=a, imaginary Im(z)=b. **Complex plane** plots Re on x-axis, Im on y. Modulus |z| = √(a²+b²). Conjugate z̄ = a − bi satisfies z·z̄ = |z|². Division: multiply numerator and denominator by conjugate. Complex roots always exist: x²+1=0 has roots ±i. FFT uses complex exponentials to decompose signals. Some RNN stability analysis uses complex eigenvalues. Understanding the complex plane aids interpreting FFT bins and filter frequency responses.`,
+          content: `A **complex number** z = a + bi where i² = −1. Real part Re(z)=a, imaginary Im(z)=b. **Complex plane** plots Re on x-axis, Im on y.
+
+Modulus |z| = √(a²+b²). Conjugate z̄ = a − bi satisfies z·z̄ = |z|². Division: multiply numerator and denominator by conjugate.
+
+Complex roots always exist: x²+1=0 has roots ±i. FFT uses complex exponentials to decompose signals. Some RNN stability analysis uses complex eigenvalues.
+
+Understanding the complex plane aids interpreting FFT bins and filter frequency responses.
+
+**Complex Number Basics** in the context of **Complex Numbers**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `z = a + bi, i² = −1`,
             `|z| = √(a² + b²)`,
@@ -938,12 +1465,47 @@ print("conj:", np.conj(z))
 print("z*conj:", z*np.conj(z))`,
           output: `|z|: 5.0
 conj: (3-4j)
-z*conj: (25+0j)`
+z*conj: (25+0j)`,
+          pseudoCode: `CONCEPT: Complex Number Basics
+
+Key relationships:
+  z = a + bi, i² = −1
+  |z| = √(a² + b²)
+  z̄ = a − bi; z·z̄ = |z|²
+  Re(z) = a, Im(z) = b
+  Complex plane: (Re, Im) coordinates
+
+Diagram (summary):
+  Im
+  │    · z=a+bi
+  │   ╱|
+  │  ╱ |b
+  │ ╱  |
+  ─────┼────┼── Re
+  │    a
+  │
+  |z| = distance from origin
+  │
+
+Checklist:
+  1. i² = −1 extends real algebra
+  2. Modulus is Euclidean length
+  3. Conjugate flips imaginary sign
+  4. Complex plane aids visualization
+  5. FFT relies on complex exponentials`
         },
         {
           id: `cx-polar`,
           title: `Polar Form & Euler`,
-          content: `Polar form: z = r(cos θ + i sin θ) = r·e^(iθ) where r=|z| and θ=arg(z). **Euler formula**: e^(iθ) = cos θ + i sin θ. Multiplication adds angles: r₁e^(iθ₁)·r₂e^(iθ₂) = r₁r₂e^(i(θ₁+θ₂)). De Moivre: (cos θ+i sin θ)^n = cos(nθ)+i sin(nθ). Phasors represent sinusoids in signal processing. Unit circle maps θ to e^(iθ). np.exp(1j*theta) computes efficiently. Euler identity e^(iπ)+1=0 connects five fundamental constants in one equation.`,
+          content: `Polar form: z = r(cos θ + i sin θ) = r·e^(iθ) where r=|z| and θ=arg(z). **Euler formula**: e^(iθ) = cos θ + i sin θ.
+
+Multiplication adds angles: r₁e^(iθ₁)·r₂e^(iθ₂) = r₁r₂e^(i(θ₁+θ₂)). De Moivre: (cos θ+i sin θ)^n = cos(nθ)+i sin(nθ).
+
+Phasors represent sinusoids in signal processing. Unit circle maps θ to e^(iθ). np.exp(1j*theta) computes efficiently.
+
+Euler identity e^(iπ)+1=0 connects five fundamental constants in one equation.
+
+**Polar Form & Euler** in the context of **Complex Numbers**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `z = r·e^(iθ) = r(cos θ + i sin θ)`,
             `e^(iθ) = cos θ + i sin θ (Euler)`,
@@ -974,12 +1536,44 @@ z = np.exp(1j*theta)
 print("rect:", np.round(z,3))
 print("cos+isin:", np.round(np.cos(theta)+1j*np.sin(theta),3))`,
           output: `rect: (0.707+0.707j)
-cos+isin: (0.707+0.707j)`
+cos+isin: (0.707+0.707j)`,
+          pseudoCode: `CONCEPT: Polar Form & Euler
+
+Key relationships:
+  z = r·e^(iθ) = r(cos θ + i sin θ)
+  e^(iθ) = cos θ + i sin θ (Euler)
+  e^(iπ) + 1 = 0 (Euler identity)
+  arg(z) = θ = atan2(b, a)
+  |z₁·z₂| = |z₁|·|z₂|; arg(z₁z₂) = arg(z₁)+arg(z₂)
+
+Diagram (summary):
+  Unit circle:
+  Im
+  │  e^(iπ/2)=i
+  │ ╱
+  ─1───┼───1 Re
+  │ ╲
+  │  e^(−iπ/2)=−i
+  θ increases counterclockwise
+  r=1 on unit circle
+
+Checklist:
+  1. Polar form simplifies multiplication
+  2. Euler links exp and trig
+  3. arg uses atan2 for quadrant
+  4. e^(iπ)+1=0 famous identity
+  5. FFT = sum of e^(−i2πkn/N)`
         },
         {
           id: `cx-ops`,
           title: `Complex Operations`,
-          content: `Addition component-wise: (a+bi)+(c+di)=(a+c)+(b+d)i. Multiplication: (a+bi)(c+di)=(ac−bd)+(ad+bc)i. Division via conjugate rationalization. Powers use De Moivre or repeated multiplication. np.real, np.imag extract parts. Complex matrices appear in quantum ML analogies. Hermitian transpose A* combines conjugate and transpose. Eigenvalues of real matrices may be complex conjugate pairs. Stability analysis: |λ|<1 for discrete dynamical systems ensures bounded trajectories.`,
+          content: `Addition component-wise: (a+bi)+(c+di)=(a+c)+(b+d)i. Multiplication: (a+bi)(c+di)=(ac−bd)+(ad+bc)i. Division via conjugate rationalization.
+
+Powers use De Moivre or repeated multiplication. np.real, np.imag extract parts. Complex matrices appear in quantum ML analogies. Hermitian transpose A* combines conjugate and transpose.
+
+Eigenvalues of real matrices may be complex conjugate pairs. Stability analysis: |λ|<1 for discrete dynamical systems ensures bounded trajectories.
+
+**Complex Operations** in the context of **Complex Numbers**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `(a+bi)(c+di) = (ac−bd) + (ad+bc)i`,
             `z/w = z·w̄ / |w|²`,
@@ -1011,12 +1605,44 @@ print("div:", z1/z2)
 print("angles add:", np.angle(z1)+np.angle(z2), np.angle(z1*z2))`,
           output: `product: (2+2j)
 div: (0.5+0.5j)
-angles add: ...`
+angles add: ...`,
+          pseudoCode: `CONCEPT: Complex Operations
+
+Key relationships:
+  (a+bi)(c+di) = (ac−bd) + (ad+bc)i
+  z/w = z·w̄ / |w|²
+  e^(iθ₁)·e^(iθ₂) = e^(i(θ₁+θ₂))
+  A* = conjugate transpose
+  |λ|<1 ⇒ stable discrete dynamics
+
+Diagram (summary):
+  Multiplication in polar:
+  z1: r1∠θ1  ×  z2: r2∠θ2
+  ─────────────────────────
+  result: r1·r2 ∠ (θ1+θ2)
+  lengths multiply
+  angles add
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Multiply in polar by adding angles
+  2. Division subtracts angles
+  3. Hermitian for complex inner products
+  4. Complex eigenvalues come in conjugate pairs
+  5. Magnitude of eigenvalue = growth rate`
         },
         {
           id: `cx-fft`,
           title: `Complex Numbers in Signal & ML`,
-          content: `**Discrete Fourier Transform** X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N) decomposes signals into frequency components. Convolution theorem: FFT(domain) multiplies in frequency domain. Spectral analysis of time series uses |X_k|. Complex activations appear in specialized architectures. Phase arg(X_k) carries timing information. np.fft.fft returns complex array. Understanding e^(iωt) as rotating vector clarifies periodic patterns in sequential data and audio feature extraction pipelines.`,
+          content: `**Discrete Fourier Transform** X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N) decomposes signals into frequency components. Convolution theorem: FFT(domain) multiplies in frequency domain.
+
+Spectral analysis of time series uses |X_k|. Complex activations appear in specialized architectures.
+
+Phase arg(X_k) carries timing information. np.fft.fft returns complex array. Understanding e^(iωt) as rotating vector clarifies periodic patterns in sequential data and audio feature extraction pipelines.
+
+**Complex Numbers in Signal & ML** in the context of **Complex Numbers**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N)`,
             `F{f*g} = F{f}·F{g}`,
@@ -1046,7 +1672,32 @@ t = np.linspace(0,1,8,endpoint=False)
 x = np.cos(2*np.pi*2*t)
 X = np.fft.fft(x)
 print("|X|:", np.round(np.abs(X),2))`,
-          output: `|X|: shows peaks at frequency bins`
+          output: `|X|: shows peaks at frequency bins`,
+          pseudoCode: `CONCEPT: Complex Numbers in Signal & ML
+
+Key relationships:
+  X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N)
+  F{f*g} = F{f}·F{g}
+  |X_k| = magnitude at frequency k
+  arg(X_k) = phase at frequency k
+  Inverse FFT reconstructs signal from spectrum
+
+Diagram (summary):
+  Time domain     FFT     Frequency
+  ~~~~ waveform  ───→   |X(k)| bars
+  low k: slow trends
+  high k: fast oscillations
+  e^(−i2πkn/N) = rotate + sample
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. FFT is O(N log N) with fast algo
+  2. Complex exponentials are DFT basis
+  3. Magnitude spectrum common in features
+  4. Phase matters for reconstruction
+  5. Convolution via FFT saves compute`
         }
       ],
       exercises: [

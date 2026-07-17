@@ -11,7 +11,13 @@ export const module13Topics: Topic[] = [
         {
           id: `scaling`,
           title: `Scaling Methods`,
-          content: `StandardScaler: zero mean unit variance. MinMaxScaler: [0,1] range. RobustScaler: uses median/IQR, robust to outliers.`,
+          content: `StandardScaler: zero mean unit variance.
+
+MinMaxScaler: [0,1] range.
+
+RobustScaler: uses median/IQR, robust to outliers.
+
+**Scaling Methods** in the context of **Feature Scaling & Encoding**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.preprocessing import StandardScaler
 import numpy as np
 
@@ -23,12 +29,25 @@ print(scaled.flatten().round(2))`,
             `Tree models invariant to scaling`,
             `Fit scaler on train only`,
             `RobustScaler for outlier-heavy data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Scaling Methods
+
+Checklist:
+  1. Required for SVM, KNN, neural networks, PCA
+  2. Tree models invariant to scaling
+  3. Fit scaler on train only
+  4. RobustScaler for outlier-heavy data`
         },
         {
           id: `encoding`,
           title: `Categorical Encoding`,
-          content: `OneHotEncoder for nominal categories. OrdinalEncoder for ordered categories. Target encoding for high cardinality.`,
+          content: `OneHotEncoder for nominal categories.
+
+OrdinalEncoder for ordered categories.
+
+Target encoding for high cardinality.
+
+**Categorical Encoding** in the context of **Feature Scaling & Encoding**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 
@@ -40,23 +59,45 @@ print(enc)`,
             `drop="first" avoids multicollinearity`,
             `Target encoding risks leakage — use CV`,
             `Embedding layers for high cardinality in DL`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Categorical Encoding
+
+Checklist:
+  1. One-hot for nominal — no ordinal assumption
+  2. drop="first" avoids multicollinearity
+  3. Target encoding risks leakage — use CV
+  4. Embedding layers for high cardinality in DL`
         },
         {
           id: `binning`,
           title: `Binning & Discretization`,
-          content: `KBinsDiscretizer converts continuous to ordinal bins. Can capture non-linear relationships for linear models.`,
+          content: `KBinsDiscretizer converts continuous to ordinal bins.
+
+Can capture non-linear relationships for linear models.
+
+**Binning & Discretization** in the context of **Feature Scaling & Encoding**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Equal-width vs equal-frequency binning`,
             `Can improve linear model performance`,
             `Risk of losing information`,
             `Domain-driven bin boundaries often best`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Binning & Discretization
+
+Checklist:
+  1. Equal-width vs equal-frequency binning
+  2. Can improve linear model performance
+  3. Risk of losing information
+  4. Domain-driven bin boundaries often best`
         },
         {
           id: `datetime-fe`,
           title: `Datetime Feature Engineering`,
-          content: `Extract hour, day, month, is_weekend, cyclical encoding (sin/cos). Critical for time series and transactional data.`,
+          content: `Extract hour, day, month, is_weekend, cyclical encoding (sin/cos).
+
+Critical for time series and transactional data.
+
+**Datetime Feature Engineering** in the context of **Feature Scaling & Encoding**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -69,7 +110,14 @@ print(df.iloc[0].round(3).tolist())`,
             `Hour 23 and hour 0 are close with sin/cos`,
             `Extract domain-relevant time features`,
             `Lag features capture temporal dependencies`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Datetime Feature Engineering
+
+Checklist:
+  1. Cyclical encoding preserves continuity at boundaries
+  2. Hour 23 and hour 0 are close with sin/cos
+  3. Extract domain-relevant time features
+  4. Lag features capture temporal dependencies`
         }
       ],
       exercises: [
@@ -137,7 +185,11 @@ print(OneHotEncoder(sparse_output=False).fit_transform([["A"],["B"],["A"]]))`,
         {
           id: `filter`,
           title: `Filter Methods`,
-          content: `Select features by statistical test independent of model. SelectKBest, chi2, mutual_info_classif, f_classif.`,
+          content: `Select features by statistical test independent of model.
+
+SelectKBest, chi2, mutual_info_classif, f_classif.
+
+**Filter Methods** in the context of **Feature Selection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.feature_selection import SelectKBest, f_classif
 from sklearn.datasets import load_iris
 
@@ -150,12 +202,21 @@ print(X_selected.shape)`,
             `Chi2 requires non-negative features`,
             `Mutual information captures non-linear relationships`,
             `Correlation filter removes redundant features`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Filter Methods
+
+Checklist:
+  1. Fast — no model training needed
+  2. Chi2 requires non-negative features
+  3. Mutual information captures non-linear relationships
+  4. Correlation filter removes redundant features`
         },
         {
           id: `wrapper`,
           title: `Wrapper Methods`,
-          content: `RFE (Recursive Feature Elimination) trains model and removes least important features iteratively.`,
+          content: `RFE (Recursive Feature Elimination) trains model and removes least important features iteratively.
+
+**Wrapper Methods** in the context of **Feature Selection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -168,29 +229,60 @@ print(rfe.support_)`,
             `RFE computationally expensive`,
             `Finds optimal subset for specific model`,
             `RFECV uses cross-validation for k`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Wrapper Methods
+
+Checklist:
+  1. Model-dependent selection
+  2. RFE computationally expensive
+  3. Finds optimal subset for specific model
+  4. RFECV uses cross-validation for k`
         },
         {
           id: `embedded`,
           title: `Embedded Methods`,
-          content: `Feature selection during model training. Lasso zeroes coefficients. Tree feature_importances_.`,
+          content: `Feature selection during model training.
+
+Lasso zeroes coefficients.
+
+Tree feature_importances_.
+
+**Embedded Methods** in the context of **Feature Selection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `L1 regularization built-in feature selection`,
             `Tree importance from split gain`,
             `SelectFromModel wraps any importance-based selector`,
             `Embedded methods most practical for production`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Embedded Methods
+
+Checklist:
+  1. L1 regularization built-in feature selection
+  2. Tree importance from split gain
+  3. SelectFromModel wraps any importance-based selector
+  4. Embedded methods most practical for production`
         },
         {
           id: `importance`,
           title: `Permutation Importance`,
-          content: `Shuffle feature values and measure performance drop. Model-agnostic, detects features model relies on.`,
+          content: `Shuffle feature values and measure performance drop.
+
+Model-agnostic, detects features model relies on.
+
+**Permutation Importance** in the context of **Feature Selection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `More reliable than tree default importance`,
             `Computes drop in validation metric`,
             `Detects features used for splits but not predictive`,
             `sklearn.inspection.permutation_importance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Permutation Importance
+
+Checklist:
+  1. More reliable than tree default importance
+  2. Computes drop in validation metric
+  3. Detects features used for splits but not predictive
+  4. sklearn.inspection.permutation_importance`
         }
       ],
       exercises: [
@@ -261,7 +353,11 @@ print(sum(RFE(LogisticRegression(max_iter=200), n_features_to_select=1).fit(X, y
         {
           id: `grid`,
           title: `Grid Search`,
-          content: `Exhaustive search over parameter grid. GridSearchCV with cv for robust evaluation.`,
+          content: `Exhaustive search over parameter grid.
+
+GridSearchCV with cv for robust evaluation.
+
+**Grid Search** in the context of **Hyperparameter Tuning**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -275,40 +371,84 @@ print(grid.best_score_.round(3))`,
             `Define sensible search ranges`,
             `Parallelize with n_jobs=-1`,
             `Refit best model on full training data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Grid Search
+
+Checklist:
+  1. Exhaustive — expensive for large grids
+  2. Define sensible search ranges
+  3. Parallelize with n_jobs=-1
+  4. Refit best model on full training data`
         },
         {
           id: `random`,
           title: `Random Search`,
-          content: `RandomizedSearchCV samples from distributions. Often finds good params faster than grid search (Bergstra & Bengio, 2012).`,
+          content: `RandomizedSearchCV samples from distributions.
+
+Often finds good params faster than grid search (Bergstra & Bengio, 2012).
+
+**Random Search** in the context of **Hyperparameter Tuning**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Sample from log-uniform for learning rates`,
             `n_iter controls number of trials`,
             `More efficient exploration of large spaces`,
             `Optuna/Hyperopt for advanced optimization`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Random Search
+
+Checklist:
+  1. Sample from log-uniform for learning rates
+  2. n_iter controls number of trials
+  3. More efficient exploration of large spaces
+  4. Optuna/Hyperopt for advanced optimization`
         },
         {
           id: `optuna`,
           title: `Bayesian Optimization`,
-          content: `Optuna, Hyperopt use past trials to guide search. TPE sampler models good regions. State-of-the-art for DL hyperparameter tuning.`,
+          content: `Optuna, Hyperopt use past trials to guide search.
+
+TPE sampler models good regions.
+
+State-of-the-art for DL hyperparameter tuning.
+
+**Bayesian Optimization** in the context of **Hyperparameter Tuning**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Bayesian methods learn from previous trials`,
             `Optuna easy API with pruning`,
             `Define objective function returning metric`,
             `Used extensively in DL and Kaggle`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Bayesian Optimization
+
+Checklist:
+  1. Bayesian methods learn from previous trials
+  2. Optuna easy API with pruning
+  3. Define objective function returning metric
+  4. Used extensively in DL and Kaggle`
         },
         {
           id: `avoid-leakage`,
           title: `Avoiding Tuning Leakage`,
-          content: `Never peek at test set during tuning. Use nested CV or separate validation set. Report final metric on held-out test only once.`,
+          content: `Never peek at test set during tuning.
+
+Use nested CV or separate validation set.
+
+Report final metric on held-out test only once.
+
+**Avoiding Tuning Leakage** in the context of **Hyperparameter Tuning**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Test set touched only once at end`,
             `Validation set or CV for all tuning decisions`,
             `Data leakage inflates reported performance`,
             `Document all tuning choices for reproducibility`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Avoiding Tuning Leakage
+
+Checklist:
+  1. Test set touched only once at end
+  2. Validation set or CV for all tuning decisions
+  3. Data leakage inflates reported performance
+  4. Document all tuning choices for reproducibility`
         }
       ],
       exercises: [
@@ -377,18 +517,35 @@ print(g.best_params_["n_estimators"])`,
         {
           id: `tradeoff`,
           title: `The Tradeoff`,
-          content: `Bias: error from wrong assumptions (underfitting). Variance: error from sensitivity to training data (overfitting). Total error = bias² + variance + irreducible noise.`,
+          content: `Bias: error from wrong assumptions (underfitting).
+
+Variance: error from sensitivity to training data (overfitting).
+
+Total error = bias² + variance + irreducible noise.
+
+**The Tradeoff** in the context of **Bias-Variance Tradeoff**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Simple models: high bias, low variance`,
             `Complex models: low bias, high variance`,
             `Goal: minimize total error not just training error`,
             `Irreducible error from inherent noise in data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: The Tradeoff
+
+Checklist:
+  1. Simple models: high bias, low variance
+  2. Complex models: low bias, high variance
+  3. Goal: minimize total error not just training error
+  4. Irreducible error from inherent noise in data`
         },
         {
           id: `learning-curves`,
           title: `Learning Curves`,
-          content: `Plot train/validation score vs training set size. High bias: both low. High variance: large gap between train and val.`,
+          content: `Plot train/validation score vs training set size.
+
+High variance: large gap between train and val.
+
+**Learning Curves** in the context of **Bias-Variance Tradeoff**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.model_selection import learning_curve
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
@@ -403,29 +560,56 @@ print(train_scores.mean(axis=1).round(3))`,
             `Converging curves suggest more data wont help (bias)`,
             `Diverging curves benefit from more data`,
             `validation_curve for hyperparameter diagnosis`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Learning Curves
+
+Checklist:
+  1. Learning curves diagnose bias/variance
+  2. Converging curves suggest more data wont help (bias)
+  3. Diverging curves benefit from more data
+  4. validation_curve for hyperparameter diagnosis`
         },
         {
           id: `regularization-bv`,
           title: `Regularization Effects`,
-          content: `Regularization increases bias slightly but reduces variance dramatically. Sweet spot via cross-validation.`,
+          content: `Regularization increases bias slightly but reduces variance dramatically.
+
+Sweet spot via cross-validation.
+
+**Regularization Effects** in the context of **Bias-Variance Tradeoff**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `L2 ridge increases bias, reduces variance`,
             `Early stopping is implicit regularization`,
             `Dropout reduces co-adaptation (variance)`,
             `Ensemble methods reduce variance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Regularization Effects
+
+Checklist:
+  1. L2 ridge increases bias, reduces variance
+  2. Early stopping is implicit regularization
+  3. Dropout reduces co-adaptation (variance)
+  4. Ensemble methods reduce variance`
         },
         {
           id: `double-descent`,
           title: `Double Descent`,
-          content: `Modern overparameterized models can exhibit double descent — error decreases, increases, then decreases again beyond interpolation threshold.`,
+          content: `Modern overparameterized models can exhibit double descent — error decreases, increases, then decreases again beyond interpolation threshold.
+
+**Double Descent** in the context of **Bias-Variance Tradeoff**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Classical U-curve bias-variance tradeoff`,
             `Double descent in overparameterized regime`,
             `Explains why huge models can generalize`,
             `Active research area in ML theory`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Double Descent
+
+Checklist:
+  1. Classical U-curve bias-variance tradeoff
+  2. Double descent in overparameterized regime
+  3. Explains why huge models can generalize
+  4. Active research area in ML theory`
         }
       ],
       exercises: [
@@ -490,7 +674,9 @@ print(diagnosis)`,
         {
           id: `shap`,
           title: `SHAP Values`,
-          content: `SHapley Additive exPlanations: fair allocation of prediction to each feature based on game theory. shap.TreeExplainer for tree models.`,
+          content: `SHapley Additive exPlanations: fair allocation of prediction to each feature based on game theory. shap.TreeExplainer for tree models.
+
+**SHAP Values** in the context of **Model Interpretability (SHAP, LIME)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `import shap
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -505,40 +691,80 @@ print(len(shap_values))`,
             `Consistent and locally accurate explanations`,
             `TreeExplainer exact and fast for trees`,
             `Summary plots show global feature importance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SHAP Values
+
+Checklist:
+  1. SHAP values sum to prediction minus base rate
+  2. Consistent and locally accurate explanations
+  3. TreeExplainer exact and fast for trees
+  4. Summary plots show global feature importance`
         },
         {
           id: `lime`,
           title: `LIME`,
-          content: `Local Interpretable Model-agnostic Explanations. Perturb input, observe prediction changes, fit simple local model.`,
+          content: `Local Interpretable Model-agnostic Explanations.
+
+Perturb input, observe prediction changes, fit simple local model.
+
+**LIME** in the context of **Model Interpretability (SHAP, LIME)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Model-agnostic — works on any black box`,
             `Local fidelity not global accuracy`,
             `Tabular, text, and image explanations`,
             `LIME can be unstable across runs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LIME
+
+Checklist:
+  1. Model-agnostic — works on any black box
+  2. Local fidelity not global accuracy
+  3. Tabular, text, and image explanations
+  4. LIME can be unstable across runs`
         },
         {
           id: `global`,
           title: `Global vs Local Interpretability`,
-          content: `Global: overall feature importance (permutation, SHAP summary). Local: why this specific prediction (SHAP force plot, LIME).`,
+          content: `Global: overall feature importance (permutation, SHAP summary).
+
+Local: why this specific prediction (SHAP force plot, LIME).
+
+**Global vs Local Interpretability** in the context of **Model Interpretability (SHAP, LIME)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Global for model understanding and feature selection`,
             `Local for individual decision audit`,
             `Partial dependence plots show marginal effects`,
             `ICE plots show heterogeneous effects`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Global vs Local Interpretability
+
+Checklist:
+  1. Global for model understanding and feature selection
+  2. Local for individual decision audit
+  3. Partial dependence plots show marginal effects
+  4. ICE plots show heterogeneous effects`
         },
         {
           id: `fairness`,
           title: `Interpretability for Fairness`,
-          content: `Explainability required for regulated domains. Detect proxy discrimination through feature importance analysis.`,
+          content: `Explainability required for regulated domains.
+
+Detect proxy discrimination through feature importance analysis.
+
+**Interpretability for Fairness** in the context of **Model Interpretability (SHAP, LIME)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `GDPR right to explanation in EU`,
             `Check if protected attributes drive predictions`,
             `Proxy variables encode protected information`,
             `Interpretability necessary not sufficient for fairness`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Interpretability for Fairness
+
+Checklist:
+  1. GDPR right to explanation in EU
+  2. Check if protected attributes drive predictions
+  3. Proxy variables encode protected information
+  4. Interpretability necessary not sufficient for fairness`
         }
       ],
       exercises: [

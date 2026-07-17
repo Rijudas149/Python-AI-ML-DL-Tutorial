@@ -11,7 +11,13 @@ export const module14Topics: Topic[] = [
         {
           id: `perceptron`,
           title: `The Perceptron`,
-          content: `Single neuron: output = activation(w·x + b). Stacked layers create MLP (Multi-Layer Perceptron). Universal function approximator with enough hidden units.`,
+          content: `Single neuron: output = activation(w·x + b).
+
+Stacked layers create MLP (Multi-Layer Perceptron).
+
+Universal function approximator with enough hidden units.
+
+**The Perceptron** in the context of **Neural Network Basics**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def forward(X, W, b, activation=np.tanh):
@@ -25,12 +31,25 @@ print(forward(X, W, np.array([0.1])))`,
             `Hidden layers learn hierarchical features`,
             `Width and depth trade off for capacity`,
             `Start simple then increase complexity`
-          ]
+          ],
+          pseudoCode: `CONCEPT: The Perceptron
+
+Checklist:
+  1. Neural network = composed non-linear transformations
+  2. Hidden layers learn hierarchical features
+  3. Width and depth trade off for capacity
+  4. Start simple then increase complexity`
         },
         {
           id: `mlp`,
           title: `Multi-Layer Perceptron`,
-          content: `Input layer → hidden layer(s) → output layer. Each layer: linear transform + non-linear activation. Depth enables hierarchical feature learning.`,
+          content: `Input layer → hidden layer(s) → output layer.
+
+Each layer: linear transform + non-linear activation.
+
+Depth enables hierarchical feature learning.
+
+**Multi-Layer Perceptron** in the context of **Neural Network Basics**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           pseudoCode: `FOR each layer L:
     z = W_L @ a_{L-1} + b_L
     a_L = activation(z)`,
@@ -44,7 +63,11 @@ print(forward(X, W, np.array([0.1])))`,
         {
           id: `forward`,
           title: `Forward Propagation`,
-          content: `Pass input through network layer by layer to produce prediction. Matrix operations enable batch processing.`,
+          content: `Pass input through network layer by layer to produce prediction.
+
+Matrix operations enable batch processing.
+
+**Forward Propagation** in the context of **Neural Network Basics**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -62,18 +85,36 @@ print(out.shape)`,
             `Output layer produces logits for classification`,
             `Softmax applied to logits for probabilities`,
             `Forward pass is inference/prediction`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Forward Propagation
+
+Checklist:
+  1. Batch dimension enables parallel GPU computation
+  2. Output layer produces logits for classification
+  3. Softmax applied to logits for probabilities
+  4. Forward pass is inference/prediction`
         },
         {
           id: `capacity`,
           title: `Network Capacity`,
-          content: `More parameters = more capacity to fit complex functions. Risk overfitting with too much capacity on small data.`,
+          content: `More parameters = more capacity to fit complex functions.
+
+Risk overfitting with too much capacity on small data.
+
+**Network Capacity** in the context of **Neural Network Basics**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Parameters = weights + biases count`,
             `Capacity must match data complexity`,
             `Regularization controls effective capacity`,
             `Modern networks vastly overparameterized yet generalize`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Network Capacity
+
+Checklist:
+  1. Parameters = weights + biases count
+  2. Capacity must match data complexity
+  3. Regularization controls effective capacity
+  4. Modern networks vastly overparameterized yet generalize`
         }
       ],
       exercises: [
@@ -139,7 +180,11 @@ print(relu(np.array([-1, 0, 2])))`,
         {
           id: `relu`,
           title: `ReLU & Variants`,
-          content: `ReLU: max(0, x). Default for hidden layers. Leaky ReLU, PReLU, ELU address dying ReLU problem.`,
+          content: `Default for hidden layers.
+
+Leaky ReLU, PReLU, ELU address dying ReLU problem.
+
+**ReLU & Variants** in the context of **Activation Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -155,12 +200,25 @@ print(leaky_relu(z))`,
             `Dying ReLU: neuron always outputs 0`,
             `Leaky ReLU keeps small gradient for negatives`,
             `GELU preferred in transformers`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ReLU & Variants
+
+Checklist:
+  1. ReLU sparse activation — efficient computation
+  2. Dying ReLU: neuron always outputs 0
+  3. Leaky ReLU keeps small gradient for negatives
+  4. GELU preferred in transformers`
         },
         {
           id: `sigmoid-tanh`,
           title: `Sigmoid & Tanh`,
-          content: `Sigmoid: (0,1) for binary output. Tanh: (-1,1) zero-centered. Vanishing gradient in deep networks limits hidden layer use.`,
+          content: `Sigmoid: (0,1) for binary output.
+
+Tanh: (-1,1) zero-centered.
+
+Vanishing gradient in deep networks limits hidden layer use.
+
+**Sigmoid & Tanh** in the context of **Activation Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def sigmoid(z): return 1 / (1 + np.exp(-z))
@@ -175,12 +233,23 @@ print(tanh(np.array([0, 2, -2])).round(3))`,
             `Tanh zero-centered — faster convergence than sigmoid`,
             `Both saturate causing vanishing gradients`,
             `Avoid in hidden layers of deep networks`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Sigmoid & Tanh
+
+Checklist:
+  1. Sigmoid for binary classification output layer
+  2. Tanh zero-centered — faster convergence than sigmoid
+  3. Both saturate causing vanishing gradients
+  4. Avoid in hidden layers of deep networks`
         },
         {
           id: `softmax`,
           title: `Softmax`,
-          content: `Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ. Outputs sum to 1. Combined with cross-entropy loss.`,
+          content: `Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.
+
+Combined with cross-entropy loss.
+
+**Softmax** in the context of **Activation Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def softmax(z):
@@ -194,18 +263,38 @@ print(softmax(np.array([2.0, 1.0, 0.1])).round(3))`,
             `Output layer only — not hidden layers`,
             `Cross-entropy + softmax gradient simplifies to p - y`,
             `Temperature scaling adjusts confidence`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Softmax
+
+Checklist:
+  1. Subtract max for numerical stability
+  2. Output layer only — not hidden layers
+  3. Cross-entropy + softmax gradient simplifies to p - y
+  4. Temperature scaling adjusts confidence`
         },
         {
           id: `modern`,
           title: `Modern Activations`,
-          content: `GELU (Gaussian Error Linear Unit) in BERT/GPT. Swish/SiLU: x·sigmoid(x). Smooth activations help deep transformers.`,
+          content: `GELU (Gaussian Error Linear Unit) in BERT/GPT.
+
+Swish/SiLU: x·sigmoid(x).
+
+Smooth activations help deep transformers.
+
+**Modern Activations** in the context of **Activation Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `GELU: x * Φ(x) where Φ is CDF of standard normal`,
             `Swish smooth near zero unlike ReLU`,
             `Activation choice less critical with good initialization`,
             `Match activation to architecture (GELU for transformers)`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Modern Activations
+
+Checklist:
+  1. GELU: x * Φ(x) where Φ is CDF of standard normal
+  2. Swish smooth near zero unlike ReLU
+  3. Activation choice less critical with good initialization
+  4. Match activation to architecture (GELU for transformers)`
         }
       ],
       exercises: [
@@ -276,7 +365,9 @@ print(round(x / (1 + np.exp(-1.702 * x)), 4))`,
         {
           id: `mse`,
           title: `MSE & MAE Loss`,
-          content: `MSE: mean((y-ŷ)²). Differentiable, penalizes large errors. MAE: mean(|y-ŷ|). Robust to outliers.`,
+          content: `Differentiable, penalizes large errors.
+
+**MSE & MAE Loss** in the context of **Loss Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def mse_loss(y_true, y_pred):
@@ -289,12 +380,25 @@ print(mse_loss(np.array([1, 2, 3]), np.array([1.1, 2.2, 2.8])))`,
             `MAE when outliers are problematic`,
             `Huber loss combines MSE and MAE benefits`,
             `Loss choice must match task and output activation`
-          ]
+          ],
+          pseudoCode: `CONCEPT: MSE & MAE Loss
+
+Checklist:
+  1. MSE standard for regression
+  2. MAE when outliers are problematic
+  3. Huber loss combines MSE and MAE benefits
+  4. Loss choice must match task and output activation`
         },
         {
           id: `ce`,
           title: `Cross-Entropy Loss`,
-          content: `Binary: -[y log(ŷ) + (1-y)log(1-ŷ)]. Categorical: -Σ yᵢ log(ŷᵢ). Standard for classification.`,
+          content: `Binary: -[y log(ŷ) + (1-y)log(1-ŷ)].
+
+Categorical: -Σ yᵢ log(ŷᵢ).
+
+Standard for classification.
+
+**Cross-Entropy Loss** in the context of **Loss Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -308,29 +412,60 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
             `Label smoothing prevents overconfidence`,
             `Focal loss addresses class imbalance`,
             `Cross-entropy = negative log-likelihood`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Cross-Entropy Loss
+
+Checklist:
+  1. Use log-loss with sigmoid/softmax outputs
+  2. Label smoothing prevents overconfidence
+  3. Focal loss addresses class imbalance
+  4. Cross-entropy = negative log-likelihood`
         },
         {
           id: `multi-task`,
           title: `Multi-Task & Custom Losses`,
-          content: `Combine losses with weights: L = α·L₁ + β·L₂. Custom losses for ranking, contrastive learning, GANs.`,
+          content: `Combine losses with weights: L = α·L₁ + β·L₂.
+
+Custom losses for ranking, contrastive learning, GANs.
+
+**Multi-Task & Custom Losses** in the context of **Loss Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Weight task losses by importance or uncertainty`,
             `Contrastive loss for embeddings (SimCLR, triplet)`,
             `Perceptual loss for image generation`,
             `Design loss to match evaluation metric when possible`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Multi-Task & Custom Losses
+
+Checklist:
+  1. Weight task losses by importance or uncertainty
+  2. Contrastive loss for embeddings (SimCLR, triplet)
+  3. Perceptual loss for image generation
+  4. Design loss to match evaluation metric when possible`
         },
         {
           id: `monitor`,
           title: `Monitoring Loss`,
-          content: `Track train and validation loss. Divergence indicates overfitting. Plateau suggests learning rate adjustment needed.`,
+          content: `Track train and validation loss.
+
+Divergence indicates overfitting.
+
+Plateau suggests learning rate adjustment needed.
+
+**Monitoring Loss** in the context of **Loss Functions**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Loss should decrease during training`,
             `Val loss increasing while train decreases = overfit`,
             `ReduceLROnPlateau on val loss`,
             `Early stopping saves best val loss checkpoint`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Monitoring Loss
+
+Checklist:
+  1. Loss should decrease during training
+  2. Val loss increasing while train decreases = overfit
+  3. ReduceLROnPlateau on val loss
+  4. Early stopping saves best val loss checkpoint`
         }
       ],
       exercises: [
@@ -396,7 +531,13 @@ print(-np.log(1 - 0.1))`,
         {
           id: `concept`,
           title: `Backpropagation Concept`,
-          content: `Forward pass computes output and loss. Backward pass applies chain rule from loss to each parameter. Efficient via dynamic programming on computational graph.`,
+          content: `Forward pass computes output and loss.
+
+Backward pass applies chain rule from loss to each parameter.
+
+Efficient via dynamic programming on computational graph.
+
+**Backpropagation Concept** in the context of **Backpropagation**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           pseudoCode: `FOR layer L from output to input:
     dL/dz_L = upstream_gradient * activation_derivative
     dL/dW_L = dL/dz_L @ a_{L-1}^T
@@ -412,7 +553,11 @@ print(-np.log(1 - 0.1))`,
         {
           id: `manual`,
           title: `Manual Backprop Example`,
-          content: `2-layer network backprop by hand builds intuition. Matrix calculus for weight gradients.`,
+          content: `2-layer network backprop by hand builds intuition.
+
+Matrix calculus for weight gradients.
+
+**Manual Backprop Example** in the context of **Backpropagation**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 # Simple gradient descent on f(w) = w^2
@@ -428,29 +573,56 @@ print(round(w, 6))`,
             `Update in negative gradient direction`,
             `Manual backprop verifies autograd results`,
             `Vanishing gradient in deep sigmoid networks`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Manual Backprop Example
+
+Checklist:
+  1. Gradient points direction of steepest increase
+  2. Update in negative gradient direction
+  3. Manual backprop verifies autograd results
+  4. Vanishing gradient in deep sigmoid networks`
         },
         {
           id: `autograd`,
           title: `Automatic Differentiation`,
-          content: `PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.`,
+          content: `PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.
+
+**Automatic Differentiation** in the context of **Backpropagation**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Autograd builds computational graph dynamically`,
             `tensor.backward() triggers reverse pass`,
             `requires_grad=True tracks gradients`,
             `No need for manual gradient derivation in practice`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Automatic Differentiation
+
+Checklist:
+  1. Autograd builds computational graph dynamically
+  2. tensor.backward() triggers reverse pass
+  3. requires_grad=True tracks gradients
+  4. No need for manual gradient derivation in practice`
         },
         {
           id: `vanishing`,
           title: `Vanishing & Exploding Gradients`,
-          content: `Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially. Solutions: ReLU, residual connections, gradient clipping, proper initialization.`,
+          content: `Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially.
+
+Solutions: ReLU, residual connections, gradient clipping, proper initialization.
+
+**Vanishing & Exploding Gradients** in the context of **Backpropagation**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Vanishing: gradients near zero in early layers`,
             `Exploding: gradients overflow — clip to max norm`,
             `Batch normalization stabilizes gradients`,
             `ResNet skip connections enable very deep networks`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Vanishing & Exploding Gradients
+
+Checklist:
+  1. Vanishing: gradients near zero in early layers
+  2. Exploding: gradients overflow — clip to max norm
+  3. Batch normalization stabilizes gradients
+  4. ResNet skip connections enable very deep networks`
         }
       ],
       exercises: [
@@ -518,7 +690,13 @@ print(round(x, 2))`,
         {
           id: `init`,
           title: `Weight Initialization`,
-          content: `Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid. He/Kaiming: scale by √(2/n_in) for ReLU. Bad init slows or prevents convergence.`,
+          content: `Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid.
+
+He/Kaiming: scale by √(2/n_in) for ReLU.
+
+Bad init slows or prevents convergence.
+
+**Weight Initialization** in the context of **Weight Initialization & Regularization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 n_in, n_out = 256, 128
@@ -530,12 +708,25 @@ print(W.std().round(4))`,
             `Xavier for sigmoid/tanh activations`,
             `He/Kaiming for ReLU family`,
             `PyTorch nn.Linear uses Kaiming by default`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Weight Initialization
+
+Checklist:
+  1. Zero init breaks symmetry badly
+  2. Xavier for sigmoid/tanh activations
+  3. He/Kaiming for ReLU family
+  4. PyTorch nn.Linear uses Kaiming by default`
         },
         {
           id: `dropout`,
           title: `Dropout`,
-          content: `Randomly zero neurons during training with probability p. Prevents co-adaptation. Scale by 1/(1-p) at inference or use inverted dropout.`,
+          content: `Randomly zero neurons during training with probability p.
+
+Prevents co-adaptation.
+
+Scale by 1/(1-p) at inference or use inverted dropout.
+
+**Dropout** in the context of **Weight Initialization & Regularization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import numpy as np
 
 def dropout(x, p=0.5, training=True):
@@ -552,29 +743,60 @@ print(dropout(x, p=0.5).sum())`,
             `Only active during training`,
             `MC dropout for uncertainty estimation`,
             `Less needed with batch norm in CNNs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Dropout
+
+Checklist:
+  1. Typical p=0.5 for hidden layers, 0.2 for input
+  2. Only active during training
+  3. MC dropout for uncertainty estimation
+  4. Less needed with batch norm in CNNs`
         },
         {
           id: `batchnorm`,
           title: `Batch Normalization`,
-          content: `Normalize layer inputs across batch: (x-μ)/σ. Learnable scale γ and shift β. Stabilizes training, allows higher learning rates.`,
+          content: `Normalize layer inputs across batch: (x-μ)/σ.
+
+Learnable scale γ and shift β.
+
+Stabilizes training, allows higher learning rates.
+
+**Batch Normalization** in the context of **Weight Initialization & Regularization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Normalizes intermediate activations`,
             `Acts as regularizer`,
             `Different behavior train vs eval — model.eval()`,
             `LayerNorm alternative for transformers/RNNs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Batch Normalization
+
+Checklist:
+  1. Normalizes intermediate activations
+  2. Acts as regularizer
+  3. Different behavior train vs eval — model.eval()
+  4. LayerNorm alternative for transformers/RNNs`
         },
         {
           id: `early-stop`,
           title: `Early Stopping & Data Augmentation`,
-          content: `Stop training when validation loss stops improving. Data augmentation artificially expands training set.`,
+          content: `Stop training when validation loss stops improving.
+
+Data augmentation artificially expands training set.
+
+**Early Stopping & Data Augmentation** in the context of **Weight Initialization & Regularization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Early stopping simplest regularization`,
             `Save checkpoint at best val loss`,
             `Augmentation: rotation, flip, crop for images`,
             `Mixup/CutMix advanced augmentation for classification`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Early Stopping & Data Augmentation
+
+Checklist:
+  1. Early stopping simplest regularization
+  2. Save checkpoint at best val loss
+  3. Augmentation: rotation, flip, crop for images
+  4. Mixup/CutMix advanced augmentation for classification`
         }
       ],
       exercises: [

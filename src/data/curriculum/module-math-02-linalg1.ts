@@ -11,7 +11,13 @@ export const moduleMath02Topics: Topic[] = [
         {
           id: `vec-basics`,
           title: `Vector Definition`,
-          content: `A **vector** v ∈ ℝⁿ is an ordered n-tuple (v₁, v₂, ..., vₙ). Geometrically, vectors represent magnitude and direction. **Vector addition** is component-wise: u+v = (u₁+v₁, ...). **Scalar multiplication** cv scales each component. The **zero vector** 0 is the additive identity. Vectors in data science represent feature rows, embeddings, and gradients. Column vs row vectors matter for matrix multiplication conventions. A **vector space** satisfies closure under addition and scalar multiplication with axioms from linear algebra.`,
+          content: `A **vector** v ∈ ℝⁿ is an ordered n-tuple (v₁, v₂, ..., vₙ). Geometrically, vectors represent magnitude and direction. **Vector addition** is component-wise: u+v = (u₁+v₁, ...).
+
+**Scalar multiplication** cv scales each component. The **zero vector** 0 is the additive identity. Vectors in data science represent feature rows, embeddings, and gradients.
+
+Column vs row vectors matter for matrix multiplication conventions. A **vector space** satisfies closure under addition and scalar multiplication with axioms from linear algebra.
+
+**Vector Definition** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `v = (v₁, v₂, ..., vₙ) ∈ ℝⁿ`,
             `u + v = (u₁+v₁, ..., uₙ+vₙ)`,
@@ -42,12 +48,44 @@ u = np.array([1., 2.])
 print("v+u:", v+u)
 print("2v:", 2*v)`,
           output: `v+u: [4. 6.]
-2v: [6. 8.]`
+2v: [6. 8.]`,
+          pseudoCode: `CONCEPT: Vector Definition
+
+Key relationships:
+  v = (v₁, v₂, ..., vₙ) ∈ ℝⁿ
+  u + v = (u₁+v₁, ..., uₙ+vₙ)
+  cv = (cv₁, ..., cvₙ)
+  0 = (0, ..., 0)
+  Span{v₁,...,v_k} = all linear combinations
+
+Diagram (summary):
+  2D vector v = (3, 4)
+  y
+  │    ╱ v
+  │   ╱
+  │  ╱ |v|=5
+  │ ╱
+  ─────┼────── x
+  │
+  tail at origin, head at (3,4)
+
+Checklist:
+  1. Vectors are ordered tuples
+  2. Addition is component-wise
+  3. Scalars stretch/shrink vectors
+  4. Column vectors default in ML
+  5. Span is set of all combinations`
         },
         {
           id: `vec-norm`,
           title: `Norms & Distance`,
-          content: `**L2 norm** (Euclidean): ||v||₂ = √(∑vᵢ²). **L1 norm**: ||v||₁ = ∑|vᵢ|. **L∞ norm**: max|vᵢ|. Unit vector v̂ = v/||v||. Distance d(u,v) = ||u−v||₂. L2 norm relates to dot product: ||v||² = v·v. Regularization in ML uses L1 (Lasso) and L2 (Ridge) penalties. Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes Euclidean norm efficiently for high-dimensional embeddings and batch feature normalization pipelines.`,
+          content: `**L2 norm** (Euclidean): ||v||₂ = √(∑vᵢ²). **L1 norm**: ||v||₁ = ∑|vᵢ|. **L∞ norm**: max|vᵢ|.
+
+Unit vector v̂ = v/||v||. Distance d(u,v) = ||u−v||₂. L2 norm relates to dot product: ||v||² = v·v.
+
+Regularization in ML uses L1 (Lasso) and L2 (Ridge) penalties. Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes Euclidean norm efficiently for high-dimensional embeddings and batch feature normalization pipelines.
+
+**Norms & Distance** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `||v||₂ = √(∑ vᵢ²)`,
             `||v||₁ = ∑ |vᵢ|`,
@@ -77,12 +115,43 @@ v = np.array([3.,4.])
 print("L2:", np.linalg.norm(v))
 print("unit:", v/np.linalg.norm(v))`,
           output: `L2: 5.0
-unit: [0.6 0.8]`
+unit: [0.6 0.8]`,
+          pseudoCode: `CONCEPT: Norms & Distance
+
+Key relationships:
+  ||v||₂ = √(∑ vᵢ²)
+  ||v||₁ = ∑ |vᵢ|
+  ||v||∞ = max |vᵢ|
+  v̂ = v / ||v||₂
+  d(u,v) = ||u − v||₂
+
+Diagram (summary):
+  ||v|| = length of arrow
+  ╱|
+  ╱ |
+  ╱  | 4
+  ╱   |
+  /____|___
+  3
+  ||v|| = √(3²+4²) = 5
+
+Checklist:
+  1. L2 is standard Euclidean length
+  2. L1 encourages sparsity in ML
+  3. Unit vectors have norm 1
+  4. Distance is norm of difference
+  5. Norms measure vector size`
         },
         {
           id: `vec-span`,
           title: `Linear Combinations & Span`,
-          content: `Linear combination: c₁v₁ + c₂v₂ + ... + c_k v_k. **Span** of vectors is all possible combinations. Vectors are **linearly independent** if no vector is a combination of others. Basis: independent set spanning the space. Dimension = size of basis. In PCA, principal components form an orthonormal basis. Feature columns spanning ℝⁿ determine rank of design matrix. Redundant features create linear dependence causing multicollinearity in regression.`,
+          content: `Linear combination: c₁v₁ + c₂v₂ + ... + c_k v_k. **Span** of vectors is all possible combinations. Vectors are **linearly independent** if no vector is a combination of others.
+
+Basis: independent set spanning the space. Dimension = size of basis. In PCA, principal components form an orthonormal basis.
+
+Feature columns spanning ℝⁿ determine rank of design matrix. Redundant features create linear dependence causing multicollinearity in regression.
+
+**Linear Combinations & Span** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `c₁v₁ + ... + c_k v_k = linear combination`,
             `Span{v₁,...,v_k} ⊆ vector space`,
@@ -114,12 +183,44 @@ c1,c2=2,3
 print(c1*v1+c2*v2)
 print("independent:", np.linalg.matrix_rank(np.column_stack([v1,v2])))`,
           output: `[2. 3.]
-independent: 2`
+independent: 2`,
+          pseudoCode: `CONCEPT: Linear Combinations & Span
+
+Key relationships:
+  c₁v₁ + ... + c_k v_k = linear combination
+  Span{v₁,...,v_k} ⊆ vector space
+  Independent: ∑cᵢvᵢ=0 ⇒ all cᵢ=0
+  Basis: independent + spanning
+  dim(V) = |basis|
+
+Diagram (summary):
+  v1 ────→  v2 ────→
+  \\         /
+  \\       /
+  \\     /
+  \\   /
+  span plane
+  Two independent vectors span ℝ²
+  │
+  │  · · ·
+
+Checklist:
+  1. Span is all weighted sums
+  2. Independence = no redundancy
+  3. Basis minimal spanning set
+  4. Rank = dimension of column space
+  5. Dependent columns → singular XᵀX`
         },
         {
           id: `vec-ml`,
           title: `Vectors in Data Science`,
-          content: `Each data point is a feature vector x ∈ ℝᵈ. **Embeddings** map discrete IDs to dense vectors. **Gradients** ∇L are vectors pointing uphill in loss. Batch stacking creates matrix X ∈ ℝ^{m×d}. Normalization scales feature vectors. Nearest neighbor search uses L2 distance in embedding space. Word2vec learns vector representations where similar words are close. Vectorized numpy operations apply element-wise ops without Python loops for speed.`,
+          content: `Each data point is a feature vector x ∈ ℝᵈ. **Embeddings** map discrete IDs to dense vectors. **Gradients** ∇L are vectors pointing uphill in loss.
+
+Batch stacking creates matrix X ∈ ℝ^{m×d}. Normalization scales feature vectors. Nearest neighbor search uses L2 distance in embedding space.
+
+Word2vec learns vector representations where similar words are close. Vectorized numpy operations apply element-wise ops without Python loops for speed.
+
+**Vectors in Data Science** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `x ∈ ℝᵈ feature vector`,
             `X ∈ ℝ^{m×d} design matrix`,
@@ -151,7 +252,32 @@ print("row0:", X[0])
 print("col0:", X[:,0])`,
           output: `shape: (3, 2)
 row0: [1 2]
-col0: [1 3 5]`
+col0: [1 3 5]`,
+          pseudoCode: `CONCEPT: Vectors in Data Science
+
+Key relationships:
+  x ∈ ℝᵈ feature vector
+  X ∈ ℝ^{m×d} design matrix
+  ∇L ∈ ℝᵈ gradient vector
+  cos(θ) = (u·v)/(||u|| ||v||)
+  Embedding: id → ℝᵈ
+
+Diagram (summary):
+  Dataset as matrix:
+  x₁ ──→ row 1 of X
+  x₂ ──→ row 2 of X
+  ...
+  x_m ──→ row m of X
+  columns = features
+  rows = samples
+  │
+
+Checklist:
+  1. Rows often = samples in sklearn
+  2. Gradients same shape as params
+  3. Embeddings capture semantics
+  4. Vectorization speeds computation
+  5. Normalize features before distance`
         }
       ],
       exercises: [
@@ -225,7 +351,13 @@ v=np.array([3.,4.]); print(v/np.linalg.norm(v))`,
         {
           id: `dot-def`,
           title: `Dot Product Definition`,
-          content: `**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Orthogonal when u·v=0. Bilinear and symmetric. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v. In ML, dot product scores attention queries against keys. Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Orthogonal when u·v=0.
+
+Bilinear and symmetric. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v. In ML, dot product scores attention queries against keys.
+
+Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Dot Product Definition** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `u · v = ∑ uᵢ vᵢ = uᵀv`,
             `u · v = ||u|| ||v|| cos θ`,
@@ -256,12 +388,45 @@ v = np.array([3.,4.])
 print("dot:", np.dot(u,v))
 print("u@v:", u@v)`,
           output: `dot: 11.0
-u@v: 11.0`
+u@v: 11.0`,
+          pseudoCode: `CONCEPT: Dot Product Definition
+
+Key relationships:
+  u · v = ∑ uᵢ vᵢ = uᵀv
+  u · v = ||u|| ||v|| cos θ
+  u · v = 0 ⇔ orthogonal (θ=90°)
+  proj_v(u) = (u·v / v·v) v
+  Wx = dot products of W rows with x
+
+Diagram (summary):
+  u · v = |u||v|cosθ
+  v
+  ╱
+  ╱ θ
+  ╱_____ u
+  θ=0: cos=1, max dot
+  θ=90: cos=0, dot=0
+  │
+
+Checklist:
+  1. Dot product sums pairwise products
+  2. Measures alignment via cosine
+  3. Zero dot = orthogonal
+  4. Linear layers are dot products
+  5. Attention uses scaled dot products`
         },
         {
           id: `dot-geom`,
           title: `Geometric Interpretation`,
-          content: `Angle between vectors: cos θ = (u·v)/(||u|| ||v||). **Cosine similarity** ignores magnitude, focuses on direction—common for text embeddings. Cauchy-Schwarz: |u·v| ≤ ||u|| ||v||. Triangle inequality on norms. Dot product positive when acute angle, negative when obtuse. Normalizing before dot gives cosine in [−1,1]. In recommendation systems, user and item embeddings with high cosine predict preference.`,
+          content: `Angle between vectors: cos θ = (u·v)/(||u|| ||v||). **Cosine similarity** ignores magnitude, focuses on direction—common for text embeddings.
+
+Cauchy-Schwarz: |u·v| ≤ ||u|| ||v||. Triangle inequality on norms.
+
+Dot product positive when acute angle, negative when obtuse. Normalizing before dot gives cosine in [−1,1].
+
+In recommendation systems, user and item embeddings with high cosine predict preference.
+
+**Geometric Interpretation** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `cos θ = (u·v) / (||u|| ||v||)`,
             `|u·v| ≤ ||u|| ||v|| (Cauchy-Schwarz)`,
@@ -291,12 +456,43 @@ u = np.array([1.,0.])
 v = np.array([1.,1.])
 cos = np.dot(u,v)/(np.linalg.norm(u)*np.linalg.norm(v))
 print("cos θ:", np.round(cos,3))`,
-          output: `cos θ: 0.707`
+          output: `cos θ: 0.707`,
+          pseudoCode: `CONCEPT: Geometric Interpretation
+
+Key relationships:
+  cos θ = (u·v) / (||u|| ||v||)
+  |u·v| ≤ ||u|| ||v|| (Cauchy-Schwarz)
+  ||u+v|| ≤ ||u|| + ||v||
+  cosine sim ∈ [−1, 1] after normalize
+  u·u = ||u||² ≥ 0
+
+Diagram (summary):
+  cosine similarity scale:
+  1.0  same direction  →→→
+  0.0  orthogonal      →↑
+  -1.0  opposite        →←
+  normalize then dot
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Cosine ignores vector length
+  2. Cauchy-Schwarz bounds dot product
+  3. Sign of dot indicates angle type
+  4. Used in semantic search
+  5. Self-dot gives squared norm`
         },
         {
           id: `cross-3d`,
           title: `Cross Product in 3D`,
-          content: `**Cross product** u×v ∈ ℝ³ perpendicular to both u and v. ||u×v|| = ||u|| ||v|| sin θ = area of parallelogram. Right-hand rule determines direction. u×v = −v×u anti-commutative. i×j=k standard basis. Used in 3D graphics, torque, and normal vectors for surfaces. In 2D, pseudo-scalar u_x v_y − u_y v_x gives signed area. Cross product less common in standard ML but appears in geometric deep learning and physics-informed nets.`,
+          content: `**Cross product** u×v ∈ ℝ³ perpendicular to both u and v. ||u×v|| = ||u|| ||v|| sin θ = area of parallelogram. Right-hand rule determines direction. u×v = −v×u anti-commutative. i×j=k standard basis.
+
+Used in 3D graphics, torque, and normal vectors for surfaces. In 2D, pseudo-scalar u_x v_y − u_y v_x gives signed area.
+
+Cross product less common in standard ML but appears in geometric deep learning and physics-informed nets.
+
+**Cross Product in 3D** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `u × v ⟂ u and ⟂ v`,
             `||u × v|| = ||u|| ||v|| sin θ`,
@@ -325,12 +521,45 @@ print("cos θ:", np.round(cos,3))`,
 u = np.array([1.,0.,0.])
 v = np.array([0.,1.,0.])
 print("u×v:", np.cross(u,v))`,
-          output: `u×v: [0. 0. 1.]`
+          output: `u×v: [0. 0. 1.]`,
+          pseudoCode: `CONCEPT: Cross Product in 3D
+
+Key relationships:
+  u × v ⟂ u and ⟂ v
+  ||u × v|| = ||u|| ||v|| sin θ
+  u × v = −v × u
+  i × j = k (right-hand rule)
+  Area = ||u × v||
+
+Diagram (summary):
+  u × v points up from plane
+  v ╱
+  ╱
+  ╱  u
+  /____
+  × = outward normal
+  right-hand rule:
+  curl fingers u→v, thumb = u×v
+
+Checklist:
+  1. Cross product only in 3D (or 7D exotic)
+  2. Gives perpendicular vector
+  3. Magnitude = parallelogram area
+  4. Anti-commutative
+  5. Normals for 3D rendering`
         },
         {
           id: `dot-attn`,
           title: `Dot Products in Neural Networks`,
-          content: `**Attention** score e_ij = q_i·k_j / √d measures query-key compatibility. Scaled dot prevents softmax saturation at large d. **Linear classification** sign(w·x + b) is perceptron. Matrix multiply C=AB: C_ij = row_i(A)·col_j(B). GPU accelerates batched dot products. Kernel SVM uses implicit dot products in feature space. Understanding dot products clarifies why weight initialization scale affects activation variance and training stability.`,
+          content: `**Attention** score e_ij = q_i·k_j / √d measures query-key compatibility. Scaled dot prevents softmax saturation at large d.
+
+**Linear classification** sign(w·x + b) is perceptron. Matrix multiply C=AB: C_ij = row_i(A)·col_j(B).
+
+GPU accelerates batched dot products. Kernel SVM uses implicit dot products in feature space.
+
+Understanding dot products clarifies why weight initialization scale affects activation variance and training stability.
+
+**Dot Products in Neural Networks** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Attention: softmax(QKᵀ/√d) V`,
             `score_ij = q_i · k_j / √d`,
@@ -360,7 +589,32 @@ Q = np.array([[1.,0.],[0.,1.]])
 K = np.array([[1.,1.],[0.,1.]])
 scores = Q @ K.T
 print(scores)`,
-          output: `scores: [[1. 1.] [0. 1.]]`
+          output: `scores: [[1. 1.] [0. 1.]]`,
+          pseudoCode: `CONCEPT: Dot Products in Neural Networks
+
+Key relationships:
+  Attention: softmax(QKᵀ/√d) V
+  score_ij = q_i · k_j / √d
+  C_ij = A_i · B_j (matrix multiply)
+  Perceptron: sign(w·x + b)
+  K(x,x') = φ(x)·φ(x') kernel trick
+
+Diagram (summary):
+  Q  Kᵀ  →  scores  → softmax  →  weights
+  q1 · k1  q1 · k2  q1 · k3
+  q2 · k1  q2 · k2  q2 · k3
+  each cell = dot product
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. Matrix multiply = batch dots
+  2. Scale by √d in transformers
+  3. Softmax turns scores to weights
+  4. Linear layers are dot + bias
+  5. Kernel = dot in feature space`
         }
       ],
       exercises: [
@@ -435,7 +689,15 @@ print(np.dot(u,v)/(np.linalg.norm(u)*np.linalg.norm(v)))`,
         {
           id: `mat-basics`,
           title: `Matrix Structure`,
-          content: `An m×n **matrix** A has m rows and n columns; entry A_ij at row i, column j. Square matrices m=n. **Identity** I_n has 1s on diagonal. **Zero matrix** all zeros. **Diagonal** matrix has off-diagonal zeros. **Symmetric** A=Aᵀ. Matrices represent linear transforms, datasets (samples×features), and weight layers. Transpose Aᵀ flips rows/columns. Storage order (row-major in C/numpy) affects cache performance in large matrix ops.`,
+          content: `An m×n **matrix** A has m rows and n columns; entry A_ij at row i, column j. **Identity** I_n has 1s on diagonal.
+
+**Zero matrix** all zeros. **Diagonal** matrix has off-diagonal zeros.
+
+Matrices represent linear transforms, datasets (samples×features), and weight layers. Transpose Aᵀ flips rows/columns.
+
+Storage order (row-major in C/numpy) affects cache performance in large matrix ops.
+
+**Matrix Structure** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `A ∈ ℝ^{m×n}; entry A_ij`,
             `(Aᵀ)_ij = A_ji`,
@@ -466,12 +728,43 @@ print("shape:", A.shape)
 print("A[1,2]:", A[1,2])
 print("A.T:\\n", A.T)`,
           output: `shape: (2, 3)
-A[1,2]: 6`
+A[1,2]: 6`,
+          pseudoCode: `CONCEPT: Matrix Structure
+
+Key relationships:
+  A ∈ ℝ^{m×n}; entry A_ij
+  (Aᵀ)_ij = A_ji
+  I_n: n×n identity
+  Symmetric: A = Aᵀ
+  Diagonal: A_ij=0 for i≠j
+
+Diagram (summary):
+  2×3 matrix A:
+  col1 col2 col3
+  r1 [ a11  a12  a13 ]
+  r2 [ a21  a22  a23 ]
+  m=2 rows, n=3 columns
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. First index = row, second = column
+  2. Transpose swaps indices
+  3. Identity leaves vectors unchanged
+  4. Symmetric matrices have real eigenvalues
+  5. Shape must align for multiply`
         },
         {
           id: `mat-mv`,
           title: `Matrix-Vector Multiplication`,
-          content: `Ax for A∈ℝ^{m×n}, x∈ℝ^n produces y∈ℝ^m where y_i = ∑_j A_ij x_j = row_i(A)·x. Each output component is dot product of row with x. Geometrically, A transforms x to new space. **Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns. Row picture: dot products of rows with x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Ax for A∈ℝ^{m×n}, x∈ℝ^n produces y∈ℝ^m where y_i = ∑_j A_ij x_j = row_i(A)·x. Each output component is dot product of row with x. Geometrically, A transforms x to new space.
+
+**Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns.
+
+Row picture: dot products of rows with x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Matrix-Vector Multiplication** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `y = Ax, y_i = ∑_j A_ij x_j`,
             `Ax = x₁a₁ + x₂a₂ + ... (column view)`,
@@ -500,12 +793,44 @@ A[1,2]: 6`
 A = np.array([[1,2],[3,4],[5,6]])
 x = np.array([1.,2.])
 print("Ax:", A @ x)`,
-          output: `Ax: [ 5. 11. 17.]`
+          output: `Ax: [ 5. 11. 17.]`,
+          pseudoCode: `CONCEPT: Matrix-Vector Multiplication
+
+Key relationships:
+  y = Ax, y_i = ∑_j A_ij x_j
+  Ax = x₁a₁ + x₂a₂ + ... (column view)
+  y_i = row_i(A) · x
+  (BA)x = B(Ax)
+  W ∈ ℝ^{out×in} for y=Wx
+
+Diagram (summary):
+  A (m×n)  ×  x (n×1)  =  y (m×1)
+  [ row1 ]     [x1]      [r1·x]
+  [ row2 ]  ·  [x2]  =   [r2·x]
+  [ ...  ]     [..]      [ ... ]
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. Columns of A span output space
+  2. Rows of A define hyperplanes
+  3. Shape: (m×n)(n×1)=(m×1)
+  4. Neural layer = matrix-vector + bias
+  5. Composition = matrix multiply`
         },
         {
           id: `mat-special`,
           title: `Special Matrices`,
-          content: `**Orthogonal** Q: QᵀQ=I; preserves lengths and angles. **Positive definite** symmetric A with xᵀAx>0 for x≠0—Hessians at minima. **Toeplitz** constant diagonals in time series. **Sparse** mostly zeros—efficient storage. **Stochastic** rows sum to 1—Markov chains. **Projection** P²=P. Understanding special structure enables faster algorithms (e.g., eigendecomposition for symmetric matrices always exists with real eigenvalues).`,
+          content: `**Orthogonal** Q: QᵀQ=I; preserves lengths and angles. **Positive definite** symmetric A with xᵀAx>0 for x≠0—Hessians at minima.
+
+**Toeplitz** constant diagonals in time series. **Sparse** mostly zeros—efficient storage.
+
+**Stochastic** rows sum to 1—Markov chains. Understanding special structure enables faster algorithms (e.g., eigendecomposition for symmetric matrices always exists with real eigenvalues).
+
+**Special Matrices** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Orthogonal: QᵀQ = I`,
             `Symmetric: A = Aᵀ`,
@@ -534,12 +859,43 @@ print("Ax:", A @ x)`,
 Q = np.array([[0,-1],[1,0]])  # 90° rot
 x = np.array([1.,0.])
 print("Qx:", Q@x, "norm:", np.linalg.norm(Q@x))`,
-          output: `Qx: [0. 1.] norm: 1.0`
+          output: `Qx: [0. 1.] norm: 1.0`,
+          pseudoCode: `CONCEPT: Special Matrices
+
+Key relationships:
+  Orthogonal: QᵀQ = I
+  Symmetric: A = Aᵀ
+  PSD: xᵀAx ≥ 0 ∀x
+  Projection: P² = P
+  Stochastic: rows sum to 1
+
+Diagram (summary):
+  Orthogonal rotation Q:
+  x ──Q──→ Qx
+  ||x|| = ||Qx||
+  length preserved
+  angles preserved
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Orthogonal = rotation/reflection
+  2. Symmetric → real eigenvalues
+  3. PSD matrices define valid covariances
+  4. Sparse matrices save memory
+  5. Structure enables fast solvers`
         },
         {
           id: `mat-data`,
           title: `Matrices as Data Tables`,
-          content: `Design matrix X ∈ ℝ^{n×p}: n samples, p features. Target vector y ∈ ℝ^n. Covariance Σ = (1/n)XᵀX (centered). Correlation from normalized covariance. Batch tensor (batch, features) in deep learning. Missing values require imputation before matrix ops. One-hot encoding creates sparse binary columns. Feature scaling applies column-wise transforms. Matrix view connects tabular data to linear algebra algorithms throughout sklearn and pytorch.`,
+          content: `Design matrix X ∈ ℝ^{n×p}: n samples, p features. Target vector y ∈ ℝ^n. Covariance Σ = (1/n)XᵀX (centered).
+
+Correlation from normalized covariance. Batch tensor (batch, features) in deep learning. Missing values require imputation before matrix ops.
+
+One-hot encoding creates sparse binary columns. Feature scaling applies column-wise transforms. Matrix view connects tabular data to linear algebra algorithms throughout sklearn and pytorch.
+
+**Matrices as Data Tables** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `X ∈ ℝ^{n×p} design matrix`,
             `Σ = (1/n) X̃ᵀ X̃ (centered covariance)`,
@@ -569,7 +925,32 @@ X = np.array([[2.1,0.5],[1.8,0.3],[3.0,0.9]])
 print("mean cols:", X.mean(axis=0))
 print("cov:\\n", np.cov(X.T))`,
           output: `mean cols: [2.3  0.567]
-cov: ...`
+cov: ...`,
+          pseudoCode: `CONCEPT: Matrices as Data Tables
+
+Key relationships:
+  X ∈ ℝ^{n×p} design matrix
+  Σ = (1/n) X̃ᵀ X̃ (centered covariance)
+  y = Xβ + ε linear model
+  One-hot: identity columns per category
+  Batch: stack rows for mini-batch GD
+
+Diagram (summary):
+  X = features table
+  sample │ f1  f2  f3
+  ───────┼────────────
+  1    │ 2.1 0.5 1
+  2    │ 1.8 0.3 0
+  3    │ 3.0 0.9 1
+  each row = one observation
+  │
+
+Checklist:
+  1. Rows = samples in sklearn convention
+  2. Columns = features/variables
+  3. Center columns before covariance
+  4. Matrix form enables vectorized fit
+  5. Batches are submatrices of data`
         }
       ],
       exercises: [
@@ -643,7 +1024,13 @@ I=np.eye(3); x=np.array([1,2,3.]); print(I@x)`,
         {
           id: `mm-def`,
           title: `Matrix Multiplication`,
-          content: `For A∈ℝ^{m×k}, B∈ℝ^{k×n}, product C=AB ∈ ℝ^{m×n} with C_ij = ∑_l A_il B_lj. **Inner dimensions must match** (k). NOT commutative: AB≠BA generally. Associative: (AB)C=A(BC). Distributive over addition. Each C_ij is dot product of row i of A with column j of B. Chain of layers composes weight matrices. Strassen and blocked multiplication optimize large products on hardware. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `For A∈ℝ^{m×k}, B∈ℝ^{k×n}, product C=AB ∈ ℝ^{m×n} with C_ij = ∑_l A_il B_lj. **Inner dimensions must match** (k). NOT commutative: AB≠BA generally.
+
+Associative: (AB)C=A(BC). Distributive over addition. Each C_ij is dot product of row i of A with column j of B.
+
+Chain of layers composes weight matrices. Strassen and blocked multiplication optimize large products on hardware. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Matrix Multiplication** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `C = AB, C_ij = ∑_l A_il B_lj`,
             `A: m×k, B: k×n → C: m×n`,
@@ -673,12 +1060,45 @@ A = np.array([[1,2],[3,4]])
 B = np.array([[5,6],[7,8]])
 print("AB:\\n", A@B)
 print("BA:\\n", B@A)`,
-          output: `AB ≠ BA shown`
+          output: `AB ≠ BA shown`,
+          pseudoCode: `CONCEPT: Matrix Multiplication
+
+Key relationships:
+  C = AB, C_ij = ∑_l A_il B_lj
+  A: m×k, B: k×n → C: m×n
+  AB ≠ BA in general
+  (AB)C = A(BC)
+  (AB)ᵀ = BᵀAᵀ
+
+Diagram (summary):
+  (m×k) · (k×n) = (m×n)
+  A         B         C
+  [ * * ] · [ * * ] = [ * * ]
+  [ * * ]   [ * * ]   [ * * ]
+  [ * * ]
+  k must match inner dim
+  │
+  │  · · ·
+
+Checklist:
+  1. Inner dimension must align
+  2. Order matters in multiplication
+  3. Transpose reverses product order
+  4. Each entry = row·column dot
+  5. Composition of linear maps`
         },
         {
           id: `mm-prop`,
           title: `Transpose & Trace`,
-          content: `**Transpose** (AB)ᵀ = BᵀAᵀ. Symmetric A iff A=Aᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)). Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `**Transpose** (AB)ᵀ = BᵀAᵀ. Symmetric A iff A=Aᵀ.
+
+**Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)).
+
+Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Transpose & Trace** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `(AB)ᵀ = BᵀAᵀ`,
             `tr(A) = ∑ A_ii`,
@@ -708,12 +1128,43 @@ A = np.array([[1,2],[3,4]])
 print("tr(A):", np.trace(A))
 print("Fro norm:", np.linalg.norm(A, "fro"))`,
           output: `tr(A): 5
-Fro norm: 5.477...`
+Fro norm: 5.477...`,
+          pseudoCode: `CONCEPT: Transpose & Trace
+
+Key relationships:
+  (AB)ᵀ = BᵀAᵀ
+  tr(A) = ∑ A_ii
+  tr(AB) = tr(BA)
+  ||A||_F = √(tr(AᵀA))
+  (Aᵀ)ᵀ = A
+
+Diagram (summary):
+  Transpose flip:
+  A = [1 2]     Aᵀ = [1 3]
+  [3 4]          [2 4]
+  rows become columns
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. Transpose reverses multiply order
+  2. Trace invariant under cyclic permute
+  3. Frobenius norm for matrix size
+  4. Symmetric matrices ↔ quadratic forms
+  5. Gradients use transpose heavily`
         },
         {
           id: `mm-inv-det`,
           title: `Preview: Inverse & Determinant`,
-          content: `Square matrix A **invertible** if ∃A⁻¹ with AA⁻¹=I. det(A)≠0 iff invertible. det(AB)=det(A)det(B). Inverse of 2×2: (1/det)[[d,−b],[−c,a]]. Singular matrices collapse dimension—non-invertible transform. Near-singular causes numerical instability. Condition number κ(A)=||A|| ||A⁻¹|| measures sensitivity. We'll deepen inverses and determinants in the next module; here we preview their role in solving Ax=b.`,
+          content: `Square matrix A **invertible** if ∃A⁻¹ with AA⁻¹=I. det(A)≠0 iff invertible. det(AB)=det(A)det(B). Inverse of 2×2: (1/det)[[d,−b],[−c,a]].
+
+Singular matrices collapse dimension—non-invertible transform. Near-singular causes numerical instability.
+
+Condition number κ(A)=||A|| ||A⁻¹|| measures sensitivity. We'll deepen inverses and determinants in the next module; here we preview their role in solving Ax=b.
+
+**Preview: Inverse & Determinant** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `AA⁻¹ = A⁻¹A = I`,
             `det(A) ≠ 0 ⇔ A invertible`,
@@ -743,12 +1194,43 @@ A = np.array([[4.,7.],[2.,6.]])
 print("det:", np.linalg.det(A))
 print("inv:\\n", np.linalg.inv(A))`,
           output: `det: 10.0
-inv: ...`
+inv: ...`,
+          pseudoCode: `CONCEPT: Preview: Inverse & Determinant
+
+Key relationships:
+  AA⁻¹ = A⁻¹A = I
+  det(A) ≠ 0 ⇔ A invertible
+  det(AB) = det(A)det(B)
+  2×2: A⁻¹ = (1/det)[[d,-b],[-c,a]]
+  κ(A) = ||A|| · ||A⁻¹||
+
+Diagram (summary):
+  Invertible: full rank
+  x ──A──→ y
+  x ←─A⁻¹─ y
+  Singular: squashes dim
+  [ 1  2 ] → line, not plane
+  [ 2  4 ]   (det=0)
+  │
+  │  · · ·
+
+Checklist:
+  1. Inverse undoes linear map
+  2. Zero determinant = singular
+  3. Ill-conditioned = hard to invert
+  4. Rank deficient → no unique inverse
+  5. Preview for linear systems topic`
         },
         {
           id: `mm-nn`,
           title: `Matrix Ops in Neural Nets`,
-          content: `Fully connected layer: h = σ(Wx+b). Batch: H = σ(XWᵀ+B). Backprop: ∂L/∂W = (∂L/∂H)ᵀ X. Weight matrices learned by gradient descent. Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow. Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Fully connected layer: h = σ(Wx+b). Backprop: ∂L/∂W = (∂L/∂H)ᵀ X. Weight matrices learned by gradient descent.
+
+Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow.
+
+Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Matrix Ops in Neural Nets** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `h = σ(Wx + b)`,
             `Batch: H = σ(XWᵀ + B)`,
@@ -778,7 +1260,32 @@ X = np.random.randn(32, 10)  # batch 32, in 10
 W = np.random.randn(5, 10)   # out 5
 H = X @ W.T
 print("H shape:", H.shape)`,
-          output: `H shape: (32, 5)`
+          output: `H shape: (32, 5)`,
+          pseudoCode: `CONCEPT: Matrix Ops in Neural Nets
+
+Key relationships:
+  h = σ(Wx + b)
+  Batch: H = σ(XWᵀ + B)
+  Attention: softmax(QKᵀ/√d)V
+  Residual: y = x + F(x)
+  He init: W ~ N(0, 2/fan_in)
+
+Diagram (summary):
+  Layer stack:
+  x → W1 → σ → W2 → σ → ... → ŷ
+  n0   n1      n2
+  W1: n1×n0
+  W2: n2×n1
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Check shapes at every layer
+  2. Batch dim adds leading axis
+  3. Transpose in batch forward pass
+  4. Init scale affects training
+  5. Residual eases deep gradients`
         }
       ],
       exercises: [
@@ -854,7 +1361,13 @@ print(np.allclose((A@B).T, B.T@A.T))`,
         {
           id: `ls-form`,
           title: `System Formulation`,
-          content: `Linear system Ax=b: A∈ℝ^{m×n}, x∈ℝ^n unknown, b∈ℝ^m. **Consistent** if ∃x solution. Unique solution when A square and invertible. Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system. Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Linear system Ax=b: A∈ℝ^{m×n}, x∈ℝ^n unknown, b∈ℝ^m. **Consistent** if ∃x solution. Unique solution when A square and invertible.
+
+Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system.
+
+Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**System Formulation** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Ax = b`,
             `Consistent ⇔ b ∈ Col(A)`,
@@ -884,12 +1397,43 @@ A = np.array([[2.,1.],[1.,1.]])
 b = np.array([4.,3.])
 x = np.linalg.solve(A,b)
 print("x:", x)`,
-          output: `x: [1. 2.]`
+          output: `x: [1. 2.]`,
+          pseudoCode: `CONCEPT: System Formulation
+
+Key relationships:
+  Ax = b
+  Consistent ⇔ b ∈ Col(A)
+  Unique ⇔ A invertible (n×n, full rank)
+  Least squares: min ||Ax − b||₂
+  rank(A) = dim Col(A)
+
+Diagram (summary):
+  2 equations, 2 unknowns:
+  a11 x1 + a12 x2 = b1   ── line 1
+  a21 x1 + a22 x2 = b2   ── line 2
+  intersection = solution
+  parallel → none
+  same line → infinite
+  │
+  │  · · ·
+
+Checklist:
+  1. Geometric: intersection of hyperplanes
+  2. Square full rank → unique solution
+  3. Overdetermined → least squares
+  4. Rank determines consistency
+  5. Regression is Ax=b`
         },
         {
           id: `ls-elim`,
           title: `Gaussian Elimination`,
-          content: `**Gaussian elimination** row-reduces [A|b] to upper triangular form then back-substitutes. **Elementary row ops**: swap rows, scale row, add multiple of row to another. **Pivoting** swaps rows to avoid zero pivot and reduce error. LU decomposition: A=LU with L lower, U upper triangular. np.linalg.solve uses optimized LAPACK. Partial pivoting improves numerical stability for ill-conditioned systems.`,
+          content: `**Gaussian elimination** row-reduces [A|b] to upper triangular form then back-substitutes. **Elementary row ops**: swap rows, scale row, add multiple of row to another.
+
+**Pivoting** swaps rows to avoid zero pivot and reduce error. LU decomposition: A=LU with L lower, U upper triangular. np.linalg.solve uses optimized LAPACK.
+
+Partial pivoting improves numerical stability for ill-conditioned systems.
+
+**Gaussian Elimination** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Elementary ops preserve solution set`,
             `Forward elimination → upper triangular U`,
@@ -918,12 +1462,45 @@ print("x:", x)`,
 A = np.array([[2.,1.,1.],[1.,2.,1.],[1.,1.,2.]])
 b = np.array([4.,4.,4.])
 print(np.linalg.solve(A,b))`,
-          output: `[1. 1. 1.]`
+          output: `[1. 1. 1.]`,
+          pseudoCode: `CONCEPT: Gaussian Elimination
+
+Key relationships:
+  Elementary ops preserve solution set
+  Forward elimination → upper triangular U
+  Back substitution from last equation
+  A = LU factorization
+  Partial pivoting: max |pivot|
+
+Diagram (summary):
+  [A|b] → row ops → [U|c]
+  [ 2  1 | 4 ]     [ 1  1 | 3 ]
+  [ 1  1 | 3 ]  →  [ 0  1 | 2 ]
+  back sub: x2=2, x1=1
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. Row ops don't change solutions
+  2. Pivot avoids division by zero
+  3. LU enables fast multiple rhs
+  4. Upper triangular easy to solve
+  5. Pivoting improves accuracy`
         },
         {
           id: `ls-lsq`,
           title: `Least Squares Solution`,
-          content: `When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb. Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible. **Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases. Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb.
+
+Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible. **Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases.
+
+Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Least Squares Solution** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `min ||Ax − b||₂²`,
             `Normal eq: AᵀAx = Aᵀb`,
@@ -953,12 +1530,44 @@ X = np.array([[1,1],[1,2],[1,3]])
 y = np.array([2.,3.,5.])
 beta, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
 print("beta:", beta)`,
-          output: `beta: [0.5 1.5] approx`
+          output: `beta: [0.5 1.5] approx`,
+          pseudoCode: `CONCEPT: Least Squares Solution
+
+Key relationships:
+  min ||Ax − b||₂²
+  Normal eq: AᵀAx = Aᵀb
+  x = (AᵀA)⁻¹Aᵀb
+  A⁺ pseudo-inverse
+  lstsq via QR/SVD preferred
+
+Diagram (summary):
+  Overdetermined: more eqs than unknowns
+  ·  ·  ·  ·  data points
+  ╲
+  ╲  best fit line
+  ╲ minimizes Σ residual²
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. LS minimizes squared residuals
+  2. Normal equations from calculus
+  3. AᵀA may be ill-conditioned
+  4. Pseudo-inverse generalizes inverse
+  5. Regression = least squares`
         },
         {
           id: `ls-rank`,
           title: `Rank & Null Space`,
-          content: `**Column space** Col(A) = {Ax | x∈ℝ^n}. **Null space** Null(A) = {x | Ax=0}. Rank-nullity: rank(A)+dim(Null(A))=n. Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values. Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `**Column space** Col(A) = {Ax | x∈ℝ^n}. **Null space** Null(A) = {x | Ax=0}. Rank-nullity: rank(A)+dim(Null(A))=n.
+
+Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values.
+
+Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Rank & Null Space** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `rank(A) = dim Col(A)`,
             `rank(A) + nullity(A) = n`,
@@ -987,7 +1596,32 @@ print("beta:", beta)`,
 A = np.array([[1.,2.],[2.,4.]])
 print("rank:", np.linalg.matrix_rank(A))
 print("null:", np.linalg.null_space(A) if hasattr(np.linalg,"null_space") else "use scipy")`,
-          output: `rank: 1`
+          output: `rank: 1`,
+          pseudoCode: `CONCEPT: Rank & Null Space
+
+Key relationships:
+  rank(A) = dim Col(A)
+  rank(A) + nullity(A) = n
+  Null(A) = {x : Ax = 0}
+  Full rank ⇔ columns independent
+  rank via SVD = # nonzero σ
+
+Diagram (summary):
+  Rank = # pivot columns
+  Full rank columns:
+  [ * * ]  rank 2
+  [ * * ]
+  Dependent column:
+  [ 1  2 ]  rank 1
+  [ 2  4 ]  col2 = 2·col1
+  │
+
+Checklist:
+  1. Rank measures independent info
+  2. Null space = directions A kills
+  3. Redundant features lower rank
+  4. SVD robust for rank detection
+  5. Nullity counts free variables`
         }
       ],
       exercises: [

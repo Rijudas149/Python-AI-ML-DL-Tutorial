@@ -8,6 +8,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES } from './references-data.mjs';
 import { deepenTopicContent } from './content-deepening.mjs';
+import { applySqlTeacherStyle } from './sql-teacher-style.mjs';
 import { ADDITIONAL_MODULES } from './additional-curriculum.mjs';
 import { MATH_MODULES } from './math-curriculum.mjs';
 
@@ -40,15 +41,16 @@ function serializeValue(value, indent = 0) {
     .join(',\n')}\n${pad}}`;
 }
 
-function enrichSection(section, _topicTitle, _track) {
-  return section;
+function enrichSection(section, topic) {
+  return applySqlTeacherStyle(section, topic);
 }
 
 function enrichTopic(topic) {
   const track = topic.track ?? 'python';
+  const topicCtx = { ...topic, track };
   const withSections = {
     ...topic,
-    sections: topic.sections.map((s) => enrichSection(s, topic.title, track)),
+    sections: topic.sections.map((s) => enrichSection(s, topicCtx)),
   };
   const deepened = deepenTopicContent(withSections);
   return {

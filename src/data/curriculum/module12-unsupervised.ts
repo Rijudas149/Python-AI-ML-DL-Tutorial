@@ -11,7 +11,11 @@ export const module12Topics: Topic[] = [
         {
           id: `kmeans`,
           title: `K-Means Clustering`,
-          content: `Partition data into k clusters minimizing within-cluster variance. Initialize centroids, assign, update, repeat.`,
+          content: `Partition data into k clusters minimizing within-cluster variance.
+
+Initialize centroids, assign, update, repeat.
+
+**K-Means Clustering** in the context of **Clustering (K-Means, DBSCAN)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.cluster import KMeans
 import numpy as np
 
@@ -24,12 +28,25 @@ print(np.bincount(kmeans.labels_))`,
             `n_init runs multiple initializations`,
             `Assumes spherical clusters of similar size`,
             `Scale features before clustering`
-          ]
+          ],
+          pseudoCode: `CONCEPT: K-Means Clustering
+
+Checklist:
+  1. Choose k via elbow method or silhouette score
+  2. n_init runs multiple initializations
+  3. Assumes spherical clusters of similar size
+  4. Scale features before clustering`
         },
         {
           id: `dbscan`,
           title: `DBSCAN`,
-          content: `Density-based clustering. No need to specify k. Finds arbitrary shapes. Labels noise as -1.`,
+          content: `Density-based clustering.
+
+No need to specify k.
+
+Finds arbitrary shapes.
+
+**DBSCAN** in the context of **Clustering (K-Means, DBSCAN)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_moons
 
@@ -41,29 +58,58 @@ print(len(set(labels)))`,
             `min_samples: core point threshold`,
             `Handles non-spherical clusters`,
             `Noise points labeled -1`
-          ]
+          ],
+          pseudoCode: `CONCEPT: DBSCAN
+
+Checklist:
+  1. eps: neighborhood radius
+  2. min_samples: core point threshold
+  3. Handles non-spherical clusters
+  4. Noise points labeled -1`
         },
         {
           id: `hierarchical`,
           title: `Hierarchical Clustering`,
-          content: `Agglomerative: bottom-up merging. Dendrogram visualizes hierarchy. No preset k needed.`,
+          content: `Agglomerative: bottom-up merging.
+
+Dendrogram visualizes hierarchy.
+
+**Hierarchical Clustering** in the context of **Clustering (K-Means, DBSCAN)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Ward linkage minimizes variance increase`,
             `Dendrogram cut determines k`,
             `O(n²) memory — not for huge datasets`,
             `Useful for taxonomy and phylogenetic trees`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Hierarchical Clustering
+
+Checklist:
+  1. Ward linkage minimizes variance increase
+  2. Dendrogram cut determines k
+  3. O(n²) memory — not for huge datasets
+  4. Useful for taxonomy and phylogenetic trees`
         },
         {
           id: `eval-cluster`,
           title: `Cluster Evaluation`,
-          content: `Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz. No ground truth needed.`,
+          content: `Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz.
+
+No ground truth needed.
+
+**Cluster Evaluation** in the context of **Clustering (K-Means, DBSCAN)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Silhouette: cohesion vs separation`,
             `Higher silhouette = better defined clusters`,
             `Elbow method for k in K-Means`,
             `Domain knowledge validates cluster meaning`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Cluster Evaluation
+
+Checklist:
+  1. Silhouette: cohesion vs separation
+  2. Higher silhouette = better defined clusters
+  3. Elbow method for k in K-Means
+  4. Domain knowledge validates cluster meaning`
         }
       ],
       exercises: [
@@ -135,7 +181,11 @@ print(round(silhouette_score(X, km.labels_), 3))`,
         {
           id: `pca`,
           title: `Principal Component Analysis`,
-          content: `Find orthogonal directions of maximum variance. PCA(n_components=k) for compression and visualization.`,
+          content: `Find orthogonal directions of maximum variance.
+
+PCA(n_components=k) for compression and visualization.
+
+**Principal Component Analysis** in the context of **Dimensionality Reduction (PCA, t-SNE)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.decomposition import PCA
 from sklearn.datasets import load_iris
 
@@ -148,40 +198,82 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
             `Standardize before PCA`,
             `Used for visualization and noise reduction`,
             `explained_variance_ratio_ shows information retained`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Principal Component Analysis
+
+Checklist:
+  1. Components ordered by variance explained
+  2. Standardize before PCA
+  3. Used for visualization and noise reduction
+  4. explained_variance_ratio_ shows information retained`
         },
         {
           id: `tsne`,
           title: `t-SNE`,
-          content: `Non-linear dimensionality reduction for visualization. Preserves local structure. t-SNE(n_components=2, perplexity=30).`,
+          content: `Non-linear dimensionality reduction for visualization.
+
+Preserves local structure. t-SNE(n_components=2, perplexity=30).
+
+**t-SNE** in the context of **Dimensionality Reduction (PCA, t-SNE)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `t-SNE for visualization only not preprocessing`,
             `perplexity balances local/global structure`,
             `Stochastic — set random_state`,
             `UMAP faster alternative preserving global structure`
-          ]
+          ],
+          pseudoCode: `CONCEPT: t-SNE
+
+Checklist:
+  1. t-SNE for visualization only not preprocessing
+  2. perplexity balances local/global structure
+  3. Stochastic — set random_state
+  4. UMAP faster alternative preserving global structure`
         },
         {
           id: `lda`,
           title: `Linear Discriminant Analysis`,
-          content: `Supervised dimensionality reduction. Maximizes class separation. LDA for dimensionality reduction before classification.`,
+          content: `Supervised dimensionality reduction.
+
+Maximizes class separation.
+
+LDA for dimensionality reduction before classification.
+
+**Linear Discriminant Analysis** in the context of **Dimensionality Reduction (PCA, t-SNE)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Uses class labels unlike PCA`,
             `Max k-1 components for k classes`,
             `Better class separation than PCA for classification`,
             `Also a classification algorithm directly`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Linear Discriminant Analysis
+
+Checklist:
+  1. Uses class labels unlike PCA
+  2. Max k-1 components for k classes
+  3. Better class separation than PCA for classification
+  4. Also a classification algorithm directly`
         },
         {
           id: `autoencoder`,
           title: `Autoencoders Preview`,
-          content: `Neural network compresses input to bottleneck then reconstructs. Non-linear dimensionality reduction. Foundation for VAE.`,
+          content: `Neural network compresses input to bottleneck then reconstructs.
+
+Non-linear dimensionality reduction.
+
+**Autoencoders Preview** in the context of **Dimensionality Reduction (PCA, t-SNE)**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Encoder compresses, decoder reconstructs`,
             `Bottleneck layer is reduced representation`,
             `Reconstruction loss trains the network`,
             `Used for denoising and anomaly detection`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Autoencoders Preview
+
+Checklist:
+  1. Encoder compresses, decoder reconstructs
+  2. Bottleneck layer is reduced representation
+  3. Reconstruction loss trains the network
+  4. Used for denoising and anomaly detection`
         }
       ],
       exercises: [
@@ -251,7 +343,11 @@ print(round(PCA().fit(X).explained_variance_ratio_[0], 3))`,
         {
           id: `isolation`,
           title: `Isolation Forest`,
-          content: `Randomly partition data; anomalies isolated in fewer splits. IsolationForest(contamination=0.1).`,
+          content: `Randomly partition data; anomalies isolated in fewer splits.
+
+IsolationForest(contamination=0.1).
+
+**Isolation Forest** in the context of **Anomaly Detection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.ensemble import IsolationForest
 import numpy as np
 
@@ -264,40 +360,80 @@ print(np.sum(preds == -1))`,
             `contamination sets expected anomaly fraction`,
             `Works in high dimensions`,
             `Fast — linear time complexity`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Isolation Forest
+
+Checklist:
+  1. -1 for anomalies, 1 for normal
+  2. contamination sets expected anomaly fraction
+  3. Works in high dimensions
+  4. Fast — linear time complexity`
         },
         {
           id: `lof`,
           title: `Local Outlier Factor`,
-          content: `Compare local density of point to neighbors. Points in sparse regions are outliers.`,
+          content: `Compare local density of point to neighbors.
+
+Points in sparse regions are outliers.
+
+**Local Outlier Factor** in the context of **Anomaly Detection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `LOF score near 1 for normal points`,
             `High LOF = outlier relative to neighbors`,
             `Sensitive to n_neighbors parameter`,
             `Good for clustered data with local outliers`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Local Outlier Factor
+
+Checklist:
+  1. LOF score near 1 for normal points
+  2. High LOF = outlier relative to neighbors
+  3. Sensitive to n_neighbors parameter
+  4. Good for clustered data with local outliers`
         },
         {
           id: `oneclass`,
           title: `One-Class SVM`,
-          content: `Learn boundary around normal data. OneClassSVM(nu=0.1). Useful when anomalies rare in training.`,
+          content: `Learn boundary around normal data.
+
+Useful when anomalies rare in training.
+
+**One-Class SVM** in the context of **Anomaly Detection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Train only on normal data`,
             `nu controls upper bound on outliers`,
             `RBF kernel for non-linear boundaries`,
             `Used in fraud and defect detection`
-          ]
+          ],
+          pseudoCode: `CONCEPT: One-Class SVM
+
+Checklist:
+  1. Train only on normal data
+  2. nu controls upper bound on outliers
+  3. RBF kernel for non-linear boundaries
+  4. Used in fraud and defect detection`
         },
         {
           id: `applications`,
           title: `Anomaly Detection Applications`,
-          content: `Fraud detection, network intrusion, manufacturing defects, system monitoring. Often unsupervised or semi-supervised.`,
+          content: `Fraud detection, network intrusion, manufacturing defects, system monitoring.
+
+Often unsupervised or semi-supervised.
+
+**Anomaly Detection Applications** in the context of **Anomaly Detection**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Anomalies often rare — class imbalance extreme`,
             `Combine domain rules with ML`,
             `Threshold tuning critical for precision/recall`,
             `Concept drift requires model retraining`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Anomaly Detection Applications
+
+Checklist:
+  1. Anomalies often rare — class imbalance extreme
+  2. Combine domain rules with ML
+  3. Threshold tuning critical for precision/recall
+  4. Concept drift requires model retraining`
         }
       ],
       exercises: [
@@ -369,18 +505,35 @@ print(np.sum(p == -1))`,
         {
           id: `apriori`,
           title: `Apriori Algorithm`,
-          content: `Find frequent itemsets meeting minimum support threshold. Generate rules with confidence and lift metrics.`,
+          content: `Find frequent itemsets meeting minimum support threshold.
+
+Generate rules with confidence and lift metrics.
+
+**Apriori Algorithm** in the context of **Association Rules**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Support: frequency of itemset in transactions`,
             `Confidence: P(B|A) for rule A→B`,
             `Lift > 1 indicates positive association`,
             `Apriori prunes infrequent candidates efficiently`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Apriori Algorithm
+
+Checklist:
+  1. Support: frequency of itemset in transactions
+  2. Confidence: P(B|A) for rule A→B
+  3. Lift > 1 indicates positive association
+  4. Apriori prunes infrequent candidates efficiently`
         },
         {
           id: `metrics`,
           title: `Support, Confidence, Lift`,
-          content: `Support(A→B) = P(A∪B). Confidence = P(B|A). Lift = confidence/P(B). Lift=1 means independent.`,
+          content: `Support(A→B) = P(A∪B).
+
+Lift = confidence/P(B).
+
+Lift=1 means independent.
+
+**Support, Confidence, Lift** in the context of **Association Rules**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `# Example: 100 transactions
 # {bread, milk}: 20 transactions -> support = 0.20
 # bread alone: 40, milk given bread: 15
@@ -391,29 +544,58 @@ print("lift = confidence / P(milk)")`,
             `Low support rules may still be actionable`,
             `Conviction and leverage are alternative metrics`,
             `Market basket analysis classic application`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Support, Confidence, Lift
+
+Checklist:
+  1. High lift = strong association beyond chance
+  2. Low support rules may still be actionable
+  3. Conviction and leverage are alternative metrics
+  4. Market basket analysis classic application`
         },
         {
           id: `mlxtend`,
           title: `mlxtend Library`,
-          content: `from mlxtend.frequent_patterns import apriori, association_rules. Convert transactions to one-hot encoded DataFrame first.`,
+          content: `from mlxtend.frequent_patterns import apriori, association_rules.
+
+Convert transactions to one-hot encoded DataFrame first.
+
+**mlxtend Library** in the context of **Association Rules**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `One-hot encode transactions for apriori`,
             `min_support filters frequent itemsets`,
             `association_rules filters by confidence/lift`,
             `FP-Growth faster alternative to Apriori`
-          ]
+          ],
+          pseudoCode: `CONCEPT: mlxtend Library
+
+Checklist:
+  1. One-hot encode transactions for apriori
+  2. min_support filters frequent itemsets
+  3. association_rules filters by confidence/lift
+  4. FP-Growth faster alternative to Apriori`
         },
         {
           id: `applications`,
           title: `Recommendation & Retail`,
-          content: `Product recommendations, shelf layout, cross-selling. Collaborative filtering shares mathematical foundations.`,
+          content: `Product recommendations, shelf layout, cross-selling.
+
+Collaborative filtering shares mathematical foundations.
+
+**Recommendation & Retail** in the context of **Association Rules**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Amazon "customers also bought" uses association`,
             `Rules complement collaborative filtering`,
             `Temporal patterns need sequential rule mining`,
             `Sparsity challenge in large catalogs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Recommendation & Retail
+
+Checklist:
+  1. Amazon "customers also bought" uses association
+  2. Rules complement collaborative filtering
+  3. Temporal patterns need sequential rule mining
+  4. Sparsity challenge in large catalogs`
         }
       ],
       exercises: [
@@ -478,7 +660,13 @@ print(support)`,
         {
           id: `gmm`,
           title: `GMM Fundamentals`,
-          content: `Mixture of k Gaussian distributions. Each point has probability of belonging to each cluster. EM algorithm for fitting.`,
+          content: `Mixture of k Gaussian distributions.
+
+Each point has probability of belonging to each cluster.
+
+EM algorithm for fitting.
+
+**GMM Fundamentals** in the context of **Gaussian Mixture Models**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `from sklearn.mixture import GaussianMixture
 import numpy as np
 
@@ -490,12 +678,23 @@ print(gmm.predict(X[:5]))`,
             `EM alternates E-step and M-step`,
             `Can model elliptical clusters unlike K-Means`,
             `BIC/AIC for choosing number of components`
-          ]
+          ],
+          pseudoCode: `CONCEPT: GMM Fundamentals
+
+Checklist:
+  1. Soft clustering — probabilistic assignments
+  2. EM alternates E-step and M-step
+  3. Can model elliptical clusters unlike K-Means
+  4. BIC/AIC for choosing number of components`
         },
         {
           id: `em`,
           title: `Expectation-Maximization`,
-          content: `E-step: compute responsibilities (posterior probabilities). M-step: update parameters maximizing expected log-likelihood.`,
+          content: `E-step: compute responsibilities (posterior probabilities).
+
+M-step: update parameters maximizing expected log-likelihood.
+
+**Expectation-Maximization** in the context of **Gaussian Mixture Models**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           pseudoCode: `REPEAT until convergence:
     E-step: compute P(cluster|point) for each point
     M-step: update means, covariances, weights`,
@@ -509,24 +708,44 @@ print(gmm.predict(X[:5]))`,
         {
           id: `vs-kmeans`,
           title: `GMM vs K-Means`,
-          content: `K-Means is special case of GMM with equal spherical covariances. GMM more flexible but more parameters.`,
+          content: `K-Means is special case of GMM with equal spherical covariances.
+
+GMM more flexible but more parameters.
+
+**GMM vs K-Means** in the context of **Gaussian Mixture Models**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `K-Means: hard assignments, spherical clusters`,
             `GMM: soft assignments, elliptical clusters`,
             `GMM provides uncertainty estimates`,
             `K-Means faster and simpler`
-          ]
+          ],
+          pseudoCode: `CONCEPT: GMM vs K-Means
+
+Checklist:
+  1. K-Means: hard assignments, spherical clusters
+  2. GMM: soft assignments, elliptical clusters
+  3. GMM provides uncertainty estimates
+  4. K-Means faster and simpler`
         },
         {
           id: `applications-gmm`,
           title: `Applications`,
-          content: `Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.`,
+          content: `Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.
+
+**Applications** in the context of **Gaussian Mixture Models**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `score_samples gives log-likelihood per point`,
             `Low likelihood points are anomalies`,
             `Used in acoustic modeling for speech`,
             `Bayesian GMM prevents overfitting`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Applications
+
+Checklist:
+  1. score_samples gives log-likelihood per point
+  2. Low likelihood points are anomalies
+  3. Used in acoustic modeling for speech
+  4. Bayesian GMM prevents overfitting`
         }
       ],
       exercises: [

@@ -21,7 +21,14 @@ Host on GitHub with clear license; include tests for data pipeline functions.
             `Makefile or script reproduces end-to-end run`,
             `Avoid notebook-only without refactored modules`,
             `Live demo or Streamlit increases impact`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Project Structure
+
+Checklist:
+  1. README answers what/why/how/results in 2 minutes
+  2. Makefile or script reproduces end-to-end run
+  3. Avoid notebook-only without refactored modules
+  4. Live demo or Streamlit increases impact`
         },
         {
           id: `ideas`,
@@ -36,22 +43,38 @@ Pick problems you can discuss deeply in interviews—not tutorial clones without
             `Show MLOps: logging, config, CI`,
             `Document failures and iterations`,
             `Open datasets with clear license`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Project Ideas by Track
+
+Checklist:
+  1. Add unique angle: new dataset or metric
+  2. Show MLOps: logging, config, CI
+  3. Document failures and iterations
+  4. Open datasets with clear license`
         },
         {
           id: `presentation`,
           title: `Presenting Results`,
           content: `Lead with business metric movement not only accuracy. Visualize errors—confusion matrix slices, failure cases. Link to blog post walking through decisions.
 
-Quantify: "Reduced false negatives 18% at same precision."
+Quantify: "Reduced false negatives 18% at same precision." **Applying ML Portfolio Projects:** Build showcase projects demonstrating end-to-end ML skills. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Presenting Results", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying ML Portfolio Projects:** Build showcase projects demonstrating end-to-end ML skills. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Presenting Results", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Presenting Results** in the context of **ML Portfolio Projects**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Tailor narrative to audience technical level`,
             `Before/after comparisons resonate`,
             `Honest limitations build credibility`,
             `Short demo video for busy reviewers`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Presenting Results
+
+Checklist:
+  1. Tailor narrative to audience technical level
+  2. Before/after comparisons resonate
+  3. Honest limitations build credibility
+  4. Short demo video for busy reviewers`
         },
         {
           id: `open-source`,
@@ -66,7 +89,14 @@ Contributions signal collaboration skills beyond solo Kaggle.
             `One focused PR better than giant dump`,
             `Discuss design in issue before large change`,
             `Link contributions on resume and LinkedIn`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Contributing to Open Source
+
+Checklist:
+  1. Read CONTRIBUTING.md before PR
+  2. One focused PR better than giant dump
+  3. Discuss design in issue before large change
+  4. Link contributions on resume and LinkedIn`
         }
       ],
       exercises: [
@@ -148,7 +178,14 @@ Discussion forum gold for domain tips; verify leaks independently.
             `Local CV strategy mirrors test if possible`,
             `Time-box EDA before endless plots`,
             `Submit early to verify format`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Competition Workflow
+
+Checklist:
+  1. Replicate baseline before complex models
+  2. Local CV strategy mirrors test if possible
+  3. Time-box EDA before endless plots
+  4. Submit early to verify format`
         },
         {
           id: `features`,
@@ -163,7 +200,14 @@ Discussion forum gold for domain tips; verify leaks independently.
             `Target encode with inner CV folds`,
             `External data check competition rules`,
             `Adversarial validation detect train/test shift`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Feature Engineering on Kaggle
+
+Checklist:
+  1. GroupKFold when groups in data
+  2. Target encode with inner CV folds
+  3. External data check competition rules
+  4. Adversarial validation detect train/test shift`
         },
         {
           id: `ensemble`,
@@ -178,7 +222,14 @@ Diminishing returns after 4-5 uncorrelated strong models—know when to stop.
             `OOF predictions prevent stack leakage`,
             `Weighted average by CV score simple baseline`,
             `Seed averaging stabilizes neural submissions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Ensembling & Stacking
+
+Checklist:
+  1. Diversity beats ten similar GBDTs
+  2. OOF predictions prevent stack leakage
+  3. Weighted average by CV score simple baseline
+  4. Seed averaging stabilizes neural submissions`
         },
         {
           id: `mindset`,
@@ -193,7 +244,14 @@ Team up to split EDA and modeling; communicate daily during crunch.
             `Do not burn out on leaderboard chasing`,
             `Reusable code > one-off notebook`,
             `Networking in competitions opens jobs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Learning Mindset
+
+Checklist:
+  1. Post-mortem writeups solidify learning
+  2. Do not burn out on leaderboard chasing
+  3. Reusable code > one-off notebook
+  4. Networking in competitions opens jobs`
         }
       ],
       exercises: [
@@ -275,7 +333,14 @@ Team up to split EDA and modeling; communicate daily during crunch.
             `Connect formulas to use cases`,
             `Know when linear models beat deep learning`,
             `Practice explaining projects in 3 minutes`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ML Concept Questions
+
+Checklist:
+  1. Explain simply then add nuance if prompted
+  2. Connect formulas to use cases
+  3. Know when linear models beat deep learning
+  4. Practice explaining projects in 3 minutes`
         },
         {
           id: `coding`,
@@ -296,7 +361,14 @@ print(round(softmax([1.0,2.0])[1], 3))`,
             `Clarify input sizes and edge cases aloud`,
             `Vectorized numpy over loops when possible`,
             `Test with small example before optimizing`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ML Coding Interviews
+
+Checklist:
+  1. Numerically stable softmax subtracts max
+  2. Clarify input sizes and edge cases aloud
+  3. Vectorized numpy over loops when possible
+  4. Test with small example before optimizing`
         },
         {
           id: `system-design`,
@@ -311,7 +383,14 @@ Scale: batch vs online features, approximate NN retrieval, cache hot predictions
             `Draw data flow diagram`,
             `Discuss label delay and feedback loops`,
             `Mention fairness and privacy proactively`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ML System Design
+
+Checklist:
+  1. Start from requirements and SLAs
+  2. Draw data flow diagram
+  3. Discuss label delay and feedback loops
+  4. Mention fairness and privacy proactively`
         },
         {
           id: `behavioral`,
@@ -326,7 +405,14 @@ Ask interviewers about team ML maturity, deployment frequency, research vs produ
             `Failure stories show growth`,
             `Prepare thoughtful questions for them`,
             `Mock interviews reduce anxiety`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Behavioral & STAR
+
+Checklist:
+  1. Quantify impact in STAR results
+  2. Failure stories show growth
+  3. Prepare thoughtful questions for them
+  4. Mock interviews reduce anxiety`
         }
       ],
       exercises: [
@@ -409,7 +495,14 @@ print(1/(1+math.exp(0)))`,
             `Compare to prior SOTA tables fairly`,
             `Check dataset size and compute budget`,
             `Supplementary often has critical details`
-          ]
+          ],
+          pseudoCode: `CONCEPT: How to Read a Paper
+
+Checklist:
+  1. Abstract claims vs evidence in experiments
+  2. Compare to prior SOTA tables fairly
+  3. Check dataset size and compute budget
+  4. Supplementary often has critical details`
         },
         {
           id: `venues`,
@@ -424,7 +517,14 @@ print(1/(1+math.exp(0)))`,
             `arXiv version may update—note date`,
             `Benchmark cherry-picking common—read fine print`,
             `Twitter hype ≠ validated result`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Venues & Preprints
+
+Checklist:
+  1. Peer review not perfect but filters noise
+  2. arXiv version may update—note date
+  3. Benchmark cherry-picking common—read fine print
+  4. Twitter hype ≠ validated result`
         },
         {
           id: `reproduce`,
@@ -439,22 +539,38 @@ print(1/(1+math.exp(0)))`,
             `Data preprocessing must match exactly`,
             `Report what you could not reproduce`,
             `Contact authors politely for missing details`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Reproducing Results
+
+Checklist:
+  1. Hidden hyperparameters in appendix or code
+  2. Data preprocessing must match exactly
+  3. Report what you could not reproduce
+  4. Contact authors politely for missing details`
         },
         {
           id: `contribute`,
           title: `From Reading to Contributing`,
-          content: `Identify extension: new dataset, ablation, efficiency improvement. Write reproducible experiment script; open source with clear README.
+          content: `Identify extension: new dataset, ablation, efficiency improvement. Write reproducible experiment script; open source with clear README. Workshop and short papers valid first publication paths.
 
-Workshop and short papers valid first publication paths.
+**Applying Reading Papers & Reproduction:** Efficiently understand research papers and reproduce key results. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "From Reading to Contributing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying Reading Papers & Reproduction:** Efficiently understand research papers and reproduce key results. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "From Reading to Contributing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**From Reading to Contributing** in the context of **Reading Papers & Reproduction**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Negative results valuable if well executed`,
             `Collaborate via Twitter/Discord research groups`,
             `Lit review before starting saves months`,
             `Ethics review for human subjects data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: From Reading to Contributing
+
+Checklist:
+  1. Negative results valuable if well executed
+  2. Collaborate via Twitter/Discord research groups
+  3. Lit review before starting saves months
+  4. Ethics review for human subjects data`
         }
       ],
       exercises: [
@@ -528,15 +644,24 @@ Workshop and short papers valid first publication paths.
           title: `Role Definitions`,
           content: `**Data Scientist**: analysis, experimentation, stakeholder communication. **MLE**: production models, pipelines, serving. **Research Scientist**: novel methods, publications, long horizons.
 
-Titles vary—read job descriptions not only labels.
+Titles vary—read job descriptions not only labels. **Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails.
 
-**Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Role Definitions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+When studying "Role Definitions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Role Definitions** in the context of **Career Paths in ML/AI**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `DS leans stats and product analytics`,
             `MLE leans software and systems`,
             `Research needs strong math and paper track`,
             `Hybrid roles common at startups`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Role Definitions
+
+Checklist:
+  1. DS leans stats and product analytics
+  2. MLE leans software and systems
+  3. Research needs strong math and paper track
+  4. Hybrid roles common at startups`
         },
         {
           id: `skills`,
@@ -551,22 +676,38 @@ Titles vary—read job descriptions not only labels.
             `Business context distinguishes senior ICs`,
             `Specialize after solid general base`,
             `Continuous learning non-optional in AI`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Skill Progression
+
+Checklist:
+  1. Communication as important as coding
+  2. Business context distinguishes senior ICs
+  3. Specialize after solid general base
+  4. Continuous learning non-optional in AI`
         },
         {
           id: `job-search`,
           title: `Job Search Tactics`,
           content: `Tailor resume bullets to metrics. LinkedIn + referrals strongest channel. Portfolio and GitHub linked prominently.
 
-Prepare 30-second pitch and 2-minute project deep dive.
+Prepare 30-second pitch and 2-minute project deep dive. **Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails.
 
-**Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Job Search Tactics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+When studying "Job Search Tactics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Job Search Tactics** in the context of **Career Paths in ML/AI**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Referrals bypass resume filters`,
             `Apply to teams not only companies`,
             `Negotiate total comp not only salary`,
             `Rejections normal—iterate resume`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Job Search Tactics
+
+Checklist:
+  1. Referrals bypass resume filters
+  2. Apply to teams not only companies
+  3. Negotiate total comp not only salary
+  4. Rejections normal—iterate resume`
         },
         {
           id: `growth`,
@@ -581,7 +722,14 @@ Contribute to standards, RFCs, internal platforms—impact multiplier.
             `Balance depth with organizational awareness`,
             `Ethics and responsible AI increasingly valued`,
             `Mentorship accelerates junior careers`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Long-Term Growth
+
+Checklist:
+  1. Document and teach to scale influence
+  2. Balance depth with organizational awareness
+  3. Ethics and responsible AI increasingly valued
+  4. Mentorship accelerates junior careers`
         }
       ],
       exercises: [

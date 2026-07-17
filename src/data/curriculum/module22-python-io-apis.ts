@@ -26,7 +26,14 @@ print(p.read_text(encoding="utf-8"))`,
             `Always specify encoding for text files`,
             `glob/rglob for pattern file discovery`,
             `resolve() removes .. and symlinks`
-          ]
+          ],
+          pseudoCode: `CONCEPT: pathlib for Paths
+
+Checklist:
+  1. Path objects are immutable and expressive
+  2. Always specify encoding for text files
+  3. glob/rglob for pattern file discovery
+  4. resolve() removes .. and symlinks`
         },
         {
           id: `json-csv`,
@@ -46,7 +53,14 @@ print(json.dumps(rows))`,
             `DictReader uses first row as field names`,
             `Stream large files line by line`,
             `Validate types after reading CSV strings`
-          ]
+          ],
+          pseudoCode: `CONCEPT: JSON & CSV
+
+Checklist:
+  1. json serializes dict/list primitives only
+  2. DictReader uses first row as field names
+  3. Stream large files line by line
+  4. Validate types after reading CSV strings`
         },
         {
           id: `pickle`,
@@ -61,7 +75,14 @@ Use pickle for ephemeral caches or sklearn joblib models in controlled environme
             `pickle is Python-specific not portable`,
             `joblib better for large numpy arrays`,
             `Prefer open formats for long-term storage`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Pickle & Security
+
+Checklist:
+  1. Never unpickle untrusted data
+  2. pickle is Python-specific not portable
+  3. joblib better for large numpy arrays
+  4. Prefer open formats for long-term storage`
         },
         {
           id: `io-patterns`,
@@ -85,7 +106,14 @@ print(safe_read("missing.txt") == "")`,
             `Atomic replace prevents partial writes`,
             `Handle missing files explicitly`,
             `pathlib works cross-platform`
-          ]
+          ],
+          pseudoCode: `CONCEPT: I/O Patterns & Error Handling
+
+Checklist:
+  1. Context managers guarantee file closure
+  2. Atomic replace prevents partial writes
+  3. Handle missing files explicitly
+  4. pathlib works cross-platform`
         }
       ],
       exercises: [
@@ -173,7 +201,14 @@ print(resp.json()["args"])  # requires network`,
             `raise_for_status converts HTTP errors to exceptions`,
             `json= parameter sets Content-Type automatically`,
             `Session objects reuse TCP connections`
-          ]
+          ],
+          pseudoCode: `CONCEPT: requests Fundamentals
+
+Checklist:
+  1. Always set timeouts on external calls
+  2. raise_for_status converts HTTP errors to exceptions
+  3. json= parameter sets Content-Type automatically
+  4. Session objects reuse TCP connections`
         },
         {
           id: `rest`,
@@ -188,7 +223,14 @@ Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).
             `Handle 429 with exponential backoff`,
             `Version APIs in path or header`,
             `Document required headers and rate limits`
-          ]
+          ],
+          pseudoCode: `CONCEPT: REST Conventions
+
+Checklist:
+  1. Respect HTTP semantics in client design
+  2. Handle 429 with exponential backoff
+  3. Version APIs in path or header
+  4. Document required headers and rate limits`
         },
         {
           id: `auth-errors`,
@@ -211,7 +253,14 @@ print(retry.total)`,
             `Retry only idempotent requests safely`,
             `Backoff reduces thundering herd`,
             `Validate JSON shape before accessing keys`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Authentication & Retries
+
+Checklist:
+  1. Store secrets in environment variables
+  2. Retry only idempotent requests safely
+  3. Backoff reduces thundering herd
+  4. Validate JSON shape before accessing keys`
         },
         {
           id: `testing-apis`,
@@ -226,7 +275,14 @@ Separate HTTP layer from business logic—pure functions parse JSON dicts; thin 
             `Integration tests hit sandboxes sparingly`,
             `Separate transport from parsing logic`,
             `Contract tests catch API drift early`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Testing API Clients
+
+Checklist:
+  1. Mock at HTTP boundary for unit tests
+  2. Integration tests hit sandboxes sparingly
+  3. Separate transport from parsing logic
+  4. Contract tests catch API drift early`
         }
       ],
       exercises: [
@@ -315,7 +371,14 @@ print([p.get_text() for p in soup.select("p.item")])`,
             `strip=True cleans whitespace in text extraction`,
             `Static HTML only—JS rendering needs browser automation`,
             `Handle missing elements with if/defaults`
-          ]
+          ],
+          pseudoCode: `CONCEPT: BeautifulSoup Parsing
+
+Checklist:
+  1. CSS selectors scale better than manual loops
+  2. strip=True cleans whitespace in text extraction
+  3. Static HTML only—JS rendering needs browser automation
+  4. Handle missing elements with if/defaults`
         },
         {
           id: `fetch`,
@@ -330,7 +393,14 @@ Cache responses during development. Do not scrape personal data without legal ba
             `Throttle requests to avoid overloading servers`,
             `Identify your scraper in User-Agent string`,
             `Prefer official APIs when available`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Fetching Pages Responsibly
+
+Checklist:
+  1. Read Terms of Service before scraping
+  2. Throttle requests to avoid overloading servers
+  3. Identify your scraper in User-Agent string
+  4. Prefer official APIs when available`
         },
         {
           id: `extract`,
@@ -348,7 +418,14 @@ print(urljoin(base, "../blog/post"))`,
             `Validate extracted fields against schema`,
             `Keep raw snapshots for debugging parser changes`,
             `pandas.read_html quick for simple tables`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Structured Extraction
+
+Checklist:
+  1. urljoin resolves relative links correctly
+  2. Validate extracted fields against schema
+  3. Keep raw snapshots for debugging parser changes
+  4. pandas.read_html quick for simple tables`
         },
         {
           id: `ethics`,
@@ -363,7 +440,14 @@ When in doubt, request permission or purchase data from licensed providers.
             `Do not circumvent authentication or DRM`,
             `Anonymize and minimize collected personal data`,
             `Document purpose and retention policy`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Ethical & Legal Considerations
+
+Checklist:
+  1. Legal risk varies by jurisdiction and site ToS
+  2. Do not circumvent authentication or DRM
+  3. Anonymize and minimize collected personal data
+  4. Document purpose and retention policy`
         }
       ],
       exercises: [
@@ -454,7 +538,14 @@ print(conn.execute("SELECT name FROM t").fetchone()[0])`,
             `Context managers handle commit/rollback`,
             `Parameterized ? placeholders prevent SQL injection`,
             `Row factory improves readability`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Connecting & Cursors
+
+Checklist:
+  1. :memory: database for tests
+  2. Context managers handle commit/rollback
+  3. Parameterized ? placeholders prevent SQL injection
+  4. Row factory improves readability`
         },
         {
           id: `sql`,
@@ -480,7 +571,14 @@ print(row)`,
             `Indexes speed lookups on large tables`,
             `Avoid SELECT * in production queries`,
             `executescript for migrations/bootstrap`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SQL Essentials in Python
+
+Checklist:
+  1. Foreign keys require PRAGMA foreign_keys=ON
+  2. Indexes speed lookups on large tables
+  3. Avoid SELECT * in production queries
+  4. executescript for migrations/bootstrap`
         },
         {
           id: `orm-alt`,
@@ -495,7 +593,14 @@ print(row)`,
             `PostgreSQL for production web apps`,
             `SQLAlchemy eases migration between engines`,
             `Backup via sqlite3 .backup API or file copy`
-          ]
+          ],
+          pseudoCode: `CONCEPT: When to Upgrade from SQLite
+
+Checklist:
+  1. SQLite single-writer limitation at scale
+  2. PostgreSQL for production web apps
+  3. SQLAlchemy eases migration between engines
+  4. Backup via sqlite3 .backup API or file copy`
         },
         {
           id: `security`,
@@ -510,7 +615,14 @@ Encrypt sensitive columns at application level if needed—SQLite file encryptio
             `Validate integers and enums before queries`,
             `Separate read replicas conceptually even locally`,
             `Do not store plaintext passwords—hash them`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SQL Safety
+
+Checklist:
+  1. Parameter binding stops SQL injection
+  2. Validate integers and enums before queries
+  3. Separate read replicas conceptually even locally
+  4. Do not store plaintext passwords—hash them`
         }
       ],
       exercises: [
@@ -603,7 +715,14 @@ print("valid")`,
             `Schemas document API contracts`,
             `Combine with pydantic for Python models`,
             `Fail fast on malformed input`
-          ]
+          ],
+          pseudoCode: `CONCEPT: JSON Schema Validation
+
+Checklist:
+  1. Validate at system boundaries
+  2. Schemas document API contracts
+  3. Combine with pydantic for Python models
+  4. Fail fast on malformed input`
         },
         {
           id: `yaml`,
@@ -622,7 +741,14 @@ print(cfg["model"]["trees"])`,
             `Keep secrets out of YAML in repos`,
             `Env var overrides for deployment-specific values`,
             `Lint config files in CI`
-          ]
+          ],
+          pseudoCode: `CONCEPT: YAML Configuration
+
+Checklist:
+  1. safe_load prevents arbitrary object construction
+  2. Keep secrets out of YAML in repos
+  3. Env var overrides for deployment-specific values
+  4. Lint config files in CI`
         },
         {
           id: `parquet`,
@@ -642,7 +768,14 @@ print(list(df.columns))`,
             `Schema evolution requires careful migration`,
             `Combine with Snappy/Zstd compression`,
             `pandas/pyarrow common Python stack`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Parquet Introduction
+
+Checklist:
+  1. Columnar storage reduces I/O for analytics
+  2. Schema evolution requires careful migration
+  3. Combine with Snappy/Zstd compression
+  4. pandas/pyarrow common Python stack`
         },
         {
           id: `formats-choose`,
@@ -657,7 +790,14 @@ Document encoding, timezone, and null conventions in data catalogs.
             `Columnar for read-heavy analytics`,
             `Row formats for transactional updates`,
             `Version datasets with DVC or similar`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Choosing a Format
+
+Checklist:
+  1. Match format to consumer tooling
+  2. Columnar for read-heavy analytics
+  3. Row formats for transactional updates
+  4. Version datasets with DVC or similar`
         }
       ],
       exercises: [

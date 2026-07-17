@@ -11,7 +11,15 @@ export const moduleMath04Topics: Topic[] = [
         {
           id: `lim-def`,
           title: `Limit Definition`,
-          content: `lim_{x→a} f(x) = L means f(x) approaches L as x approaches a (not necessarily f(a)=L). **One-sided limits**: from left x→a⁻, from right x→a⁺. Limit exists iff both one-sided limits agree. **Limits at infinity** describe asymptotic behavior. Sequential characterization connects to series convergence. ε-δ definition formalizes: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits enable defining derivative as limit of difference quotient. L'Hôpital handles 0/0 indeterminate forms.`,
+          content: `lim_{x→a} f(x) = L means f(x) approaches L as x approaches a (not necessarily f(a)=L). **One-sided limits**: from left x→a⁻, from right x→a⁺.
+
+Limit exists iff both one-sided limits agree. **Limits at infinity** describe asymptotic behavior.
+
+Sequential characterization connects to series convergence. ε-δ definition formalizes: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits enable defining derivative as limit of difference quotient.
+
+L'Hôpital handles 0/0 indeterminate forms.
+
+**Limit Definition** in the context of **Limits & Continuity**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `lim_{x→a} f(x) = L`,
             `lim exists ⇔ lim⁻ = lim⁺`,
@@ -40,12 +48,45 @@ export const moduleMath04Topics: Topic[] = [
 f = lambda x: (x**2-1)/(x-1)
 x = np.array([0.9,0.99,0.999,1.001,1.01])
 print("f(x):", f(x))`,
-          output: `f(x) → 2 as x→1`
+          output: `f(x) → 2 as x→1`,
+          pseudoCode: `CONCEPT: Limit Definition
+
+Key relationships:
+  lim_{x→a} f(x) = L
+  lim exists ⇔ lim⁻ = lim⁺
+  lim_{x→∞} f(x) (horizontal asymptote)
+  ε-δ formal definition
+  0/0 → try L'Hôpital
+
+Diagram (summary):
+  f(x) near a:
+  L ─ ─ ─ ─ ─ target
+  ·  ·
+  ·    ·  f(x)
+  ·
+  ────┼──── x
+  a
+  x→a, f(x)→L
+
+Checklist:
+  1. Limit ≠ function value at point
+  2. Both sides must agree
+  3. Infinity limits describe tails
+  4. Foundation for derivatives
+  5. L'Hôpital for indeterminate`
         },
         {
           id: `lim-rules`,
           title: `Limit Laws`,
-          content: `If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M if M≠0. Polynomials continuous everywhere. Rational continuous except zeros of denominator. lim_{x→0} sin(x)/x = 1 fundamental. lim_{x→0} (e^x−1)/x = 1. Squeeze theorem bounds limits. Composition: lim f(g(x)) if inner limit in domain. These laws justify term-by-term differentiation and integration in power series. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M if M≠0. Polynomials continuous everywhere.
+
+Rational continuous except zeros of denominator. lim_{x→0} sin(x)/x = 1 fundamental. lim_{x→0} (e^x−1)/x = 1. Squeeze theorem bounds limits.
+
+Composition: lim f(g(x)) if inner limit in domain. These laws justify term-by-term differentiation and integration in power series.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Limit Laws** in the context of **Limits & Continuity**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `lim(f+g) = lim f + lim g`,
             `lim(f/g) = lim f / lim g`,
@@ -73,12 +114,46 @@ print("f(x):", f(x))`,
           example: `import numpy as np
 x = np.linspace(-0.1,0.1,5); x=x[x!=0]
 print("sin(x)/x:", np.sin(x)/x)`,
-          output: `→ 1 near 0`
+          output: `→ 1 near 0`,
+          pseudoCode: `CONCEPT: Limit Laws
+
+Key relationships:
+  lim(f+g) = lim f + lim g
+  lim(f/g) = lim f / lim g
+  lim_{x→0} sin(x)/x = 1
+  lim_{x→0} (e^x − 1)/x = 1
+  Squeeze: g≤f≤h → same limit
+
+Diagram (summary):
+  squeeze:
+  h(x) ────────
+  f(x) ~~~ squeezed
+  g(x) ────────
+  → same limit L
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. Limit laws combine simple limits
+  2. sin(x)/x key trig limit
+  3. Squeeze for bounded functions
+  4. Continuity from limit = value
+  5. Composition needs care at boundaries`
         },
         {
           id: `lim-cont`,
           title: `Continuity`,
-          content: `f continuous at a if lim_{x→a} f(x)=f(a). **Types of discontinuity**: removable (hole), jump, infinite. Continuous on [a,b] achieves max/min (Extreme Value Theorem). Intermediate Value Theorem: continuous f with f(a)<0<f(b) has root in (a,b). ML activations: ReLU continuous; sigmoid continuous; step discontinuous. Loss landscapes continuous in parameters for smooth models. Discontinuities cause optimization issues.`,
+          content: `f continuous at a if lim_{x→a} f(x)=f(a). **Types of discontinuity**: removable (hole), jump, infinite.
+
+Continuous on [a,b] achieves max/min (Extreme Value Theorem). Intermediate Value Theorem: continuous f with f(a)<0<f(b) has root in (a,b).
+
+ML activations: ReLU continuous; sigmoid continuous; step discontinuous. Loss landscapes continuous in parameters for smooth models.
+
+Discontinuities cause optimization issues.
+
+**Continuity** in the context of **Limits & Continuity**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Continuous at a: lim_{x→a} f(x) = f(a)`,
             `IVT: sign change → root`,
@@ -107,12 +182,43 @@ print("sin(x)/x:", np.sin(x)/x)`,
 x = np.linspace(-2,2,100)
 relu = np.maximum(0,x)
 print("ReLU continuous, kink at 0")`,
-          output: `kink at 0 still continuous`
+          output: `kink at 0 still continuous`,
+          pseudoCode: `CONCEPT: Continuity
+
+Key relationships:
+  Continuous at a: lim_{x→a} f(x) = f(a)
+  IVT: sign change → root
+  EVT: continuous on [a,b] → max/min
+  Removable: redefine at hole
+  Jump: piecewise mismatch
+
+Diagram (summary):
+  continuous: no break
+  ───────╱──────
+  removable hole: ○
+  ───────○──────
+  jump:
+  ───────┐
+  └────
+  │
+
+Checklist:
+  1. Continuous functions no jumps
+  2. IVT finds roots bracketing
+  3. Activations mostly continuous
+  4. Discontinuities hurt gradients
+  5. Piecewise needs match at joints`
         },
         {
           id: `lim-ml`,
           title: `Limits in Optimization`,
-          content: `Training seeks θ where loss L(θ) approaches minimum—often lim_{t→∞} L(θ_t) desired. Gradient descent step size η affects convergence limit. As η→0, discrete updates approximate continuous gradient flow ODE. Softmax limit as temperature T→0 approaches argmax. Sigmoid limit x→±∞ gives 0/1 hard threshold. Understanding limits clarifies asymptotic behavior of learning curves and regularization paths as λ→0 or λ→∞.`,
+          content: `Training seeks θ where loss L(θ) approaches minimum—often lim_{t→∞} L(θ_t) desired. Gradient descent step size η affects convergence limit.
+
+As η→0, discrete updates approximate continuous gradient flow ODE. Softmax limit as temperature T→0 approaches argmax.
+
+Sigmoid limit x→±∞ gives 0/1 hard threshold. Understanding limits clarifies asymptotic behavior of learning curves and regularization paths as λ→0 or λ→∞.
+
+**Limits in Optimization** in the context of **Limits & Continuity**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `lim_{t→∞} L(θ_t) = L*`,
             `η→0: GD → gradient flow`,
@@ -141,7 +247,33 @@ print("ReLU continuous, kink at 0")`,
 t = np.arange(1,100)
 L = 1.0/t + 0.01
 print("lim approx:", L[-1])`,
-          output: `decreasing to limit`
+          output: `decreasing to limit`,
+          pseudoCode: `CONCEPT: Limits in Optimization
+
+Key relationships:
+  lim_{t→∞} L(θ_t) = L*
+  η→0: GD → gradient flow
+  softmax(z/T), T→0 → one-hot
+  sigmoid(x), x→∞ → 1
+  λ→∞: ridge → zero solution
+
+Diagram (summary):
+  loss vs iteration:
+  L │╲
+  │ ╲___
+  │     ────→ lim L*
+  └──────────── t
+  convergence = limit behavior
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Optimization seeks limiting minimum
+  2. LR too large prevents convergence
+  3. Temperature limits in softmax
+  4. Regularization path limits interpretable
+  5. Asymptotic analysis guides tuning`
         }
       ],
       exercises: [
@@ -215,7 +347,13 @@ x=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))`,
         {
           id: `der-def`,
           title: `Derivative Definition`,
-          content: `f'(x) = lim_{h→0} [f(x+h)−f(x)]/h **difference quotient**. Geometric: slope of tangent line. Physical: instantaneous rate of change. Notation: df/dx, Df, ẋ. Differentiable ⇒ continuous (converse false: |x| at 0). Partial derivative ∂f/∂x_i holds others fixed—multivariate preview. In ML, ∂L/∂w is gradient component telling how loss changes with weight w. Autodiff computes derivatives algorithmically.`,
+          content: `f'(x) = lim_{h→0} [f(x+h)−f(x)]/h **difference quotient**. Geometric: slope of tangent line. Physical: instantaneous rate of change.
+
+Notation: df/dx, Df, ẋ. Differentiable ⇒ continuous (converse false: |x| at 0). Partial derivative ∂f/∂x_i holds others fixed—multivariate preview.
+
+In ML, ∂L/∂w is gradient component telling how loss changes with weight w. Autodiff computes derivatives algorithmically.
+
+**Derivative Definition** in the context of **Derivatives**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `f'(x) = lim_{h→0} (f(x+h)−f(x))/h`,
             `Tangent slope at x`,
@@ -244,12 +382,44 @@ x=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))`,
 f = lambda x: x**2
 def deriv(f,x,h=1e-5): return (f(x+h)-f(x))/h
 print("f'(3):", deriv(f,3), "exact:", 2*3)`,
-          output: `f'(3): 6.0`
+          output: `f'(3): 6.0`,
+          pseudoCode: `CONCEPT: Derivative Definition
+
+Key relationships:
+  f'(x) = lim_{h→0} (f(x+h)−f(x))/h
+  Tangent slope at x
+  Differentiable ⇒ continuous
+  ∂f/∂x_i partial derivative
+  ∇f = vector of partials
+
+Diagram (summary):
+  secant → tangent as h→0
+  f(x)
+  ╱|
+  ╱ | rise
+  ╱  |/run = slope
+  ────┼── x
+  h→0
+  │
+  │  · · ·
+
+Checklist:
+  1. Derivative = instantaneous rate
+  2. Limit of secant slopes
+  3. Gradient collects partials
+  4. Non-differentiable at cusps
+  5. Autodiff automates computation`
         },
         {
           id: `der-interp`,
           title: `Interpretations`,
-          content: `**Marginal effect**: ∂y/∂x_i how y changes per unit x_i. **Sensitivity analysis** in models. **Velocity** as dx/dt. **Jacobian** matrix of all partial derivatives for vector functions. **Hessian** second derivatives for curvature. Sign of derivative: increasing vs decreasing. Critical points where f'=0: potential max/min/inflection. Convex functions have non-negative second derivative. Loss gradient points uphill; descent uses −∇L.`,
+          content: `**Marginal effect**: ∂y/∂x_i how y changes per unit x_i. **Sensitivity analysis** in models. **Velocity** as dx/dt.
+
+**Jacobian** matrix of all partial derivatives for vector functions. **Hessian** second derivatives for curvature. Sign of derivative: increasing vs decreasing.
+
+Critical points where f'=0: potential max/min/inflection. Convex functions have non-negative second derivative. Loss gradient points uphill; descent uses −∇L.
+
+**Interpretations** in the context of **Derivatives**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `f'(x)>0 → increasing`,
             `f'(x)=0 → critical point`,
@@ -279,12 +449,45 @@ x = np.linspace(-2,2,5)
 f = x**2
 grad = 2*x
 print("x:", x, "grad:", grad)`,
-          output: `grad zero at x=0`
+          output: `grad zero at x=0`,
+          pseudoCode: `CONCEPT: Interpretations
+
+Key relationships:
+  f'(x)>0 → increasing
+  f'(x)=0 → critical point
+  f''(x)>0 → convex (local)
+  Jacobian J_ij = ∂f_i/∂x_j
+  Gradient descent: θ -= η∇L
+
+Diagram (summary):
+  f'(x) sign:
+  f'>0: climbing ↗
+  f'<0: falling ↘
+  f'=0: flat ─── (critical)
+  GD goes opposite gradient ↓
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Gradient points uphill
+  2. Descent uses negative gradient
+  3. Jacobian for vector maps
+  4. Hessian for curvature
+  5. Critical points need second test`
         },
         {
           id: `der-numeric`,
           title: `Numerical Differentiation`,
-          content: `Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x−h))/(2h), error O(h²) better. Choose h~√ε_machine for float64. **Finite differences** verify autodiff implementations. np.gradient for discrete arrays. Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x−h))/(2h), error O(h²) better.
+
+Choose h~√ε_machine for float64. **Finite differences** verify autodiff implementations. np.gradient for discrete arrays.
+
+Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Numerical Differentiation** in the context of **Derivatives**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Forward: (f(x+h)−f(x))/h`,
             `Central: (f(x+h)−f(x−h))/(2h)`,
@@ -315,12 +518,44 @@ x=1.0
 h=1e-5
 central=(f(x+h)-f(x-h))/(2*h)
 print("cos(1) approx:", central, "exact:", np.cos(x))`,
-          output: `matches cos(1)`
+          output: `matches cos(1)`,
+          pseudoCode: `CONCEPT: Numerical Differentiation
+
+Key relationships:
+  Forward: (f(x+h)−f(x))/h
+  Central: (f(x+h)−f(x−h))/(2h)
+  Error central O(h²)
+  h ≈ 1e-5 typical for float64
+  gradient check in DL debugging
+
+Diagram (summary):
+  trade-off in h:
+  large h → truncation error
+  small h → cancellation noise
+  ╲    ╱
+  ╲  ╱  sweet spot ~1e-5
+  ╲╱
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Central more accurate
+  2. Balance truncation vs roundoff
+  3. gradient check validates backprop
+  4. np.gradient for discrete data
+  5. Autodiff preferred in training`
         },
         {
           id: `der-ml`,
           title: `Derivatives in Loss Landscapes`,
-          content: `Loss L(θ) differentiable in θ for smooth models. Surface plot shows valleys and saddles. Gradient ∇L perpendicular to level curves. Zero gradient at stationary points—local min, max, or saddle. Plateau: gradient near zero slows learning. Sharp minima vs flat minima generalization debate. ReLU non-differentiable at 0 but subgradient methods work. Understanding derivatives essential for all gradient-based training.`,
+          content: `Loss L(θ) differentiable in θ for smooth models. Surface plot shows valleys and saddles. Gradient ∇L perpendicular to level curves.
+
+Zero gradient at stationary points—local min, max, or saddle. Plateau: gradient near zero slows learning. Sharp minima vs flat minima generalization debate.
+
+ReLU non-differentiable at 0 but subgradient methods work. Understanding derivatives essential for all gradient-based training.
+
+**Derivatives in Loss Landscapes** in the context of **Derivatives**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `∇L(θ) = 0 at stationary points`,
             `Saddle: grad=0 but not extremum`,
@@ -351,7 +586,33 @@ L = lambda t: (t[0]-2)**2 + (t[1]+1)**2
 h=1e-5
 grad = np.array([(L(theta+np.array([h,0]))-L(theta))/h,(L(theta+np.array([0,h]))-L(theta))/h])
 print("grad:", grad)`,
-          output: `grad at (1,1)`
+          output: `grad at (1,1)`,
+          pseudoCode: `CONCEPT: Derivatives in Loss Landscapes
+
+Key relationships:
+  ∇L(θ) = 0 at stationary points
+  Saddle: grad=0 but not extremum
+  Plateau: |∇L| ≈ 0 slow training
+  ReLU subgradient at 0
+  Flat minima may generalize better
+
+Diagram (summary):
+  loss surface (2 params):
+  ╱╲  saddle
+  ╱  ╲╱╲
+  ╱ valley╲
+  local min
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. Stationary ≠ always minimum
+  2. Saddles common in high-D
+  3. Plateaus need adaptive LR
+  4. Subgradients extend to ReLU
+  5. Visualize 2D slices for intuition`
         }
       ],
       exercises: [
@@ -426,7 +687,13 @@ w=3.; print(2*w)`,
         {
           id: `dr-power`,
           title: `Basic Rules`,
-          content: `Power: d/dx x^n = n x^{n−1}. Constant multiple: (cf)'=cf'. Sum: (f+g)'=f'+g'. Exponential: d/dx e^x = e^x. Log: d/dx ln(x)=1/x. Trig: (sin x)'=cos x, (cos x)'=−sin x. Sigmoid σ(x): σ'(x)=σ(x)(1−σ(x)). Softplus smooth ReLU: d/dx ln(1+e^x). These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Power: d/dx x^n = n x^{n−1}. Constant multiple: (cf)'=cf'. Exponential: d/dx e^x = e^x.
+
+Trig: (sin x)'=cos x, (cos x)'=−sin x. Sigmoid σ(x): σ'(x)=σ(x)(1−σ(x)). Softplus smooth ReLU: d/dx ln(1+e^x).
+
+These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Basic Rules** in the context of **Differentiation Rules**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `d/dx x^n = n x^(n−1)`,
             `d/dx e^x = e^x`,
@@ -455,12 +722,44 @@ w=3.; print(2*w)`,
 x=np.array([0.5,1.,2.])
 s=1/(1+np.exp(-x))
 print("sigmoid:", s, "deriv:", s*(1-s))`,
-          output: `sigmoid deriv`
+          output: `sigmoid deriv`,
+          pseudoCode: `CONCEPT: Basic Rules
+
+Key relationships:
+  d/dx x^n = n x^(n−1)
+  d/dx e^x = e^x
+  d/dx ln(x) = 1/x
+  σ'(x) = σ(x)(1−σ(x))
+  (f+g)' = f' + g'
+
+Diagram (summary):
+  rule toolbox:
+  power  product  quotient  chain
+  ↓       ↓        ↓        ↓
+  combine for complex f(x)
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. Power rule most common
+  2. Sigmoid derivative product form
+  3. Sum rule linearizes
+  4. Build complex from simple
+  5. Table speeds manual work`
         },
         {
           id: `dr-product`,
           title: `Product & Quotient Rules`,
-          content: `**Product**: (fg)' = f'g + fg'. **Quotient**: (f/g)' = (f'g − fg')/g². **Reciprocal**: (1/g)' = −g'/g². Dot product derivative: d/dt(u·v)=u'·v+u·v'. Matrix product: d/dt(AB)=A'B+AB' when both vary. Used when loss combines products of predictions and weights. Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `**Product**: (fg)' = f'g + fg'. **Quotient**: (f/g)' = (f'g − fg')/g². **Reciprocal**: (1/g)' = −g'/g².
+
+Dot product derivative: d/dt(u·v)=u'·v+u·v'. Matrix product: d/dt(AB)=A'B+AB' when both vary. Used when loss combines products of predictions and weights.
+
+Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Product & Quotient Rules** in the context of **Differentiation Rules**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `(fg)' = f'g + fg'`,
             `(f/g)' = (f'g − fg')/g²`,
@@ -491,12 +790,44 @@ f=lambda x:x**2; g=lambda x:np.sin(x)
 h=lambda x:f(x)*g(x)
 h1=(2*x)*np.sin(x)+x**2*np.cos(x)
 print("product rule:", h1)`,
-          output: `product rule at x=2`
+          output: `product rule at x=2`,
+          pseudoCode: `CONCEPT: Product & Quotient Rules
+
+Key relationships:
+  (fg)' = f'g + fg'
+  (f/g)' = (f'g − fg')/g²
+  d(u·v) = u'·v + u·v'
+  d(AB) = A'B + AB'
+  (1/g)' = −g'/g²
+
+Diagram (summary):
+  (fg)': two terms
+  f ──┐
+  ├── product → f'g + fg'
+  g ──┘
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. Product rule two-term split
+  2. Quotient for ratios
+  3. Matrix product needs order
+  4. Softmax uses quotient structure
+  5. Verify with numeric diff`
         },
         {
           id: `dr-chain`,
           title: `Chain Rule`,
-          content: `**Chain rule**: (f∘g)'(x) = f'(g(x))·g'(x). Multivariate: dz/dx = dz/dy · dy/dx. Deep networks: ∂L/∂x₁ = (∂L/∂x_n)(∂x_n/∂x_{n−1})...(∂x₂/∂x₁) product of Jacobians—backprop. **Computational graph** tracks dependencies. Reverse-mode autodiff efficient when many inputs, one output (typical loss). Forward-mode for few inputs. Chain rule is foundation of automatic differentiation in PyTorch/JAX. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `**Chain rule**: (f∘g)'(x) = f'(g(x))·g'(x). Multivariate: dz/dx = dz/dy · dy/dx. Deep networks: ∂L/∂x₁ = (∂L/∂x_n)(∂x_n/∂x_{n−1})...(∂x₂/∂x₁) product of Jacobians—backprop.
+
+**Computational graph** tracks dependencies. Reverse-mode autodiff efficient when many inputs, one output (typical loss). Forward-mode for few inputs.
+
+Chain rule is foundation of automatic differentiation in PyTorch/JAX. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Chain Rule** in the context of **Differentiation Rules**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `(f∘g)'(x) = f'(g(x))·g'(x)`,
             `∂L/∂w = ∂L/∂y · ∂y/∂w`,
@@ -524,12 +855,43 @@ print("product rule:", h1)`,
           example: `import numpy as np
 # L=(x²+1)³ at x=1: dL/dx=3(x²+1)²·2x
 x=1.; inner=x**2+1; print(3*inner**2*2*x)`,
-          output: `chain: 24 at x=1`
+          output: `chain: 24 at x=1`,
+          pseudoCode: `CONCEPT: Chain Rule
+
+Key relationships:
+  (f∘g)'(x) = f'(g(x))·g'(x)
+  ∂L/∂w = ∂L/∂y · ∂y/∂w
+  Backprop = chain rule on graph
+  Reverse-mode: one backward pass
+  Jacobian product along path
+
+Diagram (summary):
+  x → g → u → f → L
+  dL/dx = dL/df · df/du · du/dx
+  chain multiplies local derivatives
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. Chain rule powers backprop
+  2. Local grads multiply along path
+  3. Reverse-mode efficient for DL
+  4. Graph tracks computation
+  5. Vanishing = product of small terms`
         },
         {
           id: `dr-common`,
           title: `Common ML Derivatives`,
-          content: `MSE: L=(1/2)(y−ŷ)², ∂L/∂ŷ=ŷ−y. BCE with logits handled in fused ops. L2 reg: λ||w||², ∂/∂w=2λw. Cross-entropy w softmax combined derivative simplifies to ŷ−y one-hot. tanh': 1−tanh². GELU, SiLU modern activations have known derivatives. BatchNorm backward involves batch statistics derivatives. Keeping cheat sheet accelerates debugging custom layers without autograd. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `MSE: L=(1/2)(y−ŷ)², ∂L/∂ŷ=ŷ−y. BCE with logits handled in fused ops. L2 reg: λ||w||², ∂/∂w=2λw.
+
+Cross-entropy w softmax combined derivative simplifies to ŷ−y one-hot. tanh': 1−tanh². GELU, SiLU modern activations have known derivatives. BatchNorm backward involves batch statistics derivatives.
+
+Keeping cheat sheet accelerates debugging custom layers without autograd. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Common ML Derivatives** in the context of **Differentiation Rules**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `MSE: ∂L/∂ŷ = ŷ − y`,
             `L2: ∂(λ||w||²)/∂w = 2λw`,
@@ -557,7 +919,32 @@ x=1.; inner=x**2+1; print(3*inner**2*2*x)`,
           example: `import numpy as np
 y=np.array([1.,0.,0.]); yhat=np.array([0.7,0.2,0.1])
 print("grad CE approx:", yhat-y)`,
-          output: `yhat - y`
+          output: `yhat - y`,
+          pseudoCode: `CONCEPT: Common ML Derivatives
+
+Key relationships:
+  MSE: ∂L/∂ŷ = ŷ − y
+  L2: ∂(λ||w||²)/∂w = 2λw
+  Softmax+CE: ∂L/∂z = ŷ − y
+  tanh': 1 − tanh²(x)
+  ReLU': 1 if x>0 else 0
+
+Diagram (summary):
+  CE + softmax magic:
+  gradient w.r.t logits
+  = predicted − true
+  elegant single form
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. MSE gradient simple residual
+  2. Softmax+CE simplifies beautifully
+  3. L2 adds 2λw to gradient
+  4. Know activation derivatives
+  5. Fused ops for stability`
         }
       ],
       exercises: [
@@ -632,7 +1019,15 @@ x=0.; inner=3*x+1; print(5*inner**4*3)`,
         {
           id: `tay-def`,
           title: `Taylor Series Definition`,
-          content: `Taylor expansion of f about a: f(x)=∑_{n=0}^∞ f^(n)(a)/n! · (x−a)^n. **Maclaurin** is a=0. f(x)≈f(a)+f'(a)(x−a)+f''(a)(x−a)²/2! truncated. Remainder Lagrange form bounds error. sin(x), cos(x), e^x have infinite radius convergence. Approximate functions locally for analysis. Newton method uses first-order Taylor. Second-order Taylor gives Newton step with Hessian. In ML, linearization of nonlinear models near operating point.`,
+          content: `Taylor expansion of f about a: f(x)=∑_{n=0}^∞ f^(n)(a)/n! · (x−a)^n. **Maclaurin** is a=0. f(x)≈f(a)+f'(a)(x−a)+f''(a)(x−a)²/2! truncated.
+
+Remainder Lagrange form bounds error. sin(x), cos(x), e^x have infinite radius convergence. Approximate functions locally for analysis.
+
+Newton method uses first-order Taylor. Second-order Taylor gives Newton step with Hessian.
+
+In ML, linearization of nonlinear models near operating point.
+
+**Taylor Series Definition** in the context of **Taylor Series & Approximation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `f(x) = ∑ f^(n)(a)/n! · (x−a)^n`,
             `T₁: f(a) + f'(a)(x−a)`,
@@ -660,12 +1055,46 @@ x=0.; inner=3*x+1; print(5*inner**4*3)`,
           example: `import numpy as np
 x=0.1
 print("e^x approx:", 1+x+x**2/2, "exact:", np.exp(x))`,
-          output: `2nd order close`
+          output: `2nd order close`,
+          pseudoCode: `CONCEPT: Taylor Series Definition
+
+Key relationships:
+  f(x) = ∑ f^(n)(a)/n! · (x−a)^n
+  T₁: f(a) + f'(a)(x−a)
+  Maclaurin: expand at 0
+  e^x = ∑ x^n/n!
+  sin(x) = ∑ (−1)^n x^(2n+1)/(2n+1)!
+
+Diagram (summary):
+  local approx near a:
+  f(x) ≈ tangent parabola
+  ╱ curve f
+  ╱___ approx
+  a
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+
+Checklist:
+  1. Taylor = local polynomial fit
+  2. More terms → better approx
+  3. Maclaurin common at origin
+  4. e, sin, cos standard series
+  5. Linearization = first-order Taylor`
         },
         {
           id: `tay-approx`,
           title: `Approximation Error`,
-          content: `Truncation error from omitted terms. Higher-order terms matter far from expansion point. **Big-O** notation: f(x)=f(a)+f'(a)(x−a)+O((x−a)²). Choose expansion point near region of interest. Gradient descent is first-order—linear model of loss locally. Newton uses second-order curvature. Laplace approximation approximates integrals via Gaussian from second-order Taylor of log integrand—used in variational inference.`,
+          content: `Truncation error from omitted terms. Higher-order terms matter far from expansion point.
+
+**Big-O** notation: f(x)=f(a)+f'(a)(x−a)+O((x−a)²). Choose expansion point near region of interest.
+
+Gradient descent is first-order—linear model of loss locally. Newton uses second-order curvature.
+
+Laplace approximation approximates integrals via Gaussian from second-order Taylor of log integrand—used in variational inference.
+
+**Approximation Error** in the context of **Taylor Series & Approximation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `Error ~ f''(ξ)(x−a)²/2 (2nd order)`,
             `Far from a: need more terms`,
@@ -694,12 +1123,46 @@ print("e^x approx:", 1+x+x**2/2, "exact:", np.exp(x))`,
 x=np.linspace(-1,1,5)
 approx=1+x+x**2/2+x**3/6
 print("err:", np.abs(np.exp(x)-approx))`,
-          output: `error small near 0`
+          output: `error small near 0`,
+          pseudoCode: `CONCEPT: Approximation Error
+
+Key relationships:
+  Error ~ f''(ξ)(x−a)²/2 (2nd order)
+  Far from a: need more terms
+  GD: first-order step
+  Newton: second-order step
+  Laplace approx: Taylor on log p
+
+Diagram (summary):
+  error grows with |x-a|
+  good:  ·── approx ≈ f
+  bad:   ·── diverge far out
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+  │  · · ·
+
+Checklist:
+  1. Stay near expansion point
+  2. Newton faster near minimum
+  3. GD OK with small steps
+  4. Laplace for Bayesian approx
+  5. Big-O tracks leading error`
         },
         {
           id: `tay-multivar`,
           title: `Multivariate Taylor`,
-          content: `f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vector of first partials. Hessian H_ij=∂²f/∂x_i∂x_j symmetric if f twice differentiable. Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle. Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vector of first partials.
+
+Hessian H_ij=∂²f/∂x_i∂x_j symmetric if f twice differentiable. Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle.
+
+Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Multivariate Taylor** in the context of **Taylor Series & Approximation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ`,
             `H_ij = ∂²f/∂x_i∂x_j`,
@@ -728,12 +1191,46 @@ print("err:", np.abs(np.exp(x)-approx))`,
 # f=x²+y², H=[[2,0],[0,2]]
 H=np.array([[2.,0.],[0.,2.]])
 print("eig:", np.linalg.eigvalsh(H))`,
-          output: `all positive → min`
+          output: `all positive → min`,
+          pseudoCode: `CONCEPT: Multivariate Taylor
+
+Key relationships:
+  f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ
+  H_ij = ∂²f/∂x_i∂x_j
+  H positive definite → local min
+  Mixed eigenvalues → saddle
+  Gauss-Newton approx Hessian
+
+Diagram (summary):
+  Hessian eigenvalues at critical:
+  all + : bowl min
+  all − : cap max
+  mixed : saddle ╱╲
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. Gradient is first-order term
+  2. Hessian captures curvature
+  3. Eigenvalues classify critical pts
+  4. Saddles plague high-D opt
+  5. Second-order methods use H`
         },
         {
           id: `tay-ml`,
           title: `Taylor in ML Optimization`,
-          content: `Loss linearization L(θ+Δ)≈L(θ)+∇L·Δ guides GD step. **Newton**: Δ=−H⁻¹∇L from quadratic model. **Adam** adapts steps per parameter—not pure Taylor but related momentum. **Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP. Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Loss linearization L(θ+Δ)≈L(θ)+∇L·Δ guides GD step. **Newton**: Δ=−H⁻¹∇L from quadratic model.
+
+**Adam** adapts steps per parameter—not pure Taylor but related momentum. **Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP.
+
+Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Taylor in ML Optimization** in the context of **Taylor Series & Approximation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `GD step from 1st order Taylor`,
             `Newton from 2nd order model`,
@@ -762,7 +1259,33 @@ print("eig:", np.linalg.eigvalsh(H))`,
 L=lambda t:t**2; grad=lambda t:2*t
 t=3.; eta=0.1
 print("GD step:", t-eta*grad(t))`,
-          output: `t decreases`
+          output: `t decreases`,
+          pseudoCode: `CONCEPT: Taylor in ML Optimization
+
+Key relationships:
+  GD step from 1st order Taylor
+  Newton from 2nd order model
+  MAP + Laplace ≈ Gaussian posterior
+  Small η: Taylor accurate
+  Large η: higher terms matter
+
+Diagram (summary):
+  η too large:
+  linear approx breaks
+  overshoot minimum
+  oscillate diverge
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. LR tied to Taylor validity
+  2. Newton quadratic convergence local
+  3. Laplace for uncertainty approx
+  4. Linear models = local approx
+  5. Higher-order methods costly`
         }
       ],
       exercises: [
@@ -838,7 +1361,13 @@ print(9+6*(x-a)+(x-a)**2, x**2)`,
         {
           id: `int-def`,
           title: `Integral Definition`,
-          content: `**Riemann sum**: ∫_a^b f(x)dx ≈ ∑ f(x_i)Δx limit as partition refines. **Indefinite integral** ∫f(x)dx = F(x)+C where F'=f. **Definite integral** gives signed area under curve. Fundamental Theorem: ∫_a^b f(x)dx = F(b)−F(a) if F'=f. Probability: ∫ p(x)dx=1 for PDF. Expected value E[X]=∫ x p(x) dx. Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `**Riemann sum**: ∫_a^b f(x)dx ≈ ∑ f(x_i)Δx limit as partition refines. **Indefinite integral** ∫f(x)dx = F(x)+C where F'=f. **Definite integral** gives signed area under curve.
+
+Fundamental Theorem: ∫_a^b f(x)dx = F(b)−F(a) if F'=f. Probability: ∫ p(x)dx=1 for PDF. Expected value E[X]=∫ x p(x) dx.
+
+Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Integral Definition** in the context of **Integrals & Area**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `∫_a^b f(x)dx = signed area`,
             `F(b) − F(a) if F' = f`,
@@ -868,12 +1397,46 @@ f=lambda x:x**2
 a,b=0,2
 x=np.linspace(a,b,1000)
 print("trapz:", np.trapz(f(x),x), "exact:", 8/3)`,
-          output: `8/3`
+          output: `8/3`,
+          pseudoCode: `CONCEPT: Integral Definition
+
+Key relationships:
+  ∫_a^b f(x)dx = signed area
+  F(b) − F(a) if F' = f
+  ∫ p(x)dx = 1 (PDF)
+  E[X] = ∫ x p(x) dx
+  Riemann: ∑ f(x_i) Δx
+
+Diagram (summary):
+  ∫_a^b f(x) dx = shaded area
+  f(x)
+  ╱╲
+  ╱  ╲___
+  ╱ area ╲
+  ─a────────b── x
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. Integral accumulates infinitesimals
+  2. FTC links derivative and integral
+  3. PDF integrates to 1
+  4. Expectation is integral
+  5. Monte Carlo for high-D integrals`
         },
         {
           id: `int-rules`,
           title: `Integration Techniques`,
-          content: `Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Substitution** u=g(x). **Integration by parts** ∫u dv = uv − ∫v du. **Partial fractions** for rational functions. Gaussian integral ∫ e^{−x²} dx = √π over ℝ. Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Substitution** u=g(x).
+
+**Integration by parts** ∫u dv = uv − ∫v du. **Partial fractions** for rational functions.
+
+Gaussian integral ∫ e^{−x²} dx = √π over ℝ. Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Integration Techniques** in the context of **Integrals & Area**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `∫ x^n dx = x^(n+1)/(n+1) + C`,
             `∫ e^x dx = e^x + C`,
@@ -902,12 +1465,45 @@ print("trapz:", np.trapz(f(x),x), "exact:", 8/3)`,
 from scipy import integrate
 val,_=integrate.quad(lambda x:np.exp(-x**2),-np.inf,np.inf)
 print("gaussian:", val, "sqrt pi:", np.sqrt(np.pi))`,
-          output: `sqrt pi`
+          output: `sqrt pi`,
+          pseudoCode: `CONCEPT: Integration Techniques
+
+Key relationships:
+  ∫ x^n dx = x^(n+1)/(n+1) + C
+  ∫ e^x dx = e^x + C
+  ∫ 1/x dx = ln|x| + C
+  ∫ e^(−x²) dx = √π (over ℝ)
+  By parts: ∫u dv = uv − ∫v du
+
+Diagram (summary):
+  by parts picks u,dv:
+  ∫ u dv = u·v − ∫ v du
+  choose u that simplifies when diff
+  │
+  │  · · ·
+  └──────────
+  (see formulas above)
+  │
+
+Checklist:
+  1. Substitution reverses chain rule
+  2. By parts for products
+  3. Gaussian integral famous
+  4. Numerical quad when no closed form
+  5. PDF normalization uses integrals`
         },
         {
           id: `int-prob`,
           title: `Integrals in Probability`,
-          content: `Continuous PDF p(x)≥0, ∫p=1. CDF F(x)=∫_{−∞}^x p(t)dt. E[g(X)]=∫ g(x)p(x)dx. Variance via ∫ (x−μ)²p(x)dx. Joint PDF integrates to 1 over ℝ². Marginal: p(x)=∫ p(x,y)dy. Change of variables: if y=g(x), ∫ f(y)dy = ∫ f(g(x))|g'(x)|dx. Jacobian determinant generalizes to multivariate. Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+          content: `Continuous PDF p(x)≥0, ∫p=1. CDF F(x)=∫_{−∞}^x p(t)dt. E[g(X)]=∫ g(x)p(x)dx.
+
+Variance via ∫ (x−μ)²p(x)dx. Joint PDF integrates to 1 over ℝ². Marginal: p(x)=∫ p(x,y)dy.
+
+Change of variables: if y=g(x), ∫ f(y)dy = ∫ f(g(x))|g'(x)|dx. Jacobian determinant generalizes to multivariate. Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+
+**Integrals in Probability** in the context of **Integrals & Area**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `∫ p(x) dx = 1`,
             `F(x) = ∫_{−∞}^x p(t) dt`,
@@ -936,12 +1532,43 @@ print("gaussian:", val, "sqrt pi:", np.sqrt(np.pi))`,
 x=np.linspace(-4,4,1000)
 p=np.exp(-x**2/2)/np.sqrt(2*np.pi)
 print("norm check:", np.trapz(p,x))`,
-          output: `≈ 1.0`
+          output: `≈ 1.0`,
+          pseudoCode: `CONCEPT: Integrals in Probability
+
+Key relationships:
+  ∫ p(x) dx = 1
+  F(x) = ∫_{−∞}^x p(t) dt
+  E[g(X)] = ∫ g(x) p(x) dx
+  Marginal: ∫ p(x,y) dy
+  Change vars: multiply by |dx/dy|
+
+Diagram (summary):
+  PDF normalization:
+  area under p(x) = 1
+  p(x)
+  │  ╱╲
+  │ ╱  ╲
+  └──┴───┴── x
+  total area = 1
+  │
+
+Checklist:
+  1. PDF must integrate to 1
+  2. CDF is cumulative integral
+  3. Expectations are integrals
+  4. Jacobian in multivariate change
+  5. Evidence integral often hard`
         },
         {
           id: `int-mc`,
           title: `Monte Carlo Integration`,
-          content: `Estimate ∫ f(x)p(x)dx ≈ (1/N)∑ f(x_i) with x_i~p—unbiased if samples from p. **Importance sampling** sample from q instead, weight f/q. **MCMC** generates correlated samples from posterior. High-dimensional integrals: MC often beats grid. Variance decreases O(1/√N). Used in Bayesian model evidence, policy gradient expectations, and dropout as approximate integral over weights. np.random provides sampling primitives.`,
+          content: `Estimate ∫ f(x)p(x)dx ≈ (1/N)∑ f(x_i) with x_i~p—unbiased if samples from p. **Importance sampling** sample from q instead, weight f/q.
+
+**MCMC** generates correlated samples from posterior. High-dimensional integrals: MC often beats grid.
+
+Variance decreases O(1/√N). Used in Bayesian model evidence, policy gradient expectations, and dropout as approximate integral over weights. np.random provides sampling primitives.
+
+**Monte Carlo Integration** in the context of **Integrals & Area**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
           formulas: [
             `E[f(X)] ≈ (1/N) ∑ f(x_i)`,
             `Var ∝ 1/N`,
@@ -971,7 +1598,32 @@ np.random.seed(0)
 samples=np.random.randn(100000)
 est=np.mean(samples**2)
 print("E[X²] est:", est, "true:", 1.0)`,
-          output: `≈ 1.0`
+          output: `≈ 1.0`,
+          pseudoCode: `CONCEPT: Monte Carlo Integration
+
+Key relationships:
+  E[f(X)] ≈ (1/N) ∑ f(x_i)
+  Var ∝ 1/N
+  Importance: weight by p/q
+  MCMC for posterior expectations
+  High-D: MC scales better than grid
+
+Diagram (summary):
+  MC integration:
+  sample · · · under p(x)
+  average f(x_i)
+  more samples → less error
+  error ~ 1/√N
+  │
+  │  · · ·
+  └──────────
+
+Checklist:
+  1. MC for high-dimensional integrals
+  2. Importance sampling reduces variance
+  3. MCMC for Bayesian inference
+  4. 1/√N convergence slow but general
+  5. Dropout ≈ MC over masks`
         }
       ],
       exercises: [

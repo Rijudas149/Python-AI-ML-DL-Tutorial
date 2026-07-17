@@ -11,7 +11,11 @@ export const module05Topics: Topic[] = [
         {
           id: `decorator-basics`,
           title: `Function Decorators`,
-          content: `A decorator is \`@decorator\` syntax for \`func = decorator(func)\`. Decorators are higher-order functions that wrap callables.`,
+          content: `A decorator is \`@decorator\` syntax for \`func = decorator(func)\`.
+
+Decorators are higher-order functions that wrap callables.
+
+**Function Decorators** in the context of **Decorators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def log_calls(func):
     def wrapper(*args, **kwargs):
         print(f"Calling {func.__name__}")
@@ -30,12 +34,21 @@ print(add(2, 3))`,
             `@syntax is syntactic sugar`,
             `wrapper must use *args, **kwargs`,
             `functools.wraps preserves metadata`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Function Decorators
+
+Checklist:
+  1. Decorators wrap functions transparently
+  2. @syntax is syntactic sugar
+  3. wrapper must use *args, **kwargs
+  4. functools.wraps preserves metadata`
         },
         {
           id: `functools-wraps`,
           title: `functools.wraps & functools`,
-          content: `Always use \`@wraps(func)\` on wrapper to preserve \`__name__\`, \`__doc__\`. functools.lru_cache, partial, reduce are essential tools.`,
+          content: `Always use \`@wraps(func)\` on wrapper to preserve \`__name__\`, \`__doc__\`. functools.lru_cache, partial, reduce are essential tools.
+
+**functools.wraps & functools** in the context of **Decorators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from functools import wraps, lru_cache
 
 @lru_cache(maxsize=128)
@@ -50,12 +63,21 @@ print(fib(30))`,
             `wraps preserves function identity`,
             `partial creates specialized functions`,
             `Decorators with args need decorator factory`
-          ]
+          ],
+          pseudoCode: `CONCEPT: functools.wraps & functools
+
+Checklist:
+  1. lru_cache memoizes function results
+  2. wraps preserves function identity
+  3. partial creates specialized functions
+  4. Decorators with args need decorator factory`
         },
         {
           id: `param-decorator`,
           title: `Decorators with Parameters`,
-          content: `Three-level nesting: decorator factory → decorator → wrapper. \`@retry(times=3)\` pattern.`,
+          content: `Three-level nesting: decorator factory → decorator → wrapper. \`@retry(times=3)\` pattern.
+
+**Decorators with Parameters** in the context of **Decorators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from functools import wraps
 
 def repeat(n):
@@ -81,18 +103,36 @@ Hello`,
             `Middle function receives wrapped function`,
             `Inner function receives call args`,
             `Flask/FastAPI routes use parameterized decorators`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Decorators with Parameters
+
+Checklist:
+  1. Outer function receives decorator args
+  2. Middle function receives wrapped function
+  3. Inner function receives call args
+  4. Flask/FastAPI routes use parameterized decorators`
         },
         {
           id: `class-decorator`,
           title: `Class Decorators`,
-          content: `Decorators work on classes too. \`@dataclass\`, \`@property\` are built-in class decorators. Metaclasses are advanced alternative.`,
+          content: `Decorators work on classes too. \`@dataclass\`, \`@property\` are built-in class decorators.
+
+Metaclasses are advanced alternative.
+
+**Class Decorators** in the context of **Decorators**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Class decorators modify or register classes`,
             `dataclass is a class decorator`,
             `Metaclasses customize class creation`,
             `Use decorators before metaclasses`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Class Decorators
+
+Checklist:
+  1. Class decorators modify or register classes
+  2. dataclass is a class decorator
+  3. Metaclasses customize class creation
+  4. Use decorators before metaclasses`
         }
       ],
       exercises: [
@@ -179,7 +219,11 @@ print(fact(10))`,
         {
           id: `yield`,
           title: `Generator Functions`,
-          content: `\`yield\` pauses function and returns value. Resumes on next(). Generators are iterators — memory efficient.`,
+          content: `\`yield\` pauses function and returns value.
+
+Generators are iterators — memory efficient.
+
+**Generator Functions** in the context of **Generators & yield**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def count_up(n):
     i = 0
     while i < n:
@@ -194,12 +238,23 @@ for x in count_up(5):
             `State preserved between yields`,
             `Generators are single-pass iterators`,
             `Use for infinite sequences and pipelines`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Generator Functions
+
+Checklist:
+  1. yield transforms function to generator
+  2. State preserved between yields
+  3. Generators are single-pass iterators
+  4. Use for infinite sequences and pipelines`
         },
         {
           id: `yield-from`,
           title: `yield from & send`,
-          content: `\`yield from iterable\` delegates to sub-generator. \`.send(value)\` sends values into generator. Advanced coroutine patterns.`,
+          content: `\`yield from iterable\` delegates to sub-generator. \`.send(value)\` sends values into generator.
+
+Advanced coroutine patterns.
+
+**yield from & send** in the context of **Generators & yield**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def chain(*iterables):
     for it in iterables:
         yield from it
@@ -211,12 +266,23 @@ print(list(chain([1,2], [3,4])))`,
             `send() enables two-way communication`,
             `throw() and close() control generator lifecycle`,
             `Foundation for async/await`
-          ]
+          ],
+          pseudoCode: `CONCEPT: yield from & send
+
+Checklist:
+  1. yield from simplifies generator delegation
+  2. send() enables two-way communication
+  3. throw() and close() control generator lifecycle
+  4. Foundation for async/await`
         },
         {
           id: `gen-expr`,
           title: `Generator Pipelines`,
-          content: `Chain generators for data pipelines: read → filter → transform → aggregate. Memory stays constant.`,
+          content: `Chain generators for data pipelines: read → filter → transform → aggregate.
+
+Memory stays constant.
+
+**Generator Pipelines** in the context of **Generators & yield**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def read_nums():
     for x in [1,2,3,4,5,6]:
         yield x
@@ -233,18 +299,36 @@ print(list(evens(read_nums())))`,
             `Lazy evaluation — no intermediate lists`,
             `Pattern used in ETL and streaming ML`,
             `itertools.chain and tee assist pipelines`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Generator Pipelines
+
+Checklist:
+  1. Pipeline stages are composable generators
+  2. Lazy evaluation — no intermediate lists
+  3. Pattern used in ETL and streaming ML
+  4. itertools.chain and tee assist pipelines`
         },
         {
           id: `infinite`,
           title: `Infinite Generators`,
-          content: `Generators can yield forever: \`while True: yield x\`. Use with break condition or itertools.islice to limit.`,
+          content: `Generators can yield forever: \`while True: yield x\`.
+
+Use with break condition or itertools.islice to limit.
+
+**Infinite Generators** in the context of **Generators & yield**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Infinite generators model streams`,
             `islice limits consumption`,
             `cycle and repeat from itertools`,
             `Careful with memory on accidental materialization`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Infinite Generators
+
+Checklist:
+  1. Infinite generators model streams
+  2. islice limits consumption
+  3. cycle and repeat from itertools
+  4. Careful with memory on accidental materialization`
         }
       ],
       exercises: [
@@ -319,7 +403,11 @@ print(next(g), next(g))`,
         {
           id: `with`,
           title: `The with Statement`,
-          content: `Context managers guarantee setup/teardown via \`__enter__\` and \`__exit__\`. Essential for files, locks, DB connections.`,
+          content: `Context managers guarantee setup/teardown via \`__enter__\` and \`__exit__\`.
+
+Essential for files, locks, DB connections.
+
+**The with Statement** in the context of **Context Managers**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `class Timer:
     def __enter__(self):
         import time
@@ -337,12 +425,21 @@ with Timer():
             `__exit__ receives exception info`,
             `Return True from __exit__ to suppress exception`,
             `File handling primary use case`
-          ]
+          ],
+          pseudoCode: `CONCEPT: The with Statement
+
+Checklist:
+  1. with guarantees cleanup even on exceptions
+  2. __exit__ receives exception info
+  3. Return True from __exit__ to suppress exception
+  4. File handling primary use case`
         },
         {
           id: `contextlib`,
           title: `contextlib Utilities`,
-          content: `@contextmanager decorator turns generator into context manager. contextlib.suppress, ExitStack for multiple contexts.`,
+          content: `@contextmanager decorator turns generator into context manager. contextlib.suppress, ExitStack for multiple contexts.
+
+**contextlib Utilities** in the context of **Context Managers**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from contextlib import contextmanager
 
 @contextmanager
@@ -361,12 +458,23 @@ content
             `yield separates enter and exit logic`,
             `ExitStack manages dynamic context count`,
             `suppress catches specific exceptions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: contextlib Utilities
+
+Checklist:
+  1. contextmanager decorator simplifies creation
+  2. yield separates enter and exit logic
+  3. ExitStack manages dynamic context count
+  4. suppress catches specific exceptions`
         },
         {
           id: `file-context`,
           title: `File Handling Pattern`,
-          content: `Always: \`with open(path, "r", encoding="utf-8") as f:\`. Automatic close even on error.`,
+          content: `Always: \`with open(path, "r", encoding="utf-8") as f:\`.
+
+Automatic close even on error.
+
+**File Handling Pattern** in the context of **Context Managers**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `# Pattern demonstration
 content = "Hello, File!"
 lines = content.split("\\n")
@@ -377,18 +485,36 @@ print(len(lines), lines[0])`,
             `Specify encoding explicitly`,
             `Use json.load inside with block`,
             `Pathlib improves path handling`
-          ]
+          ],
+          pseudoCode: `CONCEPT: File Handling Pattern
+
+Checklist:
+  1. with open is the only correct file pattern
+  2. Specify encoding explicitly
+  3. Use json.load inside with block
+  4. Pathlib improves path handling`
         },
         {
           id: `async-context`,
           title: `Async Context Managers`,
-          content: `async with for async __aenter__/__aexit__. Required for async DB sessions and HTTP clients.`,
+          content: `async with for async __aenter__/__aexit__.
+
+Required for async DB sessions and HTTP clients.
+
+**Async Context Managers** in the context of **Context Managers**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `async with for asyncio resources`,
             `@asynccontextmanager decorator available`,
             `Used in FastAPI lifespan events`,
             `Ensure proper await in async contexts`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Async Context Managers
+
+Checklist:
+  1. async with for asyncio resources
+  2. @asynccontextmanager decorator available
+  3. Used in FastAPI lifespan events
+  4. Ensure proper await in async contexts`
         }
       ],
       exercises: [
@@ -466,7 +592,13 @@ print(result)`,
         {
           id: `hints`,
           title: `Type Annotations`,
-          content: `Annotate parameters and returns: \`def greet(name: str) -> str:\`. Use list[int], dict[str, float] (Python 3.9+). Optional[X] or X | None for nullable.`,
+          content: `Annotate parameters and returns: \`def greet(name: str) -> str:\`.
+
+Use list[int], dict[str, float] (Python 3.9+).
+
+Optional[X] or X | None for nullable.
+
+**Type Annotations** in the context of **Type Hints & dataclasses**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `def process(items: list[int], threshold: float = 0.5) -> dict[str, int]:
     above = [x for x in items if x > threshold * max(items)]
     return {"count": len(above), "max": max(above) if above else 0}
@@ -478,12 +610,21 @@ print(process([1, 5, 3, 9, 2]))`,
             `mypy/pyright check statically`,
             `Use from __future__ import annotations for forward refs`,
             `Gradual typing — add incrementally`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Type Annotations
+
+Checklist:
+  1. Type hints are not enforced at runtime
+  2. mypy/pyright check statically
+  3. Use from __future__ import annotations for forward refs
+  4. Gradual typing — add incrementally`
         },
         {
           id: `dataclass`,
           title: `dataclasses Module`,
-          content: `@dataclass generates boilerplate. field() for defaults. frozen, order, slots options.`,
+          content: `@dataclass generates boilerplate. field() for defaults. frozen, order, slots options.
+
+**dataclasses Module** in the context of **Type Hints & dataclasses**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `from dataclasses import dataclass, field
 
 @dataclass
@@ -499,29 +640,58 @@ print(ModelConfig("mlp"))`,
             `frozen=True makes immutable`,
             `asdict() and astuple() for conversion`,
             `Preferred over namedtuple for mutable data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: dataclasses Module
+
+Checklist:
+  1. default_factory for mutable defaults
+  2. frozen=True makes immutable
+  3. asdict() and astuple() for conversion
+  4. Preferred over namedtuple for mutable data`
         },
         {
           id: `pydantic`,
           title: `Pydantic & Validation`,
-          content: `Pydantic BaseModel validates at runtime. Essential for API schemas, config, and ML pipeline configs.`,
+          content: `Pydantic BaseModel validates at runtime.
+
+Essential for API schemas, config, and ML pipeline configs.
+
+**Pydantic & Validation** in the context of **Type Hints & dataclasses**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Pydantic v2 uses Rust core — very fast`,
             `Automatic JSON serialization`,
             `Used in FastAPI request/response models`,
             `Validate ML experiment configs with Pydantic`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Pydantic & Validation
+
+Checklist:
+  1. Pydantic v2 uses Rust core — very fast
+  2. Automatic JSON serialization
+  3. Used in FastAPI request/response models
+  4. Validate ML experiment configs with Pydantic`
         },
         {
           id: `typing-advanced`,
           title: `Advanced Typing`,
-          content: `Union, Literal, TypedDict, Callable, TypeVar, Protocol. Enables precise interfaces for complex codebases.`,
+          content: `Union, Literal, TypedDict, Callable, TypeVar, Protocol.
+
+Enables precise interfaces for complex codebases.
+
+**Advanced Typing** in the context of **Type Hints & dataclasses**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `TypedDict for structured dicts`,
             `Literal for fixed value sets`,
             `Callable[[int, str], bool] for function types`,
             `Essential for large ML codebases`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Advanced Typing
+
+Checklist:
+  1. TypedDict for structured dicts
+  2. Literal for fixed value sets
+  3. Callable[[int, str], bool] for function types
+  4. Essential for large ML codebases`
         }
       ],
       exercises: [
@@ -596,7 +766,11 @@ print(mean([1.0, 2.0, 3.0, 4.0]))`,
         {
           id: `imports`,
           title: `Import System`,
-          content: `\`import module\`, \`from module import name\`, \`from package.sub import Class\`. __init__.py marks packages. Relative imports with dots.`,
+          content: `\`import module\`, \`from module import name\`, \`from package.sub import Class\`. __init__.py marks packages.
+
+Relative imports with dots.
+
+**Import System** in the context of **Modules, Packages & pip**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           example: `# Standard import patterns:
 # import numpy as np
 # from sklearn.model_selection import train_test_split
@@ -607,48 +781,78 @@ print("Organize code into focused modules")`,
             `Avoid import * — pollutes namespace`,
             `Use absolute imports in packages`,
             `__all__ controls from module import *`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Import System
+
+Checklist:
+  1. One module per logical unit
+  2. Avoid import * — pollutes namespace
+  3. Use absolute imports in packages
+  4. __all__ controls from module import *`
         },
         {
           id: `packages`,
           title: `Package Structure`,
-          content: `\`\`\`
-mypackage/
-  __init__.py
-  core.py
-  utils/
-    __init__.py
-    helpers.py
-\`\`\`
-Use pyproject.toml for modern project config.`,
+          content: `\`\`\` mypackage/ __init__.py core.py utils/ __init__.py helpers.py \`\`\` Use pyproject.toml for modern project config.
+
+**Package Structure** in the context of **Modules, Packages & pip**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `src/ layout prevents import confusion`,
             `pyproject.toml replaces setup.py`,
             `__init__.py can expose public API`,
             `Namespace packages for large projects`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Package Structure
+
+Checklist:
+  1. src/ layout prevents import confusion
+  2. pyproject.toml replaces setup.py
+  3. __init__.py can expose public API
+  4. Namespace packages for large projects`
         },
         {
           id: `publishing`,
           title: `Publishing Packages`,
-          content: `Build with \`python -m build\`. Upload to PyPI with \`twine upload\`. Semantic versioning: MAJOR.MINOR.PATCH.`,
+          content: `Build with \`python -m build\`.
+
+Upload to PyPI with \`twine upload\`.
+
+Semantic versioning: MAJOR.MINOR.PATCH.
+
+**Publishing Packages** in the context of **Modules, Packages & pip**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Follow semantic versioning`,
             `README and LICENSE required for PyPI`,
             `Test with TestPyPI first`,
             `Pin dependencies in published packages`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Publishing Packages
+
+Checklist:
+  1. Follow semantic versioning
+  2. README and LICENSE required for PyPI
+  3. Test with TestPyPI first
+  4. Pin dependencies in published packages`
         },
         {
           id: `stdlib`,
           title: `Essential Standard Library`,
-          content: `os, sys, pathlib, json, csv, datetime, collections, itertools, functools, argparse, logging, unittest.`,
+          content: `os, sys, pathlib, json, csv, datetime, collections, itertools, functools, argparse, logging, unittest.
+
+**Essential Standard Library** in the context of **Modules, Packages & pip**: Run the Python example below in a notebook or script, compare your output with the expected result, then review the key takeaways before attempting the exercises.`,
           keyPoints: [
             `Know stdlib before adding dependencies`,
             `pathlib over os.path`,
             `logging over print for production`,
             `argparse or click for CLI tools`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Essential Standard Library
+
+Checklist:
+  1. Know stdlib before adding dependencies
+  2. pathlib over os.path
+  3. logging over print for production
+  4. argparse or click for CLI tools`
         }
       ],
       exercises: [

@@ -11,7 +11,11 @@ export const module17Topics: Topic[] = [
         {
           id: `clean`,
           title: `Text Cleaning`,
-          content: `Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace. Domain-specific rules matter.`,
+          content: `Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace.
+
+Domain-specific rules matter.
+
+**Text Cleaning** in the context of **Text Preprocessing & Tokenization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import re
 
 def clean_text(text):
@@ -26,23 +30,47 @@ print(clean_text("Hello, World! Visit https://example.com"))`,
             `Preserve meaningful punctuation for sentiment`,
             `Handle unicode and encoding issues`,
             `Modern tokenizers often skip manual cleaning`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Text Cleaning
+
+Checklist:
+  1. Cleaning rules depend on task and domain
+  2. Preserve meaningful punctuation for sentiment
+  3. Handle unicode and encoding issues
+  4. Modern tokenizers often skip manual cleaning`
         },
         {
           id: `tokenize`,
           title: `Tokenization Strategies`,
-          content: `Word-level, subword (BPE, WordPiece, SentencePiece), character-level. Subword balances vocabulary size and OOV handling.`,
+          content: `Word-level, subword (BPE, WordPiece, SentencePiece), character-level.
+
+Subword balances vocabulary size and OOV handling.
+
+**Tokenization Strategies** in the context of **Text Preprocessing & Tokenization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Word tokenization simple but huge vocabularies`,
             `BPE used in GPT — merges frequent pairs`,
             `WordPiece used in BERT — likelihood-based merges`,
             `SentencePiece language-agnostic tokenization`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Tokenization Strategies
+
+Checklist:
+  1. Word tokenization simple but huge vocabularies
+  2. BPE used in GPT — merges frequent pairs
+  3. WordPiece used in BERT — likelihood-based merges
+  4. SentencePiece language-agnostic tokenization`
         },
         {
           id: `hf-tokenizer`,
           title: `HuggingFace Tokenizers`,
-          content: `AutoTokenizer.from_pretrained("bert-base-uncased"). Returns input_ids, attention_mask. Handles padding and truncation.`,
+          content: `AutoTokenizer.from_pretrained("bert-base-uncased").
+
+Returns input_ids, attention_mask.
+
+Handles padding and truncation.
+
+**HuggingFace Tokenizers** in the context of **Text Preprocessing & Tokenization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
@@ -53,18 +81,36 @@ print(encoded["input_ids"].shape)`,
             `attention_mask ignores padding tokens`,
             `truncation and max_length for fixed input`,
             `Batch encoding with padding=True`
-          ]
+          ],
+          pseudoCode: `CONCEPT: HuggingFace Tokenizers
+
+Checklist:
+  1. Pretrained tokenizers match model vocabularies
+  2. attention_mask ignores padding tokens
+  3. truncation and max_length for fixed input
+  4. Batch encoding with padding=True`
         },
         {
           id: `vocab`,
           title: `Vocabulary & Special Tokens`,
-          content: `[CLS], [SEP], [PAD], [UNK], [MASK]. Vocabulary maps tokens to integer IDs.`,
+          content: `[CLS], [SEP], [PAD], [UNK], [MASK].
+
+Vocabulary maps tokens to integer IDs.
+
+**Vocabulary & Special Tokens** in the context of **Text Preprocessing & Tokenization**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `[PAD] token enables batch processing`,
             `Special tokens have semantic roles in models`,
             `Vocab size affects embedding matrix size`,
             `Extend vocab for domain-specific tokens`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Vocabulary & Special Tokens
+
+Checklist:
+  1. [PAD] token enables batch processing
+  2. Special tokens have semantic roles in models
+  3. Vocab size affects embedding matrix size
+  4. Extend vocab for domain-specific tokens`
         }
       ],
       exercises: [
@@ -130,29 +176,59 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
         {
           id: `word2vec`,
           title: `Word2Vec`,
-          content: `Skip-gram: predict context from word. CBOW: predict word from context. Similar words have similar vectors.`,
+          content: `Skip-gram: predict context from word.
+
+CBOW: predict word from context.
+
+Similar words have similar vectors.
+
+**Word2Vec** in the context of **Word Embeddings (Word2Vec, GloVe)**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Distributional hypothesis: context defines meaning`,
             `Skip-gram better for rare words`,
             `Negative sampling speeds training`,
             `king - man + woman ≈ queen classic example`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Word2Vec
+
+Checklist:
+  1. Distributional hypothesis: context defines meaning
+  2. Skip-gram better for rare words
+  3. Negative sampling speeds training
+  4. king - man + woman ≈ queen classic example`
         },
         {
           id: `glove`,
           title: `GloVe`,
-          content: `Global Vectors: factorizes co-occurrence matrix. Combines global statistics with local context methods.`,
+          content: `Global Vectors: factorizes co-occurrence matrix.
+
+Combines global statistics with local context methods.
+
+**GloVe** in the context of **Word Embeddings (Word2Vec, GloVe)**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `GloVe uses global co-occurrence counts`,
             `Often comparable to Word2Vec quality`,
             `Pretrained GloVe vectors widely available`,
             `Static embeddings — one vector per word regardless of context`
-          ]
+          ],
+          pseudoCode: `CONCEPT: GloVe
+
+Checklist:
+  1. GloVe uses global co-occurrence counts
+  2. Often comparable to Word2Vec quality
+  3. Pretrained GloVe vectors widely available
+  4. Static embeddings — one vector per word regardless of context`
         },
         {
           id: `nn-embed`,
           title: `nn.Embedding Layer`,
-          content: `torch.nn.Embedding(vocab_size, embed_dim). Lookup table learned during training. Padding index for [PAD].`,
+          content: `torch.nn.Embedding(vocab_size, embed_dim).
+
+Lookup table learned during training.
+
+Padding index for [PAD].
+
+**nn.Embedding Layer** in the context of **Word Embeddings (Word2Vec, GloVe)**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 
@@ -165,18 +241,36 @@ print(embed(input_ids).shape)`,
             `Random init then learned via backprop`,
             `Pretrained embeddings can initialize layer`,
             `embed_dim typically 100-768`
-          ]
+          ],
+          pseudoCode: `CONCEPT: nn.Embedding Layer
+
+Checklist:
+  1. Embedding layer is lookup table of vectors
+  2. Random init then learned via backprop
+  3. Pretrained embeddings can initialize layer
+  4. embed_dim typically 100-768`
         },
         {
           id: `contextual`,
           title: `Contextual Embeddings`,
-          content: `ELMo, BERT produce different vectors per context. "bank" (river) vs "bank" (financial) get different embeddings.`,
+          content: `ELMo, BERT produce different vectors per context.
+
+"bank" (river) vs "bank" (financial) get different embeddings.
+
+**Contextual Embeddings** in the context of **Word Embeddings (Word2Vec, GloVe)**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Static embeddings one vector per word type`,
             `Contextual embeddings depend on sentence`,
             `BERT embeddings revolutionized NLP`,
             `Modern NLP uses contextual embeddings exclusively`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Contextual Embeddings
+
+Checklist:
+  1. Static embeddings one vector per word type
+  2. Contextual embeddings depend on sentence
+  3. BERT embeddings revolutionized NLP
+  4. Modern NLP uses contextual embeddings exclusively`
         }
       ],
       exercises: [
@@ -243,7 +337,13 @@ print(e(torch.tensor([1, 5, 3])).shape)`,
         {
           id: `rnn`,
           title: `Vanilla RNN`,
-          content: `Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t). Processes sequences step by step. Vanishing gradient limits long sequences.`,
+          content: `Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t).
+
+Processes sequences step by step.
+
+Vanishing gradient limits long sequences.
+
+**Vanilla RNN** in the context of **RNNs & LSTMs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 
@@ -257,12 +357,23 @@ print(out.shape, h_n.shape)`,
             `out contains all hidden states`,
             `h_n is final hidden state`,
             `Vanilla RNN rarely used — LSTM/GRU preferred`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Vanilla RNN
+
+Checklist:
+  1. batch_first=True for intuitive dimensions
+  2. out contains all hidden states
+  3. h_n is final hidden state
+  4. Vanilla RNN rarely used — LSTM/GRU preferred`
         },
         {
           id: `lstm`,
           title: `LSTM`,
-          content: `Long Short-Term Memory: cell state + gates (forget, input, output). Solves vanishing gradient for longer sequences.`,
+          content: `Long Short-Term Memory: cell state + gates (forget, input, output).
+
+Solves vanishing gradient for longer sequences.
+
+**LSTM** in the context of **RNNs & LSTMs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch
 import torch.nn as nn
 
@@ -276,23 +387,45 @@ print(out.shape)`,
             `Gates control information flow`,
             `num_layers stacks LSTM layers`,
             `dropout between LSTM layers when num_layers > 1`
-          ]
+          ],
+          pseudoCode: `CONCEPT: LSTM
+
+Checklist:
+  1. Cell state carries long-term memory
+  2. Gates control information flow
+  3. num_layers stacks LSTM layers
+  4. dropout between LSTM layers when num_layers > 1`
         },
         {
           id: `gru`,
           title: `GRU`,
-          content: `Gated Recurrent Unit: simplified LSTM with 2 gates. Fewer parameters, often comparable performance.`,
+          content: `Gated Recurrent Unit: simplified LSTM with 2 gates.
+
+Fewer parameters, often comparable performance.
+
+**GRU** in the context of **RNNs & LSTMs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `GRU merges cell and hidden state`,
             `Fewer parameters than LSTM`,
             `Often preferred when compute limited`,
             `Try both — dataset dependent performance`
-          ]
+          ],
+          pseudoCode: `CONCEPT: GRU
+
+Checklist:
+  1. GRU merges cell and hidden state
+  2. Fewer parameters than LSTM
+  3. Often preferred when compute limited
+  4. Try both — dataset dependent performance`
         },
         {
           id: `bidirectional`,
           title: `Bidirectional RNNs`,
-          content: `Process sequence forward and backward. Concatenate outputs. Captures past and future context.`,
+          content: `Process sequence forward and backward.
+
+Captures past and future context.
+
+**Bidirectional RNNs** in the context of **RNNs & LSTMs**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `import torch.nn as nn
 
 bilstm = nn.LSTM(10, 16, batch_first=True, bidirectional=True)
@@ -304,7 +437,14 @@ print(out.shape)  # hidden dim doubled`,
             `Not suitable for autoregressive generation`,
             `Standard for sequence classification`,
             `pack_padded_sequence for variable length`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Bidirectional RNNs
+
+Checklist:
+  1. Output dimension doubles with bidirectional
+  2. Not suitable for autoregressive generation
+  3. Standard for sequence classification
+  4. pack_padded_sequence for variable length`
         }
       ],
       exercises: [
@@ -371,7 +511,13 @@ print(out.shape)`,
         {
           id: `seq2seq`,
           title: `Encoder-Decoder`,
-          content: `Encoder RNN compresses input to context vector. Decoder RNN generates output sequence. Bottleneck problem with long sequences.`,
+          content: `Encoder RNN compresses input to context vector.
+
+Decoder RNN generates output sequence.
+
+Bottleneck problem with long sequences.
+
+**Encoder-Decoder** in the context of **Seq2Seq & Attention Preview**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           pseudoCode: `encoder_hidden = encode(input_sequence)
 FOR each output step t:
     decoder_hidden, output_t = decode(decoder_hidden, encoder_hidden)`,
@@ -385,35 +531,68 @@ FOR each output step t:
         {
           id: `teacher`,
           title: `Teacher Forcing`,
-          content: `During training, feed ground truth previous token as decoder input. At inference, feed model own prediction.`,
+          content: `During training, feed ground truth previous token as decoder input.
+
+At inference, feed model own prediction.
+
+**Teacher Forcing** in the context of **Seq2Seq & Attention Preview**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Teacher forcing speeds convergence`,
             `Exposure bias: train/inference mismatch`,
             `Scheduled sampling gradually uses model predictions`,
             `Beam search for better inference decoding`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Teacher Forcing
+
+Checklist:
+  1. Teacher forcing speeds convergence
+  2. Exposure bias: train/inference mismatch
+  3. Scheduled sampling gradually uses model predictions
+  4. Beam search for better inference decoding`
         },
         {
           id: `beam`,
           title: `Beam Search Decoding`,
-          content: `Keep top-k partial sequences at each step. Balance exploration vs greedy decoding. beam_width typically 4-8.`,
+          content: `Keep top-k partial sequences at each step.
+
+Balance exploration vs greedy decoding. beam_width typically 4-8.
+
+**Beam Search Decoding** in the context of **Seq2Seq & Attention Preview**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Greedy decoding may miss global optimum`,
             `Beam search explores multiple hypotheses`,
             `Larger beam improves quality but slower`,
             `Length normalization prevents short outputs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Beam Search Decoding
+
+Checklist:
+  1. Greedy decoding may miss global optimum
+  2. Beam search explores multiple hypotheses
+  3. Larger beam improves quality but slower
+  4. Length normalization prevents short outputs`
         },
         {
           id: `apps`,
           title: `Seq2Seq Applications`,
-          content: `Machine translation, text summarization, chatbots, code generation. Mostly replaced by transformers but conceptually important.`,
+          content: `Machine translation, text summarization, chatbots, code generation.
+
+Mostly replaced by transformers but conceptually important.
+
+**Seq2Seq Applications** in the context of **Seq2Seq & Attention Preview**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Transformers dominate seq2seq tasks now`,
             `Understanding seq2seq helps understand attention`,
             `Encoder-decoder pattern persists in T5, BART`,
             `Autoregressive generation core of LLMs`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Seq2Seq Applications
+
+Checklist:
+  1. Transformers dominate seq2seq tasks now
+  2. Understanding seq2seq helps understand attention
+  3. Encoder-decoder pattern persists in T5, BART
+  4. Autoregressive generation core of LLMs`
         }
       ],
       exercises: [
@@ -477,7 +656,11 @@ FOR each output step t:
         {
           id: `ner-task`,
           title: `NER Task Definition`,
-          content: `Identify and classify entities: PERSON, ORG, LOC, DATE. BIO tagging: B-PER (begin), I-PER (inside), O (outside).`,
+          content: `Identify and classify entities: PERSON, ORG, LOC, DATE.
+
+BIO tagging: B-PER (begin), I-PER (inside), O (outside).
+
+**NER Task Definition** in the context of **Named Entity Recognition**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           example: `# BIO tags for "John works at Google"
 # John: B-PER, works: O, at: O, Google: B-ORG
 sentence = ["John", "works", "at", "Google"]
@@ -488,40 +671,80 @@ print(list(zip(sentence, tags)))`,
             `Token-level classification with sequence context`,
             `CRF layer enforces valid tag transitions`,
             `spaCy provides production NER pipelines`
-          ]
+          ],
+          pseudoCode: `CONCEPT: NER Task Definition
+
+Checklist:
+  1. BIO/BIOES tagging schemes standard
+  2. Token-level classification with sequence context
+  3. CRF layer enforces valid tag transitions
+  4. spaCy provides production NER pipelines`
         },
         {
           id: `bi-lstm`,
           title: `BiLSTM-CRF`,
-          content: `Classic NER architecture: embeddings → BiLSTM → CRF. CRF learns transition constraints between tags.`,
+          content: `Classic NER architecture: embeddings → BiLSTM → CRF.
+
+CRF learns transition constraints between tags.
+
+**BiLSTM-CRF** in the context of **Named Entity Recognition**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `CRF prevents invalid tag sequences`,
             `BiLSTM captures context from both directions`,
             `Superseded by BERT fine-tuning for NER`,
             `Still useful for low-resource languages`
-          ]
+          ],
+          pseudoCode: `CONCEPT: BiLSTM-CRF
+
+Checklist:
+  1. CRF prevents invalid tag sequences
+  2. BiLSTM captures context from both directions
+  3. Superseded by BERT fine-tuning for NER
+  4. Still useful for low-resource languages`
         },
         {
           id: `bert-ner`,
           title: `BERT for NER`,
-          content: `Fine-tune BERT with token classification head. Align subword tokens to labels. State-of-the-art on CoNLL benchmarks.`,
+          content: `Fine-tune BERT with token classification head.
+
+Align subword tokens to labels.
+
+State-of-the-art on CoNLL benchmarks.
+
+**BERT for NER** in the context of **Named Entity Recognition**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Fine-tune pretrained BERT on labeled NER data`,
             `Handle subword tokenization alignment`,
             `HuggingFace token-classification pipeline`,
             `Few-shot NER with LLM prompting emerging`
-          ]
+          ],
+          pseudoCode: `CONCEPT: BERT for NER
+
+Checklist:
+  1. Fine-tune pretrained BERT on labeled NER data
+  2. Handle subword tokenization alignment
+  3. HuggingFace token-classification pipeline
+  4. Few-shot NER with LLM prompting emerging`
         },
         {
           id: `applications`,
           title: `NER Applications`,
-          content: `Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).`,
+          content: `Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).
+
+**NER Applications** in the context of **Named Entity Recognition**: Neural network code relies on this foundation at every step — shapes, gradients, and training loops. Execute the example carefully before moving to the exercises.`,
           keyPoints: [
             `Build knowledge graphs from extracted entities`,
             `PII detection is privacy-focused NER`,
             `Clinical NER requires domain-specific models`,
             `Combine NER with relation extraction`
-          ]
+          ],
+          pseudoCode: `CONCEPT: NER Applications
+
+Checklist:
+  1. Build knowledge graphs from extracted entities
+  2. PII detection is privacy-focused NER
+  3. Clinical NER requires domain-specific models
+  4. Combine NER with relation extraction`
         }
       ],
       exercises: [

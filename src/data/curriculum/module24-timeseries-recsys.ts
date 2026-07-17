@@ -26,7 +26,14 @@ print(len(ts))`,
             `Period must match domain cycle`,
             `Residuals should look random if model adequate`,
             `Plot raw series before modeling`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Trend, Seasonality & Noise
+
+Checklist:
+  1. Choose additive vs multiplicative by seasonal amplitude
+  2. Period must match domain cycle
+  3. Residuals should look random if model adequate
+  4. Plot raw series before modeling`
         },
         {
           id: `stationarity`,
@@ -41,7 +48,14 @@ ARIMA(p,d,q): d differencing orders; p AR terms; q MA terms on residuals.
             `ADF p-value low → reject unit root (stationary)`,
             `Over-differencing adds unnecessary noise`,
             `ACF/PACF plots guide p and q selection`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Stationarity & Differencing
+
+Checklist:
+  1. Non-stationary series break many model assumptions
+  2. ADF p-value low → reject unit root (stationary)
+  3. Over-differencing adds unnecessary noise
+  4. ACF/PACF plots guide p and q selection`
         },
         {
           id: `arima`,
@@ -59,7 +73,14 @@ print(len(y))`,
             `Check residual ACF for uncorrelated errors`,
             `Walk-forward validation for forecasting`,
             `Exogenous variables → ARIMAX/SARIMAX`
-          ]
+          ],
+          pseudoCode: `CONCEPT: ARIMA Modeling
+
+Checklist:
+  1. Use AIC/BIC for model comparison
+  2. Check residual ACF for uncorrelated errors
+  3. Walk-forward validation for forecasting
+  4. Exogenous variables → ARIMAX/SARIMAX`
         },
         {
           id: `seasonal-arima`,
@@ -74,7 +95,14 @@ Prophet and neural approaches complement classical SARIMA on messy business seri
             `Multiple seasonalities need complex models`,
             `Interpolate missing timestamps carefully`,
             `Document timezone and aggregation level`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SARIMA
+
+Checklist:
+  1. Seasonal order (P,D,Q,s) requires sufficient history
+  2. Multiple seasonalities need complex models
+  3. Interpolate missing timestamps carefully
+  4. Document timezone and aggregation level`
         }
       ],
       exercises: [
@@ -151,9 +179,11 @@ print(len(pd.date_range("2024-01-01", periods=12, freq="MS")))`,
           title: `Facebook Prophet`,
           content: `**Prophet** models trend changepoints, seasonality (daily/weekly/yearly), and holidays via additive components. Robust to missing data and outliers. API: \`Prophet().fit(df)\` with columns \`ds\`, \`y\`.
 
-Tune \`changepoint_prior_scale\` for flexibility vs overfit.
+Tune \`changepoint_prior_scale\` for flexibility vs overfit. **Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike.
 
-**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Facebook Prophet", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+When studying "Facebook Prophet", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Facebook Prophet** in the context of **Forecasting with Prophet & sklearn**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           example: `import pandas as pd
 df = pd.DataFrame({"ds": pd.date_range("2023-01-01", periods=5), "y": [1,2,3,4,5]})
 print(list(df.columns))`,
@@ -163,7 +193,14 @@ print(list(df.columns))`,
             `Holiday dataframe adds domain events`,
             `Cross-validation via prophet.diagnostics`,
             `Uncertain trend near sparse data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Facebook Prophet
+
+Checklist:
+  1. Prophet expects ds datetime and y numeric
+  2. Holiday dataframe adds domain events
+  3. Cross-validation via prophet.diagnostics
+  4. Uncertain trend near sparse data`
         },
         {
           id: `sklearn-ts`,
@@ -183,7 +220,14 @@ print(len(list(tscv.split(np.arange(20).reshape(-1,1)))))`,
             `Feature leakage if using future lags`,
             `Multi-step forecasting compounds error`,
             `Baseline: naive last-value forecast`
-          ]
+          ],
+          pseudoCode: `CONCEPT: sklearn Time Series Splits
+
+Checklist:
+  1. No random KFold for temporal data
+  2. Feature leakage if using future lags
+  3. Multi-step forecasting compounds error
+  4. Baseline: naive last-value forecast`
         },
         {
           id: `metrics-ts`,
@@ -198,7 +242,14 @@ Probabilistic forecasts: prediction intervals from Prophet or quantile regressio
             `MAPE unstable for intermittent demand`,
             `Track forecast bias not only magnitude error`,
             `Probabilistic forecasts support inventory decisions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Forecast Metrics
+
+Checklist:
+  1. Choose metric aligned to business cost
+  2. MAPE unstable for intermittent demand
+  3. Track forecast bias not only magnitude error
+  4. Probabilistic forecasts support inventory decisions`
         },
         {
           id: `pipeline`,
@@ -213,7 +264,14 @@ Combine statistical and ML forecasts in ensembles weighted by recent performance
             `Alert when error exceeds baseline`,
             `Document grain: hourly vs daily aggregation`,
             `Ensemble diversifies model failure modes`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Production Forecast Pipelines
+
+Checklist:
+  1. Automate retrain on new observations
+  2. Alert when error exceeds baseline
+  3. Document grain: hourly vs daily aggregation
+  4. Ensemble diversifies model failure modes`
         }
       ],
       exercises: [
@@ -297,7 +355,14 @@ print(len(list(TimeSeriesSplit(2).split(np.arange(10)))))`,
             `Regularization prevents overfitting embeddings`,
             `Bias terms capture user generosity/item popularity`,
             `Cold start: new users/items lack history`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Matrix Factorization
+
+Checklist:
+  1. Sparsity: most user-item pairs unobserved
+  2. Regularization prevents overfitting embeddings
+  3. Bias terms capture user generosity/item popularity
+  4. Cold start: new users/items lack history`
         },
         {
           id: `neighborhood`,
@@ -316,22 +381,38 @@ print(round(u@v/(np.linalg.norm(u)*np.linalg.norm(v)),2))`,
             `Normalize ratings to remove user bias`,
             `k too small noisy; k too large dull`,
             `Implicit feedback uses clicks/purchases not stars`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Neighborhood Methods
+
+Checklist:
+  1. Item-item CF scales better for many users
+  2. Normalize ratings to remove user bias
+  3. k too small noisy; k too large dull
+  4. Implicit feedback uses clicks/purchases not stars`
         },
         {
           id: `implicit`,
           title: `Implicit Feedback`,
-          content: `Clicks, views, purchases treated as confidence-weighted preferences. **ALS** on implicit matrices optimizes weighted loss.
+          content: `Clicks, views, purchases treated as confidence-weighted preferences. **ALS** on implicit matrices optimizes weighted loss. BPR pairwise ranking loss popular for top-K recommendation.
 
-BPR pairwise ranking loss popular for top-K recommendation.
+**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Implicit Feedback", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Implicit Feedback", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Implicit Feedback** in the context of **Collaborative Filtering**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
           keyPoints: [
             `Implicit signals abundant but ambiguous`,
             `Weight by dwell time or purchase`,
             `Optimize ranking not rating MSE`,
             `Negative sampling from unobserved items`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Implicit Feedback
+
+Checklist:
+  1. Implicit signals abundant but ambiguous
+  2. Weight by dwell time or purchase
+  3. Optimize ranking not rating MSE
+  4. Negative sampling from unobserved items`
         },
         {
           id: `eval-recsys`,
@@ -346,7 +427,14 @@ Online A/B tests measure click-through and revenue—the ground truth.
             `Novelty and diversity metrics beyond accuracy`,
             `Popularity bias inflates offline scores`,
             `A/B test with guardrail metrics`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Evaluating Recommenders
+
+Checklist:
+  1. Temporal split mimics deployment
+  2. Novelty and diversity metrics beyond accuracy
+  3. Popularity bias inflates offline scores
+  4. A/B test with guardrail metrics`
         }
       ],
       exercises: [
@@ -429,7 +517,14 @@ Build **item profile** vector summarizing attributes; user profile = aggregate o
             `Embeddings capture semantic similarity`,
             `Feature engineering encodes domain knowledge`,
             `Normalize features before similarity`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Item Feature Representations
+
+Checklist:
+  1. Rich features reduce cold-start for new items
+  2. Embeddings capture semantic similarity
+  3. Feature engineering encodes domain knowledge
+  4. Normalize features before similarity`
         },
         {
           id: `similarity`,
@@ -448,7 +543,14 @@ print((p@i)/(np.linalg.norm(p)*np.linalg.norm(i))>0)`,
             `Re-rank top candidates with business rules`,
             `Hybrid mitigates sparsity and cold start`,
             `Filter already purchased items`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Scoring & Retrieval
+
+Checklist:
+  1. Cosine similarity standard for sparse text vectors
+  2. Re-rank top candidates with business rules
+  3. Hybrid mitigates sparsity and cold start
+  4. Filter already purchased items`
         },
         {
           id: `learning`,
@@ -463,7 +565,14 @@ Two-tower neural networks embed users and items separately for fast retrieval.
             `Two-tower enables billion-scale retrieval`,
             `Hard negative mining improves contrastive training`,
             `Freshness features for news/catalog`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Learning to Rank
+
+Checklist:
+  1. Pointwise vs pairwise vs listwise ranking losses
+  2. Two-tower enables billion-scale retrieval
+  3. Hard negative mining improves contrastive training
+  4. Freshness features for news/catalog`
         },
         {
           id: `limits`,
@@ -478,7 +587,14 @@ Mitigate with exploration, diversity re-ranking, or hybrid CF.
             `Explore/exploit tradeoff in bandits`,
             `Content alone misses collaborative signal`,
             `Explain recommendations via feature attribution`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Content-Based Limits
+
+Checklist:
+  1. Explicit diversity objectives in re-ranking
+  2. Explore/exploit tradeoff in bandits
+  3. Content alone misses collaborative signal
+  4. Explain recommendations via feature attribution`
         }
       ],
       exercises: [
@@ -563,7 +679,14 @@ print(recall_score([0,0,1,1],[0,0,0,0]))`,
             `ROC-AUC optimistic when negatives dominate`,
             `PR-AUC more informative on imbalance`,
             `Report per-class not micro-only`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Why Accuracy Fails
+
+Checklist:
+  1. Optimize metric matching business cost
+  2. ROC-AUC optimistic when negatives dominate
+  3. PR-AUC more informative on imbalance
+  4. Report per-class not micro-only`
         },
         {
           id: `smote`,
@@ -578,7 +701,14 @@ Apply resampling **inside CV folds** on training only to prevent leakage.
             `Borderline-SMOTE focuses on hard examples`,
             `Undersampling when data huge and majority redundant`,
             `Combine with class weights`
-          ]
+          ],
+          pseudoCode: `CONCEPT: SMOTE & Resampling
+
+Checklist:
+  1. SMOTE in imblearn pipeline with CV
+  2. Borderline-SMOTE focuses on hard examples
+  3. Undersampling when data huge and majority redundant
+  4. Combine with class weights`
         },
         {
           id: `weights`,
@@ -596,7 +726,14 @@ print(LogisticRegression(class_weight="balanced").class_weight)`,
             `Calibrate probabilities before thresholding`,
             `class_weight easier than resampling sometimes`,
             `Document chosen threshold for ops`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Class Weights & Thresholds
+
+Checklist:
+  1. Default 0.5 threshold rarely optimal
+  2. Calibrate probabilities before thresholding
+  3. class_weight easier than resampling sometimes
+  4. Document chosen threshold for ops`
         },
         {
           id: `metrics-imb`,
@@ -611,7 +748,14 @@ Slice metrics by segment— imbalance may vary by region or product line.
             `Alert when prediction distribution drifts`,
             `Fairness across demographic slices`,
             `Human review queue for borderline scores`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Metrics & Monitoring
+
+Checklist:
+  1. Production SLA on minority class recall
+  2. Alert when prediction distribution drifts
+  3. Fairness across demographic slices
+  4. Human review queue for borderline scores`
         }
       ],
       exercises: [

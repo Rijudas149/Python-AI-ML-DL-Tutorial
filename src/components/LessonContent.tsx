@@ -10,38 +10,6 @@ type ContentBlock =
   | { type: 'heading'; level: 3 | 4; text: string }
   | { type: 'table'; headers: string[]; rows: string[][] };
 
-const FILLER_PATTERNS = [
-  /\n\n\*\*Extended exploration[^*]*\*\*[\s\S]*?(?=\n\n\*\*|$)/g,
-  /\n\n\*\*Conceptual depth:\*\*[\s\S]*?(?=\n\n|$)/g,
-  /\n\n\*\*Why this matters for[^:]*:[\s\S]*?(?=\n\n|$)/g,
-  /\n\n## Deep Theory[\s\S]*?(?=\n\n## |$)/g,
-  /\n\n## Practical Patterns[\s\S]*?(?=\n\n## |$)/g,
-  /\n\n## Common Pitfalls[\s\S]*?(?=\n\n## |$)/g,
-  /\n\n## Real-World Applications[\s\S]*?(?=\n\n## |$)/g,
-];
-
-function cleanLessonContent(content: string): string {
-  let text = content;
-  for (const pattern of FILLER_PATTERNS) {
-    text = text.replace(pattern, '');
-  }
-  return text.replace(/\n{3,}/g, '\n\n').trim();
-}
-
-function shouldUseBullets(text: string): boolean {
-  return text.length > 120 || (text.match(/\*\*[^*]+\*\*/g)?.length ?? 0) >= 2;
-}
-
-function paragraphToBullets(text: string): string[] {
-  const boldParts = text.split(/(?=\*\*[^*]+\*\*)/).map((p) => p.trim()).filter(Boolean);
-  if (boldParts.length > 1) return boldParts;
-
-  return text
-    .split(/(?<=[.!?])\s+(?=[A-Z*"'])/)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 12);
-}
-
 function parseSection(section: string): ContentBlock[] {
   const lines = section.split('\n');
   const blocks: ContentBlock[] = [];
@@ -108,12 +76,7 @@ function parseSection(section: string): ContentBlock[] {
       i++;
     }
     if (paraLines.length > 0) {
-      const text = paraLines.join('\n').trim();
-      if (shouldUseBullets(text)) {
-        blocks.push({ type: 'ul', items: paragraphToBullets(text) });
-      } else {
-        blocks.push({ type: 'paragraph', text });
-      }
+      blocks.push({ type: 'paragraph', text: paraLines.join('\n') });
     } else {
       i++;
     }
@@ -124,8 +87,7 @@ function parseSection(section: string): ContentBlock[] {
 
 function parseContent(content: string): ContentBlock[] {
   const blocks: ContentBlock[] = [];
-  const cleaned = cleanLessonContent(content);
-  const parts = cleaned.split(/```([\s\S]*?)```/g);
+  const parts = content.split(/```([\s\S]*?)```/g);
 
   for (let i = 0; i < parts.length; i++) {
     if (i % 2 === 1) {
@@ -202,7 +164,7 @@ export function LessonContent({ content }: { content: string }) {
   const blocks = useMemo(() => parseContent(content), [content]);
 
   return (
-    <div className="lesson-prose lesson-prose-structured">
+    <div className="lesson-prose">
       {blocks.map((block, i) => {
         switch (block.type) {
           case 'paragraph':
@@ -218,7 +180,7 @@ export function LessonContent({ content }: { content: string }) {
             );
           case 'ul':
             return (
-              <ul key={i} className="lesson-list lesson-concept-list">
+              <ul key={i} className="lesson-list">
                 {block.items.map((item, j) => (
                   <li key={j}><InlineText text={item} /></li>
                 ))}
@@ -226,7 +188,7 @@ export function LessonContent({ content }: { content: string }) {
             );
           case 'ol':
             return (
-              <ol key={i} className="lesson-list lesson-list-ordered lesson-concept-list">
+              <ol key={i} className="lesson-list lesson-list-ordered">
                 {block.items.map((item, j) => (
                   <li key={j}><InlineText text={item} /></li>
                 ))}

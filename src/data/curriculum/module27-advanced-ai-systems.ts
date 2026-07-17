@@ -26,7 +26,14 @@ print(round(float(a@b), 2))`,
             `Domain-specific embedding models improve retrieval`,
             `Dimensionality affects storage and speed`,
             `Batch encode for throughput`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Text Embeddings
+
+Checklist:
+  1. Normalize embeddings for cosine via dot product
+  2. Domain-specific embedding models improve retrieval
+  3. Dimensionality affects storage and speed
+  4. Batch encode for throughput`
         },
         {
           id: `faiss`,
@@ -41,7 +48,14 @@ print(round(float(a@b), 2))`,
             `Product quantization compresses vectors`,
             `Metadata filters pre-filter before ANN`,
             `Rebuild index when embedding model changes`
-          ]
+          ],
+          pseudoCode: `CONCEPT: FAISS & ANN Search
+
+Checklist:
+  1. HNSW good default for many workloads
+  2. Product quantization compresses vectors
+  3. Metadata filters pre-filter before ANN
+  4. Rebuild index when embedding model changes`
         },
         {
           id: `hybrid`,
@@ -56,22 +70,38 @@ Reciprocal rank fusion merges ranked lists from multiple retrievers.
             `RRF simple robust fusion without tuning`,
             `Learned sparse retrieval (SPLADE) middle ground`,
             `Query expansion improves recall`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Hybrid Search
+
+Checklist:
+  1. Hybrid reduces failure modes of either alone
+  2. RRF simple robust fusion without tuning
+  3. Learned sparse retrieval (SPLADE) middle ground
+  4. Query expansion improves recall`
         },
         {
           id: `ops`,
           title: `Operational Concerns`,
-          content: `Chunk documents, embed, upsert with metadata (source, date). Monitor query latency p95, recall@k on eval set, index size growth.
+          content: `Chunk documents, embed, upsert with metadata (source, date). Monitor query latency p95, recall@k on eval set, index size growth. Version embedding model in index metadata for migrations.
 
-Version embedding model in index metadata for migrations.
+**Applying Embeddings & Vector Databases:** Semantic search with embeddings and ANN indexes (FAISS, Chroma). Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Operational Concerns", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying Embeddings & Vector Databases:** Semantic search with embeddings and ANN indexes (FAISS, Chroma). Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Operational Concerns", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Operational Concerns** in the context of **Embeddings & Vector Databases**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Chunk size 256-512 tokens typical starting point`,
             `Stale index when source docs update`,
             `Access control on metadata fields`,
             `Cost scales with dimensions × vectors`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Operational Concerns
+
+Checklist:
+  1. Chunk size 256-512 tokens typical starting point
+  2. Stale index when source docs update
+  3. Access control on metadata fields
+  4. Cost scales with dimensions × vectors`
         }
       ],
       exercises: [
@@ -153,7 +183,14 @@ Zero-shot classification: embed class text prompts and image; pick highest simil
             `Prompt engineering affects zero-shot accuracy`,
             `ViT variants scale with compute`,
             `OpenCLIP reproduces with open data`
-          ]
+          ],
+          pseudoCode: `CONCEPT: CLIP Architecture
+
+Checklist:
+  1. Contrastive learning on large noisy web data
+  2. Prompt engineering affects zero-shot accuracy
+  3. ViT variants scale with compute
+  4. OpenCLIP reproduces with open data`
         },
         {
           id: `vlm`,
@@ -168,7 +205,14 @@ Project image patches through adapter into LLM token stream.
             `OCR and chart reasoning common enterprise uses`,
             `Hallucination on fine visual details persists`,
             `Resolution limits affect small text reading`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Vision-Language Models
+
+Checklist:
+  1. Visual tokens increase context length cost
+  2. OCR and chart reasoning common enterprise uses
+  3. Hallucination on fine visual details persists
+  4. Resolution limits affect small text reading`
         },
         {
           id: `tasks`,
@@ -183,7 +227,14 @@ Multimodal RAG embeds images and text jointly in knowledge bases.
             `Doc AI needs layout-aware encoders (LayoutLM)`,
             `Multimodal RAG stores image+text chunks`,
             `Evaluate task-specific not only caption BLEU`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Downstream Tasks
+
+Checklist:
+  1. Grounding links words to bounding boxes
+  2. Doc AI needs layout-aware encoders (LayoutLM)
+  3. Multimodal RAG stores image+text chunks
+  4. Evaluate task-specific not only caption BLEU`
         },
         {
           id: `limits`,
@@ -198,7 +249,14 @@ Accessibility: alt-text generation must be verified before publishing.
             `Adversarial robustness weak vs imperceptible noise`,
             `Watermark detectors imperfect`,
             `Human review for high-stakes descriptions`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Limitations & Bias
+
+Checklist:
+  1. Audit gender/race bias in captions
+  2. Adversarial robustness weak vs imperceptible noise
+  3. Watermark detectors imperfect
+  4. Human review for high-stakes descriptions`
         }
       ],
       exercises: [
@@ -280,22 +338,38 @@ Use \`whisper\` or \`faster-whisper\` for local inference; segment long audio.
             `Word-level timestamps in some implementations`,
             `Hallucinations on silence or noise-only segments`,
             `VRAM scales with model size (tiny to large)`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Whisper ASR
+
+Checklist:
+  1. Multilingual 99 languages in large models
+  2. Word-level timestamps in some implementations
+  3. Hallucinations on silence or noise-only segments
+  4. VRAM scales with model size (tiny to large)`
         },
         {
           id: `tts`,
           title: `Text-to-Speech Overview`,
-          content: `Pipeline: text normalization → acoustic model → vocoder (WaveNet, HiFi-GAN). **Neural TTS** (Tacotron, VITS) end-to-end variants.
+          content: `Pipeline: text normalization → acoustic model → vocoder (WaveNet, HiFi-GAN). **Neural TTS** (Tacotron, VITS) end-to-end variants. **Voice cloning** requires consent and deepfake safeguards.
 
-**Voice cloning** requires consent and deepfake safeguards.
+**Applying Speech AI (Whisper & TTS):** Automatic speech recognition and text-to-speech pipelines. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Text-to-Speech Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying Speech AI (Whisper & TTS):** Automatic speech recognition and text-to-speech pipelines. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Text-to-Speech Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Text-to-Speech Overview** in the context of **Speech AI (Whisper & TTS)**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Prosody control via SSML or reference audio`,
             `Real-time TTS needs streaming architectures`,
             `Speaker embedding conditions multi-speaker models`,
             `Evaluate MOS and intelligibility (WER round-trip)`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Text-to-Speech Overview
+
+Checklist:
+  1. Prosody control via SSML or reference audio
+  2. Real-time TTS needs streaming architectures
+  3. Speaker embedding conditions multi-speaker models
+  4. Evaluate MOS and intelligibility (WER round-trip)`
         },
         {
           id: `audio-llm`,
@@ -310,7 +384,14 @@ Latency budget: ASR + LLM + TTS sequential pipeline optimization.
             `Partial ASR streaming lowers time-to-first-token`,
             `Barge-in handling needs voice activity detection`,
             `Privacy: on-device ASR for sensitive domains`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Audio + LLM Integration
+
+Checklist:
+  1. End-to-end speech LLMs reduce cascade errors
+  2. Partial ASR streaming lowers time-to-first-token
+  3. Barge-in handling needs voice activity detection
+  4. Privacy: on-device ASR for sensitive domains`
         },
         {
           id: `deploy-speech`,
@@ -325,7 +406,14 @@ Compliance: call recording consent, biometric voice data regulations.
             `Quantization INT8 for mobile TTS`,
             `Log retention policies for transcripts`,
             `Accent fairness evaluation across demographics`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Deployment Considerations
+
+Checklist:
+  1. VAD reduces wasted ASR compute
+  2. Quantization INT8 for mobile TTS
+  3. Log retention policies for transcripts
+  4. Accent fairness evaluation across demographics`
         }
       ],
       exercises: [
@@ -407,16 +495,25 @@ Leaderboard chasing risks overfitting benchmarks—hold out private eval sets.
             `Contamination when benchmark in training data`,
             `Chain-of-thought improves reasoning scores`,
             `Domain-specific evals matter for products`
-          ]
+          ],
+          pseudoCode: `CONCEPT: MMLU & Knowledge Benchmarks
+
+Checklist:
+  1. Multiple-choice format simplifies scoring
+  2. Contamination when benchmark in training data
+  3. Chain-of-thought improves reasoning scores
+  4. Domain-specific evals matter for products`
         },
         {
           id: `humaneval`,
           title: `HumanEval & Code Benchmarks`,
-          content: `**HumanEval** functional correctness on Python programming problems. **MBPP**, **SWE-bench** (real GitHub issues) harder.
+          content: `**HumanEval** functional correctness on Python programming problems. **MBPP**, **SWE-bench** (real GitHub issues) harder. Pass@k metric: any of k samples passes tests.
 
-Pass@k metric: any of k samples passes tests.
+**Applying AI Benchmarks & Red Teaming:** MMLU, HumanEval, and systematic adversarial testing. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "HumanEval & Code Benchmarks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying AI Benchmarks & Red Teaming:** MMLU, HumanEval, and systematic adversarial testing. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "HumanEval & Code Benchmarks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**HumanEval & Code Benchmarks** in the context of **AI Benchmarks & Red Teaming**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           example: `def pass_at_k(n, c, k):
     # n problems, c correct, k samples — simplified
     return 1.0 if c > 0 else 0.0
@@ -427,7 +524,14 @@ print(pass_at_k(1, 1, 5))`,
             `Unit tests must cover edge cases`,
             `SWE-bench tests full repo context`,
             `Code execution sandbox security essential`
-          ]
+          ],
+          pseudoCode: `CONCEPT: HumanEval & Code Benchmarks
+
+Checklist:
+  1. Pass@k increases with more samples
+  2. Unit tests must cover edge cases
+  3. SWE-bench tests full repo context
+  4. Code execution sandbox security essential`
         },
         {
           id: `red-team`,
@@ -442,7 +546,14 @@ Automated red teaming with attacker LLMs scales coverage; human red team for sub
             `Unicode homoglyph attacks bypass filters`,
             `Continuous red teaming as models update`,
             `Document findings in model cards`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Red Teaming LLMs
+
+Checklist:
+  1. Prompt injection in RAG poisons context
+  2. Unicode homoglyph attacks bypass filters
+  3. Continuous red teaming as models update
+  4. Document findings in model cards`
         },
         {
           id: `eval-practice`,
@@ -457,7 +568,14 @@ Automated red teaming with attacker LLMs scales coverage; human red team for sub
             `Statistical significance on metric deltas`,
             `Calibration eval for classification outputs`,
             `Cost/latency metrics alongside quality`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Evaluation Best Practices
+
+Checklist:
+  1. Golden set regression on every model release
+  2. Statistical significance on metric deltas
+  3. Calibration eval for classification outputs
+  4. Cost/latency metrics alongside quality`
         }
       ],
       exercises: [
@@ -529,17 +647,26 @@ Automated red teaming with attacker LLMs scales coverage; human red team for sub
         {
           id: `alignment`,
           title: `Alignment Overview`,
-          content: `**RLHF** and **DPO** align models with human preferences—helpful, honest, harmless. **Constitutional AI** self-critiques against principles.
+          content: `**RLHF** and **DPO** align models with human preferences—helpful, honest, harmless. **Constitutional AI** self-critiques against principles. Alignment reduces but does not eliminate all failure modes.
 
-Alignment reduces but does not eliminate all failure modes.
+**Applying Alignment, Jailbreaks & Guardrails:** Mitigate harmful outputs and build responsible AI systems. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Alignment Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
 
-**Applying Alignment, Jailbreaks & Guardrails:** Mitigate harmful outputs and build responsible AI systems. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Alignment Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
+
+**Alignment Overview** in the context of **Alignment, Jailbreaks & Guardrails**: Production AI systems need this concept when designing reliable pipelines. Test the example output, then use the takeaways when reviewing your own project designs.`,
           keyPoints: [
             `Reward hacking when proxy rewards misaligned`,
             `DPO simpler pipeline than full RLHF`,
             `Constitutional principles need domain tailoring`,
             `Superhuman models may be hard to align`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Alignment Overview
+
+Checklist:
+  1. Reward hacking when proxy rewards misaligned
+  2. DPO simpler pipeline than full RLHF
+  3. Constitutional principles need domain tailoring
+  4. Superhuman models may be hard to align`
         },
         {
           id: `jailbreaks`,
@@ -554,7 +681,14 @@ Defenses: input/output filters, Llama Guard classifiers, structured prompts isol
             `Sanitize retrieved RAG documents`,
             `Monitor for repeated policy violations`,
             `Adversarial training on attack corpus`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Jailbreaks & Prompt Injection
+
+Checklist:
+  1. Defense in depth—no single filter sufficient
+  2. Sanitize retrieved RAG documents
+  3. Monitor for repeated policy violations
+  4. Adversarial training on attack corpus`
         },
         {
           id: `guardrails`,
@@ -569,7 +703,14 @@ Log moderation decisions for audit; appeal process for false positives.
             `PII detection before logging conversations`,
             `Human escalation for edge cases`,
             `Multilingual moderation harder than English`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Guardrails & Moderation APIs
+
+Checklist:
+  1. Tune thresholds per product risk appetite
+  2. PII detection before logging conversations
+  3. Human escalation for edge cases
+  4. Multilingual moderation harder than English`
         },
         {
           id: `governance`,
@@ -584,7 +725,14 @@ Transparency: system cards document limitations and intended use boundaries.
             `Version control prompts and model weights`,
             `Third-party audits for high-risk deployments`,
             `User education on AI limitations`
-          ]
+          ],
+          pseudoCode: `CONCEPT: Safety Governance
+
+Checklist:
+  1. Kill switch for production LLM features
+  2. Version control prompts and model weights
+  3. Third-party audits for high-risk deployments
+  4. User education on AI limitations`
         }
       ],
       exercises: [

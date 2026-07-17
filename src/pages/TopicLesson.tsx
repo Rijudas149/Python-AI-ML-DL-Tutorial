@@ -50,16 +50,10 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
       <section className="lesson-panel lesson-panel-explain">
         <div className="lesson-panel-label">
           <span className="lesson-panel-icon">📖</span>
-          Key Concepts
+          Explanation
         </div>
         <LessonContent content={section.content} />
       </section>
-
-      {section.formulas && section.formulas.length > 0 && (
-        <FormulaList formulas={section.formulas} />
-      )}
-
-      {section.diagram && <DiagramBlock diagram={section.diagram} />}
 
       {section.pseudoCode && (
         <section className="lesson-panel lesson-panel-pseudo">
@@ -70,6 +64,12 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
           <CodeBlock code={section.pseudoCode} language="pseudo" />
         </section>
       )}
+
+      {section.formulas && section.formulas.length > 0 && (
+        <FormulaList formulas={section.formulas} />
+      )}
+
+      {section.diagram && <DiagramBlock diagram={section.diagram} />}
 
       {section.example && (
         <section className="lesson-panel lesson-panel-example">
