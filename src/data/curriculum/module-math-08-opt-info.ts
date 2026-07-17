@@ -41,14 +41,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 x,y=0.2,0.8; lam=0.4
 m=lam*x+(1-lam)*y
 print(0<=m<=1)`,
-          output: `midpoint in set`,
-          pseudoCode: `Convex Sets
-
-λx + (1−λ)y ∈ C for x,y∈C, λ∈[0,1]
-Halfspace: {x : aᵀx ≤ b} convex
-Ball: {x : ||x|| ≤ r} convex
-Intersection of convex sets convex
-Polyhedron: Ax ≤ b convex`
+          output: `midpoint in set`
         },
         {
           id: `cvx-func`,
@@ -80,14 +73,7 @@ Cross-entropy convex in logits; MSE convex in linear params. Connecting this the
 f=lambda x: x**2
 x,y=-1.,2.; lam=0.3
 print(f(lam*x+(1-lam)*y) <= lam*f(x)+(1-lam)*f(y))`,
-          output: `True`,
-          pseudoCode: `Convex Functions
-
-f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)
-1st order: tangent global underestimator
-2nd order: H ⪰ 0
-Strongly convex: H ⪰ μI
-Composition rules preserve convexity`
+          output: `True`
         },
         {
           id: `cvx-problems`,
@@ -119,14 +105,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 # min (x-2)² s.t. x>=0 → x=2
 x=max(0,2.); print(x)`,
-          output: `x=2`,
-          pseudoCode: `Convex Problem Forms
-
-min f(x) s.t. x ∈ C convex
-LP: linear f and constraints
-QP: ½xᵀPx+qᵀx
-Local = global if f convex on C
-KKT: ∇f + ∑λᵢ∇gᵢ = 0`
+          output: `x=2`
         },
         {
           id: `cvx-ml`,
@@ -160,14 +139,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 w=np.linspace(-2,2,50)
 loss=(w-1)**2
 print("unique min w:", w[np.argmin(loss)])`,
-          output: `w=1`,
-          pseudoCode: `Convexity in ML Losses
-
-Logistic NLL convex in w
-Hinge loss convex
-MSE convex in linear β
-Hidden layers → non-convex
-λ||w||² preserves convexity`
+          output: `w=1`
         }
       ],
       exercises: [
@@ -262,14 +234,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 theta=5.; eta=0.1; L=2
 for _ in range(50): theta -= eta*L*theta
 print(theta)`,
-          output: `→ 0`,
-          pseudoCode: `Convergence Conditions
-
-L-smooth: ||∇f(x)−∇f(y)|| ≤ L||x−y||
-η ≤ 1/L for convex convergence
-Strongly convex: (1−ημ)^t rate
-SGD: E[||∇L||] → 0
-Non-convex: find stationary points`
+          output: `→ 0`
         },
         {
           id: `gd-momentum`,
@@ -303,14 +268,7 @@ for _ in range(100):
     v=beta*v+g
     theta-=eta*v
 print(np.round(theta,3))`,
-          output: `→ near 0`,
-          pseudoCode: `Momentum & Nesterov
-
-v_t = β v_{t−1} + ∇L
-θ_t = θ_{t−1} − η v_t
-β ≈ 0.9 common
-Nesterov: grad at lookahead
-Accelerated O(1/t²) convex`
+          output: `→ near 0`
         },
         {
           id: `gd-adaptive`,
@@ -343,14 +301,7 @@ Warmup stabilizes early Adam training in transformers. Connecting this theory to
 g=np.array([1.,0.1]); m=g; v=g**2
 m_hat=m; v_hat=v
 print(m_hat/(np.sqrt(v_hat)+1e-8))`,
-          output: `adaptive step`,
-          pseudoCode: `Adaptive Methods
-
-AdaGrad: η/√(∑g²)
-Adam: m,v EMA of g,g²
-Bias corr: m/(1−β^t)
-AdamW: weight decay separate
-Warmup for transformers`
+          output: `adaptive step`
         },
         {
           id: `gd-sgd`,
@@ -382,14 +333,7 @@ Generalization: small batch noise may help escape sharp minima. Distributed SGD 
 batch=np.array([1.,2.,3.])
 grads=batch**2
 print("batch grad mean:", grads.mean(), "full would use all data")`,
-          output: `batch estimate`,
-          pseudoCode: `SGD & Mini-batch
-
-∇L_batch unbiased if random sample
-Var ∝ 1/b batch size
-Linear scaling: η ∝ b heuristic
-Schedule: η_t = η₀/√t
-Distributed: average worker grads`
+          output: `batch estimate`
         }
       ],
       exercises: [
@@ -487,14 +431,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 # min x²+y² s.t x+y=1 → (0.5,0.5)
 print(0.5, 0.5)`,
-          output: `optimum`,
-          pseudoCode: `Equality Constraints
-
-L(x,λ) = f(x) + λ g(x)
-∇f(x*) + λ∇g(x*) = 0
-g(x*) = 0
-λ = shadow price
-∇f ∥ ∇g on constraint`
+          output: `optimum`
         },
         {
           id: `lag-ineq`,
@@ -523,14 +460,7 @@ SVM derivation uses KKT on margin constraints. Connecting this theory to numpy e
           ],
           example: `import numpy as np
 print("SVM support vectors have α>0 from KKT")`,
-          output: `KKT concept`,
-          pseudoCode: `KKT Conditions
-
-L = f + ∑λ_i g_i + ∑ν_j h_j
-λ_i ≥ 0
-λ_i g_i(x) = 0 (complementary slackness)
-Stationarity: ∇L = 0
-Convex: KKT sufficient`
+          output: `KKT concept`
         },
         {
           id: `lag-dual`,
@@ -562,14 +492,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           ],
           example: `import numpy as np
 print("dual SVM: max sum α - ½αᵀQα")`,
-          output: `dual form`,
-          pseudoCode: `Duality
-
-Dual: max_λ inf_x L(x,λ)
-Weak: d* ≤ p*
-Strong convex: d* = p*
-SVM dual: α kernel form
-Slater: strict feasibility → strong`
+          output: `dual form`
         },
         {
           id: `lag-ml`,
@@ -601,14 +524,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 v=np.array([0.2,0.5,0.4]); v=np.maximum(v,0); v/=v.sum()
 print("proj simplex:", v)`,
-          output: `feasible`,
-          pseudoCode: `Constraints in ML
-
-Penalty: f + ρ||g(x)||²
-Projection: simplex, ball
-TRPO: KL trust region
-Fairness: P(ŷ|A=a)=P(ŷ|A=b)
-Adversarial: min_θ max_φ loss`
+          output: `feasible`
         }
       ],
       exercises: [
@@ -701,14 +617,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 p=np.array([0.5,0.5])
 print("H bits:", -np.sum(p*np.log2(p)))`,
-          output: `H=1 bit`,
-          pseudoCode: `Shannon Entropy
-
-H(X) = −∑ p(x) log p(x)
-0 ≤ H(X) ≤ log |X|
-Uniform → max entropy
-H(X,Y) = H(X|Y) + H(Y)
-Indep: H(X,Y) = H(X)+H(Y)`
+          output: `H=1 bit`
         },
         {
           id: `ent-ce`,
@@ -739,14 +648,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 p=np.array([1.,0.,0.]); q=np.array([0.7,0.2,0.1])
 ce=-np.sum(p*np.log(q+1e-9))
 print("CE:", ce)`,
-          output: `CE loss`,
-          pseudoCode: `Cross-Entropy & KL
-
-H(p,q) = −∑ p log q
-D_KL(p||q) = ∑ p log(p/q)
-D_KL ≥ 0, =0 iff p=q
-I(X;Y) = H(X) − H(X|Y)
-CE loss = H(one_hot, softmax)`
+          output: `CE loss`
         },
         {
           id: `ent-mi`,
@@ -782,14 +684,7 @@ for i in range(2):
   for j in range(2):
     if joint[i,j]>0: mi+=joint[i,j]*np.log(joint[i,j]/(px[i]*py[j]))
 print("MI:", mi)`,
-          output: `MI nats`,
-          pseudoCode: `Mutual Information
-
-I(X;Y) = H(X) − H(X|Y)
-I(X;Y) = 0 ⇔ indep
-I symmetric in X,Y
-Data processing: I(X;Z) ≤ I(X;Y) if Markov
-InfoNCE lower bound on MI`
+          output: `MI nats`
         },
         {
           id: `ent-ml`,
@@ -820,14 +715,7 @@ Calibration affects cross-entropy at deployment. Understanding bits/nats clarifi
           example: `import numpy as np
 parent=0.9; child=0.4
 print("info gain:", parent-child)`,
-          output: `gain 0.5`,
-          pseudoCode: `Information in ML
-
-Minimize H(y, ŷ) for classification
-Label smoothing: soft targets
-Info gain = H(parent) − H(children)
-Temperature T scales softmax entropy
-MDL: model + data encoding`
+          output: `gain 0.5`
         }
       ],
       exercises: [
@@ -919,14 +807,7 @@ Gaussian μ̂=x̄, σ̂ sample std (biased MLE divides n not n−1). Connecting 
           example: `import numpy as np
 x=np.array([0,1,1,1,0])
 print("Bernoulli MLE p:", x.mean())`,
-          output: `p=0.6`,
-          pseudoCode: `Maximum Likelihood
-
-θ̂_MLE = argmax ∑ log p(x_i|θ)
-Equiv: min −∑ log p(x_i|θ)
-Bernoulli: p̂ = k/n
-Gaussian: μ̂ = x̄
-Invariance: g(θ̂) for g(θ)`
+          output: `p=0.6`
         },
         {
           id: `kl-mle`,
@@ -957,14 +838,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 # discrete KL p empirical vs q model
 p=np.array([0.5,0.3,0.2]); q=np.array([0.4,0.35,0.25])
 print("KL:", np.sum(p*np.log(p/q)))`,
-          output: `KL value`,
-          pseudoCode: `MLE Minimizes KL
-
-min_θ E_p[−log q_θ] ⇔ min D_KL(p||q_θ)
-Empirical p = uniform on samples
-MLE on samples = KL minimizer
-D_KL(p||q) mode-seeking
-D_KL(q||p) mode-covering`
+          output: `KL value`
         },
         {
           id: `mle-prop`,
@@ -996,14 +870,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 # Bernoulli Fisher info p(1-p)
 p=0.6; print("I:", p*(1-p))`,
-          output: `I=0.24`,
-          pseudoCode: `Properties of MLE
-
-√n(θ̂−θ) → N(0, I(θ)⁻¹)
-I(θ) = E[(∂log p/∂θ)²]
-Cramér-Rao: Var ≥ 1/(nI(θ))
-Consistent under regularity
-Score = 0 at MLE`
+          output: `I=0.24`
         },
         {
           id: `mle-ml`,
@@ -1036,14 +903,7 @@ y=np.array([1,0,0]); logits=np.array([2.,0.5,0.])
 p=np.exp(logits)/np.exp(logits).sum()
 nll=-np.log(p[0])
 print("NLL:", nll)`,
-          output: `NLL MLE loss`,
-          pseudoCode: `MLE in Deep Learning
-
-Softmax + CE = categorical MLE
-MSE ∝ Gaussian NLL (fixed σ)
-EM for latent variable models
-Diffusion: variational lower bound
-GAN ≠ MLE (implicit)`
+          output: `NLL MLE loss`
         }
       ],
       exercises: [

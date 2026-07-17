@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { DiagramSpec } from '../../types/diagram';
+import { parseFormulaDisplay } from '../../utils/latexFormula';
 import { MathFormula } from '../MathFormula';
 import { FigureView } from './FigureViews';
 import {
@@ -37,11 +38,19 @@ function LiteralView({ spec }: { spec: Extract<DiagramSpec, { type: 'literal' }>
       {c.formulas.length > 0 && (
         <DiagramZone label="Definitions & results">
           <ol className="diagram-formula-list">
-            {c.formulas.map((f, i) => (
-              <li key={i}>
-                <MathFormula formula={f} display={false} />
-              </li>
-            ))}
+            {c.formulas.map((f, i) => {
+              const display = parseFormulaDisplay(f);
+              const showExplanation =
+                display.explanation &&
+                display.explanation !== display.label &&
+                display.explanation.length > 2;
+              return (
+                <li key={i} className="diagram-formula-item">
+                  <MathFormula formula={f} display={false} />
+                  {showExplanation && <span className="diagram-formula-note">{display.explanation}</span>}
+                </li>
+              );
+            })}
           </ol>
         </DiagramZone>
       )}

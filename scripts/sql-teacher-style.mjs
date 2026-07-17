@@ -119,14 +119,8 @@ function formatContent(section, topic) {
 
 function generatePseudoCode(section) {
   if (section.pseudoCode?.trim()) return section.pseudoCode;
-
-  if (!section.formulas?.length) return undefined;
-
-  const lines = [`${section.title}`, ''];
-  for (const formula of section.formulas.slice(0, 8)) {
-    lines.push(formula);
-  }
-  return lines.join('\n').trim();
+  if (section.formulas?.length) return undefined;
+  return undefined;
 }
 
 /**
@@ -143,5 +137,6 @@ export function applySqlTeacherStyle(section, topic) {
   };
   if (pseudoCode) next.pseudoCode = pseudoCode;
   else delete next.pseudoCode;
+  if (section.formulas?.length) delete next.pseudoCode;
   return next;
 }

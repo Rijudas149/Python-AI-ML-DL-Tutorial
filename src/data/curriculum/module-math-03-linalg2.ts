@@ -40,14 +40,7 @@ A = np.array([[3.,1.],[2.,4.]])
 print("det:", np.linalg.det(A))
 print("manual:", 3*4-1*2)`,
           output: `det: 10.0
-manual: 10.0`,
-          pseudoCode: `Determinant Definition
-
-det(I) = 1
-det(AB) = det(A)det(B)
-2×2: det = ad − bc
-det(A) = 0 ⇔ A singular
-det(Aᵀ) = det(A)`
+manual: 10.0`
         },
         {
           id: `det-geom`,
@@ -80,14 +73,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 v1 = np.array([2.,0.]); v2 = np.array([1.,3.])
 print("area:", abs(np.linalg.det(np.column_stack([v1,v2]))))`,
-          output: `area: 6.0`,
-          pseudoCode: `Geometric Meaning
-
-|det([v1 v2])| = parallelogram area
-3D: |det| = volume
-det=0 → dimension collapse
-sign(det) = orientation
-|det J| in change of variables`
+          output: `area: 6.0`
         },
         {
           id: `det-prop`,
@@ -120,14 +106,7 @@ For large PD matrices, Cholesky gives log det = 2∑log(diag(L)).`,
 A = np.array([[2.,1.,0.],[0.,3.,1.],[0.,0.,4.]])
 sign, logdet = np.linalg.slogdet(A)
 print("sign:", sign, "log|det|:", logdet)`,
-          output: `sign: 1.0 log|det|: 2.484...`,
-          pseudoCode: `Properties & Computation
-
-Triangular: det = ∏ diagonal
-Row swap → multiply det by −1
-det(A) = ∏ U_ii from LU
-log det(A) for PD via Cholesky
-slogdet for numerical stability`
+          output: `sign: 1.0 log|det|: 2.484...`
         },
         {
           id: `det-ml`,
@@ -160,14 +139,7 @@ Sigma = np.array([[2.,1.],[1.,2.]])
 print("det Sigma:", np.linalg.det(Sigma))
 print("eig prod:", np.prod(np.linalg.eigvalsh(Sigma)))`,
           output: `det Sigma: 3.0
-eig prod: 3.0`,
-          pseudoCode: `Determinants in ML
-
-MVN norm: (2π)^(−n/2) |Σ|^(−1/2)
-det(Σ) = ∏ λ_i
-Flow: log p(z) = log p(f(x)) + log|det J|
-Regularize: Σ + λI
-det=0 → singular covariance`
+eig prod: 3.0`
         }
       ],
       exercises: [
@@ -261,14 +233,7 @@ Diagonal inverse inverts diagonal entries. Connecting this theory to numpy exper
 A = np.array([[1.,2.],[3.,4.]])
 Ainv = np.linalg.inv(A)
 print("A@Ainv:\\n", A@Ainv)`,
-          output: `A@Ainv: identity`,
-          pseudoCode: `Inverse Definition
-
-AA⁻¹ = A⁻¹A = I
-(AB)⁻¹ = B⁻¹A⁻¹
-(Aᵀ)⁻¹ = (A⁻¹)ᵀ
-A⁻¹ exists ⇔ det(A) ≠ 0
-Prefer solve(A,b) over inv(A)@b`
+          output: `A@Ainv: identity`
         },
         {
           id: `inv-2x2`,
@@ -301,14 +266,7 @@ A=np.array([[a,b],[c,d]])
 det=a*d-b*c
 Ainv=(1/det)*np.array([[d,-b],[-c,a]])
 print(Ainv)`,
-          output: `matches np.linalg.inv`,
-          pseudoCode: `2×2 Inverse Formula
-
-A⁻¹ = (1/det) [[d,−b], [−c,a]]
-det = ad − bc
-Singular when ad = bc
-adj(A)ᵀ / det(A)
-Large entries → ill-conditioned`
+          output: `matches np.linalg.inv`
         },
         {
           id: `inv-pinv`,
@@ -339,14 +297,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 A = np.array([[1.,1.],[2.,2.],[1.,0.]])
 print("pinv@b:", np.linalg.pinv(A) @ np.array([3.,6.,1.]))`,
-          output: `least squares solution`,
-          pseudoCode: `Pseudo-Inverse
-
-A⁺ via SVD: V Σ⁺ Uᵀ
-Least squares: x = A⁺b
-Minimum norm among LS solutions
-rank(A) = # nonzero σ
-pinv handles rectangular A`
+          output: `least squares solution`
         },
         {
           id: `inv-ml`,
@@ -380,14 +331,7 @@ y = np.array([1.,2.,2.])
 lam = 0.1
 beta = np.linalg.solve(X.T@X + lam*np.eye(2), X.T@y)
 print("ridge beta:", beta)`,
-          output: `ridge beta: ...`,
-          pseudoCode: `Inverse in Regression
-
-OLS: β = (XᵀX)⁻¹ Xᵀy
-Ridge: (XᵀX + λI)⁻¹ Xᵀy
-Newton: Δθ = H⁻¹ ∇L
-Use solve not inv
-Woodbury for rank-k updates`
+          output: `ridge beta: ...`
         }
       ],
       exercises: [
@@ -481,14 +425,7 @@ A = np.array([[2.,1.],[1.,2.]])
 w, v = np.linalg.eig(A)
 print("λ:", w)
 print("Av:", A@v[:,0], "λv:", w[0]*v[:,0])`,
-          output: `Av ≈ λv verified`,
-          pseudoCode: `Eigenvalue Problem
-
-Av = λv
-det(A − λI) = 0
-∑ λ_i = tr(A)
-∏ λ_i = det(A)
-Symmetric A → real λ, orthogonal v`
+          output: `Av ≈ λv verified`
         },
         {
           id: `eig-diag`,
@@ -520,14 +457,7 @@ Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A. Connecting this theo
 A = np.array([[1.,2.],[0.,3.]])
 w,v = np.linalg.eig(A)
 print("reconstruct:", v @ np.diag(w) @ np.linalg.inv(v))`,
-          output: `reconstructs A`,
-          pseudoCode: `Diagonalization
-
-A = V Λ V⁻¹
-Λ = diag(λ₁,...,λₙ)
-Symmetric: A = Q Λ Qᵀ
-A^k = V Λ^k V⁻¹
-Similar matrices: same eigenvalues`
+          output: `reconstructs A`
         },
         {
           id: `eig-pca`,
@@ -562,14 +492,7 @@ X -= X.mean(0)
 Sigma = X.T@X/100
 w, Q = np.linalg.eigh(Sigma)
 print("λ desc:", np.sort(w)[::-1])`,
-          output: `eigenvalues descending`,
-          pseudoCode: `Eigenvalues in PCA
-
-Σ v_i = λ_i v_i
-λ_i = variance along PC i
-Explained var: λ_i / ∑λ_j
-Keep top-k eigenvectors
-eigh for symmetric Σ`
+          output: `eigenvalues descending`
         },
         {
           id: `eig-markov`,
@@ -601,14 +524,7 @@ P = np.array([[0.9,0.5],[0.1,0.5]])
 v = np.array([0.5,0.5])
 for _ in range(20): v = P@v; v /= v.sum()
 print("stationary:", v)`,
-          output: `stationary: [0.833 0.167] approx`,
-          pseudoCode: `Eigenvalues in Markov & PageRank
-
-P 1 = 1 for stochastic P
-π: Pᵀπ = π (stationary)
-Power method → dominant eigenvector
-PageRank = eigenvector of link matrix
-Spectral clustering uses Laplacian eigenvectors`
+          output: `stationary: [0.833 0.167] approx`
         }
       ],
       exercises: [
@@ -704,14 +620,7 @@ A = np.array([[1.,2.],[3.,4.],[5.,6.]])
 U,s,VT = np.linalg.svd(A, full_matrices=False)
 print("σ:", s)
 print("rank:", (s>1e-10).sum())`,
-          output: `σ: [9.5, 0.77] approx`,
-          pseudoCode: `SVD Definition
-
-A = U Σ Vᵀ
-σ₁ ≥ σ₂ ≥ ... ≥ 0
-rank(A) = # nonzero σ
-σ_i(A) = √λ_i(AᵀA)
-U,V orthogonal`
+          output: `σ: [9.5, 0.77] approx`
         },
         {
           id: `svd-lowrank`,
@@ -747,14 +656,7 @@ U,s,VT = np.linalg.svd(A, full_matrices=False)
 k=5
 Ak = (U[:,:k]*s[:k]) @ VT[:k]
 print("Fro err:", np.linalg.norm(A-Ak,"fro"))`,
-          output: `Fro err: minimized for rank 5`,
-          pseudoCode: `Low-Rank Approximation
-
-A_k = ∑_{i=1}^k σ_i u_i v_iᵀ
-min ||A − A_k||_F over rank k
-Energy: ∑_{i=1}^k σ_i² / ∑ σ_i²
-Truncation = denoising
-Matrix factorization ≈ low-rank SVD`
+          output: `Fro err: minimized for rank 5`
         },
         {
           id: `svd-pinv`,
@@ -786,14 +688,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 A = np.array([[1,1],[1,1.0001],[1,0]])
 print("cond:", np.linalg.cond(A))
 print("pinv solve:", np.linalg.pinv(A)@[3,3,1])`,
-          output: `ill-conditioned demo`,
-          pseudoCode: `SVD & Pseudo-Inverse
-
-A⁺ = V Σ⁺ Uᵀ
-κ(A) = σ_max / σ_min
-Tiny σ → ill-conditioned
-lstsq uses SVD
-Truncate σ for regularization`
+          output: `ill-conditioned demo`
         },
         {
           id: `svd-ml`,
@@ -825,14 +720,7 @@ X -= X.mean(0)
 U,s,VT = np.linalg.svd(X, full_matrices=False)
 X2 = (U[:,:3]*s[:3]) @ VT[:3]
 print("shape reduced:", X2.shape, "var kept:", (s[:3]**2).sum()/(s**2).sum())`,
-          output: `variance retained`,
-          pseudoCode: `SVD in ML Pipelines
-
-PCA via SVD of centered X
-TruncatedSVD in sklearn
-Word embeddings from term-doc SVD
-Weight compression via SVD layers
-Randomized SVD for scale`
+          output: `variance retained`
         }
       ],
       exercises: [
@@ -928,14 +816,7 @@ X -= X.mean(0)
 C = X.T@X/200
 w, v = np.linalg.eigh(C)
 print("top PC:", v[:,np.argmax(w)])`,
-          output: `top PC direction`,
-          pseudoCode: `Variance Maximization
-
-max wᵀΣw s.t. ||w||=1
-Solution w = eigenvector of Σ
-λ = variance along PC
-PCs orthogonal for symmetric Σ
-Equivalent: SVD of centered X`
+          output: `top PC direction`
         },
         {
           id: `pca-proj`,
@@ -969,14 +850,7 @@ W = VT[:2].T
 Z = X@W
 Xhat = Z@W.T
 print("MSE:", np.mean((X-Xhat)**2))`,
-          output: `MSE from truncated`,
-          pseudoCode: `Projection & Reconstruction
-
-z = W_kᵀ x (projection)
-x̂ = W_k W_kᵀ x (reconstruction)
-Error = ∑_{i>k} λ_i
-Explained var = λ_i / ∑λ_j
-Whitening: divide by √λ_i`
+          output: `MSE from truncated`
         },
         {
           id: `pca-kernel`,
@@ -1011,14 +885,7 @@ H = np.eye(30) - np.ones((30,30))/30
 Kc = H@K@H
 w = np.linalg.eigh(Kc)[0]
 print("top eig:", np.sort(w)[-3:])`,
-          output: `top kernel eigenvalues`,
-          pseudoCode: `Kernel PCA Preview
-
-K_ij = K(x_i, x_j)
-K̃ = H K H (centered kernel)
-Eigen K̃ → nonlinear PCs
-Implicit φ via kernel trick
-O(n³) eigen problem`
+          output: `top kernel eigenvalues`
         },
         {
           id: `pca-practice`,
@@ -1052,14 +919,7 @@ from sklearn.preprocessing import StandardScaler
 X = np.column_stack([np.random.rand(100), np.random.rand(100)*1000])
 Xs = StandardScaler().fit_transform(X)
 print("PC1 loadings raw vs scaled differ greatly")`,
-          output: `scaling matters`,
-          pseudoCode: `PCA Practical Considerations
-
-Standardize if scales differ
-Correlation PCA after z-score
-IncrementalPCA for big data
-95% variance rule for k
-Loadings interpret feature contribution`
+          output: `scaling matters`
         }
       ],
       exercises: [

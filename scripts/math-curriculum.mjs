@@ -1805,11 +1805,11 @@ export const MATH_MODULES = [
             title: "L'Hôpital's Rule",
             content: "Direct substitution sometimes yields an **indeterminate form** — most commonly 0/0 or ∞/∞ — where the limit is not obvious from the ratio alone. **L'Hôpital's rule** says: if f and g are differentiable near a, g'(x)≠0 near a, and lim f(x)=lim g(x)=0 (or both →±∞), then lim_{x→a} f(x)/g(x) = lim_{x→a} f'(x)/g'(x) whenever the right-hand limit exists. Apply repeatedly if the result is still indeterminate. Other forms (0·∞, ∞−∞, 0⁰, 1^∞) require algebra first — rewrite into 0/0 or ∞/∞. Always verify conditions; the rule can fail if derivatives oscillate without a limit.",
             formulas: [
-              "0/0 or ∞/∞ → try L'Hôpital",
-              "lim_{x→a} f/g = lim_{x→a} f'/g' (conditions apply)",
-              "Repeat until determinate or limit found",
-              "0·∞ → rewrite as 0/(1/∞)",
-              "Example: lim_{x→0} sin(x)/x = lim cos(x)/1 = 1"
+              "0/0 or ∞/∞ indeterminate → apply L'Hôpital's rule",
+              "lim_{x→a} f/g = lim_{x→a} f'/g' (when conditions hold)",
+              "Apply repeatedly until the limit is determinate",
+              "0·∞ indeterminate → rewrite as 0/(1/∞) first",
+              "lim_{x→0} sin(x)/x = lim_{x→0} cos(x) = 1"
             ],
             diagram: "   L'Hôpital for 0/0 at a:\n\n        L ─ ─ ─ ─ ─ limit of f/g\n          ·  ·\n        ·    ·  f(x)/g(x)\n          ·\n        ────┼──── x\n            a\n\n   lim f/g = lim f'/g'",
             keyPoints: [
@@ -1851,9 +1851,9 @@ export const MATH_MODULES = [
             formulas: [
               "lim_{t→∞} L(θ_t) = L*",
               "η→0: GD → gradient flow",
-              "softmax(z/T), T→0 → one-hot",
-              "sigmoid(x), x→∞ → 1",
-              "λ→∞: ridge → zero solution"
+              "lim_{T→0} softmax(z/T) → one-hot vector",
+              "sigmoid(x), x→±∞ → 0 or 1",
+              "lim_{λ→∞} ridge penalty → w → 0"
             ],
             diagram: "   loss vs iteration:\n\n   L │╲\n     │ ╲___\n     │     ────→ lim L*\n     └──────────── t\n   convergence = limit behavior\n   │\n   │  · · ·\n   └──────────",
             keyPoints: [

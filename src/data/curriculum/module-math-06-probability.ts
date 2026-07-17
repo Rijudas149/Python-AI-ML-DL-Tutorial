@@ -37,14 +37,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 P_A, P_B, P_AB = 0.4, 0.3, 0.1
 print("P(AUB):", P_A+P_B-P_AB)`,
-          output: `P(AUB): 0.6`,
-          pseudoCode: `Probability Axioms
-
-P(A) ≥ 0
-P(Ω) = 1
-P(∪A_i) = ∑ P(A_i) if disjoint
-P(A^c) = 1 − P(A)
-P(A∪B) = P(A)+P(B)−P(A∩B)`
+          output: `P(AUB): 0.6`
         },
         {
           id: `pb-count`,
@@ -77,14 +70,7 @@ Careful with independence assumptions when counting joint outcomes. Connecting t
 from math import comb
 n,p,k=10,0.5,4
 print("binom PMF:", comb(n,k)*p**k*(1-p)**(n-k))`,
-          output: `binom PMF`,
-          pseudoCode: `Combinatorial Probability
-
-P(A) = |A|/|Ω| (equally likely)
-Binomial: C(n,k) p^k (1−p)^(n−k)
-Hypergeometric: draws without replacement
-Birthday: 23 people → ~50% match
-Multinomial for k categories`
+          output: `binom PMF`
         },
         {
           id: `pb-indep`,
@@ -116,14 +102,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 P_A,P_B=0.5,0.4
 print("P(A)*P(B):", P_A*P_B, "if indep P(A∩B) same")`,
-          output: `0.2`,
-          pseudoCode: `Independence
-
-A,B indep: P(A∩B)=P(A)P(B)
-i.i.d.: independent identical distribution
-P(A∩B|C)=P(A|C)P(B|C) conditional indep
-Pairwise ≠ mutual independence
-Violations break many ML assumptions`
+          output: `0.2`
         },
         {
           id: `pb-ml`,
@@ -157,14 +136,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 tp,fp,fn=50,10,5
 print("prec:", tp/(tp+fp), "rec:", tp/(tp+fn))`,
-          output: `prec/rec`,
-          pseudoCode: `Probability in ML Metrics
-
-Accuracy = P(correct)
-Precision = TP/(TP+FP)
-Recall = TP/(TP+FN)
-F1 = 2PR/(P+R)
-Calibration: P(y=1|ŷ=p) ≈ p`
+          output: `prec/rec`
         }
       ],
       exercises: [
@@ -253,14 +225,7 @@ P(A|B)≠P(B|A)—prosecutor fallacy confusion. Connecting this theory to numpy 
           example: `import numpy as np
 P_AB,P_B=0.12,0.3
 print("P(A|B):", P_AB/P_B)`,
-          output: `P(A|B): 0.4`,
-          pseudoCode: `Conditional Probability
-
-P(A|B) = P(A∩B)/P(B)
-P(A∩B) = P(A|B)P(B)
-P(A) = ∑ P(A|B_i)P(B_i)
-P(A|B) ≠ P(B|A) in general
-Evidence B updates belief about A`
+          output: `P(A|B): 0.4`
         },
         {
           id: `cb-bayes`,
@@ -290,14 +255,7 @@ MAP picks mode of posterior; full posterior gives uncertainty. Connecting this t
           example: `import numpy as np
 prior=0.01; sens=0.95; spec=0.90; P_B=0.01*0.95+0.99*0.1
 print("post:", prior*sens/P_B)`,
-          output: `posterior`,
-          pseudoCode: `Bayes Theorem
-
-P(A|B) = P(B|A)P(A)/P(B)
-Posterior ∝ Likelihood × Prior
-Naive Bayes: P(x|y)=∏ P(x_i|y)
-MAP = argmax_θ P(θ|D)
-Evidence P(D) normalizes`
+          output: `posterior`
         },
         {
           id: `cb-odds`,
@@ -328,14 +286,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 p=0.7
 print("logit:", np.log(p/(1-p)))
 print("back:", 1/(1+np.exp(-np.log(p/(1-p)))))`,
-          output: `round trip`,
-          pseudoCode: `Odds & Log-Odds
-
-Odds = p/(1−p)
-logit(p) = ln(p/(1−p))
-log-odds update additive
-Likelihood ratio = P(B|A)/P(B|A^c)
-sigmoid = inverse logit`
+          output: `round trip`
         },
         {
           id: `cb-ml`,
@@ -368,14 +319,7 @@ Prior prevents overfitting (weight decay ≈ Gaussian prior). Conjugate priors g
 a,b,k,n=1,1,7,10
 post_a,post_b=a+k,b+n-k
 print("post mean:", post_a/(post_a+post_b))`,
-          output: `post mean`,
-          pseudoCode: `Bayesian ML Preview
-
-Posterior predictive integrates θ uncertainty
-VI: optimize q(θ) ≈ p(θ|D)
-MCMC sample from posterior
-Prior = regularization
-Conjugate: closed-form update`
+          output: `post mean`
         }
       ],
       exercises: [
@@ -474,14 +418,7 @@ from scipy import stats
 x=np.arange(0,4)
 p=stats.binom.pmf(x,3,0.5)
 print("sum PMF:", p.sum())`,
-          output: `sum PMF: 1.0`,
-          pseudoCode: `Random Variable Definition
-
-PMF: p(x) = P(X=x) discrete
-PDF: P(a≤X≤b) = ∫_a^b f(x)dx
-CDF: F(x) = P(X≤x)
-∑ p(x)=1 or ∫ f(x)dx=1
-E[X] = ∑ x p(x) or ∫ x f(x)dx`
+          output: `sum PMF: 1.0`
         },
         {
           id: `rv-expect`,
@@ -512,14 +449,7 @@ Law of large numbers: x̄→E[X] as n→∞. Connecting this theory to numpy exp
           example: `import numpy as np
 x=np.array([1,2,3,4,5])
 print("mean:", x.mean(), "var:", x.var(ddof=0))`,
-          output: `mean 3 var 2`,
-          pseudoCode: `Expectation & Variance
-
-E[X] = ∑ x p(x) or ∫ x f(x) dx
-Var(X) = E[X²] − (E[X])²
-E[aX+b] = aE[X]+b
-Cov(X,Y) = E[XY] − E[X]E[Y]
-σ = √Var(X)`
+          output: `mean 3 var 2`
         },
         {
           id: `rv-transform`,
@@ -549,14 +479,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 X=np.random.randn(100000)
 print("E[X²]:", (X**2).mean(), "E[X]²:", X.mean()**2)`,
-          output: `E[X²]=1 ≠ 0`,
-          pseudoCode: `Functions of RVs
-
-E[g(X)] ≠ g(E[X]) in general
-Var(aX+b) = a²Var(X)
-Var(X+Y)=Var(X)+Var(Y) if indep
-Jensen: convex f → E[f(X)]≥f(E[X])
-Reparam: x = μ + σ·ε`
+          output: `E[X²]=1 ≠ 0`
         },
         {
           id: `rv-ml`,
@@ -586,14 +509,7 @@ Treating pipeline probabilistically improves debugging and evaluation design.`,
           example: `import numpy as np
 losses=np.array([0.5,0.8,0.3,0.6])
 print("batch mean loss:", losses.mean())`,
-          output: `batch mean`,
-          pseudoCode: `RVs in ML Pipeline
-
-Empirical risk ≈ E[L] with samples
-Batch mean estimates expectation
-Dropout ≈ model averaging
-Bias-variance tradeoff in E[error]
-Augmentation expands implicit support`
+          output: `batch mean`
         }
       ],
       exercises: [
@@ -692,14 +608,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 from scipy import stats
 k=np.arange(0,11)
 print(stats.binom.pmf(k,10,0.5))`,
-          output: `binomial PMF`,
-          pseudoCode: `Discrete Distributions
-
-Bernoulli: P(X=1)=p
-Binomial: C(n,k)p^k(1−p)^(n−k)
-Poisson: P(X=k)=e^(−λ)λ^k/k!
-Categorical: ∑p_i=1
-E[Poisson]=Var=λ`
+          output: `binomial PMF`
         },
         {
           id: `dist-cont`,
@@ -732,14 +641,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 x=np.linspace(-3,3,100)
 f=np.exp(-x**2/2)/np.sqrt(2*np.pi)
 print("area:", np.trapz(f,x))`,
-          output: `area ~ 1`,
-          pseudoCode: `Continuous Distributions
-
-N(μ,σ²): f(x) ∝ exp(−(x−μ)²/(2σ²))
-Exp(λ): f(x)=λe^(−λx), x≥0
-Uniform[a,b]: f=1/(b−a)
-Z=(X−μ)/σ standardizes
-Multivariate: (x−μ)ᵀΣ⁻¹(x−μ)`
+          output: `area ~ 1`
         },
         {
           id: `dist-clt`,
@@ -770,14 +672,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 X=np.random.exponential(1,(1000,50))
 print("mean of means:", X.mean(axis=1).mean(), "std:", X.mean(axis=1).std())`,
-          output: `approx N(1, 1/50)`,
-          pseudoCode: `Central Limit Theorem Preview
-
-X̄ approx N(μ, σ²/n) for large n
-SE = σ/√n
-CLT for sum: S approx N(nμ, nσ²)
-Works i.i.d. finite variance
-Justifies normal approximations`
+          output: `approx N(1, 1/50)`
         },
         {
           id: `dist-ml`,
@@ -809,14 +704,7 @@ Choosing distribution = choosing loss. Connecting this theory to numpy experimen
 # MSE assumes Gaussian
 y=np.array([1.,2.,3.]); yhat=np.array([1.1,1.9,3.2])
 print("MSE:", ((y-yhat)**2).mean())`,
-          output: `MSE loss`,
-          pseudoCode: `Distributions in ML Models
-
-Bernoulli → sigmoid + BCE
-Gaussian y → MSE / NLL
-Categorical → softmax + CE
-Poisson → log link
-VAE latent z ~ N(0,I)`
+          output: `MSE loss`
         }
       ],
       exercises: [
@@ -911,14 +799,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 J=np.array([[0.2,0.1],[0.3,0.4]])
 print("marg X:", J.sum(axis=1), "marg Y:", J.sum(axis=0))`,
-          output: `marginals`,
-          pseudoCode: `Joint Distributions
-
-p(x,y) joint PMF/PDF
-p(x) = ∑_y p(x,y) marginal
-f(x) = ∫ f(x,y) dy
-Σ_ij = Cov(X_i, X_j)
-∫∫ f(x,y) dx dy = 1`
+          output: `marginals`
         },
         {
           id: `jm-indep`,
@@ -948,14 +829,7 @@ Feature independence assumption in naive Bayes rarely true but useful.`,
           example: `import numpy as np
 px=np.array([0.4,0.6]); py=np.array([0.5,0.5])
 print(np.outer(px,py))`,
-          output: `indep joint`,
-          pseudoCode: `Independence & Conditional
-
-Indep: p(x,y)=p(x)p(y)
-p(x|y)=p(x,y)/p(y)
-p(x,y,z)=p(x)p(y|x)p(z|x,y)
-X⊥Y|Z: p(x,y|z)=p(x|z)p(y|z)
-Corr=0 ≠ indep (non-Gaussian)`
+          output: `indep joint`
         },
         {
           id: `jm-cov`,
@@ -988,14 +862,7 @@ Feature correlation heatmaps guide EDA and multicollinearity detection. Connecti
 X=np.random.randn(100,3)
 C=np.corrcoef(X.T)
 print(np.round(C,2))`,
-          output: `corr matrix`,
-          pseudoCode: `Covariance & Correlation
-
-Cov(X,Y) = E[XY] − E[X]E[Y]
-ρ = Cov/(σ_X σ_Y)
-Σ symmetric, PSD
-Corr matrix: diag 1
-Sample Σ = X̃ᵀX̃/n`
+          output: `corr matrix`
         },
         {
           id: `jm-ml`,
@@ -1025,14 +892,7 @@ Choosing what joint to model defines generative task complexity.`,
           example: `import numpy as np
 mu=np.zeros(2); X=np.random.randn(50,2)
 print("Mahalanobis approx:", ((X**2).sum(axis=1)).mean())`,
-          output: `chi2-like`,
-          pseudoCode: `Joint Modeling in ML
-
-Generative: model p(x) or p(x,y)
-Discriminative: p(y|x)
-p(x,y)=p(y|x)p(x)
-Mahalanobis: (x−μ)ᵀΣ⁻¹(x−μ)
-Autoregressive factorization`
+          output: `chi2-like`
         }
       ],
       exercises: [

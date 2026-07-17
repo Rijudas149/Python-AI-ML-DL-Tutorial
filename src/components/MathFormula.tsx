@@ -19,7 +19,8 @@ export function MathFormula({ formula, display = true, className = '' }: MathFor
         strict: 'ignore',
         trust: false,
       });
-      return { html, latex, ok: true };
+      const ok = !html.includes('katex-error');
+      return { html, latex, ok };
     } catch {
       return { html: '', latex, ok: false };
     }

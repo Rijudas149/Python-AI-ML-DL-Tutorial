@@ -39,13 +39,7 @@ Limits are the foundation for derivatives and integrals.`,
 f = lambda x: (x**2-1)/(x-1)
 x = np.array([0.9,0.99,0.999,1.001,1.01])
 print("f(x):", f(x))`,
-          output: `f(x) → 2 as x→1`,
-          pseudoCode: `Limit Definition
-
-lim_{x→a} f(x) = L
-lim_{x→a} f(x) exists ⇔ lim_{x→a⁻} f(x) = lim_{x→a⁺} f(x)
-lim_{x→∞} f(x) = L (horizontal asymptote y = L)
-ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε`
+          output: `f(x) → 2 as x→1`
         },
         {
           id: `lim-rules`,
@@ -77,14 +71,7 @@ Composition rules apply when inner limits stay in the domain.`,
           example: `import numpy as np
 x = np.linspace(-0.1,0.1,5); x=x[x!=0]
 print("sin(x)/x:", np.sin(x)/x)`,
-          output: `→ 1 near 0`,
-          pseudoCode: `Limit Laws
-
-lim(f+g) = lim f + lim g
-lim(f/g) = lim f / lim g
-lim_{x→0} sin(x)/x = 1
-lim_{x→0} (e^x − 1)/x = 1
-Squeeze: g≤f≤h → same limit`
+          output: `→ 1 near 0`
         },
         {
           id: `lim-lhopital`,
@@ -95,11 +82,11 @@ Apply repeatedly if the result is still indeterminate. Other forms (0·∞, ∞�
 
 Always verify conditions; the rule can fail if derivatives oscillate without a limit.`,
           formulas: [
-            `0/0 or ∞/∞ → try L'Hôpital`,
-            `lim_{x→a} f/g = lim_{x→a} f'/g' (conditions apply)`,
-            `Repeat until determinate or limit found`,
-            `0·∞ → rewrite as 0/(1/∞)`,
-            `Example: lim_{x→0} sin(x)/x = lim cos(x)/1 = 1`
+            `0/0 or ∞/∞ indeterminate → apply L'Hôpital's rule`,
+            `lim_{x→a} f/g = lim_{x→a} f'/g' (when conditions hold)`,
+            `Apply repeatedly until the limit is determinate`,
+            `0·∞ indeterminate → rewrite as 0/(1/∞) first`,
+            `lim_{x→0} sin(x)/x = lim_{x→0} cos(x) = 1`
           ],
           diagram: `L'Hôpital for 0/0 at a:
         L ─ ─ ─ ─ ─ limit of f/g
@@ -119,14 +106,7 @@ x = sp.Symbol('x')
 expr = (sp.exp(x) - 1) / x
 print("limit:", sp.limit(expr, x, 0))
 print("L'Hopital check:", sp.limit(sp.diff(sp.exp(x)-1,x)/sp.diff(x,x), x, 0))`,
-          output: `limit: 1`,
-          pseudoCode: `L'Hôpital's Rule
-
-0/0 or ∞/∞ → try L'Hôpital
-lim_{x→a} f/g = lim_{x→a} f'/g' (conditions apply)
-Repeat until determinate or limit found
-0·∞ → rewrite as 0/(1/∞)
-Example: lim_{x→0} sin(x)/x = lim cos(x)/1 = 1`
+          output: `limit: 1`
         },
         {
           id: `lim-cont`,
@@ -157,14 +137,7 @@ Discontinuities cause optimization issues.`,
 x = np.linspace(-2,2,100)
 relu = np.maximum(0,x)
 print("ReLU continuous, kink at 0")`,
-          output: `kink at 0 still continuous`,
-          pseudoCode: `Continuity
-
-Continuous at a: lim_{x→a} f(x) = f(a)
-IVT: sign change → root
-EVT: continuous on [a,b] → max/min
-Removable: redefine at hole
-Jump: piecewise mismatch`
+          output: `kink at 0 still continuous`
         },
         {
           id: `lim-ml`,
@@ -195,14 +168,7 @@ Softmax limit as temperature T→0 approaches argmax. Sigmoid limit x→±∞ gi
 t = np.arange(1,100)
 L = 1.0/t + 0.01
 print("lim approx:", L[-1])`,
-          output: `decreasing to limit`,
-          pseudoCode: `Limits in Optimization
-
-lim_{t→∞} L(θ_t) = L*
-η→0: GD → gradient flow
-softmax(z/T), T→0 → one-hot
-sigmoid(x), x→∞ → 1
-λ→∞: ridge → zero solution`
+          output: `decreasing to limit`
         }
       ],
       exercises: [
@@ -305,14 +271,7 @@ Autodiff computes derivatives algorithmically.`,
 f = lambda x: x**2
 def deriv(f,x,h=1e-5): return (f(x+h)-f(x))/h
 print("f'(3):", deriv(f,3), "exact:", 2*3)`,
-          output: `f'(3): 6.0`,
-          pseudoCode: `Derivative Definition
-
-f'(x) = lim_{h→0} (f(x+h)−f(x))/h
-Tangent slope at x
-Differentiable ⇒ continuous
-∂f/∂x_i partial derivative
-∇f = vector of partials`
+          output: `f'(3): 6.0`
         },
         {
           id: `der-interp`,
@@ -346,14 +305,7 @@ x = np.linspace(-2,2,5)
 f = x**2
 grad = 2*x
 print("x:", x, "grad:", grad)`,
-          output: `grad zero at x=0`,
-          pseudoCode: `Interpretations
-
-f'(x)>0 → increasing
-f'(x)=0 → critical point
-f''(x)>0 → convex (local)
-Jacobian J_ij = ∂f_i/∂x_j
-Gradient descent: θ -= η∇L`
+          output: `grad zero at x=0`
         },
         {
           id: `der-numeric`,
@@ -387,14 +339,7 @@ x=1.0
 h=1e-5
 central=(f(x+h)-f(x-h))/(2*h)
 print("cos(1) approx:", central, "exact:", np.cos(x))`,
-          output: `matches cos(1)`,
-          pseudoCode: `Numerical Differentiation
-
-Forward: (f(x+h)−f(x))/h
-Central: (f(x+h)−f(x−h))/(2h)
-Error central O(h²)
-h ≈ 1e-5 typical for float64
-gradient check in DL debugging`
+          output: `matches cos(1)`
         },
         {
           id: `der-ml`,
@@ -429,14 +374,7 @@ L = lambda t: (t[0]-2)**2 + (t[1]+1)**2
 h=1e-5
 grad = np.array([(L(theta+np.array([h,0]))-L(theta))/h,(L(theta+np.array([0,h]))-L(theta))/h])
 print("grad:", grad)`,
-          output: `grad at (1,1)`,
-          pseudoCode: `Derivatives in Loss Landscapes
-
-∇L(θ) = 0 at stationary points
-Saddle: grad=0 but not extremum
-Plateau: |∇L| ≈ 0 slow training
-ReLU subgradient at 0
-Flat minima may generalize better`
+          output: `grad at (1,1)`
         }
       ],
       exercises: [
@@ -532,14 +470,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 x=np.array([0.5,1.,2.])
 s=1/(1+np.exp(-x))
 print("sigmoid:", s, "deriv:", s*(1-s))`,
-          output: `sigmoid deriv`,
-          pseudoCode: `Basic Rules
-
-d/dx x^n = n x^(n−1)
-d/dx e^x = e^x
-d/dx ln(x) = 1/x
-σ'(x) = σ(x)(1−σ(x))
-(f+g)' = f' + g'`
+          output: `sigmoid deriv`
         },
         {
           id: `dr-product`,
@@ -575,14 +506,7 @@ f=lambda x:x**2; g=lambda x:np.sin(x)
 h=lambda x:f(x)*g(x)
 h1=(2*x)*np.sin(x)+x**2*np.cos(x)
 print("product rule:", h1)`,
-          output: `product rule at x=2`,
-          pseudoCode: `Product & Quotient Rules
-
-(fg)' = f'g + fg'
-(f/g)' = (f'g − fg')/g²
-d(u·v) = u'·v + u·v'
-d(AB) = A'B + AB'
-(1/g)' = −g'/g²`
+          output: `product rule at x=2`
         },
         {
           id: `dr-chain`,
@@ -612,14 +536,7 @@ Chain rule is foundation of automatic differentiation in PyTorch/JAX. Connecting
           example: `import numpy as np
 # L=(x²+1)³ at x=1: dL/dx=3(x²+1)²·2x
 x=1.; inner=x**2+1; print(3*inner**2*2*x)`,
-          output: `chain: 24 at x=1`,
-          pseudoCode: `Chain Rule
-
-(f∘g)'(x) = f'(g(x))·g'(x)
-∂L/∂w = ∂L/∂y · ∂y/∂w
-Backprop = chain rule on graph
-Reverse-mode: one backward pass
-Jacobian product along path`
+          output: `chain: 24 at x=1`
         },
         {
           id: `dr-common`,
@@ -650,14 +567,7 @@ Keeping cheat sheet accelerates debugging custom layers without autograd. Connec
           example: `import numpy as np
 y=np.array([1.,0.,0.]); yhat=np.array([0.7,0.2,0.1])
 print("grad CE approx:", yhat-y)`,
-          output: `yhat - y`,
-          pseudoCode: `Common ML Derivatives
-
-MSE: ∂L/∂ŷ = ŷ − y
-L2: ∂(λ||w||²)/∂w = 2λw
-Softmax+CE: ∂L/∂z = ŷ − y
-tanh': 1 − tanh²(x)
-ReLU': 1 if x>0 else 0`
+          output: `yhat - y`
         }
       ],
       exercises: [
@@ -751,14 +661,7 @@ In ML, linearization of nonlinear models near operating point.`,
           example: `import numpy as np
 x=0.1
 print("e^x approx:", 1+x+x**2/2, "exact:", np.exp(x))`,
-          output: `2nd order close`,
-          pseudoCode: `Taylor Series Definition
-
-f(x) = ∑ f^(n)(a)/n! · (x−a)^n
-T₁: f(a) + f'(a)(x−a)
-Maclaurin: expand at 0
-e^x = ∑ x^n/n!
-sin(x) = ∑ (−1)^n x^(2n+1)/(2n+1)!`
+          output: `2nd order close`
         },
         {
           id: `tay-approx`,
@@ -789,14 +692,7 @@ Laplace approximation approximates integrals via Gaussian from second-order Tayl
 x=np.linspace(-1,1,5)
 approx=1+x+x**2/2+x**3/6
 print("err:", np.abs(np.exp(x)-approx))`,
-          output: `error small near 0`,
-          pseudoCode: `Approximation Error
-
-Error ~ f''(ξ)(x−a)²/2 (2nd order)
-Far from a: need more terms
-GD: first-order step
-Newton: second-order step
-Laplace approx: Taylor on log p`
+          output: `error small near 0`
         },
         {
           id: `tay-multivar`,
@@ -828,14 +724,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 # f=x²+y², H=[[2,0],[0,2]]
 H=np.array([[2.,0.],[0.,2.]])
 print("eig:", np.linalg.eigvalsh(H))`,
-          output: `all positive → min`,
-          pseudoCode: `Multivariate Taylor
-
-f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ
-H_ij = ∂²f/∂x_i∂x_j
-H positive definite → local min
-Mixed eigenvalues → saddle
-Gauss-Newton approx Hessian`
+          output: `all positive → min`
         },
         {
           id: `tay-ml`,
@@ -867,14 +756,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 L=lambda t:t**2; grad=lambda t:2*t
 t=3.; eta=0.1
 print("GD step:", t-eta*grad(t))`,
-          output: `t decreases`,
-          pseudoCode: `Taylor in ML Optimization
-
-GD step from 1st order Taylor
-Newton from 2nd order model
-MAP + Laplace ≈ Gaussian posterior
-Small η: Taylor accurate
-Large η: higher terms matter`
+          output: `t decreases`
         }
       ],
       exercises: [
@@ -972,14 +854,7 @@ f=lambda x:x**2
 a,b=0,2
 x=np.linspace(a,b,1000)
 print("trapz:", np.trapz(f(x),x), "exact:", 8/3)`,
-          output: `8/3`,
-          pseudoCode: `Integral Definition
-
-∫_a^b f(x)dx = signed area
-F(b) − F(a) if F' = f
-∫ p(x)dx = 1 (PDF)
-E[X] = ∫ x p(x) dx
-Riemann: ∑ f(x_i) Δx`
+          output: `8/3`
         },
         {
           id: `int-rules`,
@@ -1010,14 +885,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 from scipy import integrate
 val,_=integrate.quad(lambda x:np.exp(-x**2),-np.inf,np.inf)
 print("gaussian:", val, "sqrt pi:", np.sqrt(np.pi))`,
-          output: `sqrt pi`,
-          pseudoCode: `Integration Techniques
-
-∫ x^n dx = x^(n+1)/(n+1) + C
-∫ e^x dx = e^x + C
-∫ 1/x dx = ln|x| + C
-∫ e^(−x²) dx = √π (over ℝ)
-By parts: ∫u dv = uv − ∫v du`
+          output: `sqrt pi`
         },
         {
           id: `int-prob`,
@@ -1050,14 +918,7 @@ Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate. Connecting this 
 x=np.linspace(-4,4,1000)
 p=np.exp(-x**2/2)/np.sqrt(2*np.pi)
 print("norm check:", np.trapz(p,x))`,
-          output: `≈ 1.0`,
-          pseudoCode: `Integrals in Probability
-
-∫ p(x) dx = 1
-F(x) = ∫_{−∞}^x p(t) dt
-E[g(X)] = ∫ g(x) p(x) dx
-Marginal: ∫ p(x,y) dy
-Change vars: multiply by |dx/dy|`
+          output: `≈ 1.0`
         },
         {
           id: `int-mc`,
@@ -1089,14 +950,7 @@ np.random.seed(0)
 samples=np.random.randn(100000)
 est=np.mean(samples**2)
 print("E[X²] est:", est, "true:", 1.0)`,
-          output: `≈ 1.0`,
-          pseudoCode: `Monte Carlo Integration
-
-E[f(X)] ≈ (1/N) ∑ f(x_i)
-Var ∝ 1/N
-Importance: weight by p/q
-MCMC for posterior expectations
-High-D: MC scales better than grid`
+          output: `≈ 1.0`
         }
       ],
       exercises: [

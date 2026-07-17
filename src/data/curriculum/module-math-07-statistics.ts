@@ -37,14 +37,7 @@ In skewed income data, median better than mean. ML: batch normalization uses bat
           example: `import numpy as np
 x=np.array([1,2,2,3,100])
 print("mean:", x.mean(), "median:", np.median(x))`,
-          output: `mean inflated by 100`,
-          pseudoCode: `Central Tendency
-
-x̄ = (1/n) ∑ x_i
-Median: middle of sorted data
-Mode: argmax frequency
-Trimmed mean: drop extremes
-Weighted: ∑ w_i x_i / ∑ w_i`
+          output: `mean inflated by 100`
         },
         {
           id: `ds-spread`,
@@ -77,14 +70,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 x=np.array([2,4,4,4,5,5,7,9])
 print("var:", x.var(ddof=1), "IQR:", np.percentile(x,75)-np.percentile(x,25))`,
-          output: `var/IQR`,
-          pseudoCode: `Variance & Spread
-
-s² = (1/(n−1))∑(x_i−x̄)²
-σ = √Var(X)
-IQR = Q3 − Q1
-MAD = median(|x−median|)
-CV = σ/|μ|`
+          output: `var/IQR`
         },
         {
           id: `ds-percentile`,
@@ -117,14 +103,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 x=np.random.randn(1000)
 print("p95:", np.percentile(x,95))`,
-          output: `p95 ~ 1.64`,
-          pseudoCode: `Percentiles & Quantiles
-
-Q(p) = inf{x : F(x)≥p}
-Q1=25th, Q2=50th, Q3=75th
-Pinball loss for quantile τ
-p99 latency common SLA
-Percentile robust to extremes`
+          output: `p95 ~ 1.64`
         },
         {
           id: `ds-eda`,
@@ -159,14 +138,7 @@ Document findings before modeling. Automated profiling (pandas describe, ydata-p
 import pandas as pd
 X=pd.DataFrame(np.random.randn(100,3),columns=list("abc"))
 print(X.describe())`,
-          output: `describe output`,
-          pseudoCode: `EDA for ML
-
-describe(): count mean std min max
-Missing rate per column
-Class balance P(y)
-Train vs test distribution compare
-IQR outlier: x<Q1−1.5IQR or x>Q3+1.5IQR`
+          output: `describe output`
         }
       ],
       exercises: [
@@ -259,14 +231,7 @@ ML train set is sample; generalization assumes representative i.i.d. Time series
 pop=np.arange(100)
 sample=np.random.choice(pop,10,replace=False)
 print("sample:", sample[:5])`,
-          output: `random sample`,
-          pseudoCode: `Random Sampling
-
-SRS: each subset equally likely
-Stratified: proportional strata
-Bootstrap: resample n with replacement
-x̄ is RV across samples
-Selection bias if sample skewed`
+          output: `random sample`
         },
         {
           id: `sc-se`,
@@ -297,14 +262,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 s=2.; n=100
 print("SE:", s/np.sqrt(n))`,
-          output: `SE: 0.2`,
-          pseudoCode: `Standard Error
-
-SE(x̄) = σ/√n
-Estimate: SE ≈ s/√n
-95% CI: x̄ ± 1.96·SE
-SE decreases ∝ 1/√n
-Report metric ± SE or CI`
+          output: `SE: 0.2`
         },
         {
           id: `sc-clt`,
@@ -335,14 +293,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
           example: `import numpy as np
 means=[np.random.exponential(1,30).mean() for _ in range(5000)]
 print("mean of means:", np.mean(means), "std:", np.std(means))`,
-          output: `≈ 1, ≈ 1/√30`,
-          pseudoCode: `Central Limit Theorem Detail
-
-(x̄−μ)/(σ/√n) → N(0,1)
-p̂ approx N(p, p(1−p)/n)
-Requires finite σ²
-n≥30 rule of thumb
-Bootstrap if CLT doubtful`
+          output: `≈ 1, ≈ 1/√30`
         },
         {
           id: `sc-ml`,
@@ -374,14 +325,7 @@ from sklearn.model_selection import KFold
 X=np.arange(20)
 kf=KFold(5)
 print("folds:", [len(te) for _,te in kf.split(X)])`,
-          output: `4 each fold`,
-          pseudoCode: `Sampling in ML Evaluation
-
-Hold-out: single test estimate
-K-fold: K metric samples
-Stratified: preserve P(y)
-Report mean±std over seeds
-Don't peek at test repeatedly`
+          output: `4 each fold`
         }
       ],
       exercises: [
@@ -477,14 +421,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 from scipy import stats
 t,p=stats.ttest_1samp([1.2,0.9,1.1,1.3,0.8], 0)
 print("p-value:", p)`,
-          output: `p-value`,
-          pseudoCode: `Testing Framework
-
-p-value = P(T ≥ t_obs | H₀)
-Reject H₀ if p < α
-Type I: reject true H₀ (α)
-Type II: fail reject false H₀ (β)
-Power = 1 − β`
+          output: `p-value`
         },
         {
           id: `ht-tests`,
@@ -519,14 +456,7 @@ from scipy import stats
 a,b=np.random.randn(30),np.random.randn(30)+0.3
 t,p=stats.ttest_ind(a,b)
 print("p:", p)`,
-          output: `p from ttest`,
-          pseudoCode: `Common Tests
-
-t = (x̄−μ₀)/(s/√n)
-χ² = ∑ (O−E)²/E
-Two-sample t: compare means
-Paired t: difference scores
-ANOVA: compare k means`
+          output: `p from ttest`
         },
         {
           id: `ht-ab`,
@@ -561,14 +491,7 @@ p_a, p_b = conv_a/n_a, conv_b/n_b
 se=np.sqrt(p_a*(1-p_a)/n_a+p_b*(1-p_b)/n_b)
 z=(p_b-p_a)/se
 print("z:", z)`,
-          output: `z stat`,
-          pseudoCode: `A/B Testing
-
-H₀: p_A = p_B
-z = (p̂_A−p̂_B)/SE_diff
-Power needs n, effect size, α
-Fixed horizon reduces peeking bias
-Practical vs statistical significance`
+          output: `z stat`
         },
         {
           id: `ht-ml`,
@@ -604,14 +527,7 @@ for _ in range(1000):
     pool=np.concatenate([a,b]); np.random.shuffle(pool)
     if abs(pool[:20].mean()-pool[20:].mean())>=abs(obs): count+=1
 print("p approx:", count/1000)`,
-          output: `perm p`,
-          pseudoCode: `Testing in ML Experiments
-
-McNemar: paired classification errors
-Permutation: shuffle null
-Paired t on CV fold scores
-Correct for multiple comparisons
-Sig ≠ deploy decision`
+          output: `perm p`
         }
       ],
       exercises: [
@@ -706,14 +622,7 @@ from scipy import stats
 x=np.random.randn(25)
 se=x.std(ddof=1)/np.sqrt(len(x))
 print(stats.t.interval(0.95, len(x)-1, loc=x.mean(), scale=se))`,
-          output: `95% CI`,
-          pseudoCode: `CI for Mean
-
-95% CI: x̄ ± t*·s/√n
-Width ∝ 1/√n
-t* → 1.96 as n→∞
-Bootstrap percentile CI
-CI = plausible μ values`
+          output: `95% CI`
         },
         {
           id: `ci-prop`,
@@ -744,14 +653,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 from statsmodels.stats.proportion import proportion_confint
 ci=proportion_confint(92,100,method="wilson")
 print("Wilson:", ci)`,
-          output: `Wilson CI`,
-          pseudoCode: `CI for Proportions
-
-Wald: p̂ ± z√(p̂(1−p̂)/n)
-Wilson score interval (better)
-Agresti-Coull adjustment
-Exact binomial conservative
-Rare events need large n`
+          output: `Wilson CI`
         },
         {
           id: `ci-diff`,
@@ -784,14 +686,7 @@ a,b=np.random.randn(50)+0.2, np.random.randn(50)
 d=a.mean()-b.mean()
 se=np.sqrt(a.var(ddof=1)/50+b.var(ddof=1)/50)
 print("diff CI:", d-1.96*se, d+1.96*se)`,
-          output: `diff CI`,
-          pseudoCode: `CI for Differences
-
-μ_A−μ_B CI: (x̄_A−x̄_B) ± t* SE
-SE_diff independent groups
-Paired: CI on d_i = x_i−y_i
-Exclude 0 ↔ significant
-Overlap CI misleading for diff`
+          output: `diff CI`
         },
         {
           id: `ci-ml`,
@@ -821,14 +716,7 @@ Nested CV for unbiased performance estimate with uncertainty. Connecting this th
           example: `import numpy as np
 acc=[0.9,0.88,0.91,0.89,0.9]  # 5-fold
 print("mean:", np.mean(acc), "std:", np.std(acc,ddof=1))`,
-          output: `CV stats`,
-          pseudoCode: `Uncertainty in ML Metrics
-
-Bootstrap metrics on test set
-CV mean ± std approximate
-Conformal: distribution-free coverage
-Bayesian predictive intervals
-Nested CV for model selection`
+          output: `CV stats`
         }
       ],
       exercises: [
@@ -925,14 +813,7 @@ X=np.column_stack([np.ones(5),np.arange(5)])
 y=np.array([1,3,3,5,5])
 beta=np.linalg.lstsq(X,y,rcond=None)[0]
 print("beta:", beta)`,
-          output: `intercept slope`,
-          pseudoCode: `Ordinary Least Squares
-
-min ||y − Xβ||²
-Normal eq: XᵀXβ = Xᵀy
-β = (XᵀX)⁻¹ Xᵀy
-ŷ = H y projection
-e = y − ŷ ⊥ Col(X)`
+          output: `intercept slope`
         },
         {
           id: `reg-assump`,
@@ -963,14 +844,7 @@ Regularization when collinear.`,
           example: `import numpy as np
 X=np.random.randn(100,3)
 print("rank:", np.linalg.matrix_rank(X))`,
-          output: `full rank likely`,
-          pseudoCode: `Regression Assumptions
-
-E[ε|X] = 0
-Var(ε|X) = σ² (homoscedastic)
-No perfect collinearity
-ε ~ N(0,σ²) for t-tests
-VIF detects multicollinearity`
+          output: `full rank likely`
         },
         {
           id: `reg-infer`,
@@ -1002,14 +876,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 y=np.array([1,2,3,4,5]); yhat=np.array([1.1,1.9,3.2,3.8,5.1])
 ss_res=((y-yhat)**2).sum(); ss_tot=((y-y.mean())**2).sum()
 print("R2:", 1-ss_res/ss_tot)`,
-          output: `R2`,
-          pseudoCode: `Statistical Inference
-
-Var(β̂) = σ² (XᵀX)⁻¹
-s² = ||e||²/(n−p−1)
-t = β̂_j / SE(β̂_j)
-R² = 1 − SSE/SST
-Adj R² penalizes p`
+          output: `R2`
         },
         {
           id: `reg-ml`,
@@ -1041,14 +908,7 @@ X=np.random.randn(100,5); y=X@np.arange(5)+np.random.randn(100)*0.1
 lam=1.
 beta=np.linalg.solve(X.T@X+lam*np.eye(5), X.T@y)
 print("ridge beta shape:", beta.shape)`,
-          output: `ridge solution`,
-          pseudoCode: `Regression to ML
-
-Ridge: min ||y−Xβ||² + λ||β||²
-Lasso: L1 → sparsity
-GD scales big data
-Normal eq O(np²) expensive
-GLM generalizes linear model`
+          output: `ridge solution`
         }
       ],
       exercises: [

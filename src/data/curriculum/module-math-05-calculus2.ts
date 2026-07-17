@@ -42,14 +42,7 @@ x,y=1.,2.
 h=1e-5
 dfdx=(f(x+h,y)-f(x-h,y))/(2*h)
 print("∂f/∂x:", dfdx, "exact:", 2*x+3*y)`,
-          output: `∂f/∂x: 8`,
-          pseudoCode: `Partial Derivative Definition
-
-∂f/∂x_i = lim_{h→0} (f(...,x_i+h,...)−f(...,x_i,...))/h
-∇f = (∂f/∂x₁, ..., ∂f/∂x_n)ᵀ
-D_u f = ∇f · u
-Mixed partial: ∂²f/∂x∂y
-Clairaut: ∂²f/∂x∂y = ∂²f/∂y∂x (smooth)`
+          output: `∂f/∂x: 8`
         },
         {
           id: `pd-geom`,
@@ -82,14 +75,7 @@ Moving −η∇L decreases loss first-order. In 2D, visualize gradient arrows on
 x,y=1.,1.
 grad=np.array([2*x+3*y, 3*x+2*y])
 print("grad:", grad, "norm:", np.linalg.norm(grad))`,
-          output: `grad at (1,1)`,
-          pseudoCode: `Geometric Meaning
-
-∇f ⟂ level sets
-Steepest ascent direction
-||∇f|| = max directional derivative
-−∇f = steepest descent
-Contour ⊥ gradient`
+          output: `grad at (1,1)`
         },
         {
           id: `pd-higher`,
@@ -119,14 +105,7 @@ Determinant of Hessian in multivariate change of variables. Fisher information r
 # f=x²+2xy+3y², H=[[2,2],[2,6]]
 H=np.array([[2.,2.],[2.,6.]])
 print("eig:", np.linalg.eigvalsh(H))`,
-          output: `curvature directions`,
-          pseudoCode: `Higher-Order Partials
-
-H_ij = ∂²f/∂x_i∂x_j
-H symmetric for C² f
-∇²f = tr(H) (Laplacian)
-det(H) in multivariate transform
-Flat dir: small H eigenvalue`
+          output: `curvature directions`
         },
         {
           id: `pd-ml`,
@@ -158,14 +137,7 @@ Manual partials verify implementation for custom ops. Connecting this theory to 
 W=np.array([[1.,2.],[3.,4.]]); x=np.array([1.,0.5])
 h=W@x
 print("dh/dx:", W.T, "shape matches x")`,
-          output: `W.T for backprop to x`,
-          pseudoCode: `Partials in Backprop
-
-∂L/∂x = (∂L/∂h)(∂h/∂x)
-Linear: ∂(Wx)/∂W = x
-Activation: diag(σ'(z))
-Batch grad = sum over samples
-autograd = automatic partials`
+          output: `W.T for backprop to x`
         }
       ],
       exercises: [
@@ -261,14 +233,7 @@ theta=np.array([1.,2.,3.])
 L=lambda t: np.sum(t**2)
 grad=2*theta
 print("∇L:", grad)`,
-          output: `∇L: [2 4 6]`,
-          pseudoCode: `Gradient Vector
-
-∇f = (∂f/∂x₁, ..., ∂f/∂x_n)ᵀ
-max_{||u||=1} D_u f = ||∇f||
-∇L(θ*) = 0 at stationary θ*
-Subgradient at non-smooth points
-∇L same shape as θ`
+          output: `∇L: [2 4 6]`
         },
         {
           id: `grad-descent`,
@@ -302,14 +267,7 @@ theta=np.array([5.,5.])
 eta=0.1
 for _ in range(20): theta -= eta*(2*theta)
 print("theta:", np.round(theta,4))`,
-          output: `→ near 0`,
-          pseudoCode: `Gradient Descent Geometry
-
-θ_{t+1} = θ_t − η ∇L(θ_t)
-η too large → diverge
-L-smooth: |∇f(x)−∇f(y)| ≤ L||x−y||
-Convex + proper η → global min
-Momentum: v_t = βv_{t-1}+∇L`
+          output: `→ near 0`
         },
         {
           id: `grad-proj`,
@@ -341,14 +299,7 @@ Projected methods maintain feasibility each step. Connecting this theory to nump
 v=np.array([0.3,0.5,0.4])
 v=np.maximum(v,0); v/=v.sum()
 print("simplex proj:", v)`,
-          output: `sums to 1`,
-          pseudoCode: `Projection & Constraints
-
-Proj_C(x) = argmin_{y∈C} ||y−x||
-Projected GD after each step
-Simplex: ∑p_i=1, p_i≥0
-Box: clip to [a,b]
-Prox for L1: soft threshold`
+          output: `sums to 1`
         },
         {
           id: `grad-numerical`,
@@ -383,14 +334,7 @@ t=np.array([1.,2.]); h=1e-5
 gn=np.array([(f(t+[h,0])-f(t-[h,0]))/(2*h),(f(t+[0,h])-f(t-[0,h]))/(2*h)])
 ga=np.array([2*t[0],3.])
 print("rel err:", np.abs(gn-ga)/(np.abs(gn)+np.abs(ga)))`,
-          output: `small error`,
-          pseudoCode: `Gradient Checking
-
-rel_err = |g_n − g_a| / (|g_n|+|g_a|+ε)
-Central diff preferred
-Check small param subsets
-Disable stochastic layers
-gradcheck in PyTorch`
+          output: `small error`
         }
       ],
       exercises: [
@@ -485,14 +429,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 # f(x,y)=[x+y, x-y], J=[[1,1],[1,-1]]
 J=np.array([[1.,1.],[1.,-1.]])
 print("J:", J)`,
-          output: `Jacobian`,
-          pseudoCode: `Jacobian Matrix
-
-J_ij = ∂f_i / ∂x_j
-J_{f∘g} = J_f · J_g
-f: ℝⁿ→ℝ: ∇f ∈ ℝⁿ
-Linear approx: f(x+δ) ≈ f(x)+Jδ
-JVP/JVJP efficient in autodiff`
+          output: `Jacobian`
         },
         {
           id: `cr-backprop`,
@@ -523,14 +460,7 @@ Memory stores activations for backward. Reverse-mode one pass O(edges) vs forwar
           example: `import numpy as np
 y=np.array([0.7,0.2,0.1]); t=np.array([1,0,0])
 print("dL/dz:", y-t)`,
-          output: `softmax+CE grad`,
-          pseudoCode: `Backpropagation Derivation
-
-∂L/∂x = (∂L/∂y)(∂y/∂x)
-Sum grads from all children
-ReLU mask: x>0
-Softmax+CE: ŷ − y
-Reverse-mode O(1) backward pass`
+          output: `softmax+CE grad`
         },
         {
           id: `cr-vector`,
@@ -562,14 +492,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 dL_dy=np.array([1.,2.]); x=np.array([0.5,1.])
 dL_dW=np.outer(dL_dy,x)
 print("dL/dW shape:", dL_dW.shape)`,
-          output: `(2,2)`,
-          pseudoCode: `Vector Chain Rules
-
-∂L/∂W = (∂L/∂y) xᵀ
-∂L/∂x = Wᵀ (∂L/∂y)
-Batch: sum over batch dim
-einsum for tensor contractions
-Shapes must align in chain`
+          output: `(2,2)`
         },
         {
           id: `cr-vanish`,
@@ -602,14 +525,7 @@ ReLU helps (deriv=1 when active). **Residual connections** add identity path. **
 grad=1000.; tau=1.
 grad*=min(1,tau/np.abs(grad))
 print("clipped:", grad)`,
-          output: `clipped: 1.0`,
-          pseudoCode: `Vanishing & Exploding Gradients
-
-∏ J_i small → vanishing
-∏ J_i large → exploding
-Sigmoid sat: σ'≤0.25
-ResNet: y=x+F(x) gradient highway
-clip: g ← g·min(1, τ/||g||)`
+          output: `clipped: 1.0`
         }
       ],
       exercises: [
@@ -702,14 +618,7 @@ Diagonal approx (AdaGrad, Adam) use diagonal only. Hessian-vector products via P
 # L=x²+4xy+2y²
 H=np.array([[2.,4.],[4.,4.]])
 print("eig:", np.linalg.eigvalsh(H))`,
-          output: `curvature`,
-          pseudoCode: `Hessian Matrix
-
-H_ij = ∂²L/∂θ_i∂θ_j
-H symmetric for C² L
-Newton: Δθ = −H⁻¹∇L
-H PD → local strict min
-HVP without full H`
+          output: `curvature`
         },
         {
           id: `jh-newton`,
@@ -742,14 +651,7 @@ from scipy.optimize import minimize
 f=lambda t: t[0]**2+t[1]**2
 r=minimize(f,[3.,3.],method="BFGS")
 print("min:", r.x)`,
-          output: `min: ~0`,
-          pseudoCode: `Newton & Quasi-Newton
-
-Newton: θ ← θ − H⁻¹∇L
-Quadratic conv near min
-BFGS: secant Hessian approx
-L-BFGS limited memory
-Natural grad: F⁻¹∇L`
+          output: `min: ~0`
         },
         {
           id: `jh-jacobian-apps`,
@@ -780,14 +682,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 # linear f(x)=Ax, log|det A|
 A=np.array([[2.,0.],[0.,0.5]])
 print("log|det|:", np.linalg.slogdet(A)[1])`,
-          output: `log det`,
-          pseudoCode: `Jacobian Applications
-
-log p(x) = log p(z) + log|det J|
-Adv examples: max ||δ|| s.t. misclassify
-p(y) = p(x) / |det ∂x/∂y|
-J maps velocity spaces
-log-det for numerical stability`
+          output: `log det`
         },
         {
           id: `jh-gauss-newton`,
@@ -820,14 +715,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 a=0.; target=2.
 for _ in range(5): a -= (a-target)*1.0
 print(a)`,
-          output: `→ 2`,
-          pseudoCode: `Gauss-Newton & Levenberg-Marquardt
-
-H ≈ JᵀJ (Gauss-Newton)
-LM: (JᵀJ + λI)Δ = −Jᵀr
-For min ∑ r_i(θ)²
-λ large → gradient-like
-λ small → Gauss-Newton`
+          output: `→ 2`
         }
       ],
       exercises: [
@@ -921,14 +809,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 # saddle f=x²-y², grad=0 at origin, H indefinite
 H=np.array([[2.,0.],[0.,-2.]])
 print("eig:", np.linalg.eigvalsh(H))`,
-          output: `mixed signs → saddle`,
-          pseudoCode: `Critical Points
-
-∇f(x*) = 0 critical
-H PD → strict local min
-H ND → strict local max
-H indefinite → saddle
-Convex f: local min = global min`
+          output: `mixed signs → saddle`
         },
         {
           id: `mvo-convex`,
@@ -963,14 +844,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 f=lambda x: x**2
 x,y=1.,3.; lam=0.5
 print("convex check:", f(lam*x+(1-lam)*y) <= lam*f(x)+(1-lam)*f(y))`,
-          output: `True`,
-          pseudoCode: `Convex Functions
-
-f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)
-H ⪰ 0 ⇔ convex (C²)
-Convex + closed set → global min
-Linear + convex loss → convex problem
-Jensen: E[f(X)] ≥ f(E[X])`
+          output: `True`
         },
         {
           id: `mvo-saddle`,
@@ -999,14 +873,7 @@ Jensen: E[f(X)] ≥ f(E[X])`
           example: `import numpy as np
 f=lambda x,y: x**2-y**2
 print("grad at origin:", 0, "H indefinite")`,
-          output: `saddle at 0`,
-          pseudoCode: `Saddle Points in High Dimensions
-
-High-D: saddles dominate
-Strict saddle: mixed H eigenvalues
-Noise in SGD helps escape
-Plateaus: small gradient
-Overparam → many global-ish min`
+          output: `saddle at 0`
         },
         {
           id: `mvo-global`,
@@ -1039,14 +906,7 @@ Overparam → many global-ish min`
           example: `import numpy as np
 loss=np.array([2.,1.,0.8,0.75,0.74,0.76])
 print("stop at epoch:", np.argmin(loss)+1)`,
-          output: `early stop argmin`,
-          pseudoCode: `Global Optimization Strategies
-
-Random restarts explore basins
-BayesOpt for hyperparam black-box
-Cosine annealing LR schedule
-Weight decay: θ ← (1−ηλ)θ
-Early stop on val loss`
+          output: `early stop argmin`
         }
       ],
       exercises: [

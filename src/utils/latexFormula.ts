@@ -25,8 +25,8 @@ const SYMBOLS: [RegExp, string][] = [
   [/ℕ/g, '\\mathbb{N}'],
   [/ℚ/g, '\\mathbb{Q}'],
   [/ℂ/g, '\\mathbb{C}'],
-  [/∀/g, '\\forall'],
-  [/∃/g, '\\exists'],
+  [/∀/g, ' \\forall '],
+  [/∃/g, ' \\exists '],
   [/∈/g, '\\in'],
   [/∉/g, '\\notin'],
   [/⊆/g, '\\subseteq'],
@@ -35,16 +35,16 @@ const SYMBOLS: [RegExp, string][] = [
   [/∪/g, '\\cup'],
   [/∩/g, '\\cap'],
   [/∅/g, '\\emptyset'],
-  [/∑/g, '\\sum'],
-  [/∏/g, '\\prod'],
-  [/∫/g, '\\int'],
-  [/∂/g, '\\partial'],
-  [/∇/g, '\\nabla'],
+  [/∑/g, ' \\sum '],
+  [/∏/g, ' \\prod '],
+  [/∫/g, ' \\int '],
+  [/∂/g, ' \\partial '],
+  [/∇/g, ' \\nabla '],
   [/∞/g, '\\infty'],
   [/±/g, '\\pm'],
   [/×/g, '\\times'],
-  [/·/g, '\\cdot'],
-  [/∘/g, '\\circ'],
+  [/·/g, ' \\cdot '],
+  [/∘/g, ' \\circ '],
   [/△/g, '\\triangle'],
   [/⇒/g, '\\Rightarrow'],
   [/⇔/g, '\\Leftrightarrow'],
@@ -53,7 +53,7 @@ const SYMBOLS: [RegExp, string][] = [
   [/↔/g, ' \\leftrightarrow '],
   [/≤/g, '\\leq'],
   [/≥/g, '\\geq'],
-  [/≠/g, '\\neq'],
+  [/≠/g, ' \\neq '],
   [/≈/g, '\\approx'],
   [/≡/g, '\\equiv'],
   [/⪰/g, '\\succeq'],
@@ -61,21 +61,22 @@ const SYMBOLS: [RegExp, string][] = [
   [/⟨/g, '\\langle'],
   [/⟩/g, '\\rangle'],
   [/Ω/g, '\\Omega'],
-  [/Λ/g, '\\Lambda'],
-  [/Σ/g, '\\Sigma'],
-  [/λ/g, '\\lambda'],
-  [/μ/g, '\\mu'],
-  [/σ/g, '\\sigma'],
-  [/ε/g, '\\varepsilon'],
-  [/θ/g, '\\theta'],
-  [/β/g, '\\beta'],
-  [/η/g, '\\eta'],
-  [/γ/g, '\\gamma'],
-  [/α/g, '\\alpha'],
-  [/δ/g, '\\delta'],
-  [/φ/g, '\\varphi'],
-  [/π/g, '\\pi'],
-  [/ν/g, '\\nu'],
+  [/Σ/g, ' \\Sigma '],
+  [/Λ/g, ' \\Lambda '],
+  [/λ/g, ' \\lambda '],
+  [/μ/g, ' \\mu '],
+  [/σ/g, ' \\sigma '],
+  [/ε/g, ' \\varepsilon '],
+  [/θ/g, ' \\theta '],
+  [/β/g, ' \\beta '],
+  [/η/g, ' \\eta '],
+  [/γ/g, ' \\gamma '],
+  [/α/g, ' \\alpha '],
+  [/δ/g, ' \\delta '],
+  [/φ/g, ' \\varphi '],
+  [/π/g, ' \\pi '],
+  [/ν/g, ' \\nu '],
+  [/∥/g, ' \\| '],
   [/−/g, '-'],
   [/–/g, '-'],
   [/—/g, '-'],
@@ -132,6 +133,29 @@ function convertSubSup(text: string): string {
 }
 
 /** Set difference: ASCII `\` with spaces only, before LaTeX commands exist. */
+function convertUnicodeSymbols(text: string): string {
+  return text
+    .replace(/ŷ/g, '\\hat{y}')
+    .replace(/Ŷ/g, '\\hat{Y}')
+    .replace(/⊥/g, ' \\perp ')
+    .replace(/(\d)%/g, '$1\\%');
+}
+
+/** Prevent KaTeX glue like \\cdotg, \\nablaL, \\neqj, \\pit, \\sume. */
+function insertOperatorSpaces(text: string): string {
+  return text.replace(
+    /\\(cdot|circ|nabla|neq|sum|int|prod|partial|pi|to(?!p)|leq|geq|approx|equiv|Rightarrow|Leftrightarrow|in|notin|cup|cap|setminus|times|pm|forall|exists|lambda|mu|sigma|theta|alpha|beta|gamma|delta|varepsilon|operatorname|mathbb|mathrm|cdotp|land|lor|iff)(\S)/g,
+    (_, cmd, next) => {
+      if (next === '{' || next === '(' || next === '\\') return `\\${cmd}${next}`;
+      return `\\${cmd} ${next}`;
+    },
+  );
+}
+
+function convertUnicodeLetters(text: string): string {
+  return text;
+}
+
 function convertSetDifference(text: string): string {
   return text.replace(/([A-Za-z0-9)\]}])\s+\\\s+([A-Za-z0-9(\[{])/g, '$1 \\setminus $2');
 }
@@ -197,9 +221,22 @@ function parseFormulaParts(formula: string): {
   }
 
   const noteMatch = math.match(/^(.+?)\s+\(([^()]+)\)\s*$/);
-  if (noteMatch && /^[a-zA-Z\s'-]+$/.test(noteMatch[2].trim())) {
+  if (noteMatch && /^[a-zA-Z0-9\s'=\u2212-]+$/.test(noteMatch[2].trim())) {
     math = noteMatch[1].trim();
     note = noteMatch[2].trim();
+  }
+
+  const arrowSplit = math.match(/^(.+?)\s*→\s*(.+)$/);
+  if (!note && arrowSplit) {
+    const lhs = arrowSplit[1].trim();
+    const rhs = arrowSplit[2].trim();
+    const lhsHasMath = /[=<>≤≥≠∫∑∇∂^_'()]|lim_|\\frac|[εθλμσδαβγ∀∃]|\d+\/\d+/.test(lhs);
+    const rhsIsProse = /^[a-zA-Z][a-zA-Z0-9\s,'()/.+\u2212-]*$/.test(rhs) && rhs.length <= 80;
+    if (lhsHasMath && rhsIsProse) {
+      math = lhs;
+      note = rhs;
+      arrowNote = true;
+    }
   }
 
   const arrowProse = math.match(/^(.+→\s*)(.+)$/);
@@ -207,8 +244,8 @@ function parseFormulaParts(formula: string): {
     const lhs = arrowProse[1].replace(/→\s*$/, '').trim();
     const rhs = arrowProse[2].trim();
     const lhsMathLike =
-      (/^[\d\\=^_().+\-/\s]+$/.test(lhs) || /lim_|\\frac|[εθλμσδαβγ]/.test(lhs)) &&
-      !/\b[a-z]{4,}\b/i.test(lhs);
+      (/^[\d\\=^_().+\-/<>\s≥≤≠∪∩·∫∑∇∂]+$/.test(lhs) || /lim_|\\frac|[εθλμσδαβγ]/.test(lhs)) &&
+      !/\b[a-z]{5,}\b/i.test(lhs);
     if (lhsMathLike && !/[=^_\\|{}(~%]|^\d/.test(rhs)) {
       math = lhs;
       note = rhs;
@@ -228,6 +265,8 @@ function parseFormulaParts(formula: string): {
 function convertMathCore(math: string): string {
   let s = math;
 
+  s = convertUnicodeSymbols(s);
+  s = convertUnicodeLetters(s);
   s = convertSetDifference(s);
   s = convertAccents(s);
   s = convertSqrt(s);
@@ -240,7 +279,11 @@ function convertMathCore(math: string): string {
   s = convertFractions(s);
   s = convertTrig(s);
   s = escapeSetBraces(s);
+  s = insertOperatorSpaces(s);
   s = s.replace(/\biff\b/gi, '\\iff');
+  s = s.replace(/\brank\b/g, '\\operatorname{rank}');
+  s = s.replace(/\bdim\b/g, '\\operatorname{dim}');
+  s = s.replace(/\bCol\b/g, '\\operatorname{Col}');
   s = s.replace(/\bargmax\b/g, '\\operatorname{argmax}');
   s = s.replace(/\bargmin\b/g, '\\operatorname{argmin}');
   s = s.replace(/(^|\s)#(?=\s)/g, '$1\\# ');
@@ -282,6 +325,44 @@ export function toLatex(formula: string): string {
   }
 
   return normalizeSpaces(parts.join(' '));
+}
+
+export type FormulaDisplay = {
+  source: string;
+  latex: string;
+  label: string | null;
+  math: string;
+  note: string | null;
+  explanation: string | null;
+};
+
+/** Structured formula parts for UI (math + human-readable explanation). */
+export function parseFormulaDisplay(formula: string): FormulaDisplay {
+  const source = formula.trim();
+  const { math, note, label, arrowNote } = parseFormulaParts(source);
+  let explanation = note;
+
+  if (!explanation && label) {
+    explanation = label;
+  }
+
+  if (!explanation && /→/.test(source)) {
+    const rhs = source.split(/→/).pop()?.trim();
+    if (rhs && rhs !== source && rhs.length <= 80) explanation = rhs;
+  }
+
+  if (!explanation && /^Example:/i.test(source)) {
+    explanation = 'Worked example showing the rule in practice.';
+  }
+
+  return {
+    source,
+    latex: toLatex(source),
+    label,
+    math,
+    note,
+    explanation: explanation && !arrowNote ? explanation : explanation,
+  };
 }
 
 /** Wrap plain-text math fragments in $...$ for inline rendering in lesson prose. */

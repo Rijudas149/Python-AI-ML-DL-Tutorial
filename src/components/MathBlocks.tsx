@@ -1,7 +1,31 @@
 import { useMemo } from 'react';
 import { parseDiagram } from '../utils/diagramParser';
+import { parseFormulaDisplay } from '../utils/latexFormula';
 import { MathDiagramView } from './diagrams/MathDiagramView';
 import { MathFormula } from './MathFormula';
+
+function FormulaCard({ formula }: { formula: string }) {
+  const display = useMemo(() => parseFormulaDisplay(formula), [formula]);
+  const showExplanation =
+    display.explanation &&
+    display.explanation !== display.label &&
+    display.explanation.length > 2;
+
+  return (
+    <li className="formula-item">
+      {display.label && !showExplanation && (
+        <span className="formula-item-label">{display.label}</span>
+      )}
+      <MathFormula formula={formula} display />
+      {showExplanation && (
+        <p className="formula-explanation">
+          {display.label && <strong>{display.label}: </strong>}
+          {display.explanation}
+        </p>
+      )}
+    </li>
+  );
+}
 
 interface FormulaListProps {
   formulas: string[];
@@ -15,11 +39,12 @@ export function FormulaList({ formulas }: FormulaListProps) {
         <span className="lesson-panel-icon">📐</span>
         Key Formulas
       </div>
+      <p className="lesson-panel-hint formula-panel-hint">
+        Each formula is typeset like a textbook. Read the line below it when a plain-language note is included.
+      </p>
       <ol className="formula-list">
         {formulas.map((formula, i) => (
-          <li key={i} className="formula-item">
-            <MathFormula formula={formula} display />
-          </li>
+          <FormulaCard key={i} formula={formula} />
         ))}
       </ol>
     </section>

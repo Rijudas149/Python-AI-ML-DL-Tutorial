@@ -42,14 +42,7 @@ u = np.array([1., 2.])
 print("v+u:", v+u)
 print("2v:", 2*v)`,
           output: `v+u: [4. 6.]
-2v: [6. 8.]`,
-          pseudoCode: `Vector Definition
-
-v = (v₁, v₂, ..., vₙ) ∈ ℝⁿ
-u + v = (u₁+v₁, ..., uₙ+vₙ)
-cv = (cv₁, ..., cvₙ)
-0 = (0, ..., 0)
-Span{v₁,...,v_k} = all linear combinations`
+2v: [6. 8.]`
         },
         {
           id: `vec-norm`,
@@ -83,14 +76,7 @@ v = np.array([3.,4.])
 print("L2:", np.linalg.norm(v))
 print("unit:", v/np.linalg.norm(v))`,
           output: `L2: 5.0
-unit: [0.6 0.8]`,
-          pseudoCode: `Norms & Distance
-
-||v||₂ = √(∑ vᵢ²)
-||v||₁ = ∑ |vᵢ|
-||v||∞ = max |vᵢ|
-v̂ = v / ||v||₂
-d(u,v) = ||u − v||₂`
+unit: [0.6 0.8]`
         },
         {
           id: `vec-span`,
@@ -124,14 +110,7 @@ c1,c2=2,3
 print(c1*v1+c2*v2)
 print("independent:", np.linalg.matrix_rank(np.column_stack([v1,v2])))`,
           output: `[2. 3.]
-independent: 2`,
-          pseudoCode: `Linear Combinations & Span
-
-c₁v₁ + ... + c_k v_k = linear combination
-Span{v₁,...,v_k} ⊆ vector space
-Independent: ∑cᵢvᵢ=0 ⇒ all cᵢ=0
-Basis: independent + spanning
-dim(V) = |basis|`
+independent: 2`
         },
         {
           id: `vec-ml`,
@@ -168,14 +147,7 @@ print("row0:", X[0])
 print("col0:", X[:,0])`,
           output: `shape: (3, 2)
 row0: [1 2]
-col0: [1 3 5]`,
-          pseudoCode: `Vectors in Data Science
-
-x ∈ ℝᵈ feature vector
-X ∈ ℝ^{m×d} design matrix
-∇L ∈ ℝᵈ gradient vector
-cos(θ) = (u·v)/(||u|| ||v||)
-Embedding: id → ℝᵈ`
+col0: [1 3 5]`
         }
       ],
       exercises: [
@@ -271,14 +243,7 @@ v = np.array([3.,4.])
 print("dot:", np.dot(u,v))
 print("u@v:", u@v)`,
           output: `dot: 11.0
-u@v: 11.0`,
-          pseudoCode: `Dot Product Definition
-
-u · v = ∑ uᵢ vᵢ = uᵀv
-u · v = ||u|| ||v|| cos θ
-u · v = 0 ⇔ orthogonal (θ=90°)
-proj_v(u) = (u·v / v·v) v
-Wx = dot products of W rows with x`
+u@v: 11.0`
         },
         {
           id: `dot-geom`,
@@ -312,14 +277,7 @@ u = np.array([1.,0.])
 v = np.array([1.,1.])
 cos = np.dot(u,v)/(np.linalg.norm(u)*np.linalg.norm(v))
 print("cos θ:", np.round(cos,3))`,
-          output: `cos θ: 0.707`,
-          pseudoCode: `Geometric Interpretation
-
-cos θ = (u·v) / (||u|| ||v||)
-|u·v| ≤ ||u|| ||v|| (Cauchy-Schwarz)
-||u+v|| ≤ ||u|| + ||v||
-cosine sim ∈ [−1, 1] after normalize
-u·u = ||u||² ≥ 0`
+          output: `cos θ: 0.707`
         },
         {
           id: `cross-3d`,
@@ -354,14 +312,7 @@ Cross product less common in standard ML but appears in geometric deep learning 
 u = np.array([1.,0.,0.])
 v = np.array([0.,1.,0.])
 print("u×v:", np.cross(u,v))`,
-          output: `u×v: [0. 0. 1.]`,
-          pseudoCode: `Cross Product in 3D
-
-u × v ⟂ u and ⟂ v
-||u × v|| = ||u|| ||v|| sin θ
-u × v = −v × u
-i × j = k (right-hand rule)
-Area = ||u × v||`
+          output: `u×v: [0. 0. 1.]`
         },
         {
           id: `dot-attn`,
@@ -394,14 +345,7 @@ Q = np.array([[1.,0.],[0.,1.]])
 K = np.array([[1.,1.],[0.,1.]])
 scores = Q @ K.T
 print(scores)`,
-          output: `scores: [[1. 1.] [0. 1.]]`,
-          pseudoCode: `Dot Products in Neural Networks
-
-Attention: softmax(QKᵀ/√d) V
-score_ij = q_i · k_j / √d
-C_ij = A_i · B_j (matrix multiply)
-Perceptron: sign(w·x + b)
-K(x,x') = φ(x)·φ(x') kernel trick`
+          output: `scores: [[1. 1.] [0. 1.]]`
         }
       ],
       exercises: [
@@ -498,14 +442,7 @@ print("shape:", A.shape)
 print("A[1,2]:", A[1,2])
 print("A.T:\\n", A.T)`,
           output: `shape: (2, 3)
-A[1,2]: 6`,
-          pseudoCode: `Matrix Structure
-
-A ∈ ℝ^{m×n}; entry A_ij
-(Aᵀ)_ij = A_ji
-I_n: n×n identity
-Symmetric: A = Aᵀ
-Diagonal: A_ij=0 for i≠j`
+A[1,2]: 6`
         },
         {
           id: `mat-mv`,
@@ -537,14 +474,7 @@ Row picture: dot products of rows with x. Connecting this theory to numpy experi
 A = np.array([[1,2],[3,4],[5,6]])
 x = np.array([1.,2.])
 print("Ax:", A @ x)`,
-          output: `Ax: [ 5. 11. 17.]`,
-          pseudoCode: `Matrix-Vector Multiplication
-
-y = Ax, y_i = ∑_j A_ij x_j
-Ax = x₁a₁ + x₂a₂ + ... (column view)
-y_i = row_i(A) · x
-(BA)x = B(Ax)
-W ∈ ℝ^{out×in} for y=Wx`
+          output: `Ax: [ 5. 11. 17.]`
         },
         {
           id: `mat-special`,
@@ -575,14 +505,7 @@ W ∈ ℝ^{out×in} for y=Wx`
 Q = np.array([[0,-1],[1,0]])  # 90° rot
 x = np.array([1.,0.])
 print("Qx:", Q@x, "norm:", np.linalg.norm(Q@x))`,
-          output: `Qx: [0. 1.] norm: 1.0`,
-          pseudoCode: `Special Matrices
-
-Orthogonal: QᵀQ = I
-Symmetric: A = Aᵀ
-PSD: xᵀAx ≥ 0 ∀x
-Projection: P² = P
-Stochastic: rows sum to 1`
+          output: `Qx: [0. 1.] norm: 1.0`
         },
         {
           id: `mat-data`,
@@ -617,14 +540,7 @@ X = np.array([[2.1,0.5],[1.8,0.3],[3.0,0.9]])
 print("mean cols:", X.mean(axis=0))
 print("cov:\\n", np.cov(X.T))`,
           output: `mean cols: [2.3  0.567]
-cov: ...`,
-          pseudoCode: `Matrices as Data Tables
-
-X ∈ ℝ^{n×p} design matrix
-Σ = (1/n) X̃ᵀ X̃ (centered covariance)
-y = Xβ + ε linear model
-One-hot: identity columns per category
-Batch: stack rows for mini-batch GD`
+cov: ...`
         }
       ],
       exercises: [
@@ -720,14 +636,7 @@ A = np.array([[1,2],[3,4]])
 B = np.array([[5,6],[7,8]])
 print("AB:\\n", A@B)
 print("BA:\\n", B@A)`,
-          output: `AB ≠ BA shown`,
-          pseudoCode: `Matrix Multiplication
-
-C = AB, C_ij = ∑_l A_il B_lj
-A: m×k, B: k×n → C: m×n
-AB ≠ BA in general
-(AB)C = A(BC)
-(AB)ᵀ = BᵀAᵀ`
+          output: `AB ≠ BA shown`
         },
         {
           id: `mm-prop`,
@@ -760,14 +669,7 @@ A = np.array([[1,2],[3,4]])
 print("tr(A):", np.trace(A))
 print("Fro norm:", np.linalg.norm(A, "fro"))`,
           output: `tr(A): 5
-Fro norm: 5.477...`,
-          pseudoCode: `Transpose & Trace
-
-(AB)ᵀ = BᵀAᵀ
-tr(A) = ∑ A_ii
-tr(AB) = tr(BA)
-||A||_F = √(tr(AᵀA))
-(Aᵀ)ᵀ = A`
+Fro norm: 5.477...`
         },
         {
           id: `mm-inv-det`,
@@ -800,14 +702,7 @@ A = np.array([[4.,7.],[2.,6.]])
 print("det:", np.linalg.det(A))
 print("inv:\\n", np.linalg.inv(A))`,
           output: `det: 10.0
-inv: ...`,
-          pseudoCode: `Preview: Inverse & Determinant
-
-AA⁻¹ = A⁻¹A = I
-det(A) ≠ 0 ⇔ A invertible
-det(AB) = det(A)det(B)
-2×2: A⁻¹ = (1/det)[[d,-b],[-c,a]]
-κ(A) = ||A|| · ||A⁻¹||`
+inv: ...`
         },
         {
           id: `mm-nn`,
@@ -843,14 +738,7 @@ X = np.random.randn(32, 10)  # batch 32, in 10
 W = np.random.randn(5, 10)   # out 5
 H = X @ W.T
 print("H shape:", H.shape)`,
-          output: `H shape: (32, 5)`,
-          pseudoCode: `Matrix Ops in Neural Nets
-
-h = σ(Wx + b)
-Batch: H = σ(XWᵀ + B)
-Attention: softmax(QKᵀ/√d)V
-Residual: y = x + F(x)
-He init: W ~ N(0, 2/fan_in)`
+          output: `H shape: (32, 5)`
         }
       ],
       exercises: [
@@ -950,14 +838,7 @@ A = np.array([[2.,1.],[1.,1.]])
 b = np.array([4.,3.])
 x = np.linalg.solve(A,b)
 print("x:", x)`,
-          output: `x: [1. 2.]`,
-          pseudoCode: `System Formulation
-
-Ax = b
-Consistent ⇔ b ∈ Col(A)
-Unique ⇔ A invertible (n×n, full rank)
-Least squares: min ||Ax − b||₂
-rank(A) = dim Col(A)`
+          output: `x: [1. 2.]`
         },
         {
           id: `ls-elim`,
@@ -989,14 +870,7 @@ Partial pivoting improves numerical stability for ill-conditioned systems.`,
 A = np.array([[2.,1.,1.],[1.,2.,1.],[1.,1.,2.]])
 b = np.array([4.,4.,4.])
 print(np.linalg.solve(A,b))`,
-          output: `[1. 1. 1.]`,
-          pseudoCode: `Gaussian Elimination
-
-Elementary ops preserve solution set
-Forward elimination → upper triangular U
-Back substitution from last equation
-A = LU factorization
-Partial pivoting: max |pivot|`
+          output: `[1. 1. 1.]`
         },
         {
           id: `ls-lsq`,
@@ -1029,14 +903,7 @@ X = np.array([[1,1],[1,2],[1,3]])
 y = np.array([2.,3.,5.])
 beta, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
 print("beta:", beta)`,
-          output: `beta: [0.5 1.5] approx`,
-          pseudoCode: `Least Squares Solution
-
-min ||Ax − b||₂²
-Normal eq: AᵀAx = Aᵀb
-x = (AᵀA)⁻¹Aᵀb
-A⁺ pseudo-inverse
-lstsq via QR/SVD preferred`
+          output: `beta: [0.5 1.5] approx`
         },
         {
           id: `ls-rank`,
@@ -1073,14 +940,7 @@ Connecting this theory to numpy experiments and sanity checks reinforces retenti
 A = np.array([[1.,2.],[2.,4.]])
 print("rank:", np.linalg.matrix_rank(A))
 print("null:", np.linalg.null_space(A) if hasattr(np.linalg,"null_space") else "use scipy")`,
-          output: `rank: 1`,
-          pseudoCode: `Rank & Null Space
-
-rank(A) = dim Col(A)
-rank(A) + nullity(A) = n
-Null(A) = {x : Ax = 0}
-Full rank ⇔ columns independent
-rank via SVD = # nonzero σ`
+          output: `rank: 1`
         }
       ],
       exercises: [

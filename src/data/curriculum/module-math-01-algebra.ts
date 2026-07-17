@@ -46,14 +46,7 @@ print("A ∩ B:", A & B)
 print("|A|:", len(A))`,
           output: `A ∪ B: {1, 2, 3, 4}
 A ∩ B: {2, 3}
-|A|: 3`,
-          pseudoCode: `Sets and Membership
-
-A ∪ B = {x | x ∈ A or x ∈ B}
-A ∩ B = {x | x ∈ A and x ∈ B}
-A^c = {x ∈ U | x ∉ A}
-|A ∪ B| = |A| + |B| − |A ∩ B|
-P(A) = {S | S ⊆ A}`
+|A|: 3`
         },
         {
           id: `sets-ops`,
@@ -95,14 +88,7 @@ print("intersect:", np.intersect1d(A,B))
 print("A only:", np.setdiff1d(A,B))`,
           output: `union: [1 2 3 4 5]
 intersect: [3]
-A only: [1 2]`,
-          pseudoCode: `Set Operations in Practice
-
-A \\ B = {x | x ∈ A, x ∉ B}
-A △ B = (A ∪ B) \\ (A ∩ B)
-|A × B| = |A| · |B|
-(A ∪ B)^c = A^c ∩ B^c
-Partition: ∪ P_i = U, P_i ∩ P_j = ∅ for i≠j`
+A only: [1 2]`
         },
         {
           id: `sets-functions`,
@@ -140,14 +126,7 @@ A = np.array([-2,-1,0,1,2])
 print("image:", np.unique(f(A)))
 print("preimage of {4}:", A[f(A)==4])`,
           output: `image: [0 1 4]
-preimage of {4}: [-2  2]`,
-          pseudoCode: `Sets as Function Domains
-
-f: A → B maps each a ∈ A to f(a) ∈ B
-Im(f) = {f(x) | x ∈ domain}
-Injective: f(x₁) = f(x₂) ⇒ x₁ = x₂
-Surjective: ∀ y ∈ B, ∃ x: f(x) = y
-Bijective ⇔ invertible function exists`
+preimage of {4}: [-2  2]`
         },
         {
           id: `sets-counting`,
@@ -187,14 +166,7 @@ print("P(10,3):", perm(n,k))
 print("2^10:", sum(comb(10,i) for i in range(11)))`,
           output: `C(10,3): 120
 P(10,3): 720
-2^10: 1024`,
-          pseudoCode: `Counting & Cardinality
-
-P(n,k) = n! / (n−k)!
-C(n,k) = n! / (k!(n−k)!)
-C(n,k) = C(n, n−k)
-∑_{k=0}^n C(n,k) = 2^n
-|A ∪ B ∪ C| uses inclusion-exclusion`
+2^10: 1024`
         }
       ],
       exercises: [
@@ -300,14 +272,7 @@ print("range sample:", f)
 print("min,max:", f.min(), f.max())`,
           output: `f(-1)= -1
 range sample: [-5 -3 -1  1  3  5  7]
-min,max: -5 7`,
-          pseudoCode: `Function Definition & Notation
-
-f(x) = ax + b (linear)
-f(x) = ax² + bx + c (quadratic)
-f(−x) = f(x) ⇒ even; f(−x) = −f(x) ⇒ odd
-Range ⊆ codomain; image = actual outputs
-(f∘g)(x) = f(g(x))`
+min,max: -5 7`
         },
         {
           id: `fn-types`,
@@ -343,14 +308,7 @@ relu = np.maximum(0,x)
 print("sigmoid:", np.round(sigmoid,3))
 print("relu:", relu)`,
           output: `sigmoid: [0.119 0.5   0.881]
-relu: [0. 0. 2.]`,
-          pseudoCode: `Common Function Families
-
-σ(x) = 1 / (1 + e^(−x))
-ReLU(x) = max(0, x)
-e^(a+b) = e^a · e^b
-log_b(x) = ln(x) / ln(b)
-Quadratic vertex: x = −b / (2a)`
+relu: [0. 0. 2.]`
         },
         {
           id: `fn-compose`,
@@ -389,14 +347,7 @@ x = 3
 print("f(g(3)):", f(g(x)))
 print("g(f(3)):", g(f(x)))`,
           output: `f(g(3)): 16
-g(f(3)): 10`,
-          pseudoCode: `Composition & Inverse
-
-(f ∘ g)(x) = f(g(x))
-f ∘ f⁻¹ = f⁻¹ ∘ f = I
-(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹ (reverse order)
-Bijective ⇔ invertible on domain
-Chain: d/dx f(g(x)) = f'(g(x))·g'(x)`
+g(f(3)): 10`
         },
         {
           id: `fn-transforms`,
@@ -434,14 +385,7 @@ z = (x - mu) / sigma
 print("mu:", mu, "sigma:", sigma)
 print("z:", np.round(z,2))`,
           output: `mu: 30.0 sigma: 14.142...
-z: [-1.41 -0.71  0.    0.71  1.41]`,
-          pseudoCode: `Functional Transforms in ML
-
-z = (x − μ) / σ
-x_norm = (x − min) / (max − min)
-log1p(x) = ln(1 + x)
-K(x,x') = ⟨φ(x), φ(x')⟩
-Inverse transform for predictions in original units`
+z: [-1.41 -0.71  0.    0.71  1.41]`
         }
       ],
       exercises: [
@@ -546,14 +490,7 @@ x = np.array([1, np.e, np.e**2])
 print("ln(x):", np.round(np.log(x),3))
 print("exp(ln(5)):", np.exp(np.log(5)))`,
           output: `ln(x): [0.    1.    2.   ]
-exp(ln(5)): 5.0`,
-          pseudoCode: `Logarithm Definition
-
-b^y = x ⇔ y = log_b(x)
-ln(x) = log_e(x); e ≈ 2.71828
-log_b(xy) = log_b(x) + log_b(y)
-log_b(x^n) = n·log_b(x)
-Change of base: log_b(x) = ln(x) / ln(b)`
+exp(ln(5)): 5.0`
         },
         {
           id: `log-rules`,
@@ -586,14 +523,7 @@ In information theory, −log(p) measures surprise in bits (base 2) or nats (bas
 a = np.array([1000., 1001., 999.])
 stable = np.max(a) + np.log(np.sum(np.exp(a - np.max(a))))
 print("log-sum-exp:", stable)`,
-          output: `log-sum-exp: 1001.313...`,
-          pseudoCode: `Logarithm Rules & Identities
-
-log(x/y) = log(x) − log(y)
-ln(e^x) = x
-e^(ln x) = x for x > 0
-ln∑e^a = max(a) + ln∑e^(a−max(a))
-−log(p) = self-information`
+          output: `log-sum-exp: 1001.313...`
         },
         {
           id: `exp-models`,
@@ -630,14 +560,7 @@ print("softmax:", np.round(p,3))
 t = np.linspace(0,5,6)
 print("decay:", np.round(np.exp(-0.5*t),3))`,
           output: `softmax: [0.09  0.245 0.665]
-decay: [1.    0.607 0.368 0.223 0.135 0.082]`,
-          pseudoCode: `Exponential Growth & Decay
-
-N(t) = N₀ · e^(kt)
-Half-life: t_{1/2} = ln(2) / |k|
-Softmax: p_i = e^z_i / ∑_j e^z_j
-A = P · e^(rt)
-η_t = η₀ · γ^t (LR decay)`
+decay: [1.    0.607 0.368 0.223 0.135 0.082]`
         },
         {
           id: `log-ml`,
@@ -671,14 +594,7 @@ y = np.array([1.,0.,1.])
 yhat = np.clip(np.array([0.9,0.2,0.7]),1e-7,1-1e-7)
 bce = -(y*np.log(yhat)+(1-y)*np.log(1-yhat))
 print("BCE:", np.round(bce,3), "mean:", np.round(bce.mean(),3))`,
-          output: `BCE: [0.105 1.609 0.357] mean: 0.691`,
-          pseudoCode: `Logs in Machine Learning
-
-ℓ = ∑_i log p(x_i | θ)
-H(p,q) = −∑ p(x) log q(x)
-BCE = −[y log ŷ + (1−y) log(1−ŷ)]
-logit(p) = ln(p / (1−p))
-Perplexity = exp(−(1/N)∑ log p)`
+          output: `BCE: [0.105 1.609 0.357] mean: 0.691`
         }
       ],
       exercises: [
@@ -778,14 +694,7 @@ a = a1 + np.arange(n)*d
 print("terms:", a)
 print("sum:", a.sum(), "formula:", n*(a1+a[-1])/2)`,
           output: `terms: [ 2  5  8 11 14]
-sum: 40 formula: 40.0`,
-          pseudoCode: `Arithmetic Sequences
-
-a_n = a₁ + (n−1)d
-d = a_{n+1} − a_n
-S_n = n(a₁ + a_n) / 2
-S_n = n(2a₁ + (n−1)d) / 2
-Linear schedule: x_n = x₀ + n·Δ`
+sum: 40 formula: 40.0`
         },
         {
           id: `seq-geom`,
@@ -821,14 +730,7 @@ a = a1 * r**np.arange(n)
 print("terms:", a)
 print("sum:", a.sum(), "limit:", a1/(1-r))`,
           output: `terms: [8.  4.  2.  1.  0.5]
-sum: 15.5 limit: 16.0`,
-          pseudoCode: `Geometric Sequences
-
-a_n = a₁ · r^(n−1)
-S_n = a₁(1 − r^n) / (1 − r), r ≠ 1
-S_∞ = a₁ / (1 − r) if |r| < 1
-EMA: s_t = β s_{t−1} + (1−β) x_t
-LR: η_t = η₀ · γ^t`
+sum: 15.5 limit: 16.0`
         },
         {
           id: `seq-series`,
@@ -865,14 +767,7 @@ k = np.arange(1,6)
 print("sum k:", k.sum())
 print("geom:", np.sum(0.5**np.arange(10)))`,
           output: `sum k: 15
-geom: 1.998...`,
-          pseudoCode: `Series & Sigma Notation
-
-∑_{k=1}^n a_k = a_1 + a_2 + ... + a_n
-∑_{k=0}^∞ r^k = 1/(1−r), |r|<1
-Batch loss: L = (1/m) ∑_{i=1}^m L_i
-H_n = ∑_{k=1}^n 1/k ~ ln(n)
-Riemann: ∫f ≈ ∑ f(x_i) Δx`
+geom: 1.998...`
         },
         {
           id: `seq-ml`,
@@ -906,14 +801,7 @@ Cosine annealing schedules LR smoothly. Convergence rate: linear (error × c eac
 loss = np.array([2.0,1.2,0.8,0.65,0.63,0.62,0.621])
 improve = np.diff(loss)
 print("improvements:", np.round(improve,3))`,
-          output: `improvements: [-0.8  -0.4  -0.15 -0.02  -0.01  0.001]`,
-          pseudoCode: `Sequences in Optimization
-
-θ_{t+1} = θ_t − η ∇L(θ_t)
-Momentum: v_t = β v_{t−1} + ∇L
-Cosine LR: η_t = η_min + ½(η_max−η_min)(1+cos(πt/T))
-Early stop when val loss plateaus
-Fixed point: x* = g(x*)`
+          output: `improvements: [-0.8  -0.4  -0.15 -0.02  -0.01  0.001]`
         }
       ],
       exercises: [
@@ -1015,14 +903,7 @@ print("conj:", np.conj(z))
 print("z*conj:", z*np.conj(z))`,
           output: `|z|: 5.0
 conj: (3-4j)
-z*conj: (25+0j)`,
-          pseudoCode: `Complex Number Basics
-
-z = a + bi, i² = −1
-|z| = √(a² + b²)
-z̄ = a − bi; z·z̄ = |z|²
-Re(z) = a, Im(z) = b
-Complex plane: (Re, Im) coordinates`
+z*conj: (25+0j)`
         },
         {
           id: `cx-polar`,
@@ -1059,14 +940,7 @@ z = np.exp(1j*theta)
 print("rect:", np.round(z,3))
 print("cos+isin:", np.round(np.cos(theta)+1j*np.sin(theta),3))`,
           output: `rect: (0.707+0.707j)
-cos+isin: (0.707+0.707j)`,
-          pseudoCode: `Polar Form & Euler
-
-z = r·e^(iθ) = r(cos θ + i sin θ)
-e^(iθ) = cos θ + i sin θ (Euler)
-e^(iπ) + 1 = 0 (Euler identity)
-arg(z) = θ = atan2(b, a)
-|z₁·z₂| = |z₁|·|z₂|; arg(z₁z₂) = arg(z₁)+arg(z₂)`
+cos+isin: (0.707+0.707j)`
         },
         {
           id: `cx-ops`,
@@ -1102,14 +976,7 @@ print("div:", z1/z2)
 print("angles add:", np.angle(z1)+np.angle(z2), np.angle(z1*z2))`,
           output: `product: (2+2j)
 div: (0.5+0.5j)
-angles add: ...`,
-          pseudoCode: `Complex Operations
-
-(a+bi)(c+di) = (ac−bd) + (ad+bc)i
-z/w = z·w̄ / |w|²
-e^(iθ₁)·e^(iθ₂) = e^(i(θ₁+θ₂))
-A* = conjugate transpose
-|λ|<1 ⇒ stable discrete dynamics`
+angles add: ...`
         },
         {
           id: `cx-fft`,
@@ -1143,14 +1010,7 @@ t = np.linspace(0,1,8,endpoint=False)
 x = np.cos(2*np.pi*2*t)
 X = np.fft.fft(x)
 print("|X|:", np.round(np.abs(X),2))`,
-          output: `|X|: shows peaks at frequency bins`,
-          pseudoCode: `Complex Numbers in Signal & ML
-
-X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N)
-F{f*g} = F{f}·F{g}
-|X_k| = magnitude at frequency k
-arg(X_k) = phase at frequency k
-Inverse FFT reconstructs signal from spectrum`
+          output: `|X|: shows peaks at frequency bins`
         }
       ],
       exercises: [
