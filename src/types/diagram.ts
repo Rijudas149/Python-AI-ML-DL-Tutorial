@@ -10,7 +10,19 @@ export type CurveShape =
   | 'sine'
   | 'flat';
 
+export type LiteralSection =
+  | { kind: 'ascii'; lines: string[] }
+  | { kind: 'equation'; lines: string[] }
+  | { kind: 'pipeline'; nodes: string[] }
+  | { kind: 'text'; lines: string[] };
+
+/** Renders the curriculum diagram text faithfully — no invented data. */
 export type DiagramSpec =
+  | {
+      type: 'literal';
+      sections: LiteralSection[];
+      source: string;
+    }
   | {
       type: 'venn';
       sets: [string, string];
@@ -29,47 +41,8 @@ export type DiagramSpec =
       footnotes: string[];
     }
   | {
-      type: 'mapping';
-      domain: string[];
-      codomain: string[];
-      maps: { from: string; to: string }[];
-      footnotes: string[];
-    }
-  | {
-      type: 'counting';
-      title?: string;
-      combinations: string[];
-      permutationsNote?: string;
-      formulas: string[];
-      footnotes: string[];
-    }
-  | {
       type: 'curves';
       curves: { name: string; shape: CurveShape; note?: string }[];
-      footnotes: string[];
-    }
-  | {
-      type: 'pipeline';
-      nodes: string[];
-      direction?: 'horizontal' | 'vertical';
-      footnotes: string[];
-    }
-  | {
-      type: 'vector';
-      vx: number;
-      vy: number;
-      title?: string;
-      footnotes: string[];
-    }
-  | {
-      type: 'triangle';
-      a: number;
-      b: number;
-      title?: string;
-      footnotes: string[];
-    }
-  | {
-      type: 'angle';
       footnotes: string[];
     }
   | {
@@ -80,21 +53,10 @@ export type DiagramSpec =
       footnotes: string[];
     }
   | {
-      type: 'formulas';
-      items: string[];
+      type: 'vector';
+      vx: number;
+      vy: number;
       title?: string;
-      footnotes: string[];
-    }
-  | {
-      type: 'polar';
-      kind: 'unit-circle' | 'complex-plane';
-      footnotes: string[];
-    }
-  | {
-      type: 'axes';
-      title?: string;
-      shape: CurveShape;
-      label?: string;
       footnotes: string[];
     }
   | {
@@ -107,38 +69,5 @@ export type DiagramSpec =
       type: 'bars';
       title?: string;
       items: { label: string; value: number }[];
-      footnotes: string[];
-    }
-  | {
-      type: 'scatter';
-      title?: string;
-      showTrend?: boolean;
-      footnotes: string[];
-    }
-  | {
-      type: 'compare';
-      columns: { title: string; lines: string[] }[];
-    }
-  | {
-      type: 'steps';
-      title?: string;
-      steps: string[];
-    }
-  | {
-      type: 'callout';
-      title?: string;
-      lines: string[];
-      variant?: 'default' | 'checklist' | 'warning' | 'compare';
-    }
-  | {
-      type: 'distribution';
-      kind: 'normal' | 'cdf' | 'binomial';
-      title?: string;
-      footnotes: string[];
-    }
-  | {
-      type: 'decomposition';
-      title?: string;
-      parts: string[];
       footnotes: string[];
     };
