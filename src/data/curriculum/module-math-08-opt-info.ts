@@ -143,111 +143,6 @@ w=np.linspace(-2,2,50)
 loss=(w-1)**2
 print("unique min w:", w[np.argmin(loss)])`,
           output: `w=1`
-        },
-        {
-          id: `math-convex-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Convex Optimization sits in the **math** track of the Data Science Master curriculum. Convex sets, convex functions, and why convex problems are tractable.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-convex, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Convex Optimization
-meta = {"topic_id": "math-convex", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-convex math advanced`,
-          keyPoints: [
-            `Core theory of Convex Optimization ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-convex-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Convex Optimization. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-convex, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-convex
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-convex", "Convex Optimization")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-convex Convex`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-convex-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Convex Optimization often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-convex, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-convex", "Convex Optimization")
-debug_step("section_count", 4)`,
-          output: `[math-convex] 'Convex Optimization' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-convex-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Convex Optimization shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-convex align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Convex Optimization
-skills = ["math", "advanced", "math-convex"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-convex`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Convex Optimization to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -268,7 +163,7 @@ x=max(1,3.); print(x, (x-3)**2)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-08`,
       references: [
         {
@@ -357,11 +252,7 @@ print(theta)`,
         {
           id: `gd-momentum`,
           title: `Momentum & Nesterov`,
-          content: `**Momentum** v_t=βv_{t−1}+∇L; θ_t=θ_{t−1}−ηv_t accumulates velocity dampens oscillation in ravines. β≈0.9 typical. **Nesterov** lookahead gradient evaluates ahead. Heavy ball method physics analogy. Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Gradient Descent Theory:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Momentum & Nesterov" connects to convergence rates, step size, momentum, and adaptive methods. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Momentum** v_t=βv_{t−1}+∇L; θ_t=θ_{t−1}−ηv_t accumulates velocity dampens oscillation in ravines. β≈0.9 typical. **Nesterov** lookahead gradient evaluates ahead. Heavy ball method physics analogy. Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `v_t = β v_{t−1} + ∇L`,
             `θ_t = θ_{t−1} − η v_t`,
@@ -433,11 +324,7 @@ print(m_hat/(np.sqrt(v_hat)+1e-8))`,
         {
           id: `gd-sgd`,
           title: `SGD & Mini-batch`,
-          content: `Full batch GD expensive; **SGD** one sample noisy gradient cheap. Mini-batch balances variance and compute. Unbiased E[∇L_batch]=∇L if uniform sample. Variance O(1/b) decreases with batch b. **Learning rate schedule** decay η_t. Large batch needs larger η linear scaling rule heuristic. Generalization: small batch noise may help escape sharp minima. Distributed SGD averages gradients across workers.
-
-**Extended exploration — Gradient Descent Theory:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "SGD & Mini-batch" connects to convergence rates, step size, momentum, and adaptive methods. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Full batch GD expensive; **SGD** one sample noisy gradient cheap. Mini-batch balances variance and compute. Unbiased E[∇L_batch]=∇L if uniform sample. Variance O(1/b) decreases with batch b. **Learning rate schedule** decay η_t. Large batch needs larger η linear scaling rule heuristic. Generalization: small batch noise may help escape sharp minima. Distributed SGD averages gradients across workers.`,
           formulas: [
             `∇L_batch unbiased if random sample`,
             `Var ∝ 1/b batch size`,
@@ -467,111 +354,6 @@ batch=np.array([1.,2.,3.])
 grads=batch**2
 print("batch grad mean:", grads.mean(), "full would use all data")`,
           output: `batch estimate`
-        },
-        {
-          id: `math-gradient-descent-math-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Gradient Descent Theory sits in the **math** track of the Data Science Master curriculum. Convergence rates, step size, momentum, and adaptive methods.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-gradient-descent-math, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Gradient Descent Theory
-meta = {"topic_id": "math-gradient-descent-math", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-gradient-descent-math math advanced`,
-          keyPoints: [
-            `Core theory of Gradient Descent Theory ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-gradient-descent-math-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Gradient Descent Theory. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-gradient-descent-math, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-gradient-descent-math
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-gradient-descent-math", "Gradient Descent Theory")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-gradient-descent-math Gradient`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-gradient-descent-math-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Gradient Descent Theory often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-gradient-descent-math, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-gradient-descent-math", "Gradient Descent Theory")
-debug_step("section_count", 4)`,
-          output: `[math-gradient-descent-math] 'Gradient Descent Theory' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-gradient-descent-math-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Gradient Descent Theory shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-gradient-descent-math align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Gradient Descent Theory
-skills = ["math", "advanced", "math-gradient-descent-math"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-gradient-descent-math`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Gradient Descent Theory to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -596,7 +378,7 @@ for b in [1,100]:
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-08`,
       references: [
         {
@@ -651,11 +433,7 @@ for b in [1,100]:
         {
           id: `lag-eq`,
           title: `Equality Constraints`,
-          content: `Minimize f(x) s.t. g(x)=0. **Lagrange function** L(x,λ)=f(x)+λg(x). Optimality: ∇_x L=0 and g(x)=0. λ is shadow price—sensitivity of optimal value to constraint. Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Lagrange Multipliers:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Equality Constraints" connects to equality constraints, kkt conditions, and constrained optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Minimize f(x) s.t. g(x)=0. **Lagrange function** L(x,λ)=f(x)+λg(x). Optimality: ∇_x L=0 and g(x)=0. λ is shadow price—sensitivity of optimal value to constraint. Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `L(x,λ) = f(x) + λ g(x)`,
             `∇f(x*) + λ∇g(x*) = 0`,
@@ -688,11 +466,7 @@ print(0.5, 0.5)`,
         {
           id: `lag-ineq`,
           title: `KKT Conditions`,
-          content: `Inequality g(x)≤0: KKT adds **complementary slackness** λ≥0, λg(x)=0. If constraint inactive g<0 then λ=0. **Karush-Kuhn-Tucker** necessary; sufficient for convex. General form: min f s.t g_i≤0, h_j=0. Stationarity ∇f+∑λ_i∇g_i+∑ν_j∇h_j=0. Dual problem provides lower bounds. SVM derivation uses KKT on margin constraints. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Lagrange Multipliers:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "KKT Conditions" connects to equality constraints, kkt conditions, and constrained optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Inequality g(x)≤0: KKT adds **complementary slackness** λ≥0, λg(x)=0. If constraint inactive g<0 then λ=0. **Karush-Kuhn-Tucker** necessary; sufficient for convex. General form: min f s.t g_i≤0, h_j=0. Stationarity ∇f+∑λ_i∇g_i+∑ν_j∇h_j=0. Dual problem provides lower bounds. SVM derivation uses KKT on margin constraints. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `L = f + ∑λ_i g_i + ∑ν_j h_j`,
             `λ_i ≥ 0`,
@@ -724,11 +498,7 @@ print("SVM support vectors have α>0 from KKT")`,
         {
           id: `lag-dual`,
           title: `Duality`,
-          content: `**Dual function** q(λ)=inf_x L(x,λ). Dual problem max q(λ) s.t λ≥0. Weak duality: dual≤primal. Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure. Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Lagrange Multipliers:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Duality" connects to equality constraints, kkt conditions, and constrained optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Dual function** q(λ)=inf_x L(x,λ). Dual problem max q(λ) s.t λ≥0. Weak duality: dual≤primal. Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure. Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Dual: max_λ inf_x L(x,λ)`,
             `Weak: d* ≤ p*`,
@@ -760,11 +530,7 @@ print("dual SVM: max sum α - ½αᵀQα")`,
         {
           id: `lag-ml`,
           title: `Constraints in ML`,
-          content: `**Fairness constraints** demographic parity bounds. **Adversarial** training min-max. **Trust region** TRPO KL constraint. **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint. Augmented Lagrangian combines both. Constrained DL growing area for safe deployment. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Lagrange Multipliers:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Constraints in ML" connects to equality constraints, kkt conditions, and constrained optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Fairness constraints** demographic parity bounds. **Adversarial** training min-max. **Trust region** TRPO KL constraint. **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint. Augmented Lagrangian combines both. Constrained DL growing area for safe deployment. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Penalty: f + ρ||g(x)||²`,
             `Projection: simplex, ball`,
@@ -793,111 +559,6 @@ print("dual SVM: max sum α - ½αᵀQα")`,
 v=np.array([0.2,0.5,0.4]); v=np.maximum(v,0); v/=v.sum()
 print("proj simplex:", v)`,
           output: `feasible`
-        },
-        {
-          id: `math-lagrange-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Lagrange Multipliers sits in the **math** track of the Data Science Master curriculum. Equality constraints, KKT conditions, and constrained optimization.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-lagrange, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Lagrange Multipliers
-meta = {"topic_id": "math-lagrange", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-lagrange math advanced`,
-          keyPoints: [
-            `Core theory of Lagrange Multipliers ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-lagrange-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Lagrange Multipliers. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-lagrange, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-lagrange
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-lagrange", "Lagrange Multipliers")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-lagrange Lagrange`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-lagrange-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Lagrange Multipliers often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-lagrange, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-lagrange", "Lagrange Multipliers")
-debug_step("section_count", 4)`,
-          output: `[math-lagrange] 'Lagrange Multipliers' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-lagrange-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Lagrange Multipliers shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-lagrange align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Lagrange Multipliers
-skills = ["math", "advanced", "math-lagrange"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-lagrange`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Lagrange Multipliers to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -915,7 +576,7 @@ v=np.ones(3)/3; print(v, v.sum())`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-08`,
       references: [
         {
@@ -1003,11 +664,7 @@ print("H bits:", -np.sum(p*np.log2(p)))`,
         {
           id: `ent-ce`,
           title: `Cross-Entropy & KL`,
-          content: `**Cross-entropy** H(p,q)=−∑p log q≥H(p) with equality if p=q. **KL divergence** D_KL(p||q)=∑p log(p/q)=H(p,q)−H(p)≥0. Not symmetric. Used as loss when p true, q model. **Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Entropy & Information:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Cross-Entropy & KL" connects to shannon entropy, cross-entropy, and mutual information. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Cross-entropy** H(p,q)=−∑p log q≥H(p) with equality if p=q. **KL divergence** D_KL(p||q)=∑p log(p/q)=H(p,q)−H(p)≥0. Not symmetric. Used as loss when p true, q model. **Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `H(p,q) = −∑ p log q`,
             `D_KL(p||q) = ∑ p log(p/q)`,
@@ -1080,11 +737,7 @@ print("MI:", mi)`,
         {
           id: `ent-ml`,
           title: `Information in ML`,
-          content: `Classification CE minimizes H(true, pred). Label smoothing softens one-hot targets increases H. **Regularization** as limiting information in weights. **Minimum description length** principle. Decision tree information gain = reduction in H. Softmax temperature scales entropy of predictions. Calibration affects cross-entropy at deployment. Understanding bits/nats clarifies loss magnitude interpretation.
-
-**Extended exploration — Entropy & Information:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Information in ML" connects to shannon entropy, cross-entropy, and mutual information. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Classification CE minimizes H(true, pred). Label smoothing softens one-hot targets increases H. **Regularization** as limiting information in weights. **Minimum description length** principle. Decision tree information gain = reduction in H. Softmax temperature scales entropy of predictions. Calibration affects cross-entropy at deployment. Understanding bits/nats clarifies loss magnitude interpretation.`,
           formulas: [
             `Minimize H(y, ŷ) for classification`,
             `Label smoothing: soft targets`,
@@ -1113,111 +766,6 @@ print("MI:", mi)`,
 parent=0.9; child=0.4
 print("info gain:", parent-child)`,
           output: `gain 0.5`
-        },
-        {
-          id: `math-entropy-math-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Entropy & Information sits in the **math** track of the Data Science Master curriculum. Shannon entropy, cross-entropy, and mutual information.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-entropy-math, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Entropy & Information
-meta = {"topic_id": "math-entropy-math", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-entropy-math math advanced`,
-          keyPoints: [
-            `Core theory of Entropy & Information ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-entropy-math-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Entropy & Information. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-entropy-math, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-entropy-math
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-entropy-math", "Entropy & Information")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-entropy-math Entropy`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-entropy-math-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Entropy & Information often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-entropy-math, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-entropy-math", "Entropy & Information")
-debug_step("section_count", 4)`,
-          output: `[math-entropy-math] 'Entropy & Information' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-entropy-math-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Entropy & Information shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-entropy-math align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Entropy & Information
-skills = ["math", "advanced", "math-entropy-math"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-entropy-math`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Entropy & Information to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1237,7 +785,7 @@ print(np.sum(p*np.log(p/q)))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-08`,
       references: [
         {
@@ -1359,11 +907,7 @@ print("KL:", np.sum(p*np.log(p/q)))`,
         {
           id: `mle-prop`,
           title: `Properties of MLE`,
-          content: `**Consistency** θ̂→θ true as n→∞. **Asymptotic normality** √n(θ̂−θ)→N(0,I(θ)⁻¹). **Fisher information** I(θ)=E[(∂log p/∂θ)²]. Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible. Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — KL Divergence & MLE:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Properties of MLE" connects to maximum likelihood estimation and its connection to minimizing kl. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Consistency** θ̂→θ true as n→∞. **Asymptotic normality** √n(θ̂−θ)→N(0,I(θ)⁻¹). **Fisher information** I(θ)=E[(∂log p/∂θ)²]. Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible. Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `√n(θ̂−θ) → N(0, I(θ)⁻¹)`,
             `I(θ) = E[(∂log p/∂θ)²]`,
@@ -1396,11 +940,7 @@ p=0.6; print("I:", p*(1-p))`,
         {
           id: `mle-ml`,
           title: `MLE in Deep Learning`,
-          content: `Categorical NLL = cross-entropy MLE for softmax. Gaussian output MSE ∝ Gaussian NLL. **Likelihood-based** generative models maximize log p(x|θ) directly. **Contrastive divergence** approximates MLE for RBMs. **EM algorithm** MLE with latent variables E-step expectation M-step maximize. Diffusion models variational bound on log-likelihood. GANs not pure MLE—adversarial game. Understanding MLE clarifies why minimizing CE is principled probabilistic modeling.
-
-**Extended exploration — KL Divergence & MLE:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "MLE in Deep Learning" connects to maximum likelihood estimation and its connection to minimizing kl. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Categorical NLL = cross-entropy MLE for softmax. Gaussian output MSE ∝ Gaussian NLL. **Likelihood-based** generative models maximize log p(x|θ) directly. **Contrastive divergence** approximates MLE for RBMs. **EM algorithm** MLE with latent variables E-step expectation M-step maximize. Diffusion models variational bound on log-likelihood. GANs not pure MLE—adversarial game. Understanding MLE clarifies why minimizing CE is principled probabilistic modeling.`,
           formulas: [
             `Softmax + CE = categorical MLE`,
             `MSE ∝ Gaussian NLL (fixed σ)`,
@@ -1431,111 +971,6 @@ p=np.exp(logits)/np.exp(logits).sum()
 nll=-np.log(p[0])
 print("NLL:", nll)`,
           output: `NLL MLE loss`
-        },
-        {
-          id: `math-kl-mle-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-KL Divergence & MLE sits in the **math** track of the Data Science Master curriculum. Maximum likelihood estimation and its connection to minimizing KL.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-kl-mle, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for KL Divergence & MLE
-meta = {"topic_id": "math-kl-mle", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-kl-mle math advanced`,
-          keyPoints: [
-            `Core theory of KL Divergence & MLE ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-kl-mle-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from KL Divergence & MLE. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-kl-mle, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-kl-mle
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-kl-mle", "KL Divergence & MLE")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-kl-mle KL`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-kl-mle-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on KL Divergence & MLE often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-kl-mle, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-kl-mle", "KL Divergence & MLE")
-debug_step("section_count", 4)`,
-          output: `[math-kl-mle] 'KL Divergence & MLE' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-kl-mle-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-KL Divergence & MLE shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-kl-mle align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for KL Divergence & MLE
-skills = ["math", "advanced", "math-kl-mle"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-kl-mle`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect KL Divergence & MLE to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1555,7 +990,7 @@ print(np.sum(p*np.log(p/q)))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-08`,
       references: [
         {

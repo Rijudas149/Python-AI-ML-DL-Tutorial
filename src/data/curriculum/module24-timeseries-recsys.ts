@@ -75,111 +75,6 @@ Prophet and neural approaches complement classical SARIMA on messy business seri
             `Interpolate missing timestamps carefully`,
             `Document timezone and aggregation level`
           ]
-        },
-        {
-          id: `ml-timeseries-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Time Series Foundations sits in the **ml** track of the Data Science Master curriculum. Decompose series, check stationarity, and fit ARIMA models.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-timeseries, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Time Series Foundations
-meta = {"topic_id": "ml-timeseries", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-timeseries ml advanced`,
-          keyPoints: [
-            `Core theory of Time Series Foundations ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-timeseries-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Time Series Foundations. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-timeseries, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-timeseries
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-timeseries", "Time Series Foundations")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-timeseries Time`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-timeseries-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Time Series Foundations often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-timeseries, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-timeseries", "Time Series Foundations")
-debug_step("section_count", 4)`,
-          output: `[ml-timeseries] 'Time Series Foundations' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-timeseries-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Time Series Foundations shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-timeseries align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Time Series Foundations
-skills = ["ml", "advanced", "ml-timeseries"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, ml-timeseries`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Time Series Foundations to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -199,7 +94,7 @@ print(len(pd.date_range("2024-01-01", periods=12, freq="MS")))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 60,
+      estimatedMinutes: 45,
       module: `module-24`,
       references: [
         {
@@ -319,111 +214,6 @@ Combine statistical and ML forecasts in ensembles weighted by recent performance
             `Document grain: hourly vs daily aggregation`,
             `Ensemble diversifies model failure modes`
           ]
-        },
-        {
-          id: `ml-forecasting-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Forecasting with Prophet & sklearn sits in the **ml** track of the Data Science Master curriculum. Practical forecasting pipelines for business time series.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-forecasting, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Forecasting with Prophet & sklearn
-meta = {"topic_id": "ml-forecasting", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-forecasting ml advanced`,
-          keyPoints: [
-            `Core theory of Forecasting with Prophet & sklearn ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-forecasting-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Forecasting with Prophet & sklearn. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-forecasting, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-forecasting
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-forecasting", "Forecasting with Prophet & sklearn")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-forecasting Forecasting`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-forecasting-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Forecasting with Prophet & sklearn often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-forecasting, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-forecasting", "Forecasting with Prophet & sklearn")
-debug_step("section_count", 4)`,
-          output: `[ml-forecasting] 'Forecasting with Prophet & sklearn' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-forecasting-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Forecasting with Prophet & sklearn shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-forecasting align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Forecasting with Prophet & sklearn
-skills = ["ml", "advanced", "ml-forecasting"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, ml-forecasting`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Forecasting with Prophet & sklearn to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -442,7 +232,7 @@ print(len(list(TimeSeriesSplit(2).split(np.arange(10)))))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-24`,
       references: [
         {
@@ -557,111 +347,6 @@ Online A/B tests measure click-through and revenue—the ground truth.
             `Popularity bias inflates offline scores`,
             `A/B test with guardrail metrics`
           ]
-        },
-        {
-          id: `ml-recsys-collab-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Collaborative Filtering sits in the **ml** track of the Data Science Master curriculum. Recommend items from user-item interaction patterns.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-recsys-collab, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Collaborative Filtering
-meta = {"topic_id": "ml-recsys-collab", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-recsys-collab ml advanced`,
-          keyPoints: [
-            `Core theory of Collaborative Filtering ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-recsys-collab-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Collaborative Filtering. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-recsys-collab, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-recsys-collab
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-recsys-collab", "Collaborative Filtering")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-recsys-collab Collaborative`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-recsys-collab-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Collaborative Filtering often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-recsys-collab, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-recsys-collab", "Collaborative Filtering")
-debug_step("section_count", 4)`,
-          output: `[ml-recsys-collab] 'Collaborative Filtering' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-recsys-collab-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Collaborative Filtering shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-recsys-collab align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Collaborative Filtering
-skills = ["ml", "advanced", "ml-recsys-collab"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, ml-recsys-collab`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Collaborative Filtering to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -679,7 +364,7 @@ print(np.dot([1,0],[0,1])==0)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-24`,
       references: [
         {
@@ -794,111 +479,6 @@ Mitigate with exploration, diversity re-ranking, or hybrid CF.
             `Content alone misses collaborative signal`,
             `Explain recommendations via feature attribution`
           ]
-        },
-        {
-          id: `ml-recsys-content-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Content-Based Filtering sits in the **ml** track of the Data Science Master curriculum. Recommend from item features and user preference profiles.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-recsys-content, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Content-Based Filtering
-meta = {"topic_id": "ml-recsys-content", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-recsys-content ml advanced`,
-          keyPoints: [
-            `Core theory of Content-Based Filtering ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-recsys-content-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Content-Based Filtering. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-recsys-content, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-recsys-content
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-recsys-content", "Content-Based Filtering")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-recsys-content Content-Based`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-recsys-content-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Content-Based Filtering often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-recsys-content, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-recsys-content", "Content-Based Filtering")
-debug_step("section_count", 4)`,
-          output: `[ml-recsys-content] 'Content-Based Filtering' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-recsys-content-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Content-Based Filtering shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-recsys-content align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Content-Based Filtering
-skills = ["ml", "advanced", "ml-recsys-content"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, ml-recsys-content`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Content-Based Filtering to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -915,7 +495,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-24`,
       references: [
         {
@@ -1032,111 +612,6 @@ Slice metrics by segment— imbalance may vary by region or product line.
             `Fairness across demographic slices`,
             `Human review queue for borderline scores`
           ]
-        },
-        {
-          id: `ml-imbalanced-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Imbalanced Classification sits in the **ml** track of the Data Science Master curriculum. Handle skewed classes with resampling, weights, and proper metrics.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-imbalanced, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Imbalanced Classification
-meta = {"topic_id": "ml-imbalanced", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-imbalanced ml advanced`,
-          keyPoints: [
-            `Core theory of Imbalanced Classification ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-imbalanced-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Imbalanced Classification. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-imbalanced, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-imbalanced
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-imbalanced", "Imbalanced Classification")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-imbalanced Imbalanced`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-imbalanced-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Imbalanced Classification often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-imbalanced, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-imbalanced", "Imbalanced Classification")
-debug_step("section_count", 4)`,
-          output: `[ml-imbalanced] 'Imbalanced Classification' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-imbalanced-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Imbalanced Classification shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-imbalanced align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Imbalanced Classification
-skills = ["ml", "advanced", "ml-imbalanced"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, ml-imbalanced`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Imbalanced Classification to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1155,7 +630,7 @@ print(LogisticRegression(class_weight="balanced").class_weight)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-24`,
       references: [
         {

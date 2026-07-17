@@ -1,4 +1,5 @@
 import type { CurveShape, DiagramSpec, StructuredLiteral } from '../types/diagram';
+import { parseAsciiFigure } from './parseAsciiFigure';
 
 const ASCII_CHARS = /[│┌┐└┘├┤┬┴┼─═╱\\|_]/;
 const FORMULA_CHARS = /[=∪∩×÷±∑∫]|\\|\^|\blog\b|\bln\b|\bexp\b|→.*=|\(\d+,\s*\d+\)/i;
@@ -38,8 +39,8 @@ function parseChipLine(line: string): string[] | null {
 }
 
 function parseStructuredLiteral(rawLines: string[]): StructuredLiteral {
+  const asciiLines: string[] = [];
   const content: StructuredLiteral = {
-    figure: [],
     formulas: [],
     pipelines: [],
     chips: [],
@@ -59,14 +60,14 @@ function parseStructuredLiteral(rawLines: string[]): StructuredLiteral {
     }
     titleSet = true;
 
-    const pipeline = parsePipelineLine(trimmed);
-    if (pipeline) {
-      content.pipelines.push(pipeline);
+    if (ASCII_CHARS.test(line)) {
+      asciiLines.push(line);
       continue;
     }
 
-    if (ASCII_CHARS.test(line)) {
-      content.figure.push(line);
+    const pipeline = parsePipelineLine(trimmed);
+    if (pipeline) {
+      content.pipelines.push(pipeline);
       continue;
     }
 
@@ -82,6 +83,16 @@ function parseStructuredLiteral(rawLines: string[]): StructuredLiteral {
     }
 
     content.notes.push(trimmed);
+  }
+
+  if (asciiLines.length) {
+    content.figure = parseAsciiFigure(asciiLines) ?? undefined;
+    if (!content.figure) {
+      const labels = asciiLines
+        .map((l) => l.replace(/[│┌┐└┘├┤┬┴┼─═╱\\_|]/g, ' ').replace(/\s+/g, ' ').trim())
+        .filter((l) => l.length > 2);
+      if (labels.length) content.notes.unshift(...labels);
+    }
   }
 
   return content;

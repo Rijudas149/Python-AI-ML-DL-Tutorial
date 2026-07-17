@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { DiagramSpec } from '../../types/diagram';
+import { FigureView } from './FigureViews';
 import {
   D,
   DiagramCanvas,
@@ -26,11 +27,9 @@ function LiteralView({ spec }: { spec: Extract<DiagramSpec, { type: 'literal' }>
     <div className="diagram-structured">
       {c.title && <h3 className="diagram-structured-title">{c.title}</h3>}
 
-      {c.figure.length > 0 && (
+      {c.figure && (
         <DiagramZone label="Figure">
-          <pre className="diagram-ascii" aria-label="Diagram figure">
-            {c.figure.join('\n')}
-          </pre>
+          <FigureView spec={c.figure} />
         </DiagramZone>
       )}
 

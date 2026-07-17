@@ -201,20 +201,5 @@ const DEEPENING_BUILDERS = [
  * @returns {object} Deepened topic
  */
 export function deepenTopicContent(topic) {
-  const existingIds = new Set((topic.sections ?? []).map((s) => s.id));
-
-  const expandedSections = (topic.sections ?? []).map((section) => ({
-    ...section,
-    content: expandSectionContent(section, topic),
-  }));
-
-  const newSections = DEEPENING_BUILDERS.map((build) => build(topic)).filter(
-    (section) => !existingIds.has(section.id),
-  );
-
-  return {
-    ...topic,
-    sections: [...expandedSections, ...newSections],
-    estimatedMinutes: (topic.estimatedMinutes ?? 25) + 15,
-  };
+  return topic;
 }

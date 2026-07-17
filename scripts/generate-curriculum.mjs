@@ -40,22 +40,8 @@ function serializeValue(value, indent = 0) {
     .join(',\n')}\n${pad}}`;
 }
 
-function enrichSection(section, topicTitle, track) {
-  const minLen = 280;
-  if (!section.content || section.content.length >= minLen) return section;
-
-  const trackContext = {
-    python: 'Python fluency is the foundation for every data science and ML workflow.',
-    math: 'Mathematics is the language of machine learning — master these before algorithms make sense.',
-    data: 'Data manipulation skills directly determine the quality of downstream models.',
-    ml: 'These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula.',
-    dl: 'Deep learning builds on the mathematical intuition taught in CS230 and fast.ai.',
-    ai: 'Modern AI systems combine research breakthroughs with rigorous engineering practice.',
-  };
-
-  const extra = `\n\n**Why this matters for ${topicTitle}:** ${trackContext[track] ?? trackContext.ml} Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`;
-
-  return { ...section, content: section.content + extra };
+function enrichSection(section, _topicTitle, _track) {
+  return section;
 }
 
 function enrichTopic(topic) {

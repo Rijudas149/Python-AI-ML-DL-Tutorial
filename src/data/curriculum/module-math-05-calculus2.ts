@@ -11,11 +11,7 @@ export const moduleMath05Topics: Topic[] = [
         {
           id: `pd-def`,
           title: `Partial Derivative Definition`,
-          content: `For f(x₁,...,x_n), **partial derivative** ∂f/∂x_i = lim_{h→0} [f(...,x_i+h,...)-f(...,x_i,...)]/h holding other x_j fixed. Notation ∂f/∂x_i or f_{x_i}. **Gradient** ∇f collects all partials as column vector. **Directional derivative** D_u f = ∇f·u for unit u. Slice f(x,y) at fixed y gives curve; ∂f/∂x is slope along x. In neural nets, ∂L/∂W_ij is partial of loss w.r.t. one weight. Autodiff computes all partials efficiently via reverse accumulation.
-
-**Extended exploration — Partial Derivatives:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Partial Derivative Definition" connects to differentiate multivariate functions holding other variables fixed. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `For f(x₁,...,x_n), **partial derivative** ∂f/∂x_i = lim_{h→0} [f(...,x_i+h,...)-f(...,x_i,...)]/h holding other x_j fixed. Notation ∂f/∂x_i or f_{x_i}. **Gradient** ∇f collects all partials as column vector. **Directional derivative** D_u f = ∇f·u for unit u. Slice f(x,y) at fixed y gives curve; ∂f/∂x is slope along x. In neural nets, ∂L/∂W_ij is partial of loss w.r.t. one weight. Autodiff computes all partials efficiently via reverse accumulation.`,
           formulas: [
             `∂f/∂x_i = lim_{h→0} (f(...,x_i+h,...)−f(...,x_i,...))/h`,
             `∇f = (∂f/∂x₁, ..., ∂f/∂x_n)ᵀ`,
@@ -51,11 +47,7 @@ print("∂f/∂x:", dfdx, "exact:", 2*x+3*y)`,
         {
           id: `pd-geom`,
           title: `Geometric Meaning`,
-          content: `∇f points direction of steepest ascent. Magnitude ||∇f|| = max rate of increase. Level set {f=c}: ∇f perpendicular to level curve. Negative gradient −∇f steepest descent direction for minimization. Contour plot: gradient orthogonal to contours. For loss L(θ), gradient in parameter space points uphill. Moving −η∇L decreases loss first-order. In 2D, visualize gradient arrows on contour grid for intuition.
-
-**Extended exploration — Partial Derivatives:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Geometric Meaning" connects to differentiate multivariate functions holding other variables fixed. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `∇f points direction of steepest ascent. Magnitude ||∇f|| = max rate of increase. Level set {f=c}: ∇f perpendicular to level curve. Negative gradient −∇f steepest descent direction for minimization. Contour plot: gradient orthogonal to contours. For loss L(θ), gradient in parameter space points uphill. Moving −η∇L decreases loss first-order. In 2D, visualize gradient arrows on contour grid for intuition.`,
           formulas: [
             `∇f ⟂ level sets`,
             `Steepest ascent direction`,
@@ -89,11 +81,7 @@ print("grad:", grad, "norm:", np.linalg.norm(grad))`,
         {
           id: `pd-higher`,
           title: `Higher-Order Partials`,
-          content: `**Hessian** H_ij=∂²f/∂x_i∂x_j matrix of second partials. Symmetric if f C². Diagonal ∂²f/∂x_i² measures curvature along axis i. **Laplacian** ∇²f = ∑ ∂²f/∂x_i² sum of diagonal second partials—appears in diffusion and score matching. Determinant of Hessian in multivariate change of variables. Fisher information related to expected Hessian of log-likelihood. Small Hessian eigenvalues → flat directions.
-
-**Extended exploration — Partial Derivatives:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Higher-Order Partials" connects to differentiate multivariate functions holding other variables fixed. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Hessian** H_ij=∂²f/∂x_i∂x_j matrix of second partials. Symmetric if f C². Diagonal ∂²f/∂x_i² measures curvature along axis i. **Laplacian** ∇²f = ∑ ∂²f/∂x_i² sum of diagonal second partials—appears in diffusion and score matching. Determinant of Hessian in multivariate change of variables. Fisher information related to expected Hessian of log-likelihood. Small Hessian eigenvalues → flat directions.`,
           formulas: [
             `H_ij = ∂²f/∂x_i∂x_j`,
             `H symmetric for C² f`,
@@ -157,111 +145,6 @@ W=np.array([[1.,2.],[3.,4.]]); x=np.array([1.,0.5])
 h=W@x
 print("dh/dx:", W.T, "shape matches x")`,
           output: `W.T for backprop to x`
-        },
-        {
-          id: `math-partial-deriv-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Partial Derivatives sits in the **math** track of the Data Science Master curriculum. Differentiate multivariate functions holding other variables fixed.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-partial-deriv, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Partial Derivatives
-meta = {"topic_id": "math-partial-deriv", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-partial-deriv math advanced`,
-          keyPoints: [
-            `Core theory of Partial Derivatives ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-partial-deriv-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Partial Derivatives. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-partial-deriv, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-partial-deriv
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-partial-deriv", "Partial Derivatives")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-partial-deriv Partial`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-partial-deriv-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Partial Derivatives often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-partial-deriv, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-partial-deriv", "Partial Derivatives")
-debug_step("section_count", 4)`,
-          output: `[math-partial-deriv] 'Partial Derivatives' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-partial-deriv-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Partial Derivatives shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-partial-deriv align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Partial Derivatives
-skills = ["math", "advanced", "math-partial-deriv"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-partial-deriv`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Partial Derivatives to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -281,7 +164,7 @@ print((f(3+h,4)-f(3-h,4))/(2*h), (f(3,4+h)-f(3,4-h))/(2*h))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-05`,
       references: [
         {
@@ -336,11 +219,7 @@ print((f(3+h,4)-f(3-h,4))/(2*h), (f(3,4+h)-f(3,4-h))/(2*h))`,
         {
           id: `grad-def`,
           title: `Gradient Vector`,
-          content: `∇f(x) ∈ ℝⁿ with components ∂f/∂x_i. Points toward steepest increase; ||∇f|| equals max directional derivative rate. **Gradient field** assigns vector at each point. For loss L, ∇L tells update direction. **Subgradient** generalizes to non-smooth convex functions at kinks. Zero gradient necessary for interior extremum (not sufficient—saddle). Numerical gradient via finite differences checks autograd. Always verify shapes: ∇L same shape as θ.
-
-**Extended exploration — Gradient & Directional Derivatives:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Gradient Vector" connects to master the gradient vector and its role in optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `∇f(x) ∈ ℝⁿ with components ∂f/∂x_i. Points toward steepest increase; ||∇f|| equals max directional derivative rate. **Gradient field** assigns vector at each point. For loss L, ∇L tells update direction. **Subgradient** generalizes to non-smooth convex functions at kinks. Zero gradient necessary for interior extremum (not sufficient—saddle). Numerical gradient via finite differences checks autograd. Always verify shapes: ∇L same shape as θ.`,
           formulas: [
             `∇f = (∂f/∂x₁, ..., ∂f/∂x_n)ᵀ`,
             `max_{||u||=1} D_u f = ||∇f||`,
@@ -444,11 +323,7 @@ print("simplex proj:", v)`,
         {
           id: `grad-numerical`,
           title: `Gradient Checking`,
-          content: `**Relative error** |g_num−g_auto|/(|g_num|+|g_auto|+ε) should <1e-5 for double precision layers. Check one layer at a time to localize bugs. Symmetric central differences. Disable dropout/batchnorm during check. Expensive O(n) forward passes for n params—use small subset. Essential when implementing custom CUDA kernels or novel autograd functions. PyTorch torch.autograd.gradcheck utility automates.
-
-**Extended exploration — Gradient & Directional Derivatives:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Gradient Checking" connects to master the gradient vector and its role in optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Relative error** |g_num−g_auto|/(|g_num|+|g_auto|+ε) should <1e-5 for double precision layers. Check one layer at a time to localize bugs. Symmetric central differences. Disable dropout/batchnorm during check. Expensive O(n) forward passes for n params—use small subset. Essential when implementing custom CUDA kernels or novel autograd functions. PyTorch torch.autograd.gradcheck utility automates.`,
           formulas: [
             `rel_err = |g_n − g_a| / (|g_n|+|g_a|+ε)`,
             `Central diff preferred`,
@@ -480,111 +355,6 @@ gn=np.array([(f(t+[h,0])-f(t-[h,0]))/(2*h),(f(t+[0,h])-f(t-[0,h]))/(2*h)])
 ga=np.array([2*t[0],3.])
 print("rel err:", np.abs(gn-ga)/(np.abs(gn)+np.abs(ga)))`,
           output: `small error`
-        },
-        {
-          id: `math-gradient-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Gradient & Directional Derivatives sits in the **math** track of the Data Science Master curriculum. Master the gradient vector and its role in optimization.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-gradient, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Gradient & Directional Derivatives
-meta = {"topic_id": "math-gradient", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-gradient math advanced`,
-          keyPoints: [
-            `Core theory of Gradient & Directional Derivatives ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-gradient-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Gradient & Directional Derivatives. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-gradient, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-gradient
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-gradient", "Gradient & Directional Derivatives")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-gradient Gradient`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-gradient-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Gradient & Directional Derivatives often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-gradient, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-gradient", "Gradient & Directional Derivatives")
-debug_step("section_count", 4)`,
-          output: `[math-gradient] 'Gradient & Directional Derivatives' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-gradient-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Gradient & Directional Derivatives shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-gradient align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Gradient & Directional Derivatives
-skills = ["math", "advanced", "math-gradient"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-gradient`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Gradient & Directional Derivatives to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -605,7 +375,7 @@ v=np.array([0.2,-0.1,0.5]); v=np.maximum(v,0); v/=v.sum(); print(v)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-05`,
       references: [
         {
@@ -694,11 +464,7 @@ print("J:", J)`,
         {
           id: `cr-backprop`,
           title: `Backpropagation Derivation`,
-          content: `Computational graph nodes with forward values. Backward pass applies chain rule from output to inputs. For node y=f(x), upstream gradient ∂L/∂y multiplies local ∂y/∂x. **Sum over paths** when node feeds multiple consumers. ReLU backward: pass gradient where x>0 else 0. Softmax+CE backward simplifies to ŷ−y. Memory stores activations for backward. Reverse-mode one pass O(edges) vs forward-mode O(inputs).
-
-**Extended exploration — Multivariate Chain Rule:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Backpropagation Derivation" connects to jacobian matrices and backpropagation as chain rule application. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Computational graph nodes with forward values. Backward pass applies chain rule from output to inputs. For node y=f(x), upstream gradient ∂L/∂y multiplies local ∂y/∂x. **Sum over paths** when node feeds multiple consumers. ReLU backward: pass gradient where x>0 else 0. Softmax+CE backward simplifies to ŷ−y. Memory stores activations for backward. Reverse-mode one pass O(edges) vs forward-mode O(inputs).`,
           formulas: [
             `∂L/∂x = (∂L/∂y)(∂y/∂x)`,
             `Sum grads from all children`,
@@ -731,11 +497,7 @@ print("dL/dz:", y-t)`,
         {
           id: `cr-vector`,
           title: `Vector Chain Rules`,
-          content: `If L=f(u) and u=g(x), then ∂L/∂x=(∂u/∂x)ᵀ∂L/∂u when using column convention. Matrix params: ∂L/∂W for y=Wx+b is (∂L/∂y)xᵀ outer product. Batch: sum over samples. **Einstein summation** einsum clarifies tensor contractions in deep nets. Batched matmul backward uses matmuls not loops. Shape discipline prevents silent bugs in manual backprop. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Multivariate Chain Rule:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Vector Chain Rules" connects to jacobian matrices and backpropagation as chain rule application. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `If L=f(u) and u=g(x), then ∂L/∂x=(∂u/∂x)ᵀ∂L/∂u when using column convention. Matrix params: ∂L/∂W for y=Wx+b is (∂L/∂y)xᵀ outer product. Batch: sum over samples. **Einstein summation** einsum clarifies tensor contractions in deep nets. Batched matmul backward uses matmuls not loops. Shape discipline prevents silent bugs in manual backprop. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `∂L/∂W = (∂L/∂y) xᵀ`,
             `∂L/∂x = Wᵀ (∂L/∂y)`,
@@ -769,11 +531,7 @@ print("dL/dW shape:", dL_dW.shape)`,
         {
           id: `cr-vanish`,
           title: `Vanishing & Exploding Gradients`,
-          content: `Deep chain multiplies many Jacobians. If ||J||<1 repeatedly, gradient vanishes—early layers learn slowly. ||J||>1 explodes—unstable training. Sigmoid/tanh saturate with small derivatives. ReLU helps (deriv=1 when active). **Residual connections** add identity path. **Layer normalization** stabilizes activations. **Gradient clipping** caps global norm. LSTM gates control gradient flow in RNNs. Xavier/He init sets initial Jacobian scale.
-
-**Extended exploration — Multivariate Chain Rule:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Vanishing & Exploding Gradients" connects to jacobian matrices and backpropagation as chain rule application. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Deep chain multiplies many Jacobians. If ||J||<1 repeatedly, gradient vanishes—early layers learn slowly. ||J||>1 explodes—unstable training. Sigmoid/tanh saturate with small derivatives. ReLU helps (deriv=1 when active). **Residual connections** add identity path. **Layer normalization** stabilizes activations. **Gradient clipping** caps global norm. LSTM gates control gradient flow in RNNs. Xavier/He init sets initial Jacobian scale.`,
           formulas: [
             `∏ J_i small → vanishing`,
             `∏ J_i large → exploding`,
@@ -803,111 +561,6 @@ grad=1000.; tau=1.
 grad*=min(1,tau/np.abs(grad))
 print("clipped:", grad)`,
           output: `clipped: 1.0`
-        },
-        {
-          id: `math-chain-rule-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Multivariate Chain Rule sits in the **math** track of the Data Science Master curriculum. Jacobian matrices and backpropagation as chain rule application.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-chain-rule, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Multivariate Chain Rule
-meta = {"topic_id": "math-chain-rule", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-chain-rule math advanced`,
-          keyPoints: [
-            `Core theory of Multivariate Chain Rule ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-chain-rule-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Multivariate Chain Rule. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-chain-rule, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-chain-rule
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-chain-rule", "Multivariate Chain Rule")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-chain-rule Multivariate`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-chain-rule-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Multivariate Chain Rule often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-chain-rule, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-chain-rule", "Multivariate Chain Rule")
-debug_step("section_count", 4)`,
-          output: `[math-chain-rule] 'Multivariate Chain Rule' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-chain-rule-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Multivariate Chain Rule shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-chain-rule align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Multivariate Chain Rule
-skills = ["math", "advanced", "math-chain-rule"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-chain-rule`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Multivariate Chain Rule to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -926,7 +579,7 @@ g=np.array([3.,4.]); g*=min(1,1/np.linalg.norm(g)); print(g)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-05`,
       references: [
         {
@@ -981,11 +634,7 @@ g=np.array([3.,4.]); g*=min(1,1/np.linalg.norm(g)); print(g)`,
         {
           id: `jh-hessian`,
           title: `Hessian Matrix`,
-          content: `H_ij=∂²L/∂θ_i∂θ_j symmetric for smooth L. Describes curvature of loss surface. Positive definite H at minimum (local convex bowl). Indefinite H → saddle. **Newton step** Δθ=−H⁻¹∇L. **Gauss-Newton** approximates H for least squares. Exact Hessian O(n²) storage—impractical for large n. Diagonal approx (AdaGrad, Adam) use diagonal only. Hessian-vector products via Pearlmutter trick without forming H.
-
-**Extended exploration — Jacobian & Hessian:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Hessian Matrix" connects to second-order information for curvature and advanced optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `H_ij=∂²L/∂θ_i∂θ_j symmetric for smooth L. Describes curvature of loss surface. Positive definite H at minimum (local convex bowl). Indefinite H → saddle. **Newton step** Δθ=−H⁻¹∇L. **Gauss-Newton** approximates H for least squares. Exact Hessian O(n²) storage—impractical for large n. Diagonal approx (AdaGrad, Adam) use diagonal only. Hessian-vector products via Pearlmutter trick without forming H.`,
           formulas: [
             `H_ij = ∂²L/∂θ_i∂θ_j`,
             `H symmetric for C² L`,
@@ -1088,11 +737,7 @@ print("log|det|:", np.linalg.slogdet(A)[1])`,
         {
           id: `jh-gauss-newton`,
           title: `Gauss-Newton & Levenberg-Marquardt`,
-          content: `For least squares r(θ), Hessian approx H≈J_rᵀJ_r Jacobian of residuals. **Gauss-Newton** ignores second-order term. **Levenberg-Marquardt** adds λI damping between GN and GD. Used in nonlinear curve fitting and some pose estimation. More stable than pure Newton for sum-of-squares objectives. Connects to linearization of nonlinear models each iteration. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Jacobian & Hessian:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Gauss-Newton & Levenberg-Marquardt" connects to second-order information for curvature and advanced optimization. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `For least squares r(θ), Hessian approx H≈J_rᵀJ_r Jacobian of residuals. **Gauss-Newton** ignores second-order term. **Levenberg-Marquardt** adds λI damping between GN and GD. Used in nonlinear curve fitting and some pose estimation. More stable than pure Newton for sum-of-squares objectives. Connects to linearization of nonlinear models each iteration. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `H ≈ JᵀJ (Gauss-Newton)`,
             `LM: (JᵀJ + λI)Δ = −Jᵀr`,
@@ -1123,111 +768,6 @@ a=0.; target=2.
 for _ in range(5): a -= (a-target)*1.0
 print(a)`,
           output: `→ 2`
-        },
-        {
-          id: `math-jacobian-hessian-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Jacobian & Hessian sits in the **math** track of the Data Science Master curriculum. Second-order information for curvature and advanced optimization.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-jacobian-hessian, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Jacobian & Hessian
-meta = {"topic_id": "math-jacobian-hessian", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-jacobian-hessian math advanced`,
-          keyPoints: [
-            `Core theory of Jacobian & Hessian ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-jacobian-hessian-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Jacobian & Hessian. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-jacobian-hessian, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-jacobian-hessian
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-jacobian-hessian", "Jacobian & Hessian")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-jacobian-hessian Jacobian`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-jacobian-hessian-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Jacobian & Hessian often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-jacobian-hessian, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-jacobian-hessian", "Jacobian & Hessian")
-debug_step("section_count", 4)`,
-          output: `[math-jacobian-hessian] 'Jacobian & Hessian' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-jacobian-hessian-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Jacobian & Hessian shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-jacobian-hessian align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Jacobian & Hessian
-skills = ["math", "advanced", "math-jacobian-hessian"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-jacobian-hessian`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Jacobian & Hessian to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1246,7 +786,7 @@ x=3.; x -= 6/2; print(x)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-05`,
       references: [
         {
@@ -1335,11 +875,7 @@ print("eig:", np.linalg.eigvalsh(H))`,
         {
           id: `mvo-convex`,
           title: `Convex Functions`,
-          content: `f convex if f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). Equivalently H⪰0 everywhere for C² f. **Strict convex** unique global min. Convex optimization globally tractable. Linear models with convex loss (MSE, logistic) → convex in w. Deep nets non-convex in θ. **Jensen inequality** E[f(X)]≥f(E[X]) for convex f—used in proofs. L1 not strictly convex at 0 but still convex. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Extended exploration — Multivariate Optimization:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Convex Functions" connects to critical points, convexity, and constrained optimization preview. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `f convex if f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). Equivalently H⪰0 everywhere for C² f. **Strict convex** unique global min. Convex optimization globally tractable. Linear models with convex loss (MSE, logistic) → convex in w. Deep nets non-convex in θ. **Jensen inequality** E[f(X)]≥f(E[X]) for convex f—used in proofs. L1 not strictly convex at 0 but still convex. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)`,
             `H ⪰ 0 ⇔ convex (C²)`,
@@ -1373,11 +909,7 @@ print("convex check:", f(lam*x+(1-lam)*y) <= lam*f(x)+(1-lam)*f(y))`,
         {
           id: `mvo-saddle`,
           title: `Saddle Points in High Dimensions`,
-          content: `Random Gaussian landscape: saddles exponentially outnumber minima as dimension grows. At saddle, gradient zero but some eigenvalues of H positive, some negative. **Strict saddle** algorithms add noise or use curvature. **Plateau** surrounding saddles slow GD. Second-order methods can escape faster but costly. Modern view: SGD finds good minima despite non-convexity partly due to overparameterization and implicit regularization.
-
-**Extended exploration — Multivariate Optimization:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Saddle Points in High Dimensions" connects to critical points, convexity, and constrained optimization preview. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `Random Gaussian landscape: saddles exponentially outnumber minima as dimension grows. At saddle, gradient zero but some eigenvalues of H positive, some negative. **Strict saddle** algorithms add noise or use curvature. **Plateau** surrounding saddles slow GD. Second-order methods can escape faster but costly. Modern view: SGD finds good minima despite non-convexity partly due to overparameterization and implicit regularization.`,
           formulas: [
             `High-D: saddles dominate`,
             `Strict saddle: mixed H eigenvalues`,
@@ -1410,11 +942,7 @@ print("grad at origin:", 0, "H indefinite")`,
         {
           id: `mvo-global`,
           title: `Global Optimization Strategies`,
-          content: `**Random restarts** from multiple init. **Simulated annealing** stochastic acceptance. **Bayesian optimization** for expensive black-box. **Learning rate schedules** cosine, warmup. **Weight decay** L2 regularization. **Early stopping** on validation. **Ensemble** average models. For DL: SGD+ momentum+ weight decay+ batch norm+ skip connections form practical recipe. No guarantee global but empirically strong minima found.
-
-**Extended exploration — Multivariate Optimization:** Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers. The section "Global Optimization Strategies" connects to critical points, convexity, and constrained optimization preview. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directl…`,
+          content: `**Random restarts** from multiple init. **Simulated annealing** stochastic acceptance. **Bayesian optimization** for expensive black-box. **Learning rate schedules** cosine, warmup. **Weight decay** L2 regularization. **Early stopping** on validation. **Ensemble** average models. For DL: SGD+ momentum+ weight decay+ batch norm+ skip connections form practical recipe. No guarantee global but empirically strong minima found.`,
           formulas: [
             `Random restarts explore basins`,
             `BayesOpt for hyperparam black-box`,
@@ -1443,111 +971,6 @@ print("grad at origin:", 0, "H indefinite")`,
 loss=np.array([2.,1.,0.8,0.75,0.74,0.76])
 print("stop at epoch:", np.argmin(loss)+1)`,
           output: `early stop argmin`
-        },
-        {
-          id: `math-multivariate-opt-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Multivariate Optimization sits in the **math** track of the Data Science Master curriculum. Critical points, convexity, and constrained optimization preview.
-
-Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
-
-For math-multivariate-opt, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Multivariate Optimization
-meta = {"topic_id": "math-multivariate-opt", "track": "math", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-multivariate-opt math advanced`,
-          keyPoints: [
-            `Core theory of Multivariate Optimization ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `math-multivariate-opt-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Multivariate Optimization. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For math-multivariate-opt, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for math-multivariate-opt
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-multivariate-opt", "Multivariate Optimization")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-multivariate-opt Multivariate`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ]
-        },
-        {
-          id: `math-multivariate-opt-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Multivariate Optimization often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on math-multivariate-opt, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-multivariate-opt", "Multivariate Optimization")
-debug_step("section_count", 4)`,
-          output: `[math-multivariate-opt] 'Multivariate Optimization' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `math-multivariate-opt-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Multivariate Optimization shows up wherever math skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around math-multivariate-opt align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Multivariate Optimization
-skills = ["math", "advanced", "math-multivariate-opt"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, advanced, math-multivariate-opt`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Multivariate Optimization to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1568,7 +991,7 @@ print("saddle", np.linalg.eigvalsh(np.diag([1.,-1.])))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-math-05`,
       references: [
         {

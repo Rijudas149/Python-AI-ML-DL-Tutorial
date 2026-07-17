@@ -71,111 +71,6 @@ Render for debugging; \`done\` flag ends episode; \`info\` dict carries diagnost
             `Reward shaping accelerates learning but changes objective`,
             `Log episode return not only final step reward`
           ]
-        },
-        {
-          id: `rl-basics-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-MDPs, Rewards & Policies sits in the **ml** track of the Data Science Master curriculum. Formalize sequential decision making as Markov Decision Processes.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For rl-basics, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for MDPs, Rewards & Policies
-meta = {"topic_id": "rl-basics", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `rl-basics ml advanced`,
-          keyPoints: [
-            `Core theory of MDPs, Rewards & Policies ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `rl-basics-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from MDPs, Rewards & Policies. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For rl-basics, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for rl-basics
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("rl-basics", "MDPs, Rewards & Policies")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `rl-basics MDPs,`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `rl-basics-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on MDPs, Rewards & Policies often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on rl-basics, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("rl-basics", "MDPs, Rewards & Policies")
-debug_step("section_count", 4)`,
-          output: `[rl-basics] 'MDPs, Rewards & Policies' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `rl-basics-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-MDPs, Rewards & Policies shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around rl-basics align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for MDPs, Rewards & Policies
-skills = ["ml", "advanced", "rl-basics"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, rl-basics`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect MDPs, Rewards & Policies to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -192,7 +87,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-25`,
       references: [
         {
@@ -306,111 +201,6 @@ State encoding critical when applying tabular methods to raw observations.
             `Double Q-learning reduces overestimation`,
             `Monitor TD error magnitude during training`
           ]
-        },
-        {
-          id: `rl-qlearning-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Q-Learning & Bellman Updates sits in the **ml** track of the Data Science Master curriculum. Model-free temporal difference learning for optimal action-values.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For rl-qlearning, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Q-Learning & Bellman Updates
-meta = {"topic_id": "rl-qlearning", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `rl-qlearning ml advanced`,
-          keyPoints: [
-            `Core theory of Q-Learning & Bellman Updates ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `rl-qlearning-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Q-Learning & Bellman Updates. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For rl-qlearning, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for rl-qlearning
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("rl-qlearning", "Q-Learning & Bellman Updates")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `rl-qlearning Q-Learning`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `rl-qlearning-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Q-Learning & Bellman Updates often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on rl-qlearning, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("rl-qlearning", "Q-Learning & Bellman Updates")
-debug_step("section_count", 4)`,
-          output: `[rl-qlearning] 'Q-Learning & Bellman Updates' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `rl-qlearning-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Q-Learning & Bellman Updates shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around rl-qlearning align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Q-Learning & Bellman Updates
-skills = ["ml", "advanced", "rl-qlearning"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, rl-qlearning`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Q-Learning & Bellman Updates to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -427,7 +217,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 60,
+      estimatedMinutes: 45,
       module: `module-25`,
       references: [
         {
@@ -538,111 +328,6 @@ Modern baselines: Rainbow combines improvements; still largely superseded by pol
             `Offline RL from fixed datasets active research area`,
             `Safety constraints rarely enforced in vanilla DQN`
           ]
-        },
-        {
-          id: `rl-deep-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Deep Q-Networks (DQN) sits in the **ml** track of the Data Science Master curriculum. Combine Q-learning with neural networks and stabilization tricks.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For rl-deep, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Deep Q-Networks (DQN)
-meta = {"topic_id": "rl-deep", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `rl-deep ml advanced`,
-          keyPoints: [
-            `Core theory of Deep Q-Networks (DQN) ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `rl-deep-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Deep Q-Networks (DQN). Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For rl-deep, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for rl-deep
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("rl-deep", "Deep Q-Networks (DQN)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `rl-deep Deep`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `rl-deep-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Deep Q-Networks (DQN) often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on rl-deep, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("rl-deep", "Deep Q-Networks (DQN)")
-debug_step("section_count", 4)`,
-          output: `[rl-deep] 'Deep Q-Networks (DQN)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `rl-deep-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Deep Q-Networks (DQN) shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around rl-deep align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Deep Q-Networks (DQN)
-skills = ["ml", "advanced", "rl-deep"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, rl-deep`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Deep Q-Networks (DQN) to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -659,7 +344,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 60,
+      estimatedMinutes: 45,
       module: `module-25`,
       references: [
         {
@@ -770,111 +455,6 @@ Modern algorithms blend both: soft actor-critic, implicit Q-learning.
             `Hybrid methods dominate contemporary research`,
             `Choose based on action space and sample budget`
           ]
-        },
-        {
-          id: `rl-policy-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Policy Gradients Intro sits in the **ml** track of the Data Science Master curriculum. Optimize parameterized policies directly with gradient ascent on expected return.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For rl-policy, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Policy Gradients Intro
-meta = {"topic_id": "rl-policy", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `rl-policy ml advanced`,
-          keyPoints: [
-            `Core theory of Policy Gradients Intro ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `rl-policy-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Policy Gradients Intro. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For rl-policy, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for rl-policy
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("rl-policy", "Policy Gradients Intro")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `rl-policy Policy`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `rl-policy-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Policy Gradients Intro often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on rl-policy, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("rl-policy", "Policy Gradients Intro")
-debug_step("section_count", 4)`,
-          output: `[rl-policy] 'Policy Gradients Intro' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `rl-policy-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Policy Gradients Intro shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around rl-policy align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Policy Gradients Intro
-skills = ["ml", "advanced", "rl-policy"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, rl-policy`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Policy Gradients Intro to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -891,7 +471,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 60,
+      estimatedMinutes: 45,
       module: `module-25`,
       references: [
         {
@@ -1002,111 +582,6 @@ Human oversight for irreversible actions; sandbox simulators for validation.
             `Interpretability harder than supervised models`,
             `Regulatory scrutiny on autonomous decisions`
           ]
-        },
-        {
-          id: `rl-applications-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-RL Applications sits in the **ml** track of the Data Science Master curriculum. Game AI, robotics overview, and deployment considerations.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For rl-applications, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for RL Applications
-meta = {"topic_id": "rl-applications", "track": "ml", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `rl-applications ml advanced`,
-          keyPoints: [
-            `Core theory of RL Applications ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `rl-applications-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from RL Applications. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For rl-applications, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for rl-applications
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("rl-applications", "RL Applications")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `rl-applications RL`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `rl-applications-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on RL Applications often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on rl-applications, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("rl-applications", "RL Applications")
-debug_step("section_count", 4)`,
-          output: `[rl-applications] 'RL Applications' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `rl-applications-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-RL Applications shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around rl-applications align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for RL Applications
-skills = ["ml", "advanced", "rl-applications"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, advanced, rl-applications`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect RL Applications to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1123,7 +598,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-25`,
       references: [
         {

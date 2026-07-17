@@ -10,10 +10,12 @@ export type CurveShape =
   | 'sine'
   | 'flat';
 
+import type { FigureSpec } from '../utils/parseAsciiFigure';
+
 /** Structured layout: figure → formulas → flow → notes (never interleaved). */
 export type StructuredLiteral = {
   title?: string;
-  figure: string[];
+  figure?: FigureSpec;
   formulas: string[];
   pipelines: string[][];
   chips: string[];

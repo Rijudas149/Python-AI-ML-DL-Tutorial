@@ -1229,6 +1229,17 @@ body {
   top: 0.1em;
 }
 
+.lesson-prose-structured .lesson-concept-list li {
+  padding: 0.55rem 0.7rem 0.55rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(16, 185, 129, 0.05);
+  border-left: 3px solid var(--study);
+}
+
+.lesson-prose-structured .lesson-concept-list li::before {
+  display: none;
+}
+
 .lesson-inline-code .code-block {
   margin: 0.75rem 0;
 }

@@ -50,7 +50,7 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
       <section className="lesson-panel lesson-panel-explain">
         <div className="lesson-panel-label">
           <span className="lesson-panel-icon">📖</span>
-          Explanation
+          Key Concepts
         </div>
         <LessonContent content={section.content} />
       </section>

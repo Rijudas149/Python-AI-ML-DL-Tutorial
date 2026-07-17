@@ -11,13 +11,7 @@ export const module12Topics: Topic[] = [
         {
           id: `kmeans`,
           title: `K-Means Clustering`,
-          content: `Partition data into k clusters minimizing within-cluster variance. Initialize centroids, assign, update, repeat.
-
-**Why this matters for Clustering (K-Means, DBSCAN):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Clustering (K-Means, DBSCAN):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "K-Means Clustering" connects to group similar data points without labels. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Partition data into k clusters minimizing within-cluster variance. Initialize centroids, assign, update, repeat.`,
           example: `from sklearn.cluster import KMeans
 import numpy as np
 
@@ -35,13 +29,7 @@ print(np.bincount(kmeans.labels_))`,
         {
           id: `dbscan`,
           title: `DBSCAN`,
-          content: `Density-based clustering. No need to specify k. Finds arbitrary shapes. Labels noise as -1.
-
-**Why this matters for Clustering (K-Means, DBSCAN):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Clustering (K-Means, DBSCAN):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "DBSCAN" connects to group similar data points without labels. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Density-based clustering. No need to specify k. Finds arbitrary shapes. Labels noise as -1.`,
           example: `from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_moons
 
@@ -58,13 +46,7 @@ print(len(set(labels)))`,
         {
           id: `hierarchical`,
           title: `Hierarchical Clustering`,
-          content: `Agglomerative: bottom-up merging. Dendrogram visualizes hierarchy. No preset k needed.
-
-**Why this matters for Clustering (K-Means, DBSCAN):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Clustering (K-Means, DBSCAN):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Hierarchical Clustering" connects to group similar data points without labels. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Agglomerative: bottom-up merging. Dendrogram visualizes hierarchy. No preset k needed.`,
           keyPoints: [
             `Ward linkage minimizes variance increase`,
             `Dendrogram cut determines k`,
@@ -75,123 +57,12 @@ print(len(set(labels)))`,
         {
           id: `eval-cluster`,
           title: `Cluster Evaluation`,
-          content: `Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz. No ground truth needed.
-
-**Why this matters for Clustering (K-Means, DBSCAN):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Clustering (K-Means, DBSCAN):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Cluster Evaluation" connects to group similar data points without labels. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz. No ground truth needed.`,
           keyPoints: [
             `Silhouette: cohesion vs separation`,
             `Higher silhouette = better defined clusters`,
             `Elbow method for k in K-Means`,
             `Domain knowledge validates cluster meaning`
-          ]
-        },
-        {
-          id: `ml-clustering-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Clustering (K-Means, DBSCAN) sits in the **ml** track of the Data Science Master curriculum. Group similar data points without labels.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-clustering, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Clustering (K-Means, DBSCAN)
-meta = {"topic_id": "ml-clustering", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-clustering ml beginner`,
-          keyPoints: [
-            `Core theory of Clustering (K-Means, DBSCAN) ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-clustering-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Clustering (K-Means, DBSCAN). Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-clustering, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-clustering
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-clustering", "Clustering (K-Means, DBSCAN)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-clustering Clustering`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-clustering-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Clustering (K-Means, DBSCAN) often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-clustering, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-clustering", "Clustering (K-Means, DBSCAN)")
-debug_step("section_count", 4)`,
-          output: `[ml-clustering] 'Clustering (K-Means, DBSCAN)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-clustering-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Clustering (K-Means, DBSCAN) shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-clustering align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Clustering (K-Means, DBSCAN)
-skills = ["ml", "beginner", "ml-clustering"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-clustering`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Clustering (K-Means, DBSCAN) to adjacent topics in the same track`
           ]
         }
       ],
@@ -217,7 +88,7 @@ print(round(silhouette_score(X, km.labels_), 3))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-12`,
       references: [
         {
@@ -264,13 +135,7 @@ print(round(silhouette_score(X, km.labels_), 3))`,
         {
           id: `pca`,
           title: `Principal Component Analysis`,
-          content: `Find orthogonal directions of maximum variance. PCA(n_components=k) for compression and visualization.
-
-**Why this matters for Dimensionality Reduction (PCA, t-SNE):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Dimensionality Reduction (PCA, t-SNE):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Principal Component Analysis" connects to reduce feature dimensions while preserving structure. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Find orthogonal directions of maximum variance. PCA(n_components=k) for compression and visualization.`,
           example: `from sklearn.decomposition import PCA
 from sklearn.datasets import load_iris
 
@@ -288,13 +153,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
         {
           id: `tsne`,
           title: `t-SNE`,
-          content: `Non-linear dimensionality reduction for visualization. Preserves local structure. t-SNE(n_components=2, perplexity=30).
-
-**Why this matters for Dimensionality Reduction (PCA, t-SNE):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Dimensionality Reduction (PCA, t-SNE):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "t-SNE" connects to reduce feature dimensions while preserving structure. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Non-linear dimensionality reduction for visualization. Preserves local structure. t-SNE(n_components=2, perplexity=30).`,
           keyPoints: [
             `t-SNE for visualization only not preprocessing`,
             `perplexity balances local/global structure`,
@@ -305,13 +164,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
         {
           id: `lda`,
           title: `Linear Discriminant Analysis`,
-          content: `Supervised dimensionality reduction. Maximizes class separation. LDA for dimensionality reduction before classification.
-
-**Why this matters for Dimensionality Reduction (PCA, t-SNE):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Dimensionality Reduction (PCA, t-SNE):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Linear Discriminant Analysis" connects to reduce feature dimensions while preserving structure. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Supervised dimensionality reduction. Maximizes class separation. LDA for dimensionality reduction before classification.`,
           keyPoints: [
             `Uses class labels unlike PCA`,
             `Max k-1 components for k classes`,
@@ -322,123 +175,12 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
         {
           id: `autoencoder`,
           title: `Autoencoders Preview`,
-          content: `Neural network compresses input to bottleneck then reconstructs. Non-linear dimensionality reduction. Foundation for VAE.
-
-**Why this matters for Dimensionality Reduction (PCA, t-SNE):** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Dimensionality Reduction (PCA, t-SNE):** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Autoencoders Preview" connects to reduce feature dimensions while preserving structure. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Neural network compresses input to bottleneck then reconstructs. Non-linear dimensionality reduction. Foundation for VAE.`,
           keyPoints: [
             `Encoder compresses, decoder reconstructs`,
             `Bottleneck layer is reduced representation`,
             `Reconstruction loss trains the network`,
             `Used for denoising and anomaly detection`
-          ]
-        },
-        {
-          id: `ml-dimred-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Dimensionality Reduction (PCA, t-SNE) sits in the **ml** track of the Data Science Master curriculum. Reduce feature dimensions while preserving structure.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-dimred, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Dimensionality Reduction (PCA, t-SNE)
-meta = {"topic_id": "ml-dimred", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-dimred ml beginner`,
-          keyPoints: [
-            `Core theory of Dimensionality Reduction (PCA, t-SNE) ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-dimred-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Dimensionality Reduction (PCA, t-SNE). Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-dimred, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-dimred
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-dimred", "Dimensionality Reduction (PCA, t-SNE)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-dimred Dimensionality`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-dimred-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Dimensionality Reduction (PCA, t-SNE) often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-dimred, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-dimred", "Dimensionality Reduction (PCA, t-SNE)")
-debug_step("section_count", 4)`,
-          output: `[ml-dimred] 'Dimensionality Reduction (PCA, t-SNE)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-dimred-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Dimensionality Reduction (PCA, t-SNE) shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-dimred align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Dimensionality Reduction (PCA, t-SNE)
-skills = ["ml", "beginner", "ml-dimred"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-dimred`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Dimensionality Reduction (PCA, t-SNE) to adjacent topics in the same track`
           ]
         }
       ],
@@ -462,7 +204,7 @@ print(round(PCA().fit(X).explained_variance_ratio_[0], 3))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-12`,
       references: [
         {
@@ -509,13 +251,7 @@ print(round(PCA().fit(X).explained_variance_ratio_[0], 3))`,
         {
           id: `isolation`,
           title: `Isolation Forest`,
-          content: `Randomly partition data; anomalies isolated in fewer splits. IsolationForest(contamination=0.1).
-
-**Why this matters for Anomaly Detection:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Anomaly Detection:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Isolation Forest" connects to identify outliers and novel patterns in data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Randomly partition data; anomalies isolated in fewer splits. IsolationForest(contamination=0.1).`,
           example: `from sklearn.ensemble import IsolationForest
 import numpy as np
 
@@ -533,13 +269,7 @@ print(np.sum(preds == -1))`,
         {
           id: `lof`,
           title: `Local Outlier Factor`,
-          content: `Compare local density of point to neighbors. Points in sparse regions are outliers.
-
-**Why this matters for Anomaly Detection:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Anomaly Detection:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Local Outlier Factor" connects to identify outliers and novel patterns in data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Compare local density of point to neighbors. Points in sparse regions are outliers.`,
           keyPoints: [
             `LOF score near 1 for normal points`,
             `High LOF = outlier relative to neighbors`,
@@ -550,13 +280,7 @@ print(np.sum(preds == -1))`,
         {
           id: `oneclass`,
           title: `One-Class SVM`,
-          content: `Learn boundary around normal data. OneClassSVM(nu=0.1). Useful when anomalies rare in training.
-
-**Why this matters for Anomaly Detection:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Anomaly Detection:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "One-Class SVM" connects to identify outliers and novel patterns in data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Learn boundary around normal data. OneClassSVM(nu=0.1). Useful when anomalies rare in training.`,
           keyPoints: [
             `Train only on normal data`,
             `nu controls upper bound on outliers`,
@@ -567,123 +291,12 @@ print(np.sum(preds == -1))`,
         {
           id: `applications`,
           title: `Anomaly Detection Applications`,
-          content: `Fraud detection, network intrusion, manufacturing defects, system monitoring. Often unsupervised or semi-supervised.
-
-**Why this matters for Anomaly Detection:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Anomaly Detection:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Anomaly Detection Applications" connects to identify outliers and novel patterns in data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Fraud detection, network intrusion, manufacturing defects, system monitoring. Often unsupervised or semi-supervised.`,
           keyPoints: [
             `Anomalies often rare — class imbalance extreme`,
             `Combine domain rules with ML`,
             `Threshold tuning critical for precision/recall`,
             `Concept drift requires model retraining`
-          ]
-        },
-        {
-          id: `ml-anomaly-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Anomaly Detection sits in the **ml** track of the Data Science Master curriculum. Identify outliers and novel patterns in data.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-anomaly, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Anomaly Detection
-meta = {"topic_id": "ml-anomaly", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-anomaly ml beginner`,
-          keyPoints: [
-            `Core theory of Anomaly Detection ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-anomaly-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Anomaly Detection. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-anomaly, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-anomaly
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-anomaly", "Anomaly Detection")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-anomaly Anomaly`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-anomaly-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Anomaly Detection often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-anomaly, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-anomaly", "Anomaly Detection")
-debug_step("section_count", 4)`,
-          output: `[ml-anomaly] 'Anomaly Detection' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-anomaly-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Anomaly Detection shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-anomaly align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Anomaly Detection
-skills = ["ml", "beginner", "ml-anomaly"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-anomaly`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Anomaly Detection to adjacent topics in the same track`
           ]
         }
       ],
@@ -709,7 +322,7 @@ print(np.sum(p == -1))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-12`,
       references: [
         {
@@ -756,13 +369,7 @@ print(np.sum(p == -1))`,
         {
           id: `apriori`,
           title: `Apriori Algorithm`,
-          content: `Find frequent itemsets meeting minimum support threshold. Generate rules with confidence and lift metrics.
-
-**Why this matters for Association Rules:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Association Rules:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Apriori Algorithm" connects to find frequent itemsets and association rules in transactional data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Find frequent itemsets meeting minimum support threshold. Generate rules with confidence and lift metrics.`,
           keyPoints: [
             `Support: frequency of itemset in transactions`,
             `Confidence: P(B|A) for rule A→B`,
@@ -773,13 +380,7 @@ print(np.sum(p == -1))`,
         {
           id: `metrics`,
           title: `Support, Confidence, Lift`,
-          content: `Support(A→B) = P(A∪B). Confidence = P(B|A). Lift = confidence/P(B). Lift=1 means independent.
-
-**Why this matters for Association Rules:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Association Rules:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Support, Confidence, Lift" connects to find frequent itemsets and association rules in transactional data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Support(A→B) = P(A∪B). Confidence = P(B|A). Lift = confidence/P(B). Lift=1 means independent.`,
           example: `# Example: 100 transactions
 # {bread, milk}: 20 transactions -> support = 0.20
 # bread alone: 40, milk given bread: 15
@@ -795,13 +396,7 @@ print("lift = confidence / P(milk)")`,
         {
           id: `mlxtend`,
           title: `mlxtend Library`,
-          content: `from mlxtend.frequent_patterns import apriori, association_rules. Convert transactions to one-hot encoded DataFrame first.
-
-**Why this matters for Association Rules:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Association Rules:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "mlxtend Library" connects to find frequent itemsets and association rules in transactional data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `from mlxtend.frequent_patterns import apriori, association_rules. Convert transactions to one-hot encoded DataFrame first.`,
           keyPoints: [
             `One-hot encode transactions for apriori`,
             `min_support filters frequent itemsets`,
@@ -812,123 +407,12 @@ print("lift = confidence / P(milk)")`,
         {
           id: `applications`,
           title: `Recommendation & Retail`,
-          content: `Product recommendations, shelf layout, cross-selling. Collaborative filtering shares mathematical foundations.
-
-**Why this matters for Association Rules:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Association Rules:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Recommendation & Retail" connects to find frequent itemsets and association rules in transactional data. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Product recommendations, shelf layout, cross-selling. Collaborative filtering shares mathematical foundations.`,
           keyPoints: [
             `Amazon "customers also bought" uses association`,
             `Rules complement collaborative filtering`,
             `Temporal patterns need sequential rule mining`,
             `Sparsity challenge in large catalogs`
-          ]
-        },
-        {
-          id: `ml-association-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Association Rules sits in the **ml** track of the Data Science Master curriculum. Find frequent itemsets and association rules in transactional data.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-association, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Association Rules
-meta = {"topic_id": "ml-association", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-association ml beginner`,
-          keyPoints: [
-            `Core theory of Association Rules ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-association-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Association Rules. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-association, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-association
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-association", "Association Rules")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-association Association`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-association-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Association Rules often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-association, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-association", "Association Rules")
-debug_step("section_count", 4)`,
-          output: `[ml-association] 'Association Rules' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-association-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Association Rules shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-association align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Association Rules
-skills = ["ml", "beginner", "ml-association"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-association`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Association Rules to adjacent topics in the same track`
           ]
         }
       ],
@@ -947,7 +431,7 @@ print(support)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-12`,
       references: [
         {
@@ -994,13 +478,7 @@ print(support)`,
         {
           id: `gmm`,
           title: `GMM Fundamentals`,
-          content: `Mixture of k Gaussian distributions. Each point has probability of belonging to each cluster. EM algorithm for fitting.
-
-**Why this matters for Gaussian Mixture Models:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Gaussian Mixture Models:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "GMM Fundamentals" connects to probabilistic clustering with soft assignments. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Mixture of k Gaussian distributions. Each point has probability of belonging to each cluster. EM algorithm for fitting.`,
           example: `from sklearn.mixture import GaussianMixture
 import numpy as np
 
@@ -1017,13 +495,7 @@ print(gmm.predict(X[:5]))`,
         {
           id: `em`,
           title: `Expectation-Maximization`,
-          content: `E-step: compute responsibilities (posterior probabilities). M-step: update parameters maximizing expected log-likelihood.
-
-**Why this matters for Gaussian Mixture Models:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Gaussian Mixture Models:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Expectation-Maximization" connects to probabilistic clustering with soft assignments. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `E-step: compute responsibilities (posterior probabilities). M-step: update parameters maximizing expected log-likelihood.`,
           pseudoCode: `REPEAT until convergence:
     E-step: compute P(cluster|point) for each point
     M-step: update means, covariances, weights`,
@@ -1037,13 +509,7 @@ print(gmm.predict(X[:5]))`,
         {
           id: `vs-kmeans`,
           title: `GMM vs K-Means`,
-          content: `K-Means is special case of GMM with equal spherical covariances. GMM more flexible but more parameters.
-
-**Why this matters for Gaussian Mixture Models:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Gaussian Mixture Models:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "GMM vs K-Means" connects to probabilistic clustering with soft assignments. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `K-Means is special case of GMM with equal spherical covariances. GMM more flexible but more parameters.`,
           keyPoints: [
             `K-Means: hard assignments, spherical clusters`,
             `GMM: soft assignments, elliptical clusters`,
@@ -1054,123 +520,12 @@ print(gmm.predict(X[:5]))`,
         {
           id: `applications-gmm`,
           title: `Applications`,
-          content: `Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.
-
-**Why this matters for Gaussian Mixture Models:** These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Gaussian Mixture Models:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems. The section "Applications" connects to probabilistic clustering with soft assignments. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.…`,
+          content: `Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.`,
           keyPoints: [
             `score_samples gives log-likelihood per point`,
             `Low likelihood points are anomalies`,
             `Used in acoustic modeling for speech`,
             `Bayesian GMM prevents overfitting`
-          ]
-        },
-        {
-          id: `ml-gmm-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Gaussian Mixture Models sits in the **ml** track of the Data Science Master curriculum. Probabilistic clustering with soft assignments.
-
-Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For ml-gmm, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Gaussian Mixture Models
-meta = {"topic_id": "ml-gmm", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-gmm ml beginner`,
-          keyPoints: [
-            `Core theory of Gaussian Mixture Models ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ml-gmm-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Gaussian Mixture Models. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ml-gmm, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ml-gmm
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-gmm", "Gaussian Mixture Models")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-gmm Gaussian`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ]
-        },
-        {
-          id: `ml-gmm-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Gaussian Mixture Models often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on ml-gmm, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-gmm", "Gaussian Mixture Models")
-debug_step("section_count", 4)`,
-          output: `[ml-gmm] 'Gaussian Mixture Models' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ml-gmm-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Gaussian Mixture Models shows up wherever ml skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around ml-gmm align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Gaussian Mixture Models
-skills = ["ml", "beginner", "ml-gmm"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-gmm`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Gaussian Mixture Models to adjacent topics in the same track`
           ]
         }
       ],
@@ -1197,7 +552,7 @@ print(2 if bic2 < bic3 else 3)`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-12`,
       references: [
         {

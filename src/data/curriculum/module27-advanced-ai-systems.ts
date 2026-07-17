@@ -72,111 +72,6 @@ Version embedding model in index metadata for migrations.
             `Access control on metadata fields`,
             `Cost scales with dimensions × vectors`
           ]
-        },
-        {
-          id: `ai-vectors-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Embeddings & Vector Databases sits in the **ai** track of the Data Science Master curriculum. Semantic search with embeddings and ANN indexes (FAISS, Chroma).
-
-LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
-
-Embeddings map discrete tokens or documents into dense vectors where semantic similarity approximates cosine distance. Approximate nearest neighbor (ANN) indexes trade recall for speed at billion scale.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Embeddings & Vector Databases
-meta = {"topic_id": "ai-vectors", "track": "ai", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ai-vectors ai advanced`,
-          keyPoints: [
-            `Core theory of Embeddings & Vector Databases ties to the ai track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ai-vectors-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Embeddings & Vector Databases. Ground responses with RAG, enforce JSON schemas for tool calls, red-team prompts before launch, log traces for audit, and gate high-risk actions with human approval.
-
-Chunk documents 256–512 tokens with overlap; hybrid search combines BM25 with dense retrieval; re-rank top-k with cross-encoders.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ai-vectors
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ai-vectors", "Embeddings & Vector Databases")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ai-vectors Embeddings`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ai ecosystem conventions`
-          ]
-        },
-        {
-          id: `ai-vectors-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Embeddings & Vector Databases often hit predictable walls. Prompt injection, hallucinated citations, unbounded agent loops, secret leakage via training data, and fairness gaps across demographics require proactive testing.
-
-Stale embeddings after model updates, wrong distance metric (cosine vs L2), and chunk boundaries splitting critical context.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ai-vectors", "Embeddings & Vector Databases")
-debug_step("section_count", 4)`,
-          output: `[ai-vectors] 'Embeddings & Vector Databases' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ai-vectors-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Embeddings & Vector Databases shows up wherever ai skills meet business constraints. Enterprises deploy copilots, search augmentation, and workflow automation with vector databases, observability stacks, and governance aligned to regulations like the EU AI Act.
-
-RAG stacks use Pinecone, Weaviate, FAISS, or Chroma behind enterprise search and support copilots.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Embeddings & Vector Databases
-skills = ["ai", "advanced", "ai-vectors"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ai, advanced, ai-vectors`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Embeddings & Vector Databases to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -193,7 +88,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-27`,
       references: [
         {
@@ -304,111 +199,6 @@ Accessibility: alt-text generation must be verified before publishing.
             `Watermark detectors imperfect`,
             `Human review for high-stakes descriptions`
           ]
-        },
-        {
-          id: `ai-multimodal-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Multimodal Models (CLIP & VLM) sits in the **ai** track of the Data Science Master curriculum. Vision-language models connecting images and text in shared embedding space.
-
-LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
-
-For ai-multimodal, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Multimodal Models (CLIP & VLM)
-meta = {"topic_id": "ai-multimodal", "track": "ai", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ai-multimodal ai advanced`,
-          keyPoints: [
-            `Core theory of Multimodal Models (CLIP & VLM) ties to the ai track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ai-multimodal-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Multimodal Models (CLIP & VLM). Ground responses with RAG, enforce JSON schemas for tool calls, red-team prompts before launch, log traces for audit, and gate high-risk actions with human approval.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ai-multimodal, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ai-multimodal
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ai-multimodal", "Multimodal Models (CLIP & VLM)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ai-multimodal Multimodal`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ai ecosystem conventions`
-          ]
-        },
-        {
-          id: `ai-multimodal-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Multimodal Models (CLIP & VLM) often hit predictable walls. Prompt injection, hallucinated citations, unbounded agent loops, secret leakage via training data, and fairness gaps across demographics require proactive testing.
-
-When stuck on ai-multimodal, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ai-multimodal", "Multimodal Models (CLIP & VLM)")
-debug_step("section_count", 4)`,
-          output: `[ai-multimodal] 'Multimodal Models (CLIP & VLM)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ai-multimodal-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Multimodal Models (CLIP & VLM) shows up wherever ai skills meet business constraints. Enterprises deploy copilots, search augmentation, and workflow automation with vector databases, observability stacks, and governance aligned to regulations like the EU AI Act.
-
-Teams shipping features around ai-multimodal align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Multimodal Models (CLIP & VLM)
-skills = ["ai", "advanced", "ai-multimodal"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ai, advanced, ai-multimodal`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Multimodal Models (CLIP & VLM) to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -425,7 +215,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-27`,
       references: [
         {
@@ -536,111 +326,6 @@ Compliance: call recording consent, biometric voice data regulations.
             `Log retention policies for transcripts`,
             `Accent fairness evaluation across demographics`
           ]
-        },
-        {
-          id: `ai-speech-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Speech AI (Whisper & TTS) sits in the **ai** track of the Data Science Master curriculum. Automatic speech recognition and text-to-speech pipelines.
-
-LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
-
-For ai-speech, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Speech AI (Whisper & TTS)
-meta = {"topic_id": "ai-speech", "track": "ai", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ai-speech ai advanced`,
-          keyPoints: [
-            `Core theory of Speech AI (Whisper & TTS) ties to the ai track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ai-speech-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Speech AI (Whisper & TTS). Ground responses with RAG, enforce JSON schemas for tool calls, red-team prompts before launch, log traces for audit, and gate high-risk actions with human approval.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ai-speech, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ai-speech
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ai-speech", "Speech AI (Whisper & TTS)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ai-speech Speech`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ai ecosystem conventions`
-          ]
-        },
-        {
-          id: `ai-speech-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Speech AI (Whisper & TTS) often hit predictable walls. Prompt injection, hallucinated citations, unbounded agent loops, secret leakage via training data, and fairness gaps across demographics require proactive testing.
-
-When stuck on ai-speech, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ai-speech", "Speech AI (Whisper & TTS)")
-debug_step("section_count", 4)`,
-          output: `[ai-speech] 'Speech AI (Whisper & TTS)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ai-speech-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Speech AI (Whisper & TTS) shows up wherever ai skills meet business constraints. Enterprises deploy copilots, search augmentation, and workflow automation with vector databases, observability stacks, and governance aligned to regulations like the EU AI Act.
-
-Teams shipping features around ai-speech align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Speech AI (Whisper & TTS)
-skills = ["ai", "advanced", "ai-speech"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ai, advanced, ai-speech`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Speech AI (Whisper & TTS) to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -657,7 +342,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 50,
+      estimatedMinutes: 35,
       module: `module-27`,
       references: [
         {
@@ -773,111 +458,6 @@ Automated red teaming with attacker LLMs scales coverage; human red team for sub
             `Calibration eval for classification outputs`,
             `Cost/latency metrics alongside quality`
           ]
-        },
-        {
-          id: `ai-eval-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-AI Benchmarks & Red Teaming sits in the **ai** track of the Data Science Master curriculum. MMLU, HumanEval, and systematic adversarial testing.
-
-LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
-
-For ai-eval, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for AI Benchmarks & Red Teaming
-meta = {"topic_id": "ai-eval", "track": "ai", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ai-eval ai advanced`,
-          keyPoints: [
-            `Core theory of AI Benchmarks & Red Teaming ties to the ai track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ai-eval-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from AI Benchmarks & Red Teaming. Ground responses with RAG, enforce JSON schemas for tool calls, red-team prompts before launch, log traces for audit, and gate high-risk actions with human approval.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ai-eval, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ai-eval
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ai-eval", "AI Benchmarks & Red Teaming")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ai-eval AI`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ai ecosystem conventions`
-          ]
-        },
-        {
-          id: `ai-eval-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on AI Benchmarks & Red Teaming often hit predictable walls. Prompt injection, hallucinated citations, unbounded agent loops, secret leakage via training data, and fairness gaps across demographics require proactive testing.
-
-When stuck on ai-eval, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ai-eval", "AI Benchmarks & Red Teaming")
-debug_step("section_count", 4)`,
-          output: `[ai-eval] 'AI Benchmarks & Red Teaming' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ai-eval-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-AI Benchmarks & Red Teaming shows up wherever ai skills meet business constraints. Enterprises deploy copilots, search augmentation, and workflow automation with vector databases, observability stacks, and governance aligned to regulations like the EU AI Act.
-
-Teams shipping features around ai-eval align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for AI Benchmarks & Red Teaming
-skills = ["ai", "advanced", "ai-eval"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ai, advanced, ai-eval`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect AI Benchmarks & Red Teaming to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -894,7 +474,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-27`,
       references: [
         {
@@ -1005,111 +585,6 @@ Transparency: system cards document limitations and intended use boundaries.
             `Third-party audits for high-risk deployments`,
             `User education on AI limitations`
           ]
-        },
-        {
-          id: `ai-safety-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Alignment, Jailbreaks & Guardrails sits in the **ai** track of the Data Science Master curriculum. Mitigate harmful outputs and build responsible AI systems.
-
-LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
-
-For ai-safety, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (advanced):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Alignment, Jailbreaks & Guardrails
-meta = {"topic_id": "ai-safety", "track": "ai", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ai-safety ai advanced`,
-          keyPoints: [
-            `Core theory of Alignment, Jailbreaks & Guardrails ties to the ai track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `ai-safety-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Alignment, Jailbreaks & Guardrails. Ground responses with RAG, enforce JSON schemas for tool calls, red-team prompts before launch, log traces for audit, and gate high-risk actions with human approval.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ai-safety, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for ai-safety
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ai-safety", "Alignment, Jailbreaks & Guardrails")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ai-safety Alignment,`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ai ecosystem conventions`
-          ]
-        },
-        {
-          id: `ai-safety-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Alignment, Jailbreaks & Guardrails often hit predictable walls. Prompt injection, hallucinated citations, unbounded agent loops, secret leakage via training data, and fairness gaps across demographics require proactive testing.
-
-When stuck on ai-safety, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ai-safety", "Alignment, Jailbreaks & Guardrails")
-debug_step("section_count", 4)`,
-          output: `[ai-safety] 'Alignment, Jailbreaks & Guardrails' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `ai-safety-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Alignment, Jailbreaks & Guardrails shows up wherever ai skills meet business constraints. Enterprises deploy copilots, search augmentation, and workflow automation with vector databases, observability stacks, and governance aligned to regulations like the EU AI Act.
-
-Teams shipping features around ai-safety align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Alignment, Jailbreaks & Guardrails
-skills = ["ai", "advanced", "ai-safety"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ai, advanced, ai-safety`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Alignment, Jailbreaks & Guardrails to adjacent topics in the same track`
-          ]
         }
       ],
       exercises: [
@@ -1126,7 +601,7 @@ print("Built project applying:", ", ".join(skills))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 55,
+      estimatedMinutes: 40,
       module: `module-27`,
       references: [
         {

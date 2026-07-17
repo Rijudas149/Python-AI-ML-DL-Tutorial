@@ -13,13 +13,7 @@ export const module02Topics: Topic[] = [
           title: `if Statements`,
           content: `The \`if\` statement executes a block when its condition is **truthy**. Python treats empty collections, zero, None, and empty strings as falsy.
 
-Indentation (4 spaces) defines blocks — no braces required.
-
-**Why this matters for Conditionals (if/elif/else):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Conditionals (if/elif/else):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "if Statements" connects to branch execution based on boolean conditions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+Indentation (4 spaces) defines blocks — no braces required.`,
           example: `score = 85
 if score >= 60:
     print("Pass")
@@ -36,13 +30,7 @@ else:
         {
           id: `elif`,
           title: `elif Chains`,
-          content: `Chain conditions with \`elif\` (else-if). Only the first true branch executes. Order matters — put specific conditions first.
-
-**Why this matters for Conditionals (if/elif/else):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Conditionals (if/elif/else):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "elif Chains" connects to branch execution based on boolean conditions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Chain conditions with \`elif\` (else-if). Only the first true branch executes. Order matters — put specific conditions first.`,
           example: `grade = 72
 if grade >= 90:
     letter = "A"
@@ -64,13 +52,7 @@ print(letter)`,
         {
           id: `ternary`,
           title: `Ternary & Match-Case`,
-          content: `Ternary: \`x if condition else y\`. Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.
-
-**Why this matters for Conditionals (if/elif/else):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Conditionals (if/elif/else):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Ternary & Match-Case" connects to branch execution based on boolean conditions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Ternary: \`x if condition else y\`. Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.`,
           example: `n = 4
 parity = "even" if n % 2 == 0 else "odd"
 
@@ -90,13 +72,7 @@ match parity:
         {
           id: `guard`,
           title: `Guard Clauses`,
-          content: `Return early with **guard clauses** instead of deep nesting. Improves readability in validation logic.
-
-**Why this matters for Conditionals (if/elif/else):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Conditionals (if/elif/else):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Guard Clauses" connects to branch execution based on boolean conditions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Return early with **guard clauses** instead of deep nesting. Improves readability in validation logic.`,
           pseudoCode: `FUNCTION process(data):
     IF data is None: RETURN
     IF not valid(data): RETURN
@@ -112,111 +88,6 @@ match parity:
             `Validate inputs at function start`,
             `Flat code is easier to read`,
             `Guard clauses are a best practice`
-          ]
-        },
-        {
-          id: `py-conditionals-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Conditionals (if/elif/else) sits in the **python** track of the Data Science Master curriculum. Branch execution based on boolean conditions.
-
-Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For py-conditionals, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Conditionals (if/elif/else)
-meta = {"topic_id": "py-conditionals", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-conditionals python beginner`,
-          keyPoints: [
-            `Core theory of Conditionals (if/elif/else) ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `py-conditionals-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Conditionals (if/elif/else). Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-conditionals, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for py-conditionals
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-conditionals", "Conditionals (if/elif/else)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-conditionals Conditionals`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ]
-        },
-        {
-          id: `py-conditionals-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Conditionals (if/elif/else) often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on py-conditionals, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-conditionals", "Conditionals (if/elif/else)")
-debug_step("section_count", 4)`,
-          output: `[py-conditionals] 'Conditionals (if/elif/else)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `py-conditionals-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Conditionals (if/elif/else) shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around py-conditionals align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Conditionals (if/elif/else)
-skills = ["python", "beginner", "py-conditionals"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-conditionals`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Conditionals (if/elif/else) to adjacent topics in the same track`
           ]
         }
       ],
@@ -242,7 +113,7 @@ print(m)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       prerequisites: [
         `py-operators`
       ],
@@ -292,13 +163,7 @@ print(m)`,
         {
           id: `for-loop`,
           title: `for Loops`,
-          content: `\`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges. Use \`range(n)\` for counting loops.
-
-**Why this matters for Loops (for/while):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Loops (for/while):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "for Loops" connects to iterate over sequences and repeat actions with for and while loops. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `\`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges. Use \`range(n)\` for counting loops.`,
           example: `total = 0
 for i in range(1, 6):
     total += i
@@ -314,13 +179,7 @@ print(total)`,
         {
           id: `while-loop`,
           title: `while Loops`,
-          content: `\`while condition:\` repeats until condition is falsy. Ensure the loop variable changes to avoid infinite loops.
-
-**Why this matters for Loops (for/while):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Loops (for/while):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "while Loops" connects to iterate over sequences and repeat actions with for and while loops. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `\`while condition:\` repeats until condition is falsy. Ensure the loop variable changes to avoid infinite loops.`,
           example: `n, count = 10, 0
 while n > 1:
     n //= 2
@@ -337,13 +196,7 @@ print(f"Divided {count} times")`,
         {
           id: `loop-else`,
           title: `else, break, continue`,
-          content: `Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.
-
-**Why this matters for Loops (for/while):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Loops (for/while):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "else, break, continue" connects to iterate over sequences and repeat actions with for and while loops. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.`,
           example: `for n in [2, 4, 6, 7, 8]:
     if n % 2 != 0:
         print(f"Found odd: {n}")
@@ -361,13 +214,7 @@ else:
         {
           id: `nested`,
           title: `Nested Loops & zip`,
-          content: `Nest loops for 2D iteration. Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.
-
-**Why this matters for Loops (for/while):** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Loops (for/while):** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Nested Loops & zip" connects to iterate over sequences and repeat actions with for and while loops. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Nest loops for 2D iteration. Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.`,
           example: `names = ["Alice", "Bob"]
 scores = [95, 87]
 for name, score in zip(names, scores):
@@ -379,111 +226,6 @@ Bob: 87`,
             `Nested loops can be O(n²) — watch performance`,
             `itertools.product for Cartesian products`,
             `List comprehensions often replace simple nested loops`
-          ]
-        },
-        {
-          id: `py-loops-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Loops (for/while) sits in the **python** track of the Data Science Master curriculum. Iterate over sequences and repeat actions with for and while loops.
-
-Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For py-loops, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Loops (for/while)
-meta = {"topic_id": "py-loops", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-loops python beginner`,
-          keyPoints: [
-            `Core theory of Loops (for/while) ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `py-loops-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Loops (for/while). Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-loops, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for py-loops
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-loops", "Loops (for/while)")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-loops Loops`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ]
-        },
-        {
-          id: `py-loops-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Loops (for/while) often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on py-loops, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-loops", "Loops (for/while)")
-debug_step("section_count", 4)`,
-          output: `[py-loops] 'Loops (for/while)' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `py-loops-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Loops (for/while) shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around py-loops align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Loops (for/while)
-skills = ["python", "beginner", "py-loops"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-loops`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Loops (for/while) to adjacent topics in the same track`
           ]
         }
       ],
@@ -508,7 +250,7 @@ print(total)`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-02`,
       references: [
         {
@@ -555,13 +297,7 @@ print(total)`,
         {
           id: `def-basic`,
           title: `Defining Functions`,
-          content: `Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`. **Docstrings** document behavior.
-
-**Why this matters for Functions & Parameters:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Functions & Parameters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Defining Functions" connects to define reusable blocks with def, parameters, return values, and docstrings. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`. **Docstrings** document behavior.`,
           example: `def area(radius):
     """Calculate circle area."""
     return 3.14159 * radius ** 2
@@ -578,13 +314,7 @@ print(area(5))`,
         {
           id: `params`,
           title: `Parameter Types`,
-          content: `Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict). Order: positional, defaults, *args, keyword-only, **kwargs.
-
-**Why this matters for Functions & Parameters:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Functions & Parameters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Parameter Types" connects to define reusable blocks with def, parameters, return values, and docstrings. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict). Order: positional, defaults, *args, keyword-only, **kwargs.`,
           example: `def greet(name, greeting="Hello", *tags, **meta):
     print(greeting, name, tags, meta)
 
@@ -600,13 +330,7 @@ greet("Alice", "Hi", "admin", role="dev")`,
         {
           id: `unpack`,
           title: `Unpacking Arguments`,
-          content: `Unpack iterables with \`*\`: \`func(*args)\`. Unpack dicts with \`**\`: \`func(**kwargs)\`.
-
-**Why this matters for Functions & Parameters:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Functions & Parameters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Unpacking Arguments" connects to define reusable blocks with def, parameters, return values, and docstrings. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Unpack iterables with \`*\`: \`func(*args)\`. Unpack dicts with \`**\`: \`func(**kwargs)\`.`,
           example: `def add(a, b, c):
     return a + b + c
 
@@ -623,123 +347,12 @@ print(add(*nums))`,
         {
           id: `pure`,
           title: `Pure Functions & Side Effects`,
-          content: `Pure functions: same input → same output, no side effects. Prefer pure functions for testability. Side effects: I/O, mutation, global state.
-
-**Why this matters for Functions & Parameters:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Functions & Parameters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Pure Functions & Side Effects" connects to define reusable blocks with def, parameters, return values, and docstrings. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Pure functions: same input → same output, no side effects. Prefer pure functions for testability. Side effects: I/O, mutation, global state.`,
           keyPoints: [
             `Pure functions are easier to test and reason about`,
             `Separate computation from I/O`,
             `Avoid global mutable state`,
             `Use return values instead of printing inside logic`
-          ]
-        },
-        {
-          id: `py-functions-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Functions & Parameters sits in the **python** track of the Data Science Master curriculum. Define reusable blocks with def, parameters, return values, and docstrings.
-
-Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For py-functions, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Functions & Parameters
-meta = {"topic_id": "py-functions", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-functions python beginner`,
-          keyPoints: [
-            `Core theory of Functions & Parameters ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `py-functions-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Functions & Parameters. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-functions, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for py-functions
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-functions", "Functions & Parameters")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-functions Functions`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ]
-        },
-        {
-          id: `py-functions-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Functions & Parameters often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on py-functions, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-functions", "Functions & Parameters")
-debug_step("section_count", 4)`,
-          output: `[py-functions] 'Functions & Parameters' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `py-functions-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Functions & Parameters shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around py-functions align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Functions & Parameters
-skills = ["python", "beginner", "py-functions"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-functions`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Functions & Parameters to adjacent topics in the same track`
           ]
         }
       ],
@@ -770,7 +383,7 @@ print(factorial(5))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-02`,
       references: [
         {
@@ -817,13 +430,7 @@ print(factorial(5))`,
         {
           id: `legb`,
           title: `LEGB Scope Rule`,
-          content: `Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in. Use \`global\` and \`nonlocal\` to modify outer bindings.
-
-**Why this matters for Scope, Closures & Lambda:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Scope, Closures & Lambda:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "LEGB Scope Rule" connects to legb scope rule, closures, and anonymous functions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in. Use \`global\` and \`nonlocal\` to modify outer bindings.`,
           example: `x = "global"
 
 def outer():
@@ -846,13 +453,7 @@ print(outer())`,
         {
           id: `closures`,
           title: `Closures`,
-          content: `A **closure** captures variables from enclosing scope. Enables factory functions and decorators.
-
-**Why this matters for Scope, Closures & Lambda:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Scope, Closures & Lambda:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Closures" connects to legb scope rule, closures, and anonymous functions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `A **closure** captures variables from enclosing scope. Enables factory functions and decorators.`,
           example: `def make_multiplier(n):
     def multiply(x):
         return x * n
@@ -871,13 +472,7 @@ print(times3(7))`,
         {
           id: `lambda`,
           title: `Lambda Functions`,
-          content: `\`lambda args: expression\` creates anonymous one-line functions. Use for short callbacks; prefer def for anything complex.
-
-**Why this matters for Scope, Closures & Lambda:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Scope, Closures & Lambda:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Lambda Functions" connects to legb scope rule, closures, and anonymous functions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `\`lambda args: expression\` creates anonymous one-line functions. Use for short callbacks; prefer def for anything complex.`,
           example: `pairs = [(3, "c"), (1, "a"), (2, "b")]
 sorted_pairs = sorted(pairs, key=lambda x: x[0])
 print(sorted_pairs)`,
@@ -892,13 +487,7 @@ print(sorted_pairs)`,
         {
           id: `higher`,
           title: `Higher-Order Functions`,
-          content: `Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`. Functional style complements loops.
-
-**Why this matters for Scope, Closures & Lambda:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Scope, Closures & Lambda:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Higher-Order Functions" connects to legb scope rule, closures, and anonymous functions. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`. Functional style complements loops.`,
           example: `nums = [1, 2, 3, 4, 5]
 evens = list(filter(lambda x: x % 2 == 0, nums))
 squares = list(map(lambda x: x**2, evens))
@@ -909,111 +498,6 @@ print(squares)`,
             `List comprehensions often replace map/filter`,
             `Higher-order functions enable composition`,
             `functools.reduce for folding`
-          ]
-        },
-        {
-          id: `py-scope-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Scope, Closures & Lambda sits in the **python** track of the Data Science Master curriculum. LEGB scope rule, closures, and anonymous functions.
-
-Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For py-scope, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Scope, Closures & Lambda
-meta = {"topic_id": "py-scope", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-scope python beginner`,
-          keyPoints: [
-            `Core theory of Scope, Closures & Lambda ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `py-scope-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Scope, Closures & Lambda. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-scope, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for py-scope
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-scope", "Scope, Closures & Lambda")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-scope Scope,`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ]
-        },
-        {
-          id: `py-scope-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Scope, Closures & Lambda often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on py-scope, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-scope", "Scope, Closures & Lambda")
-debug_step("section_count", 4)`,
-          output: `[py-scope] 'Scope, Closures & Lambda' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `py-scope-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Scope, Closures & Lambda shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around py-scope align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Scope, Closures & Lambda
-skills = ["python", "beginner", "py-scope"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-scope`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Scope, Closures & Lambda to adjacent topics in the same track`
           ]
         }
       ],
@@ -1036,7 +520,7 @@ print(sorted(words, key=lambda w: len(w)))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-02`,
       references: [
         {
@@ -1083,13 +567,7 @@ print(sorted(words, key=lambda w: len(w)))`,
         {
           id: `list-comp`,
           title: `List Comprehensions`,
-          content: `Syntax: \`[expr for item in iterable if condition]\`. Concise, readable, and often faster than equivalent loops.
-
-**Why this matters for Comprehensions & Iterators:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Comprehensions & Iterators:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "List Comprehensions" connects to list/dict/set comprehensions and the iterator protocol. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Syntax: \`[expr for item in iterable if condition]\`. Concise, readable, and often faster than equivalent loops.`,
           example: `squares = [x**2 for x in range(10) if x % 2 == 0]
 print(squares)`,
           output: `[0, 4, 16, 36, 64]`,
@@ -1103,13 +581,7 @@ print(squares)`,
         {
           id: `dict-set-comp`,
           title: `Dict & Set Comprehensions`,
-          content: `Dict: \`{k: v for ...}\`. Set: \`{expr for ...}\`. Powerful for building lookup tables.
-
-**Why this matters for Comprehensions & Iterators:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Comprehensions & Iterators:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Dict & Set Comprehensions" connects to list/dict/set comprehensions and the iterator protocol. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Dict: \`{k: v for ...}\`. Set: \`{expr for ...}\`. Powerful for building lookup tables.`,
           example: `words = ["apple", "banana", "cherry"]
 lengths = {w: len(w) for w in words}
 unique_lens = {len(w) for w in words}
@@ -1125,13 +597,7 @@ print(lengths, unique_lens)`,
         {
           id: `generators`,
           title: `Generator Expressions`,
-          content: `\`(expr for x in iter)\` creates a lazy generator. Memory-efficient for large datasets — values computed on demand.
-
-**Why this matters for Comprehensions & Iterators:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Comprehensions & Iterators:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Generator Expressions" connects to list/dict/set comprehensions and the iterator protocol. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `\`(expr for x in iter)\` creates a lazy generator. Memory-efficient for large datasets — values computed on demand.`,
           example: `gen = (x**2 for x in range(1000000))
 print(next(gen), next(gen), next(gen))`,
           output: `0 1 4`,
@@ -1145,13 +611,7 @@ print(next(gen), next(gen), next(gen))`,
         {
           id: `iterators`,
           title: `Iterator Protocol`,
-          content: `Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.
-
-**Why this matters for Comprehensions & Iterators:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
-
-**Extended exploration — Comprehensions & Iterators:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Iterator Protocol" connects to list/dict/set comprehensions and the iterator protocol. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
-
-**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
+          content: `Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.`,
           example: `it = iter([10, 20, 30])
 print(next(it), next(it))`,
           output: `10 20`,
@@ -1160,111 +620,6 @@ print(next(it), next(it))`,
             `for loops use iterator protocol internally`,
             `Custom classes can implement __iter__/__next__`,
             `itertools module provides rich iterators`
-          ]
-        },
-        {
-          id: `py-comprehensions-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `## Deep Theory & Concepts
-
-Comprehensions & Iterators sits in the **python** track of the Data Science Master curriculum. List/dict/set comprehensions and the iterator protocol.
-
-Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For py-comprehensions, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
-          example: `# Concept check for Comprehensions & Iterators
-meta = {"topic_id": "py-comprehensions", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-comprehensions python beginner`,
-          keyPoints: [
-            `Core theory of Comprehensions & Iterators ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ]
-        },
-        {
-          id: `py-comprehensions-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `## Practical Patterns & Idioms
-
-Professionals reuse patterns that encode lessons from Comprehensions & Iterators. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-comprehensions, extract a minimal working example you can paste into interviews or design docs.
-
-**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
-          example: `# Idiomatic pattern snapshot for py-comprehensions
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-comprehensions", "Comprehensions & Iterators")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-comprehensions Comprehensions`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ]
-        },
-        {
-          id: `py-comprehensions-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `## Common Pitfalls & Debugging
-
-Learners working on Comprehensions & Iterators often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on py-comprehensions, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
-
-**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-comprehensions", "Comprehensions & Iterators")
-debug_step("section_count", 4)`,
-          output: `[py-comprehensions] 'Comprehensions & Iterators' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ]
-        },
-        {
-          id: `py-comprehensions-real-world`,
-          title: `Real-World Applications`,
-          content: `## Real-World Applications
-
-Comprehensions & Iterators shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around py-comprehensions align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
-
-**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
-          example: `# Portfolio bullet generator for Comprehensions & Iterators
-skills = ["python", "beginner", "py-comprehensions"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-comprehensions`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Comprehensions & Iterators to adjacent topics in the same track`
           ]
         }
       ],
@@ -1284,7 +639,7 @@ print(sq)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 40,
+      estimatedMinutes: 25,
       module: `module-02`,
       references: [
         {
