@@ -104,7 +104,7 @@ print(out.shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Neural Network Basics sits in the **dl** track of the DL_Master curriculum. Perceptrons, multi-layer networks, and forward propagation.
+Neural Network Basics sits in the **dl** track of the Data Science Master curriculum. Perceptrons, multi-layer networks, and forward propagation.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -365,7 +365,7 @@ print(softmax(np.array([2.0, 1.0, 0.1])).round(3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Activation Functions sits in the **dl** track of the DL_Master curriculum. Non-linear functions enabling networks to learn complex patterns.
+Activation Functions sits in the **dl** track of the Data Science Master curriculum. Non-linear functions enabling networks to learn complex patterns.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -619,7 +619,7 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Loss Functions sits in the **dl** track of the DL_Master curriculum. Objective functions that neural networks minimize during training.
+Loss Functions sits in the **dl** track of the Data Science Master curriculum. Objective functions that neural networks minimize during training.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -868,7 +868,7 @@ print(round(w, 6))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Backpropagation sits in the **dl** track of the DL_Master curriculum. Computing gradients through the computational graph via chain rule.
+Backpropagation sits in the **dl** track of the Data Science Master curriculum. Computing gradients through the computational graph via chain rule.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -1121,7 +1121,7 @@ print(dropout(x, p=0.5).sum())`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Weight Initialization & Regularization sits in the **dl** track of the DL_Master curriculum. Starting weights and techniques to prevent overfitting.
+Weight Initialization & Regularization sits in the **dl** track of the Data Science Master curriculum. Starting weights and techniques to prevent overfitting.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 

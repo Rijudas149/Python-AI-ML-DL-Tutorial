@@ -100,7 +100,7 @@ print(df.iloc[0].round(3).tolist())`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Feature Scaling & Encoding sits in the **ml** track of the DL_Master curriculum. Prepare features for ML algorithms.
+Feature Scaling & Encoding sits in the **ml** track of the Data Science Master curriculum. Prepare features for ML algorithms.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -350,7 +350,7 @@ print(rfe.support_)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Feature Selection sits in the **ml** track of the DL_Master curriculum. Choose most informative features to reduce dimensionality and overfitting.
+Feature Selection sits in the **ml** track of the Data Science Master curriculum. Choose most informative features to reduce dimensionality and overfitting.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -597,7 +597,7 @@ print(grid.best_score_.round(3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Hyperparameter Tuning sits in the **ml** track of the DL_Master curriculum. Systematic search for optimal model configuration.
+Hyperparameter Tuning sits in the **ml** track of the Data Science Master curriculum. Systematic search for optimal model configuration.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -843,7 +843,7 @@ print(train_scores.mean(axis=1).round(3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Bias-Variance Tradeoff sits in the **ml** track of the DL_Master curriculum. Understanding underfitting and overfitting.
+Bias-Variance Tradeoff sits in the **ml** track of the Data Science Master curriculum. Understanding underfitting and overfitting.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1085,7 +1085,7 @@ print(len(shap_values))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Model Interpretability (SHAP, LIME) sits in the **ml** track of the DL_Master curriculum. Explain model predictions for trust and debugging.
+Model Interpretability (SHAP, LIME) sits in the **ml** track of the Data Science Master curriculum. Explain model predictions for trust and debugging.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

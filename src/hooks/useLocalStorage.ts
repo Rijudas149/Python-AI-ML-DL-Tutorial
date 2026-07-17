@@ -1,13 +1,22 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export function useLocalStorage<T>(key: string, initialValue: T) {
+export function useLocalStorage<T>(key: string, initialValue: T, legacyKeys: string[] = []) {
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key);
-      return item ? (JSON.parse(item) as T) : initialValue;
+      if (item) return JSON.parse(item) as T;
+
+      for (const legacyKey of legacyKeys) {
+        const legacyItem = window.localStorage.getItem(legacyKey);
+        if (legacyItem) {
+          window.localStorage.setItem(key, legacyItem);
+          return JSON.parse(legacyItem) as T;
+        }
+      }
     } catch {
-      return initialValue;
+      /* ignore parse errors */
     }
+    return initialValue;
   });
 
   const setValue = useCallback(

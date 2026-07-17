@@ -103,7 +103,7 @@ print(out.shape, weights.shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Self-Attention Mechanism sits in the **dl** track of the DL_Master curriculum. The core innovation enabling modern NLP and beyond.
+Self-Attention Mechanism sits in the **dl** track of the Data Science Master curriculum. The core innovation enabling modern NLP and beyond.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -341,7 +341,7 @@ print(2*2 / math.sqrt(4))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Transformer Architecture sits in the **dl** track of the DL_Master curriculum. The complete encoder-decoder architecture from "Attention Is All You Need".
+Transformer Architecture sits in the **dl** track of the Data Science Master curriculum. The complete encoder-decoder architecture from "Attention Is All You Need".
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -586,7 +586,7 @@ print(sinusoidal_pe(4, 8).shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Positional Encoding sits in the **dl** track of the DL_Master curriculum. Inject sequence order information since attention is permutation-invariant.
+Positional Encoding sits in the **dl** track of the Data Science Master curriculum. Inject sequence order information since attention is permutation-invariant.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -830,7 +830,7 @@ print(model.classifier)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-BERT & Encoder Models sits in the **dl** track of the DL_Master curriculum. Bidirectional encoder representations from transformers.
+BERT & Encoder Models sits in the **dl** track of the Data Science Master curriculum. Bidirectional encoder representations from transformers.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -1069,7 +1069,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-GPT & Decoder Models sits in the **dl** track of the DL_Master curriculum. Autoregressive language models for text generation.
+GPT & Decoder Models sits in the **dl** track of the Data Science Master curriculum. Autoregressive language models for text generation.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 

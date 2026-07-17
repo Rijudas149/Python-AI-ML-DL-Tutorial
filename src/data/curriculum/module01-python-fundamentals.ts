@@ -133,7 +133,7 @@ print(greet("World"))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Variables, Types & Literals sits in the **python** track of the DL_Master curriculum. Learn how Python stores data, dynamic typing, and core built-in types.
+Variables, Types & Literals sits in the **python** track of the Data Science Master curriculum. Learn how Python stores data, dynamic typing, and core built-in types.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -406,7 +406,7 @@ True True`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Operators & Expressions sits in the **python** track of the DL_Master curriculum. Arithmetic, comparison, logical, and assignment operators in Python.
+Operators & Expressions sits in the **python** track of the Data Science Master curriculum. Arithmetic, comparison, logical, and assignment operators in Python.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -675,7 +675,7 @@ café ☕`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Strings & Text Processing sits in the **python** track of the DL_Master curriculum. String creation, slicing, methods, and formatting fundamentals.
+Strings & Text Processing sits in the **python** track of the Data Science Master curriculum. String creation, slicing, methods, and formatting fundamentals.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -939,7 +939,7 @@ line2`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Input/Output & REPL sits in the **python** track of the DL_Master curriculum. Reading input, printing output, and using the Python REPL effectively.
+Input/Output & REPL sits in the **python** track of the Data Science Master curriculum. Reading input, printing output, and using the Python REPL effectively.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1197,7 +1197,7 @@ Keep code modular and testable from the start.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Python Environment & Tooling sits in the **python** track of the DL_Master curriculum. Virtual environments, pip, and project setup best practices.
+Python Environment & Tooling sits in the **python** track of the Data Science Master curriculum. Virtual environments, pip, and project setup best practices.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

@@ -94,7 +94,7 @@ print(len(set(labels)))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Clustering (K-Means, DBSCAN) sits in the **ml** track of the DL_Master curriculum. Group similar data points without labels.
+Clustering (K-Means, DBSCAN) sits in the **ml** track of the Data Science Master curriculum. Group similar data points without labels.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -341,7 +341,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Dimensionality Reduction (PCA, t-SNE) sits in the **ml** track of the DL_Master curriculum. Reduce feature dimensions while preserving structure.
+Dimensionality Reduction (PCA, t-SNE) sits in the **ml** track of the Data Science Master curriculum. Reduce feature dimensions while preserving structure.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -586,7 +586,7 @@ print(np.sum(preds == -1))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Anomaly Detection sits in the **ml** track of the DL_Master curriculum. Identify outliers and novel patterns in data.
+Anomaly Detection sits in the **ml** track of the Data Science Master curriculum. Identify outliers and novel patterns in data.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -831,7 +831,7 @@ print("lift = confidence / P(milk)")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Association Rules sits in the **ml** track of the DL_Master curriculum. Find frequent itemsets and association rules in transactional data.
+Association Rules sits in the **ml** track of the Data Science Master curriculum. Find frequent itemsets and association rules in transactional data.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1073,7 +1073,7 @@ print(gmm.predict(X[:5]))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Gaussian Mixture Models sits in the **ml** track of the DL_Master curriculum. Probabilistic clustering with soft assignments.
+Gaussian Mixture Models sits in the **ml** track of the Data Science Master curriculum. Probabilistic clustering with soft assignments.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

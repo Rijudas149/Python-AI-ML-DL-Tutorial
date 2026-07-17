@@ -2335,7 +2335,7 @@ body {
   .tracker-progress { grid-column: span 1; }
 }
 
-/* ── DL Master Extensions ── */
+/* ── Data Science Master Extensions ── */
 .search-trigger {
   display: flex;
   align-items: center;
@@ -2621,6 +2621,7 @@ body {
 }
 
 .track-badge.python { background: rgba(55, 118, 171, 0.2); color: #60a5fa; }
+.track-badge.math { background: rgba(5, 150, 105, 0.2); color: #34d399; }
 .track-badge.data { background: rgba(8, 145, 178, 0.2); color: #22d3ee; }
 .track-badge.ml { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
 .track-badge.dl { background: rgba(124, 58, 237, 0.2); color: #a78bfa; }
@@ -3373,3 +3374,44 @@ body {
   .roadmap-module-header { flex-wrap: wrap; }
   .roadmap-module-meta { align-items: flex-start; width: 100%; }
 }
+
+/* ── Math Formulas & Diagrams ── */
+.lesson-panel-formula { border-left: 3px solid #059669; }
+
+.formula-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.formula-item {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+}
+
+.formula-text {
+  font-family: 'JetBrains Mono', 'Cambria Math', 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.lesson-panel-diagram { border-left: 3px solid var(--study); }
+
+.math-diagram {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  overflow-x: auto;
+  white-space: pre;
+  border: 1px solid var(--border);
+}
+
+.track-badge.math { background: rgba(5, 150, 105, 0.2); color: #34d399; }

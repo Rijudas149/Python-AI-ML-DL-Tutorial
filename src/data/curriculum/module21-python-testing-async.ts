@@ -121,7 +121,7 @@ Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_ba
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Testing with pytest & unittest sits in the **python** track of the DL_Master curriculum. Write reliable unit tests, use fixtures and mocking, and integrate tests into CI pipelines.
+Testing with pytest & unittest sits in the **python** track of the Data Science Master curriculum. Write reliable unit tests, use fixtures and mocking, and integrate tests into CI pipelines.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -399,7 +399,7 @@ Maintain a debugging checklist: reproduce reliably, bisect git history (\`git bi
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Debugging, Logging & Tracebacks sits in the **python** track of the DL_Master curriculum. Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs.
+Debugging, Logging & Tracebacks sits in the **python** track of the Data Science Master curriculum. Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -680,7 +680,7 @@ print(asyncio.run(bad()))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Asyncio & Async/Await sits in the **python** track of the DL_Master curriculum. Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns.
+Asyncio & Async/Await sits in the **python** track of the Data Science Master curriculum. Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -939,7 +939,7 @@ Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on lon
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Regular Expressions with re sits in the **python** track of the DL_Master curriculum. Match, search, and transform text using Python's re module and common regex patterns.
+Regular Expressions with re sits in the **python** track of the Data Science Master curriculum. Match, search, and transform text using Python's re module and common regex patterns.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1191,7 +1191,7 @@ Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O co
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Threading, Multiprocessing & the GIL sits in the **python** track of the DL_Master curriculum. Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock.
+Threading, Multiprocessing & the GIL sits in the **python** track of the Data Science Master curriculum. Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

@@ -92,7 +92,7 @@ print(safe_read("missing.txt") == "")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Files & Serialization sits in the **python** track of the DL_Master curriculum. Read and write files safely with pathlib, json, csv, and pickle.
+Files & Serialization sits in the **python** track of the Data Science Master curriculum. Read and write files safely with pathlib, json, csv, and pickle.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -338,7 +338,7 @@ Separate HTTP layer from business logic—pure functions parse JSON dicts; thin 
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-HTTP & REST APIs sits in the **python** track of the DL_Master curriculum. Consume REST APIs with requests: methods, headers, auth, and error handling.
+HTTP & REST APIs sits in the **python** track of the Data Science Master curriculum. Consume REST APIs with requests: methods, headers, auth, and error handling.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -580,7 +580,7 @@ When in doubt, request permission or purchase data from licensed providers.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Web Scraping Basics sits in the **python** track of the DL_Master curriculum. Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits.
+Web Scraping Basics sits in the **python** track of the Data Science Master curriculum. Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -832,7 +832,7 @@ Encrypt sensitive columns at application level if needed—SQLite file encryptio
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-SQLite with Python sits in the **python** track of the DL_Master curriculum. Use sqlite3 for embedded relational storage, parameterized queries, and transactions.
+SQLite with Python sits in the **python** track of the Data Science Master curriculum. Use sqlite3 for embedded relational storage, parameterized queries, and transactions.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1084,7 +1084,7 @@ Document encoding, timezone, and null conventions in data catalogs.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Advanced Serialization sits in the **python** track of the DL_Master curriculum. JSON Schema validation, YAML config, and columnar Parquet introduction.
+Advanced Serialization sits in the **python** track of the Data Science Master curriculum. JSON Schema validation, YAML config, and columnar Parquet introduction.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

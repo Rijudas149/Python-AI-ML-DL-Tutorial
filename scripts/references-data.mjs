@@ -1,5 +1,5 @@
 /**
- * DL_Master curriculum reference library.
+ * Data Science Master curriculum reference library.
  * Real URLs from renowned courses, papers, books, and documentation.
  */
 
@@ -1352,6 +1352,13 @@ export const TRACK_REFERENCES = {
     'matplotlib-pyplot',
     'kaggle-pandas',
     'kaggle-data-viz',
+  ),
+  math: pick(
+    '3blue1brown-linalg',
+    'mit-1806-linalg',
+    '3blue1brown-calculus',
+    'khan-probability',
+    'stanford-cs229',
   ),
   ml: pick(
     'stanford-cs229',

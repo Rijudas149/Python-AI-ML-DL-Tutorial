@@ -160,7 +160,7 @@ export function Roadmap() {
                 })}
               </div>
 
-              {phase.order < 5 && (
+              {phase.order < 6 && (
                 <div className="roadmap-phase-arrow">
                   <span>↓ Then continue to Phase {phase.order + 1}</span>
                 </div>

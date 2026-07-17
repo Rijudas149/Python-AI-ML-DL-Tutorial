@@ -95,7 +95,7 @@ print(W @ x)  # 3x1 output`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Linear Algebra Essentials sits in the **ml** track of the DL_Master curriculum. Vectors, matrices, eigenvalues, and their role in ML.
+Linear Algebra Essentials sits in the **ml** track of the Data Science Master curriculum. Vectors, matrices, eigenvalues, and their role in ML.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -347,7 +347,7 @@ print(mse_grad)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Calculus for ML sits in the **ml** track of the DL_Master curriculum. Derivatives, gradients, chain rule, and partial derivatives for optimization.
+Calculus for ML sits in the **ml** track of the Data Science Master curriculum. Derivatives, gradients, chain rule, and partial derivatives for optimization.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -598,7 +598,7 @@ print(round(within_1std, 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Probability & Distributions sits in the **ml** track of the DL_Master curriculum. Probability theory, Bayes theorem, and key distributions for ML.
+Probability & Distributions sits in the **ml** track of the Data Science Master curriculum. Probability theory, Bayes theorem, and key distributions for ML.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -851,7 +851,7 @@ print(round(cross_entropy(1, 0.9), 4))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Information Theory & Entropy sits in the **ml** track of the DL_Master curriculum. Entropy, cross-entropy, KL divergence — core to classification loss.
+Information Theory & Entropy sits in the **ml** track of the Data Science Master curriculum. Entropy, cross-entropy, KL divergence — core to classification loss.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1108,7 +1108,7 @@ print(round(l2_penalty, 4))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Optimization & Gradient Descent sits in the **ml** track of the DL_Master curriculum. Finding minima of loss functions iteratively.
+Optimization & Gradient Descent sits in the **ml** track of the Data Science Master curriculum. Finding minima of loss functions iteratively.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

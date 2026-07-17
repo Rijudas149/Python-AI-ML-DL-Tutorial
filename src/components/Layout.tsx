@@ -31,7 +31,7 @@ export function Layout() {
         >
           {menuOpen ? '✕' : '☰'}
         </button>
-        <span className="mobile-topbar-title">DL Master Academy</span>
+        <span className="mobile-topbar-title">Data Science Master</span>
       </header>
 
       <div

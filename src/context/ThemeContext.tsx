@@ -10,7 +10,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>('dl-master-theme', 'dark');
+  const [theme, setTheme] = useLocalStorage<Theme>('dsm-theme', 'dark', ['dl-master-theme']);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

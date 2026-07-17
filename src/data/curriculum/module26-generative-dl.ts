@@ -77,7 +77,7 @@ Track FID during training; early stopping when FID degrades.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Generative Adversarial Networks sits in the **dl** track of the DL_Master curriculum. Train generator and discriminator in adversarial equilibrium.
+Generative Adversarial Networks sits in the **dl** track of the Data Science Master curriculum. Train generator and discriminator in adversarial equilibrium.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -316,7 +316,7 @@ Evaluate log-likelihood estimates (ELBO) and reconstruction FID for comparisons.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Variational Autoencoders sits in the **dl** track of the DL_Master curriculum. Learn latent probabilistic representations with reconstruction and KL losses.
+Variational Autoencoders sits in the **dl** track of the Data Science Master curriculum. Learn latent probabilistic representations with reconstruction and KL losses.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -553,7 +553,7 @@ Open weights enable local generation; safety filters and watermarking increasing
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Diffusion Models (DDPM) sits in the **dl** track of the DL_Master curriculum. Denoising diffusion probabilistic models for high-quality generation.
+Diffusion Models (DDPM) sits in the **dl** track of the Data Science Master curriculum. Denoising diffusion probabilistic models for high-quality generation.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -785,7 +785,7 @@ Watermarking and provenance metadata (C2PA) emerging standards.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Style Transfer & CycleGAN sits in the **dl** track of the DL_Master curriculum. Transfer artistic style and unpaired image domain translation.
+Style Transfer & CycleGAN sits in the **dl** track of the Data Science Master curriculum. Transfer artistic style and unpaired image domain translation.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -1017,7 +1017,7 @@ Track memorization metrics detecting training set copying.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Evaluating Generative Models sits in the **dl** track of the DL_Master curriculum. FID, Inception Score, and human evaluation for generative quality.
+Evaluating Generative Models sits in the **dl** track of the Data Science Master curriculum. FID, Inception Score, and human evaluation for generative quality.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 

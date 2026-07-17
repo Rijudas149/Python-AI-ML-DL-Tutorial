@@ -73,7 +73,7 @@ Contributions signal collaboration skills beyond solo Kaggle.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-ML Portfolio Projects sits in the **ai** track of the DL_Master curriculum. Build showcase projects demonstrating end-to-end ML skills.
+ML Portfolio Projects sits in the **ai** track of the Data Science Master curriculum. Build showcase projects demonstrating end-to-end ML skills.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -305,7 +305,7 @@ Team up to split EDA and modeling; communicate daily during crunch.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Kaggle Competition Strategy sits in the **ai** track of the DL_Master curriculum. Structured approach to competitive ML and learning from kernels.
+Kaggle Competition Strategy sits in the **ai** track of the Data Science Master curriculum. Structured approach to competitive ML and learning from kernels.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -543,7 +543,7 @@ Ask interviewers about team ML maturity, deployment frequency, research vs produ
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-ML Interview Preparation sits in the **ai** track of the DL_Master curriculum. ML fundamentals, coding, system design, and behavioral preparation.
+ML Interview Preparation sits in the **ai** track of the Data Science Master curriculum. ML fundamentals, coding, system design, and behavioral preparation.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -776,7 +776,7 @@ Workshop and short papers valid first publication paths.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Reading Papers & Reproduction sits in the **ai** track of the DL_Master curriculum. Efficiently understand research papers and reproduce key results.
+Reading Papers & Reproduction sits in the **ai** track of the Data Science Master curriculum. Efficiently understand research papers and reproduce key results.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -1008,7 +1008,7 @@ Contribute to standards, RFCs, internal platforms—impact multiplier.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Career Paths in ML/AI sits in the **ai** track of the DL_Master curriculum. Roles, skills, and growth paths for ML engineers, data scientists, and researchers.
+Career Paths in ML/AI sits in the **ai** track of the Data Science Master curriculum. Roles, skills, and growth paths for ML engineers, data scientists, and researchers.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 

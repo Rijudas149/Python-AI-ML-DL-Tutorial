@@ -90,7 +90,7 @@ Reproducibility: fix random seeds in stochastic routines and document numerical 
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-SciPy Numerical Tools sits in the **data** track of the DL_Master curriculum. Use scipy.optimize, integrate, and interpolate for scientific computing tasks.
+SciPy Numerical Tools sits in the **data** track of the Data Science Master curriculum. Use scipy.optimize, integrate, and interpolate for scientific computing tasks.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -337,7 +337,7 @@ print(dof, expected.shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Hypothesis Testing sits in the **data** track of the DL_Master curriculum. Apply t-tests, chi-square tests, and interpret p-values responsibly.
+Hypothesis Testing sits in the **data** track of the Data Science Master curriculum. Apply t-tests, chi-square tests, and interpret p-values responsibly.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -588,7 +588,7 @@ For proportions, use binomial or normal approx with care when np(1-p) small.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Probability Distributions sits in the **data** track of the DL_Master curriculum. Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting.
+Probability Distributions sits in the **data** track of the Data Science Master curriculum. Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -833,7 +833,7 @@ Publishing requires reporting limitations, data collection, and missing data han
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Regression with statsmodels sits in the **data** track of the DL_Master curriculum. Ordinary least squares and logistic regression for inference-rich modeling.
+Regression with statsmodels sits in the **data** track of the Data Science Master curriculum. Ordinary least squares and logistic regression for inference-rich modeling.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -1077,7 +1077,7 @@ Calibration plots compare predicted probabilities to observed frequencies—crit
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Bayesian Inference Intro sits in the **data** track of the DL_Master curriculum. Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview.
+Bayesian Inference Intro sits in the **data** track of the Data Science Master curriculum. Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 

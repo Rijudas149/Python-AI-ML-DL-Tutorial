@@ -77,7 +77,7 @@ Render for debugging; \`done\` flag ends episode; \`info\` dict carries diagnost
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-MDPs, Rewards & Policies sits in the **ml** track of the DL_Master curriculum. Formalize sequential decision making as Markov Decision Processes.
+MDPs, Rewards & Policies sits in the **ml** track of the Data Science Master curriculum. Formalize sequential decision making as Markov Decision Processes.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -312,7 +312,7 @@ State encoding critical when applying tabular methods to raw observations.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Q-Learning & Bellman Updates sits in the **ml** track of the DL_Master curriculum. Model-free temporal difference learning for optimal action-values.
+Q-Learning & Bellman Updates sits in the **ml** track of the Data Science Master curriculum. Model-free temporal difference learning for optimal action-values.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -544,7 +544,7 @@ Modern baselines: Rainbow combines improvements; still largely superseded by pol
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Deep Q-Networks (DQN) sits in the **ml** track of the DL_Master curriculum. Combine Q-learning with neural networks and stabilization tricks.
+Deep Q-Networks (DQN) sits in the **ml** track of the Data Science Master curriculum. Combine Q-learning with neural networks and stabilization tricks.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -776,7 +776,7 @@ Modern algorithms blend both: soft actor-critic, implicit Q-learning.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Policy Gradients Intro sits in the **ml** track of the DL_Master curriculum. Optimize parameterized policies directly with gradient ascent on expected return.
+Policy Gradients Intro sits in the **ml** track of the Data Science Master curriculum. Optimize parameterized policies directly with gradient ascent on expected return.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1008,7 +1008,7 @@ Human oversight for irreversible actions; sandbox simulators for validation.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-RL Applications sits in the **ml** track of the DL_Master curriculum. Game AI, robotics overview, and deployment considerations.
+RL Applications sits in the **ml** track of the Data Science Master curriculum. Game AI, robotics overview, and deployment considerations.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

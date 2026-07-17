@@ -97,7 +97,7 @@ print([row[0] for row in matrix])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Lists & Tuples sits in the **python** track of the DL_Master curriculum. Ordered sequences — mutable lists and immutable tuples.
+Lists & Tuples sits in the **python** track of the Data Science Master curriculum. Ordered sequences — mutable lists and immutable tuples.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -353,7 +353,7 @@ print(config)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Dictionaries & Sets sits in the **python** track of the DL_Master curriculum. Hash maps and unordered unique collections.
+Dictionaries & Sets sits in the **python** track of the Data Science Master curriculum. Hash maps and unordered unique collections.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -610,7 +610,7 @@ print(list(recent))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Stacks, Queues & Deque sits in the **python** track of the DL_Master curriculum. LIFO stacks and FIFO queues with collections.deque.
+Stacks, Queues & Deque sits in the **python** track of the Data Science Master curriculum. LIFO stacks and FIFO queues with collections.deque.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -872,7 +872,7 @@ print(idx)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Sorting & Searching sits in the **python** track of the DL_Master curriculum. Built-in sorting, binary search, and algorithmic complexity.
+Sorting & Searching sits in the **python** track of the Data Science Master curriculum. Built-in sorting, binary search, and algorithmic complexity.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1125,7 +1125,7 @@ print(heapq.heappop(heap))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Collections Module sits in the **python** track of the DL_Master curriculum. namedtuple, OrderedDict, ChainMap, and other specialized containers.
+Collections Module sits in the **python** track of the Data Science Master curriculum. namedtuple, OrderedDict, ChainMap, and other specialized containers.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

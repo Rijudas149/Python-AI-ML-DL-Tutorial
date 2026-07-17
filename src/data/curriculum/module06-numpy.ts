@@ -105,7 +105,7 @@ print(a.reshape(2, 6))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-NumPy Arrays Fundamentals sits in the **data** track of the DL_Master curriculum. Create and manipulate ndarrays — the foundation of scientific Python.
+NumPy Arrays Fundamentals sits in the **data** track of the Data Science Master curriculum. Create and manipulate ndarrays — the foundation of scientific Python.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -371,7 +371,7 @@ print(a.sum(), a.sum(axis=0), a.mean(axis=1))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Array Indexing & Broadcasting sits in the **data** track of the DL_Master curriculum. Slicing, boolean indexing, fancy indexing, and broadcasting rules.
+Array Indexing & Broadcasting sits in the **data** track of the Data Science Master curriculum. Slicing, boolean indexing, fancy indexing, and broadcasting rules.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -629,7 +629,7 @@ print(np.sqrt(v @ v))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Linear Algebra with NumPy sits in the **data** track of the DL_Master curriculum. Matrix operations, dot products, decomposition, and solving linear systems.
+Linear Algebra with NumPy sits in the **data** track of the Data Science Master curriculum. Matrix operations, dot products, decomposition, and solving linear systems.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -889,7 +889,7 @@ print(perm)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Random & Statistics sits in the **data** track of the DL_Master curriculum. Random number generation and statistical operations with NumPy.
+Random & Statistics sits in the **data** track of the Data Science Master curriculum. Random number generation and statistical operations with NumPy.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -1137,7 +1137,7 @@ print(np.einsum("ij,jk->ik", A, B))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Performance & Vectorization sits in the **data** track of the DL_Master curriculum. Write fast NumPy code avoiding Python loops.
+Performance & Vectorization sits in the **data** track of the Data Science Master curriculum. Write fast NumPy code avoiding Python loops.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 

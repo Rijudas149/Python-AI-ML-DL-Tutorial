@@ -110,7 +110,7 @@ print(x.device)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-PyTorch Tensors sits in the **dl** track of the DL_Master curriculum. PyTorch fundamental data structure with GPU support.
+PyTorch Tensors sits in the **dl** track of the Data Science Master curriculum. PyTorch fundamental data structure with GPU support.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -357,7 +357,7 @@ print(layer.weight.is_leaf)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Autograd & Computational Graphs sits in the **dl** track of the DL_Master curriculum. Automatic differentiation engine in PyTorch.
+Autograd & Computational Graphs sits in the **dl** track of the Data Science Master curriculum. Automatic differentiation engine in PyTorch.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -624,7 +624,7 @@ print(round(loss.item(), 4))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Building NN with nn.Module sits in the **dl** track of the DL_Master curriculum. Object-oriented model definition in PyTorch.
+Building NN with nn.Module sits in the **dl** track of the Data Science Master curriculum. Object-oriented model definition in PyTorch.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -889,7 +889,7 @@ print("Pattern defined")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-DataLoaders & Training Loops sits in the **dl** track of the DL_Master curriculum. Efficient data loading and standard training loop pattern.
+DataLoaders & Training Loops sits in the **dl** track of the Data Science Master curriculum. Efficient data loading and standard training loop pattern.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -1135,7 +1135,7 @@ print("GradScaler ready")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-GPU Training & Mixed Precision sits in the **dl** track of the DL_Master curriculum. Accelerate training with CUDA and automatic mixed precision.
+GPU Training & Mixed Precision sits in the **dl** track of the Data Science Master curriculum. Accelerate training with CUDA and automatic mixed precision.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 

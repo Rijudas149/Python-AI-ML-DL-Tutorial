@@ -99,7 +99,7 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Regression Techniques sits in the **ml** track of the DL_Master curriculum. Polynomial, ridge, lasso, and elastic net regression.
+Regression Techniques sits in the **ml** track of the Data Science Master curriculum. Polynomial, ridge, lasso, and elastic net regression.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -349,7 +349,7 @@ print(clf.predict_proba(X[:3]).round(2))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Classification Algorithms sits in the **ml** track of the DL_Master curriculum. KNN, Naive Bayes, and multi-class strategies.
+Classification Algorithms sits in the **ml** track of the Data Science Master curriculum. KNN, Naive Bayes, and multi-class strategies.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -602,7 +602,7 @@ print(clf.score(X, y))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Support Vector Machines sits in the **ml** track of the DL_Master curriculum. Maximum margin classifiers with kernel trick.
+Support Vector Machines sits in the **ml** track of the Data Science Master curriculum. Maximum margin classifiers with kernel trick.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -854,7 +854,7 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Gradient Boosting (XGBoost/LightGBM) sits in the **ml** track of the DL_Master curriculum. State-of-the-art ensemble methods for tabular data.
+Gradient Boosting (XGBoost/LightGBM) sits in the **ml** track of the Data Science Master curriculum. State-of-the-art ensemble methods for tabular data.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1102,7 +1102,7 @@ print(round(vote.score(X, y), 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Ensemble Methods sits in the **ml** track of the DL_Master curriculum. Bagging, boosting, stacking, and voting classifiers.
+Ensemble Methods sits in the **ml** track of the Data Science Master curriculum. Bagging, boosting, stacking, and voting classifiers.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

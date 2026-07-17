@@ -109,7 +109,7 @@ class SimpleCNN(nn.Module):
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Convolutional Layers sits in the **dl** track of the DL_Master curriculum. Spatial feature extraction with convolution and pooling.
+Convolutional Layers sits in the **dl** track of the Data Science Master curriculum. Spatial feature extraction with convolution and pooling.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -364,7 +364,7 @@ print(model.fc.in_features)  # 512 for resnet18`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-CNN Architectures (ResNet, VGG) sits in the **dl** track of the DL_Master curriculum. Landmark architectures that shaped computer vision.
+CNN Architectures (ResNet, VGG) sits in the **dl** track of the Data Science Master curriculum. Landmark architectures that shaped computer vision.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -609,7 +609,7 @@ print(model.fc.weight.requires_grad)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Transfer Learning sits in the **dl** track of the DL_Master curriculum. Leverage pretrained models for new tasks with limited data.
+Transfer Learning sits in the **dl** track of the Data Science Master curriculum. Leverage pretrained models for new tasks with limited data.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -858,7 +858,7 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Object Detection sits in the **dl** track of the DL_Master curriculum. Locate and classify multiple objects in images.
+Object Detection sits in the **dl** track of the Data Science Master curriculum. Locate and classify multiple objects in images.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -1098,7 +1098,7 @@ print("Encoder -> Bottleneck -> Decoder + Skips")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Image Segmentation sits in the **dl** track of the DL_Master curriculum. Pixel-level classification: semantic and instance segmentation.
+Image Segmentation sits in the **dl** track of the Data Science Master curriculum. Pixel-level classification: semantic and instance segmentation.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 

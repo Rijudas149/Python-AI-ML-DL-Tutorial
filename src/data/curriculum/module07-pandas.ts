@@ -114,7 +114,7 @@ print(df.loc[0:1, ["A", "C"]])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Series & DataFrames sits in the **data** track of the DL_Master curriculum. Pandas one-dimensional Series and two-dimensional DataFrames.
+Series & DataFrames sits in the **data** track of the Data Science Master curriculum. Pandas one-dimensional Series and two-dimensional DataFrames.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -377,7 +377,7 @@ print(df.sort_values("score", ascending=False))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Indexing, Filtering & Selection sits in the **data** track of the DL_Master curriculum. Advanced indexing with query, isin, and boolean masks.
+Indexing, Filtering & Selection sits in the **data** track of the Data Science Master curriculum. Advanced indexing with query, isin, and boolean masks.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -640,7 +640,7 @@ print(pd.pivot_table(df, values="sales", index="date", columns="product", aggfun
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-GroupBy & Aggregations sits in the **data** track of the DL_Master curriculum. Split-apply-combine pattern for grouped analysis.
+GroupBy & Aggregations sits in the **data** track of the Data Science Master curriculum. Split-apply-combine pattern for grouped analysis.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -894,7 +894,7 @@ print(pd.concat([df1, df2], ignore_index=True))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Merging, Joining & Reshaping sits in the **data** track of the DL_Master curriculum. Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
+Merging, Joining & Reshaping sits in the **data** track of the Data Science Master curriculum. Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -1149,7 +1149,7 @@ print(df.resample("MS").mean())`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Missing Data & Time Series sits in the **data** track of the DL_Master curriculum. Handle NaN values and work with datetime indices.
+Missing Data & Time Series sits in the **data** track of the Data Science Master curriculum. Handle NaN values and work with datetime indices.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 

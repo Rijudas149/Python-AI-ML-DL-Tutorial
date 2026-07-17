@@ -101,7 +101,7 @@ print("Subplots created")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Matplotlib Basics sits in the **data** track of the DL_Master curriculum. Create line, scatter, bar, and histogram plots with pyplot and OO API.
+Matplotlib Basics sits in the **data** track of the Data Science Master curriculum. Create line, scatter, bar, and histogram plots with pyplot and OO API.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -368,7 +368,7 @@ print("Correlation heatmap")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Seaborn Statistical Plots sits in the **data** track of the DL_Master curriculum. High-level statistical visualizations built on matplotlib.
+Seaborn Statistical Plots sits in the **data** track of the Data Science Master curriculum. High-level statistical visualizations built on matplotlib.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -614,7 +614,7 @@ print(fig.data[0].type)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Plotly Interactive Viz sits in the **data** track of the DL_Master curriculum. Interactive charts for exploration and dashboards.
+Plotly Interactive Viz sits in the **data** track of the Data Science Master curriculum. Interactive charts for exploration and dashboards.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -851,7 +851,7 @@ print(fig.layout.title.text)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Dashboard Design Principles sits in the **data** track of the DL_Master curriculum. Visual encoding, chart selection, and storytelling with data.
+Dashboard Design Principles sits in the **data** track of the Data Science Master curriculum. Visual encoding, chart selection, and storytelling with data.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 
@@ -1093,7 +1093,7 @@ print(confusion_matrix(y_true, y_pred))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Geospatial & Specialized Charts sits in the **data** track of the DL_Master curriculum. Maps, network graphs, and domain-specific visualizations.
+Geospatial & Specialized Charts sits in the **data** track of the Data Science Master curriculum. Maps, network graphs, and domain-specific visualizations.
 
 Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
 

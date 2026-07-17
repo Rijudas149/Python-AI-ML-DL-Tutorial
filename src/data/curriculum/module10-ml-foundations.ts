@@ -101,7 +101,7 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-ML Workflow & train_test_split sits in the **ml** track of the DL_Master curriculum. End-to-end machine learning pipeline with scikit-learn.
+ML Workflow & train_test_split sits in the **ml** track of the Data Science Master curriculum. End-to-end machine learning pipeline with scikit-learn.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -363,7 +363,7 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Linear & Logistic Regression sits in the **ml** track of the DL_Master curriculum. Foundation supervised learning algorithms.
+Linear & Logistic Regression sits in the **ml** track of the Data Science Master curriculum. Foundation supervised learning algorithms.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -614,7 +614,7 @@ print(rf.score(X, y))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Decision Trees & Random Forests sits in the **ml** track of the DL_Master curriculum. Tree-based models for classification and regression.
+Decision Trees & Random Forests sits in the **ml** track of the Data Science Master curriculum. Tree-based models for classification and regression.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -876,7 +876,7 @@ print(round(r2_score(y_true, y_pred), 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Model Evaluation Metrics sits in the **ml** track of the DL_Master curriculum. Accuracy, precision, recall, F1, ROC-AUC, MSE, R².
+Model Evaluation Metrics sits in the **ml** track of the Data Science Master curriculum. Accuracy, precision, recall, F1, ROC-AUC, MSE, R².
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1137,7 +1137,7 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Cross-Validation & Pipelines sits in the **ml** track of the DL_Master curriculum. Robust evaluation with k-fold CV and end-to-end pipelines.
+Cross-Validation & Pipelines sits in the **ml** track of the Data Science Master curriculum. Robust evaluation with k-fold CV and end-to-end pipelines.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

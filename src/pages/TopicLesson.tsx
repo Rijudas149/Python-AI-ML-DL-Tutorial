@@ -7,6 +7,7 @@ import { LessonContent, TabularDisplay } from '../components/LessonContent';
 import { ExerciseEditor } from '../components/ExerciseEditor';
 import { BookmarkButton } from '../components/BookmarkButton';
 import { ReferenceList } from '../components/ReferenceList';
+import { FormulaList, DiagramBlock } from '../components/MathBlocks';
 
 function getInitialSection(topic: NonNullable<ReturnType<typeof getTopicById>>, completedSections: string[]) {
   const firstIncomplete = topic.sections.findIndex((s) => !completedSections.includes(s.id));
@@ -221,6 +222,14 @@ export function TopicLesson() {
                   </div>
                   <LessonContent content={section.content} />
                 </section>
+
+                {section.formulas && section.formulas.length > 0 && (
+                  <FormulaList formulas={section.formulas} />
+                )}
+
+                {section.diagram && (
+                  <DiagramBlock diagram={section.diagram} />
+                )}
 
                 {section.pseudoCode && (
                   <section className="lesson-panel lesson-panel-pseudo">

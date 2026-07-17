@@ -87,7 +87,7 @@ print(f"Approx tokens: {len(text) // 4}")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Large Language Models Overview sits in the **ai** track of the DL_Master curriculum. Architecture, capabilities, and landscape of modern LLMs.
+Large Language Models Overview sits in the **ai** track of the Data Science Master curriculum. Architecture, capabilities, and landscape of modern LLMs.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -328,7 +328,7 @@ print("CoT improves reasoning")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Prompt Engineering sits in the **ai** track of the DL_Master curriculum. Design effective prompts to maximize LLM output quality.
+Prompt Engineering sits in the **ai** track of the Data Science Master curriculum. Design effective prompts to maximize LLM output quality.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -573,7 +573,7 @@ print(embeddings.shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-RAG (Retrieval Augmented Generation) sits in the **ai** track of the DL_Master curriculum. Ground LLM responses in external knowledge via retrieval.
+RAG (Retrieval Augmented Generation) sits in the **ai** track of the Data Science Master curriculum. Ground LLM responses in external knowledge via retrieval.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -811,7 +811,7 @@ print("LoRA: W + B@A with low rank r")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Fine-tuning & LoRA sits in the **ai** track of the DL_Master curriculum. Adapt pretrained LLMs to specific tasks and domains.
+Fine-tuning & LoRA sits in the **ai** track of the Data Science Master curriculum. Adapt pretrained LLMs to specific tasks and domains.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -1057,7 +1057,7 @@ print(tools[0]["name"])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Agents & Tool Use sits in the **ai** track of the DL_Master curriculum. LLM agents that reason, plan, and interact with external tools.
+Agents & Tool Use sits in the **ai** track of the Data Science Master curriculum. LLM agents that reason, plan, and interact with external tools.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 

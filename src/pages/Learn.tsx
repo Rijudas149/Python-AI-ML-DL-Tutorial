@@ -6,6 +6,7 @@ import type { Topic } from '../types';
 
 const TRACKS: { id: Topic['track']; label: string; icon: string }[] = [
   { id: 'python', label: 'Python', icon: '🐍' },
+  { id: 'math', label: 'Math', icon: '📐' },
   { id: 'data', label: 'Data', icon: '📊' },
   { id: 'ml', label: 'ML', icon: '🤖' },
   { id: 'dl', label: 'DL', icon: '🧠' },
@@ -43,9 +44,9 @@ export function Learn() {
   return (
     <div className="page learn-page">
       <header className="page-header">
-        <h1>Learn Python · ML · DL · AI</h1>
+        <h1>Learn Python · Math · ML · DL · AI</h1>
         <p>
-          Every topic explained with theory, Python code examples, expected output, and exercises.
+          Every topic explained with theory, formulas, diagrams, Python code, expected output, and exercises.
           Follow the <Link to="/roadmap">learning roadmap</Link> for the recommended study order.
         </p>
       </header>

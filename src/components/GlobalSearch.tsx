@@ -80,6 +80,7 @@ export function GlobalSearch({ open, onClose }: GlobalSearchProps) {
 
   const trackIcon: Record<string, string> = {
     python: '🐍',
+    math: '📐',
     data: '📊',
     ml: '🤖',
     dl: '🧠',

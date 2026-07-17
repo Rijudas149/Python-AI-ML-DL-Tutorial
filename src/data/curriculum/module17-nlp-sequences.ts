@@ -95,7 +95,7 @@ print(encoded["input_ids"].shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Text Preprocessing & Tokenization sits in the **dl** track of the DL_Master curriculum. Prepare raw text for neural network input.
+Text Preprocessing & Tokenization sits in the **dl** track of the Data Science Master curriculum. Prepare raw text for neural network input.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -336,7 +336,7 @@ print(embed(input_ids).shape)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Word Embeddings (Word2Vec, GloVe) sits in the **dl** track of the DL_Master curriculum. Dense vector representations capturing semantic meaning.
+Word Embeddings (Word2Vec, GloVe) sits in the **dl** track of the Data Science Master curriculum. Dense vector representations capturing semantic meaning.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -593,7 +593,7 @@ print(out.shape)  # hidden dim doubled`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-RNNs & LSTMs sits in the **dl** track of the DL_Master curriculum. Recurrent networks for sequential data processing.
+RNNs & LSTMs sits in the **dl** track of the Data Science Master curriculum. Recurrent networks for sequential data processing.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -831,7 +831,7 @@ FOR each output step t:
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Seq2Seq & Attention Preview sits in the **dl** track of the DL_Master curriculum. Encoder-decoder architecture for translation and summarization.
+Seq2Seq & Attention Preview sits in the **dl** track of the Data Science Master curriculum. Encoder-decoder architecture for translation and summarization.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
@@ -1068,7 +1068,7 @@ print(list(zip(sentence, tags)))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Named Entity Recognition sits in the **dl** track of the DL_Master curriculum. Token-level sequence labeling for entity extraction.
+Named Entity Recognition sits in the **dl** track of the Data Science Master curriculum. Token-level sequence labeling for entity extraction.
 
 Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 

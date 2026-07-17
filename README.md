@@ -1,110 +1,70 @@
-# DL Master — Python · ML · DL · AI Academy
+# Data Science Master — Python · Math · ML · DL · AI Academy
 
-A web-based learning app covering **Python** (basics to advanced), **Machine Learning**, **Deep Learning**, and **AI/GenAI** — with theory, runnable code, exercises, and curated references from Stanford, MIT, Oxford, and arXiv.
+A web-based learning app covering **Python**, **Mathematics**, **Machine Learning**, **Deep Learning**, and **AI** — with theory, formulas, diagrams, runnable code, exercises, and curated references.
+
+## Curriculum
+
+| Phase | Track | Modules | Topics |
+|-------|-------|---------|--------|
+| 1 | Python | 5 + 2 advanced | 35 |
+| 2 | **Mathematics** | 8 | **40** |
+| 3 | Data Science | 4 | 20 |
+| 4 | Machine Learning | 6 | 30 |
+| 5 | Deep Learning | 5 | 25 |
+| 6 | AI & GenAI | 6 | 30 |
+
+**180 topics** across **36 modules**, each with ~12 sections (theory, formulas, diagrams, code, exercises) and university-grade references.
+
+### Math track (40 topics)
+
+Algebra & functions · Linear algebra I & II · Calculus I · Multivariate calculus · Probability · Statistics · Optimization & information theory — every section includes **key formulas** and **ASCII diagrams**.
+
+## Features
+
+- Structured **6-phase roadmap** with progress tracking
+- **Formulas & diagrams** on math lessons
+- Runnable Python code with expected output
+- Hands-on exercises with hints and solutions
+- Bookmarks, notes, streaks, global search (Ctrl+K)
+- 154 curated references (Stanford, MIT, Oxford, arXiv, official docs)
+- ML/DL glossary
 
 ## Quick start
 
 ```bash
-cd DL_Master
 npm install
 npm run dev
 ```
 
-Open the URL shown in the terminal (usually `http://localhost:5173`).
+Open [http://localhost:5173](http://localhost:5173).
 
-### Other commands
-
-| Command | Description |
-|---------|-------------|
-| `npm run build` | Generate curriculum, type-check, and build for production |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Lint source files |
-| `npm run generate-curriculum` | Regenerate topic content from `scripts/` |
-
-## What's included
-
-- **100 topics** across **20 modules**
-- **5 learning tracks:** Python → Data → ML → DL → AI
-- **Lesson flow:** explanation → logic → code → output → takeaways → exercises
-- **154 references** (courses, papers, books, docs) linked on every topic
-- **Glossary** of 39 ML/DL/AI terms
-- **Progress tracking:** sections, exercises, streaks, bookmarks, notes (saved in browser localStorage)
-- **Global search:** `Ctrl+K` (or `Cmd+K` on Mac)
-
-## App pages
-
-| Route | Purpose |
-|-------|---------|
-| `/` | Home — progress, topic of the day, track overview |
-| `/learn` | Browse all modules and topics |
-| `/learn/:topicId` | Interactive lesson |
-| `/references` | Browse curated external resources |
-| `/glossary` | Searchable term definitions |
-| `/bookmarks` | Saved topics |
-
-## Project structure
-
-```
-DL_Master/
-├── src/
-│   ├── pages/           # Home, Learn, TopicLesson, References, Glossary, Bookmarks
-│   ├── components/      # Layout, Sidebar, CodeBlock, ExerciseEditor, etc.
-│   ├── data/
-│   │   ├── curriculum/  # Generated topic modules (100 topics)
-│   │   ├── references.ts
-│   │   └── glossary.ts
-│   └── context/         # Theme + progress (localStorage)
-├── scripts/
-│   ├── generate-curriculum.mjs   # Builds curriculum + references
-│   └── references-data.mjs       # Stanford/MIT/Oxford/paper URLs
-└── public/
-```
-
-## Curriculum modules
-
-1. Python Fundamentals → Advanced Python  
-2. NumPy, Pandas, Visualization  
-3. Math for ML, ML Foundations, Supervised/Unsupervised Learning  
-4. Feature Engineering, Deep Learning Fundamentals, PyTorch  
-5. CNNs, NLP, Transformers, LLMs & GenAI  
-6. MLOps, Deployment & AI Ethics  
-
-## Tech stack
-
-- React 19 + TypeScript
-- Vite 8
-- React Router 7
-- No backend — runs entirely in the browser
-
-## Deploy
-
-Build static assets:
+## Build
 
 ```bash
 npm run build
 ```
 
-Output is in `dist/`. Deploy to Netlify, Vercel, GitHub Pages, or any static host.
+Generates curriculum from `scripts/` then builds with Vite.
 
-### Netlify
+## Deploy (Netlify)
 
-This repo includes `netlify.toml` with the correct settings:
+- Node **22** (see `.nvmrc` and `netlify.toml`)
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Do **not** commit `node_modules/` or `dist/` (see `.gitignore`)
 
-| Setting | Value |
-|---------|-------|
-| Build command | `npm run build` |
-| Publish directory | `dist` |
-| Node version | 22 (required for Vite 8) |
+## Tech stack
 
-**Important:** Do **not** commit `node_modules` or `dist` to git. Netlify installs Linux dependencies during the build; Windows `node_modules` in the repo will break the deploy.
+React 19 · TypeScript · Vite 8 · React Router 7 · localStorage progress
 
-If you already committed them, untrack and push:
+## Project structure
 
-```bash
-git rm -r --cached node_modules dist
-git add .gitignore netlify.toml
-git commit -m "Fix Netlify deploy: ignore node_modules/dist, set Node 22"
-git push
 ```
-
-Then trigger a new deploy in the Netlify dashboard.
+scripts/                  # Curriculum generators
+  math-curriculum.mjs     # 8 math modules (40 topics)
+  generate-curriculum.mjs # Main generator
+src/
+  data/curriculum/        # Generated topic modules
+  pages/                  # Home, Learn, Roadmap, etc.
+  components/             # MathBlocks, LessonContent, etc.
+```

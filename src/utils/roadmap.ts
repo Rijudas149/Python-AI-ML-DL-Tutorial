@@ -43,30 +43,37 @@ export const ROADMAP_PHASE_META: Record<
     icon: '🐍',
     after: null,
   },
-  data: {
+  math: {
     order: 2,
-    title: 'Phase 2: Data Science',
-    subtitle: 'NumPy → Pandas → visualization → SciPy & statistics',
+    title: 'Phase 2: Mathematics for Data Science',
+    subtitle: 'Algebra → linear algebra → calculus → probability → statistics → optimization',
+    icon: '📐',
+    after: 'Complete Python fundamentals first',
+  },
+  data: {
+    order: 3,
+    title: 'Phase 3: Data Science Tools',
+    subtitle: 'NumPy → Pandas → visualization → SciPy & applied statistics',
     icon: '📊',
-    after: 'Complete Python phases first',
+    after: 'Complete Mathematics phase',
   },
   ml: {
-    order: 3,
-    title: 'Phase 3: Machine Learning',
-    subtitle: 'Math foundations → scikit-learn → supervised/unsupervised → feature engineering',
+    order: 4,
+    title: 'Phase 4: Machine Learning',
+    subtitle: 'Math for ML → scikit-learn → supervised/unsupervised → feature engineering',
     icon: '🤖',
     after: 'Complete Data Science phase',
   },
   dl: {
-    order: 4,
-    title: 'Phase 4: Deep Learning',
+    order: 5,
+    title: 'Phase 5: Deep Learning',
     subtitle: 'Neural nets → PyTorch → CNNs → NLP → Transformers',
     icon: '🧠',
     after: 'Complete Machine Learning phase',
   },
   ai: {
-    order: 5,
-    title: 'Phase 5: AI & Production',
+    order: 6,
+    title: 'Phase 6: AI & Production',
     subtitle: 'LLMs → RAG → GenAI → MLOps → ethics & governance',
     icon: '✨',
     after: 'Complete Deep Learning phase',
@@ -94,7 +101,7 @@ export function buildRoadmap(progress: ProgressState): RoadmapPhase[] {
 
   const phaseMap = new Map<Topic['track'], RoadmapPhase>();
 
-  for (const track of ['python', 'data', 'ml', 'dl', 'ai'] as const) {
+  for (const track of ['python', 'math', 'data', 'ml', 'dl', 'ai'] as const) {
     const meta = ROADMAP_PHASE_META[track];
     phaseMap.set(track, {
       id: track,

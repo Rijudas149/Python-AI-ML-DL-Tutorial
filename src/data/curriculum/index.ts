@@ -3,6 +3,14 @@ import { module02Topics } from './module02-control-flow';
 import { module03Topics } from './module03-data-structures';
 import { module04Topics } from './module04-oop-patterns';
 import { module05Topics } from './module05-advanced-python';
+import { moduleMath01Topics } from './module-math-01-algebra';
+import { moduleMath02Topics } from './module-math-02-linalg1';
+import { moduleMath03Topics } from './module-math-03-linalg2';
+import { moduleMath04Topics } from './module-math-04-calculus1';
+import { moduleMath05Topics } from './module-math-05-calculus2';
+import { moduleMath06Topics } from './module-math-06-probability';
+import { moduleMath07Topics } from './module-math-07-statistics';
+import { moduleMath08Topics } from './module-math-08-opt-info';
 import { module06Topics } from './module06-numpy';
 import { module07Topics } from './module07-pandas';
 import { module08Topics } from './module08-visualization';
@@ -64,6 +72,62 @@ export const modules: ModuleInfo[] = [
     track: 'python',
     description: `Decorators, generators, context managers, type hints, and packaging.`,
     topics: module05Topics,
+  },
+  {
+    id: 'module-math-01',
+    name: 'Algebra & Functions',
+    track: 'math',
+    description: `Foundations of sets, functions, logarithms, sequences, and complex numbers essential for data science notation and modeling.`,
+    topics: moduleMath01Topics,
+  },
+  {
+    id: 'module-math-02',
+    name: 'Linear Algebra I',
+    track: 'math',
+    description: `Vectors, dot and cross products, matrices, matrix operations, and solving linear systems.`,
+    topics: moduleMath02Topics,
+  },
+  {
+    id: 'module-math-03',
+    name: 'Linear Algebra II',
+    track: 'math',
+    description: `Determinants, matrix inverse, eigenvalues, SVD, and PCA mathematical foundations.`,
+    topics: moduleMath03Topics,
+  },
+  {
+    id: 'module-math-04',
+    name: 'Calculus I',
+    track: 'math',
+    description: `Limits, derivatives, differentiation rules, Taylor series, and integrals.`,
+    topics: moduleMath04Topics,
+  },
+  {
+    id: 'module-math-05',
+    name: 'Calculus II & Multivariate',
+    track: 'math',
+    description: `Partial derivatives, gradient, chain rule, Jacobian/Hessian, and multivariate optimization.`,
+    topics: moduleMath05Topics,
+  },
+  {
+    id: 'module-math-06',
+    name: 'Probability',
+    track: 'math',
+    description: `Probability basics, conditional probability, random variables, distributions, and joint/marginal relationships.`,
+    topics: moduleMath06Topics,
+  },
+  {
+    id: 'module-math-07',
+    name: 'Statistics',
+    track: 'math',
+    description: `Descriptive statistics, sampling, CLT, hypothesis testing, confidence intervals, and regression mathematics.`,
+    topics: moduleMath07Topics,
+  },
+  {
+    id: 'module-math-08',
+    name: 'Optimization & Information Theory',
+    track: 'math',
+    description: `Convex optimization, gradient descent theory, Lagrange multipliers, entropy, KL divergence, and MLE.`,
+    topics: moduleMath08Topics,
   },
   {
     id: 'module-06',
@@ -234,6 +298,14 @@ export const allTopics: Topic[] = [
   ...module03Topics,
   ...module04Topics,
   ...module05Topics,
+  ...moduleMath01Topics,
+  ...moduleMath02Topics,
+  ...moduleMath03Topics,
+  ...moduleMath04Topics,
+  ...moduleMath05Topics,
+  ...moduleMath06Topics,
+  ...moduleMath07Topics,
+  ...moduleMath08Topics,
   ...module06Topics,
   ...module07Topics,
   ...module08Topics,

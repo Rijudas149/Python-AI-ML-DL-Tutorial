@@ -29,8 +29,8 @@ export function Sidebar({ open = false, onClose, onSearchOpen }: SidebarProps) {
       <div className="sidebar-brand">
         <div className="brand-icon">🧠</div>
         <div>
-          <h1>DL Master</h1>
-          <p>Python · ML · DL · AI</p>
+          <h1>Data Science Master</h1>
+          <p>Python · Math · ML · DL · AI</p>
         </div>
         <button type="button" className="sidebar-close-btn" onClick={onClose} aria-label="Close menu">
           ✕
@@ -68,9 +68,9 @@ export function Sidebar({ open = false, onClose, onSearchOpen }: SidebarProps) {
 
       <div className="sidebar-tracks">
         <p className="sidebar-tracks-label">Learning Tracks</p>
-        {(['python', 'data', 'ml', 'dl', 'ai'] as const).map((track) => {
+        {(['python', 'math', 'data', 'ml', 'dl', 'ai'] as const).map((track) => {
           const count = allTopics.filter((t) => t.track === track).length;
-          const icons = { python: '🐍', data: '📊', ml: '🤖', dl: '🧠', ai: '✨' };
+          const icons = { python: '🐍', math: '📐', data: '📊', ml: '🤖', dl: '🧠', ai: '✨' };
           return (
             <Link
               key={track}

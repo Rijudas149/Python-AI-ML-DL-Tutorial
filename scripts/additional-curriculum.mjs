@@ -1,5 +1,5 @@
 /**
- * Additional curriculum modules 21–28 for DL_Master.
+ * Additional curriculum modules 21–28 for Data Science Master.
  * Import ADDITIONAL_MODULES in generate-curriculum.mjs or merge manually.
  */
 

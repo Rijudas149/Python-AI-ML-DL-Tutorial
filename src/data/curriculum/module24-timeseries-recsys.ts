@@ -81,7 +81,7 @@ Prophet and neural approaches complement classical SARIMA on messy business seri
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Time Series Foundations sits in the **ml** track of the DL_Master curriculum. Decompose series, check stationarity, and fit ARIMA models.
+Time Series Foundations sits in the **ml** track of the Data Science Master curriculum. Decompose series, check stationarity, and fit ARIMA models.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -325,7 +325,7 @@ Combine statistical and ML forecasts in ensembles weighted by recent performance
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Forecasting with Prophet & sklearn sits in the **ml** track of the DL_Master curriculum. Practical forecasting pipelines for business time series.
+Forecasting with Prophet & sklearn sits in the **ml** track of the Data Science Master curriculum. Practical forecasting pipelines for business time series.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -563,7 +563,7 @@ Online A/B tests measure click-through and revenue—the ground truth.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Collaborative Filtering sits in the **ml** track of the DL_Master curriculum. Recommend items from user-item interaction patterns.
+Collaborative Filtering sits in the **ml** track of the Data Science Master curriculum. Recommend items from user-item interaction patterns.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -800,7 +800,7 @@ Mitigate with exploration, diversity re-ranking, or hybrid CF.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Content-Based Filtering sits in the **ml** track of the DL_Master curriculum. Recommend from item features and user preference profiles.
+Content-Based Filtering sits in the **ml** track of the Data Science Master curriculum. Recommend from item features and user preference profiles.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
@@ -1038,7 +1038,7 @@ Slice metrics by segment— imbalance may vary by region or product line.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Imbalanced Classification sits in the **ml** track of the DL_Master curriculum. Handle skewed classes with resampling, weights, and proper metrics.
+Imbalanced Classification sits in the **ml** track of the Data Science Master curriculum. Handle skewed classes with resampling, weights, and proper metrics.
 
 Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 

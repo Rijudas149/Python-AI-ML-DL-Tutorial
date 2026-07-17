@@ -11,6 +11,13 @@ const TRACK_CONTEXT = {
     pitfalls: 'Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.',
     realWorld: 'Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.',
   },
+  math: {
+    lens: 'Mathematics is the foundation every ML algorithm rests on — without it, hyperparameters and loss curves are magic numbers.',
+    theory: 'Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.',
+    patterns: 'Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.',
+    pitfalls: 'Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.',
+    realWorld: 'Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.',
+  },
   data: {
     lens: 'Data quality and reproducible transforms determine whether models learn signal or noise.',
     theory: 'Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.',
@@ -96,7 +103,7 @@ function expandSectionContent(section, topic) {
 function buildDeepTheorySection(topic) {
   const c = ctx(topic);
   const o = overrides(topic);
-  const content = `## Deep Theory & Concepts\n\n${topic.title} sits in the **${trackOf(topic)}** track of the DL_Master curriculum. ${topic.description}\n\n${c.theory}\n\n${o.theoryExtra ?? `For ${topic.id}, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.`}\n\n**Level (${topic.level}):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`;
+  const content = `## Deep Theory & Concepts\n\n${topic.title} sits in the **${trackOf(topic)}** track of the Data Science Master curriculum. ${topic.description}\n\n${c.theory}\n\n${o.theoryExtra ?? `For ${topic.id}, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.`}\n\n**Level (${topic.level}):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`;
 
   return {
     id: `${topic.id}-deep-theory`,

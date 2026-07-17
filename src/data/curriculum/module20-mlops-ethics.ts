@@ -100,7 +100,7 @@ def predict(req: PredictRequest):
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Model Serialization & Serving sits in the **ai** track of the DL_Master curriculum. Save, load, and serve ML models in production.
+Model Serialization & Serving sits in the **ai** track of the Data Science Master curriculum. Save, load, and serve ML models in production.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -348,7 +348,7 @@ print(dockerfile.strip().split("\\n")[0])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Docker & Cloud Deployment sits in the **ai** track of the DL_Master curriculum. Containerize and deploy ML applications to cloud.
+Docker & Cloud Deployment sits in the **ai** track of the Data Science Master curriculum. Containerize and deploy ML applications to cloud.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -588,7 +588,7 @@ print(round(pvalue, 6))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Monitoring & Drift Detection sits in the **ai** track of the DL_Master curriculum. Track model performance and data quality in production.
+Monitoring & Drift Detection sits in the **ai** track of the Data Science Master curriculum. Track model performance and data quality in production.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -827,7 +827,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-AI Ethics, Bias & Fairness sits in the **ai** track of the DL_Master curriculum. Identify and mitigate bias in ML systems.
+AI Ethics, Bias & Fairness sits in the **ai** track of the Data Science Master curriculum. Identify and mitigate bias in ML systems.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -1059,7 +1059,7 @@ print("Built project applying:", ", ".join(skills))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Responsible AI & Governance sits in the **ai** track of the DL_Master curriculum. Organizational frameworks for ethical AI development and deployment.
+Responsible AI & Governance sits in the **ai** track of the Data Science Master curriculum. Organizational frameworks for ethical AI development and deployment.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 

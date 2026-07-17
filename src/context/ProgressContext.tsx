@@ -65,7 +65,7 @@ function ensureTopicProgress(state: ProgressState, topicId: string): TopicProgre
 }
 
 export function ProgressProvider({ children }: { children: ReactNode }) {
-  const [progress, setProgress] = useLocalStorage<ProgressState>('dl-master-progress', defaultProgress);
+  const [progress, setProgress] = useLocalStorage<ProgressState>('dsm-progress', defaultProgress, ['dl-master-progress']);
 
   const markSectionComplete = useCallback((topicId: string, sectionId: string) => {
     setProgress((prev) => {

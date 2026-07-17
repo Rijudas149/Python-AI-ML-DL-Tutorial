@@ -119,7 +119,7 @@ print(Vector(1, 2) + Vector(3, 4))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Classes & Objects sits in the **python** track of the DL_Master curriculum. Define classes with attributes and methods using the class keyword.
+Classes & Objects sits in the **python** track of the Data Science Master curriculum. Define classes with attributes and methods using the class keyword.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -408,7 +408,7 @@ print(Circle(5).area())`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Inheritance & Polymorphism sits in the **python** track of the DL_Master curriculum. Extend classes, override methods, and use polymorphic behavior.
+Inheritance & Polymorphism sits in the **python** track of the Data Science Master curriculum. Extend classes, override methods, and use polymorphic behavior.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -687,7 +687,7 @@ print(Point(1.0, 2.0))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Encapsulation & Properties sits in the **python** track of the DL_Master curriculum. Hide internal state and control access with properties and naming conventions.
+Encapsulation & Properties sits in the **python** track of the Data Science Master curriculum. Hide internal state and control access with properties and naming conventions.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -963,7 +963,7 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Design Patterns in Python sits in the **python** track of the DL_Master curriculum. Singleton, Factory, Observer, Strategy, and other common patterns.
+Design Patterns in Python sits in the **python** track of the Data Science Master curriculum. Singleton, Factory, Observer, Strategy, and other common patterns.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1230,7 +1230,7 @@ print(b.item)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Abstract Base Classes & Protocols sits in the **python** track of the DL_Master curriculum. typing.Protocol for structural subtyping and modern Python interfaces.
+Abstract Base Classes & Protocols sits in the **python** track of the Data Science Master curriculum. typing.Protocol for structural subtyping and modern Python interfaces.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

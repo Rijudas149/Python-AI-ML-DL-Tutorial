@@ -119,7 +119,7 @@ match parity:
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Conditionals (if/elif/else) sits in the **python** track of the DL_Master curriculum. Branch execution based on boolean conditions.
+Conditionals (if/elif/else) sits in the **python** track of the Data Science Master curriculum. Branch execution based on boolean conditions.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -386,7 +386,7 @@ Bob: 87`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Loops (for/while) sits in the **python** track of the DL_Master curriculum. Iterate over sequences and repeat actions with for and while loops.
+Loops (for/while) sits in the **python** track of the Data Science Master curriculum. Iterate over sequences and repeat actions with for and while loops.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -642,7 +642,7 @@ print(add(*nums))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Functions & Parameters sits in the **python** track of the DL_Master curriculum. Define reusable blocks with def, parameters, return values, and docstrings.
+Functions & Parameters sits in the **python** track of the Data Science Master curriculum. Define reusable blocks with def, parameters, return values, and docstrings.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -916,7 +916,7 @@ print(squares)`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Scope, Closures & Lambda sits in the **python** track of the DL_Master curriculum. LEGB scope rule, closures, and anonymous functions.
+Scope, Closures & Lambda sits in the **python** track of the Data Science Master curriculum. LEGB scope rule, closures, and anonymous functions.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1167,7 +1167,7 @@ print(next(it), next(it))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Comprehensions & Iterators sits in the **python** track of the DL_Master curriculum. List/dict/set comprehensions and the iterator protocol.
+Comprehensions & Iterators sits in the **python** track of the Data Science Master curriculum. List/dict/set comprehensions and the iterator protocol.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

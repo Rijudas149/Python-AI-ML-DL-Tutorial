@@ -24,6 +24,10 @@ export interface LessonSection {
   example?: string;
   output?: string;
   keyPoints?: string[];
+  /** Mathematical formulas (LaTeX-style plain text) */
+  formulas?: string[];
+  /** ASCII or structured diagram */
+  diagram?: string;
 }
 
 export interface Topic {
@@ -32,7 +36,7 @@ export interface Topic {
   description: string;
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   module: string;
-  track: 'python' | 'data' | 'ml' | 'dl' | 'ai';
+  track: 'python' | 'math' | 'data' | 'ml' | 'dl' | 'ai';
   sections: LessonSection[];
   exercises: Exercise[];
   estimatedMinutes: number;

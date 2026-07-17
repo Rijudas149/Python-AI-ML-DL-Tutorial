@@ -123,7 +123,7 @@ Hello`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Decorators sits in the **python** track of the DL_Master curriculum. Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
+Decorators sits in the **python** track of the Data Science Master curriculum. Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -404,7 +404,7 @@ print(list(evens(read_nums())))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Generators & yield sits in the **python** track of the DL_Master curriculum. Lazy iteration with generator functions and yield expressions.
+Generators & yield sits in the **python** track of the Data Science Master curriculum. Lazy iteration with generator functions and yield expressions.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -677,7 +677,7 @@ print(len(lines), lines[0])`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Context Managers sits in the **python** track of the DL_Master curriculum. Resource management with with statement and contextlib.
+Context Managers sits in the **python** track of the Data Science Master curriculum. Resource management with with statement and contextlib.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -939,7 +939,7 @@ print(ModelConfig("mlp"))`,
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Type Hints & dataclasses sits in the **python** track of the DL_Master curriculum. Static typing, dataclasses, and modern Python data modeling.
+Type Hints & dataclasses sits in the **python** track of the Data Science Master curriculum. Static typing, dataclasses, and modern Python data modeling.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
@@ -1195,7 +1195,7 @@ Use pyproject.toml for modern project config.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Modules, Packages & pip sits in the **python** track of the DL_Master curriculum. Organizing code into modules, packages, and distributing with pip.
+Modules, Packages & pip sits in the **python** track of the Data Science Master curriculum. Organizing code into modules, packages, and distributing with pip.
 
 Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 

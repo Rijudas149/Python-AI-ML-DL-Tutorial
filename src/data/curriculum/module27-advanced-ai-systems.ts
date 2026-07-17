@@ -78,7 +78,7 @@ Version embedding model in index metadata for migrations.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Embeddings & Vector Databases sits in the **ai** track of the DL_Master curriculum. Semantic search with embeddings and ANN indexes (FAISS, Chroma).
+Embeddings & Vector Databases sits in the **ai** track of the Data Science Master curriculum. Semantic search with embeddings and ANN indexes (FAISS, Chroma).
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -310,7 +310,7 @@ Accessibility: alt-text generation must be verified before publishing.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Multimodal Models (CLIP & VLM) sits in the **ai** track of the DL_Master curriculum. Vision-language models connecting images and text in shared embedding space.
+Multimodal Models (CLIP & VLM) sits in the **ai** track of the Data Science Master curriculum. Vision-language models connecting images and text in shared embedding space.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -542,7 +542,7 @@ Compliance: call recording consent, biometric voice data regulations.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Speech AI (Whisper & TTS) sits in the **ai** track of the DL_Master curriculum. Automatic speech recognition and text-to-speech pipelines.
+Speech AI (Whisper & TTS) sits in the **ai** track of the Data Science Master curriculum. Automatic speech recognition and text-to-speech pipelines.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -779,7 +779,7 @@ Automated red teaming with attacker LLMs scales coverage; human red team for sub
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-AI Benchmarks & Red Teaming sits in the **ai** track of the DL_Master curriculum. MMLU, HumanEval, and systematic adversarial testing.
+AI Benchmarks & Red Teaming sits in the **ai** track of the Data Science Master curriculum. MMLU, HumanEval, and systematic adversarial testing.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
@@ -1011,7 +1011,7 @@ Transparency: system cards document limitations and intended use boundaries.
           title: `Deep Theory & Concepts`,
           content: `## Deep Theory & Concepts
 
-Alignment, Jailbreaks & Guardrails sits in the **ai** track of the DL_Master curriculum. Mitigate harmful outputs and build responsible AI systems.
+Alignment, Jailbreaks & Guardrails sits in the **ai** track of the Data Science Master curriculum. Mitigate harmful outputs and build responsible AI systems.
 
 LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 

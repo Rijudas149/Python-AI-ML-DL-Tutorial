@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Curriculum generator for DL_Master learning platform.
+ * Curriculum generator for Data Science Master learning platform.
  * Generates TypeScript module files and index.ts from embedded curriculum data.
  */
 import { writeFileSync, mkdirSync } from 'fs';
@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES } from './references-data.mjs';
 import { deepenTopicContent } from './content-deepening.mjs';
 import { ADDITIONAL_MODULES } from './additional-curriculum.mjs';
+import { MATH_MODULES } from './math-curriculum.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, '..', 'src', 'data', 'curriculum');
@@ -45,6 +46,7 @@ function enrichSection(section, topicTitle, track) {
 
   const trackContext = {
     python: 'Python fluency is the foundation for every data science and ML workflow.',
+    math: 'Mathematics is the language of machine learning — master these before algorithms make sense.',
     data: 'Data manipulation skills directly determine the quality of downstream models.',
     ml: 'These concepts appear throughout Stanford CS229 and MIT 6.036-style curricula.',
     dl: 'Deep learning builds on the mathematical intuition taught in CS230 and fast.ai.',
@@ -2133,7 +2135,12 @@ const BASE_MODULES = [
   },
 ];
 
-const MODULES = [...BASE_MODULES, ...ADDITIONAL_MODULES];
+const MODULES = [
+  ...BASE_MODULES.slice(0, 5),
+  ...MATH_MODULES,
+  ...BASE_MODULES.slice(5),
+  ...ADDITIONAL_MODULES,
+];
 
 // ─── Generator main ──────────────────────────────────────────────────────────
 

@@ -49,7 +49,7 @@ export function Glossary() {
           />
         </div>
         <div className="track-filter-bar">
-          {(['all', 'python', 'data', 'ml', 'dl', 'ai'] as const).map((t) => (
+          {(['all', 'python', 'math', 'data', 'ml', 'dl', 'ai'] as const).map((t) => (
             <button
               key={t}
               type="button"

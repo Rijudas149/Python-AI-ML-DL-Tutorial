@@ -10,6 +10,7 @@ function getTopicOfDay(): (typeof allTopics)[0] {
 
 const TRACK_META = {
   python: { icon: '🐍', label: 'Python', color: '#3776ab' },
+  math: { icon: '📐', label: 'Mathematics', color: '#059669' },
   data: { icon: '📊', label: 'Data Science', color: '#0891b2' },
   ml: { icon: '🤖', label: 'Machine Learning', color: '#6366f1' },
   dl: { icon: '🧠', label: 'Deep Learning', color: '#7c3aed' },
@@ -24,7 +25,7 @@ export function Home() {
   const studyHours = Math.floor(progress.totalStudySeconds / 3600);
   const studyMins = Math.floor((progress.totalStudySeconds % 3600) / 60);
 
-  const trackStats = (['python', 'data', 'ml', 'dl', 'ai'] as const).map((track) => {
+  const trackStats = (['python', 'math', 'data', 'ml', 'dl', 'ai'] as const).map((track) => {
     const topics = allTopics.filter((t) => t.track === track);
     const done = topics.filter((t) => progress.topics[t.id]?.completed).length;
     return { track, total: topics.length, done, pct: topics.length ? Math.round((done / topics.length) * 100) : 0 };
@@ -36,10 +37,10 @@ export function Home() {
   return (
     <div className="page home-page">
       <header className="page-header">
-        <h1>Master Python, ML, DL & AI</h1>
+        <h1>Master Python, Math, ML, DL & AI</h1>
         <p>
-          The complete learning path from your first Python print statement to building LLMs and deploying models in production.
-          Theory, code, exercises — everything in one place.
+          The complete Data Science learning path — Python, mathematics with formulas & diagrams,
+          NumPy/Pandas, machine learning, deep learning, and production AI.
         </p>
         {progress.streakDays > 0 && (
           <div className="header-streak">
@@ -68,7 +69,7 @@ export function Home() {
       <Link to="/roadmap" className="roadmap-teaser">
         <div>
           <span className="continue-label">Your Learning Roadmap</span>
-          <h2>{roadmap.overallPct}% complete · Phase {roadmap.currentPhase.order} of 5</h2>
+          <h2>{roadmap.overallPct}% complete · Phase {roadmap.currentPhase.order} of 6</h2>
           <p>
             {roadmap.nextTopic
               ? `Next up: ${roadmap.nextTopic.title}`
@@ -167,8 +168,13 @@ export function Home() {
       </section>
 
       <section className="features-section">
-        <h2>Why DL Master?</h2>
+        <h2>Why Data Science Master?</h2>
         <div className="features-grid">
+          <div className="feature-card">
+            <span className="feature-icon">📐</span>
+            <h3>Math with Formulas</h3>
+            <p>40 dedicated math topics — algebra, linear algebra, calculus, probability, statistics, and optimization — each with key formulas and ASCII diagrams.</p>
+          </div>
           <div className="feature-card">
             <span className="feature-icon">📖</span>
             <h3>Theory + Practice</h3>
@@ -177,7 +183,7 @@ export function Home() {
           <div className="feature-card">
             <span className="feature-icon">🗺️</span>
             <h3>Structured Path</h3>
-            <p>20 modules from Python basics through transformers, LLMs, MLOps, and AI ethics.</p>
+            <p>36 modules across 6 phases — Python, Math, Data Science, ML, Deep Learning, and AI — with 180 topics total.</p>
           </div>
           <div className="feature-card">
             <span className="feature-icon">📈</span>
