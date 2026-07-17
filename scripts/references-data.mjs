@@ -1484,7 +1484,139 @@ export const TOPIC_REFERENCES = {
   'ai-monitoring': pick('evidently-ai', 'mlflow-docs', 'fairlearn-docs', 'model-cards-paper'),
   'ai-bias': pick('fairlearn-docs', 'model-cards-paper', 'esl-hastie', 'google-responsible-ai'),
   'ai-governance': pick('eu-ai-act', 'nist-ai-rmf', 'model-cards-paper', 'google-responsible-ai'),
+  // Math track — topic-specific further reading
+  'math-sets': pick('mit-6034', 'khan-probability', 'python-sets-doc', 'esl-hastie'),
+  'math-functions': pick('3blue1brown-calculus', 'khan-multivariable-calc', 'mit-6034', 'bishop-prml'),
+  'math-logarithms': pick('3blue1brown-calculus', 'cover-thomas-info-theory', 'goodfellow-dl-book', 'bishop-prml'),
+  'math-sequences': pick('clrs-algorithms', '3blue1brown-calculus', 'mit-6034', 'cs229-optimization'),
+  'math-complex': pick('mit-6034', 'numpy-linalg', '3blue1brown-calculus', 'stanford-cs230'),
+  'math-vectors': pick('mit-1806-linalg', '3blue1brown-linalg', 'numpy-linalg', 'stanford-cs229'),
+  'math-dot-cross': pick('mit-1806-linalg', '3blue1brown-linalg', 'numpy-linalg', 'cs231n-conv-notes'),
+  'math-matrices': pick('mit-1806-linalg', '3blue1brown-linalg', 'numpy-linalg', 'esl-hastie'),
+  'math-matrix-ops': pick('mit-1806-linalg', 'numpy-linalg', '3blue1brown-linalg', 'berkeley-cs189'),
+  'math-linear-systems': pick('mit-1806-linalg', 'numpy-linalg', 'clrs-algorithms', 'berkeley-cs189'),
+  'math-determinants': pick('mit-1806-linalg', '3blue1brown-linalg', 'numpy-linalg', 'esl-hastie'),
+  'math-inverse': pick('mit-1806-linalg', 'numpy-linalg', '3blue1brown-linalg', 'bishop-prml'),
+  'math-eigen': pick('mit-1806-linalg', '3blue1brown-linalg', 'sklearn-pca', 'esl-hastie'),
+  'math-svd': pick('mit-1806-linalg', 'sklearn-pca', '3blue1brown-linalg', 'bishop-prml'),
+  'math-pca-math': pick('sklearn-pca', 'mit-1806-linalg', 'van-der-maaten-tsne', 'esl-hastie'),
+  'math-limits': pick('3blue1brown-calculus', 'khan-multivariable-calc', 'goodfellow-dl-book', 'cs229-optimization'),
+  'math-derivatives': pick('3blue1brown-calculus', 'khan-multivariable-calc', 'pytorch-autograd', 'goodfellow-dl-book'),
+  'math-derivative-rules': pick('3blue1brown-calculus', 'khan-multivariable-calc', 'pytorch-autograd', 'goodfellow-dl-book'),
+  'math-taylor': pick('3blue1brown-calculus', 'khan-multivariable-calc', 'bishop-prml', 'goodfellow-dl-book'),
+  'math-integrals': pick('3blue1brown-calculus', 'khan-multivariable-calc', 'bishop-prml', 'cover-thomas-info-theory'),
+  'math-partial-deriv': pick('khan-multivariable-calc', '3blue1brown-calculus', 'goodfellow-dl-book', 'cs229-optimization'),
+  'math-gradient': pick('cs229-optimization', '3blue1brown-calculus', 'pytorch-autograd', 'goodfellow-dl-book'),
+  'math-chain-rule': pick('3blue1brown-nn', 'pytorch-autograd', 'goodfellow-dl-book', 'cs229-optimization'),
+  'math-jacobian-hessian': pick('khan-multivariable-calc', 'goodfellow-dl-book', 'pytorch-autograd', 'cs229-optimization'),
+  'math-multivariate-opt': pick('cs229-optimization', 'khan-multivariable-calc', 'adam-paper', 'goodfellow-dl-book'),
+  'math-prob-basics': pick('khan-probability', 'bishop-prml', 'cover-thomas-info-theory', 'esl-hastie'),
+  'math-conditional-bayes': pick('bishop-prml', 'khan-probability', 'cover-thomas-info-theory', 'esl-hastie'),
+  'math-random-vars': pick('khan-probability', 'bishop-prml', 'cover-thomas-info-theory', 'numpy-random'),
+  'math-distributions': pick('khan-probability', 'bishop-prml', 'numpy-random', 'esl-hastie'),
+  'math-joint-marginal': pick('bishop-prml', 'khan-probability', 'cover-thomas-info-theory', 'esl-hastie'),
+  'math-descriptive': pick('esl-hastie', 'khan-probability', 'kaggle-intro-ml', 'bishop-prml'),
+  'math-sampling-clt': pick('khan-probability', 'esl-hastie', 'berkeley-cs189', 'bishop-prml'),
+  'math-hypothesis': pick('esl-hastie', 'khan-probability', 'berkeley-cs189', 'bishop-prml'),
+  'math-confidence': pick('esl-hastie', 'khan-probability', 'berkeley-cs189', 'bishop-prml'),
+  'math-regression-math': pick('esl-hastie', 'sklearn-linear-models', 'berkeley-cs189', 'bishop-prml'),
+  'math-convex': pick('cs229-optimization', 'esl-hastie', 'goodfellow-dl-book', 'mit-6034'),
+  'math-gradient-descent-math': pick('cs229-optimization', 'adam-paper', '3blue1brown-calculus', 'goodfellow-dl-book'),
+  'math-lagrange': pick('cs229-optimization', 'khan-multivariable-calc', 'esl-hastie', 'bishop-prml'),
+  'math-entropy-math': pick('cover-thomas-info-theory', 'bishop-prml', 'goodfellow-dl-book', 'esl-hastie'),
+  'math-kl-mle': pick('cover-thomas-info-theory', 'bishop-prml', 'goodfellow-dl-book', 'esl-hastie'),
+  // Modules 21–28
+  'py-testing': pick('python-tutorial-intro', 'python-datamodel', 'cs106a-python', 'python-modules-doc'),
+  'py-debugging': pick('python-tutorial-intro', 'python-datamodel', 'real-python-scope', 'cs106a-python'),
+  'py-async': pick('python-context-managers', 'python-modules-doc', 'real-python-scope', 'python-tutorial-intro'),
+  'py-regex': pick('python-strings-doc', 'real-python-strings', 'python-tutorial-intro', 'python-datamodel'),
+  'py-concurrency': pick('python-context-managers', 'python-modules-doc', 'real-python-scope', 'python-tutorial-intro'),
+  'py-files': pick('python-input-output', 'python-modules-doc', 'python-packaging-guide', 'real-python-variables'),
+  'py-apis': pick('python-input-output', 'python-modules-doc', 'pip-user-guide', 'python-packaging-guide'),
+  'py-web-scrape': pick('python-input-output', 'python-strings-doc', 'python-modules-doc', 'kaggle-python'),
+  'py-sqlite': pick('python-input-output', 'python-modules-doc', 'pandas-getting-started', 'kaggle-python'),
+  'py-serialization': pick('python-input-output', 'python-modules-doc', 'python-packaging-guide', 'pip-user-guide'),
+  'scipy-basics': pick('numpy-quickstart', 'numpy-linalg', 'khan-probability', 'esl-hastie'),
+  'stats-hypothesis': pick('esl-hastie', 'khan-probability', 'berkeley-cs189', 'bishop-prml'),
+  'stats-distributions': pick('khan-probability', 'bishop-prml', 'numpy-random', 'esl-hastie'),
+  'stats-bayesian': pick('bishop-prml', 'khan-probability', 'cover-thomas-info-theory', 'esl-hastie'),
+  'stats-regression': pick('esl-hastie', 'sklearn-linear-models', 'berkeley-cs189', 'bishop-prml'),
+  'ml-timeseries': pick('pandas-timeseries', 'esl-hastie', 'kaggle-intermediate-ml', 'scikit-learn-user-guide'),
+  'ml-forecasting': pick('pandas-timeseries', 'esl-hastie', 'kaggle-intermediate-ml', 'scikit-learn-user-guide'),
+  'ml-recsys-collab': pick('esl-hastie', 'stanford-cs229', 'bishop-prml', 'kaggle-intermediate-ml'),
+  'ml-recsys-content': pick('esl-hastie', 'stanford-cs229', 'kaggle-intermediate-ml', 'bishop-prml'),
+  'ml-imbalanced': pick('sklearn-metrics', 'fairlearn-docs', 'esl-hastie', 'kaggle-intermediate-ml'),
+  'rl-basics': pick('stanford-cs330', 'goodfellow-dl-book', 'berkeley-cs189', 'mit-6034'),
+  'rl-qlearning': pick('stanford-cs330', 'goodfellow-dl-book', 'berkeley-cs189', 'esl-hastie'),
+  'rl-deep': pick('stanford-cs330', 'goodfellow-dl-book', 'pytorch-tutorials', 'stanford-cs230'),
+  'rl-policy': pick('stanford-cs330', 'goodfellow-dl-book', 'berkeley-cs189', 'pytorch-tutorials'),
+  'rl-applications': pick('stanford-cs330', 'goodfellow-dl-book', 'berkeley-cs189', 'stanford-cs230'),
+  'gen-gan': pick('gan-paper', 'goodfellow-dl-book', 'stanford-cs231n', 'pytorch-tutorials'),
+  'gen-vae': pick('goodfellow-dl-book', 'gan-paper', 'ddpm-paper', 'stanford-cs230'),
+  'gen-diffusion': pick('ddpm-paper', 'goodfellow-dl-book', 'gan-paper', 'stanford-cs231n'),
+  'gen-style': pick('stanford-cs231n', 'pytorch-transfer-learning', 'goodfellow-dl-book', 'fastai-course'),
+  'gen-eval': pick('goodfellow-dl-book', 'stanford-cs231n', 'model-cards-paper', 'fairlearn-docs'),
+  'ai-vectors': pick('rag-paper', 'huggingface-nlp-course', 'word2vec-paper', 'transformers-docs'),
+  'ai-multimodal': pick('huggingface-nlp-course', 'transformers-docs', 'stanford-cs224n', 'openai-gpt-best-practices'),
+  'ai-speech': pick('huggingface-nlp-course', 'stanford-cs224n', 'transformers-docs', 'goodfellow-dl-book'),
+  'ai-eval': pick('fairlearn-docs', 'model-cards-paper', 'google-responsible-ai', 'anthropic-prompt-engineering'),
+  'ai-safety': pick('google-responsible-ai', 'fairlearn-docs', 'nist-ai-rmf', 'anthropic-prompt-engineering'),
+  'cap-portfolio': pick('kaggle-intro-ml', 'stanford-cs229', 'coursera-andrew-ng', 'fastai-course'),
+  'cap-kaggle': pick('kaggle-intro-ml', 'kaggle-intermediate-ml', 'xgboost-docs', 'esl-hastie'),
+  'cap-interview': pick('stanford-cs229', 'esl-hastie', 'coursera-andrew-ng', 'clrs-algorithms'),
+  'cap-research': pick('attention-paper', 'goodfellow-dl-book', 'stanford-cs230', 'bert-paper'),
+  'cap-career': pick('coursera-andrew-ng', 'kaggle-intro-ml', 'stanford-cs229', 'fastai-course'),
 };
+
+/** Keyword rules for topics without explicit TOPIC_REFERENCES entries. */
+const REFERENCE_RULES = [
+  { test: (h, id) => id.startsWith('math-sets') || /set theory|venn|cardinality/.test(h), refs: ['mit-6034', 'khan-probability', 'python-sets-doc', 'esl-hastie'] },
+  { test: (h, id) => id.startsWith('math-functions') || id.startsWith('math-log') || id.startsWith('math-seq'), refs: ['3blue1brown-calculus', 'khan-multivariable-calc', 'mit-6034', 'bishop-prml'] },
+  { test: (h, id) => id.startsWith('math-complex') || /fft|euler|polar/.test(h), refs: ['mit-6034', 'numpy-linalg', '3blue1brown-calculus', 'stanford-cs230'] },
+  { test: (h, id) => /vector|dot product|cross product|matrix|linalg|eigen|svd|determinant|inverse|linear system|pca-math|gram|orthogonal|rank/.test(h) || /^math-(vectors|dot|matri|linear|determ|inverse|eigen|svd|pca)/.test(id), refs: ['mit-1806-linalg', '3blue1brown-linalg', 'numpy-linalg', 'esl-hastie'] },
+  { test: (h, id) => /limit|deriv|integral|taylor|calculus|chain rule|jacobian|hessian|partial/.test(h) || /^math-(limits|deriv|integral|taylor|partial|gradient|chain|jacobian)/.test(id), refs: ['3blue1brown-calculus', 'khan-multivariable-calc', 'goodfellow-dl-book', 'pytorch-autograd'] },
+  { test: (h, id) => /probability|bayes|random var|distribution|joint|marginal|conditional/.test(h) || /^math-(prob|conditional|random|distribut|joint)/.test(id), refs: ['khan-probability', 'bishop-prml', 'cover-thomas-info-theory', 'esl-hastie'] },
+  { test: (h, id) => /hypothesis|confidence|descriptive|sampling|clt|regression-math/.test(h) || /^math-(descriptive|sampling|hypothesis|confidence|regression-math)/.test(id), refs: ['esl-hastie', 'khan-probability', 'berkeley-cs189', 'bishop-prml'] },
+  { test: (h, id) => /convex|gradient.descent|lagrange|entropy|kl|mle|optim/.test(h) || /^math-(convex|gradient-descent|lagrange|entropy|kl)/.test(id), refs: ['cs229-optimization', 'cover-thomas-info-theory', 'adam-paper', 'goodfellow-dl-book'] },
+  { test: (h, id) => id.startsWith('py-testing') || id.startsWith('py-debug'), refs: ['python-tutorial-intro', 'cs106a-python', 'python-datamodel', 'real-python-variables'] },
+  { test: (h, id) => id.startsWith('py-async') || id.startsWith('py-concur'), refs: ['python-tutorial-intro', 'python-modules-doc', 'real-python-scope', 'python-context-managers'] },
+  { test: (h, id) => id.startsWith('py-regex'), refs: ['python-strings-doc', 'real-python-strings', 'python-tutorial-intro', 'python-datamodel'] },
+  { test: (h, id) => id.startsWith('py-files') || id.startsWith('py-serial'), refs: ['python-input-output', 'python-modules-doc', 'python-packaging-guide', 'real-python-variables'] },
+  { test: (h, id) => id.startsWith('py-apis') || id.startsWith('py-web') || id.startsWith('py-sqlite'), refs: ['python-input-output', 'python-modules-doc', 'pip-user-guide', 'python-tutorial-intro'] },
+  { test: (h, id) => id.startsWith('scipy-') || id.startsWith('stats-'), refs: ['numpy-quickstart', 'khan-probability', 'esl-hastie', 'bishop-prml'] },
+  { test: (h, id) => id.startsWith('ml-timeseries') || id.startsWith('ml-forecast'), refs: ['pandas-timeseries', 'esl-hastie', 'kaggle-intermediate-ml', 'scikit-learn-user-guide'] },
+  { test: (h, id) => /recsys|recommend|collaborative|content-based|implicit/.test(h), refs: ['esl-hastie', 'stanford-cs229', 'kaggle-intermediate-ml', 'bishop-prml'] },
+  { test: (h, id) => /imbalance|smote|class.weight/.test(h), refs: ['sklearn-metrics', 'esl-hastie', 'kaggle-intermediate-ml', 'fairlearn-docs'] },
+  { test: (h, id) => id.startsWith('rl-'), refs: ['stanford-cs330', 'goodfellow-dl-book', 'mit-6034', 'berkeley-cs189'] },
+  { test: (h, id) => id.startsWith('gen-'), refs: ['gan-paper', 'ddpm-paper', 'goodfellow-dl-book', 'stanford-cs231n'] },
+  { test: (h, id) => id.startsWith('ai-vectors') || /embedding|retrieval|faiss|chroma/.test(h), refs: ['rag-paper', 'huggingface-nlp-course', 'transformers-docs', 'word2vec-paper'] },
+  { test: (h, id) => id.startsWith('ai-multimodal') || id.startsWith('ai-speech'), refs: ['huggingface-nlp-course', 'transformers-docs', 'stanford-cs224n', 'openai-gpt-best-practices'] },
+  { test: (h, id) => id.startsWith('ai-eval') || id.startsWith('ai-safety'), refs: ['fairlearn-docs', 'model-cards-paper', 'google-responsible-ai', 'anthropic-prompt-engineering'] },
+  { test: (h, id) => id.startsWith('cap-'), refs: ['kaggle-intro-ml', 'stanford-cs229', 'coursera-andrew-ng', 'esl-hastie'] },
+  { test: (h, id) => /mlops|docker|monitor|drift|bias|governance|fairness/.test(h), refs: ['mlflow-docs', 'evidently-ai', 'fairlearn-docs', 'docker-docs'] },
+];
+
+/**
+ * Resolve further-reading links for a topic — explicit map first, then keyword rules.
+ * @param {{ id: string, title?: string, description?: string, track?: string }} topic
+ */
+export function resolveTopicReferences(topic) {
+  if (TOPIC_REFERENCES[topic.id]) {
+    return TOPIC_REFERENCES[topic.id];
+  }
+
+  const haystack = `${topic.id} ${topic.title ?? ''} ${topic.description ?? ''}`.toLowerCase();
+
+  for (const rule of REFERENCE_RULES) {
+    if (rule.test(haystack, topic.id)) {
+      const valid = rule.refs.filter((id) => CATALOG[id]);
+      if (valid.length >= 3) return pick(...valid.slice(0, 4));
+    }
+  }
+
+  const track = topic.track ?? 'python';
+  return TRACK_REFERENCES[track] ?? [];
+}
 
 export const ALL_REFERENCES = dedupeById([
   ...Object.values(TRACK_REFERENCES).flat(),

@@ -11,37 +11,12 @@ export const module03Topics: Topic[] = [
         {
           id: `list-ops`,
           title: `List Operations`,
-          content: `**List Operations** — what you need to know:
+          content: `Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.
 
-- **Core idea:** Ordered sequences — mutable lists and immutable tuples.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **List Operations** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Lists are mutable ordered sequences
+- sort() modifies in place; sorted() returns new list
+- Slicing [start:stop:step] never includes stop index
+- Use copy() or list() for shallow copies`,
           example: `nums = [3, 1, 4, 1, 5]
 nums.append(9)
 nums.sort()
@@ -53,57 +28,24 @@ print(nums[1:4])`,
             `Lists are mutable ordered sequences`,
             `sort() modifies in place; sorted() returns new list`,
             `Slicing [start:stop:step] never includes stop index`,
-            `Use copy() or list() for shallow copies`,
-            `List Operations is a foundational piece of Lists & Tuples`,
-            `Connect this section to the python track and beginner expectations`
+            `Use copy() or list() for shallow copies`
           ],
-          pseudoCode: `CONCEPT: List Operations
+          pseudoCode: `List Operations
 
-Study checklist:
-  1. Lists are mutable ordered sequences
-  2. sort() modifies in place; sorted() returns new list
-  3. Slicing [start:stop:step] never includes stop index
-  4. Use copy() or list() for shallow copies
-  5. List Operations is a foundational piece of Lists & Tuples
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
+1. Lists are mutable ordered sequences
+2. sort() modifies in place; sorted() returns new list
+3. Slicing [start:stop:step] never includes stop index
+4. Use copy() or list() for shallow copies`
         },
         {
           id: `tuples`,
           title: `Tuples`,
-          content: `**Tuples** — what you need to know:
+          content: `Tuples are immutable sequences. Use for fixed collections: coordinates, DB records. Tuple unpacking: \`a, b = (1, 2)\`.
 
-- **Core idea:** Ordered sequences — mutable lists and immutable tuples.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Tuples are immutable sequences. Use for fixed collections: coordinates, DB records. Tuple unpacking: \`a, b = (1, 2)\`.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Tuples** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Tuples are immutable — hashable if elements are
+- Use for heterogeneous fixed data
+- Unpacking works with any iterable
+- Single-element tuple needs trailing comma: (1,)`,
           example: `point = (10, 20)
 x, y = point
 print(f"({x}, {y})")
@@ -112,119 +54,46 @@ print(f"({x}, {y})")
             `Tuples are immutable — hashable if elements are`,
             `Use for heterogeneous fixed data`,
             `Unpacking works with any iterable`,
-            `Single-element tuple needs trailing comma: (1,)`,
-            `Tuples is a foundational piece of Lists & Tuples`,
-            `Connect this section to the python track and beginner expectations`
+            `Single-element tuple needs trailing comma: (1,)`
           ],
-          pseudoCode: `CONCEPT: Tuples
+          pseudoCode: `Tuples
 
-Study checklist:
-  1. Tuples are immutable — hashable if elements are
-  2. Use for heterogeneous fixed data
-  3. Unpacking works with any iterable
-  4. Single-element tuple needs trailing comma: (1,)
-  5. Tuples is a foundational piece of Lists & Tuples
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
+1. Tuples are immutable — hashable if elements are
+2. Use for heterogeneous fixed data
+3. Unpacking works with any iterable
+4. Single-element tuple needs trailing comma: (1,)`
         },
         {
           id: `list-perf`,
           title: `Performance Considerations`,
-          content: `**Performance Considerations** — what you need to know:
+          content: `Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.
 
-- **Core idea:** Ordered sequences — mutable lists and immutable tuples.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Performance Considerations** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Choose data structure based on access patterns
+- deque for queue operations
+- Lists for general-purpose ordered storage
+- Profile before optimizing`,
           keyPoints: [
             `Choose data structure based on access patterns`,
             `deque for queue operations`,
             `Lists for general-purpose ordered storage`,
-            `Profile before optimizing`,
-            `Performance Considerations is a foundational piece of Lists & Tuples`,
-            `Connect this section to the python track and beginner expectations`
+            `Profile before optimizing`
           ],
-          example: `# Concept check: Performance Considerations
-meta = {
-    "topic": "py-lists",
-    "section": "list-perf",
-    "track": "python",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-lists
-section: list-perf
-track: python
-level: beginner`,
-          pseudoCode: `CONCEPT: Performance Considerations
+          pseudoCode: `Performance Considerations
 
-Study checklist:
-  1. Choose data structure based on access patterns
-  2. deque for queue operations
-  3. Lists for general-purpose ordered storage
-  4. Profile before optimizing
-  5. Performance Considerations is a foundational piece of Lists & Tuples
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
+1. Choose data structure based on access patterns
+2. deque for queue operations
+3. Lists for general-purpose ordered storage
+4. Profile before optimizing`
         },
         {
           id: `nested`,
           title: `Nested Structures`,
-          content: `**Nested Structures** — what you need to know:
+          content: `Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.
 
-- **Core idea:** Ordered sequences — mutable lists and immutable tuples.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Nested Structures** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Nested structures model grids and tables
+- List comprehensions flatten or transform nested data
+- Copy carefully — nested lists share references
+- Consider numpy arrays for numeric matrices`,
           example: `matrix = [[1,2,3],[4,5,6],[7,8,9]]
 print(matrix[1][2])
 print([row[0] for row in matrix])`,
@@ -234,201 +103,14 @@ print([row[0] for row in matrix])`,
             `Nested structures model grids and tables`,
             `List comprehensions flatten or transform nested data`,
             `Copy carefully — nested lists share references`,
-            `Consider numpy arrays for numeric matrices`,
-            `Nested Structures is a foundational piece of Lists & Tuples`,
-            `Connect this section to the python track and beginner expectations`
+            `Consider numpy arrays for numeric matrices`
           ],
-          pseudoCode: `CONCEPT: Nested Structures
+          pseudoCode: `Nested Structures
 
-Study checklist:
-  1. Nested structures model grids and tables
-  2. List comprehensions flatten or transform nested data
-  3. Copy carefully — nested lists share references
-  4. Consider numpy arrays for numeric matrices
-  5. Nested Structures is a foundational piece of Lists & Tuples
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-lists-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Lists & Tuples** sits in the **python** track of the Data Science Master curriculum. Ordered sequences — mutable lists and immutable tuples.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-lists**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Lists & Tuples
-meta = {"topic_id": "py-lists", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-lists python beginner`,
-          keyPoints: [
-            `Core theory of Lists & Tuples ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Lists & Tuples ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-lists-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Lists & Tuples**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-lists**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-lists
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-lists", "Lists & Tuples")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-lists Lists`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-lists-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Lists & Tuples** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-lists**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-lists", "Lists & Tuples")
-debug_step("section_count", 4)`,
-          output: `[py-lists] 'Lists & Tuples' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-lists-real-world`,
-          title: `Real-World Applications`,
-          content: `**Lists & Tuples** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-lists** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Lists & Tuples
-skills = ["python", "beginner", "py-lists"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-lists`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Lists & Tuples to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Lists & Tuples to adjacent topics in the same track
-
-Topic: Lists & Tuples
-Track: python | Level: beginner`
+1. Nested structures model grids and tables
+2. List comprehensions flatten or transform nested data
+3. Copy carefully — nested lists share references
+4. Consider numpy arrays for numeric matrices`
         }
       ],
       exercises: [
@@ -448,7 +130,7 @@ print(nums.index(max(nums)))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-03`,
       references: [
         {
@@ -495,37 +177,12 @@ print(nums.index(max(nums)))`,
         {
           id: `dict-basics`,
           title: `Dictionary Fundamentals`,
-          content: `**Dictionary Fundamentals** — what you need to know:
+          content: `Dicts map keys to values. Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`. Access: \`d[key]\` or \`d.get(key, default)\`.
 
-- **Core idea:** Hash maps and unordered unique collections.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Dicts map keys to values. Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`. Access: \`d[key]\` or \`d.get(key, default)\`.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Dictionary Fundamentals** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Dicts preserve insertion order (Python 3.7+)
+- Use get() to avoid KeyError
+- keys(), values(), items() for iteration
+- Dict comprehensions build dicts concisely`,
           example: `user = {"name": "Alice", "age": 30, "role": "admin"}
 print(user["name"])
 print(user.get("email", "N/A"))`,
@@ -535,57 +192,24 @@ N/A`,
             `Dicts preserve insertion order (Python 3.7+)`,
             `Use get() to avoid KeyError`,
             `keys(), values(), items() for iteration`,
-            `Dict comprehensions build dicts concisely`,
-            `Dictionary Fundamentals is a foundational piece of Dictionaries & Sets`,
-            `Connect this section to the python track and beginner expectations`
+            `Dict comprehensions build dicts concisely`
           ],
-          pseudoCode: `CONCEPT: Dictionary Fundamentals
+          pseudoCode: `Dictionary Fundamentals
 
-Study checklist:
-  1. Dicts preserve insertion order (Python 3.7+)
-  2. Use get() to avoid KeyError
-  3. keys(), values(), items() for iteration
-  4. Dict comprehensions build dicts concisely
-  5. Dictionary Fundamentals is a foundational piece of Dictionaries & Sets
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
+1. Dicts preserve insertion order (Python 3.7+)
+2. Use get() to avoid KeyError
+3. keys(), values(), items() for iteration
+4. Dict comprehensions build dicts concisely`
         },
         {
           id: `sets`,
           title: `Sets`,
-          content: `**Sets** — what you need to know:
+          content: `Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.
 
-- **Core idea:** Hash maps and unordered unique collections.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Sets** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Sets eliminate duplicates
+- Fast membership testing with in
+- frozenset is immutable/hashable
+- Use sets for deduplication and set math`,
           example: `a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
 print(a & b)
@@ -596,57 +220,24 @@ print(a | b)`,
             `Sets eliminate duplicates`,
             `Fast membership testing with in`,
             `frozenset is immutable/hashable`,
-            `Use sets for deduplication and set math`,
-            `Sets is a foundational piece of Dictionaries & Sets`,
-            `Connect this section to the python track and beginner expectations`
+            `Use sets for deduplication and set math`
           ],
-          pseudoCode: `CONCEPT: Sets
+          pseudoCode: `Sets
 
-Study checklist:
-  1. Sets eliminate duplicates
-  2. Fast membership testing with in
-  3. frozenset is immutable/hashable
-  4. Use sets for deduplication and set math
-  5. Sets is a foundational piece of Dictionaries & Sets
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
+1. Sets eliminate duplicates
+2. Fast membership testing with in
+3. frozenset is immutable/hashable
+4. Use sets for deduplication and set math`
         },
         {
           id: `defaultdict`,
           title: `defaultdict & Counter`,
-          content: `**defaultdict & Counter** — what you need to know:
+          content: `\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.
 
-- **Core idea:** Hash maps and unordered unique collections.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **defaultdict & Counter** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Counter is a dict subclass for counting
+- most_common(n) returns top n items
+- defaultdict avoids manual key existence checks
+- Use Counter for text and categorical analysis`,
           example: `from collections import Counter
 words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
 counts = Counter(words)
@@ -656,51 +247,24 @@ print(counts.most_common(2))`,
             `Counter is a dict subclass for counting`,
             `most_common(n) returns top n items`,
             `defaultdict avoids manual key existence checks`,
-            `Use Counter for text and categorical analysis`,
-            `defaultdict & Counter is a foundational piece of Dictionaries & Sets`,
-            `Connect this section to the python track and beginner expectations`
+            `Use Counter for text and categorical analysis`
           ],
-          pseudoCode: `CONCEPT: defaultdict & Counter
+          pseudoCode: `defaultdict & Counter
 
-Study checklist:
-  1. Counter is a dict subclass for counting
-  2. most_common(n) returns top n items
-  3. defaultdict avoids manual key existence checks
-  4. Use Counter for text and categorical analysis
-  5. defaultdict & Counter is a foundational piece of Dictionaries & Sets
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
+1. Counter is a dict subclass for counting
+2. most_common(n) returns top n items
+3. defaultdict avoids manual key existence checks
+4. Use Counter for text and categorical analysis`
         },
         {
           id: `dict-merge`,
           title: `Merging & Updating Dicts`,
           content: `Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`. Update in place: \`d.update(other)\`.
 
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Merging & Updating Dicts** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Later keys override earlier in merge
+- Use for config and kwargs merging
+- Deep merge requires custom logic
+- Dict union operator | available in 3.9+`,
           example: `defaults = {"lr": 0.01, "epochs": 10}
 overrides = {"epochs": 50}
 config = {**defaults, **overrides}
@@ -710,201 +274,14 @@ print(config)`,
             `Later keys override earlier in merge`,
             `Use for config and kwargs merging`,
             `Deep merge requires custom logic`,
-            `Dict union operator | available in 3.9+`,
-            `Merging & Updating Dicts is a foundational piece of Dictionaries & Sets`,
-            `Connect this section to the python track and beginner expectations`
+            `Dict union operator | available in 3.9+`
           ],
-          pseudoCode: `CONCEPT: Merging & Updating Dicts
+          pseudoCode: `Merging & Updating Dicts
 
-Study checklist:
-  1. Later keys override earlier in merge
-  2. Use for config and kwargs merging
-  3. Deep merge requires custom logic
-  4. Dict union operator | available in 3.9+
-  5. Merging & Updating Dicts is a foundational piece of Dictionaries & Sets
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-dicts-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Dictionaries & Sets** sits in the **python** track of the Data Science Master curriculum. Hash maps and unordered unique collections.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-dicts**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Dictionaries & Sets
-meta = {"topic_id": "py-dicts", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-dicts python beginner`,
-          keyPoints: [
-            `Core theory of Dictionaries & Sets ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Dictionaries & Sets ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-dicts-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Dictionaries & Sets**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-dicts**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-dicts
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-dicts", "Dictionaries & Sets")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-dicts Dictionaries`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-dicts-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Dictionaries & Sets** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-dicts**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-dicts", "Dictionaries & Sets")
-debug_step("section_count", 4)`,
-          output: `[py-dicts] 'Dictionaries & Sets' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-dicts-real-world`,
-          title: `Real-World Applications`,
-          content: `**Dictionaries & Sets** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-dicts** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Dictionaries & Sets
-skills = ["python", "beginner", "py-dicts"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-dicts`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Dictionaries & Sets to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Dictionaries & Sets to adjacent topics in the same track
-
-Topic: Dictionaries & Sets
-Track: python | Level: beginner`
+1. Later keys override earlier in merge
+2. Use for config and kwargs merging
+3. Deep merge requires custom logic
+4. Dict union operator | available in 3.9+`
         }
       ],
       exercises: [
@@ -925,7 +302,7 @@ print(inverted)`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-03`,
       references: [
         {
@@ -972,37 +349,12 @@ print(inverted)`,
         {
           id: `stack`,
           title: `Stack (LIFO)`,
-          content: `**Stack (LIFO)** — what you need to know:
+          content: `Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.
 
-- **Core idea:** LIFO stacks and FIFO queues with collections.deque.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Stack (LIFO)** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- append/pop from end implements stack
+- O(1) operations at list end
+- Used in recursion and graph DFS
+- deque also supports append/pop`,
           example: `stack = []
 stack.append(1)
 stack.append(2)
@@ -1015,57 +367,24 @@ print(stack)`,
             `append/pop from end implements stack`,
             `O(1) operations at list end`,
             `Used in recursion and graph DFS`,
-            `deque also supports append/pop`,
-            `Stack (LIFO) is a foundational piece of Stacks, Queues & Deque`,
-            `Connect this section to the python track and beginner expectations`
+            `deque also supports append/pop`
           ],
-          pseudoCode: `CONCEPT: Stack (LIFO)
+          pseudoCode: `Stack (LIFO)
 
-Study checklist:
-  1. append/pop from end implements stack
-  2. O(1) operations at list end
-  3. Used in recursion and graph DFS
-  4. deque also supports append/pop
-  5. Stack (LIFO) is a foundational piece of Stacks, Queues & Deque
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
+1. append/pop from end implements stack
+2. O(1) operations at list end
+3. Used in recursion and graph DFS
+4. deque also supports append/pop`
         },
         {
           id: `queue`,
           title: `Queue (FIFO)`,
-          content: `**Queue (FIFO)** — what you need to know:
+          content: `Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).
 
-- **Core idea:** LIFO stacks and FIFO queues with collections.deque.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Queue (FIFO)** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- deque provides O(1) appendleft/popleft
+- FIFO for BFS and task scheduling
+- list.pop(0) is O(n) — avoid for queues
+- queue.Queue is thread-safe alternative`,
           example: `from collections import deque
 q = deque(["task1", "task2"])
 q.append("task3")
@@ -1077,57 +396,24 @@ deque(['task2', 'task3'])`,
             `deque provides O(1) appendleft/popleft`,
             `FIFO for BFS and task scheduling`,
             `list.pop(0) is O(n) — avoid for queues`,
-            `queue.Queue is thread-safe alternative`,
-            `Queue (FIFO) is a foundational piece of Stacks, Queues & Deque`,
-            `Connect this section to the python track and beginner expectations`
+            `queue.Queue is thread-safe alternative`
           ],
-          pseudoCode: `CONCEPT: Queue (FIFO)
+          pseudoCode: `Queue (FIFO)
 
-Study checklist:
-  1. deque provides O(1) appendleft/popleft
-  2. FIFO for BFS and task scheduling
-  3. list.pop(0) is O(n) — avoid for queues
-  4. queue.Queue is thread-safe alternative
-  5. Queue (FIFO) is a foundational piece of Stacks, Queues & Deque
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
+1. deque provides O(1) appendleft/popleft
+2. FIFO for BFS and task scheduling
+3. list.pop(0) is O(n) — avoid for queues
+4. queue.Queue is thread-safe alternative`
         },
         {
           id: `deque-features`,
           title: `deque Advanced Features`,
-          content: `**deque Advanced Features** — what you need to know:
+          content: `deque supports maxlen for bounded buffers, rotation, and double-ended operations.
 
-- **Core idea:** LIFO stacks and FIFO queues with collections.deque.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-deque supports maxlen for bounded buffers, rotation, and double-ended operations.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **deque Advanced Features** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- maxlen creates sliding window buffer
+- Automatic eviction of oldest items
+- rotate(n) shifts elements circularly
+- Ideal for rolling statistics`,
           example: `from collections import deque
 recent = deque(maxlen=3)
 for x in [1, 2, 3, 4, 5]:
@@ -1138,263 +424,36 @@ print(list(recent))`,
             `maxlen creates sliding window buffer`,
             `Automatic eviction of oldest items`,
             `rotate(n) shifts elements circularly`,
-            `Ideal for rolling statistics`,
-            `deque Advanced Features is a foundational piece of Stacks, Queues & Deque`,
-            `Connect this section to the python track and beginner expectations`
+            `Ideal for rolling statistics`
           ],
-          pseudoCode: `CONCEPT: deque Advanced Features
+          pseudoCode: `deque Advanced Features
 
-Study checklist:
-  1. maxlen creates sliding window buffer
-  2. Automatic eviction of oldest items
-  3. rotate(n) shifts elements circularly
-  4. Ideal for rolling statistics
-  5. deque Advanced Features is a foundational piece of Stacks, Queues & Deque
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
+1. maxlen creates sliding window buffer
+2. Automatic eviction of oldest items
+3. rotate(n) shifts elements circularly
+4. Ideal for rolling statistics`
         },
         {
           id: `applications`,
           title: `Real-World Applications`,
-          content: `**Real-World Applications** — what you need to know:
+          content: `Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.
 
-- **Core idea:** LIFO stacks and FIFO queues with collections.deque.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Real-World Applications** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Match data structure to algorithm needs
+- BFS uses queue, DFS uses stack
+- Priority queues use heapq module
+- Consider thread safety for concurrent queues`,
           keyPoints: [
             `Match data structure to algorithm needs`,
             `BFS uses queue, DFS uses stack`,
             `Priority queues use heapq module`,
-            `Consider thread safety for concurrent queues`,
-            `Real-World Applications is a foundational piece of Stacks, Queues & Deque`,
-            `Connect this section to the python track and beginner expectations`
+            `Consider thread safety for concurrent queues`
           ],
-          example: `# Concept check: Real-World Applications
-meta = {
-    "topic": "py-deque",
-    "section": "applications",
-    "track": "python",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-deque
-section: applications
-track: python
-level: beginner`,
-          pseudoCode: `CONCEPT: Real-World Applications
+          pseudoCode: `Real-World Applications
 
-Study checklist:
-  1. Match data structure to algorithm needs
-  2. BFS uses queue, DFS uses stack
-  3. Priority queues use heapq module
-  4. Consider thread safety for concurrent queues
-  5. Real-World Applications is a foundational piece of Stacks, Queues & Deque
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-deque-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Stacks, Queues & Deque** sits in the **python** track of the Data Science Master curriculum. LIFO stacks and FIFO queues with collections.deque.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-deque**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Stacks, Queues & Deque
-meta = {"topic_id": "py-deque", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-deque python beginner`,
-          keyPoints: [
-            `Core theory of Stacks, Queues & Deque ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Stacks, Queues & Deque ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-deque-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Stacks, Queues & Deque**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-deque**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-deque
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-deque", "Stacks, Queues & Deque")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-deque Stacks,`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-deque-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Stacks, Queues & Deque** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-deque**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-deque", "Stacks, Queues & Deque")
-debug_step("section_count", 4)`,
-          output: `[py-deque] 'Stacks, Queues & Deque' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-deque-real-world`,
-          title: `Real-World Applications`,
-          content: `**Stacks, Queues & Deque** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-deque** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Stacks, Queues & Deque
-skills = ["python", "beginner", "py-deque"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-deque`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Stacks, Queues & Deque to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Stacks, Queues & Deque to adjacent topics in the same track
-
-Topic: Stacks, Queues & Deque
-Track: python | Level: beginner`
+1. Match data structure to algorithm needs
+2. BFS uses queue, DFS uses stack
+3. Priority queues use heapq module
+4. Consider thread safety for concurrent queues`
         }
       ],
       exercises: [
@@ -1427,7 +486,7 @@ print(processed)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-03`,
       references: [
         {
@@ -1474,37 +533,12 @@ print(processed)`,
         {
           id: `sorting`,
           title: `Sorting in Python`,
-          content: `**Sorting in Python** — what you need to know:
+          content: `\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).
 
-- **Core idea:** Built-in sorting, binary search, and algorithmic complexity.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Sorting in Python** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- sorted() preserves original list
+- key=function customizes sort criteria
+- Stable sort preserves equal element order
+- Timsort exploits partially sorted input`,
           example: `data = [3, 1, 4, 1, 5, 9]
 print(sorted(data))
 print(sorted(data, reverse=True))`,
@@ -1514,57 +548,24 @@ print(sorted(data, reverse=True))`,
             `sorted() preserves original list`,
             `key=function customizes sort criteria`,
             `Stable sort preserves equal element order`,
-            `Timsort exploits partially sorted input`,
-            `Sorting in Python is a foundational piece of Sorting & Searching`,
-            `Connect this section to the python track and beginner expectations`
+            `Timsort exploits partially sorted input`
           ],
-          pseudoCode: `CONCEPT: Sorting in Python
+          pseudoCode: `Sorting in Python
 
-Study checklist:
-  1. sorted() preserves original list
-  2. key=function customizes sort criteria
-  3. Stable sort preserves equal element order
-  4. Timsort exploits partially sorted input
-  5. Sorting in Python is a foundational piece of Sorting & Searching
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
+1. sorted() preserves original list
+2. key=function customizes sort criteria
+3. Stable sort preserves equal element order
+4. Timsort exploits partially sorted input`
         },
         {
           id: `custom-sort`,
           title: `Custom Sort Keys`,
-          content: `**Custom Sort Keys** — what you need to know:
+          content: `Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.
 
-- **Core idea:** Built-in sorting, binary search, and algorithmic complexity.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Custom Sort Keys** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Tuple keys enable multi-criteria sort
+- Negate numeric key for descending
+- itemgetter is faster than lambda for simple access
+- Sort once, reuse for repeated queries`,
           example: `students = [("Alice", 95), ("Bob", 87), ("Charlie", 95)]
 by_grade = sorted(students, key=lambda s: (-s[1], s[0]))
 print(by_grade)`,
@@ -1573,57 +574,24 @@ print(by_grade)`,
             `Tuple keys enable multi-criteria sort`,
             `Negate numeric key for descending`,
             `itemgetter is faster than lambda for simple access`,
-            `Sort once, reuse for repeated queries`,
-            `Custom Sort Keys is a foundational piece of Sorting & Searching`,
-            `Connect this section to the python track and beginner expectations`
+            `Sort once, reuse for repeated queries`
           ],
-          pseudoCode: `CONCEPT: Custom Sort Keys
+          pseudoCode: `Custom Sort Keys
 
-Study checklist:
-  1. Tuple keys enable multi-criteria sort
-  2. Negate numeric key for descending
-  3. itemgetter is faster than lambda for simple access
-  4. Sort once, reuse for repeated queries
-  5. Custom Sort Keys is a foundational piece of Sorting & Searching
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
+1. Tuple keys enable multi-criteria sort
+2. Negate numeric key for descending
+3. itemgetter is faster than lambda for simple access
+4. Sort once, reuse for repeated queries`
         },
         {
           id: `search`,
           title: `Linear & Binary Search`,
-          content: `**Linear & Binary Search** — what you need to know:
+          content: `Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.
 
-- **Core idea:** Built-in sorting, binary search, and algorithmic complexity.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Linear & Binary Search** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Binary search requires sorted data
+- bisect finds insertion position
+- bisect_left vs bisect_right for duplicates
+- Use set/dict for O(1) lookup when possible`,
           example: `import bisect
 sorted_list = [1, 3, 5, 7, 9]
 idx = bisect.bisect_left(sorted_list, 5)
@@ -1633,263 +601,36 @@ print(idx)`,
             `Binary search requires sorted data`,
             `bisect finds insertion position`,
             `bisect_left vs bisect_right for duplicates`,
-            `Use set/dict for O(1) lookup when possible`,
-            `Linear & Binary Search is a foundational piece of Sorting & Searching`,
-            `Connect this section to the python track and beginner expectations`
+            `Use set/dict for O(1) lookup when possible`
           ],
-          pseudoCode: `CONCEPT: Linear & Binary Search
+          pseudoCode: `Linear & Binary Search
 
-Study checklist:
-  1. Binary search requires sorted data
-  2. bisect finds insertion position
-  3. bisect_left vs bisect_right for duplicates
-  4. Use set/dict for O(1) lookup when possible
-  5. Linear & Binary Search is a foundational piece of Sorting & Searching
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
+1. Binary search requires sorted data
+2. bisect finds insertion position
+3. bisect_left vs bisect_right for duplicates
+4. Use set/dict for O(1) lookup when possible`
         },
         {
           id: `complexity`,
           title: `Big-O Basics`,
-          content: `**Big-O Basics** — what you need to know:
+          content: `Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.
 
-- **Core idea:** Built-in sorting, binary search, and algorithmic complexity.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Big-O Basics** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Big-O describes growth rate, not exact time
+- Nested loops often imply O(n²)
+- Hash lookups are average O(1)
+- Sorting dominates many pipeline costs`,
           keyPoints: [
             `Big-O describes growth rate, not exact time`,
             `Nested loops often imply O(n²)`,
             `Hash lookups are average O(1)`,
-            `Sorting dominates many pipeline costs`,
-            `Big-O Basics is a foundational piece of Sorting & Searching`,
-            `Connect this section to the python track and beginner expectations`
+            `Sorting dominates many pipeline costs`
           ],
-          example: `# Concept check: Big-O Basics
-meta = {
-    "topic": "py-sort-search",
-    "section": "complexity",
-    "track": "python",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-sort-search
-section: complexity
-track: python
-level: beginner`,
-          pseudoCode: `CONCEPT: Big-O Basics
+          pseudoCode: `Big-O Basics
 
-Study checklist:
-  1. Big-O describes growth rate, not exact time
-  2. Nested loops often imply O(n²)
-  3. Hash lookups are average O(1)
-  4. Sorting dominates many pipeline costs
-  5. Big-O Basics is a foundational piece of Sorting & Searching
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-sort-search-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Sorting & Searching** sits in the **python** track of the Data Science Master curriculum. Built-in sorting, binary search, and algorithmic complexity.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-sort-search**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Sorting & Searching
-meta = {"topic_id": "py-sort-search", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-sort-search python beginner`,
-          keyPoints: [
-            `Core theory of Sorting & Searching ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Sorting & Searching ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-sort-search-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Sorting & Searching**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-sort-search**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-sort-search
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-sort-search", "Sorting & Searching")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-sort-search Sorting`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-sort-search-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Sorting & Searching** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-sort-search**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-sort-search", "Sorting & Searching")
-debug_step("section_count", 4)`,
-          output: `[py-sort-search] 'Sorting & Searching' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-sort-search-real-world`,
-          title: `Real-World Applications`,
-          content: `**Sorting & Searching** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-sort-search** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Sorting & Searching
-skills = ["python", "beginner", "py-sort-search"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-sort-search`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Sorting & Searching to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Sorting & Searching to adjacent topics in the same track
-
-Topic: Sorting & Searching
-Track: python | Level: beginner`
+1. Big-O describes growth rate, not exact time
+2. Nested loops often imply O(n²)
+3. Hash lookups are average O(1)
+4. Sorting dominates many pipeline costs`
         }
       ],
       exercises: [
@@ -1910,7 +651,7 @@ print(lst)`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-03`,
       references: [
         {
@@ -1957,37 +698,12 @@ print(lst)`,
         {
           id: `namedtuple`,
           title: `namedtuple`,
-          content: `**namedtuple** — what you need to know:
+          content: `Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.
 
-- **Core idea:** namedtuple, OrderedDict, ChainMap, and other specialized containers.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **namedtuple** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Immutable like regular tuples
+- Named access improves readability
+- Use _replace for modified copies
+- dataclass is modern alternative`,
           example: `from collections import namedtuple
 Point = namedtuple("Point", ["x", "y"])
 p = Point(3, 4)
@@ -1997,57 +713,24 @@ print(p.x, p.y)`,
             `Immutable like regular tuples`,
             `Named access improves readability`,
             `Use _replace for modified copies`,
-            `dataclass is modern alternative`,
-            `namedtuple is a foundational piece of Collections Module`,
-            `Connect this section to the python track and beginner expectations`
+            `dataclass is modern alternative`
           ],
-          pseudoCode: `CONCEPT: namedtuple
+          pseudoCode: `namedtuple
 
-Study checklist:
-  1. Immutable like regular tuples
-  2. Named access improves readability
-  3. Use _replace for modified copies
-  4. dataclass is modern alternative
-  5. namedtuple is a foundational piece of Collections Module
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Collections Module
-Track: python | Level: beginner`
+1. Immutable like regular tuples
+2. Named access improves readability
+3. Use _replace for modified copies
+4. dataclass is modern alternative`
         },
         {
           id: `chainmap`,
           title: `ChainMap`,
-          content: `**ChainMap** — what you need to know:
+          content: `ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.
 
-- **Core idea:** namedtuple, OrderedDict, ChainMap, and other specialized containers.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **ChainMap** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- First dict in chain takes precedence
+- Useful for layered configuration
+- Does not merge — searches sequentially
+- Modifications affect first dict in chain`,
           example: `from collections import ChainMap
 defaults = {"color": "blue", "size": "M"}
 user = {"color": "red"}
@@ -2058,119 +741,46 @@ print(config["color"], config["size"])`,
             `First dict in chain takes precedence`,
             `Useful for layered configuration`,
             `Does not merge — searches sequentially`,
-            `Modifications affect first dict in chain`,
-            `ChainMap is a foundational piece of Collections Module`,
-            `Connect this section to the python track and beginner expectations`
+            `Modifications affect first dict in chain`
           ],
-          pseudoCode: `CONCEPT: ChainMap
+          pseudoCode: `ChainMap
 
-Study checklist:
-  1. First dict in chain takes precedence
-  2. Useful for layered configuration
-  3. Does not merge — searches sequentially
-  4. Modifications affect first dict in chain
-  5. ChainMap is a foundational piece of Collections Module
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Collections Module
-Track: python | Level: beginner`
+1. First dict in chain takes precedence
+2. Useful for layered configuration
+3. Does not merge — searches sequentially
+4. Modifications affect first dict in chain`
         },
         {
           id: `ordered`,
           title: `OrderedDict & Modern Dicts`,
-          content: `**OrderedDict & Modern Dicts** — what you need to know:
+          content: `OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).
 
-- **Core idea:** namedtuple, OrderedDict, ChainMap, and other specialized containers.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **OrderedDict & Modern Dicts** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Regular dict preserves insertion order since 3.7
+- OrderedDict for LRU cache patterns
+- move_to_end for reordering
+- Consider functools.lru_cache for caching`,
           keyPoints: [
             `Regular dict preserves insertion order since 3.7`,
             `OrderedDict for LRU cache patterns`,
             `move_to_end for reordering`,
-            `Consider functools.lru_cache for caching`,
-            `OrderedDict & Modern Dicts is a foundational piece of Collections Module`,
-            `Connect this section to the python track and beginner expectations`
+            `Consider functools.lru_cache for caching`
           ],
-          example: `# Concept check: OrderedDict & Modern Dicts
-meta = {
-    "topic": "py-collections",
-    "section": "ordered",
-    "track": "python",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-collections
-section: ordered
-track: python
-level: beginner`,
-          pseudoCode: `CONCEPT: OrderedDict & Modern Dicts
+          pseudoCode: `OrderedDict & Modern Dicts
 
-Study checklist:
-  1. Regular dict preserves insertion order since 3.7
-  2. OrderedDict for LRU cache patterns
-  3. move_to_end for reordering
-  4. Consider functools.lru_cache for caching
-  5. OrderedDict & Modern Dicts is a foundational piece of Collections Module
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Collections Module
-Track: python | Level: beginner`
+1. Regular dict preserves insertion order since 3.7
+2. OrderedDict for LRU cache patterns
+3. move_to_end for reordering
+4. Consider functools.lru_cache for caching`
         },
         {
           id: `heapq`,
           title: `heapq — Priority Queues`,
-          content: `**heapq — Priority Queues** — what you need to know:
+          content: `heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.
 
-- **Core idea:** namedtuple, OrderedDict, ChainMap, and other specialized containers.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **heapq — Priority Queues** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Min-heap — smallest element first
+- heappush/heappop are O(log n)
+- heapify converts list to heap in O(n)
+- Use for top-k and scheduling problems`,
           example: `import heapq
 heap = []
 for val in [5, 3, 8, 1]:
@@ -2181,201 +791,14 @@ print(heapq.heappop(heap))`,
             `Min-heap — smallest element first`,
             `heappush/heappop are O(log n)`,
             `heapify converts list to heap in O(n)`,
-            `Use for top-k and scheduling problems`,
-            `heapq — Priority Queues is a foundational piece of Collections Module`,
-            `Connect this section to the python track and beginner expectations`
+            `Use for top-k and scheduling problems`
           ],
-          pseudoCode: `CONCEPT: heapq — Priority Queues
+          pseudoCode: `heapq — Priority Queues
 
-Study checklist:
-  1. Min-heap — smallest element first
-  2. heappush/heappop are O(log n)
-  3. heapify converts list to heap in O(n)
-  4. Use for top-k and scheduling problems
-  5. heapq — Priority Queues is a foundational piece of Collections Module
-  6. Connect this section to the python track and beginner expectations
-
-Topic: Collections Module
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-collections-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Collections Module** sits in the **python** track of the Data Science Master curriculum. namedtuple, OrderedDict, ChainMap, and other specialized containers.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-collections**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Collections Module
-meta = {"topic_id": "py-collections", "track": "python", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-collections python beginner`,
-          keyPoints: [
-            `Core theory of Collections Module ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Collections Module ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Collections Module
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-collections-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Collections Module**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-collections**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-collections
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-collections", "Collections Module")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-collections Collections`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Collections Module
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-collections-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Collections Module** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-collections**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-collections", "Collections Module")
-debug_step("section_count", 4)`,
-          output: `[py-collections] 'Collections Module' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Collections Module
-Track: python | Level: beginner`
-        },
-        {
-          id: `py-collections-real-world`,
-          title: `Real-World Applications`,
-          content: `**Collections Module** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-collections** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Collections Module
-skills = ["python", "beginner", "py-collections"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, beginner, py-collections`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Collections Module to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Collections Module to adjacent topics in the same track
-
-Topic: Collections Module
-Track: python | Level: beginner`
+1. Min-heap — smallest element first
+2. heappush/heappop are O(log n)
+3. heapify converts list to heap in O(n)
+4. Use for top-k and scheduling problems`
         }
       ],
       exercises: [
@@ -2396,7 +819,7 @@ print(heapq.nlargest(3, [10, 3, 7, 1, 25, 18]))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-03`,
       references: [
         {

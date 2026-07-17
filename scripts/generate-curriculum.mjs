@@ -6,7 +6,7 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES } from './references-data.mjs';
+import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES, resolveTopicReferences } from './references-data.mjs';
 import { deepenTopicContent } from './content-deepening.mjs';
 import { expandTopicContent } from './content-expansion.mjs';
 import { applySqlTeacherStyle } from './sql-teacher-style.mjs';
@@ -57,7 +57,7 @@ function enrichTopic(topic) {
   };
   return {
     ...withSections,
-    references: TOPIC_REFERENCES[topic.id] ?? TRACK_REFERENCES[track] ?? [],
+    references: resolveTopicReferences(topic),
   };
 }
 

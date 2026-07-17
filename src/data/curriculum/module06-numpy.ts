@@ -11,37 +11,12 @@ export const module06Topics: Topic[] = [
         {
           id: `create`,
           title: `Creating Arrays`,
-          content: `**Creating Arrays** — what you need to know:
+          content: `NumPy ndarrays are homogeneous, fixed-size multidimensional arrays. Create from lists: \`np.array([1,2,3])\`, zeros, ones, arange, linspace.
 
-- **Core idea:** Create and manipulate ndarrays — the foundation of scientific Python.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-NumPy ndarrays are homogeneous, fixed-size multidimensional arrays. Create from lists: \`np.array([1,2,3])\`, zeros, ones, arange, linspace.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Creating Arrays** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- ndarray is homogeneous — single dtype
+- shape tuple describes dimensions
+- arange for step-based ranges
+- linspace for evenly spaced floats`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3, 4, 5])
@@ -54,57 +29,24 @@ print(a.shape, b.shape, c, d)`,
             `ndarray is homogeneous — single dtype`,
             `shape tuple describes dimensions`,
             `arange for step-based ranges`,
-            `linspace for evenly spaced floats`,
-            `Creating Arrays is a foundational piece of NumPy Arrays Fundamentals`,
-            `Connect this section to the data track and beginner expectations`
+            `linspace for evenly spaced floats`
           ],
-          pseudoCode: `CONCEPT: Creating Arrays
+          pseudoCode: `Creating Arrays
 
-Study checklist:
-  1. ndarray is homogeneous — single dtype
-  2. shape tuple describes dimensions
-  3. arange for step-based ranges
-  4. linspace for evenly spaced floats
-  5. Creating Arrays is a foundational piece of NumPy Arrays Fundamentals
-  6. Connect this section to the data track and beginner expectations
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
+1. ndarray is homogeneous — single dtype
+2. shape tuple describes dimensions
+3. arange for step-based ranges
+4. linspace for evenly spaced floats`
         },
         {
           id: `dtype`,
           title: `Data Types`,
-          content: `**Data Types** — what you need to know:
+          content: `dtype determines memory and precision: int32, float64, bool_, complex128. Specify: \`np.array([1,2], dtype=np.float32)\`.
 
-- **Core idea:** Create and manipulate ndarrays — the foundation of scientific Python.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-dtype determines memory and precision: int32, float64, bool_, complex128. Specify: \`np.array([1,2], dtype=np.float32)\`.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Data Types** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- float64 default for floats
+- float32 saves memory in deep learning
+- astype creates copy with new dtype
+- dtype mismatch can cause subtle bugs`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3], dtype=np.float32)
@@ -117,57 +59,24 @@ int64`,
             `float64 default for floats`,
             `float32 saves memory in deep learning`,
             `astype creates copy with new dtype`,
-            `dtype mismatch can cause subtle bugs`,
-            `Data Types is a foundational piece of NumPy Arrays Fundamentals`,
-            `Connect this section to the data track and beginner expectations`
+            `dtype mismatch can cause subtle bugs`
           ],
-          pseudoCode: `CONCEPT: Data Types
+          pseudoCode: `Data Types
 
-Study checklist:
-  1. float64 default for floats
-  2. float32 saves memory in deep learning
-  3. astype creates copy with new dtype
-  4. dtype mismatch can cause subtle bugs
-  5. Data Types is a foundational piece of NumPy Arrays Fundamentals
-  6. Connect this section to the data track and beginner expectations
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
+1. float64 default for floats
+2. float32 saves memory in deep learning
+3. astype creates copy with new dtype
+4. dtype mismatch can cause subtle bugs`
         },
         {
           id: `attrs`,
           title: `Array Attributes`,
-          content: `**Array Attributes** — what you need to know:
+          content: `.shape, .ndim, .size, .dtype, .itemsize. reshape() changes shape without copying data (usually).
 
-- **Core idea:** Create and manipulate ndarrays — the foundation of scientific Python.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-.shape, .ndim, .size, .dtype, .itemsize. reshape() changes shape without copying data (usually).
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Array Attributes** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- size = product of shape dimensions
+- reshape total elements must match
+- -1 in reshape auto-calculates dimension
+- ravel() returns flattened view`,
           example: `import numpy as np
 
 a = np.arange(12).reshape(3, 4)
@@ -180,263 +89,36 @@ print(a.reshape(2, 6))`,
             `size = product of shape dimensions`,
             `reshape total elements must match`,
             `-1 in reshape auto-calculates dimension`,
-            `ravel() returns flattened view`,
-            `Array Attributes is a foundational piece of NumPy Arrays Fundamentals`,
-            `Connect this section to the data track and beginner expectations`
+            `ravel() returns flattened view`
           ],
-          pseudoCode: `CONCEPT: Array Attributes
+          pseudoCode: `Array Attributes
 
-Study checklist:
-  1. size = product of shape dimensions
-  2. reshape total elements must match
-  3. -1 in reshape auto-calculates dimension
-  4. ravel() returns flattened view
-  5. Array Attributes is a foundational piece of NumPy Arrays Fundamentals
-  6. Connect this section to the data track and beginner expectations
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
+1. size = product of shape dimensions
+2. reshape total elements must match
+3. -1 in reshape auto-calculates dimension
+4. ravel() returns flattened view`
         },
         {
           id: `vs-list`,
           title: `Arrays vs Python Lists`,
-          content: `**Arrays vs Python Lists** — what you need to know:
+          content: `NumPy: fixed type, vectorized ops, contiguous memory, C-speed. Lists: heterogeneous, slower for numeric work. Always prefer NumPy for numerics.
 
-- **Core idea:** Create and manipulate ndarrays — the foundation of scientific Python.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-NumPy: fixed type, vectorized ops, contiguous memory, C-speed. Lists: heterogeneous, slower for numeric work. Always prefer NumPy for numerics.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Arrays vs Python Lists** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Vectorization eliminates Python loops
+- 10-100x speedup typical for numeric ops
+- Memory efficient contiguous storage
+- Foundation for pandas, sklearn, pytorch`,
           keyPoints: [
             `Vectorization eliminates Python loops`,
             `10-100x speedup typical for numeric ops`,
             `Memory efficient contiguous storage`,
-            `Foundation for pandas, sklearn, pytorch`,
-            `Arrays vs Python Lists is a foundational piece of NumPy Arrays Fundamentals`,
-            `Connect this section to the data track and beginner expectations`
+            `Foundation for pandas, sklearn, pytorch`
           ],
-          example: `# Concept check: Arrays vs Python Lists
-meta = {
-    "topic": "np-arrays",
-    "section": "vs-list",
-    "track": "data",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: np-arrays
-section: vs-list
-track: data
-level: beginner`,
-          pseudoCode: `CONCEPT: Arrays vs Python Lists
+          pseudoCode: `Arrays vs Python Lists
 
-Study checklist:
-  1. Vectorization eliminates Python loops
-  2. 10-100x speedup typical for numeric ops
-  3. Memory efficient contiguous storage
-  4. Foundation for pandas, sklearn, pytorch
-  5. Arrays vs Python Lists is a foundational piece of NumPy Arrays Fundamentals
-  6. Connect this section to the data track and beginner expectations
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-arrays-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**NumPy Arrays Fundamentals** sits in the **data** track of the Data Science Master curriculum. Create and manipulate ndarrays — the foundation of scientific Python.
-
-**Theoretical foundation:**
-
-- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
-- Every aggregation encodes assumptions about granularity and time.
-
-For **np-arrays**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for NumPy Arrays Fundamentals
-meta = {"topic_id": "np-arrays", "track": "data", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `np-arrays data beginner`,
-          keyPoints: [
-            `Core theory of NumPy Arrays Fundamentals ties to the data track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of NumPy Arrays Fundamentals ties to the data track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-arrays-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **NumPy Arrays Fundamentals**. Use explicit schemas, partition keys for large tables, vectorized operations over Python loops, and idempotent ETL jobs with checkpointing. Document column lineage and unit tests on critical transforms.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **np-arrays**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for np-arrays
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("np-arrays", "NumPy Arrays Fundamentals")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `np-arrays NumPy`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with data ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with data ecosystem conventions
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-arrays-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **NumPy Arrays Fundamentals** often hit predictable walls. Watch for train/test leakage via future information, silent dtype coercion, Cartesian joins exploding row counts, and unhandled null semantics. Profile memory before scaling pandas workloads.
-
-When stuck on **np-arrays**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("np-arrays", "NumPy Arrays Fundamentals")
-debug_step("section_count", 4)`,
-          output: `[np-arrays] 'NumPy Arrays Fundamentals' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-arrays-real-world`,
-          title: `Real-World Applications`,
-          content: `**NumPy Arrays Fundamentals** shows up wherever **data** skills meet business constraints. Analytics engineers ship dbt models, Spark jobs, and DuckDB pipelines; scientists rely on reproducible notebooks with pinned seeds and versioned datasets on object storage.
-
-Teams shipping features around **np-arrays** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for NumPy Arrays Fundamentals
-skills = ["data", "beginner", "np-arrays"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: data, beginner, np-arrays`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect NumPy Arrays Fundamentals to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect NumPy Arrays Fundamentals to adjacent topics in the same track
-
-Topic: NumPy Arrays Fundamentals
-Track: data | Level: beginner`
+1. Vectorization eliminates Python loops
+2. 10-100x speedup typical for numeric ops
+3. Memory efficient contiguous storage
+4. Foundation for pandas, sklearn, pytorch`
         }
       ],
       exercises: [
@@ -457,7 +139,7 @@ print(np.linspace(0, 1, 5))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-06`,
       references: [
         {
@@ -504,37 +186,12 @@ print(np.linspace(0, 1, 5))`,
         {
           id: `slicing`,
           title: `Array Indexing & Slicing`,
-          content: `**Array Indexing & Slicing** — what you need to know:
+          content: `Same as lists but multidimensional: \`arr[row, col]\`. Slicing creates views (not copies) — modifying view affects original!
 
-- **Core idea:** Slicing, boolean indexing, fancy indexing, and broadcasting rules.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Same as lists but multidimensional: \`arr[row, col]\`. Slicing creates views (not copies) — modifying view affects original!
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Array Indexing & Slicing** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Multidimensional indexing with commas
+- Slicing creates views — beware aliasing
+- copy() for independent arrays
+- Boolean indexing for filtering`,
           example: `import numpy as np
 
 a = np.arange(10)
@@ -549,57 +206,24 @@ print(b[:, -1])`,
             `Multidimensional indexing with commas`,
             `Slicing creates views — beware aliasing`,
             `copy() for independent arrays`,
-            `Boolean indexing for filtering`,
-            `Array Indexing & Slicing is a foundational piece of Array Indexing & Broadcasting`,
-            `Connect this section to the data track and beginner expectations`
+            `Boolean indexing for filtering`
           ],
-          pseudoCode: `CONCEPT: Array Indexing & Slicing
+          pseudoCode: `Array Indexing & Slicing
 
-Study checklist:
-  1. Multidimensional indexing with commas
-  2. Slicing creates views — beware aliasing
-  3. copy() for independent arrays
-  4. Boolean indexing for filtering
-  5. Array Indexing & Slicing is a foundational piece of Array Indexing & Broadcasting
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
+1. Multidimensional indexing with commas
+2. Slicing creates views — beware aliasing
+3. copy() for independent arrays
+4. Boolean indexing for filtering`
         },
         {
           id: `boolean`,
           title: `Boolean & Fancy Indexing`,
-          content: `**Boolean & Fancy Indexing** — what you need to know:
+          content: `Boolean mask: \`arr[arr > 0]\`. Fancy indexing with integer arrays selects specific elements.
 
-- **Core idea:** Slicing, boolean indexing, fancy indexing, and broadcasting rules.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Boolean mask: \`arr[arr > 0]\`. Fancy indexing with integer arrays selects specific elements.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Boolean & Fancy Indexing** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Boolean indexing for conditional selection
+- Fancy indexing with integer arrays
+- Boolean indexing returns copy
+- np.where for conditional replacement`,
           example: `import numpy as np
 
 a = np.array([10, -3, 5, -1, 8])
@@ -612,57 +236,24 @@ print(a[idx])`,
             `Boolean indexing for conditional selection`,
             `Fancy indexing with integer arrays`,
             `Boolean indexing returns copy`,
-            `np.where for conditional replacement`,
-            `Boolean & Fancy Indexing is a foundational piece of Array Indexing & Broadcasting`,
-            `Connect this section to the data track and beginner expectations`
+            `np.where for conditional replacement`
           ],
-          pseudoCode: `CONCEPT: Boolean & Fancy Indexing
+          pseudoCode: `Boolean & Fancy Indexing
 
-Study checklist:
-  1. Boolean indexing for conditional selection
-  2. Fancy indexing with integer arrays
-  3. Boolean indexing returns copy
-  4. np.where for conditional replacement
-  5. Boolean & Fancy Indexing is a foundational piece of Array Indexing & Broadcasting
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
+1. Boolean indexing for conditional selection
+2. Fancy indexing with integer arrays
+3. Boolean indexing returns copy
+4. np.where for conditional replacement`
         },
         {
           id: `broadcast`,
           title: `Broadcasting Rules`,
-          content: `**Broadcasting Rules** — what you need to know:
+          content: `NumPy stretches smaller arrays to match shapes. Rules: align trailing dimensions; size 1 broadcasts; mismatched non-1 sizes error.
 
-- **Core idea:** Slicing, boolean indexing, fancy indexing, and broadcasting rules.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-NumPy stretches smaller arrays to match shapes. Rules: align trailing dimensions; size 1 broadcasts; mismatched non-1 sizes error.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Broadcasting Rules** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Broadcasting avoids explicit loops
+- Trailing dimensions compared
+- Size-1 dimensions stretch
+- Essential for ML batch operations`,
           example: `import numpy as np
 
 a = np.array([[1, 2, 3], [4, 5, 6]])
@@ -674,51 +265,24 @@ print(a + b)`,
             `Broadcasting avoids explicit loops`,
             `Trailing dimensions compared`,
             `Size-1 dimensions stretch`,
-            `Essential for ML batch operations`,
-            `Broadcasting Rules is a foundational piece of Array Indexing & Broadcasting`,
-            `Connect this section to the data track and beginner expectations`
+            `Essential for ML batch operations`
           ],
-          pseudoCode: `CONCEPT: Broadcasting Rules
+          pseudoCode: `Broadcasting Rules
 
-Study checklist:
-  1. Broadcasting avoids explicit loops
-  2. Trailing dimensions compared
-  3. Size-1 dimensions stretch
-  4. Essential for ML batch operations
-  5. Broadcasting Rules is a foundational piece of Array Indexing & Broadcasting
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
+1. Broadcasting avoids explicit loops
+2. Trailing dimensions compared
+3. Size-1 dimensions stretch
+4. Essential for ML batch operations`
         },
         {
           id: `vectorize`,
           title: `Vectorized Operations`,
           content: `Element-wise: +, -, *, /, **. Universal functions (ufuncs): np.sin, np.exp, np.log. Aggregations: .sum(), .mean(), .std(), axis parameter.
 
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Vectorized Operations** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- axis=0 collapses rows (column-wise)
+- axis=1 collapses columns (row-wise)
+- keepdims preserves dimensions
+- np.einsum for advanced tensor ops`,
           example: `import numpy as np
 
 a = np.array([[1, 2], [3, 4]])
@@ -728,201 +292,14 @@ print(a.sum(), a.sum(axis=0), a.mean(axis=1))`,
             `axis=0 collapses rows (column-wise)`,
             `axis=1 collapses columns (row-wise)`,
             `keepdims preserves dimensions`,
-            `np.einsum for advanced tensor ops`,
-            `Vectorized Operations is a foundational piece of Array Indexing & Broadcasting`,
-            `Connect this section to the data track and beginner expectations`
+            `np.einsum for advanced tensor ops`
           ],
-          pseudoCode: `CONCEPT: Vectorized Operations
+          pseudoCode: `Vectorized Operations
 
-Study checklist:
-  1. axis=0 collapses rows (column-wise)
-  2. axis=1 collapses columns (row-wise)
-  3. keepdims preserves dimensions
-  4. np.einsum for advanced tensor ops
-  5. Vectorized Operations is a foundational piece of Array Indexing & Broadcasting
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-indexing-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Array Indexing & Broadcasting** sits in the **data** track of the Data Science Master curriculum. Slicing, boolean indexing, fancy indexing, and broadcasting rules.
-
-**Theoretical foundation:**
-
-- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
-- Every aggregation encodes assumptions about granularity and time.
-
-For **np-indexing**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Array Indexing & Broadcasting
-meta = {"topic_id": "np-indexing", "track": "data", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `np-indexing data beginner`,
-          keyPoints: [
-            `Core theory of Array Indexing & Broadcasting ties to the data track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Array Indexing & Broadcasting ties to the data track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-indexing-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Array Indexing & Broadcasting**. Use explicit schemas, partition keys for large tables, vectorized operations over Python loops, and idempotent ETL jobs with checkpointing. Document column lineage and unit tests on critical transforms.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **np-indexing**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for np-indexing
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("np-indexing", "Array Indexing & Broadcasting")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `np-indexing Array`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with data ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with data ecosystem conventions
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-indexing-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Array Indexing & Broadcasting** often hit predictable walls. Watch for train/test leakage via future information, silent dtype coercion, Cartesian joins exploding row counts, and unhandled null semantics. Profile memory before scaling pandas workloads.
-
-When stuck on **np-indexing**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("np-indexing", "Array Indexing & Broadcasting")
-debug_step("section_count", 4)`,
-          output: `[np-indexing] 'Array Indexing & Broadcasting' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-indexing-real-world`,
-          title: `Real-World Applications`,
-          content: `**Array Indexing & Broadcasting** shows up wherever **data** skills meet business constraints. Analytics engineers ship dbt models, Spark jobs, and DuckDB pipelines; scientists rely on reproducible notebooks with pinned seeds and versioned datasets on object storage.
-
-Teams shipping features around **np-indexing** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Array Indexing & Broadcasting
-skills = ["data", "beginner", "np-indexing"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: data, beginner, np-indexing`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Array Indexing & Broadcasting to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Array Indexing & Broadcasting to adjacent topics in the same track
-
-Topic: Array Indexing & Broadcasting
-Track: data | Level: beginner`
+1. axis=0 collapses rows (column-wise)
+2. axis=1 collapses columns (row-wise)
+3. keepdims preserves dimensions
+4. np.einsum for advanced tensor ops`
         }
       ],
       exercises: [
@@ -944,7 +321,7 @@ print(m + v)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-06`,
       references: [
         {
@@ -991,37 +368,12 @@ print(m + v)`,
         {
           id: `matmul`,
           title: `Matrix Multiplication`,
-          content: `**Matrix Multiplication** — what you need to know:
+          content: `np.dot(a, b) or a @ b (Python 3.5+). Inner product for 1D, matrix multiply for 2D. np.matmul preferred.
 
-- **Core idea:** Matrix operations, dot products, decomposition, and solving linear systems.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-np.dot(a, b) or a @ b (Python 3.5+). Inner product for 1D, matrix multiply for 2D. np.matmul preferred.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Matrix Multiplication** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- @ operator for matrix multiplication
+- Element-wise * is NOT matrix multiply
+- np.dot handles various dimensions
+- Order matters: AB ≠ BA generally`,
           example: `import numpy as np
 
 A = np.array([[1, 2], [3, 4]])
@@ -1033,51 +385,24 @@ print(A @ B)`,
             `@ operator for matrix multiplication`,
             `Element-wise * is NOT matrix multiply`,
             `np.dot handles various dimensions`,
-            `Order matters: AB ≠ BA generally`,
-            `Connect this section to the data track and beginner expectations`,
-            `Run the example, predict output first, then verify against expected results`
+            `Order matters: AB ≠ BA generally`
           ],
-          pseudoCode: `CONCEPT: Matrix Multiplication
+          pseudoCode: `Matrix Multiplication
 
-Study checklist:
-  1. @ operator for matrix multiplication
-  2. Element-wise * is NOT matrix multiply
-  3. np.dot handles various dimensions
-  4. Order matters: AB ≠ BA generally
-  5. Connect this section to the data track and beginner expectations
-  6. Run the example, predict output first, then verify against expected results
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
+1. @ operator for matrix multiplication
+2. Element-wise * is NOT matrix multiply
+3. np.dot handles various dimensions
+4. Order matters: AB ≠ BA generally`
         },
         {
           id: `linalg`,
           title: `np.linalg Module`,
           content: `det, inv, eig, svd, solve. **Never invert matrices directly for solving Ax=b** — use np.linalg.solve(A, b).
 
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **np.linalg Module** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- solve() numerically stable vs inv() @ b
+- SVD fundamental for PCA and ML
+- eig for eigenvalue problems
+- cond() checks matrix conditioning`,
           example: `import numpy as np
 
 A = np.array([[3, 1], [1, 2]])
@@ -1089,57 +414,24 @@ print(x)`,
             `solve() numerically stable vs inv() @ b`,
             `SVD fundamental for PCA and ML`,
             `eig for eigenvalue problems`,
-            `cond() checks matrix conditioning`,
-            `np.linalg Module is a foundational piece of Linear Algebra with NumPy`,
-            `Connect this section to the data track and beginner expectations`
+            `cond() checks matrix conditioning`
           ],
-          pseudoCode: `CONCEPT: np.linalg Module
+          pseudoCode: `np.linalg Module
 
-Study checklist:
-  1. solve() numerically stable vs inv() @ b
-  2. SVD fundamental for PCA and ML
-  3. eig for eigenvalue problems
-  4. cond() checks matrix conditioning
-  5. np.linalg Module is a foundational piece of Linear Algebra with NumPy
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
+1. solve() numerically stable vs inv() @ b
+2. SVD fundamental for PCA and ML
+3. eig for eigenvalue problems
+4. cond() checks matrix conditioning`
         },
         {
           id: `norm`,
           title: `Norms & Distances`,
-          content: `**Norms & Distances** — what you need to know:
+          content: `np.linalg.norm for vector/matrix norms. Combined with broadcasting for pairwise distances.
 
-- **Core idea:** Matrix operations, dot products, decomposition, and solving linear systems.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-np.linalg.norm for vector/matrix norms. Combined with broadcasting for pairwise distances.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Norms & Distances** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- L2 norm is default Euclidean distance
+- Norms measure vector magnitude
+- Distance matrices via broadcasting
+- Cosine similarity common in NLP/ML`,
           example: `import numpy as np
 
 v = np.array([3, 4])
@@ -1151,263 +443,36 @@ print(np.sqrt(v @ v))`,
             `L2 norm is default Euclidean distance`,
             `Norms measure vector magnitude`,
             `Distance matrices via broadcasting`,
-            `Cosine similarity common in NLP/ML`,
-            `Norms & Distances is a foundational piece of Linear Algebra with NumPy`,
-            `Connect this section to the data track and beginner expectations`
+            `Cosine similarity common in NLP/ML`
           ],
-          pseudoCode: `CONCEPT: Norms & Distances
+          pseudoCode: `Norms & Distances
 
-Study checklist:
-  1. L2 norm is default Euclidean distance
-  2. Norms measure vector magnitude
-  3. Distance matrices via broadcasting
-  4. Cosine similarity common in NLP/ML
-  5. Norms & Distances is a foundational piece of Linear Algebra with NumPy
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
+1. L2 norm is default Euclidean distance
+2. Norms measure vector magnitude
+3. Distance matrices via broadcasting
+4. Cosine similarity common in NLP/ML`
         },
         {
           id: `applications`,
           title: `ML Applications`,
-          content: `**ML Applications** — what you need to know:
+          content: `Linear regression: w = (X^T X)^(-1) X^T y. PCA via SVD. Neural network layers are matrix multiplications.
 
-- **Core idea:** Matrix operations, dot products, decomposition, and solving linear systems.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Linear regression: w = (X^T X)^(-1) X^T y. PCA via SVD. Neural network layers are matrix multiplications.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **ML Applications** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- All DL is matrix multiplication at core
+- SVD powers dimensionality reduction
+- Normal equations for linear regression
+- Use float32 for GPU efficiency`,
           keyPoints: [
             `All DL is matrix multiplication at core`,
             `SVD powers dimensionality reduction`,
             `Normal equations for linear regression`,
-            `Use float32 for GPU efficiency`,
-            `ML Applications is a foundational piece of Linear Algebra with NumPy`,
-            `Connect this section to the data track and beginner expectations`
+            `Use float32 for GPU efficiency`
           ],
-          example: `# Concept check: ML Applications
-meta = {
-    "topic": "np-linalg",
-    "section": "applications",
-    "track": "data",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: np-linalg
-section: applications
-track: data
-level: beginner`,
-          pseudoCode: `CONCEPT: ML Applications
+          pseudoCode: `ML Applications
 
-Study checklist:
-  1. All DL is matrix multiplication at core
-  2. SVD powers dimensionality reduction
-  3. Normal equations for linear regression
-  4. Use float32 for GPU efficiency
-  5. ML Applications is a foundational piece of Linear Algebra with NumPy
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-linalg-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Linear Algebra with NumPy** sits in the **data** track of the Data Science Master curriculum. Matrix operations, dot products, decomposition, and solving linear systems.
-
-**Theoretical foundation:**
-
-- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
-- Every aggregation encodes assumptions about granularity and time.
-
-For **np-linalg**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Linear Algebra with NumPy
-meta = {"topic_id": "np-linalg", "track": "data", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `np-linalg data beginner`,
-          keyPoints: [
-            `Core theory of Linear Algebra with NumPy ties to the data track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Linear Algebra with NumPy ties to the data track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-linalg-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Linear Algebra with NumPy**. Use explicit schemas, partition keys for large tables, vectorized operations over Python loops, and idempotent ETL jobs with checkpointing. Document column lineage and unit tests on critical transforms.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **np-linalg**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for np-linalg
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("np-linalg", "Linear Algebra with NumPy")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `np-linalg Linear`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with data ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with data ecosystem conventions
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-linalg-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Linear Algebra with NumPy** often hit predictable walls. Watch for train/test leakage via future information, silent dtype coercion, Cartesian joins exploding row counts, and unhandled null semantics. Profile memory before scaling pandas workloads.
-
-When stuck on **np-linalg**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("np-linalg", "Linear Algebra with NumPy")
-debug_step("section_count", 4)`,
-          output: `[np-linalg] 'Linear Algebra with NumPy' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-linalg-real-world`,
-          title: `Real-World Applications`,
-          content: `**Linear Algebra with NumPy** shows up wherever **data** skills meet business constraints. Analytics engineers ship dbt models, Spark jobs, and DuckDB pipelines; scientists rely on reproducible notebooks with pinned seeds and versioned datasets on object storage.
-
-Teams shipping features around **np-linalg** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Linear Algebra with NumPy
-skills = ["data", "beginner", "np-linalg"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: data, beginner, np-linalg`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Linear Algebra with NumPy to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Linear Algebra with NumPy to adjacent topics in the same track
-
-Topic: Linear Algebra with NumPy
-Track: data | Level: beginner`
+1. All DL is matrix multiplication at core
+2. SVD powers dimensionality reduction
+3. Normal equations for linear regression
+4. Use float32 for GPU efficiency`
         }
       ],
       exercises: [
@@ -1430,7 +495,7 @@ print(np.linalg.solve(A, b))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-06`,
       references: [
         {
@@ -1477,37 +542,12 @@ print(np.linalg.solve(A, b))`,
         {
           id: `rng`,
           title: `Random Number Generation`,
-          content: `**Random Number Generation** — what you need to know:
+          content: `np.random.default_rng(seed) for reproducible randomness. .random(), .integers(), .normal(), .choice().
 
-- **Core idea:** Random number generation and statistical operations with NumPy.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-np.random.default_rng(seed) for reproducible randomness. .random(), .integers(), .normal(), .choice().
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Random Number Generation** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Always set seed for reproducibility
+- default_rng is modern API
+- normal(loc, scale, size) for Gaussian
+- choice for random sampling`,
           example: `import numpy as np
 
 rng = np.random.default_rng(42)
@@ -1521,57 +561,24 @@ print(rng.normal(0, 1, 5))`,
             `Always set seed for reproducibility`,
             `default_rng is modern API`,
             `normal(loc, scale, size) for Gaussian`,
-            `choice for random sampling`,
-            `Random Number Generation is a foundational piece of Random & Statistics`,
-            `Connect this section to the data track and beginner expectations`
+            `choice for random sampling`
           ],
-          pseudoCode: `CONCEPT: Random Number Generation
+          pseudoCode: `Random Number Generation
 
-Study checklist:
-  1. Always set seed for reproducibility
-  2. default_rng is modern API
-  3. normal(loc, scale, size) for Gaussian
-  4. choice for random sampling
-  5. Random Number Generation is a foundational piece of Random & Statistics
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
+1. Always set seed for reproducibility
+2. default_rng is modern API
+3. normal(loc, scale, size) for Gaussian
+4. choice for random sampling`
         },
         {
           id: `stats`,
           title: `Statistical Functions`,
-          content: `**Statistical Functions** — what you need to know:
+          content: `np.mean, np.median, np.std, np.var, np.percentile, np.corrcoef. axis parameter for multidimensional stats.
 
-- **Core idea:** Random number generation and statistical operations with NumPy.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-np.mean, np.median, np.std, np.var, np.percentile, np.corrcoef. axis parameter for multidimensional stats.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Statistical Functions** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- std default is population (ddof=0)
+- ddof=1 for sample standard deviation
+- percentile for quartiles and outliers
+- corrcoef for feature correlation analysis`,
           example: `import numpy as np
 
 data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
@@ -1583,57 +590,24 @@ print(np.percentile(data, [25, 50, 75]))`,
             `std default is population (ddof=0)`,
             `ddof=1 for sample standard deviation`,
             `percentile for quartiles and outliers`,
-            `corrcoef for feature correlation analysis`,
-            `Statistical Functions is a foundational piece of Random & Statistics`,
-            `Connect this section to the data track and beginner expectations`
+            `corrcoef for feature correlation analysis`
           ],
-          pseudoCode: `CONCEPT: Statistical Functions
+          pseudoCode: `Statistical Functions
 
-Study checklist:
-  1. std default is population (ddof=0)
-  2. ddof=1 for sample standard deviation
-  3. percentile for quartiles and outliers
-  4. corrcoef for feature correlation analysis
-  5. Statistical Functions is a foundational piece of Random & Statistics
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
+1. std default is population (ddof=0)
+2. ddof=1 for sample standard deviation
+3. percentile for quartiles and outliers
+4. corrcoef for feature correlation analysis`
         },
         {
           id: `shuffle`,
           title: `Shuffling & Sampling`,
-          content: `**Shuffling & Sampling** — what you need to know:
+          content: `rng.shuffle() in-place. rng.permutation() returns shuffled copy. train/test splits use permutation.
 
-- **Core idea:** Random number generation and statistical operations with NumPy.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-rng.shuffle() in-place. rng.permutation() returns shuffled copy. train/test splits use permutation.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Shuffling & Sampling** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Shuffle before train/test split
+- permutation preserves original
+- choice(replace=False) for sampling without replacement
+- Bootstrap uses sampling with replacement`,
           example: `import numpy as np
 
 rng = np.random.default_rng(42)
@@ -1644,263 +618,36 @@ print(perm)`,
             `Shuffle before train/test split`,
             `permutation preserves original`,
             `choice(replace=False) for sampling without replacement`,
-            `Bootstrap uses sampling with replacement`,
-            `Shuffling & Sampling is a foundational piece of Random & Statistics`,
-            `Connect this section to the data track and beginner expectations`
+            `Bootstrap uses sampling with replacement`
           ],
-          pseudoCode: `CONCEPT: Shuffling & Sampling
+          pseudoCode: `Shuffling & Sampling
 
-Study checklist:
-  1. Shuffle before train/test split
-  2. permutation preserves original
-  3. choice(replace=False) for sampling without replacement
-  4. Bootstrap uses sampling with replacement
-  5. Shuffling & Sampling is a foundational piece of Random & Statistics
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
+1. Shuffle before train/test split
+2. permutation preserves original
+3. choice(replace=False) for sampling without replacement
+4. Bootstrap uses sampling with replacement`
         },
         {
           id: `distributions`,
           title: `Probability Distributions`,
-          content: `**Probability Distributions** — what you need to know:
+          content: `rng.uniform, binomial, poisson, exponential. Understanding distributions essential for ML probabilistic models.
 
-- **Core idea:** Random number generation and statistical operations with NumPy.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-rng.uniform, binomial, poisson, exponential. Understanding distributions essential for ML probabilistic models.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Probability Distributions** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Normal distribution central to ML
+- Binomial for classification simulation
+- Distribution choice affects synthetic data
+- Scipy.stats for advanced distributions`,
           keyPoints: [
             `Normal distribution central to ML`,
             `Binomial for classification simulation`,
             `Distribution choice affects synthetic data`,
-            `Scipy.stats for advanced distributions`,
-            `Probability Distributions is a foundational piece of Random & Statistics`,
-            `Connect this section to the data track and beginner expectations`
+            `Scipy.stats for advanced distributions`
           ],
-          example: `# Concept check: Probability Distributions
-meta = {
-    "topic": "np-random",
-    "section": "distributions",
-    "track": "data",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: np-random
-section: distributions
-track: data
-level: beginner`,
-          pseudoCode: `CONCEPT: Probability Distributions
+          pseudoCode: `Probability Distributions
 
-Study checklist:
-  1. Normal distribution central to ML
-  2. Binomial for classification simulation
-  3. Distribution choice affects synthetic data
-  4. Scipy.stats for advanced distributions
-  5. Probability Distributions is a foundational piece of Random & Statistics
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-random-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Random & Statistics** sits in the **data** track of the Data Science Master curriculum. Random number generation and statistical operations with NumPy.
-
-**Theoretical foundation:**
-
-- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
-- Every aggregation encodes assumptions about granularity and time.
-
-For **np-random**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Random & Statistics
-meta = {"topic_id": "np-random", "track": "data", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `np-random data beginner`,
-          keyPoints: [
-            `Core theory of Random & Statistics ties to the data track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Random & Statistics ties to the data track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-random-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Random & Statistics**. Use explicit schemas, partition keys for large tables, vectorized operations over Python loops, and idempotent ETL jobs with checkpointing. Document column lineage and unit tests on critical transforms.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **np-random**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for np-random
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("np-random", "Random & Statistics")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `np-random Random`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with data ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with data ecosystem conventions
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-random-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Random & Statistics** often hit predictable walls. Watch for train/test leakage via future information, silent dtype coercion, Cartesian joins exploding row counts, and unhandled null semantics. Profile memory before scaling pandas workloads.
-
-When stuck on **np-random**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("np-random", "Random & Statistics")
-debug_step("section_count", 4)`,
-          output: `[np-random] 'Random & Statistics' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-random-real-world`,
-          title: `Real-World Applications`,
-          content: `**Random & Statistics** shows up wherever **data** skills meet business constraints. Analytics engineers ship dbt models, Spark jobs, and DuckDB pipelines; scientists rely on reproducible notebooks with pinned seeds and versioned datasets on object storage.
-
-Teams shipping features around **np-random** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Random & Statistics
-skills = ["data", "beginner", "np-random"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: data, beginner, np-random`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Random & Statistics to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Random & Statistics to adjacent topics in the same track
-
-Topic: Random & Statistics
-Track: data | Level: beginner`
+1. Normal distribution central to ML
+2. Binomial for classification simulation
+3. Distribution choice affects synthetic data
+4. Scipy.stats for advanced distributions`
         }
       ],
       exercises: [
@@ -1921,7 +668,7 @@ print(np.mean(d), round(np.std(d), 2))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-06`,
       references: [
         {
@@ -1968,37 +715,12 @@ print(np.mean(d), round(np.std(d), 2))`,
         {
           id: `vectorize`,
           title: `Avoid Python Loops`,
-          content: `**Avoid Python Loops** — what you need to know:
+          content: `Replace loops with vectorized operations. np.vectorize is convenience, not performance — true vectorization uses ufuncs.
 
-- **Core idea:** Write fast NumPy code avoiding Python loops.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Replace loops with vectorized operations. np.vectorize is convenience, not performance — true vectorization uses ufuncs.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Avoid Python Loops** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Python loops on arrays are slow
+- Ufuncs run at C speed
+- Broadcasting eliminates nested loops
+- Profile with %timeit before optimizing`,
           example: `import numpy as np
 
 a = np.arange(1000000)
@@ -2010,119 +732,46 @@ print(b[:5])`,
             `Python loops on arrays are slow`,
             `Ufuncs run at C speed`,
             `Broadcasting eliminates nested loops`,
-            `Profile with %timeit before optimizing`,
-            `Avoid Python Loops is a foundational piece of Performance & Vectorization`,
-            `Connect this section to the data track and beginner expectations`
+            `Profile with %timeit before optimizing`
           ],
-          pseudoCode: `CONCEPT: Avoid Python Loops
+          pseudoCode: `Avoid Python Loops
 
-Study checklist:
-  1. Python loops on arrays are slow
-  2. Ufuncs run at C speed
-  3. Broadcasting eliminates nested loops
-  4. Profile with %timeit before optimizing
-  5. Avoid Python Loops is a foundational piece of Performance & Vectorization
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
+1. Python loops on arrays are slow
+2. Ufuncs run at C speed
+3. Broadcasting eliminates nested loops
+4. Profile with %timeit before optimizing`
         },
         {
           id: `memory`,
           title: `Memory Layout`,
-          content: `**Memory Layout** — what you need to know:
+          content: `C-contiguous (row-major) vs Fortran-contiguous (column-major). .flags, np.ascontiguousarray. Affects cache performance.
 
-- **Core idea:** Write fast NumPy code avoiding Python loops.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-C-contiguous (row-major) vs Fortran-contiguous (column-major). .flags, np.ascontiguousarray. Affects cache performance.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Memory Layout** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Row-major default in NumPy/C
+- Column-major in Fortran/MATLAB
+- Contiguous arrays faster for operations
+- ravel vs flatten — view vs copy`,
           keyPoints: [
             `Row-major default in NumPy/C`,
             `Column-major in Fortran/MATLAB`,
             `Contiguous arrays faster for operations`,
-            `ravel vs flatten — view vs copy`,
-            `Memory Layout is a foundational piece of Performance & Vectorization`,
-            `Connect this section to the data track and beginner expectations`
+            `ravel vs flatten — view vs copy`
           ],
-          example: `# Concept check: Memory Layout
-meta = {
-    "topic": "np-perf",
-    "section": "memory",
-    "track": "data",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: np-perf
-section: memory
-track: data
-level: beginner`,
-          pseudoCode: `CONCEPT: Memory Layout
+          pseudoCode: `Memory Layout
 
-Study checklist:
-  1. Row-major default in NumPy/C
-  2. Column-major in Fortran/MATLAB
-  3. Contiguous arrays faster for operations
-  4. ravel vs flatten — view vs copy
-  5. Memory Layout is a foundational piece of Performance & Vectorization
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
+1. Row-major default in NumPy/C
+2. Column-major in Fortran/MATLAB
+3. Contiguous arrays faster for operations
+4. ravel vs flatten — view vs copy`
         },
         {
           id: `einsum`,
           title: `np.einsum`,
-          content: `**np.einsum** — what you need to know:
+          content: `Einstein summation for concise tensor operations. Powers attention mechanisms and batch operations.
 
-- **Core idea:** Write fast NumPy code avoiding Python loops.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Einstein summation for concise tensor operations. Powers attention mechanisms and batch operations.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **np.einsum** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- einsum expresses complex tensor ops
+- Used in transformer attention
+- More readable than nested transpose/matmul
+- Optimize einsum path for performance`,
           example: `import numpy as np
 
 A = np.arange(6).reshape(2, 3)
@@ -2132,263 +781,36 @@ print(np.einsum("ij,jk->ik", A, B))`,
             `einsum expresses complex tensor ops`,
             `Used in transformer attention`,
             `More readable than nested transpose/matmul`,
-            `Optimize einsum path for performance`,
-            `np.einsum is a foundational piece of Performance & Vectorization`,
-            `Connect this section to the data track and beginner expectations`
+            `Optimize einsum path for performance`
           ],
-          pseudoCode: `CONCEPT: np.einsum
+          pseudoCode: `np.einsum
 
-Study checklist:
-  1. einsum expresses complex tensor ops
-  2. Used in transformer attention
-  3. More readable than nested transpose/matmul
-  4. Optimize einsum path for performance
-  5. np.einsum is a foundational piece of Performance & Vectorization
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
+1. einsum expresses complex tensor ops
+2. Used in transformer attention
+3. More readable than nested transpose/matmul
+4. Optimize einsum path for performance`
         },
         {
           id: `numba`,
           title: `Numba & Cython Preview`,
-          content: `**Numba & Cython Preview** — what you need to know:
+          content: `When NumPy insufficient, @numba.jit compiles Python to machine code. Cython for C-speed extensions.
 
-- **Core idea:** Write fast NumPy code avoiding Python loops.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-When NumPy insufficient, @numba.jit compiles Python to machine code. Cython for C-speed extensions.
-
-**Why this matters:**
-
-- Data quality and reproducible transforms determine whether models learn signal or noise.
-- Mastering **Numba & Cython Preview** directly affects how confidently you can build, debug, and ship data projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Profile dtypes, null rates, and cardinality before any modeling step.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Numba JIT for custom numeric loops
+- nopython mode for max speed
+- Cython for production extensions
+- Prefer vectorization first, JIT second`,
           keyPoints: [
             `Numba JIT for custom numeric loops`,
             `nopython mode for max speed`,
             `Cython for production extensions`,
-            `Prefer vectorization first, JIT second`,
-            `Numba & Cython Preview is a foundational piece of Performance & Vectorization`,
-            `Connect this section to the data track and beginner expectations`
+            `Prefer vectorization first, JIT second`
           ],
-          example: `# Concept check: Numba & Cython Preview
-meta = {
-    "topic": "np-perf",
-    "section": "numba",
-    "track": "data",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: np-perf
-section: numba
-track: data
-level: beginner`,
-          pseudoCode: `CONCEPT: Numba & Cython Preview
+          pseudoCode: `Numba & Cython Preview
 
-Study checklist:
-  1. Numba JIT for custom numeric loops
-  2. nopython mode for max speed
-  3. Cython for production extensions
-  4. Prefer vectorization first, JIT second
-  5. Numba & Cython Preview is a foundational piece of Performance & Vectorization
-  6. Connect this section to the data track and beginner expectations
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-perf-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Performance & Vectorization** sits in the **data** track of the Data Science Master curriculum. Write fast NumPy code avoiding Python loops.
-
-**Theoretical foundation:**
-
-- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
-- Every aggregation encodes assumptions about granularity and time.
-
-For **np-perf**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Performance & Vectorization
-meta = {"topic_id": "np-perf", "track": "data", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `np-perf data beginner`,
-          keyPoints: [
-            `Core theory of Performance & Vectorization ties to the data track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Performance & Vectorization ties to the data track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-perf-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Performance & Vectorization**. Use explicit schemas, partition keys for large tables, vectorized operations over Python loops, and idempotent ETL jobs with checkpointing. Document column lineage and unit tests on critical transforms.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **np-perf**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for np-perf
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("np-perf", "Performance & Vectorization")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `np-perf Performance`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with data ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with data ecosystem conventions
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-perf-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Performance & Vectorization** often hit predictable walls. Watch for train/test leakage via future information, silent dtype coercion, Cartesian joins exploding row counts, and unhandled null semantics. Profile memory before scaling pandas workloads.
-
-When stuck on **np-perf**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("np-perf", "Performance & Vectorization")
-debug_step("section_count", 4)`,
-          output: `[np-perf] 'Performance & Vectorization' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
-        },
-        {
-          id: `np-perf-real-world`,
-          title: `Real-World Applications`,
-          content: `**Performance & Vectorization** shows up wherever **data** skills meet business constraints. Analytics engineers ship dbt models, Spark jobs, and DuckDB pipelines; scientists rely on reproducible notebooks with pinned seeds and versioned datasets on object storage.
-
-Teams shipping features around **np-perf** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Performance & Vectorization
-skills = ["data", "beginner", "np-perf"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: data, beginner, np-perf`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Performance & Vectorization to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Performance & Vectorization to adjacent topics in the same track
-
-Topic: Performance & Vectorization
-Track: data | Level: beginner`
+1. Numba JIT for custom numeric loops
+2. nopython mode for max speed
+3. Cython for production extensions
+4. Prefer vectorization first, JIT second`
         }
       ],
       exercises: [
@@ -2411,7 +833,7 @@ print(a)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-06`,
       references: [
         {

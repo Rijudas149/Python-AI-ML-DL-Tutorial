@@ -11,37 +11,12 @@ export const module09Topics: Topic[] = [
         {
           id: `vectors`,
           title: `Vectors & Dot Products`,
-          content: `**Vectors & Dot Products** — what you need to know:
+          content: `Vectors represent features and weights. Dot product measures similarity: a·b = Σaᵢbᵢ. Cosine similarity normalizes by magnitude.
 
-- **Core idea:** Vectors, matrices, eigenvalues, and their role in ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Vectors represent features and weights. Dot product measures similarity: a·b = Σaᵢbᵢ. Cosine similarity normalizes by magnitude.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Vectors & Dot Products** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Vectors are ordered lists of numbers
+- Dot product fundamental to neural networks
+- Cosine similarity for text/document similarity
+- Unit vectors have norm 1`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3])
@@ -54,57 +29,24 @@ print(dot, round(cos_sim, 4))`,
             `Vectors are ordered lists of numbers`,
             `Dot product fundamental to neural networks`,
             `Cosine similarity for text/document similarity`,
-            `Unit vectors have norm 1`,
-            `Vectors & Dot Products is a foundational piece of Linear Algebra Essentials`,
-            `Connect this section to the ml track and beginner expectations`
+            `Unit vectors have norm 1`
           ],
-          pseudoCode: `CONCEPT: Vectors & Dot Products
+          pseudoCode: `Vectors & Dot Products
 
-Study checklist:
-  1. Vectors are ordered lists of numbers
-  2. Dot product fundamental to neural networks
-  3. Cosine similarity for text/document similarity
-  4. Unit vectors have norm 1
-  5. Vectors & Dot Products is a foundational piece of Linear Algebra Essentials
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
+1. Vectors are ordered lists of numbers
+2. Dot product fundamental to neural networks
+3. Cosine similarity for text/document similarity
+4. Unit vectors have norm 1`
         },
         {
           id: `matrices`,
           title: `Matrix Operations`,
-          content: `**Matrix Operations** — what you need to know:
+          content: `Matrices transform vectors. Matrix multiplication composes transformations. Transpose, inverse, rank.
 
-- **Core idea:** Vectors, matrices, eigenvalues, and their role in ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Matrices transform vectors. Matrix multiplication composes transformations. Transpose, inverse, rank.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Matrix Operations** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- ML layers are matrix multiplications
+- Weight matrix W maps input to output
+- Rank indicates independent dimensions
+- Singular matrices cannot be inverted`,
           example: `import numpy as np
 
 W = np.array([[1, 2], [3, 4], [5, 6]])  # 3x2
@@ -115,325 +57,58 @@ print(W @ x)  # 3x1 output`,
             `ML layers are matrix multiplications`,
             `Weight matrix W maps input to output`,
             `Rank indicates independent dimensions`,
-            `Singular matrices cannot be inverted`,
-            `Matrix Operations is a foundational piece of Linear Algebra Essentials`,
-            `Connect this section to the ml track and beginner expectations`
+            `Singular matrices cannot be inverted`
           ],
-          pseudoCode: `CONCEPT: Matrix Operations
+          pseudoCode: `Matrix Operations
 
-Study checklist:
-  1. ML layers are matrix multiplications
-  2. Weight matrix W maps input to output
-  3. Rank indicates independent dimensions
-  4. Singular matrices cannot be inverted
-  5. Matrix Operations is a foundational piece of Linear Algebra Essentials
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
+1. ML layers are matrix multiplications
+2. Weight matrix W maps input to output
+3. Rank indicates independent dimensions
+4. Singular matrices cannot be inverted`
         },
         {
           id: `eigen`,
           title: `Eigenvalues & Eigenvectors`,
-          content: `**Eigenvalues & Eigenvectors** — what you need to know:
+          content: `Av = λv. PCA finds principal eigenvectors of covariance matrix. Eigen decomposition reveals data structure.
 
-- **Core idea:** Vectors, matrices, eigenvalues, and their role in ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Av = λv. PCA finds principal eigenvectors of covariance matrix. Eigen decomposition reveals data structure.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Eigenvalues & Eigenvectors** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Eigenvectors define principal directions
+- Eigenvalues measure variance along directions
+- PCA uses eigendecomposition of covariance
+- SVD generalizes to non-square matrices`,
           keyPoints: [
             `Eigenvectors define principal directions`,
             `Eigenvalues measure variance along directions`,
             `PCA uses eigendecomposition of covariance`,
-            `SVD generalizes to non-square matrices`,
-            `Eigenvalues & Eigenvectors is a foundational piece of Linear Algebra Essentials`,
-            `Connect this section to the ml track and beginner expectations`
+            `SVD generalizes to non-square matrices`
           ],
-          example: `# Concept check: Eigenvalues & Eigenvectors
-meta = {
-    "topic": "ml-linear-algebra",
-    "section": "eigen",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-linear-algebra
-section: eigen
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: Eigenvalues & Eigenvectors
+          pseudoCode: `Eigenvalues & Eigenvectors
 
-Study checklist:
-  1. Eigenvectors define principal directions
-  2. Eigenvalues measure variance along directions
-  3. PCA uses eigendecomposition of covariance
-  4. SVD generalizes to non-square matrices
-  5. Eigenvalues & Eigenvectors is a foundational piece of Linear Algebra Essentials
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
+1. Eigenvectors define principal directions
+2. Eigenvalues measure variance along directions
+3. PCA uses eigendecomposition of covariance
+4. SVD generalizes to non-square matrices`
         },
         {
           id: `svd`,
           title: `SVD in ML`,
-          content: `**SVD in ML** — what you need to know:
+          content: `A = UΣVᵀ. Used in PCA, recommender systems, NLP (LSA), and dimensionality reduction.
 
-- **Core idea:** Vectors, matrices, eigenvalues, and their role in ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-A = UΣVᵀ. Used in PCA, recommender systems, NLP (LSA), and dimensionality reduction.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **SVD in ML** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- SVD always exists for any matrix
+- Truncated SVD for dimensionality reduction
+- Singular values indicate importance
+- Low-rank approximation compresses data`,
           keyPoints: [
             `SVD always exists for any matrix`,
             `Truncated SVD for dimensionality reduction`,
             `Singular values indicate importance`,
-            `Low-rank approximation compresses data`,
-            `SVD in ML is a foundational piece of Linear Algebra Essentials`,
-            `Connect this section to the ml track and beginner expectations`
+            `Low-rank approximation compresses data`
           ],
-          example: `# Concept check: SVD in ML
-meta = {
-    "topic": "ml-linear-algebra",
-    "section": "svd",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-linear-algebra
-section: svd
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: SVD in ML
+          pseudoCode: `SVD in ML
 
-Study checklist:
-  1. SVD always exists for any matrix
-  2. Truncated SVD for dimensionality reduction
-  3. Singular values indicate importance
-  4. Low-rank approximation compresses data
-  5. SVD in ML is a foundational piece of Linear Algebra Essentials
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-linear-algebra-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Linear Algebra Essentials** sits in the **ml** track of the Data Science Master curriculum. Vectors, matrices, eigenvalues, and their role in ML.
-
-**Theoretical foundation:**
-
-- Learning algorithms minimize expected risk on unseen data.
-- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For **ml-linear-algebra**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Linear Algebra Essentials
-meta = {"topic_id": "ml-linear-algebra", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-linear-algebra ml beginner`,
-          keyPoints: [
-            `Core theory of Linear Algebra Essentials ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Linear Algebra Essentials ties to the ml track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-linear-algebra-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Linear Algebra Essentials**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-linear-algebra**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for ml-linear-algebra
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-linear-algebra", "Linear Algebra Essentials")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-linear-algebra Linear`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with ml ecosystem conventions
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-linear-algebra-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Linear Algebra Essentials** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on **ml-linear-algebra**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-linear-algebra", "Linear Algebra Essentials")
-debug_step("section_count", 4)`,
-          output: `[ml-linear-algebra] 'Linear Algebra Essentials' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-linear-algebra-real-world`,
-          title: `Real-World Applications`,
-          content: `**Linear Algebra Essentials** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around **ml-linear-algebra** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Linear Algebra Essentials
-skills = ["ml", "beginner", "ml-linear-algebra"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-linear-algebra`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Linear Algebra Essentials to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Linear Algebra Essentials to adjacent topics in the same track
-
-Topic: Linear Algebra Essentials
-Track: ml | Level: beginner`
+1. SVD always exists for any matrix
+2. Truncated SVD for dimensionality reduction
+3. Singular values indicate importance
+4. Low-rank approximation compresses data`
         }
       ],
       exercises: [
@@ -452,7 +127,7 @@ print(np.array([[1,2],[3,4]]) @ np.array([1, 0]))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-09`,
       references: [
         {
@@ -499,37 +174,12 @@ print(np.array([[1,2],[3,4]]) @ np.array([1, 0]))`,
         {
           id: `derivatives`,
           title: `Derivatives & Gradients`,
-          content: `**Derivatives & Gradients** — what you need to know:
+          content: `Derivative measures rate of change. Gradient ∇f is vector of partial derivatives — points direction of steepest ascent.
 
-- **Core idea:** Derivatives, gradients, chain rule, and partial derivatives for optimization.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Derivative measures rate of change. Gradient ∇f is vector of partial derivatives — points direction of steepest ascent.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Derivatives & Gradients** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Gradient points uphill on loss surface
+- Negative gradient direction minimizes loss
+- Partial derivatives hold other variables fixed
+- Gradient is foundation of gradient descent`,
           example: `# f(x, y) = x^2 + y^2
 # df/dx = 2x, df/dy = 2y
 # At (3, 4): gradient = [6, 8]
@@ -542,51 +192,24 @@ print(grad, np.linalg.norm(grad))`,
             `Gradient points uphill on loss surface`,
             `Negative gradient direction minimizes loss`,
             `Partial derivatives hold other variables fixed`,
-            `Gradient is foundation of gradient descent`,
-            `Derivatives & Gradients is a foundational piece of Calculus for ML`,
-            `Connect this section to the ml track and beginner expectations`
+            `Gradient is foundation of gradient descent`
           ],
-          pseudoCode: `CONCEPT: Derivatives & Gradients
+          pseudoCode: `Derivatives & Gradients
 
-Study checklist:
-  1. Gradient points uphill on loss surface
-  2. Negative gradient direction minimizes loss
-  3. Partial derivatives hold other variables fixed
-  4. Gradient is foundation of gradient descent
-  5. Derivatives & Gradients is a foundational piece of Calculus for ML
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
+1. Gradient points uphill on loss surface
+2. Negative gradient direction minimizes loss
+3. Partial derivatives hold other variables fixed
+4. Gradient is foundation of gradient descent`
         },
         {
           id: `chain-rule`,
           title: `Chain Rule & Backpropagation`,
-          content: `**Chain Rule & Backpropagation** — what you need to know:
+          content: `Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule through computational graph.
 
-- **Core idea:** Derivatives, gradients, chain rule, and partial derivatives for optimization.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule through computational graph.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Chain Rule & Backpropagation** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Chain rule enables gradient flow through networks
+- Backprop is efficient application of chain rule
+- Computational graph tracks dependencies
+- Automatic differentiation automates chain rule`,
           pseudoCode: `FOR each layer L from output to input:
     compute local gradient
     propagate gradient to previous layer via chain rule`,
@@ -594,58 +217,18 @@ Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule
             `Chain rule enables gradient flow through networks`,
             `Backprop is efficient application of chain rule`,
             `Computational graph tracks dependencies`,
-            `Automatic differentiation automates chain rule`,
-            `Chain Rule & Backpropagation is a foundational piece of Calculus for ML`,
-            `Connect this section to the ml track and beginner expectations`
-          ],
-          example: `# Concept check: Chain Rule & Backpropagation
-meta = {
-    "topic": "ml-calculus",
-    "section": "chain-rule",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-calculus
-section: chain-rule
-track: ml
-level: beginner`
+            `Automatic differentiation automates chain rule`
+          ]
         },
         {
           id: `loss-gradients`,
           title: `Gradients of Common Loss Functions`,
-          content: `**Gradients of Common Loss Functions** — what you need to know:
+          content: `MSE: ∂/∂ŷ = 2(ŷ-y). Cross-entropy with softmax has elegant gradient: ŷ - y. Know these for debugging.
 
-- **Core idea:** Derivatives, gradients, chain rule, and partial derivatives for optimization.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-MSE: ∂/∂ŷ = 2(ŷ-y). Cross-entropy with softmax has elegant gradient: ŷ - y. Know these for debugging.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Gradients of Common Loss Functions** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- MSE gradient proportional to error
+- Cross-entropy gradient simplifies with softmax
+- Gradient magnitude indicates update size
+- Vanishing gradients plague deep networks`,
           example: `import numpy as np
 
 y_true = np.array([1.0, 3.0, 5.0])
@@ -657,263 +240,36 @@ print(mse_grad)`,
             `MSE gradient proportional to error`,
             `Cross-entropy gradient simplifies with softmax`,
             `Gradient magnitude indicates update size`,
-            `Vanishing gradients plague deep networks`,
-            `Gradients of Common Loss Functions is a foundational piece of Calculus for ML`,
-            `Connect this section to the ml track and beginner expectations`
+            `Vanishing gradients plague deep networks`
           ],
-          pseudoCode: `CONCEPT: Gradients of Common Loss Functions
+          pseudoCode: `Gradients of Common Loss Functions
 
-Study checklist:
-  1. MSE gradient proportional to error
-  2. Cross-entropy gradient simplifies with softmax
-  3. Gradient magnitude indicates update size
-  4. Vanishing gradients plague deep networks
-  5. Gradients of Common Loss Functions is a foundational piece of Calculus for ML
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
+1. MSE gradient proportional to error
+2. Cross-entropy gradient simplifies with softmax
+3. Gradient magnitude indicates update size
+4. Vanishing gradients plague deep networks`
         },
         {
           id: `jacobian`,
           title: `Jacobian & Hessian`,
-          content: `**Jacobian & Hessian** — what you need to know:
+          content: `Jacobian matrix of vector-valued functions. Hessian (second derivatives) for curvature. Newton method uses Hessian.
 
-- **Core idea:** Derivatives, gradients, chain rule, and partial derivatives for optimization.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Jacobian matrix of vector-valued functions. Hessian (second derivatives) for curvature. Newton method uses Hessian.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Jacobian & Hessian** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Jacobian generalizes gradient to vector outputs
+- Hessian reveals convexity/concavity
+- Second-order methods converge faster but cost more
+- Most DL uses first-order (gradient) methods only`,
           keyPoints: [
             `Jacobian generalizes gradient to vector outputs`,
             `Hessian reveals convexity/concavity`,
             `Second-order methods converge faster but cost more`,
-            `Most DL uses first-order (gradient) methods only`,
-            `Jacobian & Hessian is a foundational piece of Calculus for ML`,
-            `Connect this section to the ml track and beginner expectations`
+            `Most DL uses first-order (gradient) methods only`
           ],
-          example: `# Concept check: Jacobian & Hessian
-meta = {
-    "topic": "ml-calculus",
-    "section": "jacobian",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-calculus
-section: jacobian
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: Jacobian & Hessian
+          pseudoCode: `Jacobian & Hessian
 
-Study checklist:
-  1. Jacobian generalizes gradient to vector outputs
-  2. Hessian reveals convexity/concavity
-  3. Second-order methods converge faster but cost more
-  4. Most DL uses first-order (gradient) methods only
-  5. Jacobian & Hessian is a foundational piece of Calculus for ML
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-calculus-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Calculus for ML** sits in the **ml** track of the Data Science Master curriculum. Derivatives, gradients, chain rule, and partial derivatives for optimization.
-
-**Theoretical foundation:**
-
-- Learning algorithms minimize expected risk on unseen data.
-- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For **ml-calculus**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Calculus for ML
-meta = {"topic_id": "ml-calculus", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-calculus ml beginner`,
-          keyPoints: [
-            `Core theory of Calculus for ML ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Calculus for ML ties to the ml track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-calculus-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Calculus for ML**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-calculus**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for ml-calculus
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-calculus", "Calculus for ML")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-calculus Calculus`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with ml ecosystem conventions
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-calculus-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Calculus for ML** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on **ml-calculus**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-calculus", "Calculus for ML")
-debug_step("section_count", 4)`,
-          output: `[ml-calculus] 'Calculus for ML' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-calculus-real-world`,
-          title: `Real-World Applications`,
-          content: `**Calculus for ML** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around **ml-calculus** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Calculus for ML
-skills = ["ml", "beginner", "ml-calculus"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-calculus`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Calculus for ML to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Calculus for ML to adjacent topics in the same track
-
-Topic: Calculus for ML
-Track: ml | Level: beginner`
+1. Jacobian generalizes gradient to vector outputs
+2. Hessian reveals convexity/concavity
+3. Second-order methods converge faster but cost more
+4. Most DL uses first-order (gradient) methods only`
         }
       ],
       exercises: [
@@ -934,7 +290,7 @@ print(2 * (pred - y) / len(y))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-09`,
       references: [
         {
@@ -981,37 +337,12 @@ print(2 * (pred - y) / len(y))`,
         {
           id: `basics`,
           title: `Probability Fundamentals`,
-          content: `**Probability Fundamentals** — what you need to know:
+          content: `P(A|B) = P(A∩B)/P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B). Foundation for Naive Bayes and Bayesian ML.
 
-- **Core idea:** Probability theory, Bayes theorem, and key distributions for ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-P(A|B) = P(A∩B)/P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B). Foundation for Naive Bayes and Bayesian ML.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Probability Fundamentals** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Bayes theorem updates beliefs with evidence
+- Prior × likelihood ∝ posterior
+- Base rate neglect is common error
+- Naive Bayes assumes feature independence`,
           example: `# Bayes: P(disease|+) = P(+|disease)*P(disease)/P(+)
 p_disease = 0.01
 p_pos_given_disease = 0.99
@@ -1023,57 +354,24 @@ print(round(p_disease_given_pos, 4))`,
             `Bayes theorem updates beliefs with evidence`,
             `Prior × likelihood ∝ posterior`,
             `Base rate neglect is common error`,
-            `Naive Bayes assumes feature independence`,
-            `Probability Fundamentals is a foundational piece of Probability & Distributions`,
-            `Connect this section to the ml track and beginner expectations`
+            `Naive Bayes assumes feature independence`
           ],
-          pseudoCode: `CONCEPT: Probability Fundamentals
+          pseudoCode: `Probability Fundamentals
 
-Study checklist:
-  1. Bayes theorem updates beliefs with evidence
-  2. Prior × likelihood ∝ posterior
-  3. Base rate neglect is common error
-  4. Naive Bayes assumes feature independence
-  5. Probability Fundamentals is a foundational piece of Probability & Distributions
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
+1. Bayes theorem updates beliefs with evidence
+2. Prior × likelihood ∝ posterior
+3. Base rate neglect is common error
+4. Naive Bayes assumes feature independence`
         },
         {
           id: `distributions`,
           title: `Key Distributions`,
-          content: `**Key Distributions** — what you need to know:
+          content: `Normal/Gaussian: central to ML. Bernoulli/Binomial: binary outcomes. Poisson: counts. Uniform: equal probability.
 
-- **Core idea:** Probability theory, Bayes theorem, and key distributions for ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Normal/Gaussian: central to ML. Bernoulli/Binomial: binary outcomes. Poisson: counts. Uniform: equal probability.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Key Distributions** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Normal distribution ubiquitous in ML
+- Central Limit Theorem justifies normality
+- Bernoulli for binary classification targets
+- Choose distribution matching data generating process`,
           example: `import numpy as np
 
 # 68-95-99.7 rule for normal distribution
@@ -1086,325 +384,58 @@ print(round(within_1std, 3))`,
             `Normal distribution ubiquitous in ML`,
             `Central Limit Theorem justifies normality`,
             `Bernoulli for binary classification targets`,
-            `Choose distribution matching data generating process`,
-            `Key Distributions is a foundational piece of Probability & Distributions`,
-            `Connect this section to the ml track and beginner expectations`
+            `Choose distribution matching data generating process`
           ],
-          pseudoCode: `CONCEPT: Key Distributions
+          pseudoCode: `Key Distributions
 
-Study checklist:
-  1. Normal distribution ubiquitous in ML
-  2. Central Limit Theorem justifies normality
-  3. Bernoulli for binary classification targets
-  4. Choose distribution matching data generating process
-  5. Key Distributions is a foundational piece of Probability & Distributions
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
+1. Normal distribution ubiquitous in ML
+2. Central Limit Theorem justifies normality
+3. Bernoulli for binary classification targets
+4. Choose distribution matching data generating process`
         },
         {
           id: `expectation`,
           title: `Expectation & Variance`,
-          content: `**Expectation & Variance** — what you need to know:
+          content: `E[X] = Σx·P(x). Var(X) = E[(X-μ)²]. Covariance measures joint variability. Correlation is normalized covariance.
 
-- **Core idea:** Probability theory, Bayes theorem, and key distributions for ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-E[X] = Σx·P(x). Var(X) = E[(X-μ)²]. Covariance measures joint variability. Correlation is normalized covariance.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Expectation & Variance** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Expectation is average outcome weighted by probability
+- Variance measures spread around mean
+- Covariance matrix for multivariate data
+- Correlation ∈ [-1, 1] is scale-invariant`,
           keyPoints: [
             `Expectation is average outcome weighted by probability`,
             `Variance measures spread around mean`,
             `Covariance matrix for multivariate data`,
-            `Correlation ∈ [-1, 1] is scale-invariant`,
-            `Expectation & Variance is a foundational piece of Probability & Distributions`,
-            `Connect this section to the ml track and beginner expectations`
+            `Correlation ∈ [-1, 1] is scale-invariant`
           ],
-          example: `# Concept check: Expectation & Variance
-meta = {
-    "topic": "ml-probability",
-    "section": "expectation",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-probability
-section: expectation
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: Expectation & Variance
+          pseudoCode: `Expectation & Variance
 
-Study checklist:
-  1. Expectation is average outcome weighted by probability
-  2. Variance measures spread around mean
-  3. Covariance matrix for multivariate data
-  4. Correlation ∈ [-1, 1] is scale-invariant
-  5. Expectation & Variance is a foundational piece of Probability & Distributions
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
+1. Expectation is average outcome weighted by probability
+2. Variance measures spread around mean
+3. Covariance matrix for multivariate data
+4. Correlation ∈ [-1, 1] is scale-invariant`
         },
         {
           id: `mle`,
           title: `Maximum Likelihood Estimation`,
-          content: `**Maximum Likelihood Estimation** — what you need to know:
+          content: `Choose parameters maximizing P(data|θ). MLE for Gaussian mean is sample mean. Foundation for many ML algorithms.
 
-- **Core idea:** Probability theory, Bayes theorem, and key distributions for ML.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Choose parameters maximizing P(data|θ). MLE for Gaussian mean is sample mean. Foundation for many ML algorithms.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Maximum Likelihood Estimation** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- MLE finds most probable parameters given data
+- Log-likelihood easier to optimize (products → sums)
+- MLE can overfit with complex models
+- MAP adds prior for regularization`,
           keyPoints: [
             `MLE finds most probable parameters given data`,
             `Log-likelihood easier to optimize (products → sums)`,
             `MLE can overfit with complex models`,
-            `MAP adds prior for regularization`,
-            `Maximum Likelihood Estimation is a foundational piece of Probability & Distributions`,
-            `Connect this section to the ml track and beginner expectations`
+            `MAP adds prior for regularization`
           ],
-          example: `# Concept check: Maximum Likelihood Estimation
-meta = {
-    "topic": "ml-probability",
-    "section": "mle",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-probability
-section: mle
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: Maximum Likelihood Estimation
+          pseudoCode: `Maximum Likelihood Estimation
 
-Study checklist:
-  1. MLE finds most probable parameters given data
-  2. Log-likelihood easier to optimize (products → sums)
-  3. MLE can overfit with complex models
-  4. MAP adds prior for regularization
-  5. Maximum Likelihood Estimation is a foundational piece of Probability & Distributions
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-probability-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Probability & Distributions** sits in the **ml** track of the Data Science Master curriculum. Probability theory, Bayes theorem, and key distributions for ML.
-
-**Theoretical foundation:**
-
-- Learning algorithms minimize expected risk on unseen data.
-- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For **ml-probability**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Probability & Distributions
-meta = {"topic_id": "ml-probability", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-probability ml beginner`,
-          keyPoints: [
-            `Core theory of Probability & Distributions ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Probability & Distributions ties to the ml track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-probability-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Probability & Distributions**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-probability**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for ml-probability
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-probability", "Probability & Distributions")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-probability Probability`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with ml ecosystem conventions
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-probability-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Probability & Distributions** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on **ml-probability**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-probability", "Probability & Distributions")
-debug_step("section_count", 4)`,
-          output: `[ml-probability] 'Probability & Distributions' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-probability-real-world`,
-          title: `Real-World Applications`,
-          content: `**Probability & Distributions** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around **ml-probability** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Probability & Distributions
-skills = ["ml", "beginner", "ml-probability"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-probability`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Probability & Distributions to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Probability & Distributions to adjacent topics in the same track
-
-Topic: Probability & Distributions
-Track: ml | Level: beginner`
+1. MLE finds most probable parameters given data
+2. Log-likelihood easier to optimize (products → sums)
+3. MLE can overfit with complex models
+4. MAP adds prior for regularization`
         }
       ],
       exercises: [
@@ -1423,7 +454,7 @@ print(np.random.default_rng(0).normal(0, 1, 5))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-09`,
       references: [
         {
@@ -1470,37 +501,12 @@ print(np.random.default_rng(0).normal(0, 1, 5))`,
         {
           id: `entropy`,
           title: `Entropy`,
-          content: `**Entropy** — what you need to know:
+          content: `H(X) = -Σ P(x) log P(x). Measures uncertainty. Maximum when uniform distribution.
 
-- **Core idea:** Entropy, cross-entropy, KL divergence — core to classification loss.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-H(X) = -Σ P(x) log P(x). Measures uncertainty. Maximum when uniform distribution.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Entropy** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Entropy in bits when using log2
+- Higher entropy = more uncertainty
+- Uniform distribution maximizes entropy
+- Decision trees use entropy for splitting`,
           example: `import numpy as np
 
 def entropy(p):
@@ -1516,57 +522,24 @@ print(entropy([0.9, 0.1]))  # low uncertainty`,
             `Entropy in bits when using log2`,
             `Higher entropy = more uncertainty`,
             `Uniform distribution maximizes entropy`,
-            `Decision trees use entropy for splitting`,
-            `Entropy is a foundational piece of Information Theory & Entropy`,
-            `Connect this section to the ml track and beginner expectations`
+            `Decision trees use entropy for splitting`
           ],
-          pseudoCode: `CONCEPT: Entropy
+          pseudoCode: `Entropy
 
-Study checklist:
-  1. Entropy in bits when using log2
-  2. Higher entropy = more uncertainty
-  3. Uniform distribution maximizes entropy
-  4. Decision trees use entropy for splitting
-  5. Entropy is a foundational piece of Information Theory & Entropy
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
+1. Entropy in bits when using log2
+2. Higher entropy = more uncertainty
+3. Uniform distribution maximizes entropy
+4. Decision trees use entropy for splitting`
         },
         {
           id: `cross-entropy`,
           title: `Cross-Entropy Loss`,
-          content: `**Cross-Entropy Loss** — what you need to know:
+          content: `H(p,q) = -Σ p(x) log q(x). Classification loss compares predicted q to true p. Log loss for binary classification.
 
-- **Core idea:** Entropy, cross-entropy, KL divergence — core to classification loss.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-H(p,q) = -Σ p(x) log q(x). Classification loss compares predicted q to true p. Log loss for binary classification.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Cross-Entropy Loss** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Cross-entropy is standard classification loss
+- Heavily penalizes confident wrong predictions
+- Numerical stability requires clipping
+- Equivalent to negative log-likelihood`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -1579,325 +552,58 @@ print(round(cross_entropy(1, 0.9), 4))`,
             `Cross-entropy is standard classification loss`,
             `Heavily penalizes confident wrong predictions`,
             `Numerical stability requires clipping`,
-            `Equivalent to negative log-likelihood`,
-            `Cross-Entropy Loss is a foundational piece of Information Theory & Entropy`,
-            `Connect this section to the ml track and beginner expectations`
+            `Equivalent to negative log-likelihood`
           ],
-          pseudoCode: `CONCEPT: Cross-Entropy Loss
+          pseudoCode: `Cross-Entropy Loss
 
-Study checklist:
-  1. Cross-entropy is standard classification loss
-  2. Heavily penalizes confident wrong predictions
-  3. Numerical stability requires clipping
-  4. Equivalent to negative log-likelihood
-  5. Cross-Entropy Loss is a foundational piece of Information Theory & Entropy
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
+1. Cross-entropy is standard classification loss
+2. Heavily penalizes confident wrong predictions
+3. Numerical stability requires clipping
+4. Equivalent to negative log-likelihood`
         },
         {
           id: `kl`,
           title: `KL Divergence`,
-          content: `**KL Divergence** — what you need to know:
+          content: `D_KL(p||q) = Σ p(x) log(p(x)/q(x)). Measures difference between distributions. Non-negative, zero iff p=q.
 
-- **Core idea:** Entropy, cross-entropy, KL divergence — core to classification loss.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-D_KL(p||q) = Σ p(x) log(p(x)/q(x)). Measures difference between distributions. Non-negative, zero iff p=q.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **KL Divergence** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- KL divergence is asymmetric
+- Used in VAE loss and knowledge distillation
+- Not a true metric (no triangle inequality)
+- Minimizing cross-entropy ≈ minimizing KL to true distribution`,
           keyPoints: [
             `KL divergence is asymmetric`,
             `Used in VAE loss and knowledge distillation`,
             `Not a true metric (no triangle inequality)`,
-            `Minimizing cross-entropy ≈ minimizing KL to true distribution`,
-            `KL Divergence is a foundational piece of Information Theory & Entropy`,
-            `Connect this section to the ml track and beginner expectations`
+            `Minimizing cross-entropy ≈ minimizing KL to true distribution`
           ],
-          example: `# Concept check: KL Divergence
-meta = {
-    "topic": "ml-info-theory",
-    "section": "kl",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-info-theory
-section: kl
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: KL Divergence
+          pseudoCode: `KL Divergence
 
-Study checklist:
-  1. KL divergence is asymmetric
-  2. Used in VAE loss and knowledge distillation
-  3. Not a true metric (no triangle inequality)
-  4. Minimizing cross-entropy ≈ minimizing KL to true distribution
-  5. KL Divergence is a foundational piece of Information Theory & Entropy
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
+1. KL divergence is asymmetric
+2. Used in VAE loss and knowledge distillation
+3. Not a true metric (no triangle inequality)
+4. Minimizing cross-entropy ≈ minimizing KL to true distribution`
         },
         {
           id: `mutual-info`,
           title: `Mutual Information`,
-          content: `**Mutual Information** — what you need to know:
+          content: `I(X;Y) = H(X) - H(X|Y). Measures shared information. Used in feature selection.
 
-- **Core idea:** Entropy, cross-entropy, KL divergence — core to classification loss.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-I(X;Y) = H(X) - H(X|Y). Measures shared information. Used in feature selection.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Mutual Information** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Mutual information captures nonlinear dependencies
+- Zero iff variables are independent
+- Used in decision tree feature selection
+- Harder to estimate than correlation`,
           keyPoints: [
             `Mutual information captures nonlinear dependencies`,
             `Zero iff variables are independent`,
             `Used in decision tree feature selection`,
-            `Harder to estimate than correlation`,
-            `Mutual Information is a foundational piece of Information Theory & Entropy`,
-            `Connect this section to the ml track and beginner expectations`
+            `Harder to estimate than correlation`
           ],
-          example: `# Concept check: Mutual Information
-meta = {
-    "topic": "ml-info-theory",
-    "section": "mutual-info",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-info-theory
-section: mutual-info
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: Mutual Information
+          pseudoCode: `Mutual Information
 
-Study checklist:
-  1. Mutual information captures nonlinear dependencies
-  2. Zero iff variables are independent
-  3. Used in decision tree feature selection
-  4. Harder to estimate than correlation
-  5. Mutual Information is a foundational piece of Information Theory & Entropy
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-info-theory-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Information Theory & Entropy** sits in the **ml** track of the Data Science Master curriculum. Entropy, cross-entropy, KL divergence — core to classification loss.
-
-**Theoretical foundation:**
-
-- Learning algorithms minimize expected risk on unseen data.
-- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For **ml-info-theory**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Information Theory & Entropy
-meta = {"topic_id": "ml-info-theory", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-info-theory ml beginner`,
-          keyPoints: [
-            `Core theory of Information Theory & Entropy ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Information Theory & Entropy ties to the ml track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-info-theory-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Information Theory & Entropy**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-info-theory**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for ml-info-theory
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-info-theory", "Information Theory & Entropy")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-info-theory Information`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with ml ecosystem conventions
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-info-theory-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Information Theory & Entropy** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on **ml-info-theory**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-info-theory", "Information Theory & Entropy")
-debug_step("section_count", 4)`,
-          output: `[ml-info-theory] 'Information Theory & Entropy' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-info-theory-real-world`,
-          title: `Real-World Applications`,
-          content: `**Information Theory & Entropy** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around **ml-info-theory** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Information Theory & Entropy
-skills = ["ml", "beginner", "ml-info-theory"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-info-theory`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Information Theory & Entropy to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Information Theory & Entropy to adjacent topics in the same track
-
-Topic: Information Theory & Entropy
-Track: ml | Level: beginner`
+1. Mutual information captures nonlinear dependencies
+2. Zero iff variables are independent
+3. Used in decision tree feature selection
+4. Harder to estimate than correlation`
         }
       ],
       exercises: [
@@ -1916,7 +622,7 @@ print(-np.sum([0.25]*4 * np.log2([0.25]*4)))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-09`,
       references: [
         {
@@ -1963,37 +669,12 @@ print(-np.sum([0.25]*4 * np.log2([0.25]*4)))`,
         {
           id: `gd`,
           title: `Gradient Descent`,
-          content: `**Gradient Descent** — what you need to know:
+          content: `θ := θ - α∇L(θ). Learning rate α controls step size. Iterate until convergence.
 
-- **Core idea:** Finding minima of loss functions iteratively.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-θ := θ - α∇L(θ). Learning rate α controls step size. Iterate until convergence.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Gradient Descent** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Learning rate most important hyperparameter
+- Too large α diverges, too small slow
+- Convergence when gradient near zero
+- Batch/mini-batch/stochastic variants`,
           example: `import numpy as np
 
 # Minimize f(x) = x^2
@@ -2009,51 +690,24 @@ print(round(x, 6))`,
             `Learning rate most important hyperparameter`,
             `Too large α diverges, too small slow`,
             `Convergence when gradient near zero`,
-            `Batch/mini-batch/stochastic variants`,
-            `Gradient Descent is a foundational piece of Optimization & Gradient Descent`,
-            `Connect this section to the ml track and beginner expectations`
+            `Batch/mini-batch/stochastic variants`
           ],
-          pseudoCode: `CONCEPT: Gradient Descent
+          pseudoCode: `Gradient Descent
 
-Study checklist:
-  1. Learning rate most important hyperparameter
-  2. Too large α diverges, too small slow
-  3. Convergence when gradient near zero
-  4. Batch/mini-batch/stochastic variants
-  5. Gradient Descent is a foundational piece of Optimization & Gradient Descent
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
+1. Learning rate most important hyperparameter
+2. Too large α diverges, too small slow
+3. Convergence when gradient near zero
+4. Batch/mini-batch/stochastic variants`
         },
         {
           id: `variants`,
           title: `SGD, Momentum, Adam`,
-          content: `**SGD, Momentum, Adam** — what you need to know:
+          content: `SGD: one sample at a time. Momentum: accumulate velocity. Adam: adaptive per-parameter learning rates — default for DL.
 
-- **Core idea:** Finding minima of loss functions iteratively.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-SGD: one sample at a time. Momentum: accumulate velocity. Adam: adaptive per-parameter learning rates — default for DL.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **SGD, Momentum, Adam** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Mini-batch balances speed and stability
+- Momentum helps escape local minima and ravines
+- Adam adapts learning rate per parameter
+- Learning rate scheduling improves convergence`,
           pseudoCode: `FOR each epoch:
     FOR each mini-batch:
         compute gradient
@@ -2063,120 +717,40 @@ SGD: one sample at a time. Momentum: accumulate velocity. Adam: adaptive per-par
             `Mini-batch balances speed and stability`,
             `Momentum helps escape local minima and ravines`,
             `Adam adapts learning rate per parameter`,
-            `Learning rate scheduling improves convergence`,
-            `SGD, Momentum, Adam is a foundational piece of Optimization & Gradient Descent`,
-            `Connect this section to the ml track and beginner expectations`
-          ],
-          example: `# Concept check: SGD, Momentum, Adam
-meta = {
-    "topic": "ml-optimization",
-    "section": "variants",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-optimization
-section: variants
-track: ml
-level: beginner`
+            `Learning rate scheduling improves convergence`
+          ]
         },
         {
           id: `convex`,
           title: `Convex vs Non-Convex`,
-          content: `**Convex vs Non-Convex** — what you need to know:
+          content: `Convex functions have one global minimum. Neural network loss is non-convex — many local minima but SGD often finds good solutions.
 
-- **Core idea:** Finding minima of loss functions iteratively.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Convex functions have one global minimum. Neural network loss is non-convex — many local minima but SGD often finds good solutions.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Convex vs Non-Convex** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Linear regression loss is convex
+- Deep network loss surfaces are highly non-convex
+- Saddle points more common than local minima in high-D
+- Overparameterization helps optimization in DL`,
           keyPoints: [
             `Linear regression loss is convex`,
             `Deep network loss surfaces are highly non-convex`,
             `Saddle points more common than local minima in high-D`,
-            `Overparameterization helps optimization in DL`,
-            `Convex vs Non-Convex is a foundational piece of Optimization & Gradient Descent`,
-            `Connect this section to the ml track and beginner expectations`
+            `Overparameterization helps optimization in DL`
           ],
-          example: `# Concept check: Convex vs Non-Convex
-meta = {
-    "topic": "ml-optimization",
-    "section": "convex",
-    "track": "ml",
-    "level": "beginner",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: ml-optimization
-section: convex
-track: ml
-level: beginner`,
-          pseudoCode: `CONCEPT: Convex vs Non-Convex
+          pseudoCode: `Convex vs Non-Convex
 
-Study checklist:
-  1. Linear regression loss is convex
-  2. Deep network loss surfaces are highly non-convex
-  3. Saddle points more common than local minima in high-D
-  4. Overparameterization helps optimization in DL
-  5. Convex vs Non-Convex is a foundational piece of Optimization & Gradient Descent
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
+1. Linear regression loss is convex
+2. Deep network loss surfaces are highly non-convex
+3. Saddle points more common than local minima in high-D
+4. Overparameterization helps optimization in DL`
         },
         {
           id: `regularization`,
           title: `Regularization in Optimization`,
-          content: `**Regularization in Optimization** — what you need to know:
+          content: `L1/L2 penalties constrain weights. Early stopping halts when validation loss increases. Dropout during training.
 
-- **Core idea:** Finding minima of loss functions iteratively.
-- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-L1/L2 penalties constrain weights. Early stopping halts when validation loss increases. Dropout during training.
-
-**Why this matters:**
-
-- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
-- Mastering **Regularization in Optimization** directly affects how confidently you can build, debug, and ship ml projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Establish baselines, stratify splits, and report confidence intervals — not single scores.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- L2 (ridge) shrinks weights toward zero
+- L1 (lasso) drives weights to exactly zero
+- Regularization prevents overfitting
+- Weight decay in AdamW decouples L2 from adaptive rates`,
           example: `import numpy as np
 
 # L2 regularization adds lambda * ||w||^2 to loss
@@ -2188,201 +762,14 @@ print(round(l2_penalty, 4))`,
             `L2 (ridge) shrinks weights toward zero`,
             `L1 (lasso) drives weights to exactly zero`,
             `Regularization prevents overfitting`,
-            `Weight decay in AdamW decouples L2 from adaptive rates`,
-            `Regularization in Optimization is a foundational piece of Optimization & Gradient Descent`,
-            `Connect this section to the ml track and beginner expectations`
+            `Weight decay in AdamW decouples L2 from adaptive rates`
           ],
-          pseudoCode: `CONCEPT: Regularization in Optimization
+          pseudoCode: `Regularization in Optimization
 
-Study checklist:
-  1. L2 (ridge) shrinks weights toward zero
-  2. L1 (lasso) drives weights to exactly zero
-  3. Regularization prevents overfitting
-  4. Weight decay in AdamW decouples L2 from adaptive rates
-  5. Regularization in Optimization is a foundational piece of Optimization & Gradient Descent
-  6. Connect this section to the ml track and beginner expectations
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-optimization-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Optimization & Gradient Descent** sits in the **ml** track of the Data Science Master curriculum. Finding minima of loss functions iteratively.
-
-**Theoretical foundation:**
-
-- Learning algorithms minimize expected risk on unseen data.
-- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
-
-For **ml-optimization**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Optimization & Gradient Descent
-meta = {"topic_id": "ml-optimization", "track": "ml", "level": "beginner"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `ml-optimization ml beginner`,
-          keyPoints: [
-            `Core theory of Optimization & Gradient Descent ties to the ml track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Optimization & Gradient Descent ties to the ml track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-optimization-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Optimization & Gradient Descent**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-optimization**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for ml-optimization
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("ml-optimization", "Optimization & Gradient Descent")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `ml-optimization Optimization`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with ml ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with ml ecosystem conventions
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-optimization-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Optimization & Gradient Descent** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
-
-When stuck on **ml-optimization**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("ml-optimization", "Optimization & Gradient Descent")
-debug_step("section_count", 4)`,
-          output: `[ml-optimization] 'Optimization & Gradient Descent' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
-        },
-        {
-          id: `ml-optimization-real-world`,
-          title: `Real-World Applications`,
-          content: `**Optimization & Gradient Descent** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
-
-Teams shipping features around **ml-optimization** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Optimization & Gradient Descent
-skills = ["ml", "beginner", "ml-optimization"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: ml, beginner, ml-optimization`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Optimization & Gradient Descent to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Optimization & Gradient Descent to adjacent topics in the same track
-
-Topic: Optimization & Gradient Descent
-Track: ml | Level: beginner`
+1. L2 (ridge) shrinks weights toward zero
+2. L1 (lasso) drives weights to exactly zero
+3. Regularization prevents overfitting
+4. Weight decay in AdamW decouples L2 from adaptive rates`
         }
       ],
       exercises: [
@@ -2404,7 +791,7 @@ print(round(0.1 * np.sum(w**2), 2))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-09`,
       references: [
         {

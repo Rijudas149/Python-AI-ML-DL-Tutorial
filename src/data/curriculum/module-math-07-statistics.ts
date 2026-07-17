@@ -11,43 +11,11 @@ export const moduleMath07Topics: Topic[] = [
         {
           id: `ds-central`,
           title: `Central Tendency`,
-          content: `**Mean** x̄=(1/n)∑x_i sensitive to outliers. **Median** middle value robust. **Mode** most frequent; useful categorical. **Trimmed mean** drops extremes. Weighted mean for uneven importance. Geometric mean for rates/ratios. Harmonic mean for rates. In skewed income data, median better than mean. ML: batch normalization uses batch mean; layer norm uses feature statistics. Choose summary matching distribution shape and robustness needs.
+          content: `**Mean** x̄=(1/n)∑x_i sensitive to outliers. **Median** middle value robust. **Mode** most frequent; useful categorical.
 
-**Why this matters:**
+**Trimmed mean** drops extremes. Weighted mean for uneven importance. Geometric mean for rates/ratios.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Central Tendency** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+In skewed income data, median better than mean. ML: batch normalization uses batch mean; layer norm uses feature statistics. Choose summary matching distribution shape and robustness needs.`,
           formulas: [
             `x̄ = (1/n) ∑ x_i`,
             `Median: middle of sorted data`,
@@ -70,71 +38,33 @@ export const moduleMath07Topics: Topic[] = [
 x=np.array([1,2,2,3,100])
 print("mean:", x.mean(), "median:", np.median(x))`,
           output: `mean inflated by 100`,
-          pseudoCode: `CONCEPT: Central Tendency
+          pseudoCode: `Central Tendency
 
-Key relationships:
-  x̄ = (1/n) ∑ x_i
-  Median: middle of sorted data
-  Mode: argmax frequency
-  Trimmed mean: drop extremes
-  Weighted: ∑ w_i x_i / ∑ w_i
+x̄ = (1/n) ∑ x_i
+Median: middle of sorted data
+Mode: argmax frequency
+Trimmed mean: drop extremes
+Weighted: ∑ w_i x_i / ∑ w_i
 
-Visual summary:
-  skewed data:
-  mean → pulled by tail
-  median → center of mass
-  ↑ median
+skewed data:
+mean → pulled by tail
+median → center of mass
+↑ median
 
-Study checklist:
-  1. Mean sensitive to outliers
-  2. Median robust for skew
-  3. Mode for categorical peaks
-  4. Batch norm tracks mean
-  5. Report median for skewed metrics
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
+1. Mean sensitive to outliers
+2. Median robust for skew
+3. Mode for categorical peaks
+4. Batch norm tracks mean
+5. Report median for skewed metrics`
         },
         {
           id: `ds-spread`,
           title: `Variance & Spread`,
-          content: `Sample variance s²=(1/(n−1))∑(x_i−x̄)² unbiased for σ². Population variance divides by n. **IQR** Q3−Q1 robust spread. **MAD** median absolute deviation. Std σ same units as data. CV=σ/|μ| relative spread. Range max−min sensitive. Boxplot shows quartiles and outliers. Feature scaling uses std. High variance features may dominate distance metrics without normalization. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `Sample variance s²=(1/(n−1))∑(x_i−x̄)² unbiased for σ². Population variance divides by n. **IQR** Q3−Q1 robust spread.
 
-**Why this matters:**
+**MAD** median absolute deviation. Boxplot shows quartiles and outliers. High variance features may dominate distance metrics without normalization.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Variance & Spread** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `s² = (1/(n−1))∑(x_i−x̄)²`,
             `σ = √Var(X)`,
@@ -157,71 +87,33 @@ Track: math | Level: intermediate`
 x=np.array([2,4,4,4,5,5,7,9])
 print("var:", x.var(ddof=1), "IQR:", np.percentile(x,75)-np.percentile(x,25))`,
           output: `var/IQR`,
-          pseudoCode: `CONCEPT: Variance & Spread
+          pseudoCode: `Variance & Spread
 
-Key relationships:
-  s² = (1/(n−1))∑(x_i−x̄)²
-  σ = √Var(X)
-  IQR = Q3 − Q1
-  MAD = median(|x−median|)
-  CV = σ/|μ|
+s² = (1/(n−1))∑(x_i−x̄)²
+σ = √Var(X)
+IQR = Q3 − Q1
+MAD = median(|x−median|)
+CV = σ/|μ|
 
-Visual summary:
-  boxplot:
-  max ─┬─
-  med ─┤ box
-  min ─┴─ outliers ·
+boxplot:
+max ─┬─
+med ─┤ box
+min ─┴─ outliers ·
 
-Study checklist:
-  1. n−1 for unbiased sample var
-  2. IQR robust to outliers
-  3. Std for z-score scaling
-  4. Boxplot visualizes quartiles
-  5. Normalize before distance-based ML
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
+1. n−1 for unbiased sample var
+2. IQR robust to outliers
+3. Std for z-score scaling
+4. Boxplot visualizes quartiles
+5. Normalize before distance-based ML`
         },
         {
           id: `ds-percentile`,
           title: `Percentiles & Quantiles`,
-          content: `p-th percentile: p% data below. **Quartiles** Q1=25%, Q2=median, Q3=75%. Quantile function Q(p) inverse CDF. Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers. Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `p-th percentile: p% data below. **Quartiles** Q1=25%, Q2=median, Q3=75%. Quantile function Q(p) inverse CDF.
 
-**Why this matters:**
+Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers. Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Percentiles & Quantiles** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Q(p) = inf{x : F(x)≥p}`,
             `Q1=25th, Q2=50th, Q3=75th`,
@@ -243,76 +135,32 @@ Track: math | Level: intermediate`
 x=np.random.randn(1000)
 print("p95:", np.percentile(x,95))`,
           output: `p95 ~ 1.64`,
-          pseudoCode: `CONCEPT: Percentiles & Quantiles
+          pseudoCode: `Percentiles & Quantiles
 
-Key relationships:
-  Q(p) = inf{x : F(x)≥p}
-  Q1=25th, Q2=50th, Q3=75th
-  Pinball loss for quantile τ
-  p99 latency common SLA
-  Percentile robust to extremes
+Q(p) = inf{x : F(x)≥p}
+Q1=25th, Q2=50th, Q3=75th
+Pinball loss for quantile τ
+p99 latency common SLA
+Percentile robust to extremes
 
-Visual summary:
-  CDF F(x)
-  ↑ Q(0.95)
-  95% below this value
+CDF F(x)
+↑ Q(0.95)
+95% below this value
 
-Study checklist:
-  1. Percentiles invert CDF
-  2. Pinball loss for quantile reg
-  3. p95/p99 for tail behavior
-  4. Clip using percentile bounds
-  5. Quartiles in boxplots
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
+1. Percentiles invert CDF
+2. Pinball loss for quantile reg
+3. p95/p99 for tail behavior
+4. Clip using percentile bounds
+5. Quartiles in boxplots`
         },
         {
           id: `ds-eda`,
           title: `EDA for ML`,
-          content: `**EDA for ML** — what you need to know:
+          content: `Summary stats per feature: mean, std, missing rate, unique count. Histograms reveal skew/multimodality. Correlation matrix detects redundancy.
 
-- **Core idea:** Mean, variance, percentiles, and exploratory data summaries.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
+Target distribution check for class imbalance. Outlier flags via IQR rule. EDA prevents garbage-in failures.
 
-Summary stats per feature: mean, std, missing rate, unique count. Histograms reveal skew/multimodality. Correlation matrix detects redundancy. Pairplots for bivariate. Target distribution check for class imbalance. Outlier flags via IQR rule. EDA prevents garbage-in failures. Document findings before modeling. Automated profiling (pandas describe, ydata-profiling) accelerates. Compare train vs test distributions for shift detection.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **EDA for ML** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Document findings before modeling. Automated profiling (pandas describe, ydata-profiling) accelerates. Compare train vs test distributions for shift detection.`,
           formulas: [
             `describe(): count mean std min max`,
             `Missing rate per column`,
@@ -339,212 +187,27 @@ import pandas as pd
 X=pd.DataFrame(np.random.randn(100,3),columns=list("abc"))
 print(X.describe())`,
           output: `describe output`,
-          pseudoCode: `CONCEPT: EDA for ML
+          pseudoCode: `EDA for ML
 
-Key relationships:
-  describe(): count mean std min max
-  Missing rate per column
-  Class balance P(y)
-  Train vs test distribution compare
-  IQR outlier: x<Q1−1.5IQR or x>Q3+1.5IQR
+describe(): count mean std min max
+Missing rate per column
+Class balance P(y)
+Train vs test distribution compare
+IQR outlier: x<Q1−1.5IQR or x>Q3+1.5IQR
 
-Visual summary:
-  EDA checklist:
-  □ shape dtypes
-  □ missing values
-  □ target balance
-  □ feature histograms
-  □ correlations
-  □ train/test shift
+EDA checklist:
+□ shape dtypes
+□ missing values
+□ target balance
+□ feature histograms
+□ correlations
+□ train/test shift
 
-Study checklist:
-  1. EDA before modeling mandatory
-  2. Check imbalance early
-  3. Correlation guides feature selection
-  4. Distribution shift breaks models
-  5. Automate reproducible profiles
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-descriptive-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Descriptive Statistics** sits in the **math** track of the Data Science Master curriculum. Mean, variance, percentiles, and exploratory data summaries.
-
-**Theoretical foundation:**
-
-- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
-- Each branch connects directly to numpy operations and loss functions.
-
-For **math-descriptive**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Descriptive Statistics
-meta = {"topic_id": "math-descriptive", "track": "math", "level": "intermediate"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-descriptive math intermediate`,
-          keyPoints: [
-            `Core theory of Descriptive Statistics ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Descriptive Statistics ties to the math track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-descriptive-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Descriptive Statistics**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-descriptive**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for math-descriptive
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-descriptive", "Descriptive Statistics")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-descriptive Descriptive`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with math ecosystem conventions
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-descriptive-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Descriptive Statistics** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on **math-descriptive**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-descriptive", "Descriptive Statistics")
-debug_step("section_count", 4)`,
-          output: `[math-descriptive] 'Descriptive Statistics' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-descriptive-real-world`,
-          title: `Real-World Applications`,
-          content: `**Descriptive Statistics** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around **math-descriptive** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Descriptive Statistics
-skills = ["math", "intermediate", "math-descriptive"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, intermediate, math-descriptive`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Descriptive Statistics to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Descriptive Statistics to adjacent topics in the same track
-
-Topic: Descriptive Statistics
-Track: math | Level: intermediate`
+1. EDA before modeling mandatory
+2. Check imbalance early
+3. Correlation guides feature selection
+4. Distribution shift breaks models
+5. Automate reproducible profiles`
         }
       ],
       exercises: [
@@ -563,32 +226,16 @@ x=np.random.randn(10000); print(np.percentile(x,[25,75]))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 35,
       module: `module-math-07`,
       references: [
         {
-          id: `3blue1brown-linalg`,
-          title: `Essence of Linear Algebra`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/linear-algebra`,
-          description: `Visual intuition for vectors, matrices, and transformations.`
-        },
-        {
-          id: `mit-1806-linalg`,
-          title: `MIT 18.06 Linear Algebra`,
-          source: `MIT`,
-          type: `course`,
-          url: `https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/`,
-          description: `Gilbert Strang's foundational linear algebra course used across ML.`
-        },
-        {
-          id: `3blue1brown-calculus`,
-          title: `Essence of Calculus`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/calculus`,
-          description: `Geometric intuition for derivatives, integrals, and the chain rule.`
+          id: `esl-hastie`,
+          title: `The Elements of Statistical Learning`,
+          source: `Stanford`,
+          type: `book`,
+          url: `https://hastie.su.domains/ElemStatLearn/`,
+          description: `Free authoritative text on statistical learning methods and theory.`
         },
         {
           id: `khan-probability`,
@@ -599,12 +246,20 @@ x=np.random.randn(10000); print(np.percentile(x,[25,75]))`,
           description: `Probability distributions, Bayes theorem, and statistical inference.`
         },
         {
-          id: `stanford-cs229`,
-          title: `Stanford CS229 — Machine Learning`,
-          source: `Stanford CS229`,
+          id: `kaggle-intro-ml`,
+          title: `Kaggle Learn — Intro to Machine Learning`,
+          source: `Kaggle`,
           type: `course`,
-          url: `https://cs229.stanford.edu/`,
-          description: `Andrew Ng's graduate ML course — the canonical theoretical foundation.`
+          url: `https://www.kaggle.com/learn/intro-to-machine-learning`,
+          description: `Practical first steps with decision trees and model validation.`
+        },
+        {
+          id: `bishop-prml`,
+          title: `Pattern Recognition and Machine Learning`,
+          source: `Cambridge`,
+          type: `book`,
+          url: `https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/`,
+          description: `Rigorous treatment of probability, inference, and classical ML algorithms.`
         }
       ]
     },
@@ -618,43 +273,11 @@ x=np.random.randn(10000); print(np.percentile(x,[25,75]))`,
         {
           id: `sc-sample`,
           title: `Random Sampling`,
-          content: `**Simple random sample** each unit equal probability. **Stratified** sample within groups preserves proportions. **Bootstrap** resample with replacement estimates sampling distribution. Sample statistic x̄ random across samples. **Sampling frame** defines population accessible. Bias when sample ≠ population (selection bias). ML train set is sample; generalization assumes representative i.i.d. (approximately). Time series breaks i.i.d.—use temporal splits.
+          content: `**Simple random sample** each unit equal probability. **Stratified** sample within groups preserves proportions. **Bootstrap** resample with replacement estimates sampling distribution.
 
-**Why this matters:**
+Sample statistic x̄ random across samples. **Sampling frame** defines population accessible. Bias when sample ≠ population (selection bias).
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Random Sampling** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+ML train set is sample; generalization assumes representative i.i.d. Time series breaks i.i.d.—use temporal splits.`,
           formulas: [
             `SRS: each subset equally likely`,
             `Stratified: proportional strata`,
@@ -678,71 +301,31 @@ pop=np.arange(100)
 sample=np.random.choice(pop,10,replace=False)
 print("sample:", sample[:5])`,
           output: `random sample`,
-          pseudoCode: `CONCEPT: Random Sampling
+          pseudoCode: `Random Sampling
 
-Key relationships:
-  SRS: each subset equally likely
-  Stratified: proportional strata
-  Bootstrap: resample n with replacement
-  x̄ is RV across samples
-  Selection bias if sample skewed
+SRS: each subset equally likely
+Stratified: proportional strata
+Bootstrap: resample n with replacement
+x̄ is RV across samples
+Selection bias if sample skewed
 
-Visual summary:
-  population → sample → statistic
-  Ω (big) ──draw──→ data (n)
-  ↓
-  x̄, s²
+population → sample → statistic
+Ω (big) ──draw──→ data (n)
+↓
+x̄, s²
 
-Study checklist:
-  1. Representative sample critical
-  2. Stratify for rare classes
-  3. Bootstrap for CI without formulas
-  4. Train/val/test splits are samples
-  5. Temporal data needs special splits
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
+1. Representative sample critical
+2. Stratify for rare classes
+3. Bootstrap for CI without formulas
+4. Train/val/test splits are samples
+5. Temporal data needs special splits`
         },
         {
           id: `sc-se`,
           title: `Standard Error`,
-          content: `**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. Unknown σ: estimate s/√n. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT). Compare models using SE of metric difference. Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT). Compare models using SE of metric difference.
 
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Standard Error** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `SE(x̄) = σ/√n`,
             `Estimate: SE ≈ s/√n`,
@@ -765,77 +348,33 @@ Track: math | Level: intermediate`
 s=2.; n=100
 print("SE:", s/np.sqrt(n))`,
           output: `SE: 0.2`,
-          pseudoCode: `CONCEPT: Standard Error
+          pseudoCode: `Standard Error
 
-Key relationships:
-  SE(x̄) = σ/√n
-  Estimate: SE ≈ s/√n
-  95% CI: x̄ ± 1.96·SE
-  SE decreases ∝ 1/√n
-  Report metric ± SE or CI
+SE(x̄) = σ/√n
+Estimate: SE ≈ s/√n
+95% CI: x̄ ± 1.96·SE
+SE decreases ∝ 1/√n
+Report metric ± SE or CI
 
-Visual summary:
-  sampling distribution of x̄:
-  bell narrows as n↑
-  n=10  wide bell
-  n=100 narrow bell
+sampling distribution of x̄:
+bell narrows as n↑
+n=10  wide bell
+n=100 narrow bell
 
-Study checklist:
-  1. SE quantifies estimate uncertainty
-  2. Grows with √n not n
-  3. CI from CLT approximate
-  4. CV metrics need multiple folds
-  5. Don't report point alone
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
+1. SE quantifies estimate uncertainty
+2. Grows with √n not n
+3. CI from CLT approximate
+4. CV metrics need multiple folds
+5. Don't report point alone`
         },
         {
           id: `sc-clt`,
           title: `Central Limit Theorem Detail`,
-          content: `**Central Limit Theorem Detail** — what you need to know:
+          content: `Standardized x̄: (x̄−μ)/(σ/√n) → N(0,1) in distribution. Works for many non-normal populations. Also applies to proportions p̂ approx N(p, p(1−p)/n).
 
-- **Core idea:** Sampling distributions, standard error, and CLT applications.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
+Sum of n RVs also normal for large n. CLT fails heavy tails infinite variance. Bootstrap nonparametric alternative when CLT questionable.
 
-Standardized x̄: (x̄−μ)/(σ/√n) → N(0,1) in distribution. Works for many non-normal populations. Rule of thumb n≥30. Also applies to proportions p̂ approx N(p, p(1−p)/n). Enables z-tests and CIs. Sum of n RVs also normal for large n. CLT fails heavy tails infinite variance. Bootstrap nonparametric alternative when CLT questionable. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Central Limit Theorem Detail** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `(x̄−μ)/(σ/√n) → N(0,1)`,
             `p̂ approx N(p, p(1−p)/n)`,
@@ -858,71 +397,33 @@ Standardized x̄: (x̄−μ)/(σ/√n) → N(0,1) in distribution. Works for man
 means=[np.random.exponential(1,30).mean() for _ in range(5000)]
 print("mean of means:", np.mean(means), "std:", np.std(means))`,
           output: `≈ 1, ≈ 1/√30`,
-          pseudoCode: `CONCEPT: Central Limit Theorem Detail
+          pseudoCode: `Central Limit Theorem Detail
 
-Key relationships:
-  (x̄−μ)/(σ/√n) → N(0,1)
-  p̂ approx N(p, p(1−p)/n)
-  Requires finite σ²
-  n≥30 rule of thumb
-  Bootstrap if CLT doubtful
+(x̄−μ)/(σ/√n) → N(0,1)
+p̂ approx N(p, p(1−p)/n)
+Requires finite σ²
+n≥30 rule of thumb
+Bootstrap if CLT doubtful
 
-Visual summary:
-  sampling distribution:
-  any population
-  ↓ average n samples
-  ≈ Normal for large n
+sampling distribution:
+any population
+↓ average n samples
+≈ Normal for large n
 
-Study checklist:
-  1. CLT enables inferential stats
-  2. Applies to means and proportions
-  3. Finite variance needed
-  4. Bootstrap backup method
-  5. Heavy tails need care
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
+1. CLT enables inferential stats
+2. Applies to means and proportions
+3. Finite variance needed
+4. Bootstrap backup method
+5. Heavy tails need care`
         },
         {
           id: `sc-ml`,
           title: `Sampling in ML Evaluation`,
-          content: `Hold-out test set estimates generalization error. **K-fold CV** reduces variance of metric estimate. **Bootstrap** confidence on AUC. **Stratified k-fold** preserves class ratio. Multiple seeds report mean±std. **Power analysis** determines n needed to detect effect. Online A/B tests sequential sampling with caution (peeking). Always fix test set; tune on val only once workflow to avoid overfitting selection.
+          content: `Hold-out test set estimates generalization error. **K-fold CV** reduces variance of metric estimate. **Bootstrap** confidence on AUC.
 
-**Why this matters:**
+**Stratified k-fold** preserves class ratio. Multiple seeds report mean±std. **Power analysis** determines n needed to detect effect.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Sampling in ML Evaluation** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Online A/B tests sequential sampling with caution (peeking). Always fix test set; tune on val only once workflow to avoid overfitting selection.`,
           formulas: [
             `Hold-out: single test estimate`,
             `K-fold: K metric samples`,
@@ -946,208 +447,23 @@ X=np.arange(20)
 kf=KFold(5)
 print("folds:", [len(te) for _,te in kf.split(X)])`,
           output: `4 each fold`,
-          pseudoCode: `CONCEPT: Sampling in ML Evaluation
+          pseudoCode: `Sampling in ML Evaluation
 
-Key relationships:
-  Hold-out: single test estimate
-  K-fold: K metric samples
-  Stratified: preserve P(y)
-  Report mean±std over seeds
-  Don't peek at test repeatedly
+Hold-out: single test estimate
+K-fold: K metric samples
+Stratified: preserve P(y)
+Report mean±std over seeds
+Don't peek at test repeatedly
 
-Visual summary:
-  train │ val │ test
-  tune    pick   once
-  test peeking → optimistic bias
+train │ val │ test
+tune    pick   once
+test peeking → optimistic bias
 
-Study checklist:
-  1. Fixed test set sacred
-  2. CV for small data
-  3. Stratify imbalanced labels
-  4. Multiple seeds show stability
-  5. A/B needs sequential care
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-sampling-clt-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Sampling & Central Limit Theorem** sits in the **math** track of the Data Science Master curriculum. Sampling distributions, standard error, and CLT applications.
-
-**Theoretical foundation:**
-
-- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
-- Each branch connects directly to numpy operations and loss functions.
-
-For **math-sampling-clt**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Sampling & Central Limit Theorem
-meta = {"topic_id": "math-sampling-clt", "track": "math", "level": "intermediate"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-sampling-clt math intermediate`,
-          keyPoints: [
-            `Core theory of Sampling & Central Limit Theorem ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Sampling & Central Limit Theorem ties to the math track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-sampling-clt-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Sampling & Central Limit Theorem**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-sampling-clt**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for math-sampling-clt
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-sampling-clt", "Sampling & Central Limit Theorem")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-sampling-clt Sampling`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with math ecosystem conventions
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-sampling-clt-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Sampling & Central Limit Theorem** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on **math-sampling-clt**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-sampling-clt", "Sampling & Central Limit Theorem")
-debug_step("section_count", 4)`,
-          output: `[math-sampling-clt] 'Sampling & Central Limit Theorem' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-sampling-clt-real-world`,
-          title: `Real-World Applications`,
-          content: `**Sampling & Central Limit Theorem** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around **math-sampling-clt** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Sampling & Central Limit Theorem
-skills = ["math", "intermediate", "math-sampling-clt"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, intermediate, math-sampling-clt`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Sampling & Central Limit Theorem to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Sampling & Central Limit Theorem to adjacent topics in the same track
-
-Topic: Sampling & Central Limit Theorem
-Track: math | Level: intermediate`
+1. Fixed test set sacred
+2. CV for small data
+3. Stratify imbalanced labels
+4. Multiple seeds show stability
+5. A/B needs sequential care`
         }
       ],
       exercises: [
@@ -1167,33 +483,9 @@ print(np.std(m), 1/np.sqrt(12*40))`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 35,
       module: `module-math-07`,
       references: [
-        {
-          id: `3blue1brown-linalg`,
-          title: `Essence of Linear Algebra`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/linear-algebra`,
-          description: `Visual intuition for vectors, matrices, and transformations.`
-        },
-        {
-          id: `mit-1806-linalg`,
-          title: `MIT 18.06 Linear Algebra`,
-          source: `MIT`,
-          type: `course`,
-          url: `https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/`,
-          description: `Gilbert Strang's foundational linear algebra course used across ML.`
-        },
-        {
-          id: `3blue1brown-calculus`,
-          title: `Essence of Calculus`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/calculus`,
-          description: `Geometric intuition for derivatives, integrals, and the chain rule.`
-        },
         {
           id: `khan-probability`,
           title: `Statistics and Probability — Khan Academy`,
@@ -1203,12 +495,28 @@ print(np.std(m), 1/np.sqrt(12*40))`,
           description: `Probability distributions, Bayes theorem, and statistical inference.`
         },
         {
-          id: `stanford-cs229`,
-          title: `Stanford CS229 — Machine Learning`,
-          source: `Stanford CS229`,
+          id: `esl-hastie`,
+          title: `The Elements of Statistical Learning`,
+          source: `Stanford`,
+          type: `book`,
+          url: `https://hastie.su.domains/ElemStatLearn/`,
+          description: `Free authoritative text on statistical learning methods and theory.`
+        },
+        {
+          id: `berkeley-cs189`,
+          title: `Berkeley CS189/289A — Introduction to Machine Learning`,
+          source: `Berkeley`,
           type: `course`,
-          url: `https://cs229.stanford.edu/`,
-          description: `Andrew Ng's graduate ML course — the canonical theoretical foundation.`
+          url: `https://people.eecs.berkeley.edu/~jrs/189/`,
+          description: `Comprehensive ML course with strong mathematical foundations.`
+        },
+        {
+          id: `bishop-prml`,
+          title: `Pattern Recognition and Machine Learning`,
+          source: `Cambridge`,
+          type: `book`,
+          url: `https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/`,
+          description: `Rigorous treatment of probability, inference, and classical ML algorithms.`
         }
       ]
     },
@@ -1222,43 +530,11 @@ print(np.std(m), 1/np.sqrt(12*40))`,
         {
           id: `ht-framework`,
           title: `Testing Framework`,
-          content: `**H₀** null hypothesis default skepticism. **H₁** alternative. **Test statistic** summarizes data vs H₀. **p-value** P(data this extreme|H₀). Reject H₀ if p<α (significance level, often 0.05). **Type I error** false positive rate α. **Type II** β false negative. Power=1−β. Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `**H₀** null hypothesis default skepticism. **Test statistic** summarizes data vs H₀. **p-value** P(data this extreme|H₀).
 
-**Why this matters:**
+Reject H₀ if p<α (significance level, often 0.05). **Type I error** false positive rate α. **Type II** β false negative.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Testing Framework** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `p-value = P(T ≥ t_obs | H₀)`,
             `Reject H₀ if p < α`,
@@ -1282,71 +558,35 @@ from scipy import stats
 t,p=stats.ttest_1samp([1.2,0.9,1.1,1.3,0.8], 0)
 print("p-value:", p)`,
           output: `p-value`,
-          pseudoCode: `CONCEPT: Testing Framework
+          pseudoCode: `Testing Framework
 
-Key relationships:
-  p-value = P(T ≥ t_obs | H₀)
-  Reject H₀ if p < α
-  Type I: reject true H₀ (α)
-  Type II: fail reject false H₀ (β)
-  Power = 1 − β
+p-value = P(T ≥ t_obs | H₀)
+Reject H₀ if p < α
+Type I: reject true H₀ (α)
+Type II: fail reject false H₀ (β)
+Power = 1 − β
 
-Visual summary:
-  decision:
-  p small → reject H₀
-  p large → insufficient evidence
-  α=0.05 threshold line
+decision:
+p small → reject H₀
+p large → insufficient evidence
+α=0.05 threshold line
 
-Study checklist:
-  1. p-value not prob H₀ true
-  2. α controls false positives
-  3. Power needs effect size + n
-  4. Multiple tests need correction
-  5. Fail to reject ≠ prove null
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
+1. p-value not prob H₀ true
+2. α controls false positives
+3. Power needs effect size + n
+4. Multiple tests need correction
+5. Fail to reject ≠ prove null`
         },
         {
           id: `ht-tests`,
           title: `Common Tests`,
-          content: `**z-test** mean known σ large n. **t-test** mean unknown σ small n. Paired t for before/after. Two-sample t independent groups. **χ²** goodness-of-fit and independence in contingency tables. **F-test** variance ratio. ANOVA F for multiple means. Choose test matching data type and assumptions (normality, independence). Nonparametric: Mann-Whitney, Wilcoxon when normality fails. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `**z-test** mean known σ large n. **t-test** mean unknown σ small n. Paired t for before/after.
 
-**Why this matters:**
+Two-sample t independent groups. **χ²** goodness-of-fit and independence in contingency tables. **F-test** variance ratio.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Common Tests** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
+ANOVA F for multiple means. Choose test matching data type and assumptions (normality, independence). Nonparametric: Mann-Whitney, Wilcoxon when normality fails.
 
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `t = (x̄−μ₀)/(s/√n)`,
             `χ² = ∑ (O−E)²/E`,
@@ -1371,77 +611,33 @@ a,b=np.random.randn(30),np.random.randn(30)+0.3
 t,p=stats.ttest_ind(a,b)
 print("p:", p)`,
           output: `p from ttest`,
-          pseudoCode: `CONCEPT: Common Tests
+          pseudoCode: `Common Tests
 
-Key relationships:
-  t = (x̄−μ₀)/(s/√n)
-  χ² = ∑ (O−E)²/E
-  Two-sample t: compare means
-  Paired t: difference scores
-  ANOVA: compare k means
+t = (x̄−μ₀)/(s/√n)
+χ² = ∑ (O−E)²/E
+Two-sample t: compare means
+Paired t: difference scores
+ANOVA: compare k means
 
-Visual summary:
-  test selection tree:
-  numeric 2 groups → t-test
-  categorical table → χ²
-  >2 group means → ANOVA
+test selection tree:
+numeric 2 groups → t-test
+categorical table → χ²
+>2 group means → ANOVA
 
-Study checklist:
-  1. Match test to question
-  2. Check assumptions
-  3. t-test for means
-  4. Chi-square for counts
-  5. Nonparametric if needed
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
+1. Match test to question
+2. Check assumptions
+3. t-test for means
+4. Chi-square for counts
+5. Nonparametric if needed`
         },
         {
           id: `ht-ab`,
           title: `A/B Testing`,
-          content: `**A/B Testing** — what you need to know:
+          content: `Compare conversion rates p_A vs p_B. Two-proportion z-test or χ² on 2×2 table. Need sample size for desired power.
 
-- **Core idea:** Null/alternative, p-values, errors, and common tests.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
+**SRM** sample ratio mismatch checks randomization. Run fixed horizon avoid peeking bias. **Sequential testing** specialized bounds.
 
-Compare conversion rates p_A vs p_B. H₀: p_A=p_B. Two-proportion z-test or χ² on 2×2 table. Need sample size for desired power. **SRM** sample ratio mismatch checks randomization. Run fixed horizon avoid peeking bias. **Sequential testing** specialized bounds. Practical significance vs statistical: 0.01% lift may be significant with huge n but useless. Bayesian A/B alternative gives posterior on lift.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **A/B Testing** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Practical significance vs statistical: 0.01% lift may be significant with huge n but useless. Bayesian A/B alternative gives posterior on lift.`,
           formulas: [
             `H₀: p_A = p_B`,
             `z = (p̂_A−p̂_B)/SE_diff`,
@@ -1468,71 +664,33 @@ se=np.sqrt(p_a*(1-p_a)/n_a+p_b*(1-p_b)/n_b)
 z=(p_b-p_a)/se
 print("z:", z)`,
           output: `z stat`,
-          pseudoCode: `CONCEPT: A/B Testing
+          pseudoCode: `A/B Testing
 
-Key relationships:
-  H₀: p_A = p_B
-  z = (p̂_A−p̂_B)/SE_diff
-  Power needs n, effect size, α
-  Fixed horizon reduces peeking bias
-  Practical vs statistical significance
+H₀: p_A = p_B
+z = (p̂_A−p̂_B)/SE_diff
+Power needs n, effect size, α
+Fixed horizon reduces peeking bias
+Practical vs statistical significance
 
-Visual summary:
-  A/B split:
-  users ──50/50──→ A (control)
-  └──→ B (treatment)
-  compare metric mean/rate
+A/B split:
+users ──50/50──→ A (control)
+└──→ B (treatment)
+compare metric mean/rate
 
-Study checklist:
-  1. Randomization avoids confounding
-  2. Power analysis before test
-  3. Peeking inflates false positives
-  4. Check SRM on assignment
-  5. Effect size matters for business
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
+1. Randomization avoids confounding
+2. Power analysis before test
+3. Peeking inflates false positives
+4. Check SRM on assignment
+5. Effect size matters for business`
         },
         {
           id: `ht-ml`,
           title: `Testing in ML Experiments`,
-          content: `**McNemar** paired classifier comparison same test set. **Permutation test** shuffle labels nonparametric p-value. **Diebold-Mariano** forecast comparison. Compare CV scores with paired t across folds. Report confidence intervals on metric not just point. **Multiple model comparison** Bonferroni or Holm correction. Statistical significance ≠ better production model—consider latency, cost, fairness.
+          content: `**McNemar** paired classifier comparison same test set. **Permutation test** shuffle labels nonparametric p-value. **Diebold-Mariano** forecast comparison.
 
-**Why this matters:**
+Compare CV scores with paired t across folds. Report confidence intervals on metric not just point. **Multiple model comparison** Bonferroni or Holm correction.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Testing in ML Experiments** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Statistical significance ≠ better production model—consider latency, cost, fairness.`,
           formulas: [
             `McNemar: paired classification errors`,
             `Permutation: shuffle null`,
@@ -1560,208 +718,23 @@ for _ in range(1000):
     if abs(pool[:20].mean()-pool[20:].mean())>=abs(obs): count+=1
 print("p approx:", count/1000)`,
           output: `perm p`,
-          pseudoCode: `CONCEPT: Testing in ML Experiments
+          pseudoCode: `Testing in ML Experiments
 
-Key relationships:
-  McNemar: paired classification errors
-  Permutation: shuffle null
-  Paired t on CV fold scores
-  Correct for multiple comparisons
-  Sig ≠ deploy decision
+McNemar: paired classification errors
+Permutation: shuffle null
+Paired t on CV fold scores
+Correct for multiple comparisons
+Sig ≠ deploy decision
 
-Visual summary:
-  model A vs B same test:
-  both wrong → both right pairs
-  McNemar uses discordant pairs
+model A vs B same test:
+both wrong → both right pairs
+McNemar uses discordant pairs
 
-Study checklist:
-  1. Use paired tests same data
-  2. Permutation flexible
-  3. Correct multiple models
-  4. CI better than p alone
-  5. Engineering constraints matter
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-hypothesis-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Hypothesis Testing** sits in the **math** track of the Data Science Master curriculum. Null/alternative, p-values, errors, and common tests.
-
-**Theoretical foundation:**
-
-- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
-- Each branch connects directly to numpy operations and loss functions.
-
-For **math-hypothesis**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Hypothesis Testing
-meta = {"topic_id": "math-hypothesis", "track": "math", "level": "intermediate"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-hypothesis math intermediate`,
-          keyPoints: [
-            `Core theory of Hypothesis Testing ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Hypothesis Testing ties to the math track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-hypothesis-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Hypothesis Testing**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-hypothesis**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for math-hypothesis
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-hypothesis", "Hypothesis Testing")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-hypothesis Hypothesis`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with math ecosystem conventions
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-hypothesis-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Hypothesis Testing** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on **math-hypothesis**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-hypothesis", "Hypothesis Testing")
-debug_step("section_count", 4)`,
-          output: `[math-hypothesis] 'Hypothesis Testing' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-hypothesis-real-world`,
-          title: `Real-World Applications`,
-          content: `**Hypothesis Testing** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around **math-hypothesis** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Hypothesis Testing
-skills = ["math", "intermediate", "math-hypothesis"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, intermediate, math-hypothesis`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Hypothesis Testing to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Hypothesis Testing to adjacent topics in the same track
-
-Topic: Hypothesis Testing
-Track: math | Level: intermediate`
+1. Use paired tests same data
+2. Permutation flexible
+3. Correct multiple models
+4. CI better than p alone
+5. Engineering constraints matter`
         }
       ],
       exercises: [
@@ -1781,32 +754,16 @@ se=np.sqrt(p1*(1-p1)/n1+p2*(1-p2)/n2); print(se)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 35,
       module: `module-math-07`,
       references: [
         {
-          id: `3blue1brown-linalg`,
-          title: `Essence of Linear Algebra`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/linear-algebra`,
-          description: `Visual intuition for vectors, matrices, and transformations.`
-        },
-        {
-          id: `mit-1806-linalg`,
-          title: `MIT 18.06 Linear Algebra`,
-          source: `MIT`,
-          type: `course`,
-          url: `https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/`,
-          description: `Gilbert Strang's foundational linear algebra course used across ML.`
-        },
-        {
-          id: `3blue1brown-calculus`,
-          title: `Essence of Calculus`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/calculus`,
-          description: `Geometric intuition for derivatives, integrals, and the chain rule.`
+          id: `esl-hastie`,
+          title: `The Elements of Statistical Learning`,
+          source: `Stanford`,
+          type: `book`,
+          url: `https://hastie.su.domains/ElemStatLearn/`,
+          description: `Free authoritative text on statistical learning methods and theory.`
         },
         {
           id: `khan-probability`,
@@ -1817,12 +774,20 @@ se=np.sqrt(p1*(1-p1)/n1+p2*(1-p2)/n2); print(se)`,
           description: `Probability distributions, Bayes theorem, and statistical inference.`
         },
         {
-          id: `stanford-cs229`,
-          title: `Stanford CS229 — Machine Learning`,
-          source: `Stanford CS229`,
+          id: `berkeley-cs189`,
+          title: `Berkeley CS189/289A — Introduction to Machine Learning`,
+          source: `Berkeley`,
           type: `course`,
-          url: `https://cs229.stanford.edu/`,
-          description: `Andrew Ng's graduate ML course — the canonical theoretical foundation.`
+          url: `https://people.eecs.berkeley.edu/~jrs/189/`,
+          description: `Comprehensive ML course with strong mathematical foundations.`
+        },
+        {
+          id: `bishop-prml`,
+          title: `Pattern Recognition and Machine Learning`,
+          source: `Cambridge`,
+          type: `book`,
+          url: `https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/`,
+          description: `Rigorous treatment of probability, inference, and classical ML algorithms.`
         }
       ]
     },
@@ -1836,49 +801,9 @@ se=np.sqrt(p1*(1-p1)/n1+p2*(1-p2)/n2); print(se)`,
         {
           id: `ci-mean`,
           title: `CI for Mean`,
-          content: `**CI for Mean** — what you need to know:
+          content: `95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval). Bootstrapping: resample B times, percentile CI from bootstrap distribution.
 
-- **Core idea:** Construct and interpret confidence intervals for means and proportions.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval). Width ∝ 1/√n. Wider CI more uncertain. Bootstrapping: resample B times, percentile CI from bootstrap distribution. BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **CI for Mean** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `95% CI: x̄ ± t*·s/√n`,
             `Width ∝ 1/√n`,
@@ -1903,71 +828,33 @@ x=np.random.randn(25)
 se=x.std(ddof=1)/np.sqrt(len(x))
 print(stats.t.interval(0.95, len(x)-1, loc=x.mean(), scale=se))`,
           output: `95% CI`,
-          pseudoCode: `CONCEPT: CI for Mean
+          pseudoCode: `CI for Mean
 
-Key relationships:
-  95% CI: x̄ ± t*·s/√n
-  Width ∝ 1/√n
-  t* → 1.96 as n→∞
-  Bootstrap percentile CI
-  CI = plausible μ values
+95% CI: x̄ ± t*·s/√n
+Width ∝ 1/√n
+t* → 1.96 as n→∞
+Bootstrap percentile CI
+CI = plausible μ values
 
-Visual summary:
-  CI as error bar:
-  x̄ ────[====]────
-  lower  upper
-  wider = less precision
+CI as error bar:
+x̄ ────[====]────
+lower  upper
+wider = less precision
 
-Study checklist:
-  1. CI frequency interpretation
-  2. t for small samples
-  3. Bootstrap when CLT weak
-  4. Width shrinks with √n
-  5. Always pair with estimate
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
+1. CI frequency interpretation
+2. t for small samples
+3. Bootstrap when CLT weak
+4. Width shrinks with √n
+5. Always pair with estimate`
         },
         {
           id: `ci-prop`,
           title: `CI for Proportions`,
-          content: `Wald CI p̂±z√(p̂(1−p̂)/n) simple but poor small n/extreme p. **Wilson score** interval better coverage. Binomial exact (Clopper-Pearson) conservative. For ML accuracy on n test samples: report p̂±CI. Rare class metrics need large n for tight CI. Wilson preferred in modern practice over Wald for proportions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `Wald CI p̂±z√(p̂(1−p̂)/n) simple but poor small n/extreme p. **Wilson score** interval better coverage. Binomial exact (Clopper-Pearson) conservative.
 
-**Why this matters:**
+For ML accuracy on n test samples: report p̂±CI. Rare class metrics need large n for tight CI. Wilson preferred in modern practice over Wald for proportions.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **CI for Proportions** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Wald: p̂ ± z√(p̂(1−p̂)/n)`,
             `Wilson score interval (better)`,
@@ -1990,76 +877,32 @@ from statsmodels.stats.proportion import proportion_confint
 ci=proportion_confint(92,100,method="wilson")
 print("Wilson:", ci)`,
           output: `Wilson CI`,
-          pseudoCode: `CONCEPT: CI for Proportions
+          pseudoCode: `CI for Proportions
 
-Key relationships:
-  Wald: p̂ ± z√(p̂(1−p̂)/n)
-  Wilson score interval (better)
-  Agresti-Coull adjustment
-  Exact binomial conservative
-  Rare events need large n
+Wald: p̂ ± z√(p̂(1−p̂)/n)
+Wilson score interval (better)
+Agresti-Coull adjustment
+Exact binomial conservative
+Rare events need large n
 
-Visual summary:
-  accuracy 0.92 on n=100:
-  CI might [0.85, 0.96]
-  n=10000 → much tighter
+accuracy 0.92 on n=100:
+CI might [0.85, 0.96]
+n=10000 → much tighter
 
-Study checklist:
-  1. Wald fails at extremes
-  2. Wilson recommended
-  3. Small test set wide CI
-  4. Report CI with accuracy
-  5. Rare class CIs very wide
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
+1. Wald fails at extremes
+2. Wilson recommended
+3. Small test set wide CI
+4. Report CI with accuracy
+5. Rare class CIs very wide`
         },
         {
           id: `ci-diff`,
           title: `CI for Differences`,
-          content: `**CI for Differences** — what you need to know:
+          content: `CI for μ_A−μ_B: (x̄_A−x̄_B)±t*·SE_diff. Independent: SE_diff=√(s_A²/n_A+s_B²/n_B). Overlap of individual CIs ≠ non-significance of difference (common mistake).
 
-- **Core idea:** Construct and interpret confidence intervals for means and proportions.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
+Paired: CI on mean difference. Lift CI in A/B: bootstrap on ratio or log ratio. If difference CI excludes 0, significant at corresponding α.
 
-CI for μ_A−μ_B: (x̄_A−x̄_B)±t*·SE_diff. Independent: SE_diff=√(s_A²/n_A+s_B²/n_B). Overlap of individual CIs ≠ non-significance of difference (common mistake). Paired: CI on mean difference. Lift CI in A/B: bootstrap on ratio or log ratio. If difference CI excludes 0, significant at corresponding α. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **CI for Differences** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `μ_A−μ_B CI: (x̄_A−x̄_B) ± t* SE`,
             `SE_diff independent groups`,
@@ -2084,71 +927,33 @@ d=a.mean()-b.mean()
 se=np.sqrt(a.var(ddof=1)/50+b.var(ddof=1)/50)
 print("diff CI:", d-1.96*se, d+1.96*se)`,
           output: `diff CI`,
-          pseudoCode: `CONCEPT: CI for Differences
+          pseudoCode: `CI for Differences
 
-Key relationships:
-  μ_A−μ_B CI: (x̄_A−x̄_B) ± t* SE
-  SE_diff independent groups
-  Paired: CI on d_i = x_i−y_i
-  Exclude 0 ↔ significant
-  Overlap CI misleading for diff
+μ_A−μ_B CI: (x̄_A−x̄_B) ± t* SE
+SE_diff independent groups
+Paired: CI on d_i = x_i−y_i
+Exclude 0 ↔ significant
+Overlap CI misleading for diff
 
-Visual summary:
-  difference CI:
-  0 inside CI → not significant
-  0 outside → significant
-  [====|----0----|====]
+difference CI:
+0 inside CI → not significant
+0 outside → significant
+[====|----0----|====]
 
-Study checklist:
-  1. Difference CI tests effect
-  2. Overlap individual CIs misleading
-  3. Paired uses difference scores
-  4. Bootstrap for ratio metrics
-  5. Exclude zero = significant
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
+1. Difference CI tests effect
+2. Overlap individual CIs misleading
+3. Paired uses difference scores
+4. Bootstrap for ratio metrics
+5. Exclude zero = significant`
         },
         {
           id: `ci-ml`,
           title: `Uncertainty in ML Metrics`,
-          content: `Bootstrap test set for metric CI. CV: mean±std across folds is approximate. **Conformal prediction** gives prediction intervals with coverage guarantee. Bayesian models posterior predictive intervals. Report F1 CI on imbalanced data especially. Leaderboard scores without CI overfit to test noise. Nested CV for unbiased performance estimate with uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `Bootstrap test set for metric CI. CV: mean±std across folds is approximate. **Conformal prediction** gives prediction intervals with coverage guarantee.
 
-**Why this matters:**
+Bayesian models posterior predictive intervals. Report F1 CI on imbalanced data especially. Leaderboard scores without CI overfit to test noise.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Uncertainty in ML Metrics** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Nested CV for unbiased performance estimate with uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Bootstrap metrics on test set`,
             `CV mean ± std approximate`,
@@ -2170,208 +975,23 @@ Track: math | Level: intermediate`
 acc=[0.9,0.88,0.91,0.89,0.9]  # 5-fold
 print("mean:", np.mean(acc), "std:", np.std(acc,ddof=1))`,
           output: `CV stats`,
-          pseudoCode: `CONCEPT: Uncertainty in ML Metrics
+          pseudoCode: `Uncertainty in ML Metrics
 
-Key relationships:
-  Bootstrap metrics on test set
-  CV mean ± std approximate
-  Conformal: distribution-free coverage
-  Bayesian predictive intervals
-  Nested CV for model selection
+Bootstrap metrics on test set
+CV mean ± std approximate
+Conformal: distribution-free coverage
+Bayesian predictive intervals
+Nested CV for model selection
 
-Visual summary:
-  metric report format:
-  F1 = 0.87 (95% CI: 0.84–0.90)
-  not just F1 = 0.87
+metric report format:
+F1 = 0.87 (95% CI: 0.84–0.90)
+not just F1 = 0.87
 
-Study checklist:
-  1. Always quantify metric uncertainty
-  2. Bootstrap simple and flexible
-  3. Conformal for prediction bands
-  4. Nested CV reduces selection bias
-  5. Leaderboards ignore uncertainty
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-confidence-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Confidence Intervals** sits in the **math** track of the Data Science Master curriculum. Construct and interpret confidence intervals for means and proportions.
-
-**Theoretical foundation:**
-
-- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
-- Each branch connects directly to numpy operations and loss functions.
-
-For **math-confidence**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Confidence Intervals
-meta = {"topic_id": "math-confidence", "track": "math", "level": "intermediate"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-confidence math intermediate`,
-          keyPoints: [
-            `Core theory of Confidence Intervals ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Confidence Intervals ties to the math track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-confidence-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Confidence Intervals**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-confidence**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for math-confidence
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-confidence", "Confidence Intervals")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-confidence Confidence`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with math ecosystem conventions
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-confidence-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Confidence Intervals** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on **math-confidence**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-confidence", "Confidence Intervals")
-debug_step("section_count", 4)`,
-          output: `[math-confidence] 'Confidence Intervals' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-confidence-real-world`,
-          title: `Real-World Applications`,
-          content: `**Confidence Intervals** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around **math-confidence** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Confidence Intervals
-skills = ["math", "intermediate", "math-confidence"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, intermediate, math-confidence`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Confidence Intervals to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Confidence Intervals to adjacent topics in the same track
-
-Topic: Confidence Intervals
-Track: math | Level: intermediate`
+1. Always quantify metric uncertainty
+2. Bootstrap simple and flexible
+3. Conformal for prediction bands
+4. Nested CV reduces selection bias
+5. Leaderboards ignore uncertainty`
         }
       ],
       exercises: [
@@ -2392,32 +1012,16 @@ print(proportion_confint(45,50,method="wilson"))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 35,
       module: `module-math-07`,
       references: [
         {
-          id: `3blue1brown-linalg`,
-          title: `Essence of Linear Algebra`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/linear-algebra`,
-          description: `Visual intuition for vectors, matrices, and transformations.`
-        },
-        {
-          id: `mit-1806-linalg`,
-          title: `MIT 18.06 Linear Algebra`,
-          source: `MIT`,
-          type: `course`,
-          url: `https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/`,
-          description: `Gilbert Strang's foundational linear algebra course used across ML.`
-        },
-        {
-          id: `3blue1brown-calculus`,
-          title: `Essence of Calculus`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/calculus`,
-          description: `Geometric intuition for derivatives, integrals, and the chain rule.`
+          id: `esl-hastie`,
+          title: `The Elements of Statistical Learning`,
+          source: `Stanford`,
+          type: `book`,
+          url: `https://hastie.su.domains/ElemStatLearn/`,
+          description: `Free authoritative text on statistical learning methods and theory.`
         },
         {
           id: `khan-probability`,
@@ -2428,12 +1032,20 @@ print(proportion_confint(45,50,method="wilson"))`,
           description: `Probability distributions, Bayes theorem, and statistical inference.`
         },
         {
-          id: `stanford-cs229`,
-          title: `Stanford CS229 — Machine Learning`,
-          source: `Stanford CS229`,
+          id: `berkeley-cs189`,
+          title: `Berkeley CS189/289A — Introduction to Machine Learning`,
+          source: `Berkeley`,
           type: `course`,
-          url: `https://cs229.stanford.edu/`,
-          description: `Andrew Ng's graduate ML course — the canonical theoretical foundation.`
+          url: `https://people.eecs.berkeley.edu/~jrs/189/`,
+          description: `Comprehensive ML course with strong mathematical foundations.`
+        },
+        {
+          id: `bishop-prml`,
+          title: `Pattern Recognition and Machine Learning`,
+          source: `Cambridge`,
+          type: `book`,
+          url: `https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/`,
+          description: `Rigorous treatment of probability, inference, and classical ML algorithms.`
         }
       ]
     },
@@ -2447,43 +1059,11 @@ print(proportion_confint(45,50,method="wilson"))`,
         {
           id: `reg-ols`,
           title: `Ordinary Least Squares`,
-          content: `Model y=Xβ+ε. OLS minimizes ||y−Xβ||². **Normal equations** XᵀXβ=Xᵀy. Solution β=(XᵀX)⁻¹Xᵀy if full rank. Geometric: orthogonal projection of y onto Col(X). Hat matrix H=X(XᵀX)⁻¹Xᵀ, ŷ=Hy. Residuals e=y−ŷ orthogonal to Col(X). Multiple regression adds columns to X. Polynomial regression linear in β with nonlinear features. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+          content: `**Normal equations** XᵀXβ=Xᵀy. Solution β=(XᵀX)⁻¹Xᵀy if full rank. Geometric: orthogonal projection of y onto Col(X).
 
-**Why this matters:**
+Hat matrix H=X(XᵀX)⁻¹Xᵀ, ŷ=Hy. Residuals e=y−ŷ orthogonal to Col(X). Multiple regression adds columns to X.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Ordinary Least Squares** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Polynomial regression linear in β with nonlinear features. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `min ||y − Xβ||²`,
             `Normal eq: XᵀXβ = Xᵀy`,
@@ -2509,78 +1089,34 @@ y=np.array([1,3,3,5,5])
 beta=np.linalg.lstsq(X,y,rcond=None)[0]
 print("beta:", beta)`,
           output: `intercept slope`,
-          pseudoCode: `CONCEPT: Ordinary Least Squares
+          pseudoCode: `Ordinary Least Squares
 
-Key relationships:
-  min ||y − Xβ||²
-  Normal eq: XᵀXβ = Xᵀy
-  β = (XᵀX)⁻¹ Xᵀy
-  ŷ = H y projection
-  e = y − ŷ ⊥ Col(X)
+min ||y − Xβ||²
+Normal eq: XᵀXβ = Xᵀy
+β = (XᵀX)⁻¹ Xᵀy
+ŷ = H y projection
+e = y − ŷ ⊥ Col(X)
 
-Visual summary:
-  y vector projected onto
-  column space of X:
-  y
-  ╱  | e (residual)
-  Col(X)
+y vector projected onto
+column space of X:
+y
+╱  | e (residual)
+Col(X)
 
-Study checklist:
-  1. OLS = orthogonal projection
-  2. Normal equations from calculus
-  3. Full rank needed unique β
-  4. Polynomial via feature map
-  5. Residuals orthogonal to fit
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
+1. OLS = orthogonal projection
+2. Normal equations from calculus
+3. Full rank needed unique β
+4. Polynomial via feature map
+5. Residuals orthogonal to fit`
         },
         {
           id: `reg-assump`,
           title: `Regression Assumptions`,
-          content: `**Regression Assumptions** — what you need to know:
+          content: `Classical linear model: (1) linearity E[ε|X]=0 (2) homoscedasticity Var(ε|X)=σ² constant (3) independence (4) no perfect multicollinearity (5) often normality of ε for inference. Violations: heteroscedasticity, autocorrelation, nonlinearity.
 
-- **Core idea:** Linear regression normal equations, assumptions, and statistical inference.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
+Diagnostics: residual plots, VIF for multicollinearity, Breusch-Pagan test. Robust SE or weighted least squares address heteroscedasticity.
 
-Classical linear model: (1) linearity E[ε|X]=0 (2) homoscedasticity Var(ε|X)=σ² constant (3) independence (4) no perfect multicollinearity (5) often normality of ε for inference. Violations: heteroscedasticity, autocorrelation, nonlinearity. Diagnostics: residual plots, VIF for multicollinearity, Breusch-Pagan test. Robust SE or weighted least squares address heteroscedasticity. Regularization when collinear.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Regression Assumptions** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Regularization when collinear.`,
           formulas: [
             `E[ε|X] = 0`,
             `Var(ε|X) = σ² (homoscedastic)`,
@@ -2603,77 +1139,33 @@ Classical linear model: (1) linearity E[ε|X]=0 (2) homoscedasticity Var(ε|X)=�
 X=np.random.randn(100,3)
 print("rank:", np.linalg.matrix_rank(X))`,
           output: `full rank likely`,
-          pseudoCode: `CONCEPT: Regression Assumptions
+          pseudoCode: `Regression Assumptions
 
-Key relationships:
-  E[ε|X] = 0
-  Var(ε|X) = σ² (homoscedastic)
-  No perfect collinearity
-  ε ~ N(0,σ²) for t-tests
-  VIF detects multicollinearity
+E[ε|X] = 0
+Var(ε|X) = σ² (homoscedastic)
+No perfect collinearity
+ε ~ N(0,σ²) for t-tests
+VIF detects multicollinearity
 
-Visual summary:
-  residual plot healthy:
-  e │ ·  ·    random scatter
-  └── predictor
-  funnel → heteroscedasticity
+residual plot healthy:
+e │ ·  ·    random scatter
+└── predictor
+funnel → heteroscedasticity
 
-Study checklist:
-  1. Check residuals systematically
-  2. Funnel shape bad
-  3. VIF>10 concern collinearity
-  4. Normality for CI/p-values
-  5. Regularize collinear features
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
+1. Check residuals systematically
+2. Funnel shape bad
+3. VIF>10 concern collinearity
+4. Normality for CI/p-values
+5. Regularize collinear features`
         },
         {
           id: `reg-infer`,
           title: `Statistical Inference`,
-          content: `**Statistical Inference** — what you need to know:
+          content: `Estimate σ² by s²=||e||²/(n−p−1). t-test for β_j=0: t=β̂_j/SE(β̂_j). R²=1−SSE/SST proportion variance explained— increases with more features.
 
-- **Core idea:** Linear regression normal equations, assumptions, and statistical inference.
-- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
+Adjusted R² penalizes complexity. Confidence bands for mean response vs prediction intervals wider include ε noise.
 
-β̂ variance σ²(XᵀX)⁻¹. Estimate σ² by s²=||e||²/(n−p−1). t-test for β_j=0: t=β̂_j/SE(β̂_j). F-test overall model. R²=1−SSE/SST proportion variance explained— increases with more features. Adjusted R² penalizes complexity. Confidence bands for mean response vs prediction intervals wider include ε noise. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
-
-**Why this matters:**
-
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Statistical Inference** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Var(β̂) = σ² (XᵀX)⁻¹`,
             `s² = ||e||²/(n−p−1)`,
@@ -2697,71 +1189,33 @@ y=np.array([1,2,3,4,5]); yhat=np.array([1.1,1.9,3.2,3.8,5.1])
 ss_res=((y-yhat)**2).sum(); ss_tot=((y-y.mean())**2).sum()
 print("R2:", 1-ss_res/ss_tot)`,
           output: `R2`,
-          pseudoCode: `CONCEPT: Statistical Inference
+          pseudoCode: `Statistical Inference
 
-Key relationships:
-  Var(β̂) = σ² (XᵀX)⁻¹
-  s² = ||e||²/(n−p−1)
-  t = β̂_j / SE(β̂_j)
-  R² = 1 − SSE/SST
-  Adj R² penalizes p
+Var(β̂) = σ² (XᵀX)⁻¹
+s² = ||e||²/(n−p−1)
+t = β̂_j / SE(β̂_j)
+R² = 1 − SSE/SST
+Adj R² penalizes p
 
-Visual summary:
-  R² interpretation:
-  0 = no better than mean
-  1 = perfect fit (overfit risk)
-  adj R² down if useless feature added
+R² interpretation:
+0 = no better than mean
+1 = perfect fit (overfit risk)
+adj R² down if useless feature added
 
-Study checklist:
-  1. SE on coefficients for significance
-  2. R² not always better high
-  3. Adj R² compares models
-  4. Prediction interval wider than CI mean
-  5. F-test overall significance
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
+1. SE on coefficients for significance
+2. R² not always better high
+3. Adj R² compares models
+4. Prediction interval wider than CI mean
+5. F-test overall significance`
         },
         {
           id: `reg-ml`,
           title: `Regression to ML`,
-          content: `Linear regression foundation for GLMs, logistic (IRLS), neural nets (linear output layer). **Ridge** L2, **Lasso** L1, **Elastic Net** combine. Gradient descent scales to large data vs normal equations O(np²). Regularization as Bayesian priors. Polynomial and interaction features expand X. Logistic regression for classification still linear in features. Understanding OLS clarifies loss surfaces and normal equations in linear networks.
+          content: `Linear regression foundation for GLMs, logistic (IRLS), neural nets (linear output layer). **Ridge** L2, **Lasso** L1, **Elastic Net** combine. Gradient descent scales to large data vs normal equations O(np²).
 
-**Why this matters:**
+Regularization as Bayesian priors. Polynomial and interaction features expand X. Logistic regression for classification still linear in features.
 
-- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
-- Mastering **Regression to ML** directly affects how confidently you can build, debug, and ship math projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.
-
-**Mathematical foundation:**
-
-- This section includes 5 key formulas.
-- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
-- Work through a tiny numeric example by hand, then verify in code.
-
-**Visual guide:**
-
-- Study the diagram alongside the explanation — do not skip it.
-- Trace each arrow, box, or region back to a term in the text.
-- If you cannot map a visual element to words, re-read until the connection is clear.`,
+Understanding OLS clarifies loss surfaces and normal equations in linear networks.`,
           formulas: [
             `Ridge: min ||y−Xβ||² + λ||β||²`,
             `Lasso: L1 → sparsity`,
@@ -2785,208 +1239,23 @@ lam=1.
 beta=np.linalg.solve(X.T@X+lam*np.eye(5), X.T@y)
 print("ridge beta shape:", beta.shape)`,
           output: `ridge solution`,
-          pseudoCode: `CONCEPT: Regression to ML
+          pseudoCode: `Regression to ML
 
-Key relationships:
-  Ridge: min ||y−Xβ||² + λ||β||²
-  Lasso: L1 → sparsity
-  GD scales big data
-  Normal eq O(np²) expensive
-  GLM generalizes linear model
+Ridge: min ||y−Xβ||² + λ||β||²
+Lasso: L1 → sparsity
+GD scales big data
+Normal eq O(np²) expensive
+GLM generalizes linear model
 
-Visual summary:
-  OLS → Ridge → Lasso
-  add λ||β||²   add λ||β||₁
-  shrink        select features
+OLS → Ridge → Lasso
+add λ||β||²   add λ||β||₁
+shrink        select features
 
-Study checklist:
-  1. Normal eq fine small p
-  2. GD for deep/large data
-  3. Ridge handles collinearity
-  4. Lasso feature selection
-  5. Logistic = linear + logit link
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-regression-math-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Regression Mathematics** sits in the **math** track of the Data Science Master curriculum. Linear regression normal equations, assumptions, and statistical inference.
-
-**Theoretical foundation:**
-
-- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
-- Each branch connects directly to numpy operations and loss functions.
-
-For **math-regression-math**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Regression Mathematics
-meta = {"topic_id": "math-regression-math", "track": "math", "level": "intermediate"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `math-regression-math math intermediate`,
-          keyPoints: [
-            `Core theory of Regression Mathematics ties to the math track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Regression Mathematics ties to the math track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-regression-math-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Regression Mathematics**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-regression-math**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for math-regression-math
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("math-regression-math", "Regression Mathematics")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `math-regression-math Regression`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with math ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with math ecosystem conventions
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-regression-math-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Regression Mathematics** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
-
-When stuck on **math-regression-math**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("math-regression-math", "Regression Mathematics")
-debug_step("section_count", 4)`,
-          output: `[math-regression-math] 'Regression Mathematics' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
-        },
-        {
-          id: `math-regression-math-real-world`,
-          title: `Real-World Applications`,
-          content: `**Regression Mathematics** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
-
-Teams shipping features around **math-regression-math** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Regression Mathematics
-skills = ["math", "intermediate", "math-regression-math"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: math, intermediate, math-regression-math`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Regression Mathematics to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Regression Mathematics to adjacent topics in the same track
-
-Topic: Regression Mathematics
-Track: math | Level: intermediate`
+1. Normal eq fine small p
+2. GD for deep/large data
+3. Ridge handles collinearity
+4. Lasso feature selection
+5. Logistic = linear + logit link`
         }
       ],
       exercises: [
@@ -3006,48 +1275,40 @@ y=np.array([1,2,3]); print(1-0/((y-y.mean())**2).sum())`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 35,
       module: `module-math-07`,
       references: [
         {
-          id: `3blue1brown-linalg`,
-          title: `Essence of Linear Algebra`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/linear-algebra`,
-          description: `Visual intuition for vectors, matrices, and transformations.`
+          id: `esl-hastie`,
+          title: `The Elements of Statistical Learning`,
+          source: `Stanford`,
+          type: `book`,
+          url: `https://hastie.su.domains/ElemStatLearn/`,
+          description: `Free authoritative text on statistical learning methods and theory.`
         },
         {
-          id: `mit-1806-linalg`,
-          title: `MIT 18.06 Linear Algebra`,
-          source: `MIT`,
+          id: `sklearn-linear-models`,
+          title: `scikit-learn Linear Models`,
+          source: `scikit-learn`,
+          type: `documentation`,
+          url: `https://scikit-learn.org/stable/modules/linear_model.html`,
+          description: `Linear, logistic, ridge, lasso, and elastic net regression implementations.`
+        },
+        {
+          id: `berkeley-cs189`,
+          title: `Berkeley CS189/289A — Introduction to Machine Learning`,
+          source: `Berkeley`,
           type: `course`,
-          url: `https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/`,
-          description: `Gilbert Strang's foundational linear algebra course used across ML.`
+          url: `https://people.eecs.berkeley.edu/~jrs/189/`,
+          description: `Comprehensive ML course with strong mathematical foundations.`
         },
         {
-          id: `3blue1brown-calculus`,
-          title: `Essence of Calculus`,
-          source: `3Blue1Brown`,
-          type: `video`,
-          url: `https://www.3blue1brown.com/topics/calculus`,
-          description: `Geometric intuition for derivatives, integrals, and the chain rule.`
-        },
-        {
-          id: `khan-probability`,
-          title: `Statistics and Probability — Khan Academy`,
-          source: `Khan Academy`,
-          type: `course`,
-          url: `https://www.khanacademy.org/math/statistics-probability`,
-          description: `Probability distributions, Bayes theorem, and statistical inference.`
-        },
-        {
-          id: `stanford-cs229`,
-          title: `Stanford CS229 — Machine Learning`,
-          source: `Stanford CS229`,
-          type: `course`,
-          url: `https://cs229.stanford.edu/`,
-          description: `Andrew Ng's graduate ML course — the canonical theoretical foundation.`
+          id: `bishop-prml`,
+          title: `Pattern Recognition and Machine Learning`,
+          source: `Cambridge`,
+          type: `book`,
+          url: `https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/`,
+          description: `Rigorous treatment of probability, inference, and classical ML algorithms.`
         }
       ]
     }

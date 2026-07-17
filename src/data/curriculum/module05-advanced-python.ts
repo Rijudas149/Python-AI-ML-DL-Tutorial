@@ -11,37 +11,12 @@ export const module05Topics: Topic[] = [
         {
           id: `decorator-basics`,
           title: `Function Decorators`,
-          content: `**Function Decorators** — what you need to know:
+          content: `A decorator is \`@decorator\` syntax for \`func = decorator(func)\`. Decorators are higher-order functions that wrap callables.
 
-- **Core idea:** Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-A decorator is \`@decorator\` syntax for \`func = decorator(func)\`. Decorators are higher-order functions that wrap callables.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Function Decorators** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Decorators wrap functions transparently
+- @syntax is syntactic sugar
+- wrapper must use *args, **kwargs
+- functools.wraps preserves metadata`,
           example: `def log_calls(func):
     def wrapper(*args, **kwargs):
         print(f"Calling {func.__name__}")
@@ -59,57 +34,24 @@ print(add(2, 3))`,
             `Decorators wrap functions transparently`,
             `@syntax is syntactic sugar`,
             `wrapper must use *args, **kwargs`,
-            `functools.wraps preserves metadata`,
-            `Function Decorators is a foundational piece of Decorators`,
-            `Connect this section to the python track and advanced expectations`
+            `functools.wraps preserves metadata`
           ],
-          pseudoCode: `CONCEPT: Function Decorators
+          pseudoCode: `Function Decorators
 
-Study checklist:
-  1. Decorators wrap functions transparently
-  2. @syntax is syntactic sugar
-  3. wrapper must use *args, **kwargs
-  4. functools.wraps preserves metadata
-  5. Function Decorators is a foundational piece of Decorators
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Decorators
-Track: python | Level: advanced`
+1. Decorators wrap functions transparently
+2. @syntax is syntactic sugar
+3. wrapper must use *args, **kwargs
+4. functools.wraps preserves metadata`
         },
         {
           id: `functools-wraps`,
           title: `functools.wraps & functools`,
-          content: `**functools.wraps & functools** — what you need to know:
+          content: `Always use \`@wraps(func)\` on wrapper to preserve \`__name__\`, \`__doc__\`. functools.lru_cache, partial, reduce are essential tools.
 
-- **Core idea:** Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Always use \`@wraps(func)\` on wrapper to preserve \`__name__\`, \`__doc__\`. functools.lru_cache, partial, reduce are essential tools.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **functools.wraps & functools** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- lru_cache memoizes function results
+- wraps preserves function identity
+- partial creates specialized functions
+- Decorators with args need decorator factory`,
           example: `from functools import wraps, lru_cache
 
 @lru_cache(maxsize=128)
@@ -123,57 +65,24 @@ print(fib(30))`,
             `lru_cache memoizes function results`,
             `wraps preserves function identity`,
             `partial creates specialized functions`,
-            `Decorators with args need decorator factory`,
-            `functools.wraps & functools is a foundational piece of Decorators`,
-            `Connect this section to the python track and advanced expectations`
+            `Decorators with args need decorator factory`
           ],
-          pseudoCode: `CONCEPT: functools.wraps & functools
+          pseudoCode: `functools.wraps & functools
 
-Study checklist:
-  1. lru_cache memoizes function results
-  2. wraps preserves function identity
-  3. partial creates specialized functions
-  4. Decorators with args need decorator factory
-  5. functools.wraps & functools is a foundational piece of Decorators
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Decorators
-Track: python | Level: advanced`
+1. lru_cache memoizes function results
+2. wraps preserves function identity
+3. partial creates specialized functions
+4. Decorators with args need decorator factory`
         },
         {
           id: `param-decorator`,
           title: `Decorators with Parameters`,
-          content: `**Decorators with Parameters** — what you need to know:
+          content: `Three-level nesting: decorator factory → decorator → wrapper. \`@retry(times=3)\` pattern.
 
-- **Core idea:** Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Three-level nesting: decorator factory → decorator → wrapper. \`@retry(times=3)\` pattern.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Decorators with Parameters** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Outer function receives decorator args
+- Middle function receives wrapped function
+- Inner function receives call args
+- Flask/FastAPI routes use parameterized decorators`,
           example: `from functools import wraps
 
 def repeat(n):
@@ -198,263 +107,36 @@ Hello`,
             `Outer function receives decorator args`,
             `Middle function receives wrapped function`,
             `Inner function receives call args`,
-            `Flask/FastAPI routes use parameterized decorators`,
-            `Decorators with Parameters is a foundational piece of Decorators`,
-            `Connect this section to the python track and advanced expectations`
+            `Flask/FastAPI routes use parameterized decorators`
           ],
-          pseudoCode: `CONCEPT: Decorators with Parameters
+          pseudoCode: `Decorators with Parameters
 
-Study checklist:
-  1. Outer function receives decorator args
-  2. Middle function receives wrapped function
-  3. Inner function receives call args
-  4. Flask/FastAPI routes use parameterized decorators
-  5. Decorators with Parameters is a foundational piece of Decorators
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Decorators
-Track: python | Level: advanced`
+1. Outer function receives decorator args
+2. Middle function receives wrapped function
+3. Inner function receives call args
+4. Flask/FastAPI routes use parameterized decorators`
         },
         {
           id: `class-decorator`,
           title: `Class Decorators`,
-          content: `**Class Decorators** — what you need to know:
+          content: `Decorators work on classes too. \`@dataclass\`, \`@property\` are built-in class decorators. Metaclasses are advanced alternative.
 
-- **Core idea:** Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Decorators work on classes too. \`@dataclass\`, \`@property\` are built-in class decorators. Metaclasses are advanced alternative.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Class Decorators** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Class decorators modify or register classes
+- dataclass is a class decorator
+- Metaclasses customize class creation
+- Use decorators before metaclasses`,
           keyPoints: [
             `Class decorators modify or register classes`,
             `dataclass is a class decorator`,
             `Metaclasses customize class creation`,
-            `Use decorators before metaclasses`,
-            `Class Decorators is a foundational piece of Decorators`,
-            `Connect this section to the python track and advanced expectations`
+            `Use decorators before metaclasses`
           ],
-          example: `# Concept check: Class Decorators
-meta = {
-    "topic": "py-decorators",
-    "section": "class-decorator",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-decorators
-section: class-decorator
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Class Decorators
+          pseudoCode: `Class Decorators
 
-Study checklist:
-  1. Class decorators modify or register classes
-  2. dataclass is a class decorator
-  3. Metaclasses customize class creation
-  4. Use decorators before metaclasses
-  5. Class Decorators is a foundational piece of Decorators
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Decorators
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-decorators-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Decorators** sits in the **python** track of the Data Science Master curriculum. Functions that modify or wrap other functions. Essential for logging, timing, auth, and frameworks.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-decorators**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Decorators
-meta = {"topic_id": "py-decorators", "track": "python", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-decorators python advanced`,
-          keyPoints: [
-            `Core theory of Decorators ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Decorators ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Decorators
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-decorators-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Decorators**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-decorators**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-decorators
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-decorators", "Decorators")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-decorators Decorators`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Decorators
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-decorators-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Decorators** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-decorators**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-decorators", "Decorators")
-debug_step("section_count", 4)`,
-          output: `[py-decorators] 'Decorators' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Decorators
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-decorators-real-world`,
-          title: `Real-World Applications`,
-          content: `**Decorators** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-decorators** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Decorators
-skills = ["python", "advanced", "py-decorators"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, advanced, py-decorators`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Decorators to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Decorators to adjacent topics in the same track
-
-Topic: Decorators
-Track: python | Level: advanced`
+1. Class decorators modify or register classes
+2. dataclass is a class decorator
+3. Metaclasses customize class creation
+4. Use decorators before metaclasses`
         }
       ],
       exercises: [
@@ -494,7 +176,7 @@ print(fact(10))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-05`,
       references: [
         {
@@ -541,37 +223,12 @@ print(fact(10))`,
         {
           id: `yield`,
           title: `Generator Functions`,
-          content: `**Generator Functions** — what you need to know:
+          content: `\`yield\` pauses function and returns value. Resumes on next(). Generators are iterators — memory efficient.
 
-- **Core idea:** Lazy iteration with generator functions and yield expressions.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-\`yield\` pauses function and returns value. Resumes on next(). Generators are iterators — memory efficient.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Generator Functions** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- yield transforms function to generator
+- State preserved between yields
+- Generators are single-pass iterators
+- Use for infinite sequences and pipelines`,
           example: `def count_up(n):
     i = 0
     while i < n:
@@ -585,57 +242,24 @@ for x in count_up(5):
             `yield transforms function to generator`,
             `State preserved between yields`,
             `Generators are single-pass iterators`,
-            `Use for infinite sequences and pipelines`,
-            `Generator Functions is a foundational piece of Generators & yield`,
-            `Connect this section to the python track and advanced expectations`
+            `Use for infinite sequences and pipelines`
           ],
-          pseudoCode: `CONCEPT: Generator Functions
+          pseudoCode: `Generator Functions
 
-Study checklist:
-  1. yield transforms function to generator
-  2. State preserved between yields
-  3. Generators are single-pass iterators
-  4. Use for infinite sequences and pipelines
-  5. Generator Functions is a foundational piece of Generators & yield
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Generators & yield
-Track: python | Level: advanced`
+1. yield transforms function to generator
+2. State preserved between yields
+3. Generators are single-pass iterators
+4. Use for infinite sequences and pipelines`
         },
         {
           id: `yield-from`,
           title: `yield from & send`,
-          content: `**yield from & send** — what you need to know:
+          content: `\`yield from iterable\` delegates to sub-generator. \`.send(value)\` sends values into generator. Advanced coroutine patterns.
 
-- **Core idea:** Lazy iteration with generator functions and yield expressions.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-\`yield from iterable\` delegates to sub-generator. \`.send(value)\` sends values into generator. Advanced coroutine patterns.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **yield from & send** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- yield from simplifies generator delegation
+- send() enables two-way communication
+- throw() and close() control generator lifecycle
+- Foundation for async/await`,
           example: `def chain(*iterables):
     for it in iterables:
         yield from it
@@ -646,57 +270,24 @@ print(list(chain([1,2], [3,4])))`,
             `yield from simplifies generator delegation`,
             `send() enables two-way communication`,
             `throw() and close() control generator lifecycle`,
-            `Foundation for async/await`,
-            `yield from & send is a foundational piece of Generators & yield`,
-            `Connect this section to the python track and advanced expectations`
+            `Foundation for async/await`
           ],
-          pseudoCode: `CONCEPT: yield from & send
+          pseudoCode: `yield from & send
 
-Study checklist:
-  1. yield from simplifies generator delegation
-  2. send() enables two-way communication
-  3. throw() and close() control generator lifecycle
-  4. Foundation for async/await
-  5. yield from & send is a foundational piece of Generators & yield
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Generators & yield
-Track: python | Level: advanced`
+1. yield from simplifies generator delegation
+2. send() enables two-way communication
+3. throw() and close() control generator lifecycle
+4. Foundation for async/await`
         },
         {
           id: `gen-expr`,
           title: `Generator Pipelines`,
-          content: `**Generator Pipelines** — what you need to know:
+          content: `Chain generators for data pipelines: read → filter → transform → aggregate. Memory stays constant.
 
-- **Core idea:** Lazy iteration with generator functions and yield expressions.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Chain generators for data pipelines: read → filter → transform → aggregate. Memory stays constant.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Generator Pipelines** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Pipeline stages are composable generators
+- Lazy evaluation — no intermediate lists
+- Pattern used in ETL and streaming ML
+- itertools.chain and tee assist pipelines`,
           example: `def read_nums():
     for x in [1,2,3,4,5,6]:
         yield x
@@ -712,263 +303,36 @@ print(list(evens(read_nums())))`,
             `Pipeline stages are composable generators`,
             `Lazy evaluation — no intermediate lists`,
             `Pattern used in ETL and streaming ML`,
-            `itertools.chain and tee assist pipelines`,
-            `Generator Pipelines is a foundational piece of Generators & yield`,
-            `Connect this section to the python track and advanced expectations`
+            `itertools.chain and tee assist pipelines`
           ],
-          pseudoCode: `CONCEPT: Generator Pipelines
+          pseudoCode: `Generator Pipelines
 
-Study checklist:
-  1. Pipeline stages are composable generators
-  2. Lazy evaluation — no intermediate lists
-  3. Pattern used in ETL and streaming ML
-  4. itertools.chain and tee assist pipelines
-  5. Generator Pipelines is a foundational piece of Generators & yield
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Generators & yield
-Track: python | Level: advanced`
+1. Pipeline stages are composable generators
+2. Lazy evaluation — no intermediate lists
+3. Pattern used in ETL and streaming ML
+4. itertools.chain and tee assist pipelines`
         },
         {
           id: `infinite`,
           title: `Infinite Generators`,
-          content: `**Infinite Generators** — what you need to know:
+          content: `Generators can yield forever: \`while True: yield x\`. Use with break condition or itertools.islice to limit.
 
-- **Core idea:** Lazy iteration with generator functions and yield expressions.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Generators can yield forever: \`while True: yield x\`. Use with break condition or itertools.islice to limit.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Infinite Generators** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Infinite generators model streams
+- islice limits consumption
+- cycle and repeat from itertools
+- Careful with memory on accidental materialization`,
           keyPoints: [
             `Infinite generators model streams`,
             `islice limits consumption`,
             `cycle and repeat from itertools`,
-            `Careful with memory on accidental materialization`,
-            `Connect this section to the python track and advanced expectations`,
-            `Relate definitions to concrete inputs, outputs, and evaluation criteria`
+            `Careful with memory on accidental materialization`
           ],
-          example: `# Concept check: Infinite Generators
-meta = {
-    "topic": "py-generators",
-    "section": "infinite",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-generators
-section: infinite
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Infinite Generators
+          pseudoCode: `Infinite Generators
 
-Study checklist:
-  1. Infinite generators model streams
-  2. islice limits consumption
-  3. cycle and repeat from itertools
-  4. Careful with memory on accidental materialization
-  5. Connect this section to the python track and advanced expectations
-  6. Relate definitions to concrete inputs, outputs, and evaluation criteria
-
-Topic: Generators & yield
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-generators-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Generators & yield** sits in the **python** track of the Data Science Master curriculum. Lazy iteration with generator functions and yield expressions.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-generators**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Generators & yield
-meta = {"topic_id": "py-generators", "track": "python", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-generators python advanced`,
-          keyPoints: [
-            `Core theory of Generators & yield ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Generators & yield ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Generators & yield
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-generators-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Generators & yield**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-generators**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-generators
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-generators", "Generators & yield")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-generators Generators`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Generators & yield
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-generators-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Generators & yield** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-generators**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-generators", "Generators & yield")
-debug_step("section_count", 4)`,
-          output: `[py-generators] 'Generators & yield' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Generators & yield
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-generators-real-world`,
-          title: `Real-World Applications`,
-          content: `**Generators & yield** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-generators** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Generators & yield
-skills = ["python", "advanced", "py-generators"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, advanced, py-generators`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Generators & yield to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Generators & yield to adjacent topics in the same track
-
-Topic: Generators & yield
-Track: python | Level: advanced`
+1. Infinite generators model streams
+2. islice limits consumption
+3. cycle and repeat from itertools
+4. Careful with memory on accidental materialization`
         }
       ],
       exercises: [
@@ -996,7 +360,7 @@ print(next(g), next(g))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-05`,
       references: [
         {
@@ -1043,37 +407,12 @@ print(next(g), next(g))`,
         {
           id: `with`,
           title: `The with Statement`,
-          content: `**The with Statement** — what you need to know:
+          content: `Context managers guarantee setup/teardown via \`__enter__\` and \`__exit__\`. Essential for files, locks, DB connections.
 
-- **Core idea:** Resource management with with statement and contextlib.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Context managers guarantee setup/teardown via \`__enter__\` and \`__exit__\`. Essential for files, locks, DB connections.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **The with Statement** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- with guarantees cleanup even on exceptions
+- __exit__ receives exception info
+- Return True from __exit__ to suppress exception
+- File handling primary use case`,
           example: `class Timer:
     def __enter__(self):
         import time
@@ -1090,57 +429,24 @@ with Timer():
             `with guarantees cleanup even on exceptions`,
             `__exit__ receives exception info`,
             `Return True from __exit__ to suppress exception`,
-            `File handling primary use case`,
-            `The with Statement is a foundational piece of Context Managers`,
-            `Connect this section to the python track and advanced expectations`
+            `File handling primary use case`
           ],
-          pseudoCode: `CONCEPT: The with Statement
+          pseudoCode: `The with Statement
 
-Study checklist:
-  1. with guarantees cleanup even on exceptions
-  2. __exit__ receives exception info
-  3. Return True from __exit__ to suppress exception
-  4. File handling primary use case
-  5. The with Statement is a foundational piece of Context Managers
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Context Managers
-Track: python | Level: advanced`
+1. with guarantees cleanup even on exceptions
+2. __exit__ receives exception info
+3. Return True from __exit__ to suppress exception
+4. File handling primary use case`
         },
         {
           id: `contextlib`,
           title: `contextlib Utilities`,
-          content: `**contextlib Utilities** — what you need to know:
+          content: `@contextmanager decorator turns generator into context manager. contextlib.suppress, ExitStack for multiple contexts.
 
-- **Core idea:** Resource management with with statement and contextlib.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-@contextmanager decorator turns generator into context manager. contextlib.suppress, ExitStack for multiple contexts.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **contextlib Utilities** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- contextmanager decorator simplifies creation
+- yield separates enter and exit logic
+- ExitStack manages dynamic context count
+- suppress catches specific exceptions`,
           example: `from contextlib import contextmanager
 
 @contextmanager
@@ -1158,57 +464,24 @@ content
             `contextmanager decorator simplifies creation`,
             `yield separates enter and exit logic`,
             `ExitStack manages dynamic context count`,
-            `suppress catches specific exceptions`,
-            `contextlib Utilities is a foundational piece of Context Managers`,
-            `Connect this section to the python track and advanced expectations`
+            `suppress catches specific exceptions`
           ],
-          pseudoCode: `CONCEPT: contextlib Utilities
+          pseudoCode: `contextlib Utilities
 
-Study checklist:
-  1. contextmanager decorator simplifies creation
-  2. yield separates enter and exit logic
-  3. ExitStack manages dynamic context count
-  4. suppress catches specific exceptions
-  5. contextlib Utilities is a foundational piece of Context Managers
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Context Managers
-Track: python | Level: advanced`
+1. contextmanager decorator simplifies creation
+2. yield separates enter and exit logic
+3. ExitStack manages dynamic context count
+4. suppress catches specific exceptions`
         },
         {
           id: `file-context`,
           title: `File Handling Pattern`,
-          content: `**File Handling Pattern** — what you need to know:
+          content: `Always: \`with open(path, "r", encoding="utf-8") as f:\`. Automatic close even on error.
 
-- **Core idea:** Resource management with with statement and contextlib.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Always: \`with open(path, "r", encoding="utf-8") as f:\`. Automatic close even on error.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **File Handling Pattern** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- with open is the only correct file pattern
+- Specify encoding explicitly
+- Use json.load inside with block
+- Pathlib improves path handling`,
           example: `# Pattern demonstration
 content = "Hello, File!"
 lines = content.split("\\n")
@@ -1218,263 +491,36 @@ print(len(lines), lines[0])`,
             `with open is the only correct file pattern`,
             `Specify encoding explicitly`,
             `Use json.load inside with block`,
-            `Pathlib improves path handling`,
-            `File Handling Pattern is a foundational piece of Context Managers`,
-            `Connect this section to the python track and advanced expectations`
+            `Pathlib improves path handling`
           ],
-          pseudoCode: `CONCEPT: File Handling Pattern
+          pseudoCode: `File Handling Pattern
 
-Study checklist:
-  1. with open is the only correct file pattern
-  2. Specify encoding explicitly
-  3. Use json.load inside with block
-  4. Pathlib improves path handling
-  5. File Handling Pattern is a foundational piece of Context Managers
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Context Managers
-Track: python | Level: advanced`
+1. with open is the only correct file pattern
+2. Specify encoding explicitly
+3. Use json.load inside with block
+4. Pathlib improves path handling`
         },
         {
           id: `async-context`,
           title: `Async Context Managers`,
-          content: `**Async Context Managers** — what you need to know:
+          content: `async with for async __aenter__/__aexit__. Required for async DB sessions and HTTP clients.
 
-- **Core idea:** Resource management with with statement and contextlib.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-async with for async __aenter__/__aexit__. Required for async DB sessions and HTTP clients.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Async Context Managers** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- async with for asyncio resources
+- @asynccontextmanager decorator available
+- Used in FastAPI lifespan events
+- Ensure proper await in async contexts`,
           keyPoints: [
             `async with for asyncio resources`,
             `@asynccontextmanager decorator available`,
             `Used in FastAPI lifespan events`,
-            `Ensure proper await in async contexts`,
-            `Async Context Managers is a foundational piece of Context Managers`,
-            `Connect this section to the python track and advanced expectations`
+            `Ensure proper await in async contexts`
           ],
-          example: `# Concept check: Async Context Managers
-meta = {
-    "topic": "py-context",
-    "section": "async-context",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-context
-section: async-context
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Async Context Managers
+          pseudoCode: `Async Context Managers
 
-Study checklist:
-  1. async with for asyncio resources
-  2. @asynccontextmanager decorator available
-  3. Used in FastAPI lifespan events
-  4. Ensure proper await in async contexts
-  5. Async Context Managers is a foundational piece of Context Managers
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Context Managers
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-context-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Context Managers** sits in the **python** track of the Data Science Master curriculum. Resource management with with statement and contextlib.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-context**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Context Managers
-meta = {"topic_id": "py-context", "track": "python", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-context python advanced`,
-          keyPoints: [
-            `Core theory of Context Managers ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Context Managers ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Context Managers
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-context-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Context Managers**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-context**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-context
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-context", "Context Managers")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-context Context`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Context Managers
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-context-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Context Managers** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-context**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-context", "Context Managers")
-debug_step("section_count", 4)`,
-          output: `[py-context] 'Context Managers' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Context Managers
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-context-real-world`,
-          title: `Real-World Applications`,
-          content: `**Context Managers** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-context** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Context Managers
-skills = ["python", "advanced", "py-context"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, advanced, py-context`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Context Managers to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Context Managers to adjacent topics in the same track
-
-Topic: Context Managers
-Track: python | Level: advanced`
+1. async with for asyncio resources
+2. @asynccontextmanager decorator available
+3. Used in FastAPI lifespan events
+4. Ensure proper await in async contexts`
         }
       ],
       exercises: [
@@ -1505,7 +551,7 @@ print(result)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-05`,
       references: [
         {
@@ -1552,37 +598,12 @@ print(result)`,
         {
           id: `hints`,
           title: `Type Annotations`,
-          content: `**Type Annotations** — what you need to know:
+          content: `Annotate parameters and returns: \`def greet(name: str) -> str:\`. Use list[int], dict[str, float] (Python 3.9+). Optional[X] or X | None for nullable.
 
-- **Core idea:** Static typing, dataclasses, and modern Python data modeling.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Annotate parameters and returns: \`def greet(name: str) -> str:\`. Use list[int], dict[str, float] (Python 3.9+). Optional[X] or X | None for nullable.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Type Annotations** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Type hints are not enforced at runtime
+- mypy/pyright check statically
+- Use from __future__ import annotations for forward refs
+- Gradual typing — add incrementally`,
           example: `def process(items: list[int], threshold: float = 0.5) -> dict[str, int]:
     above = [x for x in items if x > threshold * max(items)]
     return {"count": len(above), "max": max(above) if above else 0}
@@ -1593,57 +614,24 @@ print(process([1, 5, 3, 9, 2]))`,
             `Type hints are not enforced at runtime`,
             `mypy/pyright check statically`,
             `Use from __future__ import annotations for forward refs`,
-            `Gradual typing — add incrementally`,
-            `Type Annotations is a foundational piece of Type Hints & dataclasses`,
-            `Connect this section to the python track and advanced expectations`
+            `Gradual typing — add incrementally`
           ],
-          pseudoCode: `CONCEPT: Type Annotations
+          pseudoCode: `Type Annotations
 
-Study checklist:
-  1. Type hints are not enforced at runtime
-  2. mypy/pyright check statically
-  3. Use from __future__ import annotations for forward refs
-  4. Gradual typing — add incrementally
-  5. Type Annotations is a foundational piece of Type Hints & dataclasses
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
+1. Type hints are not enforced at runtime
+2. mypy/pyright check statically
+3. Use from __future__ import annotations for forward refs
+4. Gradual typing — add incrementally`
         },
         {
           id: `dataclass`,
           title: `dataclasses Module`,
-          content: `**dataclasses Module** — what you need to know:
+          content: `@dataclass generates boilerplate. field() for defaults. frozen, order, slots options.
 
-- **Core idea:** Static typing, dataclasses, and modern Python data modeling.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-@dataclass generates boilerplate. field() for defaults. frozen, order, slots options.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **dataclasses Module** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- default_factory for mutable defaults
+- frozen=True makes immutable
+- asdict() and astuple() for conversion
+- Preferred over namedtuple for mutable data`,
           example: `from dataclasses import dataclass, field
 
 @dataclass
@@ -1658,325 +646,58 @@ print(ModelConfig("mlp"))`,
             `default_factory for mutable defaults`,
             `frozen=True makes immutable`,
             `asdict() and astuple() for conversion`,
-            `Preferred over namedtuple for mutable data`,
-            `dataclasses Module is a foundational piece of Type Hints & dataclasses`,
-            `Connect this section to the python track and advanced expectations`
+            `Preferred over namedtuple for mutable data`
           ],
-          pseudoCode: `CONCEPT: dataclasses Module
+          pseudoCode: `dataclasses Module
 
-Study checklist:
-  1. default_factory for mutable defaults
-  2. frozen=True makes immutable
-  3. asdict() and astuple() for conversion
-  4. Preferred over namedtuple for mutable data
-  5. dataclasses Module is a foundational piece of Type Hints & dataclasses
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
+1. default_factory for mutable defaults
+2. frozen=True makes immutable
+3. asdict() and astuple() for conversion
+4. Preferred over namedtuple for mutable data`
         },
         {
           id: `pydantic`,
           title: `Pydantic & Validation`,
-          content: `**Pydantic & Validation** — what you need to know:
+          content: `Pydantic BaseModel validates at runtime. Essential for API schemas, config, and ML pipeline configs.
 
-- **Core idea:** Static typing, dataclasses, and modern Python data modeling.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Pydantic BaseModel validates at runtime. Essential for API schemas, config, and ML pipeline configs.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Pydantic & Validation** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Pydantic v2 uses Rust core — very fast
+- Automatic JSON serialization
+- Used in FastAPI request/response models
+- Validate ML experiment configs with Pydantic`,
           keyPoints: [
             `Pydantic v2 uses Rust core — very fast`,
             `Automatic JSON serialization`,
             `Used in FastAPI request/response models`,
-            `Validate ML experiment configs with Pydantic`,
-            `Pydantic & Validation is a foundational piece of Type Hints & dataclasses`,
-            `Connect this section to the python track and advanced expectations`
+            `Validate ML experiment configs with Pydantic`
           ],
-          example: `# Concept check: Pydantic & Validation
-meta = {
-    "topic": "py-typehints",
-    "section": "pydantic",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-typehints
-section: pydantic
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Pydantic & Validation
+          pseudoCode: `Pydantic & Validation
 
-Study checklist:
-  1. Pydantic v2 uses Rust core — very fast
-  2. Automatic JSON serialization
-  3. Used in FastAPI request/response models
-  4. Validate ML experiment configs with Pydantic
-  5. Pydantic & Validation is a foundational piece of Type Hints & dataclasses
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
+1. Pydantic v2 uses Rust core — very fast
+2. Automatic JSON serialization
+3. Used in FastAPI request/response models
+4. Validate ML experiment configs with Pydantic`
         },
         {
           id: `typing-advanced`,
           title: `Advanced Typing`,
-          content: `**Advanced Typing** — what you need to know:
+          content: `Union, Literal, TypedDict, Callable, TypeVar, Protocol. Enables precise interfaces for complex codebases.
 
-- **Core idea:** Static typing, dataclasses, and modern Python data modeling.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Union, Literal, TypedDict, Callable, TypeVar, Protocol. Enables precise interfaces for complex codebases.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Advanced Typing** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- TypedDict for structured dicts
+- Literal for fixed value sets
+- Callable[[int, str], bool] for function types
+- Essential for large ML codebases`,
           keyPoints: [
             `TypedDict for structured dicts`,
             `Literal for fixed value sets`,
             `Callable[[int, str], bool] for function types`,
-            `Essential for large ML codebases`,
-            `Advanced Typing is a foundational piece of Type Hints & dataclasses`,
-            `Connect this section to the python track and advanced expectations`
+            `Essential for large ML codebases`
           ],
-          example: `# Concept check: Advanced Typing
-meta = {
-    "topic": "py-typehints",
-    "section": "typing-advanced",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-typehints
-section: typing-advanced
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Advanced Typing
+          pseudoCode: `Advanced Typing
 
-Study checklist:
-  1. TypedDict for structured dicts
-  2. Literal for fixed value sets
-  3. Callable[[int, str], bool] for function types
-  4. Essential for large ML codebases
-  5. Advanced Typing is a foundational piece of Type Hints & dataclasses
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-typehints-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Type Hints & dataclasses** sits in the **python** track of the Data Science Master curriculum. Static typing, dataclasses, and modern Python data modeling.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-typehints**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Type Hints & dataclasses
-meta = {"topic_id": "py-typehints", "track": "python", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-typehints python advanced`,
-          keyPoints: [
-            `Core theory of Type Hints & dataclasses ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Type Hints & dataclasses ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-typehints-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Type Hints & dataclasses**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-typehints**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-typehints
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-typehints", "Type Hints & dataclasses")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-typehints Type`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-typehints-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Type Hints & dataclasses** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-typehints**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-typehints", "Type Hints & dataclasses")
-debug_step("section_count", 4)`,
-          output: `[py-typehints] 'Type Hints & dataclasses' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-typehints-real-world`,
-          title: `Real-World Applications`,
-          content: `**Type Hints & dataclasses** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-typehints** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Type Hints & dataclasses
-skills = ["python", "advanced", "py-typehints"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, advanced, py-typehints`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Type Hints & dataclasses to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Type Hints & dataclasses to adjacent topics in the same track
-
-Topic: Type Hints & dataclasses
-Track: python | Level: advanced`
+1. TypedDict for structured dicts
+2. Literal for fixed value sets
+3. Callable[[int, str], bool] for function types
+4. Essential for large ML codebases`
         }
       ],
       exercises: [
@@ -2004,7 +725,7 @@ print(mean([1.0, 2.0, 3.0, 4.0]))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-05`,
       references: [
         {
@@ -2051,37 +772,12 @@ print(mean([1.0, 2.0, 3.0, 4.0]))`,
         {
           id: `imports`,
           title: `Import System`,
-          content: `**Import System** — what you need to know:
+          content: `\`import module\`, \`from module import name\`, \`from package.sub import Class\`. __init__.py marks packages. Relative imports with dots.
 
-- **Core idea:** Organizing code into modules, packages, and distributing with pip.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-\`import module\`, \`from module import name\`, \`from package.sub import Class\`. __init__.py marks packages. Relative imports with dots.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Import System** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Hands-on practice:**
-
-- Run the code example below in Python or Jupyter.
-- Predict the output before executing, then compare line-by-line.
-- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- One module per logical unit
+- Avoid import * — pollutes namespace
+- Use absolute imports in packages
+- __all__ controls from module import *`,
           example: `# Standard import patterns:
 # import numpy as np
 # from sklearn.model_selection import train_test_split
@@ -2091,33 +787,19 @@ print("Organize code into focused modules")`,
             `One module per logical unit`,
             `Avoid import * — pollutes namespace`,
             `Use absolute imports in packages`,
-            `__all__ controls from module import *`,
-            `Import System is a foundational piece of Modules, Packages & pip`,
-            `Connect this section to the python track and advanced expectations`
+            `__all__ controls from module import *`
           ],
-          pseudoCode: `CONCEPT: Import System
+          pseudoCode: `Import System
 
-Study checklist:
-  1. One module per logical unit
-  2. Avoid import * — pollutes namespace
-  3. Use absolute imports in packages
-  4. __all__ controls from module import *
-  5. Import System is a foundational piece of Modules, Packages & pip
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
+1. One module per logical unit
+2. Avoid import * — pollutes namespace
+3. Use absolute imports in packages
+4. __all__ controls from module import *`
         },
         {
           id: `packages`,
           title: `Package Structure`,
-          content: `**Package Structure** — what you need to know:
-
-- **Core idea:** Organizing code into modules, packages, and distributing with pip.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-\`\`\`
+          content: `\`\`\`
 mypackage/
   __init__.py
   core.py
@@ -2127,359 +809,66 @@ mypackage/
 \`\`\`
 Use pyproject.toml for modern project config.
 
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Package Structure** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- src/ layout prevents import confusion
+- pyproject.toml replaces setup.py
+- __init__.py can expose public API
+- Namespace packages for large projects`,
           keyPoints: [
             `src/ layout prevents import confusion`,
             `pyproject.toml replaces setup.py`,
             `__init__.py can expose public API`,
-            `Namespace packages for large projects`,
-            `Package Structure is a foundational piece of Modules, Packages & pip`,
-            `Connect this section to the python track and advanced expectations`
+            `Namespace packages for large projects`
           ],
-          example: `# Concept check: Package Structure
-meta = {
-    "topic": "py-modules",
-    "section": "packages",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-modules
-section: packages
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Package Structure
+          pseudoCode: `Package Structure
 
-Study checklist:
-  1. src/ layout prevents import confusion
-  2. pyproject.toml replaces setup.py
-  3. __init__.py can expose public API
-  4. Namespace packages for large projects
-  5. Package Structure is a foundational piece of Modules, Packages & pip
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
+1. src/ layout prevents import confusion
+2. pyproject.toml replaces setup.py
+3. __init__.py can expose public API
+4. Namespace packages for large projects`
         },
         {
           id: `publishing`,
           title: `Publishing Packages`,
-          content: `**Publishing Packages** — what you need to know:
+          content: `Build with \`python -m build\`. Upload to PyPI with \`twine upload\`. Semantic versioning: MAJOR.MINOR.PATCH.
 
-- **Core idea:** Organizing code into modules, packages, and distributing with pip.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-Build with \`python -m build\`. Upload to PyPI with \`twine upload\`. Semantic versioning: MAJOR.MINOR.PATCH.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Publishing Packages** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Follow semantic versioning
+- README and LICENSE required for PyPI
+- Test with TestPyPI first
+- Pin dependencies in published packages`,
           keyPoints: [
             `Follow semantic versioning`,
             `README and LICENSE required for PyPI`,
             `Test with TestPyPI first`,
-            `Pin dependencies in published packages`,
-            `Publishing Packages is a foundational piece of Modules, Packages & pip`,
-            `Connect this section to the python track and advanced expectations`
+            `Pin dependencies in published packages`
           ],
-          example: `# Concept check: Publishing Packages
-meta = {
-    "topic": "py-modules",
-    "section": "publishing",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-modules
-section: publishing
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Publishing Packages
+          pseudoCode: `Publishing Packages
 
-Study checklist:
-  1. Follow semantic versioning
-  2. README and LICENSE required for PyPI
-  3. Test with TestPyPI first
-  4. Pin dependencies in published packages
-  5. Publishing Packages is a foundational piece of Modules, Packages & pip
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
+1. Follow semantic versioning
+2. README and LICENSE required for PyPI
+3. Test with TestPyPI first
+4. Pin dependencies in published packages`
         },
         {
           id: `stdlib`,
           title: `Essential Standard Library`,
-          content: `**Essential Standard Library** — what you need to know:
+          content: `os, sys, pathlib, json, csv, datetime, collections, itertools, functools, argparse, logging, unittest.
 
-- **Core idea:** Organizing code into modules, packages, and distributing with pip.
-- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
-- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
-
-os, sys, pathlib, json, csv, datetime, collections, itertools, functools, argparse, logging, unittest.
-
-**Why this matters:**
-
-- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
-- Mastering **Essential Standard Library** directly affects how confidently you can build, debug, and ship python projects.
-- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
-
-**Professional habits:**
-
-- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
-- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
-- Revisit this section after the exercises to confirm each habit feels automatic.
-
-**Common mistakes:**
-
-- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
-- When debugging, reduce to the smallest input that reproduces the issue.
-- Log intermediate values with their types before guessing at the fix.`,
+- Know stdlib before adding dependencies
+- pathlib over os.path
+- logging over print for production
+- argparse or click for CLI tools`,
           keyPoints: [
             `Know stdlib before adding dependencies`,
             `pathlib over os.path`,
             `logging over print for production`,
-            `argparse or click for CLI tools`,
-            `Essential Standard Library is a foundational piece of Modules, Packages & pip`,
-            `Connect this section to the python track and advanced expectations`
+            `argparse or click for CLI tools`
           ],
-          example: `# Concept check: Essential Standard Library
-meta = {
-    "topic": "py-modules",
-    "section": "stdlib",
-    "track": "python",
-    "level": "advanced",
-}
-for key, value in meta.items():
-    print(f"{key}: {value}")`,
-          output: `topic: py-modules
-section: stdlib
-track: python
-level: advanced`,
-          pseudoCode: `CONCEPT: Essential Standard Library
+          pseudoCode: `Essential Standard Library
 
-Study checklist:
-  1. Know stdlib before adding dependencies
-  2. pathlib over os.path
-  3. logging over print for production
-  4. argparse or click for CLI tools
-  5. Essential Standard Library is a foundational piece of Modules, Packages & pip
-  6. Connect this section to the python track and advanced expectations
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-modules-deep-theory`,
-          title: `Deep Theory & Concepts`,
-          content: `**Modules, Packages & pip** sits in the **python** track of the Data Science Master curriculum. Organizing code into modules, packages, and distributing with pip.
-
-**Theoretical foundation:**
-
-- Python's execution model combines bytecode interpretation with C extensions for hot paths.
-- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
-
-For **py-modules**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
-
-**At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
-
-**Study approach:**
-
-- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
-- That gap reveals what to revisit.`,
-          example: `# Concept check for Modules, Packages & pip
-meta = {"topic_id": "py-modules", "track": "python", "level": "advanced"}
-print(meta["topic_id"], meta["track"], meta["level"])`,
-          output: `py-modules python advanced`,
-          keyPoints: [
-            `Core theory of Modules, Packages & pip ties to the python track`,
-            `Connect definitions to inputs, outputs, and evaluation criteria`,
-            `Identify assumptions that break in production or at scale`,
-            `Relate this topic to prerequisites and follow-on modules`,
-            `Use paper/documentation cross-checks to validate intuition`,
-            `Sketch diagrams before implementing from memory`
-          ],
-          pseudoCode: `CONCEPT: Deep Theory & Concepts
-
-Study checklist:
-  1. Core theory of Modules, Packages & pip ties to the python track
-  2. Connect definitions to inputs, outputs, and evaluation criteria
-  3. Identify assumptions that break in production or at scale
-  4. Relate this topic to prerequisites and follow-on modules
-  5. Use paper/documentation cross-checks to validate intuition
-  6. Sketch diagrams before implementing from memory
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-modules-patterns`,
-          title: `Practical Patterns & Idioms`,
-          content: `Professionals reuse patterns that encode lessons from **Modules, Packages & pip**. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
-
-Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **py-modules**, extract a minimal working example you can paste into interviews or design docs.
-
-**Recommended workflow:**
-
-- 1. Reproduce the canonical example from earlier sections exactly.
-2. Vary one parameter at a time and log what changes.
-3. Capture results in a notebook cell or short markdown log.
-4. Promote stable patterns into shared utilities only after the second reuse.
-
-**Pattern mindset:**
-
-- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
-          example: `# Idiomatic pattern snapshot for py-modules
-from dataclasses import dataclass
-
-@dataclass(frozen=True)
-class LessonRef:
-    topic_id: str
-    title: str
-
-ref = LessonRef("py-modules", "Modules, Packages & pip")
-print(ref.topic_id, ref.title.split()[0])`,
-          output: `py-modules Modules,`,
-          keyPoints: [
-            `Start from canonical examples before abstracting helpers`,
-            `One change at a time when experimenting`,
-            `Prefer readable names over clever one-liners`,
-            `Promote patterns to shared code only after reuse`,
-            `Document invariants your pattern relies on`,
-            `Align style with python ecosystem conventions`
-          ],
-          pseudoCode: `CONCEPT: Practical Patterns & Idioms
-
-Study checklist:
-  1. Start from canonical examples before abstracting helpers
-  2. One change at a time when experimenting
-  3. Prefer readable names over clever one-liners
-  4. Promote patterns to shared code only after reuse
-  5. Document invariants your pattern relies on
-  6. Align style with python ecosystem conventions
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-modules-pitfalls`,
-          title: `Common Pitfalls & Debugging`,
-          content: `Learners working on **Modules, Packages & pip** often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
-
-When stuck on **py-modules**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
-
-**Debugging checklist:**
-
-- Verify assumptions listed in earlier sections.
-- Compare actual vs expected intermediate values.
-- Check for off-by-one errors and unit mismatches.
-- Confirm library versions match the tutorial environment.
-- Build a minimal reproducible example before asking for help.
-
-**Expert habit:**
-
-- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
-          example: `# Minimal repro template
-def debug_step(label, value):
-    print(f"[{label}] {value!r} ({type(value).__name__})")
-
-debug_step("py-modules", "Modules, Packages & pip")
-debug_step("section_count", 4)`,
-          output: `[py-modules] 'Modules, Packages & pip' (str)
-[section_count] 4`,
-          keyPoints: [
-            `Reduce to the smallest failing example`,
-            `Log intermediate values with types`,
-            `Bisect changes with git or notebook history`,
-            `Separate data bugs from logic bugs`,
-            `Record seeds, versions, and hardware context`,
-            `Fix root cause—not symptoms with silent catches`
-          ],
-          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
-
-Study checklist:
-  1. Reduce to the smallest failing example
-  2. Log intermediate values with types
-  3. Bisect changes with git or notebook history
-  4. Separate data bugs from logic bugs
-  5. Record seeds, versions, and hardware context
-  6. Fix root cause—not symptoms with silent catches
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
-        },
-        {
-          id: `py-modules-real-world`,
-          title: `Real-World Applications`,
-          content: `**Modules, Packages & pip** shows up wherever **python** skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
-
-Teams shipping features around **py-modules** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
-
-**Career narrative:**
-
-- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
-
-**Portfolio tip:**
-
-- Link this lesson to README entries and capstone modules later in the curriculum.
-- One concrete project beats ten theoretical certificates.`,
-          example: `# Portfolio bullet generator for Modules, Packages & pip
-skills = ["python", "advanced", "py-modules"]
-print("Built project applying:", ", ".join(skills))`,
-          output: `Built project applying: python, advanced, py-modules`,
-          keyPoints: [
-            ` Tie lessons to portfolio projects with measurable outcomes`,
-            `Explain tradeoffs to technical and non-technical audiences`,
-            `Plan deployment, monitoring, and maintenance early`,
-            `Document ethical and privacy implications where relevant`,
-            `Iterate with user feedback—not only offline metrics`,
-            `Connect Modules, Packages & pip to adjacent topics in the same track`
-          ],
-          pseudoCode: `CONCEPT: Real-World Applications
-
-Study checklist:
-  1.  Tie lessons to portfolio projects with measurable outcomes
-  2. Explain tradeoffs to technical and non-technical audiences
-  3. Plan deployment, monitoring, and maintenance early
-  4. Document ethical and privacy implications where relevant
-  5. Iterate with user feedback—not only offline metrics
-  6. Connect Modules, Packages & pip to adjacent topics in the same track
-
-Topic: Modules, Packages & pip
-Track: python | Level: advanced`
+1. Know stdlib before adding dependencies
+2. pathlib over os.path
+3. logging over print for production
+4. argparse or click for CLI tools`
         }
       ],
       exercises: [
@@ -2504,7 +893,7 @@ print(str(p))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 124,
+      estimatedMinutes: 25,
       module: `module-05`,
       references: [
         {

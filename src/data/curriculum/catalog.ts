@@ -54,18 +54,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 20,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `vars-intro`,
             `literals`,
             `mutability`,
-            `type-checking`,
-            `py-vars-types-deep-theory`,
-            `py-vars-types-patterns`,
-            `py-vars-types-pitfalls`,
-            `py-vars-types-real-world`
+            `type-checking`
           ],
           exerciseIds: [
             `ex-vars-1`,
@@ -80,18 +76,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `arith`,
             `compare`,
             `assign`,
-            `bitwise`,
-            `py-operators-deep-theory`,
-            `py-operators-patterns`,
-            `py-operators-pitfalls`,
-            `py-operators-real-world`
+            `bitwise`
           ],
           exerciseIds: [
             `ex-op-1`,
@@ -106,18 +98,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `str-basics`,
             `str-methods`,
             `str-format`,
-            `str-unicode`,
-            `py-strings-deep-theory`,
-            `py-strings-patterns`,
-            `py-strings-pitfalls`,
-            `py-strings-real-world`
+            `str-unicode`
           ],
           exerciseIds: [
             `ex-str-1`,
@@ -132,18 +120,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `print`,
             `input`,
             `repl`,
-            `files-intro`,
-            `py-io-deep-theory`,
-            `py-io-patterns`,
-            `py-io-pitfalls`,
-            `py-io-real-world`
+            `files-intro`
           ],
           exerciseIds: [
             `ex-io-1`,
@@ -158,18 +142,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `venv`,
             `pip`,
             `ide`,
-            `project-structure`,
-            `py-env-deep-theory`,
-            `py-env-patterns`,
-            `py-env-pitfalls`,
-            `py-env-real-world`
+            `project-structure`
           ],
           exerciseIds: [
             `ex-env-1`,
@@ -192,18 +172,14 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `if-basic`,
             `elif`,
             `ternary`,
-            `guard`,
-            `py-conditionals-deep-theory`,
-            `py-conditionals-patterns`,
-            `py-conditionals-pitfalls`,
-            `py-conditionals-real-world`
+            `guard`
           ],
           exerciseIds: [
             `ex-if-1`,
@@ -218,18 +194,14 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `for-loop`,
             `while-loop`,
             `loop-else`,
-            `nested`,
-            `py-loops-deep-theory`,
-            `py-loops-patterns`,
-            `py-loops-pitfalls`,
-            `py-loops-real-world`
+            `nested`
           ],
           exerciseIds: [
             `ex-loop-1`,
@@ -244,18 +216,14 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `def-basic`,
             `params`,
             `unpack`,
-            `pure`,
-            `py-functions-deep-theory`,
-            `py-functions-patterns`,
-            `py-functions-pitfalls`,
-            `py-functions-real-world`
+            `pure`
           ],
           exerciseIds: [
             `ex-fn-1`,
@@ -270,18 +238,14 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `legb`,
             `closures`,
             `lambda`,
-            `higher`,
-            `py-scope-deep-theory`,
-            `py-scope-patterns`,
-            `py-scope-pitfalls`,
-            `py-scope-real-world`
+            `higher`
           ],
           exerciseIds: [
             `ex-scope-1`,
@@ -296,18 +260,14 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `list-comp`,
             `dict-set-comp`,
             `generators`,
-            `iterators`,
-            `py-comprehensions-deep-theory`,
-            `py-comprehensions-patterns`,
-            `py-comprehensions-pitfalls`,
-            `py-comprehensions-real-world`
+            `iterators`
           ],
           exerciseIds: [
             `ex-comp-1`,
@@ -330,18 +290,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `list-ops`,
             `tuples`,
             `list-perf`,
-            `nested`,
-            `py-lists-deep-theory`,
-            `py-lists-patterns`,
-            `py-lists-pitfalls`,
-            `py-lists-real-world`
+            `nested`
           ],
           exerciseIds: [
             `ex-list-1`,
@@ -356,18 +312,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dict-basics`,
             `sets`,
             `defaultdict`,
-            `dict-merge`,
-            `py-dicts-deep-theory`,
-            `py-dicts-patterns`,
-            `py-dicts-pitfalls`,
-            `py-dicts-real-world`
+            `dict-merge`
           ],
           exerciseIds: [
             `ex-dict-1`,
@@ -382,18 +334,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `stack`,
             `queue`,
             `deque-features`,
-            `applications`,
-            `py-deque-deep-theory`,
-            `py-deque-patterns`,
-            `py-deque-pitfalls`,
-            `py-deque-real-world`
+            `applications`
           ],
           exerciseIds: [
             `ex-deque-1`,
@@ -408,18 +356,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `sorting`,
             `custom-sort`,
             `search`,
-            `complexity`,
-            `py-sort-search-deep-theory`,
-            `py-sort-search-patterns`,
-            `py-sort-search-pitfalls`,
-            `py-sort-search-real-world`
+            `complexity`
           ],
           exerciseIds: [
             `ex-sort-1`,
@@ -434,18 +378,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `namedtuple`,
             `chainmap`,
             `ordered`,
-            `heapq`,
-            `py-collections-deep-theory`,
-            `py-collections-patterns`,
-            `py-collections-pitfalls`,
-            `py-collections-real-world`
+            `heapq`
           ],
           exerciseIds: [
             `ex-coll-1`,
@@ -468,18 +408,14 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `class-basics`,
             `class-vs-instance`,
             `methods`,
-            `dunder`,
-            `py-classes-deep-theory`,
-            `py-classes-patterns`,
-            `py-classes-pitfalls`,
-            `py-classes-real-world`
+            `dunder`
           ],
           exerciseIds: [
             `ex-class-1`,
@@ -494,18 +430,14 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `inheritance`,
             `mro`,
             `abstract`,
-            `composition`,
-            `py-inheritance-deep-theory`,
-            `py-inheritance-patterns`,
-            `py-inheritance-pitfalls`,
-            `py-inheritance-real-world`
+            `composition`
           ],
           exerciseIds: [
             `ex-inherit-1`,
@@ -520,18 +452,14 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `naming`,
             `property`,
             `slots`,
-            `dataclass-preview`,
-            `py-encapsulation-deep-theory`,
-            `py-encapsulation-patterns`,
-            `py-encapsulation-pitfalls`,
-            `py-encapsulation-real-world`
+            `dataclass-preview`
           ],
           exerciseIds: [
             `ex-encap-1`,
@@ -546,18 +474,14 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `factory`,
             `strategy`,
             `observer`,
-            `singleton`,
-            `py-patterns-deep-theory`,
-            `py-patterns-patterns`,
-            `py-patterns-pitfalls`,
-            `py-patterns-real-world`
+            `singleton`
           ],
           exerciseIds: [
             `ex-pattern-1`,
@@ -572,18 +496,14 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `protocol`,
             `abc-vs-protocol`,
             `generic`,
-            `solid`,
-            `py-protocols-deep-theory`,
-            `py-protocols-patterns`,
-            `py-protocols-pitfalls`,
-            `py-protocols-real-world`
+            `solid`
           ],
           exerciseIds: [
             `ex-proto-1`,
@@ -606,18 +526,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `decorator-basics`,
             `functools-wraps`,
             `param-decorator`,
-            `class-decorator`,
-            `py-decorators-deep-theory`,
-            `py-decorators-patterns`,
-            `py-decorators-pitfalls`,
-            `py-decorators-real-world`
+            `class-decorator`
           ],
           exerciseIds: [
             `ex-dec-1`,
@@ -632,18 +548,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `yield`,
             `yield-from`,
             `gen-expr`,
-            `infinite`,
-            `py-generators-deep-theory`,
-            `py-generators-patterns`,
-            `py-generators-pitfalls`,
-            `py-generators-real-world`
+            `infinite`
           ],
           exerciseIds: [
             `ex-gen-1`,
@@ -658,18 +570,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `with`,
             `contextlib`,
             `file-context`,
-            `async-context`,
-            `py-context-deep-theory`,
-            `py-context-patterns`,
-            `py-context-pitfalls`,
-            `py-context-real-world`
+            `async-context`
           ],
           exerciseIds: [
             `ex-ctx-1`,
@@ -684,18 +592,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `hints`,
             `dataclass`,
             `pydantic`,
-            `typing-advanced`,
-            `py-typehints-deep-theory`,
-            `py-typehints-patterns`,
-            `py-typehints-pitfalls`,
-            `py-typehints-real-world`
+            `typing-advanced`
           ],
           exerciseIds: [
             `ex-type-1`,
@@ -710,18 +614,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `imports`,
             `packages`,
             `publishing`,
-            `stdlib`,
-            `py-modules-deep-theory`,
-            `py-modules-patterns`,
-            `py-modules-pitfalls`,
-            `py-modules-real-world`
+            `stdlib`
           ],
           exerciseIds: [
             `ex-mod-1`,
@@ -744,18 +644,14 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `sets-intro`,
             `sets-ops`,
             `sets-functions`,
-            `sets-counting`,
-            `math-sets-deep-theory`,
-            `math-sets-patterns`,
-            `math-sets-pitfalls`,
-            `math-sets-real-world`
+            `sets-counting`
           ],
           exerciseIds: [
             `ex-sets-1`,
@@ -770,18 +666,14 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `fn-basics`,
             `fn-types`,
             `fn-compose`,
-            `fn-transforms`,
-            `math-functions-deep-theory`,
-            `math-functions-patterns`,
-            `math-functions-pitfalls`,
-            `math-functions-real-world`
+            `fn-transforms`
           ],
           exerciseIds: [
             `ex-fn-1`,
@@ -796,18 +688,14 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `log-def`,
             `log-rules`,
             `exp-models`,
-            `log-ml`,
-            `math-logarithms-deep-theory`,
-            `math-logarithms-patterns`,
-            `math-logarithms-pitfalls`,
-            `math-logarithms-real-world`
+            `log-ml`
           ],
           exerciseIds: [
             `ex-log-1`,
@@ -822,18 +710,14 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `seq-arith`,
             `seq-geom`,
             `seq-series`,
-            `seq-ml`,
-            `math-sequences-deep-theory`,
-            `math-sequences-patterns`,
-            `math-sequences-pitfalls`,
-            `math-sequences-real-world`
+            `seq-ml`
           ],
           exerciseIds: [
             `ex-seq-1`,
@@ -848,18 +732,14 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `cx-basics`,
             `cx-polar`,
             `cx-ops`,
-            `cx-fft`,
-            `math-complex-deep-theory`,
-            `math-complex-patterns`,
-            `math-complex-pitfalls`,
-            `math-complex-real-world`
+            `cx-fft`
           ],
           exerciseIds: [
             `ex-cx-1`,
@@ -882,18 +762,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `vec-basics`,
             `vec-norm`,
             `vec-span`,
-            `vec-ml`,
-            `math-vectors-deep-theory`,
-            `math-vectors-patterns`,
-            `math-vectors-pitfalls`,
-            `math-vectors-real-world`
+            `vec-ml`
           ],
           exerciseIds: [
             `ex-vec-1`,
@@ -908,18 +784,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dot-def`,
             `dot-geom`,
             `cross-3d`,
-            `dot-attn`,
-            `math-dot-cross-deep-theory`,
-            `math-dot-cross-patterns`,
-            `math-dot-cross-pitfalls`,
-            `math-dot-cross-real-world`
+            `dot-attn`
           ],
           exerciseIds: [
             `ex-dot-1`,
@@ -934,18 +806,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mat-basics`,
             `mat-mv`,
             `mat-special`,
-            `mat-data`,
-            `math-matrices-deep-theory`,
-            `math-matrices-patterns`,
-            `math-matrices-pitfalls`,
-            `math-matrices-real-world`
+            `mat-data`
           ],
           exerciseIds: [
             `ex-mat-1`,
@@ -960,18 +828,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mm-def`,
             `mm-prop`,
             `mm-inv-det`,
-            `mm-nn`,
-            `math-matrix-ops-deep-theory`,
-            `math-matrix-ops-patterns`,
-            `math-matrix-ops-pitfalls`,
-            `math-matrix-ops-real-world`
+            `mm-nn`
           ],
           exerciseIds: [
             `ex-mm-1`,
@@ -986,18 +850,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ls-form`,
             `ls-elim`,
             `ls-lsq`,
-            `ls-rank`,
-            `math-linear-systems-deep-theory`,
-            `math-linear-systems-patterns`,
-            `math-linear-systems-pitfalls`,
-            `math-linear-systems-real-world`
+            `ls-rank`
           ],
           exerciseIds: [
             `ex-ls-1`,
@@ -1020,18 +880,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `det-def`,
             `det-geom`,
             `det-prop`,
-            `det-ml`,
-            `math-determinants-deep-theory`,
-            `math-determinants-patterns`,
-            `math-determinants-pitfalls`,
-            `math-determinants-real-world`
+            `det-ml`
           ],
           exerciseIds: [
             `ex-det-1`,
@@ -1046,18 +902,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `inv-def`,
             `inv-2x2`,
             `inv-pinv`,
-            `inv-ml`,
-            `math-inverse-deep-theory`,
-            `math-inverse-patterns`,
-            `math-inverse-pitfalls`,
-            `math-inverse-real-world`
+            `inv-ml`
           ],
           exerciseIds: [
             `ex-inv-1`,
@@ -1072,18 +924,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `eig-def`,
             `eig-diag`,
             `eig-pca`,
-            `eig-markov`,
-            `math-eigen-deep-theory`,
-            `math-eigen-patterns`,
-            `math-eigen-pitfalls`,
-            `math-eigen-real-world`
+            `eig-markov`
           ],
           exerciseIds: [
             `ex-eig-1`,
@@ -1098,18 +946,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `svd-def`,
             `svd-lowrank`,
             `svd-pinv`,
-            `svd-ml`,
-            `math-svd-deep-theory`,
-            `math-svd-patterns`,
-            `math-svd-pitfalls`,
-            `math-svd-real-world`
+            `svd-ml`
           ],
           exerciseIds: [
             `ex-svd-1`,
@@ -1124,18 +968,14 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pca-goal`,
             `pca-proj`,
             `pca-kernel`,
-            `pca-practice`,
-            `math-pca-math-deep-theory`,
-            `math-pca-math-patterns`,
-            `math-pca-math-pitfalls`,
-            `math-pca-math-real-world`
+            `pca-practice`
           ],
           exerciseIds: [
             `ex-pca-1`,
@@ -1158,18 +998,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `lim-def`,
             `lim-rules`,
             `lim-cont`,
-            `lim-ml`,
-            `math-limits-deep-theory`,
-            `math-limits-patterns`,
-            `math-limits-pitfalls`,
-            `math-limits-real-world`
+            `lim-ml`
           ],
           exerciseIds: [
             `ex-lim-1`,
@@ -1184,18 +1020,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `der-def`,
             `der-interp`,
             `der-numeric`,
-            `der-ml`,
-            `math-derivatives-deep-theory`,
-            `math-derivatives-patterns`,
-            `math-derivatives-pitfalls`,
-            `math-derivatives-real-world`
+            `der-ml`
           ],
           exerciseIds: [
             `ex-der-1`,
@@ -1210,18 +1042,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dr-power`,
             `dr-product`,
             `dr-chain`,
-            `dr-common`,
-            `math-derivative-rules-deep-theory`,
-            `math-derivative-rules-patterns`,
-            `math-derivative-rules-pitfalls`,
-            `math-derivative-rules-real-world`
+            `dr-common`
           ],
           exerciseIds: [
             `ex-dr-1`,
@@ -1236,18 +1064,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `tay-def`,
             `tay-approx`,
             `tay-multivar`,
-            `tay-ml`,
-            `math-taylor-deep-theory`,
-            `math-taylor-patterns`,
-            `math-taylor-pitfalls`,
-            `math-taylor-real-world`
+            `tay-ml`
           ],
           exerciseIds: [
             `ex-tay-1`,
@@ -1262,18 +1086,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `int-def`,
             `int-rules`,
             `int-prob`,
-            `int-mc`,
-            `math-integrals-deep-theory`,
-            `math-integrals-patterns`,
-            `math-integrals-pitfalls`,
-            `math-integrals-real-world`
+            `int-mc`
           ],
           exerciseIds: [
             `ex-int-1`,
@@ -1296,18 +1116,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pd-def`,
             `pd-geom`,
             `pd-higher`,
-            `pd-ml`,
-            `math-partial-deriv-deep-theory`,
-            `math-partial-deriv-patterns`,
-            `math-partial-deriv-pitfalls`,
-            `math-partial-deriv-real-world`
+            `pd-ml`
           ],
           exerciseIds: [
             `ex-pd-1`,
@@ -1322,18 +1138,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `grad-def`,
             `grad-descent`,
             `grad-proj`,
-            `grad-numerical`,
-            `math-gradient-deep-theory`,
-            `math-gradient-patterns`,
-            `math-gradient-pitfalls`,
-            `math-gradient-real-world`
+            `grad-numerical`
           ],
           exerciseIds: [
             `ex-grad-1`,
@@ -1348,18 +1160,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `cr-jacobian`,
             `cr-backprop`,
             `cr-vector`,
-            `cr-vanish`,
-            `math-chain-rule-deep-theory`,
-            `math-chain-rule-patterns`,
-            `math-chain-rule-pitfalls`,
-            `math-chain-rule-real-world`
+            `cr-vanish`
           ],
           exerciseIds: [
             `ex-cr-1`,
@@ -1374,18 +1182,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `jh-hessian`,
             `jh-newton`,
             `jh-jacobian-apps`,
-            `jh-gauss-newton`,
-            `math-jacobian-hessian-deep-theory`,
-            `math-jacobian-hessian-patterns`,
-            `math-jacobian-hessian-pitfalls`,
-            `math-jacobian-hessian-real-world`
+            `jh-gauss-newton`
           ],
           exerciseIds: [
             `ex-jh-1`,
@@ -1400,18 +1204,14 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mvo-critical`,
             `mvo-convex`,
             `mvo-saddle`,
-            `mvo-global`,
-            `math-multivariate-opt-deep-theory`,
-            `math-multivariate-opt-patterns`,
-            `math-multivariate-opt-pitfalls`,
-            `math-multivariate-opt-real-world`
+            `mvo-global`
           ],
           exerciseIds: [
             `ex-mvo-1`,
@@ -1434,18 +1234,14 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pb-axioms`,
             `pb-count`,
             `pb-indep`,
-            `pb-ml`,
-            `math-prob-basics-deep-theory`,
-            `math-prob-basics-patterns`,
-            `math-prob-basics-pitfalls`,
-            `math-prob-basics-real-world`
+            `pb-ml`
           ],
           exerciseIds: [
             `ex-pb-1`,
@@ -1460,18 +1256,14 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `cb-cond`,
             `cb-bayes`,
             `cb-odds`,
-            `cb-ml`,
-            `math-conditional-bayes-deep-theory`,
-            `math-conditional-bayes-patterns`,
-            `math-conditional-bayes-pitfalls`,
-            `math-conditional-bayes-real-world`
+            `cb-ml`
           ],
           exerciseIds: [
             `ex-cb-1`,
@@ -1486,18 +1278,14 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `rv-def`,
             `rv-expect`,
             `rv-transform`,
-            `rv-ml`,
-            `math-random-vars-deep-theory`,
-            `math-random-vars-patterns`,
-            `math-random-vars-pitfalls`,
-            `math-random-vars-real-world`
+            `rv-ml`
           ],
           exerciseIds: [
             `ex-rv-1`,
@@ -1512,18 +1300,14 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dist-disc`,
             `dist-cont`,
             `dist-clt`,
-            `dist-ml`,
-            `math-distributions-deep-theory`,
-            `math-distributions-patterns`,
-            `math-distributions-pitfalls`,
-            `math-distributions-real-world`
+            `dist-ml`
           ],
           exerciseIds: [
             `ex-dist-1`,
@@ -1538,18 +1322,14 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `jm-joint`,
             `jm-indep`,
             `jm-cov`,
-            `jm-ml`,
-            `math-joint-marginal-deep-theory`,
-            `math-joint-marginal-patterns`,
-            `math-joint-marginal-pitfalls`,
-            `math-joint-marginal-real-world`
+            `jm-ml`
           ],
           exerciseIds: [
             `ex-jm-1`,
@@ -1572,18 +1352,14 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ds-central`,
             `ds-spread`,
             `ds-percentile`,
-            `ds-eda`,
-            `math-descriptive-deep-theory`,
-            `math-descriptive-patterns`,
-            `math-descriptive-pitfalls`,
-            `math-descriptive-real-world`
+            `ds-eda`
           ],
           exerciseIds: [
             `ex-ds-1`,
@@ -1598,18 +1374,14 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `sc-sample`,
             `sc-se`,
             `sc-clt`,
-            `sc-ml`,
-            `math-sampling-clt-deep-theory`,
-            `math-sampling-clt-patterns`,
-            `math-sampling-clt-pitfalls`,
-            `math-sampling-clt-real-world`
+            `sc-ml`
           ],
           exerciseIds: [
             `ex-sc-1`,
@@ -1624,18 +1396,14 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ht-framework`,
             `ht-tests`,
             `ht-ab`,
-            `ht-ml`,
-            `math-hypothesis-deep-theory`,
-            `math-hypothesis-patterns`,
-            `math-hypothesis-pitfalls`,
-            `math-hypothesis-real-world`
+            `ht-ml`
           ],
           exerciseIds: [
             `ex-ht-1`,
@@ -1650,18 +1418,14 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ci-mean`,
             `ci-prop`,
             `ci-diff`,
-            `ci-ml`,
-            `math-confidence-deep-theory`,
-            `math-confidence-patterns`,
-            `math-confidence-pitfalls`,
-            `math-confidence-real-world`
+            `ci-ml`
           ],
           exerciseIds: [
             `ex-ci-1`,
@@ -1676,18 +1440,14 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `reg-ols`,
             `reg-assump`,
             `reg-infer`,
-            `reg-ml`,
-            `math-regression-math-deep-theory`,
-            `math-regression-math-patterns`,
-            `math-regression-math-pitfalls`,
-            `math-regression-math-real-world`
+            `reg-ml`
           ],
           exerciseIds: [
             `ex-reg-1`,
@@ -1710,18 +1470,14 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `cvx-sets`,
             `cvx-func`,
             `cvx-problems`,
-            `cvx-ml`,
-            `math-convex-deep-theory`,
-            `math-convex-patterns`,
-            `math-convex-pitfalls`,
-            `math-convex-real-world`
+            `cvx-ml`
           ],
           exerciseIds: [
             `ex-cvx-1`,
@@ -1736,18 +1492,14 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gd-conv`,
             `gd-momentum`,
             `gd-adaptive`,
-            `gd-sgd`,
-            `math-gradient-descent-math-deep-theory`,
-            `math-gradient-descent-math-patterns`,
-            `math-gradient-descent-math-pitfalls`,
-            `math-gradient-descent-math-real-world`
+            `gd-sgd`
           ],
           exerciseIds: [
             `ex-gd-1`,
@@ -1762,18 +1514,14 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `lag-eq`,
             `lag-ineq`,
             `lag-dual`,
-            `lag-ml`,
-            `math-lagrange-deep-theory`,
-            `math-lagrange-patterns`,
-            `math-lagrange-pitfalls`,
-            `math-lagrange-real-world`
+            `lag-ml`
           ],
           exerciseIds: [
             `ex-lag-1`,
@@ -1788,18 +1536,14 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ent-def`,
             `ent-ce`,
             `ent-mi`,
-            `ent-ml`,
-            `math-entropy-math-deep-theory`,
-            `math-entropy-math-patterns`,
-            `math-entropy-math-pitfalls`,
-            `math-entropy-math-real-world`
+            `ent-ml`
           ],
           exerciseIds: [
             `ex-ent-1`,
@@ -1814,18 +1558,14 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mle-def`,
             `kl-mle`,
             `mle-prop`,
-            `mle-ml`,
-            `math-kl-mle-deep-theory`,
-            `math-kl-mle-patterns`,
-            `math-kl-mle-pitfalls`,
-            `math-kl-mle-real-world`
+            `mle-ml`
           ],
           exerciseIds: [
             `ex-mle-1`,
@@ -1848,18 +1588,14 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `create`,
             `dtype`,
             `attrs`,
-            `vs-list`,
-            `np-arrays-deep-theory`,
-            `np-arrays-patterns`,
-            `np-arrays-pitfalls`,
-            `np-arrays-real-world`
+            `vs-list`
           ],
           exerciseIds: [
             `ex-np-1`,
@@ -1874,18 +1610,14 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `slicing`,
             `boolean`,
             `broadcast`,
-            `vectorize`,
-            `np-indexing-deep-theory`,
-            `np-indexing-patterns`,
-            `np-indexing-pitfalls`,
-            `np-indexing-real-world`
+            `vectorize`
           ],
           exerciseIds: [
             `ex-np-idx-1`,
@@ -1900,18 +1632,14 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `matmul`,
             `linalg`,
             `norm`,
-            `applications`,
-            `np-linalg-deep-theory`,
-            `np-linalg-patterns`,
-            `np-linalg-pitfalls`,
-            `np-linalg-real-world`
+            `applications`
           ],
           exerciseIds: [
             `ex-linalg-1`,
@@ -1926,18 +1654,14 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `rng`,
             `stats`,
             `shuffle`,
-            `distributions`,
-            `np-random-deep-theory`,
-            `np-random-patterns`,
-            `np-random-pitfalls`,
-            `np-random-real-world`
+            `distributions`
           ],
           exerciseIds: [
             `ex-rand-1`,
@@ -1952,18 +1676,14 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `vectorize`,
             `memory`,
             `einsum`,
-            `numba`,
-            `np-perf-deep-theory`,
-            `np-perf-patterns`,
-            `np-perf-pitfalls`,
-            `np-perf-real-world`
+            `numba`
           ],
           exerciseIds: [
             `ex-perf-1`,
@@ -1986,18 +1706,14 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `series`,
             `dataframe`,
             `selection`,
-            `dtypes`,
-            `pd-dataframes-deep-theory`,
-            `pd-dataframes-patterns`,
-            `pd-dataframes-pitfalls`,
-            `pd-dataframes-real-world`
+            `dtypes`
           ],
           exerciseIds: [
             `ex-pd-1`,
@@ -2012,18 +1728,14 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `boolean`,
             `query`,
             `assign`,
-            `sort`,
-            `pd-indexing-deep-theory`,
-            `pd-indexing-patterns`,
-            `pd-indexing-pitfalls`,
-            `pd-indexing-real-world`
+            `sort`
           ],
           exerciseIds: [
             `ex-pd-idx-1`,
@@ -2038,18 +1750,14 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `groupby`,
             `agg`,
             `pivot`,
-            `window`,
-            `pd-groupby-deep-theory`,
-            `pd-groupby-patterns`,
-            `pd-groupby-pitfalls`,
-            `pd-groupby-real-world`
+            `window`
           ],
           exerciseIds: [
             `ex-gb-1`,
@@ -2064,18 +1772,14 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `merge`,
             `concat`,
             `reshape`,
-            `join-index`,
-            `pd-merge-deep-theory`,
-            `pd-merge-patterns`,
-            `pd-merge-pitfalls`,
-            `pd-merge-real-world`
+            `join-index`
           ],
           exerciseIds: [
             `ex-merge-1`,
@@ -2090,18 +1794,14 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `missing`,
             `datetime`,
             `tz`,
-            `ts-features`,
-            `pd-missing-deep-theory`,
-            `pd-missing-patterns`,
-            `pd-missing-pitfalls`,
-            `pd-missing-real-world`
+            `ts-features`
           ],
           exerciseIds: [
             `ex-miss-1`,
@@ -2124,18 +1824,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pyplot`,
             `oo-api`,
             `styles`,
-            `anatomy`,
-            `viz-matplotlib-deep-theory`,
-            `viz-matplotlib-patterns`,
-            `viz-matplotlib-pitfalls`,
-            `viz-matplotlib-real-world`
+            `anatomy`
           ],
           exerciseIds: [
             `ex-mpl-1`,
@@ -2150,18 +1846,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `distplot`,
             `relplot`,
             `catplot`,
-            `heatmap`,
-            `viz-seaborn-deep-theory`,
-            `viz-seaborn-patterns`,
-            `viz-seaborn-pitfalls`,
-            `viz-seaborn-real-world`
+            `heatmap`
           ],
           exerciseIds: [
             `ex-sns-1`,
@@ -2176,18 +1868,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `plotly-express`,
             `plotly-graph`,
             `dash`,
-            `when`,
-            `viz-plotly-deep-theory`,
-            `viz-plotly-patterns`,
-            `viz-plotly-pitfalls`,
-            `viz-plotly-real-world`
+            `when`
           ],
           exerciseIds: [
             `ex-plotly-1`,
@@ -2202,18 +1890,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `chart-selection`,
             `color`,
             `storytelling`,
-            `eda-workflow`,
-            `viz-design-deep-theory`,
-            `viz-design-patterns`,
-            `viz-design-pitfalls`,
-            `viz-design-real-world`
+            `eda-workflow`
           ],
           exerciseIds: [
             `ex-design-1`,
@@ -2228,18 +1912,14 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `geopandas`,
             `network`,
             `ml-viz`,
-            `tools`,
-            `viz-specialized-deep-theory`,
-            `viz-specialized-patterns`,
-            `viz-specialized-pitfalls`,
-            `viz-specialized-real-world`
+            `tools`
           ],
           exerciseIds: [
             `ex-spec-1`,
@@ -2262,18 +1942,14 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `vectors`,
             `matrices`,
             `eigen`,
-            `svd`,
-            `ml-linear-algebra-deep-theory`,
-            `ml-linear-algebra-patterns`,
-            `ml-linear-algebra-pitfalls`,
-            `ml-linear-algebra-real-world`
+            `svd`
           ],
           exerciseIds: [
             `ex-la-1`,
@@ -2288,18 +1964,14 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `derivatives`,
             `chain-rule`,
             `loss-gradients`,
-            `jacobian`,
-            `ml-calculus-deep-theory`,
-            `ml-calculus-patterns`,
-            `ml-calculus-pitfalls`,
-            `ml-calculus-real-world`
+            `jacobian`
           ],
           exerciseIds: [
             `ex-calc-1`,
@@ -2314,18 +1986,14 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `basics`,
             `distributions`,
             `expectation`,
-            `mle`,
-            `ml-probability-deep-theory`,
-            `ml-probability-patterns`,
-            `ml-probability-pitfalls`,
-            `ml-probability-real-world`
+            `mle`
           ],
           exerciseIds: [
             `ex-prob-1`,
@@ -2340,18 +2008,14 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `entropy`,
             `cross-entropy`,
             `kl`,
-            `mutual-info`,
-            `ml-info-theory-deep-theory`,
-            `ml-info-theory-patterns`,
-            `ml-info-theory-pitfalls`,
-            `ml-info-theory-real-world`
+            `mutual-info`
           ],
           exerciseIds: [
             `ex-info-1`,
@@ -2366,18 +2030,14 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gd`,
             `variants`,
             `convex`,
-            `regularization`,
-            `ml-optimization-deep-theory`,
-            `ml-optimization-patterns`,
-            `ml-optimization-pitfalls`,
-            `ml-optimization-real-world`
+            `regularization`
           ],
           exerciseIds: [
             `ex-opt-1`,
@@ -2400,18 +2060,14 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pipeline`,
             `split`,
             `preprocessing`,
-            `baseline`,
-            `ml-workflow-deep-theory`,
-            `ml-workflow-patterns`,
-            `ml-workflow-pitfalls`,
-            `ml-workflow-real-world`
+            `baseline`
           ],
           exerciseIds: [
             `ex-split-1`,
@@ -2426,18 +2082,14 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `linear-reg`,
             `logistic`,
             `sigmoid`,
-            `interpret`,
-            `ml-linear-deep-theory`,
-            `ml-linear-patterns`,
-            `ml-linear-pitfalls`,
-            `ml-linear-real-world`
+            `interpret`
           ],
           exerciseIds: [
             `ex-lr-1`,
@@ -2452,18 +2104,14 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dt`,
             `rf`,
             `hyperparams`,
-            `when`,
-            `ml-trees-deep-theory`,
-            `ml-trees-patterns`,
-            `ml-trees-pitfalls`,
-            `ml-trees-real-world`
+            `when`
           ],
           exerciseIds: [
             `ex-tree-1`,
@@ -2478,18 +2126,14 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `classification`,
             `roc`,
             `regression`,
-            `confusion`,
-            `ml-metrics-deep-theory`,
-            `ml-metrics-patterns`,
-            `ml-metrics-pitfalls`,
-            `ml-metrics-real-world`
+            `confusion`
           ],
           exerciseIds: [
             `ex-met-1`,
@@ -2504,18 +2148,14 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `kfold`,
             `gridsearch`,
             `pipeline-cv`,
-            `nested`,
-            `ml-cv-deep-theory`,
-            `ml-cv-patterns`,
-            `ml-cv-pitfalls`,
-            `ml-cv-real-world`
+            `nested`
           ],
           exerciseIds: [
             `ex-cv-1`,
@@ -2538,18 +2178,14 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `poly`,
             `ridge-lasso`,
             `assumptions`,
-            `robust`,
-            `ml-regression-deep-theory`,
-            `ml-regression-patterns`,
-            `ml-regression-pitfalls`,
-            `ml-regression-real-world`
+            `robust`
           ],
           exerciseIds: [
             `ex-reg-1`,
@@ -2564,18 +2200,14 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `knn`,
             `naive-bayes`,
             `multiclass`,
-            `imbalanced`,
-            `ml-classification-deep-theory`,
-            `ml-classification-patterns`,
-            `ml-classification-pitfalls`,
-            `ml-classification-real-world`
+            `imbalanced`
           ],
           exerciseIds: [
             `ex-clf-1`,
@@ -2590,18 +2222,14 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `svm-linear`,
             `kernel`,
             `svc-params`,
-            `svr`,
-            `ml-svm-deep-theory`,
-            `ml-svm-patterns`,
-            `ml-svm-pitfalls`,
-            `ml-svm-real-world`
+            `svr`
           ],
           exerciseIds: [
             `ex-svm-1`,
@@ -2616,18 +2244,14 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gbm`,
             `xgboost`,
             `lightgbm`,
-            `tuning-gbm`,
-            `ml-boosting-deep-theory`,
-            `ml-boosting-patterns`,
-            `ml-boosting-pitfalls`,
-            `ml-boosting-real-world`
+            `tuning-gbm`
           ],
           exerciseIds: [
             `ex-xgb-1`,
@@ -2642,18 +2266,14 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `bagging`,
             `voting`,
             `blending`,
-            `diversity`,
-            `ml-ensemble-deep-theory`,
-            `ml-ensemble-patterns`,
-            `ml-ensemble-pitfalls`,
-            `ml-ensemble-real-world`
+            `diversity`
           ],
           exerciseIds: [
             `ex-ens-1`,
@@ -2676,18 +2296,14 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `kmeans`,
             `dbscan`,
             `hierarchical`,
-            `eval-cluster`,
-            `ml-clustering-deep-theory`,
-            `ml-clustering-patterns`,
-            `ml-clustering-pitfalls`,
-            `ml-clustering-real-world`
+            `eval-cluster`
           ],
           exerciseIds: [
             `ex-km-1`,
@@ -2702,18 +2318,14 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pca`,
             `tsne`,
             `lda`,
-            `autoencoder`,
-            `ml-dimred-deep-theory`,
-            `ml-dimred-patterns`,
-            `ml-dimred-pitfalls`,
-            `ml-dimred-real-world`
+            `autoencoder`
           ],
           exerciseIds: [
             `ex-pca-1`,
@@ -2728,18 +2340,14 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `isolation`,
             `lof`,
             `oneclass`,
-            `applications`,
-            `ml-anomaly-deep-theory`,
-            `ml-anomaly-patterns`,
-            `ml-anomaly-pitfalls`,
-            `ml-anomaly-real-world`
+            `applications`
           ],
           exerciseIds: [
             `ex-anom-1`,
@@ -2754,18 +2362,14 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `apriori`,
             `metrics`,
             `mlxtend`,
-            `applications`,
-            `ml-association-deep-theory`,
-            `ml-association-patterns`,
-            `ml-association-pitfalls`,
-            `ml-association-real-world`
+            `applications`
           ],
           exerciseIds: [
             `ex-assoc-1`,
@@ -2780,18 +2384,14 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gmm`,
             `em`,
             `vs-kmeans`,
-            `applications-gmm`,
-            `ml-gmm-deep-theory`,
-            `ml-gmm-patterns`,
-            `ml-gmm-pitfalls`,
-            `ml-gmm-real-world`
+            `applications-gmm`
           ],
           exerciseIds: [
             `ex-gmm-1`,
@@ -2814,18 +2414,14 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `scaling`,
             `encoding`,
             `binning`,
-            `datetime-fe`,
-            `ml-scaling-deep-theory`,
-            `ml-scaling-patterns`,
-            `ml-scaling-pitfalls`,
-            `ml-scaling-real-world`
+            `datetime-fe`
           ],
           exerciseIds: [
             `ex-scale-1`,
@@ -2840,18 +2436,14 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `filter`,
             `wrapper`,
             `embedded`,
-            `importance`,
-            `ml-feature-sel-deep-theory`,
-            `ml-feature-sel-patterns`,
-            `ml-feature-sel-pitfalls`,
-            `ml-feature-sel-real-world`
+            `importance`
           ],
           exerciseIds: [
             `ex-fsel-1`,
@@ -2866,18 +2458,14 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `grid`,
             `random`,
             `optuna`,
-            `avoid-leakage`,
-            `ml-hyperparam-deep-theory`,
-            `ml-hyperparam-patterns`,
-            `ml-hyperparam-pitfalls`,
-            `ml-hyperparam-real-world`
+            `avoid-leakage`
           ],
           exerciseIds: [
             `ex-hp-1`,
@@ -2892,18 +2480,14 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `tradeoff`,
             `learning-curves`,
             `regularization-bv`,
-            `double-descent`,
-            `ml-bias-variance-deep-theory`,
-            `ml-bias-variance-patterns`,
-            `ml-bias-variance-pitfalls`,
-            `ml-bias-variance-real-world`
+            `double-descent`
           ],
           exerciseIds: [
             `ex-bv-1`,
@@ -2918,18 +2502,14 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `shap`,
             `lime`,
             `global`,
-            `fairness`,
-            `ml-interpret-deep-theory`,
-            `ml-interpret-patterns`,
-            `ml-interpret-pitfalls`,
-            `ml-interpret-real-world`
+            `fairness`
           ],
           exerciseIds: [
             `ex-shap-1`,
@@ -2952,18 +2532,14 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `perceptron`,
             `mlp`,
             `forward`,
-            `capacity`,
-            `dl-nn-basics-deep-theory`,
-            `dl-nn-basics-patterns`,
-            `dl-nn-basics-pitfalls`,
-            `dl-nn-basics-real-world`
+            `capacity`
           ],
           exerciseIds: [
             `ex-nn-1`,
@@ -2978,18 +2554,14 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `relu`,
             `sigmoid-tanh`,
             `softmax`,
-            `modern`,
-            `dl-activations-deep-theory`,
-            `dl-activations-patterns`,
-            `dl-activations-pitfalls`,
-            `dl-activations-real-world`
+            `modern`
           ],
           exerciseIds: [
             `ex-act-1`,
@@ -3004,18 +2576,14 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mse`,
             `ce`,
             `multi-task`,
-            `monitor`,
-            `dl-loss-deep-theory`,
-            `dl-loss-patterns`,
-            `dl-loss-pitfalls`,
-            `dl-loss-real-world`
+            `monitor`
           ],
           exerciseIds: [
             `ex-loss-1`,
@@ -3030,18 +2598,14 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `concept`,
             `manual`,
             `autograd`,
-            `vanishing`,
-            `dl-backprop-deep-theory`,
-            `dl-backprop-patterns`,
-            `dl-backprop-pitfalls`,
-            `dl-backprop-real-world`
+            `vanishing`
           ],
           exerciseIds: [
             `ex-bp-1`,
@@ -3056,18 +2620,14 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `init`,
             `dropout`,
             `batchnorm`,
-            `early-stop`,
-            `dl-init-reg-deep-theory`,
-            `dl-init-reg-patterns`,
-            `dl-init-reg-pitfalls`,
-            `dl-init-reg-real-world`
+            `early-stop`
           ],
           exerciseIds: [
             `ex-init-1`,
@@ -3090,18 +2650,14 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `tensor-basics`,
             `ops`,
             `numpy-bridge`,
-            `device`,
-            `pt-tensors-deep-theory`,
-            `pt-tensors-patterns`,
-            `pt-tensors-pitfalls`,
-            `pt-tensors-real-world`
+            `device`
           ],
           exerciseIds: [
             `ex-pt-1`,
@@ -3116,18 +2672,14 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `grad`,
             `graph`,
             `leaf`,
-            `higher`,
-            `pt-autograd-deep-theory`,
-            `pt-autograd-patterns`,
-            `pt-autograd-pitfalls`,
-            `pt-autograd-real-world`
+            `higher`
           ],
           exerciseIds: [
             `ex-ag-1`,
@@ -3142,18 +2694,14 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `module`,
             `layers`,
             `loss-opt`,
-            `save`,
-            `pt-module-deep-theory`,
-            `pt-module-patterns`,
-            `pt-module-pitfalls`,
-            `pt-module-real-world`
+            `save`
           ],
           exerciseIds: [
             `ex-mod-1`,
@@ -3168,18 +2716,14 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dataset`,
             `loop`,
             `transforms`,
-            `scheduler`,
-            `pt-training-deep-theory`,
-            `pt-training-patterns`,
-            `pt-training-pitfalls`,
-            `pt-training-real-world`
+            `scheduler`
           ],
           exerciseIds: [
             `ex-train-1`,
@@ -3194,18 +2738,14 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `cuda`,
             `amp`,
             `compile`,
-            `distributed`,
-            `pt-gpu-deep-theory`,
-            `pt-gpu-patterns`,
-            `pt-gpu-pitfalls`,
-            `pt-gpu-real-world`
+            `distributed`
           ],
           exerciseIds: [
             `ex-gpu-1`,
@@ -3228,18 +2768,14 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `conv2d`,
             `pooling`,
             `receptive`,
-            `cnn-arch`,
-            `dl-conv-deep-theory`,
-            `dl-conv-patterns`,
-            `dl-conv-pitfalls`,
-            `dl-conv-real-world`
+            `cnn-arch`
           ],
           exerciseIds: [
             `ex-conv-1`,
@@ -3254,18 +2790,14 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `vgg`,
             `resnet`,
             `modern`,
-            `torchvision`,
-            `dl-cnn-arch-deep-theory`,
-            `dl-cnn-arch-patterns`,
-            `dl-cnn-arch-pitfalls`,
-            `dl-cnn-arch-real-world`
+            `torchvision`
           ],
           exerciseIds: [
             `ex-res-1`,
@@ -3280,18 +2812,14 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `strategy`,
             `finetune`,
             `domain`,
-            `hub`,
-            `dl-transfer-deep-theory`,
-            `dl-transfer-patterns`,
-            `dl-transfer-pitfalls`,
-            `dl-transfer-real-world`
+            `hub`
           ],
           exerciseIds: [
             `ex-tl-1`,
@@ -3306,18 +2834,14 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `metrics-det`,
             `rcnn`,
             `yolo`,
-            `tools`,
-            `dl-detection-deep-theory`,
-            `dl-detection-patterns`,
-            `dl-detection-pitfalls`,
-            `dl-detection-real-world`
+            `tools`
           ],
           exerciseIds: [
             `ex-det-1`,
@@ -3332,18 +2856,14 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `semantic`,
             `instance`,
             `unet`,
-            `metrics-seg`,
-            `dl-segmentation-deep-theory`,
-            `dl-segmentation-patterns`,
-            `dl-segmentation-pitfalls`,
-            `dl-segmentation-real-world`
+            `metrics-seg`
           ],
           exerciseIds: [
             `ex-seg-1`,
@@ -3366,18 +2886,14 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `clean`,
             `tokenize`,
             `hf-tokenizer`,
-            `vocab`,
-            `nlp-preprocess-deep-theory`,
-            `nlp-preprocess-patterns`,
-            `nlp-preprocess-pitfalls`,
-            `nlp-preprocess-real-world`
+            `vocab`
           ],
           exerciseIds: [
             `ex-nlp-1`,
@@ -3392,18 +2908,14 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `word2vec`,
             `glove`,
             `nn-embed`,
-            `contextual`,
-            `nlp-embeddings-deep-theory`,
-            `nlp-embeddings-patterns`,
-            `nlp-embeddings-pitfalls`,
-            `nlp-embeddings-real-world`
+            `contextual`
           ],
           exerciseIds: [
             `ex-emb-1`,
@@ -3418,18 +2930,14 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `rnn`,
             `lstm`,
             `gru`,
-            `bidirectional`,
-            `nlp-rnn-deep-theory`,
-            `nlp-rnn-patterns`,
-            `nlp-rnn-pitfalls`,
-            `nlp-rnn-real-world`
+            `bidirectional`
           ],
           exerciseIds: [
             `ex-rnn-1`,
@@ -3444,18 +2952,14 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `seq2seq`,
             `teacher`,
             `beam`,
-            `apps`,
-            `nlp-seq2seq-deep-theory`,
-            `nlp-seq2seq-patterns`,
-            `nlp-seq2seq-pitfalls`,
-            `nlp-seq2seq-real-world`
+            `apps`
           ],
           exerciseIds: [
             `ex-s2s-1`,
@@ -3470,18 +2974,14 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ner-task`,
             `bi-lstm`,
             `bert-ner`,
-            `applications`,
-            `nlp-ner-deep-theory`,
-            `nlp-ner-patterns`,
-            `nlp-ner-pitfalls`,
-            `nlp-ner-real-world`
+            `applications`
           ],
           exerciseIds: [
             `ex-ner-1`,
@@ -3504,18 +3004,14 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `attention`,
             `scaled`,
             `self-attn`,
-            `multi-head`,
-            `dl-attention-deep-theory`,
-            `dl-attention-patterns`,
-            `dl-attention-pitfalls`,
-            `dl-attention-real-world`
+            `multi-head`
           ],
           exerciseIds: [
             `ex-attn-1`,
@@ -3530,18 +3026,14 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `encoder`,
             `decoder`,
             `ffn`,
-            `layer-norm`,
-            `dl-transformer-deep-theory`,
-            `dl-transformer-patterns`,
-            `dl-transformer-pitfalls`,
-            `dl-transformer-real-world`
+            `layer-norm`
           ],
           exerciseIds: [
             `ex-tr-1`,
@@ -3556,18 +3048,14 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `sinusoidal`,
             `learned`,
             `rope`,
-            `alibi`,
-            `dl-positional-deep-theory`,
-            `dl-positional-patterns`,
-            `dl-positional-pitfalls`,
-            `dl-positional-real-world`
+            `alibi`
           ],
           exerciseIds: [
             `ex-pe-1`,
@@ -3582,18 +3070,14 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `bert`,
             `mlm`,
             `fine-tune`,
-            `encoder-models`,
-            `dl-bert-deep-theory`,
-            `dl-bert-patterns`,
-            `dl-bert-pitfalls`,
-            `dl-bert-real-world`
+            `encoder-models`
           ],
           exerciseIds: [
             `ex-bert-1`,
@@ -3608,18 +3092,14 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gpt`,
             `generation`,
             `causal`,
-            `scaling`,
-            `dl-gpt-deep-theory`,
-            `dl-gpt-patterns`,
-            `dl-gpt-pitfalls`,
-            `dl-gpt-real-world`
+            `scaling`
           ],
           exerciseIds: [
             `ex-gpt-1`,
@@ -3642,18 +3122,14 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 30,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `landscape`,
             `capabilities`,
             `tokens`,
-            `eval`,
-            `ai-llm-deep-theory`,
-            `ai-llm-patterns`,
-            `ai-llm-pitfalls`,
-            `ai-llm-real-world`
+            `eval`
           ],
           exerciseIds: [
             `ex-llm-1`,
@@ -3668,18 +3144,14 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `basics`,
             `cot`,
             `few-shot`,
-            `advanced-prompt`,
-            `ai-prompt-deep-theory`,
-            `ai-prompt-patterns`,
-            `ai-prompt-pitfalls`,
-            `ai-prompt-real-world`
+            `advanced-prompt`
           ],
           exerciseIds: [
             `ex-prompt-1`,
@@ -3694,18 +3166,14 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `rag-arch`,
             `embeddings-rag`,
             `chunking`,
-            `eval-rag`,
-            `ai-rag-deep-theory`,
-            `ai-rag-patterns`,
-            `ai-rag-pitfalls`,
-            `ai-rag-real-world`
+            `eval-rag`
           ],
           exerciseIds: [
             `ex-rag-1`,
@@ -3720,18 +3188,14 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `finetune`,
             `lora`,
             `instruction`,
-            `rlhf`,
-            `ai-finetune-deep-theory`,
-            `ai-finetune-patterns`,
-            `ai-finetune-pitfalls`,
-            `ai-finetune-real-world`
+            `rlhf`
           ],
           exerciseIds: [
             `ex-ft-1`,
@@ -3746,18 +3210,14 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `agents`,
             `tools`,
             `frameworks`,
-            `safety`,
-            `ai-agents-deep-theory`,
-            `ai-agents-patterns`,
-            `ai-agents-pitfalls`,
-            `ai-agents-real-world`
+            `safety`
           ],
           exerciseIds: [
             `ex-agent-1`,
@@ -3780,18 +3240,14 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `serialize`,
             `fastapi`,
             `onnx`,
-            `batch-realtime`,
-            `ai-serving-deep-theory`,
-            `ai-serving-patterns`,
-            `ai-serving-pitfalls`,
-            `ai-serving-real-world`
+            `batch-realtime`
           ],
           exerciseIds: [
             `ex-serve-1`,
@@ -3806,18 +3262,14 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `docker`,
             `compose`,
             `cloud`,
-            `cicd`,
-            `ai-docker-deep-theory`,
-            `ai-docker-patterns`,
-            `ai-docker-pitfalls`,
-            `ai-docker-real-world`
+            `cicd`
           ],
           exerciseIds: [
             `ex-docker-1`,
@@ -3832,18 +3284,14 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `monitoring`,
             `drift`,
             `evidently`,
-            `retraining`,
-            `ai-monitoring-deep-theory`,
-            `ai-monitoring-patterns`,
-            `ai-monitoring-pitfalls`,
-            `ai-monitoring-real-world`
+            `retraining`
           ],
           exerciseIds: [
             `ex-mon-1`,
@@ -3858,18 +3306,14 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `bias`,
             `fairness`,
             `mitigation`,
-            `explain-ethics`,
-            `ai-bias-deep-theory`,
-            `ai-bias-patterns`,
-            `ai-bias-pitfalls`,
-            `ai-bias-real-world`
+            `explain-ethics`
           ],
           exerciseIds: [
             `ex-bias-1`,
@@ -3884,18 +3328,14 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 25,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `framework`,
             `eu-ai-act`,
             `privacy`,
-            `red-team`,
-            `ai-governance-deep-theory`,
-            `ai-governance-patterns`,
-            `ai-governance-pitfalls`,
-            `ai-governance-real-world`
+            `red-team`
           ],
           exerciseIds: [
             `ex-gov-1`,
@@ -3918,18 +3358,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pytest-basics`,
             `fixtures`,
             `unittest-mock`,
-            `coverage-ci`,
-            `py-testing-deep-theory`,
-            `py-testing-patterns`,
-            `py-testing-pitfalls`,
-            `py-testing-real-world`
+            `coverage-ci`
           ],
           exerciseIds: [
             `ex-pytest-1`,
@@ -3944,18 +3380,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 30,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pdb`,
             `logging`,
             `tracebacks`,
-            `debug-tools`,
-            `py-debugging-deep-theory`,
-            `py-debugging-patterns`,
-            `py-debugging-pitfalls`,
-            `py-debugging-real-world`
+            `debug-tools`
           ],
           exerciseIds: [
             `ex-debug-1`,
@@ -3970,18 +3402,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `coroutines`,
             `gather-tasks`,
             `aiohttp`,
-            `async-pitfalls`,
-            `py-async-deep-theory`,
-            `py-async-patterns`,
-            `py-async-pitfalls`,
-            `py-async-real-world`
+            `async-pitfalls`
           ],
           exerciseIds: [
             `ex-async-1`,
@@ -3996,18 +3424,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 30,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `re-basics`,
             `patterns`,
             `flags-groups`,
-            `regex-caveats`,
-            `py-regex-deep-theory`,
-            `py-regex-patterns`,
-            `py-regex-pitfalls`,
-            `py-regex-real-world`
+            `regex-caveats`
           ],
           exerciseIds: [
             `ex-regex-1`,
@@ -4022,18 +3446,14 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gil`,
             `threading`,
             `multiprocessing`,
-            `choosing`,
-            `py-concurrency-deep-theory`,
-            `py-concurrency-patterns`,
-            `py-concurrency-pitfalls`,
-            `py-concurrency-real-world`
+            `choosing`
           ],
           exerciseIds: [
             `ex-conc-1`,
@@ -4056,18 +3476,14 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 30,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `pathlib`,
             `json-csv`,
             `pickle`,
-            `io-patterns`,
-            `py-files-deep-theory`,
-            `py-files-patterns`,
-            `py-files-pitfalls`,
-            `py-files-real-world`
+            `io-patterns`
           ],
           exerciseIds: [
             `ex-files-1`,
@@ -4082,18 +3498,14 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `requests-basics`,
             `rest`,
             `auth-errors`,
-            `testing-apis`,
-            `py-apis-deep-theory`,
-            `py-apis-patterns`,
-            `py-apis-pitfalls`,
-            `py-apis-real-world`
+            `testing-apis`
           ],
           exerciseIds: [
             `ex-api-1`,
@@ -4108,18 +3520,14 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `bs4`,
             `fetch`,
             `extract`,
-            `ethics`,
-            `py-web-scrape-deep-theory`,
-            `py-web-scrape-patterns`,
-            `py-web-scrape-pitfalls`,
-            `py-web-scrape-real-world`
+            `ethics`
           ],
           exerciseIds: [
             `ex-scrape-1`,
@@ -4134,18 +3542,14 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `connect`,
             `sql`,
             `orm-alt`,
-            `security`,
-            `py-sqlite-deep-theory`,
-            `py-sqlite-patterns`,
-            `py-sqlite-pitfalls`,
-            `py-sqlite-real-world`
+            `security`
           ],
           exerciseIds: [
             `ex-sql-1`,
@@ -4160,18 +3564,14 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 30,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `json-schema`,
             `yaml`,
             `parquet`,
-            `formats-choose`,
-            `py-serialization-deep-theory`,
-            `py-serialization-patterns`,
-            `py-serialization-pitfalls`,
-            `py-serialization-real-world`
+            `formats-choose`
           ],
           exerciseIds: [
             `ex-ser-1`,
@@ -4194,18 +3594,14 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `optimize`,
             `integrate`,
             `interpolate`,
-            `scipy-ecosystem`,
-            `scipy-basics-deep-theory`,
-            `scipy-basics-patterns`,
-            `scipy-basics-pitfalls`,
-            `scipy-basics-real-world`
+            `scipy-ecosystem`
           ],
           exerciseIds: [
             `ex-scipy-1`,
@@ -4220,18 +3616,14 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `hypothesis`,
             `ttest`,
             `chisq`,
-            `pvalue-interpret`,
-            `stats-hypothesis-deep-theory`,
-            `stats-hypothesis-patterns`,
-            `stats-hypothesis-pitfalls`,
-            `stats-hypothesis-real-world`
+            `pvalue-interpret`
           ],
           exerciseIds: [
             `ex-hyp-1`,
@@ -4246,18 +3638,14 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `rv`,
             `fit`,
             `sampling`,
-            `clt`,
-            `stats-distributions-deep-theory`,
-            `stats-distributions-patterns`,
-            `stats-distributions-pitfalls`,
-            `stats-distributions-real-world`
+            `clt`
           ],
           exerciseIds: [
             `ex-dist-1`,
@@ -4272,18 +3660,14 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ols`,
             `logistic`,
             `diagnostics`,
-            `inference-vs-pred`,
-            `stats-regression-deep-theory`,
-            `stats-regression-patterns`,
-            `stats-regression-pitfalls`,
-            `stats-regression-real-world`
+            `inference-vs-pred`
           ],
           exerciseIds: [
             `ex-reg-1`,
@@ -4298,18 +3682,14 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `bayes-theorem`,
             `priors`,
             `mcmc`,
-            `bayes-ml`,
-            `stats-bayes-deep-theory`,
-            `stats-bayes-patterns`,
-            `stats-bayes-pitfalls`,
-            `stats-bayes-real-world`
+            `bayes-ml`
           ],
           exerciseIds: [
             `ex-bayes-1`,
@@ -4332,18 +3712,14 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `components`,
             `stationarity`,
             `arima`,
-            `seasonal-arima`,
-            `ml-timeseries-deep-theory`,
-            `ml-timeseries-patterns`,
-            `ml-timeseries-pitfalls`,
-            `ml-timeseries-real-world`
+            `seasonal-arima`
           ],
           exerciseIds: [
             `ex-ts-1`,
@@ -4358,18 +3734,14 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `prophet`,
             `sklearn-ts`,
             `metrics-ts`,
-            `pipeline`,
-            `ml-forecasting-deep-theory`,
-            `ml-forecasting-patterns`,
-            `ml-forecasting-pitfalls`,
-            `ml-forecasting-real-world`
+            `pipeline`
           ],
           exerciseIds: [
             `ex-fc-1`,
@@ -4384,18 +3756,14 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `matrix-factor`,
             `neighborhood`,
             `implicit`,
-            `eval-recsys`,
-            `ml-recsys-collab-deep-theory`,
-            `ml-recsys-collab-patterns`,
-            `ml-recsys-collab-pitfalls`,
-            `ml-recsys-collab-real-world`
+            `eval-recsys`
           ],
           exerciseIds: [
             `ex-cf-1`,
@@ -4410,18 +3778,14 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `features`,
             `similarity`,
             `learning`,
-            `limits`,
-            `ml-recsys-content-deep-theory`,
-            `ml-recsys-content-patterns`,
-            `ml-recsys-content-pitfalls`,
-            `ml-recsys-content-real-world`
+            `limits`
           ],
           exerciseIds: [
             `ex-cb-1`,
@@ -4436,18 +3800,14 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `problem`,
             `smote`,
             `weights`,
-            `metrics-imb`,
-            `ml-imbalanced-deep-theory`,
-            `ml-imbalanced-patterns`,
-            `ml-imbalanced-pitfalls`,
-            `ml-imbalanced-real-world`
+            `metrics-imb`
           ],
           exerciseIds: [
             `ex-imb-1`,
@@ -4470,18 +3830,14 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mdp`,
             `value-policy`,
             `explore`,
-            `rl-loop`,
-            `rl-basics-deep-theory`,
-            `rl-basics-patterns`,
-            `rl-basics-pitfalls`,
-            `rl-basics-real-world`
+            `rl-loop`
           ],
           exerciseIds: [
             `ex-rl-1`,
@@ -4496,18 +3852,14 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `qlearning`,
             `td`,
             `tabular`,
-            `convergence`,
-            `rl-qlearning-deep-theory`,
-            `rl-qlearning-patterns`,
-            `rl-qlearning-pitfalls`,
-            `rl-qlearning-real-world`
+            `convergence`
           ],
           exerciseIds: [
             `ex-ql-1`,
@@ -4522,18 +3874,14 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `dqn`,
             `improvements`,
             `atari`,
-            `limits-dqn`,
-            `rl-deep-deep-theory`,
-            `rl-deep-patterns`,
-            `rl-deep-pitfalls`,
-            `rl-deep-real-world`
+            `limits-dqn`
           ],
           exerciseIds: [
             `ex-dqn-1`,
@@ -4548,18 +3896,14 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `reinforce`,
             `actor-critic`,
             `continuous`,
-            `pg-vs-value`,
-            `rl-policy-deep-theory`,
-            `rl-policy-patterns`,
-            `rl-policy-pitfalls`,
-            `rl-policy-real-world`
+            `pg-vs-value`
           ],
           exerciseIds: [
             `ex-pg-1`,
@@ -4574,18 +3918,14 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `games`,
             `robotics`,
             `recsys-rl`,
-            `deploy`,
-            `rl-applications-deep-theory`,
-            `rl-applications-patterns`,
-            `rl-applications-pitfalls`,
-            `rl-applications-real-world`
+            `deploy`
           ],
           exerciseIds: [
             `ex-rlapp-1`,
@@ -4608,18 +3948,14 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `gan-arch`,
             `dcgan`,
             `training-tricks`,
-            `conditional`,
-            `gen-gan-deep-theory`,
-            `gen-gan-patterns`,
-            `gen-gan-pitfalls`,
-            `gen-gan-real-world`
+            `conditional`
           ],
           exerciseIds: [
             `ex-gan-1`,
@@ -4634,18 +3970,14 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `vae`,
             `latent`,
             `vae-variants`,
-            `sampling-vae`,
-            `gen-vae-deep-theory`,
-            `gen-vae-patterns`,
-            `gen-vae-pitfalls`,
-            `gen-vae-real-world`
+            `sampling-vae`
           ],
           exerciseIds: [
             `ex-vae-1`,
@@ -4660,18 +3992,14 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `forward`,
             `reverse`,
             `guidance`,
-            `diffusion-apps`,
-            `gen-diffusion-deep-theory`,
-            `gen-diffusion-patterns`,
-            `gen-diffusion-pitfalls`,
-            `gen-diffusion-real-world`
+            `diffusion-apps`
           ],
           exerciseIds: [
             `ex-diff-1`,
@@ -4686,18 +4014,14 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `nst`,
             `cyclegan`,
             `stylegan`,
-            `applications`,
-            `gen-style-deep-theory`,
-            `gen-style-patterns`,
-            `gen-style-pitfalls`,
-            `gen-style-real-world`
+            `applications`
           ],
           exerciseIds: [
             `ex-style-1`,
@@ -4712,18 +4036,14 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `fid`,
             `is`,
             `human`,
-            `other-metrics`,
-            `gen-eval-deep-theory`,
-            `gen-eval-patterns`,
-            `gen-eval-pitfalls`,
-            `gen-eval-real-world`
+            `other-metrics`
           ],
           exerciseIds: [
             `ex-geval-1`,
@@ -4746,18 +4066,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `embeddings`,
             `faiss`,
             `hybrid`,
-            `ops`,
-            `ai-vectors-deep-theory`,
-            `ai-vectors-patterns`,
-            `ai-vectors-pitfalls`,
-            `ai-vectors-real-world`
+            `ops`
           ],
           exerciseIds: [
             `ex-vec-1`,
@@ -4772,18 +4088,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `clip`,
             `vlm`,
             `tasks`,
-            `limits`,
-            `ai-multimodal-deep-theory`,
-            `ai-multimodal-patterns`,
-            `ai-multimodal-pitfalls`,
-            `ai-multimodal-real-world`
+            `limits`
           ],
           exerciseIds: [
             `ex-mm-1`,
@@ -4798,18 +4110,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `whisper`,
             `tts`,
             `audio-llm`,
-            `deploy-speech`,
-            `ai-speech-deep-theory`,
-            `ai-speech-patterns`,
-            `ai-speech-pitfalls`,
-            `ai-speech-real-world`
+            `deploy-speech`
           ],
           exerciseIds: [
             `ex-speech-1`,
@@ -4824,18 +4132,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `mmlu`,
             `humaneval`,
             `red-team`,
-            `eval-practice`,
-            `ai-eval-deep-theory`,
-            `ai-eval-patterns`,
-            `ai-eval-pitfalls`,
-            `ai-eval-real-world`
+            `eval-practice`
           ],
           exerciseIds: [
             `ex-aieval-1`,
@@ -4850,18 +4154,14 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `alignment`,
             `jailbreaks`,
             `guardrails`,
-            `governance`,
-            `ai-safety-deep-theory`,
-            `ai-safety-patterns`,
-            `ai-safety-pitfalls`,
-            `ai-safety-real-world`
+            `governance`
           ],
           exerciseIds: [
             `ex-safe-1`,
@@ -4884,18 +4184,14 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `structure`,
             `ideas`,
             `presentation`,
-            `open-source`,
-            `cap-portfolio-deep-theory`,
-            `cap-portfolio-patterns`,
-            `cap-portfolio-pitfalls`,
-            `cap-portfolio-real-world`
+            `open-source`
           ],
           exerciseIds: [
             `ex-port-1`,
@@ -4910,18 +4206,14 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 40,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `workflow`,
             `features`,
             `ensemble`,
-            `mindset`,
-            `cap-kaggle-deep-theory`,
-            `cap-kaggle-patterns`,
-            `cap-kaggle-pitfalls`,
-            `cap-kaggle-real-world`
+            `mindset`
           ],
           exerciseIds: [
             `ex-kaggle-1`,
@@ -4936,18 +4228,14 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 45,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `ml-fundamentals`,
             `coding`,
             `system-design`,
-            `behavioral`,
-            `cap-interview-deep-theory`,
-            `cap-interview-patterns`,
-            `cap-interview-pitfalls`,
-            `cap-interview-real-world`
+            `behavioral`
           ],
           exerciseIds: [
             `ex-int-1`,
@@ -4962,18 +4250,14 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 35,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `reading`,
             `venues`,
             `reproduce`,
-            `contribute`,
-            `cap-research-deep-theory`,
-            `cap-research-patterns`,
-            `cap-research-pitfalls`,
-            `cap-research-real-world`
+            `contribute`
           ],
           exerciseIds: [
             `ex-paper-1`,
@@ -4988,18 +4272,14 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 124,
-          sectionCount: 8,
+          estimatedMinutes: 30,
+          sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
             `roles`,
             `skills`,
             `job-search`,
-            `growth`,
-            `cap-career-deep-theory`,
-            `cap-career-patterns`,
-            `cap-career-pitfalls`,
-            `cap-career-real-world`
+            `growth`
           ],
           exerciseIds: [
             `ex-career-1`,
@@ -5019,18 +4299,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 20,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `vars-intro`,
       `literals`,
       `mutability`,
-      `type-checking`,
-      `py-vars-types-deep-theory`,
-      `py-vars-types-patterns`,
-      `py-vars-types-pitfalls`,
-      `py-vars-types-real-world`
+      `type-checking`
     ],
     exerciseIds: [
       `ex-vars-1`,
@@ -5045,18 +4321,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `arith`,
       `compare`,
       `assign`,
-      `bitwise`,
-      `py-operators-deep-theory`,
-      `py-operators-patterns`,
-      `py-operators-pitfalls`,
-      `py-operators-real-world`
+      `bitwise`
     ],
     exerciseIds: [
       `ex-op-1`,
@@ -5071,18 +4343,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `str-basics`,
       `str-methods`,
       `str-format`,
-      `str-unicode`,
-      `py-strings-deep-theory`,
-      `py-strings-patterns`,
-      `py-strings-pitfalls`,
-      `py-strings-real-world`
+      `str-unicode`
     ],
     exerciseIds: [
       `ex-str-1`,
@@ -5097,18 +4365,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `print`,
       `input`,
       `repl`,
-      `files-intro`,
-      `py-io-deep-theory`,
-      `py-io-patterns`,
-      `py-io-pitfalls`,
-      `py-io-real-world`
+      `files-intro`
     ],
     exerciseIds: [
       `ex-io-1`,
@@ -5123,18 +4387,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `venv`,
       `pip`,
       `ide`,
-      `project-structure`,
-      `py-env-deep-theory`,
-      `py-env-patterns`,
-      `py-env-pitfalls`,
-      `py-env-real-world`
+      `project-structure`
     ],
     exerciseIds: [
       `ex-env-1`,
@@ -5149,18 +4409,14 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `if-basic`,
       `elif`,
       `ternary`,
-      `guard`,
-      `py-conditionals-deep-theory`,
-      `py-conditionals-patterns`,
-      `py-conditionals-pitfalls`,
-      `py-conditionals-real-world`
+      `guard`
     ],
     exerciseIds: [
       `ex-if-1`,
@@ -5175,18 +4431,14 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `for-loop`,
       `while-loop`,
       `loop-else`,
-      `nested`,
-      `py-loops-deep-theory`,
-      `py-loops-patterns`,
-      `py-loops-pitfalls`,
-      `py-loops-real-world`
+      `nested`
     ],
     exerciseIds: [
       `ex-loop-1`,
@@ -5201,18 +4453,14 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `def-basic`,
       `params`,
       `unpack`,
-      `pure`,
-      `py-functions-deep-theory`,
-      `py-functions-patterns`,
-      `py-functions-pitfalls`,
-      `py-functions-real-world`
+      `pure`
     ],
     exerciseIds: [
       `ex-fn-1`,
@@ -5227,18 +4475,14 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `legb`,
       `closures`,
       `lambda`,
-      `higher`,
-      `py-scope-deep-theory`,
-      `py-scope-patterns`,
-      `py-scope-pitfalls`,
-      `py-scope-real-world`
+      `higher`
     ],
     exerciseIds: [
       `ex-scope-1`,
@@ -5253,18 +4497,14 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `list-comp`,
       `dict-set-comp`,
       `generators`,
-      `iterators`,
-      `py-comprehensions-deep-theory`,
-      `py-comprehensions-patterns`,
-      `py-comprehensions-pitfalls`,
-      `py-comprehensions-real-world`
+      `iterators`
     ],
     exerciseIds: [
       `ex-comp-1`,
@@ -5279,18 +4519,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `list-ops`,
       `tuples`,
       `list-perf`,
-      `nested`,
-      `py-lists-deep-theory`,
-      `py-lists-patterns`,
-      `py-lists-pitfalls`,
-      `py-lists-real-world`
+      `nested`
     ],
     exerciseIds: [
       `ex-list-1`,
@@ -5305,18 +4541,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dict-basics`,
       `sets`,
       `defaultdict`,
-      `dict-merge`,
-      `py-dicts-deep-theory`,
-      `py-dicts-patterns`,
-      `py-dicts-pitfalls`,
-      `py-dicts-real-world`
+      `dict-merge`
     ],
     exerciseIds: [
       `ex-dict-1`,
@@ -5331,18 +4563,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `stack`,
       `queue`,
       `deque-features`,
-      `applications`,
-      `py-deque-deep-theory`,
-      `py-deque-patterns`,
-      `py-deque-pitfalls`,
-      `py-deque-real-world`
+      `applications`
     ],
     exerciseIds: [
       `ex-deque-1`,
@@ -5357,18 +4585,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `sorting`,
       `custom-sort`,
       `search`,
-      `complexity`,
-      `py-sort-search-deep-theory`,
-      `py-sort-search-patterns`,
-      `py-sort-search-pitfalls`,
-      `py-sort-search-real-world`
+      `complexity`
     ],
     exerciseIds: [
       `ex-sort-1`,
@@ -5383,18 +4607,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `namedtuple`,
       `chainmap`,
       `ordered`,
-      `heapq`,
-      `py-collections-deep-theory`,
-      `py-collections-patterns`,
-      `py-collections-pitfalls`,
-      `py-collections-real-world`
+      `heapq`
     ],
     exerciseIds: [
       `ex-coll-1`,
@@ -5409,18 +4629,14 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `class-basics`,
       `class-vs-instance`,
       `methods`,
-      `dunder`,
-      `py-classes-deep-theory`,
-      `py-classes-patterns`,
-      `py-classes-pitfalls`,
-      `py-classes-real-world`
+      `dunder`
     ],
     exerciseIds: [
       `ex-class-1`,
@@ -5435,18 +4651,14 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `inheritance`,
       `mro`,
       `abstract`,
-      `composition`,
-      `py-inheritance-deep-theory`,
-      `py-inheritance-patterns`,
-      `py-inheritance-pitfalls`,
-      `py-inheritance-real-world`
+      `composition`
     ],
     exerciseIds: [
       `ex-inherit-1`,
@@ -5461,18 +4673,14 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `naming`,
       `property`,
       `slots`,
-      `dataclass-preview`,
-      `py-encapsulation-deep-theory`,
-      `py-encapsulation-patterns`,
-      `py-encapsulation-pitfalls`,
-      `py-encapsulation-real-world`
+      `dataclass-preview`
     ],
     exerciseIds: [
       `ex-encap-1`,
@@ -5487,18 +4695,14 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `factory`,
       `strategy`,
       `observer`,
-      `singleton`,
-      `py-patterns-deep-theory`,
-      `py-patterns-patterns`,
-      `py-patterns-pitfalls`,
-      `py-patterns-real-world`
+      `singleton`
     ],
     exerciseIds: [
       `ex-pattern-1`,
@@ -5513,18 +4717,14 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `protocol`,
       `abc-vs-protocol`,
       `generic`,
-      `solid`,
-      `py-protocols-deep-theory`,
-      `py-protocols-patterns`,
-      `py-protocols-pitfalls`,
-      `py-protocols-real-world`
+      `solid`
     ],
     exerciseIds: [
       `ex-proto-1`,
@@ -5539,18 +4739,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `decorator-basics`,
       `functools-wraps`,
       `param-decorator`,
-      `class-decorator`,
-      `py-decorators-deep-theory`,
-      `py-decorators-patterns`,
-      `py-decorators-pitfalls`,
-      `py-decorators-real-world`
+      `class-decorator`
     ],
     exerciseIds: [
       `ex-dec-1`,
@@ -5565,18 +4761,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `yield`,
       `yield-from`,
       `gen-expr`,
-      `infinite`,
-      `py-generators-deep-theory`,
-      `py-generators-patterns`,
-      `py-generators-pitfalls`,
-      `py-generators-real-world`
+      `infinite`
     ],
     exerciseIds: [
       `ex-gen-1`,
@@ -5591,18 +4783,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `with`,
       `contextlib`,
       `file-context`,
-      `async-context`,
-      `py-context-deep-theory`,
-      `py-context-patterns`,
-      `py-context-pitfalls`,
-      `py-context-real-world`
+      `async-context`
     ],
     exerciseIds: [
       `ex-ctx-1`,
@@ -5617,18 +4805,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `hints`,
       `dataclass`,
       `pydantic`,
-      `typing-advanced`,
-      `py-typehints-deep-theory`,
-      `py-typehints-patterns`,
-      `py-typehints-pitfalls`,
-      `py-typehints-real-world`
+      `typing-advanced`
     ],
     exerciseIds: [
       `ex-type-1`,
@@ -5643,18 +4827,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `imports`,
       `packages`,
       `publishing`,
-      `stdlib`,
-      `py-modules-deep-theory`,
-      `py-modules-patterns`,
-      `py-modules-pitfalls`,
-      `py-modules-real-world`
+      `stdlib`
     ],
     exerciseIds: [
       `ex-mod-1`,
@@ -5669,18 +4849,14 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `sets-intro`,
       `sets-ops`,
       `sets-functions`,
-      `sets-counting`,
-      `math-sets-deep-theory`,
-      `math-sets-patterns`,
-      `math-sets-pitfalls`,
-      `math-sets-real-world`
+      `sets-counting`
     ],
     exerciseIds: [
       `ex-sets-1`,
@@ -5695,18 +4871,14 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `fn-basics`,
       `fn-types`,
       `fn-compose`,
-      `fn-transforms`,
-      `math-functions-deep-theory`,
-      `math-functions-patterns`,
-      `math-functions-pitfalls`,
-      `math-functions-real-world`
+      `fn-transforms`
     ],
     exerciseIds: [
       `ex-fn-1`,
@@ -5721,18 +4893,14 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `log-def`,
       `log-rules`,
       `exp-models`,
-      `log-ml`,
-      `math-logarithms-deep-theory`,
-      `math-logarithms-patterns`,
-      `math-logarithms-pitfalls`,
-      `math-logarithms-real-world`
+      `log-ml`
     ],
     exerciseIds: [
       `ex-log-1`,
@@ -5747,18 +4915,14 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `seq-arith`,
       `seq-geom`,
       `seq-series`,
-      `seq-ml`,
-      `math-sequences-deep-theory`,
-      `math-sequences-patterns`,
-      `math-sequences-pitfalls`,
-      `math-sequences-real-world`
+      `seq-ml`
     ],
     exerciseIds: [
       `ex-seq-1`,
@@ -5773,18 +4937,14 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `cx-basics`,
       `cx-polar`,
       `cx-ops`,
-      `cx-fft`,
-      `math-complex-deep-theory`,
-      `math-complex-patterns`,
-      `math-complex-pitfalls`,
-      `math-complex-real-world`
+      `cx-fft`
     ],
     exerciseIds: [
       `ex-cx-1`,
@@ -5799,18 +4959,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `vec-basics`,
       `vec-norm`,
       `vec-span`,
-      `vec-ml`,
-      `math-vectors-deep-theory`,
-      `math-vectors-patterns`,
-      `math-vectors-pitfalls`,
-      `math-vectors-real-world`
+      `vec-ml`
     ],
     exerciseIds: [
       `ex-vec-1`,
@@ -5825,18 +4981,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dot-def`,
       `dot-geom`,
       `cross-3d`,
-      `dot-attn`,
-      `math-dot-cross-deep-theory`,
-      `math-dot-cross-patterns`,
-      `math-dot-cross-pitfalls`,
-      `math-dot-cross-real-world`
+      `dot-attn`
     ],
     exerciseIds: [
       `ex-dot-1`,
@@ -5851,18 +5003,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mat-basics`,
       `mat-mv`,
       `mat-special`,
-      `mat-data`,
-      `math-matrices-deep-theory`,
-      `math-matrices-patterns`,
-      `math-matrices-pitfalls`,
-      `math-matrices-real-world`
+      `mat-data`
     ],
     exerciseIds: [
       `ex-mat-1`,
@@ -5877,18 +5025,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mm-def`,
       `mm-prop`,
       `mm-inv-det`,
-      `mm-nn`,
-      `math-matrix-ops-deep-theory`,
-      `math-matrix-ops-patterns`,
-      `math-matrix-ops-pitfalls`,
-      `math-matrix-ops-real-world`
+      `mm-nn`
     ],
     exerciseIds: [
       `ex-mm-1`,
@@ -5903,18 +5047,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ls-form`,
       `ls-elim`,
       `ls-lsq`,
-      `ls-rank`,
-      `math-linear-systems-deep-theory`,
-      `math-linear-systems-patterns`,
-      `math-linear-systems-pitfalls`,
-      `math-linear-systems-real-world`
+      `ls-rank`
     ],
     exerciseIds: [
       `ex-ls-1`,
@@ -5929,18 +5069,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `det-def`,
       `det-geom`,
       `det-prop`,
-      `det-ml`,
-      `math-determinants-deep-theory`,
-      `math-determinants-patterns`,
-      `math-determinants-pitfalls`,
-      `math-determinants-real-world`
+      `det-ml`
     ],
     exerciseIds: [
       `ex-det-1`,
@@ -5955,18 +5091,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `inv-def`,
       `inv-2x2`,
       `inv-pinv`,
-      `inv-ml`,
-      `math-inverse-deep-theory`,
-      `math-inverse-patterns`,
-      `math-inverse-pitfalls`,
-      `math-inverse-real-world`
+      `inv-ml`
     ],
     exerciseIds: [
       `ex-inv-1`,
@@ -5981,18 +5113,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `eig-def`,
       `eig-diag`,
       `eig-pca`,
-      `eig-markov`,
-      `math-eigen-deep-theory`,
-      `math-eigen-patterns`,
-      `math-eigen-pitfalls`,
-      `math-eigen-real-world`
+      `eig-markov`
     ],
     exerciseIds: [
       `ex-eig-1`,
@@ -6007,18 +5135,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `svd-def`,
       `svd-lowrank`,
       `svd-pinv`,
-      `svd-ml`,
-      `math-svd-deep-theory`,
-      `math-svd-patterns`,
-      `math-svd-pitfalls`,
-      `math-svd-real-world`
+      `svd-ml`
     ],
     exerciseIds: [
       `ex-svd-1`,
@@ -6033,18 +5157,14 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pca-goal`,
       `pca-proj`,
       `pca-kernel`,
-      `pca-practice`,
-      `math-pca-math-deep-theory`,
-      `math-pca-math-patterns`,
-      `math-pca-math-pitfalls`,
-      `math-pca-math-real-world`
+      `pca-practice`
     ],
     exerciseIds: [
       `ex-pca-1`,
@@ -6059,18 +5179,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `lim-def`,
       `lim-rules`,
       `lim-cont`,
-      `lim-ml`,
-      `math-limits-deep-theory`,
-      `math-limits-patterns`,
-      `math-limits-pitfalls`,
-      `math-limits-real-world`
+      `lim-ml`
     ],
     exerciseIds: [
       `ex-lim-1`,
@@ -6085,18 +5201,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `der-def`,
       `der-interp`,
       `der-numeric`,
-      `der-ml`,
-      `math-derivatives-deep-theory`,
-      `math-derivatives-patterns`,
-      `math-derivatives-pitfalls`,
-      `math-derivatives-real-world`
+      `der-ml`
     ],
     exerciseIds: [
       `ex-der-1`,
@@ -6111,18 +5223,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dr-power`,
       `dr-product`,
       `dr-chain`,
-      `dr-common`,
-      `math-derivative-rules-deep-theory`,
-      `math-derivative-rules-patterns`,
-      `math-derivative-rules-pitfalls`,
-      `math-derivative-rules-real-world`
+      `dr-common`
     ],
     exerciseIds: [
       `ex-dr-1`,
@@ -6137,18 +5245,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `tay-def`,
       `tay-approx`,
       `tay-multivar`,
-      `tay-ml`,
-      `math-taylor-deep-theory`,
-      `math-taylor-patterns`,
-      `math-taylor-pitfalls`,
-      `math-taylor-real-world`
+      `tay-ml`
     ],
     exerciseIds: [
       `ex-tay-1`,
@@ -6163,18 +5267,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `int-def`,
       `int-rules`,
       `int-prob`,
-      `int-mc`,
-      `math-integrals-deep-theory`,
-      `math-integrals-patterns`,
-      `math-integrals-pitfalls`,
-      `math-integrals-real-world`
+      `int-mc`
     ],
     exerciseIds: [
       `ex-int-1`,
@@ -6189,18 +5289,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pd-def`,
       `pd-geom`,
       `pd-higher`,
-      `pd-ml`,
-      `math-partial-deriv-deep-theory`,
-      `math-partial-deriv-patterns`,
-      `math-partial-deriv-pitfalls`,
-      `math-partial-deriv-real-world`
+      `pd-ml`
     ],
     exerciseIds: [
       `ex-pd-1`,
@@ -6215,18 +5311,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `grad-def`,
       `grad-descent`,
       `grad-proj`,
-      `grad-numerical`,
-      `math-gradient-deep-theory`,
-      `math-gradient-patterns`,
-      `math-gradient-pitfalls`,
-      `math-gradient-real-world`
+      `grad-numerical`
     ],
     exerciseIds: [
       `ex-grad-1`,
@@ -6241,18 +5333,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `cr-jacobian`,
       `cr-backprop`,
       `cr-vector`,
-      `cr-vanish`,
-      `math-chain-rule-deep-theory`,
-      `math-chain-rule-patterns`,
-      `math-chain-rule-pitfalls`,
-      `math-chain-rule-real-world`
+      `cr-vanish`
     ],
     exerciseIds: [
       `ex-cr-1`,
@@ -6267,18 +5355,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `jh-hessian`,
       `jh-newton`,
       `jh-jacobian-apps`,
-      `jh-gauss-newton`,
-      `math-jacobian-hessian-deep-theory`,
-      `math-jacobian-hessian-patterns`,
-      `math-jacobian-hessian-pitfalls`,
-      `math-jacobian-hessian-real-world`
+      `jh-gauss-newton`
     ],
     exerciseIds: [
       `ex-jh-1`,
@@ -6293,18 +5377,14 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mvo-critical`,
       `mvo-convex`,
       `mvo-saddle`,
-      `mvo-global`,
-      `math-multivariate-opt-deep-theory`,
-      `math-multivariate-opt-patterns`,
-      `math-multivariate-opt-pitfalls`,
-      `math-multivariate-opt-real-world`
+      `mvo-global`
     ],
     exerciseIds: [
       `ex-mvo-1`,
@@ -6319,18 +5399,14 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pb-axioms`,
       `pb-count`,
       `pb-indep`,
-      `pb-ml`,
-      `math-prob-basics-deep-theory`,
-      `math-prob-basics-patterns`,
-      `math-prob-basics-pitfalls`,
-      `math-prob-basics-real-world`
+      `pb-ml`
     ],
     exerciseIds: [
       `ex-pb-1`,
@@ -6345,18 +5421,14 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `cb-cond`,
       `cb-bayes`,
       `cb-odds`,
-      `cb-ml`,
-      `math-conditional-bayes-deep-theory`,
-      `math-conditional-bayes-patterns`,
-      `math-conditional-bayes-pitfalls`,
-      `math-conditional-bayes-real-world`
+      `cb-ml`
     ],
     exerciseIds: [
       `ex-cb-1`,
@@ -6371,18 +5443,14 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `rv-def`,
       `rv-expect`,
       `rv-transform`,
-      `rv-ml`,
-      `math-random-vars-deep-theory`,
-      `math-random-vars-patterns`,
-      `math-random-vars-pitfalls`,
-      `math-random-vars-real-world`
+      `rv-ml`
     ],
     exerciseIds: [
       `ex-rv-1`,
@@ -6397,18 +5465,14 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dist-disc`,
       `dist-cont`,
       `dist-clt`,
-      `dist-ml`,
-      `math-distributions-deep-theory`,
-      `math-distributions-patterns`,
-      `math-distributions-pitfalls`,
-      `math-distributions-real-world`
+      `dist-ml`
     ],
     exerciseIds: [
       `ex-dist-1`,
@@ -6423,18 +5487,14 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `jm-joint`,
       `jm-indep`,
       `jm-cov`,
-      `jm-ml`,
-      `math-joint-marginal-deep-theory`,
-      `math-joint-marginal-patterns`,
-      `math-joint-marginal-pitfalls`,
-      `math-joint-marginal-real-world`
+      `jm-ml`
     ],
     exerciseIds: [
       `ex-jm-1`,
@@ -6449,18 +5509,14 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ds-central`,
       `ds-spread`,
       `ds-percentile`,
-      `ds-eda`,
-      `math-descriptive-deep-theory`,
-      `math-descriptive-patterns`,
-      `math-descriptive-pitfalls`,
-      `math-descriptive-real-world`
+      `ds-eda`
     ],
     exerciseIds: [
       `ex-ds-1`,
@@ -6475,18 +5531,14 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `sc-sample`,
       `sc-se`,
       `sc-clt`,
-      `sc-ml`,
-      `math-sampling-clt-deep-theory`,
-      `math-sampling-clt-patterns`,
-      `math-sampling-clt-pitfalls`,
-      `math-sampling-clt-real-world`
+      `sc-ml`
     ],
     exerciseIds: [
       `ex-sc-1`,
@@ -6501,18 +5553,14 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ht-framework`,
       `ht-tests`,
       `ht-ab`,
-      `ht-ml`,
-      `math-hypothesis-deep-theory`,
-      `math-hypothesis-patterns`,
-      `math-hypothesis-pitfalls`,
-      `math-hypothesis-real-world`
+      `ht-ml`
     ],
     exerciseIds: [
       `ex-ht-1`,
@@ -6527,18 +5575,14 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ci-mean`,
       `ci-prop`,
       `ci-diff`,
-      `ci-ml`,
-      `math-confidence-deep-theory`,
-      `math-confidence-patterns`,
-      `math-confidence-pitfalls`,
-      `math-confidence-real-world`
+      `ci-ml`
     ],
     exerciseIds: [
       `ex-ci-1`,
@@ -6553,18 +5597,14 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `reg-ols`,
       `reg-assump`,
       `reg-infer`,
-      `reg-ml`,
-      `math-regression-math-deep-theory`,
-      `math-regression-math-patterns`,
-      `math-regression-math-pitfalls`,
-      `math-regression-math-real-world`
+      `reg-ml`
     ],
     exerciseIds: [
       `ex-reg-1`,
@@ -6579,18 +5619,14 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `cvx-sets`,
       `cvx-func`,
       `cvx-problems`,
-      `cvx-ml`,
-      `math-convex-deep-theory`,
-      `math-convex-patterns`,
-      `math-convex-pitfalls`,
-      `math-convex-real-world`
+      `cvx-ml`
     ],
     exerciseIds: [
       `ex-cvx-1`,
@@ -6605,18 +5641,14 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gd-conv`,
       `gd-momentum`,
       `gd-adaptive`,
-      `gd-sgd`,
-      `math-gradient-descent-math-deep-theory`,
-      `math-gradient-descent-math-patterns`,
-      `math-gradient-descent-math-pitfalls`,
-      `math-gradient-descent-math-real-world`
+      `gd-sgd`
     ],
     exerciseIds: [
       `ex-gd-1`,
@@ -6631,18 +5663,14 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `lag-eq`,
       `lag-ineq`,
       `lag-dual`,
-      `lag-ml`,
-      `math-lagrange-deep-theory`,
-      `math-lagrange-patterns`,
-      `math-lagrange-pitfalls`,
-      `math-lagrange-real-world`
+      `lag-ml`
     ],
     exerciseIds: [
       `ex-lag-1`,
@@ -6657,18 +5685,14 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ent-def`,
       `ent-ce`,
       `ent-mi`,
-      `ent-ml`,
-      `math-entropy-math-deep-theory`,
-      `math-entropy-math-patterns`,
-      `math-entropy-math-pitfalls`,
-      `math-entropy-math-real-world`
+      `ent-ml`
     ],
     exerciseIds: [
       `ex-ent-1`,
@@ -6683,18 +5707,14 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mle-def`,
       `kl-mle`,
       `mle-prop`,
-      `mle-ml`,
-      `math-kl-mle-deep-theory`,
-      `math-kl-mle-patterns`,
-      `math-kl-mle-pitfalls`,
-      `math-kl-mle-real-world`
+      `mle-ml`
     ],
     exerciseIds: [
       `ex-mle-1`,
@@ -6709,18 +5729,14 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `create`,
       `dtype`,
       `attrs`,
-      `vs-list`,
-      `np-arrays-deep-theory`,
-      `np-arrays-patterns`,
-      `np-arrays-pitfalls`,
-      `np-arrays-real-world`
+      `vs-list`
     ],
     exerciseIds: [
       `ex-np-1`,
@@ -6735,18 +5751,14 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `slicing`,
       `boolean`,
       `broadcast`,
-      `vectorize`,
-      `np-indexing-deep-theory`,
-      `np-indexing-patterns`,
-      `np-indexing-pitfalls`,
-      `np-indexing-real-world`
+      `vectorize`
     ],
     exerciseIds: [
       `ex-np-idx-1`,
@@ -6761,18 +5773,14 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `matmul`,
       `linalg`,
       `norm`,
-      `applications`,
-      `np-linalg-deep-theory`,
-      `np-linalg-patterns`,
-      `np-linalg-pitfalls`,
-      `np-linalg-real-world`
+      `applications`
     ],
     exerciseIds: [
       `ex-linalg-1`,
@@ -6787,18 +5795,14 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `rng`,
       `stats`,
       `shuffle`,
-      `distributions`,
-      `np-random-deep-theory`,
-      `np-random-patterns`,
-      `np-random-pitfalls`,
-      `np-random-real-world`
+      `distributions`
     ],
     exerciseIds: [
       `ex-rand-1`,
@@ -6813,18 +5817,14 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `vectorize`,
       `memory`,
       `einsum`,
-      `numba`,
-      `np-perf-deep-theory`,
-      `np-perf-patterns`,
-      `np-perf-pitfalls`,
-      `np-perf-real-world`
+      `numba`
     ],
     exerciseIds: [
       `ex-perf-1`,
@@ -6839,18 +5839,14 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `series`,
       `dataframe`,
       `selection`,
-      `dtypes`,
-      `pd-dataframes-deep-theory`,
-      `pd-dataframes-patterns`,
-      `pd-dataframes-pitfalls`,
-      `pd-dataframes-real-world`
+      `dtypes`
     ],
     exerciseIds: [
       `ex-pd-1`,
@@ -6865,18 +5861,14 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `boolean`,
       `query`,
       `assign`,
-      `sort`,
-      `pd-indexing-deep-theory`,
-      `pd-indexing-patterns`,
-      `pd-indexing-pitfalls`,
-      `pd-indexing-real-world`
+      `sort`
     ],
     exerciseIds: [
       `ex-pd-idx-1`,
@@ -6891,18 +5883,14 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `groupby`,
       `agg`,
       `pivot`,
-      `window`,
-      `pd-groupby-deep-theory`,
-      `pd-groupby-patterns`,
-      `pd-groupby-pitfalls`,
-      `pd-groupby-real-world`
+      `window`
     ],
     exerciseIds: [
       `ex-gb-1`,
@@ -6917,18 +5905,14 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `merge`,
       `concat`,
       `reshape`,
-      `join-index`,
-      `pd-merge-deep-theory`,
-      `pd-merge-patterns`,
-      `pd-merge-pitfalls`,
-      `pd-merge-real-world`
+      `join-index`
     ],
     exerciseIds: [
       `ex-merge-1`,
@@ -6943,18 +5927,14 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `missing`,
       `datetime`,
       `tz`,
-      `ts-features`,
-      `pd-missing-deep-theory`,
-      `pd-missing-patterns`,
-      `pd-missing-pitfalls`,
-      `pd-missing-real-world`
+      `ts-features`
     ],
     exerciseIds: [
       `ex-miss-1`,
@@ -6969,18 +5949,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pyplot`,
       `oo-api`,
       `styles`,
-      `anatomy`,
-      `viz-matplotlib-deep-theory`,
-      `viz-matplotlib-patterns`,
-      `viz-matplotlib-pitfalls`,
-      `viz-matplotlib-real-world`
+      `anatomy`
     ],
     exerciseIds: [
       `ex-mpl-1`,
@@ -6995,18 +5971,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `distplot`,
       `relplot`,
       `catplot`,
-      `heatmap`,
-      `viz-seaborn-deep-theory`,
-      `viz-seaborn-patterns`,
-      `viz-seaborn-pitfalls`,
-      `viz-seaborn-real-world`
+      `heatmap`
     ],
     exerciseIds: [
       `ex-sns-1`,
@@ -7021,18 +5993,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `plotly-express`,
       `plotly-graph`,
       `dash`,
-      `when`,
-      `viz-plotly-deep-theory`,
-      `viz-plotly-patterns`,
-      `viz-plotly-pitfalls`,
-      `viz-plotly-real-world`
+      `when`
     ],
     exerciseIds: [
       `ex-plotly-1`,
@@ -7047,18 +6015,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `chart-selection`,
       `color`,
       `storytelling`,
-      `eda-workflow`,
-      `viz-design-deep-theory`,
-      `viz-design-patterns`,
-      `viz-design-pitfalls`,
-      `viz-design-real-world`
+      `eda-workflow`
     ],
     exerciseIds: [
       `ex-design-1`,
@@ -7073,18 +6037,14 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `geopandas`,
       `network`,
       `ml-viz`,
-      `tools`,
-      `viz-specialized-deep-theory`,
-      `viz-specialized-patterns`,
-      `viz-specialized-pitfalls`,
-      `viz-specialized-real-world`
+      `tools`
     ],
     exerciseIds: [
       `ex-spec-1`,
@@ -7099,18 +6059,14 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `vectors`,
       `matrices`,
       `eigen`,
-      `svd`,
-      `ml-linear-algebra-deep-theory`,
-      `ml-linear-algebra-patterns`,
-      `ml-linear-algebra-pitfalls`,
-      `ml-linear-algebra-real-world`
+      `svd`
     ],
     exerciseIds: [
       `ex-la-1`,
@@ -7125,18 +6081,14 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `derivatives`,
       `chain-rule`,
       `loss-gradients`,
-      `jacobian`,
-      `ml-calculus-deep-theory`,
-      `ml-calculus-patterns`,
-      `ml-calculus-pitfalls`,
-      `ml-calculus-real-world`
+      `jacobian`
     ],
     exerciseIds: [
       `ex-calc-1`,
@@ -7151,18 +6103,14 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `basics`,
       `distributions`,
       `expectation`,
-      `mle`,
-      `ml-probability-deep-theory`,
-      `ml-probability-patterns`,
-      `ml-probability-pitfalls`,
-      `ml-probability-real-world`
+      `mle`
     ],
     exerciseIds: [
       `ex-prob-1`,
@@ -7177,18 +6125,14 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `entropy`,
       `cross-entropy`,
       `kl`,
-      `mutual-info`,
-      `ml-info-theory-deep-theory`,
-      `ml-info-theory-patterns`,
-      `ml-info-theory-pitfalls`,
-      `ml-info-theory-real-world`
+      `mutual-info`
     ],
     exerciseIds: [
       `ex-info-1`,
@@ -7203,18 +6147,14 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gd`,
       `variants`,
       `convex`,
-      `regularization`,
-      `ml-optimization-deep-theory`,
-      `ml-optimization-patterns`,
-      `ml-optimization-pitfalls`,
-      `ml-optimization-real-world`
+      `regularization`
     ],
     exerciseIds: [
       `ex-opt-1`,
@@ -7229,18 +6169,14 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pipeline`,
       `split`,
       `preprocessing`,
-      `baseline`,
-      `ml-workflow-deep-theory`,
-      `ml-workflow-patterns`,
-      `ml-workflow-pitfalls`,
-      `ml-workflow-real-world`
+      `baseline`
     ],
     exerciseIds: [
       `ex-split-1`,
@@ -7255,18 +6191,14 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `linear-reg`,
       `logistic`,
       `sigmoid`,
-      `interpret`,
-      `ml-linear-deep-theory`,
-      `ml-linear-patterns`,
-      `ml-linear-pitfalls`,
-      `ml-linear-real-world`
+      `interpret`
     ],
     exerciseIds: [
       `ex-lr-1`,
@@ -7281,18 +6213,14 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dt`,
       `rf`,
       `hyperparams`,
-      `when`,
-      `ml-trees-deep-theory`,
-      `ml-trees-patterns`,
-      `ml-trees-pitfalls`,
-      `ml-trees-real-world`
+      `when`
     ],
     exerciseIds: [
       `ex-tree-1`,
@@ -7307,18 +6235,14 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `classification`,
       `roc`,
       `regression`,
-      `confusion`,
-      `ml-metrics-deep-theory`,
-      `ml-metrics-patterns`,
-      `ml-metrics-pitfalls`,
-      `ml-metrics-real-world`
+      `confusion`
     ],
     exerciseIds: [
       `ex-met-1`,
@@ -7333,18 +6257,14 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `kfold`,
       `gridsearch`,
       `pipeline-cv`,
-      `nested`,
-      `ml-cv-deep-theory`,
-      `ml-cv-patterns`,
-      `ml-cv-pitfalls`,
-      `ml-cv-real-world`
+      `nested`
     ],
     exerciseIds: [
       `ex-cv-1`,
@@ -7359,18 +6279,14 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `poly`,
       `ridge-lasso`,
       `assumptions`,
-      `robust`,
-      `ml-regression-deep-theory`,
-      `ml-regression-patterns`,
-      `ml-regression-pitfalls`,
-      `ml-regression-real-world`
+      `robust`
     ],
     exerciseIds: [
       `ex-reg-1`,
@@ -7385,18 +6301,14 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `knn`,
       `naive-bayes`,
       `multiclass`,
-      `imbalanced`,
-      `ml-classification-deep-theory`,
-      `ml-classification-patterns`,
-      `ml-classification-pitfalls`,
-      `ml-classification-real-world`
+      `imbalanced`
     ],
     exerciseIds: [
       `ex-clf-1`,
@@ -7411,18 +6323,14 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `svm-linear`,
       `kernel`,
       `svc-params`,
-      `svr`,
-      `ml-svm-deep-theory`,
-      `ml-svm-patterns`,
-      `ml-svm-pitfalls`,
-      `ml-svm-real-world`
+      `svr`
     ],
     exerciseIds: [
       `ex-svm-1`,
@@ -7437,18 +6345,14 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gbm`,
       `xgboost`,
       `lightgbm`,
-      `tuning-gbm`,
-      `ml-boosting-deep-theory`,
-      `ml-boosting-patterns`,
-      `ml-boosting-pitfalls`,
-      `ml-boosting-real-world`
+      `tuning-gbm`
     ],
     exerciseIds: [
       `ex-xgb-1`,
@@ -7463,18 +6367,14 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `bagging`,
       `voting`,
       `blending`,
-      `diversity`,
-      `ml-ensemble-deep-theory`,
-      `ml-ensemble-patterns`,
-      `ml-ensemble-pitfalls`,
-      `ml-ensemble-real-world`
+      `diversity`
     ],
     exerciseIds: [
       `ex-ens-1`,
@@ -7489,18 +6389,14 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `kmeans`,
       `dbscan`,
       `hierarchical`,
-      `eval-cluster`,
-      `ml-clustering-deep-theory`,
-      `ml-clustering-patterns`,
-      `ml-clustering-pitfalls`,
-      `ml-clustering-real-world`
+      `eval-cluster`
     ],
     exerciseIds: [
       `ex-km-1`,
@@ -7515,18 +6411,14 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pca`,
       `tsne`,
       `lda`,
-      `autoencoder`,
-      `ml-dimred-deep-theory`,
-      `ml-dimred-patterns`,
-      `ml-dimred-pitfalls`,
-      `ml-dimred-real-world`
+      `autoencoder`
     ],
     exerciseIds: [
       `ex-pca-1`,
@@ -7541,18 +6433,14 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `isolation`,
       `lof`,
       `oneclass`,
-      `applications`,
-      `ml-anomaly-deep-theory`,
-      `ml-anomaly-patterns`,
-      `ml-anomaly-pitfalls`,
-      `ml-anomaly-real-world`
+      `applications`
     ],
     exerciseIds: [
       `ex-anom-1`,
@@ -7567,18 +6455,14 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `apriori`,
       `metrics`,
       `mlxtend`,
-      `applications`,
-      `ml-association-deep-theory`,
-      `ml-association-patterns`,
-      `ml-association-pitfalls`,
-      `ml-association-real-world`
+      `applications`
     ],
     exerciseIds: [
       `ex-assoc-1`,
@@ -7593,18 +6477,14 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gmm`,
       `em`,
       `vs-kmeans`,
-      `applications-gmm`,
-      `ml-gmm-deep-theory`,
-      `ml-gmm-patterns`,
-      `ml-gmm-pitfalls`,
-      `ml-gmm-real-world`
+      `applications-gmm`
     ],
     exerciseIds: [
       `ex-gmm-1`,
@@ -7619,18 +6499,14 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `scaling`,
       `encoding`,
       `binning`,
-      `datetime-fe`,
-      `ml-scaling-deep-theory`,
-      `ml-scaling-patterns`,
-      `ml-scaling-pitfalls`,
-      `ml-scaling-real-world`
+      `datetime-fe`
     ],
     exerciseIds: [
       `ex-scale-1`,
@@ -7645,18 +6521,14 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `filter`,
       `wrapper`,
       `embedded`,
-      `importance`,
-      `ml-feature-sel-deep-theory`,
-      `ml-feature-sel-patterns`,
-      `ml-feature-sel-pitfalls`,
-      `ml-feature-sel-real-world`
+      `importance`
     ],
     exerciseIds: [
       `ex-fsel-1`,
@@ -7671,18 +6543,14 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `grid`,
       `random`,
       `optuna`,
-      `avoid-leakage`,
-      `ml-hyperparam-deep-theory`,
-      `ml-hyperparam-patterns`,
-      `ml-hyperparam-pitfalls`,
-      `ml-hyperparam-real-world`
+      `avoid-leakage`
     ],
     exerciseIds: [
       `ex-hp-1`,
@@ -7697,18 +6565,14 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `tradeoff`,
       `learning-curves`,
       `regularization-bv`,
-      `double-descent`,
-      `ml-bias-variance-deep-theory`,
-      `ml-bias-variance-patterns`,
-      `ml-bias-variance-pitfalls`,
-      `ml-bias-variance-real-world`
+      `double-descent`
     ],
     exerciseIds: [
       `ex-bv-1`,
@@ -7723,18 +6587,14 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `shap`,
       `lime`,
       `global`,
-      `fairness`,
-      `ml-interpret-deep-theory`,
-      `ml-interpret-patterns`,
-      `ml-interpret-pitfalls`,
-      `ml-interpret-real-world`
+      `fairness`
     ],
     exerciseIds: [
       `ex-shap-1`,
@@ -7749,18 +6609,14 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `perceptron`,
       `mlp`,
       `forward`,
-      `capacity`,
-      `dl-nn-basics-deep-theory`,
-      `dl-nn-basics-patterns`,
-      `dl-nn-basics-pitfalls`,
-      `dl-nn-basics-real-world`
+      `capacity`
     ],
     exerciseIds: [
       `ex-nn-1`,
@@ -7775,18 +6631,14 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `relu`,
       `sigmoid-tanh`,
       `softmax`,
-      `modern`,
-      `dl-activations-deep-theory`,
-      `dl-activations-patterns`,
-      `dl-activations-pitfalls`,
-      `dl-activations-real-world`
+      `modern`
     ],
     exerciseIds: [
       `ex-act-1`,
@@ -7801,18 +6653,14 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mse`,
       `ce`,
       `multi-task`,
-      `monitor`,
-      `dl-loss-deep-theory`,
-      `dl-loss-patterns`,
-      `dl-loss-pitfalls`,
-      `dl-loss-real-world`
+      `monitor`
     ],
     exerciseIds: [
       `ex-loss-1`,
@@ -7827,18 +6675,14 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `concept`,
       `manual`,
       `autograd`,
-      `vanishing`,
-      `dl-backprop-deep-theory`,
-      `dl-backprop-patterns`,
-      `dl-backprop-pitfalls`,
-      `dl-backprop-real-world`
+      `vanishing`
     ],
     exerciseIds: [
       `ex-bp-1`,
@@ -7853,18 +6697,14 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `init`,
       `dropout`,
       `batchnorm`,
-      `early-stop`,
-      `dl-init-reg-deep-theory`,
-      `dl-init-reg-patterns`,
-      `dl-init-reg-pitfalls`,
-      `dl-init-reg-real-world`
+      `early-stop`
     ],
     exerciseIds: [
       `ex-init-1`,
@@ -7879,18 +6719,14 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `tensor-basics`,
       `ops`,
       `numpy-bridge`,
-      `device`,
-      `pt-tensors-deep-theory`,
-      `pt-tensors-patterns`,
-      `pt-tensors-pitfalls`,
-      `pt-tensors-real-world`
+      `device`
     ],
     exerciseIds: [
       `ex-pt-1`,
@@ -7905,18 +6741,14 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `grad`,
       `graph`,
       `leaf`,
-      `higher`,
-      `pt-autograd-deep-theory`,
-      `pt-autograd-patterns`,
-      `pt-autograd-pitfalls`,
-      `pt-autograd-real-world`
+      `higher`
     ],
     exerciseIds: [
       `ex-ag-1`,
@@ -7931,18 +6763,14 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `module`,
       `layers`,
       `loss-opt`,
-      `save`,
-      `pt-module-deep-theory`,
-      `pt-module-patterns`,
-      `pt-module-pitfalls`,
-      `pt-module-real-world`
+      `save`
     ],
     exerciseIds: [
       `ex-mod-1`,
@@ -7957,18 +6785,14 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dataset`,
       `loop`,
       `transforms`,
-      `scheduler`,
-      `pt-training-deep-theory`,
-      `pt-training-patterns`,
-      `pt-training-pitfalls`,
-      `pt-training-real-world`
+      `scheduler`
     ],
     exerciseIds: [
       `ex-train-1`,
@@ -7983,18 +6807,14 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `cuda`,
       `amp`,
       `compile`,
-      `distributed`,
-      `pt-gpu-deep-theory`,
-      `pt-gpu-patterns`,
-      `pt-gpu-pitfalls`,
-      `pt-gpu-real-world`
+      `distributed`
     ],
     exerciseIds: [
       `ex-gpu-1`,
@@ -8009,18 +6829,14 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `conv2d`,
       `pooling`,
       `receptive`,
-      `cnn-arch`,
-      `dl-conv-deep-theory`,
-      `dl-conv-patterns`,
-      `dl-conv-pitfalls`,
-      `dl-conv-real-world`
+      `cnn-arch`
     ],
     exerciseIds: [
       `ex-conv-1`,
@@ -8035,18 +6851,14 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `vgg`,
       `resnet`,
       `modern`,
-      `torchvision`,
-      `dl-cnn-arch-deep-theory`,
-      `dl-cnn-arch-patterns`,
-      `dl-cnn-arch-pitfalls`,
-      `dl-cnn-arch-real-world`
+      `torchvision`
     ],
     exerciseIds: [
       `ex-res-1`,
@@ -8061,18 +6873,14 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `strategy`,
       `finetune`,
       `domain`,
-      `hub`,
-      `dl-transfer-deep-theory`,
-      `dl-transfer-patterns`,
-      `dl-transfer-pitfalls`,
-      `dl-transfer-real-world`
+      `hub`
     ],
     exerciseIds: [
       `ex-tl-1`,
@@ -8087,18 +6895,14 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `metrics-det`,
       `rcnn`,
       `yolo`,
-      `tools`,
-      `dl-detection-deep-theory`,
-      `dl-detection-patterns`,
-      `dl-detection-pitfalls`,
-      `dl-detection-real-world`
+      `tools`
     ],
     exerciseIds: [
       `ex-det-1`,
@@ -8113,18 +6917,14 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `semantic`,
       `instance`,
       `unet`,
-      `metrics-seg`,
-      `dl-segmentation-deep-theory`,
-      `dl-segmentation-patterns`,
-      `dl-segmentation-pitfalls`,
-      `dl-segmentation-real-world`
+      `metrics-seg`
     ],
     exerciseIds: [
       `ex-seg-1`,
@@ -8139,18 +6939,14 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `clean`,
       `tokenize`,
       `hf-tokenizer`,
-      `vocab`,
-      `nlp-preprocess-deep-theory`,
-      `nlp-preprocess-patterns`,
-      `nlp-preprocess-pitfalls`,
-      `nlp-preprocess-real-world`
+      `vocab`
     ],
     exerciseIds: [
       `ex-nlp-1`,
@@ -8165,18 +6961,14 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `word2vec`,
       `glove`,
       `nn-embed`,
-      `contextual`,
-      `nlp-embeddings-deep-theory`,
-      `nlp-embeddings-patterns`,
-      `nlp-embeddings-pitfalls`,
-      `nlp-embeddings-real-world`
+      `contextual`
     ],
     exerciseIds: [
       `ex-emb-1`,
@@ -8191,18 +6983,14 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `rnn`,
       `lstm`,
       `gru`,
-      `bidirectional`,
-      `nlp-rnn-deep-theory`,
-      `nlp-rnn-patterns`,
-      `nlp-rnn-pitfalls`,
-      `nlp-rnn-real-world`
+      `bidirectional`
     ],
     exerciseIds: [
       `ex-rnn-1`,
@@ -8217,18 +7005,14 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `seq2seq`,
       `teacher`,
       `beam`,
-      `apps`,
-      `nlp-seq2seq-deep-theory`,
-      `nlp-seq2seq-patterns`,
-      `nlp-seq2seq-pitfalls`,
-      `nlp-seq2seq-real-world`
+      `apps`
     ],
     exerciseIds: [
       `ex-s2s-1`,
@@ -8243,18 +7027,14 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ner-task`,
       `bi-lstm`,
       `bert-ner`,
-      `applications`,
-      `nlp-ner-deep-theory`,
-      `nlp-ner-patterns`,
-      `nlp-ner-pitfalls`,
-      `nlp-ner-real-world`
+      `applications`
     ],
     exerciseIds: [
       `ex-ner-1`,
@@ -8269,18 +7049,14 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `attention`,
       `scaled`,
       `self-attn`,
-      `multi-head`,
-      `dl-attention-deep-theory`,
-      `dl-attention-patterns`,
-      `dl-attention-pitfalls`,
-      `dl-attention-real-world`
+      `multi-head`
     ],
     exerciseIds: [
       `ex-attn-1`,
@@ -8295,18 +7071,14 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `encoder`,
       `decoder`,
       `ffn`,
-      `layer-norm`,
-      `dl-transformer-deep-theory`,
-      `dl-transformer-patterns`,
-      `dl-transformer-pitfalls`,
-      `dl-transformer-real-world`
+      `layer-norm`
     ],
     exerciseIds: [
       `ex-tr-1`,
@@ -8321,18 +7093,14 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `sinusoidal`,
       `learned`,
       `rope`,
-      `alibi`,
-      `dl-positional-deep-theory`,
-      `dl-positional-patterns`,
-      `dl-positional-pitfalls`,
-      `dl-positional-real-world`
+      `alibi`
     ],
     exerciseIds: [
       `ex-pe-1`,
@@ -8347,18 +7115,14 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `bert`,
       `mlm`,
       `fine-tune`,
-      `encoder-models`,
-      `dl-bert-deep-theory`,
-      `dl-bert-patterns`,
-      `dl-bert-pitfalls`,
-      `dl-bert-real-world`
+      `encoder-models`
     ],
     exerciseIds: [
       `ex-bert-1`,
@@ -8373,18 +7137,14 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gpt`,
       `generation`,
       `causal`,
-      `scaling`,
-      `dl-gpt-deep-theory`,
-      `dl-gpt-patterns`,
-      `dl-gpt-pitfalls`,
-      `dl-gpt-real-world`
+      `scaling`
     ],
     exerciseIds: [
       `ex-gpt-1`,
@@ -8399,18 +7159,14 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 30,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `landscape`,
       `capabilities`,
       `tokens`,
-      `eval`,
-      `ai-llm-deep-theory`,
-      `ai-llm-patterns`,
-      `ai-llm-pitfalls`,
-      `ai-llm-real-world`
+      `eval`
     ],
     exerciseIds: [
       `ex-llm-1`,
@@ -8425,18 +7181,14 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `basics`,
       `cot`,
       `few-shot`,
-      `advanced-prompt`,
-      `ai-prompt-deep-theory`,
-      `ai-prompt-patterns`,
-      `ai-prompt-pitfalls`,
-      `ai-prompt-real-world`
+      `advanced-prompt`
     ],
     exerciseIds: [
       `ex-prompt-1`,
@@ -8451,18 +7203,14 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `rag-arch`,
       `embeddings-rag`,
       `chunking`,
-      `eval-rag`,
-      `ai-rag-deep-theory`,
-      `ai-rag-patterns`,
-      `ai-rag-pitfalls`,
-      `ai-rag-real-world`
+      `eval-rag`
     ],
     exerciseIds: [
       `ex-rag-1`,
@@ -8477,18 +7225,14 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `finetune`,
       `lora`,
       `instruction`,
-      `rlhf`,
-      `ai-finetune-deep-theory`,
-      `ai-finetune-patterns`,
-      `ai-finetune-pitfalls`,
-      `ai-finetune-real-world`
+      `rlhf`
     ],
     exerciseIds: [
       `ex-ft-1`,
@@ -8503,18 +7247,14 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `agents`,
       `tools`,
       `frameworks`,
-      `safety`,
-      `ai-agents-deep-theory`,
-      `ai-agents-patterns`,
-      `ai-agents-pitfalls`,
-      `ai-agents-real-world`
+      `safety`
     ],
     exerciseIds: [
       `ex-agent-1`,
@@ -8529,18 +7269,14 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `serialize`,
       `fastapi`,
       `onnx`,
-      `batch-realtime`,
-      `ai-serving-deep-theory`,
-      `ai-serving-patterns`,
-      `ai-serving-pitfalls`,
-      `ai-serving-real-world`
+      `batch-realtime`
     ],
     exerciseIds: [
       `ex-serve-1`,
@@ -8555,18 +7291,14 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `docker`,
       `compose`,
       `cloud`,
-      `cicd`,
-      `ai-docker-deep-theory`,
-      `ai-docker-patterns`,
-      `ai-docker-pitfalls`,
-      `ai-docker-real-world`
+      `cicd`
     ],
     exerciseIds: [
       `ex-docker-1`,
@@ -8581,18 +7313,14 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `monitoring`,
       `drift`,
       `evidently`,
-      `retraining`,
-      `ai-monitoring-deep-theory`,
-      `ai-monitoring-patterns`,
-      `ai-monitoring-pitfalls`,
-      `ai-monitoring-real-world`
+      `retraining`
     ],
     exerciseIds: [
       `ex-mon-1`,
@@ -8607,18 +7335,14 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `bias`,
       `fairness`,
       `mitigation`,
-      `explain-ethics`,
-      `ai-bias-deep-theory`,
-      `ai-bias-patterns`,
-      `ai-bias-pitfalls`,
-      `ai-bias-real-world`
+      `explain-ethics`
     ],
     exerciseIds: [
       `ex-bias-1`,
@@ -8633,18 +7357,14 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 25,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `framework`,
       `eu-ai-act`,
       `privacy`,
-      `red-team`,
-      `ai-governance-deep-theory`,
-      `ai-governance-patterns`,
-      `ai-governance-pitfalls`,
-      `ai-governance-real-world`
+      `red-team`
     ],
     exerciseIds: [
       `ex-gov-1`,
@@ -8659,18 +7379,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pytest-basics`,
       `fixtures`,
       `unittest-mock`,
-      `coverage-ci`,
-      `py-testing-deep-theory`,
-      `py-testing-patterns`,
-      `py-testing-pitfalls`,
-      `py-testing-real-world`
+      `coverage-ci`
     ],
     exerciseIds: [
       `ex-pytest-1`,
@@ -8685,18 +7401,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 30,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pdb`,
       `logging`,
       `tracebacks`,
-      `debug-tools`,
-      `py-debugging-deep-theory`,
-      `py-debugging-patterns`,
-      `py-debugging-pitfalls`,
-      `py-debugging-real-world`
+      `debug-tools`
     ],
     exerciseIds: [
       `ex-debug-1`,
@@ -8711,18 +7423,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `coroutines`,
       `gather-tasks`,
       `aiohttp`,
-      `async-pitfalls`,
-      `py-async-deep-theory`,
-      `py-async-patterns`,
-      `py-async-pitfalls`,
-      `py-async-real-world`
+      `async-pitfalls`
     ],
     exerciseIds: [
       `ex-async-1`,
@@ -8737,18 +7445,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 30,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `re-basics`,
       `patterns`,
       `flags-groups`,
-      `regex-caveats`,
-      `py-regex-deep-theory`,
-      `py-regex-patterns`,
-      `py-regex-pitfalls`,
-      `py-regex-real-world`
+      `regex-caveats`
     ],
     exerciseIds: [
       `ex-regex-1`,
@@ -8763,18 +7467,14 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gil`,
       `threading`,
       `multiprocessing`,
-      `choosing`,
-      `py-concurrency-deep-theory`,
-      `py-concurrency-patterns`,
-      `py-concurrency-pitfalls`,
-      `py-concurrency-real-world`
+      `choosing`
     ],
     exerciseIds: [
       `ex-conc-1`,
@@ -8789,18 +7489,14 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 30,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `pathlib`,
       `json-csv`,
       `pickle`,
-      `io-patterns`,
-      `py-files-deep-theory`,
-      `py-files-patterns`,
-      `py-files-pitfalls`,
-      `py-files-real-world`
+      `io-patterns`
     ],
     exerciseIds: [
       `ex-files-1`,
@@ -8815,18 +7511,14 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `requests-basics`,
       `rest`,
       `auth-errors`,
-      `testing-apis`,
-      `py-apis-deep-theory`,
-      `py-apis-patterns`,
-      `py-apis-pitfalls`,
-      `py-apis-real-world`
+      `testing-apis`
     ],
     exerciseIds: [
       `ex-api-1`,
@@ -8841,18 +7533,14 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `bs4`,
       `fetch`,
       `extract`,
-      `ethics`,
-      `py-web-scrape-deep-theory`,
-      `py-web-scrape-patterns`,
-      `py-web-scrape-pitfalls`,
-      `py-web-scrape-real-world`
+      `ethics`
     ],
     exerciseIds: [
       `ex-scrape-1`,
@@ -8867,18 +7555,14 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `connect`,
       `sql`,
       `orm-alt`,
-      `security`,
-      `py-sqlite-deep-theory`,
-      `py-sqlite-patterns`,
-      `py-sqlite-pitfalls`,
-      `py-sqlite-real-world`
+      `security`
     ],
     exerciseIds: [
       `ex-sql-1`,
@@ -8893,18 +7577,14 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 30,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `json-schema`,
       `yaml`,
       `parquet`,
-      `formats-choose`,
-      `py-serialization-deep-theory`,
-      `py-serialization-patterns`,
-      `py-serialization-pitfalls`,
-      `py-serialization-real-world`
+      `formats-choose`
     ],
     exerciseIds: [
       `ex-ser-1`,
@@ -8919,18 +7599,14 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `optimize`,
       `integrate`,
       `interpolate`,
-      `scipy-ecosystem`,
-      `scipy-basics-deep-theory`,
-      `scipy-basics-patterns`,
-      `scipy-basics-pitfalls`,
-      `scipy-basics-real-world`
+      `scipy-ecosystem`
     ],
     exerciseIds: [
       `ex-scipy-1`,
@@ -8945,18 +7621,14 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `hypothesis`,
       `ttest`,
       `chisq`,
-      `pvalue-interpret`,
-      `stats-hypothesis-deep-theory`,
-      `stats-hypothesis-patterns`,
-      `stats-hypothesis-pitfalls`,
-      `stats-hypothesis-real-world`
+      `pvalue-interpret`
     ],
     exerciseIds: [
       `ex-hyp-1`,
@@ -8971,18 +7643,14 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `rv`,
       `fit`,
       `sampling`,
-      `clt`,
-      `stats-distributions-deep-theory`,
-      `stats-distributions-patterns`,
-      `stats-distributions-pitfalls`,
-      `stats-distributions-real-world`
+      `clt`
     ],
     exerciseIds: [
       `ex-dist-1`,
@@ -8997,18 +7665,14 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ols`,
       `logistic`,
       `diagnostics`,
-      `inference-vs-pred`,
-      `stats-regression-deep-theory`,
-      `stats-regression-patterns`,
-      `stats-regression-pitfalls`,
-      `stats-regression-real-world`
+      `inference-vs-pred`
     ],
     exerciseIds: [
       `ex-reg-1`,
@@ -9023,18 +7687,14 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `bayes-theorem`,
       `priors`,
       `mcmc`,
-      `bayes-ml`,
-      `stats-bayes-deep-theory`,
-      `stats-bayes-patterns`,
-      `stats-bayes-pitfalls`,
-      `stats-bayes-real-world`
+      `bayes-ml`
     ],
     exerciseIds: [
       `ex-bayes-1`,
@@ -9049,18 +7709,14 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `components`,
       `stationarity`,
       `arima`,
-      `seasonal-arima`,
-      `ml-timeseries-deep-theory`,
-      `ml-timeseries-patterns`,
-      `ml-timeseries-pitfalls`,
-      `ml-timeseries-real-world`
+      `seasonal-arima`
     ],
     exerciseIds: [
       `ex-ts-1`,
@@ -9075,18 +7731,14 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `prophet`,
       `sklearn-ts`,
       `metrics-ts`,
-      `pipeline`,
-      `ml-forecasting-deep-theory`,
-      `ml-forecasting-patterns`,
-      `ml-forecasting-pitfalls`,
-      `ml-forecasting-real-world`
+      `pipeline`
     ],
     exerciseIds: [
       `ex-fc-1`,
@@ -9101,18 +7753,14 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `matrix-factor`,
       `neighborhood`,
       `implicit`,
-      `eval-recsys`,
-      `ml-recsys-collab-deep-theory`,
-      `ml-recsys-collab-patterns`,
-      `ml-recsys-collab-pitfalls`,
-      `ml-recsys-collab-real-world`
+      `eval-recsys`
     ],
     exerciseIds: [
       `ex-cf-1`,
@@ -9127,18 +7775,14 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `features`,
       `similarity`,
       `learning`,
-      `limits`,
-      `ml-recsys-content-deep-theory`,
-      `ml-recsys-content-patterns`,
-      `ml-recsys-content-pitfalls`,
-      `ml-recsys-content-real-world`
+      `limits`
     ],
     exerciseIds: [
       `ex-cb-1`,
@@ -9153,18 +7797,14 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `problem`,
       `smote`,
       `weights`,
-      `metrics-imb`,
-      `ml-imbalanced-deep-theory`,
-      `ml-imbalanced-patterns`,
-      `ml-imbalanced-pitfalls`,
-      `ml-imbalanced-real-world`
+      `metrics-imb`
     ],
     exerciseIds: [
       `ex-imb-1`,
@@ -9179,18 +7819,14 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mdp`,
       `value-policy`,
       `explore`,
-      `rl-loop`,
-      `rl-basics-deep-theory`,
-      `rl-basics-patterns`,
-      `rl-basics-pitfalls`,
-      `rl-basics-real-world`
+      `rl-loop`
     ],
     exerciseIds: [
       `ex-rl-1`,
@@ -9205,18 +7841,14 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `qlearning`,
       `td`,
       `tabular`,
-      `convergence`,
-      `rl-qlearning-deep-theory`,
-      `rl-qlearning-patterns`,
-      `rl-qlearning-pitfalls`,
-      `rl-qlearning-real-world`
+      `convergence`
     ],
     exerciseIds: [
       `ex-ql-1`,
@@ -9231,18 +7863,14 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `dqn`,
       `improvements`,
       `atari`,
-      `limits-dqn`,
-      `rl-deep-deep-theory`,
-      `rl-deep-patterns`,
-      `rl-deep-pitfalls`,
-      `rl-deep-real-world`
+      `limits-dqn`
     ],
     exerciseIds: [
       `ex-dqn-1`,
@@ -9257,18 +7885,14 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `reinforce`,
       `actor-critic`,
       `continuous`,
-      `pg-vs-value`,
-      `rl-policy-deep-theory`,
-      `rl-policy-patterns`,
-      `rl-policy-pitfalls`,
-      `rl-policy-real-world`
+      `pg-vs-value`
     ],
     exerciseIds: [
       `ex-pg-1`,
@@ -9283,18 +7907,14 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `games`,
       `robotics`,
       `recsys-rl`,
-      `deploy`,
-      `rl-applications-deep-theory`,
-      `rl-applications-patterns`,
-      `rl-applications-pitfalls`,
-      `rl-applications-real-world`
+      `deploy`
     ],
     exerciseIds: [
       `ex-rlapp-1`,
@@ -9309,18 +7929,14 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `gan-arch`,
       `dcgan`,
       `training-tricks`,
-      `conditional`,
-      `gen-gan-deep-theory`,
-      `gen-gan-patterns`,
-      `gen-gan-pitfalls`,
-      `gen-gan-real-world`
+      `conditional`
     ],
     exerciseIds: [
       `ex-gan-1`,
@@ -9335,18 +7951,14 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `vae`,
       `latent`,
       `vae-variants`,
-      `sampling-vae`,
-      `gen-vae-deep-theory`,
-      `gen-vae-patterns`,
-      `gen-vae-pitfalls`,
-      `gen-vae-real-world`
+      `sampling-vae`
     ],
     exerciseIds: [
       `ex-vae-1`,
@@ -9361,18 +7973,14 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `forward`,
       `reverse`,
       `guidance`,
-      `diffusion-apps`,
-      `gen-diffusion-deep-theory`,
-      `gen-diffusion-patterns`,
-      `gen-diffusion-pitfalls`,
-      `gen-diffusion-real-world`
+      `diffusion-apps`
     ],
     exerciseIds: [
       `ex-diff-1`,
@@ -9387,18 +7995,14 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `nst`,
       `cyclegan`,
       `stylegan`,
-      `applications`,
-      `gen-style-deep-theory`,
-      `gen-style-patterns`,
-      `gen-style-pitfalls`,
-      `gen-style-real-world`
+      `applications`
     ],
     exerciseIds: [
       `ex-style-1`,
@@ -9413,18 +8017,14 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `fid`,
       `is`,
       `human`,
-      `other-metrics`,
-      `gen-eval-deep-theory`,
-      `gen-eval-patterns`,
-      `gen-eval-pitfalls`,
-      `gen-eval-real-world`
+      `other-metrics`
     ],
     exerciseIds: [
       `ex-geval-1`,
@@ -9439,18 +8039,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `embeddings`,
       `faiss`,
       `hybrid`,
-      `ops`,
-      `ai-vectors-deep-theory`,
-      `ai-vectors-patterns`,
-      `ai-vectors-pitfalls`,
-      `ai-vectors-real-world`
+      `ops`
     ],
     exerciseIds: [
       `ex-vec-1`,
@@ -9465,18 +8061,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `clip`,
       `vlm`,
       `tasks`,
-      `limits`,
-      `ai-multimodal-deep-theory`,
-      `ai-multimodal-patterns`,
-      `ai-multimodal-pitfalls`,
-      `ai-multimodal-real-world`
+      `limits`
     ],
     exerciseIds: [
       `ex-mm-1`,
@@ -9491,18 +8083,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `whisper`,
       `tts`,
       `audio-llm`,
-      `deploy-speech`,
-      `ai-speech-deep-theory`,
-      `ai-speech-patterns`,
-      `ai-speech-pitfalls`,
-      `ai-speech-real-world`
+      `deploy-speech`
     ],
     exerciseIds: [
       `ex-speech-1`,
@@ -9517,18 +8105,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `mmlu`,
       `humaneval`,
       `red-team`,
-      `eval-practice`,
-      `ai-eval-deep-theory`,
-      `ai-eval-patterns`,
-      `ai-eval-pitfalls`,
-      `ai-eval-real-world`
+      `eval-practice`
     ],
     exerciseIds: [
       `ex-aieval-1`,
@@ -9543,18 +8127,14 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `alignment`,
       `jailbreaks`,
       `guardrails`,
-      `governance`,
-      `ai-safety-deep-theory`,
-      `ai-safety-patterns`,
-      `ai-safety-pitfalls`,
-      `ai-safety-real-world`
+      `governance`
     ],
     exerciseIds: [
       `ex-safe-1`,
@@ -9569,18 +8149,14 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `structure`,
       `ideas`,
       `presentation`,
-      `open-source`,
-      `cap-portfolio-deep-theory`,
-      `cap-portfolio-patterns`,
-      `cap-portfolio-pitfalls`,
-      `cap-portfolio-real-world`
+      `open-source`
     ],
     exerciseIds: [
       `ex-port-1`,
@@ -9595,18 +8171,14 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 40,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `workflow`,
       `features`,
       `ensemble`,
-      `mindset`,
-      `cap-kaggle-deep-theory`,
-      `cap-kaggle-patterns`,
-      `cap-kaggle-pitfalls`,
-      `cap-kaggle-real-world`
+      `mindset`
     ],
     exerciseIds: [
       `ex-kaggle-1`,
@@ -9621,18 +8193,14 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 45,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `ml-fundamentals`,
       `coding`,
       `system-design`,
-      `behavioral`,
-      `cap-interview-deep-theory`,
-      `cap-interview-patterns`,
-      `cap-interview-pitfalls`,
-      `cap-interview-real-world`
+      `behavioral`
     ],
     exerciseIds: [
       `ex-int-1`,
@@ -9647,18 +8215,14 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 35,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `reading`,
       `venues`,
       `reproduce`,
-      `contribute`,
-      `cap-research-deep-theory`,
-      `cap-research-patterns`,
-      `cap-research-pitfalls`,
-      `cap-research-real-world`
+      `contribute`
     ],
     exerciseIds: [
       `ex-paper-1`,
@@ -9673,18 +8237,14 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 124,
-    sectionCount: 8,
+    estimatedMinutes: 30,
+    sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
       `roles`,
       `skills`,
       `job-search`,
-      `growth`,
-      `cap-career-deep-theory`,
-      `cap-career-patterns`,
-      `cap-career-pitfalls`,
-      `cap-career-real-world`
+      `growth`
     ],
     exerciseIds: [
       `ex-career-1`,
@@ -9702,18 +8262,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 20,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `vars-intro`,
         `literals`,
         `mutability`,
-        `type-checking`,
-        `py-vars-types-deep-theory`,
-        `py-vars-types-patterns`,
-        `py-vars-types-pitfalls`,
-        `py-vars-types-real-world`
+        `type-checking`
       ],
       exerciseIds: [
         `ex-vars-1`,
@@ -9728,18 +8284,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `arith`,
         `compare`,
         `assign`,
-        `bitwise`,
-        `py-operators-deep-theory`,
-        `py-operators-patterns`,
-        `py-operators-pitfalls`,
-        `py-operators-real-world`
+        `bitwise`
       ],
       exerciseIds: [
         `ex-op-1`,
@@ -9754,18 +8306,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `str-basics`,
         `str-methods`,
         `str-format`,
-        `str-unicode`,
-        `py-strings-deep-theory`,
-        `py-strings-patterns`,
-        `py-strings-pitfalls`,
-        `py-strings-real-world`
+        `str-unicode`
       ],
       exerciseIds: [
         `ex-str-1`,
@@ -9780,18 +8328,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `print`,
         `input`,
         `repl`,
-        `files-intro`,
-        `py-io-deep-theory`,
-        `py-io-patterns`,
-        `py-io-pitfalls`,
-        `py-io-real-world`
+        `files-intro`
       ],
       exerciseIds: [
         `ex-io-1`,
@@ -9806,18 +8350,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `venv`,
         `pip`,
         `ide`,
-        `project-structure`,
-        `py-env-deep-theory`,
-        `py-env-patterns`,
-        `py-env-pitfalls`,
-        `py-env-real-world`
+        `project-structure`
       ],
       exerciseIds: [
         `ex-env-1`,
@@ -9832,18 +8372,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `if-basic`,
         `elif`,
         `ternary`,
-        `guard`,
-        `py-conditionals-deep-theory`,
-        `py-conditionals-patterns`,
-        `py-conditionals-pitfalls`,
-        `py-conditionals-real-world`
+        `guard`
       ],
       exerciseIds: [
         `ex-if-1`,
@@ -9858,18 +8394,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `for-loop`,
         `while-loop`,
         `loop-else`,
-        `nested`,
-        `py-loops-deep-theory`,
-        `py-loops-patterns`,
-        `py-loops-pitfalls`,
-        `py-loops-real-world`
+        `nested`
       ],
       exerciseIds: [
         `ex-loop-1`,
@@ -9884,18 +8416,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `def-basic`,
         `params`,
         `unpack`,
-        `pure`,
-        `py-functions-deep-theory`,
-        `py-functions-patterns`,
-        `py-functions-pitfalls`,
-        `py-functions-real-world`
+        `pure`
       ],
       exerciseIds: [
         `ex-fn-1`,
@@ -9910,18 +8438,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `legb`,
         `closures`,
         `lambda`,
-        `higher`,
-        `py-scope-deep-theory`,
-        `py-scope-patterns`,
-        `py-scope-pitfalls`,
-        `py-scope-real-world`
+        `higher`
       ],
       exerciseIds: [
         `ex-scope-1`,
@@ -9936,18 +8460,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `list-comp`,
         `dict-set-comp`,
         `generators`,
-        `iterators`,
-        `py-comprehensions-deep-theory`,
-        `py-comprehensions-patterns`,
-        `py-comprehensions-pitfalls`,
-        `py-comprehensions-real-world`
+        `iterators`
       ],
       exerciseIds: [
         `ex-comp-1`,
@@ -9962,18 +8482,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `list-ops`,
         `tuples`,
         `list-perf`,
-        `nested`,
-        `py-lists-deep-theory`,
-        `py-lists-patterns`,
-        `py-lists-pitfalls`,
-        `py-lists-real-world`
+        `nested`
       ],
       exerciseIds: [
         `ex-list-1`,
@@ -9988,18 +8504,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dict-basics`,
         `sets`,
         `defaultdict`,
-        `dict-merge`,
-        `py-dicts-deep-theory`,
-        `py-dicts-patterns`,
-        `py-dicts-pitfalls`,
-        `py-dicts-real-world`
+        `dict-merge`
       ],
       exerciseIds: [
         `ex-dict-1`,
@@ -10014,18 +8526,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `stack`,
         `queue`,
         `deque-features`,
-        `applications`,
-        `py-deque-deep-theory`,
-        `py-deque-patterns`,
-        `py-deque-pitfalls`,
-        `py-deque-real-world`
+        `applications`
       ],
       exerciseIds: [
         `ex-deque-1`,
@@ -10040,18 +8548,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `sorting`,
         `custom-sort`,
         `search`,
-        `complexity`,
-        `py-sort-search-deep-theory`,
-        `py-sort-search-patterns`,
-        `py-sort-search-pitfalls`,
-        `py-sort-search-real-world`
+        `complexity`
       ],
       exerciseIds: [
         `ex-sort-1`,
@@ -10066,18 +8570,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `namedtuple`,
         `chainmap`,
         `ordered`,
-        `heapq`,
-        `py-collections-deep-theory`,
-        `py-collections-patterns`,
-        `py-collections-pitfalls`,
-        `py-collections-real-world`
+        `heapq`
       ],
       exerciseIds: [
         `ex-coll-1`,
@@ -10092,18 +8592,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `class-basics`,
         `class-vs-instance`,
         `methods`,
-        `dunder`,
-        `py-classes-deep-theory`,
-        `py-classes-patterns`,
-        `py-classes-pitfalls`,
-        `py-classes-real-world`
+        `dunder`
       ],
       exerciseIds: [
         `ex-class-1`,
@@ -10118,18 +8614,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `inheritance`,
         `mro`,
         `abstract`,
-        `composition`,
-        `py-inheritance-deep-theory`,
-        `py-inheritance-patterns`,
-        `py-inheritance-pitfalls`,
-        `py-inheritance-real-world`
+        `composition`
       ],
       exerciseIds: [
         `ex-inherit-1`,
@@ -10144,18 +8636,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `naming`,
         `property`,
         `slots`,
-        `dataclass-preview`,
-        `py-encapsulation-deep-theory`,
-        `py-encapsulation-patterns`,
-        `py-encapsulation-pitfalls`,
-        `py-encapsulation-real-world`
+        `dataclass-preview`
       ],
       exerciseIds: [
         `ex-encap-1`,
@@ -10170,18 +8658,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `factory`,
         `strategy`,
         `observer`,
-        `singleton`,
-        `py-patterns-deep-theory`,
-        `py-patterns-patterns`,
-        `py-patterns-pitfalls`,
-        `py-patterns-real-world`
+        `singleton`
       ],
       exerciseIds: [
         `ex-pattern-1`,
@@ -10196,18 +8680,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `protocol`,
         `abc-vs-protocol`,
         `generic`,
-        `solid`,
-        `py-protocols-deep-theory`,
-        `py-protocols-patterns`,
-        `py-protocols-pitfalls`,
-        `py-protocols-real-world`
+        `solid`
       ],
       exerciseIds: [
         `ex-proto-1`,
@@ -10222,18 +8702,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `decorator-basics`,
         `functools-wraps`,
         `param-decorator`,
-        `class-decorator`,
-        `py-decorators-deep-theory`,
-        `py-decorators-patterns`,
-        `py-decorators-pitfalls`,
-        `py-decorators-real-world`
+        `class-decorator`
       ],
       exerciseIds: [
         `ex-dec-1`,
@@ -10248,18 +8724,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `yield`,
         `yield-from`,
         `gen-expr`,
-        `infinite`,
-        `py-generators-deep-theory`,
-        `py-generators-patterns`,
-        `py-generators-pitfalls`,
-        `py-generators-real-world`
+        `infinite`
       ],
       exerciseIds: [
         `ex-gen-1`,
@@ -10274,18 +8746,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `with`,
         `contextlib`,
         `file-context`,
-        `async-context`,
-        `py-context-deep-theory`,
-        `py-context-patterns`,
-        `py-context-pitfalls`,
-        `py-context-real-world`
+        `async-context`
       ],
       exerciseIds: [
         `ex-ctx-1`,
@@ -10300,18 +8768,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `hints`,
         `dataclass`,
         `pydantic`,
-        `typing-advanced`,
-        `py-typehints-deep-theory`,
-        `py-typehints-patterns`,
-        `py-typehints-pitfalls`,
-        `py-typehints-real-world`
+        `typing-advanced`
       ],
       exerciseIds: [
         `ex-type-1`,
@@ -10326,18 +8790,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `imports`,
         `packages`,
         `publishing`,
-        `stdlib`,
-        `py-modules-deep-theory`,
-        `py-modules-patterns`,
-        `py-modules-pitfalls`,
-        `py-modules-real-world`
+        `stdlib`
       ],
       exerciseIds: [
         `ex-mod-1`,
@@ -10352,18 +8812,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `sets-intro`,
         `sets-ops`,
         `sets-functions`,
-        `sets-counting`,
-        `math-sets-deep-theory`,
-        `math-sets-patterns`,
-        `math-sets-pitfalls`,
-        `math-sets-real-world`
+        `sets-counting`
       ],
       exerciseIds: [
         `ex-sets-1`,
@@ -10378,18 +8834,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `fn-basics`,
         `fn-types`,
         `fn-compose`,
-        `fn-transforms`,
-        `math-functions-deep-theory`,
-        `math-functions-patterns`,
-        `math-functions-pitfalls`,
-        `math-functions-real-world`
+        `fn-transforms`
       ],
       exerciseIds: [
         `ex-fn-1`,
@@ -10404,18 +8856,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `log-def`,
         `log-rules`,
         `exp-models`,
-        `log-ml`,
-        `math-logarithms-deep-theory`,
-        `math-logarithms-patterns`,
-        `math-logarithms-pitfalls`,
-        `math-logarithms-real-world`
+        `log-ml`
       ],
       exerciseIds: [
         `ex-log-1`,
@@ -10430,18 +8878,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `seq-arith`,
         `seq-geom`,
         `seq-series`,
-        `seq-ml`,
-        `math-sequences-deep-theory`,
-        `math-sequences-patterns`,
-        `math-sequences-pitfalls`,
-        `math-sequences-real-world`
+        `seq-ml`
       ],
       exerciseIds: [
         `ex-seq-1`,
@@ -10456,18 +8900,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `cx-basics`,
         `cx-polar`,
         `cx-ops`,
-        `cx-fft`,
-        `math-complex-deep-theory`,
-        `math-complex-patterns`,
-        `math-complex-pitfalls`,
-        `math-complex-real-world`
+        `cx-fft`
       ],
       exerciseIds: [
         `ex-cx-1`,
@@ -10482,18 +8922,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `vec-basics`,
         `vec-norm`,
         `vec-span`,
-        `vec-ml`,
-        `math-vectors-deep-theory`,
-        `math-vectors-patterns`,
-        `math-vectors-pitfalls`,
-        `math-vectors-real-world`
+        `vec-ml`
       ],
       exerciseIds: [
         `ex-vec-1`,
@@ -10508,18 +8944,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dot-def`,
         `dot-geom`,
         `cross-3d`,
-        `dot-attn`,
-        `math-dot-cross-deep-theory`,
-        `math-dot-cross-patterns`,
-        `math-dot-cross-pitfalls`,
-        `math-dot-cross-real-world`
+        `dot-attn`
       ],
       exerciseIds: [
         `ex-dot-1`,
@@ -10534,18 +8966,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mat-basics`,
         `mat-mv`,
         `mat-special`,
-        `mat-data`,
-        `math-matrices-deep-theory`,
-        `math-matrices-patterns`,
-        `math-matrices-pitfalls`,
-        `math-matrices-real-world`
+        `mat-data`
       ],
       exerciseIds: [
         `ex-mat-1`,
@@ -10560,18 +8988,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mm-def`,
         `mm-prop`,
         `mm-inv-det`,
-        `mm-nn`,
-        `math-matrix-ops-deep-theory`,
-        `math-matrix-ops-patterns`,
-        `math-matrix-ops-pitfalls`,
-        `math-matrix-ops-real-world`
+        `mm-nn`
       ],
       exerciseIds: [
         `ex-mm-1`,
@@ -10586,18 +9010,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ls-form`,
         `ls-elim`,
         `ls-lsq`,
-        `ls-rank`,
-        `math-linear-systems-deep-theory`,
-        `math-linear-systems-patterns`,
-        `math-linear-systems-pitfalls`,
-        `math-linear-systems-real-world`
+        `ls-rank`
       ],
       exerciseIds: [
         `ex-ls-1`,
@@ -10612,18 +9032,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `det-def`,
         `det-geom`,
         `det-prop`,
-        `det-ml`,
-        `math-determinants-deep-theory`,
-        `math-determinants-patterns`,
-        `math-determinants-pitfalls`,
-        `math-determinants-real-world`
+        `det-ml`
       ],
       exerciseIds: [
         `ex-det-1`,
@@ -10638,18 +9054,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `inv-def`,
         `inv-2x2`,
         `inv-pinv`,
-        `inv-ml`,
-        `math-inverse-deep-theory`,
-        `math-inverse-patterns`,
-        `math-inverse-pitfalls`,
-        `math-inverse-real-world`
+        `inv-ml`
       ],
       exerciseIds: [
         `ex-inv-1`,
@@ -10664,18 +9076,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `eig-def`,
         `eig-diag`,
         `eig-pca`,
-        `eig-markov`,
-        `math-eigen-deep-theory`,
-        `math-eigen-patterns`,
-        `math-eigen-pitfalls`,
-        `math-eigen-real-world`
+        `eig-markov`
       ],
       exerciseIds: [
         `ex-eig-1`,
@@ -10690,18 +9098,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `svd-def`,
         `svd-lowrank`,
         `svd-pinv`,
-        `svd-ml`,
-        `math-svd-deep-theory`,
-        `math-svd-patterns`,
-        `math-svd-pitfalls`,
-        `math-svd-real-world`
+        `svd-ml`
       ],
       exerciseIds: [
         `ex-svd-1`,
@@ -10716,18 +9120,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pca-goal`,
         `pca-proj`,
         `pca-kernel`,
-        `pca-practice`,
-        `math-pca-math-deep-theory`,
-        `math-pca-math-patterns`,
-        `math-pca-math-pitfalls`,
-        `math-pca-math-real-world`
+        `pca-practice`
       ],
       exerciseIds: [
         `ex-pca-1`,
@@ -10742,18 +9142,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `lim-def`,
         `lim-rules`,
         `lim-cont`,
-        `lim-ml`,
-        `math-limits-deep-theory`,
-        `math-limits-patterns`,
-        `math-limits-pitfalls`,
-        `math-limits-real-world`
+        `lim-ml`
       ],
       exerciseIds: [
         `ex-lim-1`,
@@ -10768,18 +9164,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `der-def`,
         `der-interp`,
         `der-numeric`,
-        `der-ml`,
-        `math-derivatives-deep-theory`,
-        `math-derivatives-patterns`,
-        `math-derivatives-pitfalls`,
-        `math-derivatives-real-world`
+        `der-ml`
       ],
       exerciseIds: [
         `ex-der-1`,
@@ -10794,18 +9186,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dr-power`,
         `dr-product`,
         `dr-chain`,
-        `dr-common`,
-        `math-derivative-rules-deep-theory`,
-        `math-derivative-rules-patterns`,
-        `math-derivative-rules-pitfalls`,
-        `math-derivative-rules-real-world`
+        `dr-common`
       ],
       exerciseIds: [
         `ex-dr-1`,
@@ -10820,18 +9208,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `tay-def`,
         `tay-approx`,
         `tay-multivar`,
-        `tay-ml`,
-        `math-taylor-deep-theory`,
-        `math-taylor-patterns`,
-        `math-taylor-pitfalls`,
-        `math-taylor-real-world`
+        `tay-ml`
       ],
       exerciseIds: [
         `ex-tay-1`,
@@ -10846,18 +9230,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `int-def`,
         `int-rules`,
         `int-prob`,
-        `int-mc`,
-        `math-integrals-deep-theory`,
-        `math-integrals-patterns`,
-        `math-integrals-pitfalls`,
-        `math-integrals-real-world`
+        `int-mc`
       ],
       exerciseIds: [
         `ex-int-1`,
@@ -10872,18 +9252,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pd-def`,
         `pd-geom`,
         `pd-higher`,
-        `pd-ml`,
-        `math-partial-deriv-deep-theory`,
-        `math-partial-deriv-patterns`,
-        `math-partial-deriv-pitfalls`,
-        `math-partial-deriv-real-world`
+        `pd-ml`
       ],
       exerciseIds: [
         `ex-pd-1`,
@@ -10898,18 +9274,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `grad-def`,
         `grad-descent`,
         `grad-proj`,
-        `grad-numerical`,
-        `math-gradient-deep-theory`,
-        `math-gradient-patterns`,
-        `math-gradient-pitfalls`,
-        `math-gradient-real-world`
+        `grad-numerical`
       ],
       exerciseIds: [
         `ex-grad-1`,
@@ -10924,18 +9296,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `cr-jacobian`,
         `cr-backprop`,
         `cr-vector`,
-        `cr-vanish`,
-        `math-chain-rule-deep-theory`,
-        `math-chain-rule-patterns`,
-        `math-chain-rule-pitfalls`,
-        `math-chain-rule-real-world`
+        `cr-vanish`
       ],
       exerciseIds: [
         `ex-cr-1`,
@@ -10950,18 +9318,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `jh-hessian`,
         `jh-newton`,
         `jh-jacobian-apps`,
-        `jh-gauss-newton`,
-        `math-jacobian-hessian-deep-theory`,
-        `math-jacobian-hessian-patterns`,
-        `math-jacobian-hessian-pitfalls`,
-        `math-jacobian-hessian-real-world`
+        `jh-gauss-newton`
       ],
       exerciseIds: [
         `ex-jh-1`,
@@ -10976,18 +9340,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mvo-critical`,
         `mvo-convex`,
         `mvo-saddle`,
-        `mvo-global`,
-        `math-multivariate-opt-deep-theory`,
-        `math-multivariate-opt-patterns`,
-        `math-multivariate-opt-pitfalls`,
-        `math-multivariate-opt-real-world`
+        `mvo-global`
       ],
       exerciseIds: [
         `ex-mvo-1`,
@@ -11002,18 +9362,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pb-axioms`,
         `pb-count`,
         `pb-indep`,
-        `pb-ml`,
-        `math-prob-basics-deep-theory`,
-        `math-prob-basics-patterns`,
-        `math-prob-basics-pitfalls`,
-        `math-prob-basics-real-world`
+        `pb-ml`
       ],
       exerciseIds: [
         `ex-pb-1`,
@@ -11028,18 +9384,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `cb-cond`,
         `cb-bayes`,
         `cb-odds`,
-        `cb-ml`,
-        `math-conditional-bayes-deep-theory`,
-        `math-conditional-bayes-patterns`,
-        `math-conditional-bayes-pitfalls`,
-        `math-conditional-bayes-real-world`
+        `cb-ml`
       ],
       exerciseIds: [
         `ex-cb-1`,
@@ -11054,18 +9406,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `rv-def`,
         `rv-expect`,
         `rv-transform`,
-        `rv-ml`,
-        `math-random-vars-deep-theory`,
-        `math-random-vars-patterns`,
-        `math-random-vars-pitfalls`,
-        `math-random-vars-real-world`
+        `rv-ml`
       ],
       exerciseIds: [
         `ex-rv-1`,
@@ -11080,18 +9428,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dist-disc`,
         `dist-cont`,
         `dist-clt`,
-        `dist-ml`,
-        `math-distributions-deep-theory`,
-        `math-distributions-patterns`,
-        `math-distributions-pitfalls`,
-        `math-distributions-real-world`
+        `dist-ml`
       ],
       exerciseIds: [
         `ex-dist-1`,
@@ -11106,18 +9450,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `jm-joint`,
         `jm-indep`,
         `jm-cov`,
-        `jm-ml`,
-        `math-joint-marginal-deep-theory`,
-        `math-joint-marginal-patterns`,
-        `math-joint-marginal-pitfalls`,
-        `math-joint-marginal-real-world`
+        `jm-ml`
       ],
       exerciseIds: [
         `ex-jm-1`,
@@ -11132,18 +9472,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ds-central`,
         `ds-spread`,
         `ds-percentile`,
-        `ds-eda`,
-        `math-descriptive-deep-theory`,
-        `math-descriptive-patterns`,
-        `math-descriptive-pitfalls`,
-        `math-descriptive-real-world`
+        `ds-eda`
       ],
       exerciseIds: [
         `ex-ds-1`,
@@ -11158,18 +9494,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `sc-sample`,
         `sc-se`,
         `sc-clt`,
-        `sc-ml`,
-        `math-sampling-clt-deep-theory`,
-        `math-sampling-clt-patterns`,
-        `math-sampling-clt-pitfalls`,
-        `math-sampling-clt-real-world`
+        `sc-ml`
       ],
       exerciseIds: [
         `ex-sc-1`,
@@ -11184,18 +9516,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ht-framework`,
         `ht-tests`,
         `ht-ab`,
-        `ht-ml`,
-        `math-hypothesis-deep-theory`,
-        `math-hypothesis-patterns`,
-        `math-hypothesis-pitfalls`,
-        `math-hypothesis-real-world`
+        `ht-ml`
       ],
       exerciseIds: [
         `ex-ht-1`,
@@ -11210,18 +9538,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ci-mean`,
         `ci-prop`,
         `ci-diff`,
-        `ci-ml`,
-        `math-confidence-deep-theory`,
-        `math-confidence-patterns`,
-        `math-confidence-pitfalls`,
-        `math-confidence-real-world`
+        `ci-ml`
       ],
       exerciseIds: [
         `ex-ci-1`,
@@ -11236,18 +9560,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `reg-ols`,
         `reg-assump`,
         `reg-infer`,
-        `reg-ml`,
-        `math-regression-math-deep-theory`,
-        `math-regression-math-patterns`,
-        `math-regression-math-pitfalls`,
-        `math-regression-math-real-world`
+        `reg-ml`
       ],
       exerciseIds: [
         `ex-reg-1`,
@@ -11262,18 +9582,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `cvx-sets`,
         `cvx-func`,
         `cvx-problems`,
-        `cvx-ml`,
-        `math-convex-deep-theory`,
-        `math-convex-patterns`,
-        `math-convex-pitfalls`,
-        `math-convex-real-world`
+        `cvx-ml`
       ],
       exerciseIds: [
         `ex-cvx-1`,
@@ -11288,18 +9604,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gd-conv`,
         `gd-momentum`,
         `gd-adaptive`,
-        `gd-sgd`,
-        `math-gradient-descent-math-deep-theory`,
-        `math-gradient-descent-math-patterns`,
-        `math-gradient-descent-math-pitfalls`,
-        `math-gradient-descent-math-real-world`
+        `gd-sgd`
       ],
       exerciseIds: [
         `ex-gd-1`,
@@ -11314,18 +9626,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `lag-eq`,
         `lag-ineq`,
         `lag-dual`,
-        `lag-ml`,
-        `math-lagrange-deep-theory`,
-        `math-lagrange-patterns`,
-        `math-lagrange-pitfalls`,
-        `math-lagrange-real-world`
+        `lag-ml`
       ],
       exerciseIds: [
         `ex-lag-1`,
@@ -11340,18 +9648,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ent-def`,
         `ent-ce`,
         `ent-mi`,
-        `ent-ml`,
-        `math-entropy-math-deep-theory`,
-        `math-entropy-math-patterns`,
-        `math-entropy-math-pitfalls`,
-        `math-entropy-math-real-world`
+        `ent-ml`
       ],
       exerciseIds: [
         `ex-ent-1`,
@@ -11366,18 +9670,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mle-def`,
         `kl-mle`,
         `mle-prop`,
-        `mle-ml`,
-        `math-kl-mle-deep-theory`,
-        `math-kl-mle-patterns`,
-        `math-kl-mle-pitfalls`,
-        `math-kl-mle-real-world`
+        `mle-ml`
       ],
       exerciseIds: [
         `ex-mle-1`,
@@ -11392,18 +9692,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `create`,
         `dtype`,
         `attrs`,
-        `vs-list`,
-        `np-arrays-deep-theory`,
-        `np-arrays-patterns`,
-        `np-arrays-pitfalls`,
-        `np-arrays-real-world`
+        `vs-list`
       ],
       exerciseIds: [
         `ex-np-1`,
@@ -11418,18 +9714,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `slicing`,
         `boolean`,
         `broadcast`,
-        `vectorize`,
-        `np-indexing-deep-theory`,
-        `np-indexing-patterns`,
-        `np-indexing-pitfalls`,
-        `np-indexing-real-world`
+        `vectorize`
       ],
       exerciseIds: [
         `ex-np-idx-1`,
@@ -11444,18 +9736,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `matmul`,
         `linalg`,
         `norm`,
-        `applications`,
-        `np-linalg-deep-theory`,
-        `np-linalg-patterns`,
-        `np-linalg-pitfalls`,
-        `np-linalg-real-world`
+        `applications`
       ],
       exerciseIds: [
         `ex-linalg-1`,
@@ -11470,18 +9758,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `rng`,
         `stats`,
         `shuffle`,
-        `distributions`,
-        `np-random-deep-theory`,
-        `np-random-patterns`,
-        `np-random-pitfalls`,
-        `np-random-real-world`
+        `distributions`
       ],
       exerciseIds: [
         `ex-rand-1`,
@@ -11496,18 +9780,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `vectorize`,
         `memory`,
         `einsum`,
-        `numba`,
-        `np-perf-deep-theory`,
-        `np-perf-patterns`,
-        `np-perf-pitfalls`,
-        `np-perf-real-world`
+        `numba`
       ],
       exerciseIds: [
         `ex-perf-1`,
@@ -11522,18 +9802,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `series`,
         `dataframe`,
         `selection`,
-        `dtypes`,
-        `pd-dataframes-deep-theory`,
-        `pd-dataframes-patterns`,
-        `pd-dataframes-pitfalls`,
-        `pd-dataframes-real-world`
+        `dtypes`
       ],
       exerciseIds: [
         `ex-pd-1`,
@@ -11548,18 +9824,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `boolean`,
         `query`,
         `assign`,
-        `sort`,
-        `pd-indexing-deep-theory`,
-        `pd-indexing-patterns`,
-        `pd-indexing-pitfalls`,
-        `pd-indexing-real-world`
+        `sort`
       ],
       exerciseIds: [
         `ex-pd-idx-1`,
@@ -11574,18 +9846,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `groupby`,
         `agg`,
         `pivot`,
-        `window`,
-        `pd-groupby-deep-theory`,
-        `pd-groupby-patterns`,
-        `pd-groupby-pitfalls`,
-        `pd-groupby-real-world`
+        `window`
       ],
       exerciseIds: [
         `ex-gb-1`,
@@ -11600,18 +9868,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `merge`,
         `concat`,
         `reshape`,
-        `join-index`,
-        `pd-merge-deep-theory`,
-        `pd-merge-patterns`,
-        `pd-merge-pitfalls`,
-        `pd-merge-real-world`
+        `join-index`
       ],
       exerciseIds: [
         `ex-merge-1`,
@@ -11626,18 +9890,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `missing`,
         `datetime`,
         `tz`,
-        `ts-features`,
-        `pd-missing-deep-theory`,
-        `pd-missing-patterns`,
-        `pd-missing-pitfalls`,
-        `pd-missing-real-world`
+        `ts-features`
       ],
       exerciseIds: [
         `ex-miss-1`,
@@ -11652,18 +9912,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pyplot`,
         `oo-api`,
         `styles`,
-        `anatomy`,
-        `viz-matplotlib-deep-theory`,
-        `viz-matplotlib-patterns`,
-        `viz-matplotlib-pitfalls`,
-        `viz-matplotlib-real-world`
+        `anatomy`
       ],
       exerciseIds: [
         `ex-mpl-1`,
@@ -11678,18 +9934,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `distplot`,
         `relplot`,
         `catplot`,
-        `heatmap`,
-        `viz-seaborn-deep-theory`,
-        `viz-seaborn-patterns`,
-        `viz-seaborn-pitfalls`,
-        `viz-seaborn-real-world`
+        `heatmap`
       ],
       exerciseIds: [
         `ex-sns-1`,
@@ -11704,18 +9956,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `plotly-express`,
         `plotly-graph`,
         `dash`,
-        `when`,
-        `viz-plotly-deep-theory`,
-        `viz-plotly-patterns`,
-        `viz-plotly-pitfalls`,
-        `viz-plotly-real-world`
+        `when`
       ],
       exerciseIds: [
         `ex-plotly-1`,
@@ -11730,18 +9978,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `chart-selection`,
         `color`,
         `storytelling`,
-        `eda-workflow`,
-        `viz-design-deep-theory`,
-        `viz-design-patterns`,
-        `viz-design-pitfalls`,
-        `viz-design-real-world`
+        `eda-workflow`
       ],
       exerciseIds: [
         `ex-design-1`,
@@ -11756,18 +10000,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `geopandas`,
         `network`,
         `ml-viz`,
-        `tools`,
-        `viz-specialized-deep-theory`,
-        `viz-specialized-patterns`,
-        `viz-specialized-pitfalls`,
-        `viz-specialized-real-world`
+        `tools`
       ],
       exerciseIds: [
         `ex-spec-1`,
@@ -11782,18 +10022,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `vectors`,
         `matrices`,
         `eigen`,
-        `svd`,
-        `ml-linear-algebra-deep-theory`,
-        `ml-linear-algebra-patterns`,
-        `ml-linear-algebra-pitfalls`,
-        `ml-linear-algebra-real-world`
+        `svd`
       ],
       exerciseIds: [
         `ex-la-1`,
@@ -11808,18 +10044,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `derivatives`,
         `chain-rule`,
         `loss-gradients`,
-        `jacobian`,
-        `ml-calculus-deep-theory`,
-        `ml-calculus-patterns`,
-        `ml-calculus-pitfalls`,
-        `ml-calculus-real-world`
+        `jacobian`
       ],
       exerciseIds: [
         `ex-calc-1`,
@@ -11834,18 +10066,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `basics`,
         `distributions`,
         `expectation`,
-        `mle`,
-        `ml-probability-deep-theory`,
-        `ml-probability-patterns`,
-        `ml-probability-pitfalls`,
-        `ml-probability-real-world`
+        `mle`
       ],
       exerciseIds: [
         `ex-prob-1`,
@@ -11860,18 +10088,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `entropy`,
         `cross-entropy`,
         `kl`,
-        `mutual-info`,
-        `ml-info-theory-deep-theory`,
-        `ml-info-theory-patterns`,
-        `ml-info-theory-pitfalls`,
-        `ml-info-theory-real-world`
+        `mutual-info`
       ],
       exerciseIds: [
         `ex-info-1`,
@@ -11886,18 +10110,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gd`,
         `variants`,
         `convex`,
-        `regularization`,
-        `ml-optimization-deep-theory`,
-        `ml-optimization-patterns`,
-        `ml-optimization-pitfalls`,
-        `ml-optimization-real-world`
+        `regularization`
       ],
       exerciseIds: [
         `ex-opt-1`,
@@ -11912,18 +10132,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pipeline`,
         `split`,
         `preprocessing`,
-        `baseline`,
-        `ml-workflow-deep-theory`,
-        `ml-workflow-patterns`,
-        `ml-workflow-pitfalls`,
-        `ml-workflow-real-world`
+        `baseline`
       ],
       exerciseIds: [
         `ex-split-1`,
@@ -11938,18 +10154,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `linear-reg`,
         `logistic`,
         `sigmoid`,
-        `interpret`,
-        `ml-linear-deep-theory`,
-        `ml-linear-patterns`,
-        `ml-linear-pitfalls`,
-        `ml-linear-real-world`
+        `interpret`
       ],
       exerciseIds: [
         `ex-lr-1`,
@@ -11964,18 +10176,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dt`,
         `rf`,
         `hyperparams`,
-        `when`,
-        `ml-trees-deep-theory`,
-        `ml-trees-patterns`,
-        `ml-trees-pitfalls`,
-        `ml-trees-real-world`
+        `when`
       ],
       exerciseIds: [
         `ex-tree-1`,
@@ -11990,18 +10198,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `classification`,
         `roc`,
         `regression`,
-        `confusion`,
-        `ml-metrics-deep-theory`,
-        `ml-metrics-patterns`,
-        `ml-metrics-pitfalls`,
-        `ml-metrics-real-world`
+        `confusion`
       ],
       exerciseIds: [
         `ex-met-1`,
@@ -12016,18 +10220,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `kfold`,
         `gridsearch`,
         `pipeline-cv`,
-        `nested`,
-        `ml-cv-deep-theory`,
-        `ml-cv-patterns`,
-        `ml-cv-pitfalls`,
-        `ml-cv-real-world`
+        `nested`
       ],
       exerciseIds: [
         `ex-cv-1`,
@@ -12042,18 +10242,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `poly`,
         `ridge-lasso`,
         `assumptions`,
-        `robust`,
-        `ml-regression-deep-theory`,
-        `ml-regression-patterns`,
-        `ml-regression-pitfalls`,
-        `ml-regression-real-world`
+        `robust`
       ],
       exerciseIds: [
         `ex-reg-1`,
@@ -12068,18 +10264,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `knn`,
         `naive-bayes`,
         `multiclass`,
-        `imbalanced`,
-        `ml-classification-deep-theory`,
-        `ml-classification-patterns`,
-        `ml-classification-pitfalls`,
-        `ml-classification-real-world`
+        `imbalanced`
       ],
       exerciseIds: [
         `ex-clf-1`,
@@ -12094,18 +10286,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `svm-linear`,
         `kernel`,
         `svc-params`,
-        `svr`,
-        `ml-svm-deep-theory`,
-        `ml-svm-patterns`,
-        `ml-svm-pitfalls`,
-        `ml-svm-real-world`
+        `svr`
       ],
       exerciseIds: [
         `ex-svm-1`,
@@ -12120,18 +10308,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gbm`,
         `xgboost`,
         `lightgbm`,
-        `tuning-gbm`,
-        `ml-boosting-deep-theory`,
-        `ml-boosting-patterns`,
-        `ml-boosting-pitfalls`,
-        `ml-boosting-real-world`
+        `tuning-gbm`
       ],
       exerciseIds: [
         `ex-xgb-1`,
@@ -12146,18 +10330,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `bagging`,
         `voting`,
         `blending`,
-        `diversity`,
-        `ml-ensemble-deep-theory`,
-        `ml-ensemble-patterns`,
-        `ml-ensemble-pitfalls`,
-        `ml-ensemble-real-world`
+        `diversity`
       ],
       exerciseIds: [
         `ex-ens-1`,
@@ -12172,18 +10352,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `kmeans`,
         `dbscan`,
         `hierarchical`,
-        `eval-cluster`,
-        `ml-clustering-deep-theory`,
-        `ml-clustering-patterns`,
-        `ml-clustering-pitfalls`,
-        `ml-clustering-real-world`
+        `eval-cluster`
       ],
       exerciseIds: [
         `ex-km-1`,
@@ -12198,18 +10374,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pca`,
         `tsne`,
         `lda`,
-        `autoencoder`,
-        `ml-dimred-deep-theory`,
-        `ml-dimred-patterns`,
-        `ml-dimred-pitfalls`,
-        `ml-dimred-real-world`
+        `autoencoder`
       ],
       exerciseIds: [
         `ex-pca-1`,
@@ -12224,18 +10396,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `isolation`,
         `lof`,
         `oneclass`,
-        `applications`,
-        `ml-anomaly-deep-theory`,
-        `ml-anomaly-patterns`,
-        `ml-anomaly-pitfalls`,
-        `ml-anomaly-real-world`
+        `applications`
       ],
       exerciseIds: [
         `ex-anom-1`,
@@ -12250,18 +10418,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `apriori`,
         `metrics`,
         `mlxtend`,
-        `applications`,
-        `ml-association-deep-theory`,
-        `ml-association-patterns`,
-        `ml-association-pitfalls`,
-        `ml-association-real-world`
+        `applications`
       ],
       exerciseIds: [
         `ex-assoc-1`,
@@ -12276,18 +10440,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gmm`,
         `em`,
         `vs-kmeans`,
-        `applications-gmm`,
-        `ml-gmm-deep-theory`,
-        `ml-gmm-patterns`,
-        `ml-gmm-pitfalls`,
-        `ml-gmm-real-world`
+        `applications-gmm`
       ],
       exerciseIds: [
         `ex-gmm-1`,
@@ -12302,18 +10462,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `scaling`,
         `encoding`,
         `binning`,
-        `datetime-fe`,
-        `ml-scaling-deep-theory`,
-        `ml-scaling-patterns`,
-        `ml-scaling-pitfalls`,
-        `ml-scaling-real-world`
+        `datetime-fe`
       ],
       exerciseIds: [
         `ex-scale-1`,
@@ -12328,18 +10484,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `filter`,
         `wrapper`,
         `embedded`,
-        `importance`,
-        `ml-feature-sel-deep-theory`,
-        `ml-feature-sel-patterns`,
-        `ml-feature-sel-pitfalls`,
-        `ml-feature-sel-real-world`
+        `importance`
       ],
       exerciseIds: [
         `ex-fsel-1`,
@@ -12354,18 +10506,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `grid`,
         `random`,
         `optuna`,
-        `avoid-leakage`,
-        `ml-hyperparam-deep-theory`,
-        `ml-hyperparam-patterns`,
-        `ml-hyperparam-pitfalls`,
-        `ml-hyperparam-real-world`
+        `avoid-leakage`
       ],
       exerciseIds: [
         `ex-hp-1`,
@@ -12380,18 +10528,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `tradeoff`,
         `learning-curves`,
         `regularization-bv`,
-        `double-descent`,
-        `ml-bias-variance-deep-theory`,
-        `ml-bias-variance-patterns`,
-        `ml-bias-variance-pitfalls`,
-        `ml-bias-variance-real-world`
+        `double-descent`
       ],
       exerciseIds: [
         `ex-bv-1`,
@@ -12406,18 +10550,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `shap`,
         `lime`,
         `global`,
-        `fairness`,
-        `ml-interpret-deep-theory`,
-        `ml-interpret-patterns`,
-        `ml-interpret-pitfalls`,
-        `ml-interpret-real-world`
+        `fairness`
       ],
       exerciseIds: [
         `ex-shap-1`,
@@ -12432,18 +10572,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `perceptron`,
         `mlp`,
         `forward`,
-        `capacity`,
-        `dl-nn-basics-deep-theory`,
-        `dl-nn-basics-patterns`,
-        `dl-nn-basics-pitfalls`,
-        `dl-nn-basics-real-world`
+        `capacity`
       ],
       exerciseIds: [
         `ex-nn-1`,
@@ -12458,18 +10594,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `relu`,
         `sigmoid-tanh`,
         `softmax`,
-        `modern`,
-        `dl-activations-deep-theory`,
-        `dl-activations-patterns`,
-        `dl-activations-pitfalls`,
-        `dl-activations-real-world`
+        `modern`
       ],
       exerciseIds: [
         `ex-act-1`,
@@ -12484,18 +10616,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mse`,
         `ce`,
         `multi-task`,
-        `monitor`,
-        `dl-loss-deep-theory`,
-        `dl-loss-patterns`,
-        `dl-loss-pitfalls`,
-        `dl-loss-real-world`
+        `monitor`
       ],
       exerciseIds: [
         `ex-loss-1`,
@@ -12510,18 +10638,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `concept`,
         `manual`,
         `autograd`,
-        `vanishing`,
-        `dl-backprop-deep-theory`,
-        `dl-backprop-patterns`,
-        `dl-backprop-pitfalls`,
-        `dl-backprop-real-world`
+        `vanishing`
       ],
       exerciseIds: [
         `ex-bp-1`,
@@ -12536,18 +10660,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `init`,
         `dropout`,
         `batchnorm`,
-        `early-stop`,
-        `dl-init-reg-deep-theory`,
-        `dl-init-reg-patterns`,
-        `dl-init-reg-pitfalls`,
-        `dl-init-reg-real-world`
+        `early-stop`
       ],
       exerciseIds: [
         `ex-init-1`,
@@ -12562,18 +10682,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `tensor-basics`,
         `ops`,
         `numpy-bridge`,
-        `device`,
-        `pt-tensors-deep-theory`,
-        `pt-tensors-patterns`,
-        `pt-tensors-pitfalls`,
-        `pt-tensors-real-world`
+        `device`
       ],
       exerciseIds: [
         `ex-pt-1`,
@@ -12588,18 +10704,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `grad`,
         `graph`,
         `leaf`,
-        `higher`,
-        `pt-autograd-deep-theory`,
-        `pt-autograd-patterns`,
-        `pt-autograd-pitfalls`,
-        `pt-autograd-real-world`
+        `higher`
       ],
       exerciseIds: [
         `ex-ag-1`,
@@ -12614,18 +10726,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `module`,
         `layers`,
         `loss-opt`,
-        `save`,
-        `pt-module-deep-theory`,
-        `pt-module-patterns`,
-        `pt-module-pitfalls`,
-        `pt-module-real-world`
+        `save`
       ],
       exerciseIds: [
         `ex-mod-1`,
@@ -12640,18 +10748,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dataset`,
         `loop`,
         `transforms`,
-        `scheduler`,
-        `pt-training-deep-theory`,
-        `pt-training-patterns`,
-        `pt-training-pitfalls`,
-        `pt-training-real-world`
+        `scheduler`
       ],
       exerciseIds: [
         `ex-train-1`,
@@ -12666,18 +10770,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `cuda`,
         `amp`,
         `compile`,
-        `distributed`,
-        `pt-gpu-deep-theory`,
-        `pt-gpu-patterns`,
-        `pt-gpu-pitfalls`,
-        `pt-gpu-real-world`
+        `distributed`
       ],
       exerciseIds: [
         `ex-gpu-1`,
@@ -12692,18 +10792,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `conv2d`,
         `pooling`,
         `receptive`,
-        `cnn-arch`,
-        `dl-conv-deep-theory`,
-        `dl-conv-patterns`,
-        `dl-conv-pitfalls`,
-        `dl-conv-real-world`
+        `cnn-arch`
       ],
       exerciseIds: [
         `ex-conv-1`,
@@ -12718,18 +10814,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `vgg`,
         `resnet`,
         `modern`,
-        `torchvision`,
-        `dl-cnn-arch-deep-theory`,
-        `dl-cnn-arch-patterns`,
-        `dl-cnn-arch-pitfalls`,
-        `dl-cnn-arch-real-world`
+        `torchvision`
       ],
       exerciseIds: [
         `ex-res-1`,
@@ -12744,18 +10836,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `strategy`,
         `finetune`,
         `domain`,
-        `hub`,
-        `dl-transfer-deep-theory`,
-        `dl-transfer-patterns`,
-        `dl-transfer-pitfalls`,
-        `dl-transfer-real-world`
+        `hub`
       ],
       exerciseIds: [
         `ex-tl-1`,
@@ -12770,18 +10858,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `metrics-det`,
         `rcnn`,
         `yolo`,
-        `tools`,
-        `dl-detection-deep-theory`,
-        `dl-detection-patterns`,
-        `dl-detection-pitfalls`,
-        `dl-detection-real-world`
+        `tools`
       ],
       exerciseIds: [
         `ex-det-1`,
@@ -12796,18 +10880,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `semantic`,
         `instance`,
         `unet`,
-        `metrics-seg`,
-        `dl-segmentation-deep-theory`,
-        `dl-segmentation-patterns`,
-        `dl-segmentation-pitfalls`,
-        `dl-segmentation-real-world`
+        `metrics-seg`
       ],
       exerciseIds: [
         `ex-seg-1`,
@@ -12822,18 +10902,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `clean`,
         `tokenize`,
         `hf-tokenizer`,
-        `vocab`,
-        `nlp-preprocess-deep-theory`,
-        `nlp-preprocess-patterns`,
-        `nlp-preprocess-pitfalls`,
-        `nlp-preprocess-real-world`
+        `vocab`
       ],
       exerciseIds: [
         `ex-nlp-1`,
@@ -12848,18 +10924,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `word2vec`,
         `glove`,
         `nn-embed`,
-        `contextual`,
-        `nlp-embeddings-deep-theory`,
-        `nlp-embeddings-patterns`,
-        `nlp-embeddings-pitfalls`,
-        `nlp-embeddings-real-world`
+        `contextual`
       ],
       exerciseIds: [
         `ex-emb-1`,
@@ -12874,18 +10946,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `rnn`,
         `lstm`,
         `gru`,
-        `bidirectional`,
-        `nlp-rnn-deep-theory`,
-        `nlp-rnn-patterns`,
-        `nlp-rnn-pitfalls`,
-        `nlp-rnn-real-world`
+        `bidirectional`
       ],
       exerciseIds: [
         `ex-rnn-1`,
@@ -12900,18 +10968,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `seq2seq`,
         `teacher`,
         `beam`,
-        `apps`,
-        `nlp-seq2seq-deep-theory`,
-        `nlp-seq2seq-patterns`,
-        `nlp-seq2seq-pitfalls`,
-        `nlp-seq2seq-real-world`
+        `apps`
       ],
       exerciseIds: [
         `ex-s2s-1`,
@@ -12926,18 +10990,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ner-task`,
         `bi-lstm`,
         `bert-ner`,
-        `applications`,
-        `nlp-ner-deep-theory`,
-        `nlp-ner-patterns`,
-        `nlp-ner-pitfalls`,
-        `nlp-ner-real-world`
+        `applications`
       ],
       exerciseIds: [
         `ex-ner-1`,
@@ -12952,18 +11012,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `attention`,
         `scaled`,
         `self-attn`,
-        `multi-head`,
-        `dl-attention-deep-theory`,
-        `dl-attention-patterns`,
-        `dl-attention-pitfalls`,
-        `dl-attention-real-world`
+        `multi-head`
       ],
       exerciseIds: [
         `ex-attn-1`,
@@ -12978,18 +11034,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `encoder`,
         `decoder`,
         `ffn`,
-        `layer-norm`,
-        `dl-transformer-deep-theory`,
-        `dl-transformer-patterns`,
-        `dl-transformer-pitfalls`,
-        `dl-transformer-real-world`
+        `layer-norm`
       ],
       exerciseIds: [
         `ex-tr-1`,
@@ -13004,18 +11056,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `sinusoidal`,
         `learned`,
         `rope`,
-        `alibi`,
-        `dl-positional-deep-theory`,
-        `dl-positional-patterns`,
-        `dl-positional-pitfalls`,
-        `dl-positional-real-world`
+        `alibi`
       ],
       exerciseIds: [
         `ex-pe-1`,
@@ -13030,18 +11078,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `bert`,
         `mlm`,
         `fine-tune`,
-        `encoder-models`,
-        `dl-bert-deep-theory`,
-        `dl-bert-patterns`,
-        `dl-bert-pitfalls`,
-        `dl-bert-real-world`
+        `encoder-models`
       ],
       exerciseIds: [
         `ex-bert-1`,
@@ -13056,18 +11100,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gpt`,
         `generation`,
         `causal`,
-        `scaling`,
-        `dl-gpt-deep-theory`,
-        `dl-gpt-patterns`,
-        `dl-gpt-pitfalls`,
-        `dl-gpt-real-world`
+        `scaling`
       ],
       exerciseIds: [
         `ex-gpt-1`,
@@ -13082,18 +11122,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 30,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `landscape`,
         `capabilities`,
         `tokens`,
-        `eval`,
-        `ai-llm-deep-theory`,
-        `ai-llm-patterns`,
-        `ai-llm-pitfalls`,
-        `ai-llm-real-world`
+        `eval`
       ],
       exerciseIds: [
         `ex-llm-1`,
@@ -13108,18 +11144,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `basics`,
         `cot`,
         `few-shot`,
-        `advanced-prompt`,
-        `ai-prompt-deep-theory`,
-        `ai-prompt-patterns`,
-        `ai-prompt-pitfalls`,
-        `ai-prompt-real-world`
+        `advanced-prompt`
       ],
       exerciseIds: [
         `ex-prompt-1`,
@@ -13134,18 +11166,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `rag-arch`,
         `embeddings-rag`,
         `chunking`,
-        `eval-rag`,
-        `ai-rag-deep-theory`,
-        `ai-rag-patterns`,
-        `ai-rag-pitfalls`,
-        `ai-rag-real-world`
+        `eval-rag`
       ],
       exerciseIds: [
         `ex-rag-1`,
@@ -13160,18 +11188,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `finetune`,
         `lora`,
         `instruction`,
-        `rlhf`,
-        `ai-finetune-deep-theory`,
-        `ai-finetune-patterns`,
-        `ai-finetune-pitfalls`,
-        `ai-finetune-real-world`
+        `rlhf`
       ],
       exerciseIds: [
         `ex-ft-1`,
@@ -13186,18 +11210,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `agents`,
         `tools`,
         `frameworks`,
-        `safety`,
-        `ai-agents-deep-theory`,
-        `ai-agents-patterns`,
-        `ai-agents-pitfalls`,
-        `ai-agents-real-world`
+        `safety`
       ],
       exerciseIds: [
         `ex-agent-1`,
@@ -13212,18 +11232,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `serialize`,
         `fastapi`,
         `onnx`,
-        `batch-realtime`,
-        `ai-serving-deep-theory`,
-        `ai-serving-patterns`,
-        `ai-serving-pitfalls`,
-        `ai-serving-real-world`
+        `batch-realtime`
       ],
       exerciseIds: [
         `ex-serve-1`,
@@ -13238,18 +11254,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `docker`,
         `compose`,
         `cloud`,
-        `cicd`,
-        `ai-docker-deep-theory`,
-        `ai-docker-patterns`,
-        `ai-docker-pitfalls`,
-        `ai-docker-real-world`
+        `cicd`
       ],
       exerciseIds: [
         `ex-docker-1`,
@@ -13264,18 +11276,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `monitoring`,
         `drift`,
         `evidently`,
-        `retraining`,
-        `ai-monitoring-deep-theory`,
-        `ai-monitoring-patterns`,
-        `ai-monitoring-pitfalls`,
-        `ai-monitoring-real-world`
+        `retraining`
       ],
       exerciseIds: [
         `ex-mon-1`,
@@ -13290,18 +11298,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `bias`,
         `fairness`,
         `mitigation`,
-        `explain-ethics`,
-        `ai-bias-deep-theory`,
-        `ai-bias-patterns`,
-        `ai-bias-pitfalls`,
-        `ai-bias-real-world`
+        `explain-ethics`
       ],
       exerciseIds: [
         `ex-bias-1`,
@@ -13316,18 +11320,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 25,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `framework`,
         `eu-ai-act`,
         `privacy`,
-        `red-team`,
-        `ai-governance-deep-theory`,
-        `ai-governance-patterns`,
-        `ai-governance-pitfalls`,
-        `ai-governance-real-world`
+        `red-team`
       ],
       exerciseIds: [
         `ex-gov-1`,
@@ -13342,18 +11342,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pytest-basics`,
         `fixtures`,
         `unittest-mock`,
-        `coverage-ci`,
-        `py-testing-deep-theory`,
-        `py-testing-patterns`,
-        `py-testing-pitfalls`,
-        `py-testing-real-world`
+        `coverage-ci`
       ],
       exerciseIds: [
         `ex-pytest-1`,
@@ -13368,18 +11364,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 30,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pdb`,
         `logging`,
         `tracebacks`,
-        `debug-tools`,
-        `py-debugging-deep-theory`,
-        `py-debugging-patterns`,
-        `py-debugging-pitfalls`,
-        `py-debugging-real-world`
+        `debug-tools`
       ],
       exerciseIds: [
         `ex-debug-1`,
@@ -13394,18 +11386,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `coroutines`,
         `gather-tasks`,
         `aiohttp`,
-        `async-pitfalls`,
-        `py-async-deep-theory`,
-        `py-async-patterns`,
-        `py-async-pitfalls`,
-        `py-async-real-world`
+        `async-pitfalls`
       ],
       exerciseIds: [
         `ex-async-1`,
@@ -13420,18 +11408,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 30,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `re-basics`,
         `patterns`,
         `flags-groups`,
-        `regex-caveats`,
-        `py-regex-deep-theory`,
-        `py-regex-patterns`,
-        `py-regex-pitfalls`,
-        `py-regex-real-world`
+        `regex-caveats`
       ],
       exerciseIds: [
         `ex-regex-1`,
@@ -13446,18 +11430,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gil`,
         `threading`,
         `multiprocessing`,
-        `choosing`,
-        `py-concurrency-deep-theory`,
-        `py-concurrency-patterns`,
-        `py-concurrency-pitfalls`,
-        `py-concurrency-real-world`
+        `choosing`
       ],
       exerciseIds: [
         `ex-conc-1`,
@@ -13472,18 +11452,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 30,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `pathlib`,
         `json-csv`,
         `pickle`,
-        `io-patterns`,
-        `py-files-deep-theory`,
-        `py-files-patterns`,
-        `py-files-pitfalls`,
-        `py-files-real-world`
+        `io-patterns`
       ],
       exerciseIds: [
         `ex-files-1`,
@@ -13498,18 +11474,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `requests-basics`,
         `rest`,
         `auth-errors`,
-        `testing-apis`,
-        `py-apis-deep-theory`,
-        `py-apis-patterns`,
-        `py-apis-pitfalls`,
-        `py-apis-real-world`
+        `testing-apis`
       ],
       exerciseIds: [
         `ex-api-1`,
@@ -13524,18 +11496,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `bs4`,
         `fetch`,
         `extract`,
-        `ethics`,
-        `py-web-scrape-deep-theory`,
-        `py-web-scrape-patterns`,
-        `py-web-scrape-pitfalls`,
-        `py-web-scrape-real-world`
+        `ethics`
       ],
       exerciseIds: [
         `ex-scrape-1`,
@@ -13550,18 +11518,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `connect`,
         `sql`,
         `orm-alt`,
-        `security`,
-        `py-sqlite-deep-theory`,
-        `py-sqlite-patterns`,
-        `py-sqlite-pitfalls`,
-        `py-sqlite-real-world`
+        `security`
       ],
       exerciseIds: [
         `ex-sql-1`,
@@ -13576,18 +11540,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 30,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `json-schema`,
         `yaml`,
         `parquet`,
-        `formats-choose`,
-        `py-serialization-deep-theory`,
-        `py-serialization-patterns`,
-        `py-serialization-pitfalls`,
-        `py-serialization-real-world`
+        `formats-choose`
       ],
       exerciseIds: [
         `ex-ser-1`,
@@ -13602,18 +11562,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `optimize`,
         `integrate`,
         `interpolate`,
-        `scipy-ecosystem`,
-        `scipy-basics-deep-theory`,
-        `scipy-basics-patterns`,
-        `scipy-basics-pitfalls`,
-        `scipy-basics-real-world`
+        `scipy-ecosystem`
       ],
       exerciseIds: [
         `ex-scipy-1`,
@@ -13628,18 +11584,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `hypothesis`,
         `ttest`,
         `chisq`,
-        `pvalue-interpret`,
-        `stats-hypothesis-deep-theory`,
-        `stats-hypothesis-patterns`,
-        `stats-hypothesis-pitfalls`,
-        `stats-hypothesis-real-world`
+        `pvalue-interpret`
       ],
       exerciseIds: [
         `ex-hyp-1`,
@@ -13654,18 +11606,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `rv`,
         `fit`,
         `sampling`,
-        `clt`,
-        `stats-distributions-deep-theory`,
-        `stats-distributions-patterns`,
-        `stats-distributions-pitfalls`,
-        `stats-distributions-real-world`
+        `clt`
       ],
       exerciseIds: [
         `ex-dist-1`,
@@ -13680,18 +11628,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ols`,
         `logistic`,
         `diagnostics`,
-        `inference-vs-pred`,
-        `stats-regression-deep-theory`,
-        `stats-regression-patterns`,
-        `stats-regression-pitfalls`,
-        `stats-regression-real-world`
+        `inference-vs-pred`
       ],
       exerciseIds: [
         `ex-reg-1`,
@@ -13706,18 +11650,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `bayes-theorem`,
         `priors`,
         `mcmc`,
-        `bayes-ml`,
-        `stats-bayes-deep-theory`,
-        `stats-bayes-patterns`,
-        `stats-bayes-pitfalls`,
-        `stats-bayes-real-world`
+        `bayes-ml`
       ],
       exerciseIds: [
         `ex-bayes-1`,
@@ -13732,18 +11672,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `components`,
         `stationarity`,
         `arima`,
-        `seasonal-arima`,
-        `ml-timeseries-deep-theory`,
-        `ml-timeseries-patterns`,
-        `ml-timeseries-pitfalls`,
-        `ml-timeseries-real-world`
+        `seasonal-arima`
       ],
       exerciseIds: [
         `ex-ts-1`,
@@ -13758,18 +11694,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `prophet`,
         `sklearn-ts`,
         `metrics-ts`,
-        `pipeline`,
-        `ml-forecasting-deep-theory`,
-        `ml-forecasting-patterns`,
-        `ml-forecasting-pitfalls`,
-        `ml-forecasting-real-world`
+        `pipeline`
       ],
       exerciseIds: [
         `ex-fc-1`,
@@ -13784,18 +11716,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `matrix-factor`,
         `neighborhood`,
         `implicit`,
-        `eval-recsys`,
-        `ml-recsys-collab-deep-theory`,
-        `ml-recsys-collab-patterns`,
-        `ml-recsys-collab-pitfalls`,
-        `ml-recsys-collab-real-world`
+        `eval-recsys`
       ],
       exerciseIds: [
         `ex-cf-1`,
@@ -13810,18 +11738,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `features`,
         `similarity`,
         `learning`,
-        `limits`,
-        `ml-recsys-content-deep-theory`,
-        `ml-recsys-content-patterns`,
-        `ml-recsys-content-pitfalls`,
-        `ml-recsys-content-real-world`
+        `limits`
       ],
       exerciseIds: [
         `ex-cb-1`,
@@ -13836,18 +11760,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `problem`,
         `smote`,
         `weights`,
-        `metrics-imb`,
-        `ml-imbalanced-deep-theory`,
-        `ml-imbalanced-patterns`,
-        `ml-imbalanced-pitfalls`,
-        `ml-imbalanced-real-world`
+        `metrics-imb`
       ],
       exerciseIds: [
         `ex-imb-1`,
@@ -13862,18 +11782,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mdp`,
         `value-policy`,
         `explore`,
-        `rl-loop`,
-        `rl-basics-deep-theory`,
-        `rl-basics-patterns`,
-        `rl-basics-pitfalls`,
-        `rl-basics-real-world`
+        `rl-loop`
       ],
       exerciseIds: [
         `ex-rl-1`,
@@ -13888,18 +11804,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `qlearning`,
         `td`,
         `tabular`,
-        `convergence`,
-        `rl-qlearning-deep-theory`,
-        `rl-qlearning-patterns`,
-        `rl-qlearning-pitfalls`,
-        `rl-qlearning-real-world`
+        `convergence`
       ],
       exerciseIds: [
         `ex-ql-1`,
@@ -13914,18 +11826,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `dqn`,
         `improvements`,
         `atari`,
-        `limits-dqn`,
-        `rl-deep-deep-theory`,
-        `rl-deep-patterns`,
-        `rl-deep-pitfalls`,
-        `rl-deep-real-world`
+        `limits-dqn`
       ],
       exerciseIds: [
         `ex-dqn-1`,
@@ -13940,18 +11848,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `reinforce`,
         `actor-critic`,
         `continuous`,
-        `pg-vs-value`,
-        `rl-policy-deep-theory`,
-        `rl-policy-patterns`,
-        `rl-policy-pitfalls`,
-        `rl-policy-real-world`
+        `pg-vs-value`
       ],
       exerciseIds: [
         `ex-pg-1`,
@@ -13966,18 +11870,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `games`,
         `robotics`,
         `recsys-rl`,
-        `deploy`,
-        `rl-applications-deep-theory`,
-        `rl-applications-patterns`,
-        `rl-applications-pitfalls`,
-        `rl-applications-real-world`
+        `deploy`
       ],
       exerciseIds: [
         `ex-rlapp-1`,
@@ -13992,18 +11892,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `gan-arch`,
         `dcgan`,
         `training-tricks`,
-        `conditional`,
-        `gen-gan-deep-theory`,
-        `gen-gan-patterns`,
-        `gen-gan-pitfalls`,
-        `gen-gan-real-world`
+        `conditional`
       ],
       exerciseIds: [
         `ex-gan-1`,
@@ -14018,18 +11914,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `vae`,
         `latent`,
         `vae-variants`,
-        `sampling-vae`,
-        `gen-vae-deep-theory`,
-        `gen-vae-patterns`,
-        `gen-vae-pitfalls`,
-        `gen-vae-real-world`
+        `sampling-vae`
       ],
       exerciseIds: [
         `ex-vae-1`,
@@ -14044,18 +11936,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `forward`,
         `reverse`,
         `guidance`,
-        `diffusion-apps`,
-        `gen-diffusion-deep-theory`,
-        `gen-diffusion-patterns`,
-        `gen-diffusion-pitfalls`,
-        `gen-diffusion-real-world`
+        `diffusion-apps`
       ],
       exerciseIds: [
         `ex-diff-1`,
@@ -14070,18 +11958,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `nst`,
         `cyclegan`,
         `stylegan`,
-        `applications`,
-        `gen-style-deep-theory`,
-        `gen-style-patterns`,
-        `gen-style-pitfalls`,
-        `gen-style-real-world`
+        `applications`
       ],
       exerciseIds: [
         `ex-style-1`,
@@ -14096,18 +11980,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `fid`,
         `is`,
         `human`,
-        `other-metrics`,
-        `gen-eval-deep-theory`,
-        `gen-eval-patterns`,
-        `gen-eval-pitfalls`,
-        `gen-eval-real-world`
+        `other-metrics`
       ],
       exerciseIds: [
         `ex-geval-1`,
@@ -14122,18 +12002,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `embeddings`,
         `faiss`,
         `hybrid`,
-        `ops`,
-        `ai-vectors-deep-theory`,
-        `ai-vectors-patterns`,
-        `ai-vectors-pitfalls`,
-        `ai-vectors-real-world`
+        `ops`
       ],
       exerciseIds: [
         `ex-vec-1`,
@@ -14148,18 +12024,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `clip`,
         `vlm`,
         `tasks`,
-        `limits`,
-        `ai-multimodal-deep-theory`,
-        `ai-multimodal-patterns`,
-        `ai-multimodal-pitfalls`,
-        `ai-multimodal-real-world`
+        `limits`
       ],
       exerciseIds: [
         `ex-mm-1`,
@@ -14174,18 +12046,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `whisper`,
         `tts`,
         `audio-llm`,
-        `deploy-speech`,
-        `ai-speech-deep-theory`,
-        `ai-speech-patterns`,
-        `ai-speech-pitfalls`,
-        `ai-speech-real-world`
+        `deploy-speech`
       ],
       exerciseIds: [
         `ex-speech-1`,
@@ -14200,18 +12068,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `mmlu`,
         `humaneval`,
         `red-team`,
-        `eval-practice`,
-        `ai-eval-deep-theory`,
-        `ai-eval-patterns`,
-        `ai-eval-pitfalls`,
-        `ai-eval-real-world`
+        `eval-practice`
       ],
       exerciseIds: [
         `ex-aieval-1`,
@@ -14226,18 +12090,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `alignment`,
         `jailbreaks`,
         `guardrails`,
-        `governance`,
-        `ai-safety-deep-theory`,
-        `ai-safety-patterns`,
-        `ai-safety-pitfalls`,
-        `ai-safety-real-world`
+        `governance`
       ],
       exerciseIds: [
         `ex-safe-1`,
@@ -14252,18 +12112,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `structure`,
         `ideas`,
         `presentation`,
-        `open-source`,
-        `cap-portfolio-deep-theory`,
-        `cap-portfolio-patterns`,
-        `cap-portfolio-pitfalls`,
-        `cap-portfolio-real-world`
+        `open-source`
       ],
       exerciseIds: [
         `ex-port-1`,
@@ -14278,18 +12134,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 40,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `workflow`,
         `features`,
         `ensemble`,
-        `mindset`,
-        `cap-kaggle-deep-theory`,
-        `cap-kaggle-patterns`,
-        `cap-kaggle-pitfalls`,
-        `cap-kaggle-real-world`
+        `mindset`
       ],
       exerciseIds: [
         `ex-kaggle-1`,
@@ -14304,18 +12156,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 45,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `ml-fundamentals`,
         `coding`,
         `system-design`,
-        `behavioral`,
-        `cap-interview-deep-theory`,
-        `cap-interview-patterns`,
-        `cap-interview-pitfalls`,
-        `cap-interview-real-world`
+        `behavioral`
       ],
       exerciseIds: [
         `ex-int-1`,
@@ -14330,18 +12178,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 35,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `reading`,
         `venues`,
         `reproduce`,
-        `contribute`,
-        `cap-research-deep-theory`,
-        `cap-research-patterns`,
-        `cap-research-pitfalls`,
-        `cap-research-real-world`
+        `contribute`
       ],
       exerciseIds: [
         `ex-paper-1`,
@@ -14356,18 +12200,14 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 124,
-      sectionCount: 8,
+      estimatedMinutes: 30,
+      sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
         `roles`,
         `skills`,
         `job-search`,
-        `growth`,
-        `cap-career-deep-theory`,
-        `cap-career-patterns`,
-        `cap-career-pitfalls`,
-        `cap-career-real-world`
+        `growth`
       ],
       exerciseIds: [
         `ex-career-1`,

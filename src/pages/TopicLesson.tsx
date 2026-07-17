@@ -456,7 +456,10 @@ export function TopicLesson() {
           )}
 
           {topic.references && topic.references.length > 0 && (
-            <ReferenceList references={topic.references} title="Further Reading — Stanford, MIT, Oxford & Papers" />
+            <ReferenceList
+              references={topic.references}
+              title={`Further Reading — ${topic.title}`}
+            />
           )}
 
           {relatedTopics.length > 0 && (

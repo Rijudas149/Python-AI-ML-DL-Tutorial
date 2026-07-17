@@ -138,6 +138,14 @@ export const allReferences: Reference[] = [
       description: `Detailed notes on convolution, pooling, and spatial feature extraction.`
     },
     {
+      id: `ddpm-paper`,
+      title: `Denoising Diffusion Probabilistic Models`,
+      source: `arXiv`,
+      type: `paper`,
+      url: `https://arxiv.org/abs/2006.11239`,
+      description: `Foundational diffusion model paper powering modern image generation.`
+    },
+    {
       id: `docker-docs`,
       title: `Docker Documentation`,
       source: `Docker`,
@@ -192,6 +200,14 @@ export const allReferences: Reference[] = [
       type: `course`,
       url: `https://course.fast.ai/`,
       description: `Top-down, code-first approach to training state-of-the-art models.`
+    },
+    {
+      id: `gan-paper`,
+      title: `Generative Adversarial Networks`,
+      source: `arXiv`,
+      type: `paper`,
+      url: `https://arxiv.org/abs/1406.2661`,
+      description: `Adversarial training framework for generative modeling.`
     },
     {
       id: `glove-paper`,
@@ -376,6 +392,14 @@ export const allReferences: Reference[] = [
       type: `course`,
       url: `https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/`,
       description: `Gilbert Strang's foundational linear algebra course used across ML.`
+    },
+    {
+      id: `mit-6034`,
+      title: `MIT 6.034 — Artificial Intelligence`,
+      source: `MIT`,
+      type: `course`,
+      url: `https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/`,
+      description: `Classic AI course covering search, knowledge, learning, and reasoning.`
     },
     {
       id: `mit-6s191`,
@@ -1152,6 +1176,14 @@ export const allReferences: Reference[] = [
       type: `course`,
       url: `http://cs231n.stanford.edu/`,
       description: `Definitive course on convolutional networks and computer vision.`
+    },
+    {
+      id: `stanford-cs330`,
+      title: `Stanford CS330 — Deep Multi-Task and Meta Learning`,
+      source: `Stanford`,
+      type: `course`,
+      url: `https://cs330.stanford.edu/`,
+      description: `Advanced course on multi-task learning, meta-learning, and transfer.`
     },
     {
       id: `torchserve-docs`,
