@@ -47,18 +47,7 @@ v = (v₁, v₂, ..., vₙ) ∈ ℝⁿ
 u + v = (u₁+v₁, ..., uₙ+vₙ)
 cv = (cv₁, ..., cvₙ)
 0 = (0, ..., 0)
-Span{v₁,...,v_k} = all linear combinations
-
-2D vector v = (3, 4)
-y
-│  ╱ |v|=5
-tail at origin, head at (3,4)
-
-1. Vectors are ordered tuples
-2. Addition is component-wise
-3. Scalars stretch/shrink vectors
-4. Column vectors default in ML
-5. Span is set of all combinations`
+Span{v₁,...,v_k} = all linear combinations`
         },
         {
           id: `vec-norm`,
@@ -98,18 +87,7 @@ unit: [0.6 0.8]`,
 ||v||₁ = ∑ |vᵢ|
 ||v||∞ = max |vᵢ|
 v̂ = v / ||v||₂
-d(u,v) = ||u − v||₂
-
-||v|| = length of arrow
-/____|___
-3
-||v|| = √(3²+4²) = 5
-
-1. L2 is standard Euclidean length
-2. L1 encourages sparsity in ML
-3. Unit vectors have norm 1
-4. Distance is norm of difference
-5. Norms measure vector size`
+d(u,v) = ||u − v||₂`
         },
         {
           id: `vec-span`,
@@ -150,17 +128,7 @@ c₁v₁ + ... + c_k v_k = linear combination
 Span{v₁,...,v_k} ⊆ vector space
 Independent: ∑cᵢvᵢ=0 ⇒ all cᵢ=0
 Basis: independent + spanning
-dim(V) = |basis|
-
-v1 ────→  v2 ────→
-span plane
-Two independent vectors span ℝ²
-
-1. Span is all weighted sums
-2. Independence = no redundancy
-3. Basis minimal spanning set
-4. Rank = dimension of column space
-5. Dependent columns → singular XᵀX`
+dim(V) = |basis|`
         },
         {
           id: `vec-ml`,
@@ -204,20 +172,7 @@ x ∈ ℝᵈ feature vector
 X ∈ ℝ^{m×d} design matrix
 ∇L ∈ ℝᵈ gradient vector
 cos(θ) = (u·v)/(||u|| ||v||)
-Embedding: id → ℝᵈ
-
-Dataset as matrix:
-x₁ ──→ row 1 of X
-x₂ ──→ row 2 of X
-x_m ──→ row m of X
-columns = features
-rows = samples
-
-1. Rows often = samples in sklearn
-2. Gradients same shape as params
-3. Embeddings capture semantics
-4. Vectorization speeds computation
-5. Normalize features before distance`
+Embedding: id → ℝᵈ`
         }
       ],
       exercises: [
@@ -319,18 +274,7 @@ u · v = ∑ uᵢ vᵢ = uᵀv
 u · v = ||u|| ||v|| cos θ
 u · v = 0 ⇔ orthogonal (θ=90°)
 proj_v(u) = (u·v / v·v) v
-Wx = dot products of W rows with x
-
-u · v = |u||v|cosθ
-v
-θ=0: cos=1, max dot
-θ=90: cos=0, dot=0
-
-1. Dot product sums pairwise products
-2. Measures alignment via cosine
-3. Zero dot = orthogonal
-4. Linear layers are dot products
-5. Attention uses scaled dot products`
+Wx = dot products of W rows with x`
         },
         {
           id: `dot-geom`,
@@ -371,19 +315,7 @@ cos θ = (u·v) / (||u|| ||v||)
 |u·v| ≤ ||u|| ||v|| (Cauchy-Schwarz)
 ||u+v|| ≤ ||u|| + ||v||
 cosine sim ∈ [−1, 1] after normalize
-u·u = ||u||² ≥ 0
-
-cosine similarity scale:
-1.0  same direction  →→→
-0.0  orthogonal      →↑
--1.0  opposite        →←
-normalize then dot
-
-1. Cosine ignores vector length
-2. Cauchy-Schwarz bounds dot product
-3. Sign of dot indicates angle type
-4. Used in semantic search
-5. Self-dot gives squared norm`
+u·u = ||u||² ≥ 0`
         },
         {
           id: `cross-3d`,
@@ -423,19 +355,7 @@ u × v ⟂ u and ⟂ v
 ||u × v|| = ||u|| ||v|| sin θ
 u × v = −v × u
 i × j = k (right-hand rule)
-Area = ||u × v||
-
-u × v points up from plane
-/____
-× = outward normal
-right-hand rule:
-curl fingers u→v, thumb = u×v
-
-1. Cross product only in 3D (or 7D exotic)
-2. Gives perpendicular vector
-3. Magnitude = parallelogram area
-4. Anti-commutative
-5. Normals for 3D rendering`
+Area = ||u × v||`
         },
         {
           id: `dot-attn`,
@@ -475,18 +395,7 @@ Attention: softmax(QKᵀ/√d) V
 score_ij = q_i · k_j / √d
 C_ij = A_i · B_j (matrix multiply)
 Perceptron: sign(w·x + b)
-K(x,x') = φ(x)·φ(x') kernel trick
-
-Q  Kᵀ  →  scores  → softmax  →  weights
-q1 · k1  q1 · k2  q1 · k3
-q2 · k1  q2 · k2  q2 · k3
-each cell = dot product
-
-1. Matrix multiply = batch dots
-2. Scale by √d in transformers
-3. Softmax turns scores to weights
-4. Linear layers are dot + bias
-5. Kernel = dot in feature space`
+K(x,x') = φ(x)·φ(x') kernel trick`
         }
       ],
       exercises: [
@@ -590,19 +499,7 @@ A ∈ ℝ^{m×n}; entry A_ij
 (Aᵀ)_ij = A_ji
 I_n: n×n identity
 Symmetric: A = Aᵀ
-Diagonal: A_ij=0 for i≠j
-
-2×3 matrix A:
-col1 col2 col3
-r1 [ a11  a12  a13 ]
-r2 [ a21  a22  a23 ]
-m=2 rows, n=3 columns
-
-1. First index = row, second = column
-2. Transpose swaps indices
-3. Identity leaves vectors unchanged
-4. Symmetric matrices have real eigenvalues
-5. Shape must align for multiply`
+Diagonal: A_ij=0 for i≠j`
         },
         {
           id: `mat-mv`,
@@ -641,18 +538,7 @@ y = Ax, y_i = ∑_j A_ij x_j
 Ax = x₁a₁ + x₂a₂ + ... (column view)
 y_i = row_i(A) · x
 (BA)x = B(Ax)
-W ∈ ℝ^{out×in} for y=Wx
-
-A (m×n)  ×  x (n×1)  =  y (m×1)
-[ row1 ]     [x1]      [r1·x]
-[ row2 ]  ·  [x2]  =   [r2·x]
-[ ...  ]     [..]      [ ... ]
-
-1. Columns of A span output space
-2. Rows of A define hyperplanes
-3. Shape: (m×n)(n×1)=(m×1)
-4. Neural layer = matrix-vector + bias
-5. Composition = matrix multiply`
+W ∈ ℝ^{out×in} for y=Wx`
         },
         {
           id: `mat-special`,
@@ -690,19 +576,7 @@ Orthogonal: QᵀQ = I
 Symmetric: A = Aᵀ
 PSD: xᵀAx ≥ 0 ∀x
 Projection: P² = P
-Stochastic: rows sum to 1
-
-Orthogonal rotation Q:
-x ──Q──→ Qx
-||x|| = ||Qx||
-length preserved
-angles preserved
-
-1. Orthogonal = rotation/reflection
-2. Symmetric → real eigenvalues
-3. PSD matrices define valid covariances
-4. Sparse matrices save memory
-5. Structure enables fast solvers`
+Stochastic: rows sum to 1`
         },
         {
           id: `mat-data`,
@@ -744,20 +618,7 @@ X ∈ ℝ^{n×p} design matrix
 Σ = (1/n) X̃ᵀ X̃ (centered covariance)
 y = Xβ + ε linear model
 One-hot: identity columns per category
-Batch: stack rows for mini-batch GD
-
-X = features table
-sample │ f1  f2  f3
-1    │ 2.1 0.5 1
-2    │ 1.8 0.3 0
-3    │ 3.0 0.9 1
-each row = one observation
-
-1. Rows = samples in sklearn convention
-2. Columns = features/variables
-3. Center columns before covariance
-4. Matrix form enables vectorized fit
-5. Batches are submatrices of data`
+Batch: stack rows for mini-batch GD`
         }
       ],
       exercises: [
@@ -860,20 +721,7 @@ C = AB, C_ij = ∑_l A_il B_lj
 A: m×k, B: k×n → C: m×n
 AB ≠ BA in general
 (AB)C = A(BC)
-(AB)ᵀ = BᵀAᵀ
-
-(m×k) · (k×n) = (m×n)
-A         B         C
-[ * * ] · [ * * ] = [ * * ]
-[ * * ]   [ * * ]   [ * * ]
-[ * * ]
-k must match inner dim
-
-1. Inner dimension must align
-2. Order matters in multiplication
-3. Transpose reverses product order
-4. Each entry = row·column dot
-5. Composition of linear maps`
+(AB)ᵀ = BᵀAᵀ`
         },
         {
           id: `mm-prop`,
@@ -913,18 +761,7 @@ Fro norm: 5.477...`,
 tr(A) = ∑ A_ii
 tr(AB) = tr(BA)
 ||A||_F = √(tr(AᵀA))
-(Aᵀ)ᵀ = A
-
-Transpose flip:
-A = [1 2]     Aᵀ = [1 3]
-[3 4]          [2 4]
-rows become columns
-
-1. Transpose reverses multiply order
-2. Trace invariant under cyclic permute
-3. Frobenius norm for matrix size
-4. Symmetric matrices ↔ quadratic forms
-5. Gradients use transpose heavily`
+(Aᵀ)ᵀ = A`
         },
         {
           id: `mm-inv-det`,
@@ -964,20 +801,7 @@ AA⁻¹ = A⁻¹A = I
 det(A) ≠ 0 ⇔ A invertible
 det(AB) = det(A)det(B)
 2×2: A⁻¹ = (1/det)[[d,-b],[-c,a]]
-κ(A) = ||A|| · ||A⁻¹||
-
-Invertible: full rank
-x ──A──→ y
-x ←─A⁻¹─ y
-Singular: squashes dim
-[ 1  2 ] → line, not plane
-[ 2  4 ]   (det=0)
-
-1. Inverse undoes linear map
-2. Zero determinant = singular
-3. Ill-conditioned = hard to invert
-4. Rank deficient → no unique inverse
-5. Preview for linear systems topic`
+κ(A) = ||A|| · ||A⁻¹||`
         },
         {
           id: `mm-nn`,
@@ -1020,19 +844,7 @@ h = σ(Wx + b)
 Batch: H = σ(XWᵀ + B)
 Attention: softmax(QKᵀ/√d)V
 Residual: y = x + F(x)
-He init: W ~ N(0, 2/fan_in)
-
-Layer stack:
-x → W1 → σ → W2 → σ → ... → ŷ
-n0   n1      n2
-W1: n1×n0
-W2: n2×n1
-
-1. Check shapes at every layer
-2. Batch dim adds leading axis
-3. Transpose in batch forward pass
-4. Init scale affects training
-5. Residual eases deep gradients`
+He init: W ~ N(0, 2/fan_in)`
         }
       ],
       exercises: [
@@ -1139,20 +951,7 @@ Ax = b
 Consistent ⇔ b ∈ Col(A)
 Unique ⇔ A invertible (n×n, full rank)
 Least squares: min ||Ax − b||₂
-rank(A) = dim Col(A)
-
-2 equations, 2 unknowns:
-a11 x1 + a12 x2 = b1   ── line 1
-a21 x1 + a22 x2 = b2   ── line 2
-intersection = solution
-parallel → none
-same line → infinite
-
-1. Geometric: intersection of hyperplanes
-2. Square full rank → unique solution
-3. Overdetermined → least squares
-4. Rank determines consistency
-5. Regression is Ax=b`
+rank(A) = dim Col(A)`
         },
         {
           id: `ls-elim`,
@@ -1191,18 +990,7 @@ Elementary ops preserve solution set
 Forward elimination → upper triangular U
 Back substitution from last equation
 A = LU factorization
-Partial pivoting: max |pivot|
-
-[A|b] → row ops → [U|c]
-[ 2  1 | 4 ]     [ 1  1 | 3 ]
-[ 1  1 | 3 ]  →  [ 0  1 | 2 ]
-back sub: x2=2, x1=1
-
-1. Row ops don't change solutions
-2. Pivot avoids division by zero
-3. LU enables fast multiple rhs
-4. Upper triangular easy to solve
-5. Pivoting improves accuracy`
+Partial pivoting: max |pivot|`
         },
         {
           id: `ls-lsq`,
@@ -1242,18 +1030,7 @@ min ||Ax − b||₂²
 Normal eq: AᵀAx = Aᵀb
 x = (AᵀA)⁻¹Aᵀb
 A⁺ pseudo-inverse
-lstsq via QR/SVD preferred
-
-Overdetermined: more eqs than unknowns
-╲
-╲  best fit line
-╲ minimizes Σ residual²
-
-1. LS minimizes squared residuals
-2. Normal equations from calculus
-3. AᵀA may be ill-conditioned
-4. Pseudo-inverse generalizes inverse
-5. Regression = least squares`
+lstsq via QR/SVD preferred`
         },
         {
           id: `ls-rank`,
@@ -1297,21 +1074,7 @@ rank(A) = dim Col(A)
 rank(A) + nullity(A) = n
 Null(A) = {x : Ax = 0}
 Full rank ⇔ columns independent
-rank via SVD = # nonzero σ
-
-Rank = # pivot columns
-Full rank columns:
-[ * * ]  rank 2
-[ * * ]
-Dependent column:
-[ 1  2 ]  rank 1
-[ 2  4 ]  col2 = 2·col1
-
-1. Rank measures independent info
-2. Null space = directions A kills
-3. Redundant features lower rank
-4. SVD robust for rank detection
-5. Nullity counts free variables`
+rank via SVD = # nonzero σ`
         }
       ],
       exercises: [

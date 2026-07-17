@@ -43,17 +43,7 @@ P(A) ≥ 0
 P(Ω) = 1
 P(∪A_i) = ∑ P(A_i) if disjoint
 P(A^c) = 1 − P(A)
-P(A∪B) = P(A)+P(B)−P(A∩B)
-
-Ω sample space
-│ ┌──┐ overlap    │
-P(A∪B) = P(A)+P(B)−P(A∩B)
-
-1. Axioms foundation all probability
-2. Complement rule common
-3. Inclusion-exclusion for overlap
-4. Countable additivity for limits
-5. Define Ω before P`
+P(A∪B) = P(A)+P(B)−P(A∩B)`
         },
         {
           id: `pb-count`,
@@ -93,19 +83,7 @@ P(A) = |A|/|Ω| (equally likely)
 Binomial: C(n,k) p^k (1−p)^(n−k)
 Hypergeometric: draws without replacement
 Birthday: 23 people → ~50% match
-Multinomial for k categories
-
-coin n flips:
-Ω = {H,T}^n
-|Ω| = 2^n
-k heads: C(n,k) outcomes
-P(k heads) = C(n,k)/2^n
-
-1. Count favorable over total
-2. Binomial for independent trials
-3. Without replacement changes odds
-4. Paradoxes test intuition
-5. Multinomial for class counts`
+Multinomial for k categories`
         },
         {
           id: `pb-indep`,
@@ -144,19 +122,7 @@ A,B indep: P(A∩B)=P(A)P(B)
 i.i.d.: independent identical distribution
 P(A∩B|C)=P(A|C)P(B|C) conditional indep
 Pairwise ≠ mutual independence
-Violations break many ML assumptions
-
-independent:
-A happens ─╳─ B happens
-no influence
-dependent:
-A ────→ affects ──── B
-
-1. Independence simplifies products
-2. i.i.d. assumption in SGD batches
-3. Conditional indep in Bayes nets
-4. Time series usually dependent
-5. Leakage violates independence`
+Violations break many ML assumptions`
         },
         {
           id: `pb-ml`,
@@ -197,19 +163,7 @@ Accuracy = P(correct)
 Precision = TP/(TP+FP)
 Recall = TP/(TP+FN)
 F1 = 2PR/(P+R)
-Calibration: P(y=1|ŷ=p) ≈ p
-
-confusion matrix:
-pred +  pred −
-true + │ TP    FN
-true − │ FP    TN
-metrics from cell probs
-
-1. Metrics are conditional probabilities
-2. Calibration matters for decisions
-3. Confusion matrix = joint counts
-4. Expected loss integrates over data
-5. Rare classes need recall focus`
+Calibration: P(y=1|ŷ=p) ≈ p`
         }
       ],
       exercises: [
@@ -305,17 +259,7 @@ P(A|B) = P(A∩B)/P(B)
 P(A∩B) = P(A|B)P(B)
 P(A) = ∑ P(A|B_i)P(B_i)
 P(A|B) ≠ P(B|A) in general
-Evidence B updates belief about A
-
-P(A|B): shrink world to B
-Ω → only B region
-renormalize probs in B
-
-1. Conditioning restricts sample space
-2. Total probability law decomposes
-3. Order matters in conditioning
-4. Base rate often ignored
-5. Evidence updates beliefs`
+Evidence B updates belief about A`
         },
         {
           id: `cb-bayes`,
@@ -352,17 +296,7 @@ P(A|B) = P(B|A)P(A)/P(B)
 Posterior ∝ Likelihood × Prior
 Naive Bayes: P(x|y)=∏ P(x_i|y)
 MAP = argmax_θ P(θ|D)
-Evidence P(D) normalizes
-
-prior ──× likelihood ──→ posterior
-P(θ)    P(D|θ)         P(θ|D)
-normalize by P(D)
-
-1. Bayes reverses conditioning
-2. Prior encodes belief before data
-3. Naive Bayes simple but strong baseline
-4. MAP point estimate common
-5. Full posterior harder but richer`
+Evidence P(D) normalizes`
         },
         {
           id: `cb-odds`,
@@ -400,17 +334,7 @@ Odds = p/(1−p)
 logit(p) = ln(p/(1−p))
 log-odds update additive
 Likelihood ratio = P(B|A)/P(B|A^c)
-sigmoid = inverse logit
-
-p=0.5 → odds 1:1
-p=0.9 → odds 9:1
-log-odds: −∞ to +∞ linear model
-
-1. Log-odds unbounded for linear models
-2. Logit link in logistic regression
-3. Likelihood ratio quantifies evidence
-4. Bayes factor for model compare
-5. sigmoid inverts logit`
+sigmoid = inverse logit`
         },
         {
           id: `cb-ml`,
@@ -450,18 +374,7 @@ Posterior predictive integrates θ uncertainty
 VI: optimize q(θ) ≈ p(θ|D)
 MCMC sample from posterior
 Prior = regularization
-Conjugate: closed-form update
-
-weight uncertainty:
-MAP: single θ*
-Bayesian: distribution over θ
-wider → more uncertainty
-
-1. Posterior captures uncertainty
-2. VI scales to big models
-3. MCMC accurate but slow
-4. Priors encode preferences
-5. Predictive distribution for decisions`
+Conjugate: closed-form update`
         }
       ],
       exercises: [
@@ -566,19 +479,7 @@ PMF: p(x) = P(X=x) discrete
 PDF: P(a≤X≤b) = ∫_a^b f(x)dx
 CDF: F(x) = P(X≤x)
 ∑ p(x)=1 or ∫ f(x)dx=1
-E[X] = ∑ x p(x) or ∫ x f(x)dx
-
-discrete PMF bar chart:
-P(X)
-│ ██ ██
-0  1  2
-continuous PDF curve area=1
-
-1. PMF vs PDF notation
-2. CDF universal for any type
-3. Normalization integrates/sums to 1
-4. Support where mass lives
-5. Targets are conditional RVs`
+E[X] = ∑ x p(x) or ∫ x f(x)dx`
         },
         {
           id: `rv-expect`,
@@ -616,18 +517,7 @@ E[X] = ∑ x p(x) or ∫ x f(x) dx
 Var(X) = E[X²] − (E[X])²
 E[aX+b] = aE[X]+b
 Cov(X,Y) = E[XY] − E[X]E[Y]
-σ = √Var(X)
-
-distribution spread:
-low Var: tight cluster
-high Var: wide spread
-E[X] = balance point
-
-1. Expectation is average limit
-2. Variance measures spread
-3. Linearity always holds
-4. Covariance measures co-movement
-5. Sample stats estimate population`
+σ = √Var(X)`
         },
         {
           id: `rv-transform`,
@@ -664,17 +554,7 @@ E[g(X)] ≠ g(E[X]) in general
 Var(aX+b) = a²Var(X)
 Var(X+Y)=Var(X)+Var(Y) if indep
 Jensen: convex f → E[f(X)]≥f(E[X])
-Reparam: x = μ + σ·ε
-
-Jensen convex f:
-E[f(X)] ≥ f(E[X])
-concave: reverse inequality
-
-1. Nonlinear g breaks naive plug-in
-2. Jensen explains bias of convex losses
-3. Independence needed for Var sum
-4. Reparam enables VAE gradients
-5. Transform PDF with Jacobian`
+Reparam: x = μ + σ·ε`
         },
         {
           id: `rv-ml`,
@@ -711,17 +591,7 @@ Empirical risk ≈ E[L] with samples
 Batch mean estimates expectation
 Dropout ≈ model averaging
 Bias-variance tradeoff in E[error]
-Augmentation expands implicit support
-
-batch loss:
-(1/m)∑ L_i ≈ E[L]
-bigger batch → lower MC noise
-
-1. SGD noisy due to batch sampling
-2. Dropout for uncertainty approx
-3. Augmentation as distribution shift
-4. Bias-variance guides model complexity
-5. Expectations central to loss design`
+Augmentation expands implicit support`
         }
       ],
       exercises: [
@@ -827,20 +697,7 @@ Bernoulli: P(X=1)=p
 Binomial: C(n,k)p^k(1−p)^(n−k)
 Poisson: P(X=k)=e^(−λ)λ^k/k!
 Categorical: ∑p_i=1
-E[Poisson]=Var=λ
-
-Binomial n=10 p=0.5
-PMF shape bell-ish:
-*
-***
-*****
-*******
-
-1. Bernoulli single trial
-2. Binomial n independent Bernoullis
-3. Poisson for rare counts
-4. Categorical for multi-class
-5. Poisson mean equals variance`
+E[Poisson]=Var=λ`
         },
         {
           id: `dist-cont`,
@@ -879,16 +736,7 @@ N(μ,σ²): f(x) ∝ exp(−(x−μ)²/(2σ²))
 Exp(λ): f(x)=λe^(−λx), x≥0
 Uniform[a,b]: f=1/(b−a)
 Z=(X−μ)/σ standardizes
-Multivariate: (x−μ)ᵀΣ⁻¹(x−μ)
-
-Normal bell curve:
-μ
-
-1. Gaussian central in statistics
-2. Exponential models waiting times
-3. Beta for probability priors
-4. Standardize before many algorithms
-5. Multivariate for correlated features`
+Multivariate: (x−μ)ᵀΣ⁻¹(x−μ)`
         },
         {
           id: `dist-clt`,
@@ -926,18 +774,7 @@ X̄ approx N(μ, σ²/n) for large n
 SE = σ/√n
 CLT for sum: S approx N(nμ, nσ²)
 Works i.i.d. finite variance
-Justifies normal approximations
-
-any shape → sum of many
-becomes bell curve
-n=1  skewed
-n=30 ≈ normal
-
-1. CLT explains normal ubiquity
-2. SE shrinks with √n
-3. Applies to sample mean
-4. Finite variance required
-5. Metrics use CLT for CIs`
+Justifies normal approximations`
         },
         {
           id: `dist-ml`,
@@ -976,18 +813,7 @@ Bernoulli → sigmoid + BCE
 Gaussian y → MSE / NLL
 Categorical → softmax + CE
 Poisson → log link
-VAE latent z ~ N(0,I)
-
-output layer ↔ distribution:
-sigmoid    → Bernoulli
-softmax    → Categorical
-linear     → Gaussian (MSE)
-
-1. Likelihood choice drives loss
-2. Softmax matches categorical NLL
-3. MSE assumes Gaussian noise
-4. Generative models specify full dist
-5. Mismatch hurts performance`
+VAE latent z ~ N(0,I)`
         }
       ],
       exercises: [
@@ -1089,19 +915,7 @@ p(x,y) joint PMF/PDF
 p(x) = ∑_y p(x,y) marginal
 f(x) = ∫ f(x,y) dy
 Σ_ij = Cov(X_i, X_j)
-∫∫ f(x,y) dx dy = 1
-
-joint table X,Y:
-y1   y2   y3
-x1  .2   .1   .05
-x2  .15  .3   .2
-marginals = row/col sums
-
-1. Joint has full info
-2. Marginals sum/integrate out
-3. Cov matrix from joint
-4. Independence factorizes joint
-5. High-D joints hard to model`
+∫∫ f(x,y) dx dy = 1`
         },
         {
           id: `jm-indep`,
@@ -1138,17 +952,7 @@ Indep: p(x,y)=p(x)p(y)
 p(x|y)=p(x,y)/p(y)
 p(x,y,z)=p(x)p(y|x)p(z|x,y)
 X⊥Y|Z: p(x,y|z)=p(x|z)p(y|z)
-Corr=0 ≠ indep (non-Gaussian)
-
-independent joint factorizes:
-p(x,y) = p(x)·p(y)
-grid = outer product of marginals
-
-1. Independence factorizes joint
-2. Conditional from joint/marginal
-3. Chain rule builds complex joints
-4. Conditional indep in Bayes nets
-5. Naive Bayes strong assumption`
+Corr=0 ≠ indep (non-Gaussian)`
         },
         {
           id: `jm-cov`,
@@ -1188,19 +992,7 @@ Cov(X,Y) = E[XY] − E[X]E[Y]
 ρ = Cov/(σ_X σ_Y)
 Σ symmetric, PSD
 Corr matrix: diag 1
-Sample Σ = X̃ᵀX̃/n
-
-correlation heatmap:
-1.0  0.8  0.1
-0.8  1.0 −0.3
-0.1 −0.3  1.0
-diagonal always 1
-
-1. Correlation normalized covariance
-2. PSD required valid cov matrix
-3. High corr → redundancy
-4. Eigenvalues of Σ for PCA
-5. Shrinkage for small samples`
+Sample Σ = X̃ᵀX̃/n`
         },
         {
           id: `jm-ml`,
@@ -1237,17 +1029,7 @@ Generative: model p(x) or p(x,y)
 Discriminative: p(y|x)
 p(x,y)=p(y|x)p(x)
 Mahalanobis: (x−μ)ᵀΣ⁻¹(x−μ)
-Autoregressive factorization
-
-generative vs discriminative:
-p(x,y) ──→ p(y|x)  discriminative
-p(x,y) ──→ p(x)    generative
-
-1. Discriminative often better classification
-2. Generative enables sampling
-3. Mahalanobis for outliers
-4. Autoregressive GPT factorization
-5. Joint structure defines difficulty`
+Autoregressive factorization`
         }
       ],
       exercises: [

@@ -31,13 +31,7 @@ dtype: int64`,
             `Index enables label-based access`,
             `Automatic alignment on operations`,
             `Series is column of DataFrame`
-          ],
-          pseudoCode: `Series
-
-1. Series has data and index
-2. Index enables label-based access
-3. Automatic alignment on operations
-4. Series is column of DataFrame`
+          ]
         },
         {
           id: `dataframe`,
@@ -70,13 +64,7 @@ max    35.000000  95.000000`,
             `describe() gives numeric summary`,
             `info() shows dtypes and non-null counts`,
             `read_csv most common ingestion method`
-          ],
-          pseudoCode: `DataFrame Creation
-
-1. DataFrame is primary pandas structure
-2. describe() gives numeric summary
-3. info() shows dtypes and non-null counts
-4. read_csv most common ingestion method`
+          ]
         },
         {
           id: `selection`,
@@ -99,13 +87,7 @@ print(df.loc[0:1, ["A", "C"]])`,
             `loc is label-based inclusive`,
             `iloc is integer-based exclusive on stop`,
             `Avoid df[df.A > 0]["B"] chained indexing`
-          ],
-          pseudoCode: `Column & Row Selection
-
-1. Single brackets for column, double for multiple
-2. loc is label-based inclusive
-3. iloc is integer-based exclusive on stop
-4. Avoid df[df.A > 0]["B"] chained indexing`
+          ]
         },
         {
           id: `dtypes`,
@@ -121,13 +103,7 @@ print(df.loc[0:1, ["A", "C"]])`,
             `Parse dates early with to_datetime`,
             `Downcast numeric types to save memory`,
             `String dtype (StringDtype) in modern pandas`
-          ],
-          pseudoCode: `Data Types
-
-1. category dtype saves memory for repeated strings
-2. Parse dates early with to_datetime
-3. Downcast numeric types to save memory
-4. String dtype (StringDtype) in modern pandas`
+          ]
         }
       ],
       exercises: [
@@ -213,13 +189,7 @@ print(df[(df["age"] > 25) & (df["salary"] > 55000)])`,
             `Wrap each condition in parentheses`,
             `isin() for membership tests`,
             `query() method for readable filters`
-          ],
-          pseudoCode: `Boolean Filtering
-
-1. Use & not and for element-wise logic
-2. Wrap each condition in parentheses
-3. isin() for membership tests
-4. query() method for readable filters`
+          ]
         },
         {
           id: `query`,
@@ -242,13 +212,7 @@ print(df.query("x > 2 and y < 10"))`,
             `@var references Python variable`,
             `Often faster for large DataFrames`,
             `Column names with spaces need backticks`
-          ],
-          pseudoCode: `query() Method
-
-1. query uses expression strings
-2. @var references Python variable
-3. Often faster for large DataFrames
-4. Column names with spaces need backticks`
+          ]
         },
         {
           id: `assign`,
@@ -273,13 +237,7 @@ print(df)`,
             `Lambda x refers to DataFrame`,
             `Vectorized ops beat apply() for speed`,
             `map() for element-wise dict/Series lookup`
-          ],
-          pseudoCode: `assign() & apply()
-
-1. assign returns new DataFrame — chainable
-2. Lambda x refers to DataFrame
-3. Vectorized ops beat apply() for speed
-4. map() for element-wise dict/Series lookup`
+          ]
         },
         {
           id: `sort`,
@@ -299,13 +257,7 @@ print(df.sort_values("score", ascending=False))`,
             `rank handles ties with method parameter`,
             `nlargest efficient for top-k`,
             `Stable sort preserves equal element order`
-          ],
-          pseudoCode: `Sorting & Ranking
-
-1. sort_values for column sorting
-2. rank handles ties with method parameter
-3. nlargest efficient for top-k
-4. Stable sort preserves equal element order`
+          ]
         }
       ],
       exercises: [
@@ -395,13 +347,7 @@ Name: salary, dtype: float64`,
             `as_index=False keeps group columns`,
             `agg accepts dict or list of functions`,
             `size() counts rows per group`
-          ],
-          pseudoCode: `groupby Basics
-
-1. groupby is split-apply-combine
-2. as_index=False keeps group columns
-3. agg accepts dict or list of functions
-4. size() counts rows per group`
+          ]
         },
         {
           id: `agg`,
@@ -425,13 +371,7 @@ B           30       40  35.0`,
             `Multiple functions per column`,
             `transform() returns same shape as input`,
             `filter() filters groups by condition`
-          ],
-          pseudoCode: `Multiple Aggregations
-
-1. Named aggregations produce clean column names
-2. Multiple functions per column
-3. transform() returns same shape as input
-4. filter() filters groups by condition`
+          ]
         },
         {
           id: `pivot`,
@@ -455,13 +395,7 @@ print(pd.pivot_table(df, values="sales", index="date", columns="product", aggfun
             `crosstab for categorical frequency analysis`,
             `margins=True adds row/column totals`,
             `melt() is inverse of pivot`
-          ],
-          pseudoCode: `pivot_table & crosstab
-
-1. pivot_table handles duplicates via aggfunc
-2. crosstab for categorical frequency analysis
-3. margins=True adds row/column totals
-4. melt() is inverse of pivot`
+          ]
         },
         {
           id: `window`,
@@ -477,13 +411,7 @@ print(pd.pivot_table(df, values="sales", index="date", columns="product", aggfun
             `expanding for cumulative metrics`,
             `ewm for exponential weighted`,
             `shift() for lag features in ML`
-          ],
-          pseudoCode: `Rolling & Expanding Windows
-
-1. rolling for sliding window statistics
-2. expanding for cumulative metrics
-3. ewm for exponential weighted
-4. shift() for lag features in ML`
+          ]
         }
       ],
       exercises: [
@@ -570,13 +498,7 @@ print(pd.merge(orders, products, on="product_id"))`,
             `left join keeps all left rows`,
             `validate="one_to_many" catches bad joins`,
             `indicator=True shows join source`
-          ],
-          pseudoCode: `merge Operations
-
-1. inner join keeps matching rows only
-2. left join keeps all left rows
-3. validate="one_to_many" catches bad joins
-4. indicator=True shows join source`
+          ]
         },
         {
           id: `concat`,
@@ -602,13 +524,7 @@ print(pd.concat([df1, df2], ignore_index=True))`,
             `join="outer" handles different columns`,
             `keys parameter creates hierarchical index`,
             `Prefer concat over deprecated append`
-          ],
-          pseudoCode: `concat & append
-
-1. concat for same-structure DataFrames
-2. join="outer" handles different columns
-3. keys parameter creates hierarchical index
-4. Prefer concat over deprecated append`
+          ]
         },
         {
           id: `reshape`,
@@ -624,13 +540,7 @@ print(pd.concat([df1, df2], ignore_index=True))`,
             `Tidy data: one row per observation`,
             `stack/unstack for MultiIndex manipulation`,
             `get_dummies for one-hot encoding`
-          ],
-          pseudoCode: `melt & pivot
-
-1. melt essential for tidy data format
-2. Tidy data: one row per observation
-3. stack/unstack for MultiIndex manipulation
-4. get_dummies for one-hot encoding`
+          ]
         },
         {
           id: `join-index`,
@@ -646,13 +556,7 @@ print(pd.concat([df1, df2], ignore_index=True))`,
             `join method on DataFrame uses indexes`,
             `align indices before arithmetic operations`,
             `reindex for explicit index alignment`
-          ],
-          pseudoCode: `Index-based Joins
-
-1. Set index for repeated join operations
-2. join method on DataFrame uses indexes
-3. align indices before arithmetic operations
-4. reindex for explicit index alignment`
+          ]
         }
       ],
       exercises: [
@@ -742,13 +646,7 @@ print(df.fillna({"A": df["A"].mean(), "B": 0}))`,
             `Understand MCAR, MAR, MNAR missingness`,
             `fillna with mean/median/mode or model-based`,
             `isna().sum() counts missing per column`
-          ],
-          pseudoCode: `Handling Missing Data
-
-1. Never drop all missing blindly in ML
-2. Understand MCAR, MAR, MNAR missingness
-3. fillna with mean/median/mode or model-based
-4. isna().sum() counts missing per column`
+          ]
         },
         {
           id: `datetime`,
@@ -772,13 +670,7 @@ print(df.resample("MS").mean())`,
             `dt accessor extracts date components`,
             `resample for time-based aggregation`,
             `shift/lag for time series features`
-          ],
-          pseudoCode: `Datetime Operations
-
-1. to_datetime parses various formats
-2. dt accessor extracts date components
-3. resample for time-based aggregation
-4. shift/lag for time series features`
+          ]
         },
         {
           id: `tz`,
@@ -794,13 +686,7 @@ print(df.resample("MS").mean())`,
             `tz_localize assigns timezone`,
             `tz_convert changes timezone`,
             `Ambiguous times during DST transitions`
-          ],
-          pseudoCode: `Timezones
-
-1. Store UTC, convert for display
-2. tz_localize assigns timezone
-3. tz_convert changes timezone
-4. Ambiguous times during DST transitions`
+          ]
         },
         {
           id: `ts-features`,
@@ -816,13 +702,7 @@ print(df.resample("MS").mean())`,
             `Rolling windows for local trends`,
             `Seasonal patterns need explicit encoding`,
             `Train/test split must respect time order`
-          ],
-          pseudoCode: `Time Series Features for ML
-
-1. Lag features capture temporal dependencies
-2. Rolling windows for local trends
-3. Seasonal patterns need explicit encoding
-4. Train/test split must respect time order`
+          ]
         }
       ],
       exercises: [

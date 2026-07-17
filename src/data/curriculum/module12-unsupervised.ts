@@ -29,13 +29,7 @@ print(np.bincount(kmeans.labels_))`,
             `n_init runs multiple initializations`,
             `Assumes spherical clusters of similar size`,
             `Scale features before clustering`
-          ],
-          pseudoCode: `K-Means Clustering
-
-1. Choose k via elbow method or silhouette score
-2. n_init runs multiple initializations
-3. Assumes spherical clusters of similar size
-4. Scale features before clustering`
+          ]
         },
         {
           id: `dbscan`,
@@ -57,13 +51,7 @@ print(len(set(labels)))`,
             `min_samples: core point threshold`,
             `Handles non-spherical clusters`,
             `Noise points labeled -1`
-          ],
-          pseudoCode: `DBSCAN
-
-1. eps: neighborhood radius
-2. min_samples: core point threshold
-3. Handles non-spherical clusters
-4. Noise points labeled -1`
+          ]
         },
         {
           id: `hierarchical`,
@@ -79,13 +67,7 @@ print(len(set(labels)))`,
             `Dendrogram cut determines k`,
             `O(n²) memory — not for huge datasets`,
             `Useful for taxonomy and phylogenetic trees`
-          ],
-          pseudoCode: `Hierarchical Clustering
-
-1. Ward linkage minimizes variance increase
-2. Dendrogram cut determines k
-3. O(n²) memory — not for huge datasets
-4. Useful for taxonomy and phylogenetic trees`
+          ]
         },
         {
           id: `eval-cluster`,
@@ -101,13 +83,7 @@ print(len(set(labels)))`,
             `Higher silhouette = better defined clusters`,
             `Elbow method for k in K-Means`,
             `Domain knowledge validates cluster meaning`
-          ],
-          pseudoCode: `Cluster Evaluation
-
-1. Silhouette: cohesion vs separation
-2. Higher silhouette = better defined clusters
-3. Elbow method for k in K-Means
-4. Domain knowledge validates cluster meaning`
+          ]
         }
       ],
       exercises: [
@@ -197,13 +173,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
             `Standardize before PCA`,
             `Used for visualization and noise reduction`,
             `explained_variance_ratio_ shows information retained`
-          ],
-          pseudoCode: `Principal Component Analysis
-
-1. Components ordered by variance explained
-2. Standardize before PCA
-3. Used for visualization and noise reduction
-4. explained_variance_ratio_ shows information retained`
+          ]
         },
         {
           id: `tsne`,
@@ -219,13 +189,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
             `perplexity balances local/global structure`,
             `Stochastic — set random_state`,
             `UMAP faster alternative preserving global structure`
-          ],
-          pseudoCode: `t-SNE
-
-1. t-SNE for visualization only not preprocessing
-2. perplexity balances local/global structure
-3. Stochastic — set random_state
-4. UMAP faster alternative preserving global structure`
+          ]
         },
         {
           id: `lda`,
@@ -241,13 +205,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
             `Max k-1 components for k classes`,
             `Better class separation than PCA for classification`,
             `Also a classification algorithm directly`
-          ],
-          pseudoCode: `Linear Discriminant Analysis
-
-1. Uses class labels unlike PCA
-2. Max k-1 components for k classes
-3. Better class separation than PCA for classification
-4. Also a classification algorithm directly`
+          ]
         },
         {
           id: `autoencoder`,
@@ -263,13 +221,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
             `Bottleneck layer is reduced representation`,
             `Reconstruction loss trains the network`,
             `Used for denoising and anomaly detection`
-          ],
-          pseudoCode: `Autoencoders Preview
-
-1. Encoder compresses, decoder reconstructs
-2. Bottleneck layer is reduced representation
-3. Reconstruction loss trains the network
-4. Used for denoising and anomaly detection`
+          ]
         }
       ],
       exercises: [
@@ -357,13 +309,7 @@ print(np.sum(preds == -1))`,
             `contamination sets expected anomaly fraction`,
             `Works in high dimensions`,
             `Fast — linear time complexity`
-          ],
-          pseudoCode: `Isolation Forest
-
-1. -1 for anomalies, 1 for normal
-2. contamination sets expected anomaly fraction
-3. Works in high dimensions
-4. Fast — linear time complexity`
+          ]
         },
         {
           id: `lof`,
@@ -379,13 +325,7 @@ print(np.sum(preds == -1))`,
             `High LOF = outlier relative to neighbors`,
             `Sensitive to n_neighbors parameter`,
             `Good for clustered data with local outliers`
-          ],
-          pseudoCode: `Local Outlier Factor
-
-1. LOF score near 1 for normal points
-2. High LOF = outlier relative to neighbors
-3. Sensitive to n_neighbors parameter
-4. Good for clustered data with local outliers`
+          ]
         },
         {
           id: `oneclass`,
@@ -401,13 +341,7 @@ print(np.sum(preds == -1))`,
             `nu controls upper bound on outliers`,
             `RBF kernel for non-linear boundaries`,
             `Used in fraud and defect detection`
-          ],
-          pseudoCode: `One-Class SVM
-
-1. Train only on normal data
-2. nu controls upper bound on outliers
-3. RBF kernel for non-linear boundaries
-4. Used in fraud and defect detection`
+          ]
         },
         {
           id: `applications`,
@@ -423,13 +357,7 @@ print(np.sum(preds == -1))`,
             `Combine domain rules with ML`,
             `Threshold tuning critical for precision/recall`,
             `Concept drift requires model retraining`
-          ],
-          pseudoCode: `Anomaly Detection Applications
-
-1. Anomalies often rare — class imbalance extreme
-2. Combine domain rules with ML
-3. Threshold tuning critical for precision/recall
-4. Concept drift requires model retraining`
+          ]
         }
       ],
       exercises: [
@@ -512,13 +440,7 @@ print(np.sum(p == -1))`,
             `Confidence: P(B|A) for rule A→B`,
             `Lift > 1 indicates positive association`,
             `Apriori prunes infrequent candidates efficiently`
-          ],
-          pseudoCode: `Apriori Algorithm
-
-1. Support: frequency of itemset in transactions
-2. Confidence: P(B|A) for rule A→B
-3. Lift > 1 indicates positive association
-4. Apriori prunes infrequent candidates efficiently`
+          ]
         },
         {
           id: `metrics`,
@@ -539,13 +461,7 @@ print("lift = confidence / P(milk)")`,
             `Low support rules may still be actionable`,
             `Conviction and leverage are alternative metrics`,
             `Market basket analysis classic application`
-          ],
-          pseudoCode: `Support, Confidence, Lift
-
-1. High lift = strong association beyond chance
-2. Low support rules may still be actionable
-3. Conviction and leverage are alternative metrics
-4. Market basket analysis classic application`
+          ]
         },
         {
           id: `mlxtend`,
@@ -561,13 +477,7 @@ print("lift = confidence / P(milk)")`,
             `min_support filters frequent itemsets`,
             `association_rules filters by confidence/lift`,
             `FP-Growth faster alternative to Apriori`
-          ],
-          pseudoCode: `mlxtend Library
-
-1. One-hot encode transactions for apriori
-2. min_support filters frequent itemsets
-3. association_rules filters by confidence/lift
-4. FP-Growth faster alternative to Apriori`
+          ]
         },
         {
           id: `applications`,
@@ -583,13 +493,7 @@ print("lift = confidence / P(milk)")`,
             `Rules complement collaborative filtering`,
             `Temporal patterns need sequential rule mining`,
             `Sparsity challenge in large catalogs`
-          ],
-          pseudoCode: `Recommendation & Retail
-
-1. Amazon "customers also bought" uses association
-2. Rules complement collaborative filtering
-3. Temporal patterns need sequential rule mining
-4. Sparsity challenge in large catalogs`
+          ]
         }
       ],
       exercises: [
@@ -671,13 +575,7 @@ print(gmm.predict(X[:5]))`,
             `EM alternates E-step and M-step`,
             `Can model elliptical clusters unlike K-Means`,
             `BIC/AIC for choosing number of components`
-          ],
-          pseudoCode: `GMM Fundamentals
-
-1. Soft clustering — probabilistic assignments
-2. EM alternates E-step and M-step
-3. Can model elliptical clusters unlike K-Means
-4. BIC/AIC for choosing number of components`
+          ]
         },
         {
           id: `em`,
@@ -712,13 +610,7 @@ print(gmm.predict(X[:5]))`,
             `GMM: soft assignments, elliptical clusters`,
             `GMM provides uncertainty estimates`,
             `K-Means faster and simpler`
-          ],
-          pseudoCode: `GMM vs K-Means
-
-1. K-Means: hard assignments, spherical clusters
-2. GMM: soft assignments, elliptical clusters
-3. GMM provides uncertainty estimates
-4. K-Means faster and simpler`
+          ]
         },
         {
           id: `applications-gmm`,
@@ -734,13 +626,7 @@ print(gmm.predict(X[:5]))`,
             `Low likelihood points are anomalies`,
             `Used in acoustic modeling for speech`,
             `Bayesian GMM prevents overfitting`
-          ],
-          pseudoCode: `Applications
-
-1. score_samples gives log-likelihood per point
-2. Low likelihood points are anomalies
-3. Used in acoustic modeling for speech
-4. Bayesian GMM prevents overfitting`
+          ]
         }
       ],
       exercises: [

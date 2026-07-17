@@ -9,7 +9,7 @@ import { BookmarkButton } from '../components/BookmarkButton';
 import { ReferenceList } from '../components/ReferenceList';
 import { FormulaList, DiagramBlock } from '../components/MathBlocks';
 import { ensureTopicProgress } from '../utils/progressStorage';
-import { estimateReadingMinutes, extractKeyTerms, buildStudySheet } from '../utils/lessonHelpers';
+import { estimateReadingMinutes, extractKeyTerms, buildStudySheet, isRedundantPseudoCode } from '../utils/lessonHelpers';
 import type { Topic, LessonSection, ProgressState, TopicSummary } from '../types';
 
 function getInitialSection(topic: Topic, completedSections: string[]) {
@@ -46,6 +46,10 @@ function applyTopicState(
 }
 
 const SectionContent = memo(function SectionContent({ section }: { section: LessonSection }) {
+  const showPseudoCode =
+    section.pseudoCode &&
+    !isRedundantPseudoCode(section.pseudoCode, section.keyPoints);
+
   return (
     <div className="lesson-flow">
       <section className="lesson-panel lesson-panel-explain">
@@ -59,13 +63,13 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
         <LessonContent content={section.content} />
       </section>
 
-      {section.pseudoCode && (
+      {showPseudoCode && (
         <section className="lesson-panel lesson-panel-pseudo">
           <div className="lesson-panel-label">
             <span className="lesson-panel-icon">🧩</span>
             Step-by-Step Logic
           </div>
-          <CodeBlock code={section.pseudoCode} language="pseudo" />
+          <CodeBlock code={section.pseudoCode!} language="pseudo" />
         </section>
       )}
 
@@ -305,7 +309,7 @@ export function TopicLesson() {
               type="button"
               className={`btn btn-ghost btn-sm ${focusMode ? 'active' : ''}`}
               onClick={() => setFocusMode((v) => !v)}
-              title="Hide sidebar for distraction-free reading"
+              title="Hide section navigation for distraction-free reading"
             >
               {focusMode ? '📋 Exit Focus' : '🎯 Focus Mode'}
             </button>

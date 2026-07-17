@@ -30,13 +30,7 @@ print(forward(X, W, np.array([0.1])))`,
             `Hidden layers learn hierarchical features`,
             `Width and depth trade off for capacity`,
             `Start simple then increase complexity`
-          ],
-          pseudoCode: `The Perceptron
-
-1. Neural network = composed non-linear transformations
-2. Hidden layers learn hierarchical features
-3. Width and depth trade off for capacity
-4. Start simple then increase complexity`
+          ]
         },
         {
           id: `mlp`,
@@ -83,13 +77,7 @@ print(out.shape)`,
             `Output layer produces logits for classification`,
             `Softmax applied to logits for probabilities`,
             `Forward pass is inference/prediction`
-          ],
-          pseudoCode: `Forward Propagation
-
-1. Batch dimension enables parallel GPU computation
-2. Output layer produces logits for classification
-3. Softmax applied to logits for probabilities
-4. Forward pass is inference/prediction`
+          ]
         },
         {
           id: `capacity`,
@@ -105,13 +93,7 @@ print(out.shape)`,
             `Capacity must match data complexity`,
             `Regularization controls effective capacity`,
             `Modern networks vastly overparameterized yet generalize`
-          ],
-          pseudoCode: `Network Capacity
-
-1. Parameters = weights + biases count
-2. Capacity must match data complexity
-3. Regularization controls effective capacity
-4. Modern networks vastly overparameterized yet generalize`
+          ]
         }
       ],
       exercises: [
@@ -198,13 +180,7 @@ print(leaky_relu(z))`,
             `Dying ReLU: neuron always outputs 0`,
             `Leaky ReLU keeps small gradient for negatives`,
             `GELU preferred in transformers`
-          ],
-          pseudoCode: `ReLU & Variants
-
-1. ReLU sparse activation — efficient computation
-2. Dying ReLU: neuron always outputs 0
-3. Leaky ReLU keeps small gradient for negatives
-4. GELU preferred in transformers`
+          ]
         },
         {
           id: `sigmoid-tanh`,
@@ -229,13 +205,7 @@ print(tanh(np.array([0, 2, -2])).round(3))`,
             `Tanh zero-centered — faster convergence than sigmoid`,
             `Both saturate causing vanishing gradients`,
             `Avoid in hidden layers of deep networks`
-          ],
-          pseudoCode: `Sigmoid & Tanh
-
-1. Sigmoid for binary classification output layer
-2. Tanh zero-centered — faster convergence than sigmoid
-3. Both saturate causing vanishing gradients
-4. Avoid in hidden layers of deep networks`
+          ]
         },
         {
           id: `softmax`,
@@ -259,13 +229,7 @@ print(softmax(np.array([2.0, 1.0, 0.1])).round(3))`,
             `Output layer only — not hidden layers`,
             `Cross-entropy + softmax gradient simplifies to p - y`,
             `Temperature scaling adjusts confidence`
-          ],
-          pseudoCode: `Softmax
-
-1. Subtract max for numerical stability
-2. Output layer only — not hidden layers
-3. Cross-entropy + softmax gradient simplifies to p - y
-4. Temperature scaling adjusts confidence`
+          ]
         },
         {
           id: `modern`,
@@ -281,13 +245,7 @@ print(softmax(np.array([2.0, 1.0, 0.1])).round(3))`,
             `Swish smooth near zero unlike ReLU`,
             `Activation choice less critical with good initialization`,
             `Match activation to architecture (GELU for transformers)`
-          ],
-          pseudoCode: `Modern Activations
-
-1. GELU: x * Φ(x) where Φ is CDF of standard normal
-2. Swish smooth near zero unlike ReLU
-3. Activation choice less critical with good initialization
-4. Match activation to architecture (GELU for transformers)`
+          ]
         }
       ],
       exercises: [
@@ -376,13 +334,7 @@ print(mse_loss(np.array([1, 2, 3]), np.array([1.1, 2.2, 2.8])))`,
             `MAE when outliers are problematic`,
             `Huber loss combines MSE and MAE benefits`,
             `Loss choice must match task and output activation`
-          ],
-          pseudoCode: `MSE & MAE Loss
-
-1. MSE standard for regression
-2. MAE when outliers are problematic
-3. Huber loss combines MSE and MAE benefits
-4. Loss choice must match task and output activation`
+          ]
         },
         {
           id: `ce`,
@@ -406,13 +358,7 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
             `Label smoothing prevents overconfidence`,
             `Focal loss addresses class imbalance`,
             `Cross-entropy = negative log-likelihood`
-          ],
-          pseudoCode: `Cross-Entropy Loss
-
-1. Use log-loss with sigmoid/softmax outputs
-2. Label smoothing prevents overconfidence
-3. Focal loss addresses class imbalance
-4. Cross-entropy = negative log-likelihood`
+          ]
         },
         {
           id: `multi-task`,
@@ -428,13 +374,7 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
             `Contrastive loss for embeddings (SimCLR, triplet)`,
             `Perceptual loss for image generation`,
             `Design loss to match evaluation metric when possible`
-          ],
-          pseudoCode: `Multi-Task & Custom Losses
-
-1. Weight task losses by importance or uncertainty
-2. Contrastive loss for embeddings (SimCLR, triplet)
-3. Perceptual loss for image generation
-4. Design loss to match evaluation metric when possible`
+          ]
         },
         {
           id: `monitor`,
@@ -450,13 +390,7 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
             `Val loss increasing while train decreases = overfit`,
             `ReduceLROnPlateau on val loss`,
             `Early stopping saves best val loss checkpoint`
-          ],
-          pseudoCode: `Monitoring Loss
-
-1. Loss should decrease during training
-2. Val loss increasing while train decreases = overfit
-3. ReduceLROnPlateau on val loss
-4. Early stopping saves best val loss checkpoint`
+          ]
         }
       ],
       exercises: [
@@ -564,13 +498,7 @@ print(round(w, 6))`,
             `Update in negative gradient direction`,
             `Manual backprop verifies autograd results`,
             `Vanishing gradient in deep sigmoid networks`
-          ],
-          pseudoCode: `Manual Backprop Example
-
-1. Gradient points direction of steepest increase
-2. Update in negative gradient direction
-3. Manual backprop verifies autograd results
-4. Vanishing gradient in deep sigmoid networks`
+          ]
         },
         {
           id: `autograd`,
@@ -586,13 +514,7 @@ print(round(w, 6))`,
             `tensor.backward() triggers reverse pass`,
             `requires_grad=True tracks gradients`,
             `No need for manual gradient derivation in practice`
-          ],
-          pseudoCode: `Automatic Differentiation
-
-1. Autograd builds computational graph dynamically
-2. tensor.backward() triggers reverse pass
-3. requires_grad=True tracks gradients
-4. No need for manual gradient derivation in practice`
+          ]
         },
         {
           id: `vanishing`,
@@ -608,13 +530,7 @@ print(round(w, 6))`,
             `Exploding: gradients overflow — clip to max norm`,
             `Batch normalization stabilizes gradients`,
             `ResNet skip connections enable very deep networks`
-          ],
-          pseudoCode: `Vanishing & Exploding Gradients
-
-1. Vanishing: gradients near zero in early layers
-2. Exploding: gradients overflow — clip to max norm
-3. Batch normalization stabilizes gradients
-4. ResNet skip connections enable very deep networks`
+          ]
         }
       ],
       exercises: [
@@ -699,13 +615,7 @@ print(W.std().round(4))`,
             `Xavier for sigmoid/tanh activations`,
             `He/Kaiming for ReLU family`,
             `PyTorch nn.Linear uses Kaiming by default`
-          ],
-          pseudoCode: `Weight Initialization
-
-1. Zero init breaks symmetry badly
-2. Xavier for sigmoid/tanh activations
-3. He/Kaiming for ReLU family
-4. PyTorch nn.Linear uses Kaiming by default`
+          ]
         },
         {
           id: `dropout`,
@@ -732,13 +642,7 @@ print(dropout(x, p=0.5).sum())`,
             `Only active during training`,
             `MC dropout for uncertainty estimation`,
             `Less needed with batch norm in CNNs`
-          ],
-          pseudoCode: `Dropout
-
-1. Typical p=0.5 for hidden layers, 0.2 for input
-2. Only active during training
-3. MC dropout for uncertainty estimation
-4. Less needed with batch norm in CNNs`
+          ]
         },
         {
           id: `batchnorm`,
@@ -754,13 +658,7 @@ print(dropout(x, p=0.5).sum())`,
             `Acts as regularizer`,
             `Different behavior train vs eval — model.eval()`,
             `LayerNorm alternative for transformers/RNNs`
-          ],
-          pseudoCode: `Batch Normalization
-
-1. Normalizes intermediate activations
-2. Acts as regularizer
-3. Different behavior train vs eval — model.eval()
-4. LayerNorm alternative for transformers/RNNs`
+          ]
         },
         {
           id: `early-stop`,
@@ -776,13 +674,7 @@ print(dropout(x, p=0.5).sum())`,
             `Save checkpoint at best val loss`,
             `Augmentation: rotation, flip, crop for images`,
             `Mixup/CutMix advanced augmentation for classification`
-          ],
-          pseudoCode: `Early Stopping & Data Augmentation
-
-1. Early stopping simplest regularization
-2. Save checkpoint at best val loss
-3. Augmentation: rotation, flip, crop for images
-4. Mixup/CutMix advanced augmentation for classification`
+          ]
         }
       ],
       exercises: [

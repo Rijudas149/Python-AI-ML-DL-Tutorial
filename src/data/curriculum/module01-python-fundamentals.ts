@@ -37,13 +37,7 @@ print(type(x), type(pi), type(name))`,
             `Python is dynamically typed`,
             `Use snake_case for variable names`,
             `None represents absence of value`
-          ],
-          pseudoCode: `What Are Variables?
-
-1. Variables are references to objects, not boxes
-2. Python is dynamically typed
-3. Use snake_case for variable names
-4. None represents absence of value`
+          ]
         },
         {
           id: `literals`,
@@ -66,13 +60,7 @@ print(a, b, c, d, e)`,
             `Type conversion is explicit via built-in functions`,
             `Empty strings and zero are falsy`,
             `Non-empty strings convert to True in bool()`
-          ],
-          pseudoCode: `Literals & Type Conversion
-
-1. Literals represent fixed values in source code
-2. Type conversion is explicit via built-in functions
-3. Empty strings and zero are falsy
-4. Non-empty strings convert to True in bool()`
+          ]
         },
         {
           id: `mutability`,
@@ -105,13 +93,7 @@ print(lst2)  # same object modified`,
             `Lists are mutable — methods modify in place`,
             `Assignment copies references, not values`,
             `Use id() to verify object identity`
-          ],
-          pseudoCode: `Mutable vs Immutable Types
-
-1. Strings are immutable — concatenation creates new objects
-2. Lists are mutable — methods modify in place
-3. Assignment copies references, not values
-4. Use id() to verify object identity`
+          ]
         },
         {
           id: `type-checking`,
@@ -232,13 +214,7 @@ print(a / b, a // b, a % b, a ** 2)`,
             `Floor division truncates toward negative infinity`,
             `Modulo works with negative numbers`,
             `Use ** for powers, not ^`
-          ],
-          pseudoCode: `Arithmetic Operators
-
-1. Division always returns float in Python 3
-2. Floor division truncates toward negative infinity
-3. Modulo works with negative numbers
-4. Use ** for powers, not ^`
+          ]
         },
         {
           id: `compare`,
@@ -263,13 +239,7 @@ False`,
             `and/or use short-circuit evaluation`,
             `Use == for equality, is for identity`,
             `not has lower precedence than comparisons`
-          ],
-          pseudoCode: `Comparison & Logical Operators
-
-1. Chained comparisons are idiomatic Python
-2. and/or use short-circuit evaluation
-3. Use == for equality, is for identity
-4. not has lower precedence than comparisons`
+          ]
         },
         {
           id: `assign`,
@@ -291,13 +261,7 @@ if (n := len(data)) > 3:
             `Walrus operator reduces duplication`,
             `Avoid overusing := — clarity first`,
             `Assignment is a statement, not expression (except :=)`
-          ],
-          pseudoCode: `Assignment & Walrus Operator
-
-1. Compound operators modify and reassign
-2. Walrus operator reduces duplication
-3. Avoid overusing := — clarity first
-4. Assignment is a statement, not expression (except :=)`
+          ]
         },
         {
           id: `bitwise`,
@@ -326,13 +290,7 @@ True True`,
             `in works on any iterable`,
             `Bitwise ops useful for flags and permissions`,
             `Never use is for value comparison`
-          ],
-          pseudoCode: `Bitwise & Membership Operators
-
-1. Use is only for None, True, False, and singleton checks
-2. in works on any iterable
-3. Bitwise ops useful for flags and permissions
-4. Never use is for value comparison`
+          ]
         }
       ],
       exercises: [
@@ -421,13 +379,7 @@ nohtyP`,
             `Negative indices count from the end`,
             `Step in slicing enables reversal`,
             `Triple quotes for multiline strings`
-          ],
-          pseudoCode: `String Creation & Indexing
-
-1. Strings are immutable sequences
-2. Negative indices count from the end
-3. Step in slicing enables reversal
-4. Triple quotes for multiline strings`
+          ]
         },
         {
           id: `str-methods`,
@@ -455,13 +407,7 @@ a-b-c`,
             `split/join are inverse operations`,
             `strip removes leading/trailing whitespace`,
             `Methods never modify original string`
-          ],
-          pseudoCode: `Essential String Methods
-
-1. Strings have rich method API
-2. split/join are inverse operations
-3. strip removes leading/trailing whitespace
-4. Methods never modify original string`
+          ]
         },
         {
           id: `str-format`,
@@ -482,13 +428,7 @@ Alice = 96`,
             `Expressions evaluated at runtime inside {}`,
             `Format specifiers control precision and alignment`,
             `f-strings are faster than .format()`
-          ],
-          pseudoCode: `f-strings & Formatting
-
-1. f-strings are the preferred formatting method
-2. Expressions evaluated at runtime inside {}
-3. Format specifiers control precision and alignment
-4. f-strings are faster than .format()`
+          ]
         },
         {
           id: `str-unicode`,
@@ -510,13 +450,7 @@ café ☕`,
             `Always specify encoding for file I/O`,
             `UTF-8 handles all Unicode characters`,
             `len() counts characters, not bytes`
-          ],
-          pseudoCode: `Unicode & Encoding
-
-1. str is Unicode, bytes is raw data
-2. Always specify encoding for file I/O
-3. UTF-8 handles all Unicode characters
-4. len() counts characters, not bytes`
+          ]
         }
       ],
       exercises: [
@@ -605,13 +539,7 @@ Done`,
             `sep and end customize formatting`,
             `Use file= for logging to files`,
             `flush=True for real-time output`
-          ],
-          pseudoCode: `Print Function Deep Dive
-
-1. print accepts multiple arguments
-2. sep and end customize formatting
-3. Use file= for logging to files
-4. flush=True for real-time output`
+          ]
         },
         {
           id: `input`,
@@ -632,13 +560,7 @@ print(f"You are {age} years old")`,
             `Wrap in try/except for invalid input`,
             `Validate before converting types`,
             `Never trust user input blindly`
-          ],
-          pseudoCode: `Reading User Input
-
-1. input() always returns a string
-2. Wrap in try/except for invalid input
-3. Validate before converting types
-4. Never trust user input blindly`
+          ]
         },
         {
           id: `repl`,
@@ -661,13 +583,7 @@ print("Use python or ipython for interactive exploration")`,
             `_ holds the last evaluated result`,
             `IPython adds magic commands and tab completion`,
             `Use REPL before writing full scripts`
-          ],
-          pseudoCode: `The Python REPL
-
-1. REPL is ideal for quick experiments
-2. _ holds the last evaluated result
-3. IPython adds magic commands and tab completion
-4. Use REPL before writing full scripts`
+          ]
         },
         {
           id: `files-intro`,
@@ -689,13 +605,7 @@ line2`,
             `Text mode vs binary mode matters`,
             `Specify encoding=utf-8 for text files`,
             `File I/O covered in depth later`
-          ],
-          pseudoCode: `Basic File I/O Preview
-
-1. Always use with open() as f:
-2. Text mode vs binary mode matters
-3. Specify encoding=utf-8 for text files
-4. File I/O covered in depth later`
+          ]
         }
       ],
       exercises: [
@@ -776,13 +686,7 @@ print("Always use venv per project")`,
             `Never install packages globally for projects`,
             `Add .venv to .gitignore`,
             `Use python -m pip not bare pip`
-          ],
-          pseudoCode: `Virtual Environments
-
-1. One venv per project prevents dependency conflicts
-2. Never install packages globally for projects
-3. Add .venv to .gitignore
-4. Use python -m pip not bare pip`
+          ]
         },
         {
           id: `pip`,
@@ -806,13 +710,7 @@ scikit-learn>=1.3`,
             `requirements.txt tracks dependencies`,
             `Use pip list to see installed packages`,
             `Consider pip-tools or poetry for advanced management`
-          ],
-          pseudoCode: `Package Management with pip
-
-1. Pin major versions for reproducibility
-2. requirements.txt tracks dependencies
-3. Use pip list to see installed packages
-4. Consider pip-tools or poetry for advanced management`
+          ]
         },
         {
           id: `ide`,
@@ -832,13 +730,7 @@ scikit-learn>=1.3`,
             `Configure linter and formatter in IDE`,
             `Use debugger for complex bugs`,
             `Jupyter for exploratory data work`
-          ],
-          pseudoCode: `IDEs & Running Scripts
-
-1. if __name__ == "__main__" guards script execution
-2. Configure linter and formatter in IDE
-3. Use debugger for complex bugs
-4. Jupyter for exploratory data work`
+          ]
         },
         {
           id: `project-structure`,
@@ -862,13 +754,7 @@ Keep code modular and testable from the start.
             `Use meaningful module names`,
             `Document setup in README`,
             `Version control with git from day one`
-          ],
-          pseudoCode: `Project Structure Basics
-
-1. Separate source, tests, and data
-2. Use meaningful module names
-3. Document setup in README
-4. Version control with git from day one`
+          ]
         }
       ],
       exercises: [

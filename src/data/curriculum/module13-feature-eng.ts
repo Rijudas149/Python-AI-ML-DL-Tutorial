@@ -28,13 +28,7 @@ print(scaled.flatten().round(2))`,
             `Tree models invariant to scaling`,
             `Fit scaler on train only`,
             `RobustScaler for outlier-heavy data`
-          ],
-          pseudoCode: `Scaling Methods
-
-1. Required for SVM, KNN, neural networks, PCA
-2. Tree models invariant to scaling
-3. Fit scaler on train only
-4. RobustScaler for outlier-heavy data`
+          ]
         },
         {
           id: `encoding`,
@@ -56,13 +50,7 @@ print(enc)`,
             `drop="first" avoids multicollinearity`,
             `Target encoding risks leakage — use CV`,
             `Embedding layers for high cardinality in DL`
-          ],
-          pseudoCode: `Categorical Encoding
-
-1. One-hot for nominal — no ordinal assumption
-2. drop="first" avoids multicollinearity
-3. Target encoding risks leakage — use CV
-4. Embedding layers for high cardinality in DL`
+          ]
         },
         {
           id: `binning`,
@@ -78,13 +66,7 @@ print(enc)`,
             `Can improve linear model performance`,
             `Risk of losing information`,
             `Domain-driven bin boundaries often best`
-          ],
-          pseudoCode: `Binning & Discretization
-
-1. Equal-width vs equal-frequency binning
-2. Can improve linear model performance
-3. Risk of losing information
-4. Domain-driven bin boundaries often best`
+          ]
         },
         {
           id: `datetime-fe`,
@@ -107,13 +89,7 @@ print(df.iloc[0].round(3).tolist())`,
             `Hour 23 and hour 0 are close with sin/cos`,
             `Extract domain-relevant time features`,
             `Lag features capture temporal dependencies`
-          ],
-          pseudoCode: `Datetime Feature Engineering
-
-1. Cyclical encoding preserves continuity at boundaries
-2. Hour 23 and hour 0 are close with sin/cos
-3. Extract domain-relevant time features
-4. Lag features capture temporal dependencies`
+          ]
         }
       ],
       exercises: [
@@ -199,13 +175,7 @@ print(X_selected.shape)`,
             `Chi2 requires non-negative features`,
             `Mutual information captures non-linear relationships`,
             `Correlation filter removes redundant features`
-          ],
-          pseudoCode: `Filter Methods
-
-1. Fast — no model training needed
-2. Chi2 requires non-negative features
-3. Mutual information captures non-linear relationships
-4. Correlation filter removes redundant features`
+          ]
         },
         {
           id: `wrapper`,
@@ -228,13 +198,7 @@ print(rfe.support_)`,
             `RFE computationally expensive`,
             `Finds optimal subset for specific model`,
             `RFECV uses cross-validation for k`
-          ],
-          pseudoCode: `Wrapper Methods
-
-1. Model-dependent selection
-2. RFE computationally expensive
-3. Finds optimal subset for specific model
-4. RFECV uses cross-validation for k`
+          ]
         },
         {
           id: `embedded`,
@@ -250,13 +214,7 @@ print(rfe.support_)`,
             `Tree importance from split gain`,
             `SelectFromModel wraps any importance-based selector`,
             `Embedded methods most practical for production`
-          ],
-          pseudoCode: `Embedded Methods
-
-1. L1 regularization built-in feature selection
-2. Tree importance from split gain
-3. SelectFromModel wraps any importance-based selector
-4. Embedded methods most practical for production`
+          ]
         },
         {
           id: `importance`,
@@ -272,13 +230,7 @@ print(rfe.support_)`,
             `Computes drop in validation metric`,
             `Detects features used for splits but not predictive`,
             `sklearn.inspection.permutation_importance`
-          ],
-          pseudoCode: `Permutation Importance
-
-1. More reliable than tree default importance
-2. Computes drop in validation metric
-3. Detects features used for splits but not predictive
-4. sklearn.inspection.permutation_importance`
+          ]
         }
       ],
       exercises: [
@@ -368,13 +320,7 @@ print(grid.best_score_.round(3))`,
             `Define sensible search ranges`,
             `Parallelize with n_jobs=-1`,
             `Refit best model on full training data`
-          ],
-          pseudoCode: `Grid Search
-
-1. Exhaustive — expensive for large grids
-2. Define sensible search ranges
-3. Parallelize with n_jobs=-1
-4. Refit best model on full training data`
+          ]
         },
         {
           id: `random`,
@@ -390,13 +336,7 @@ print(grid.best_score_.round(3))`,
             `n_iter controls number of trials`,
             `More efficient exploration of large spaces`,
             `Optuna/Hyperopt for advanced optimization`
-          ],
-          pseudoCode: `Random Search
-
-1. Sample from log-uniform for learning rates
-2. n_iter controls number of trials
-3. More efficient exploration of large spaces
-4. Optuna/Hyperopt for advanced optimization`
+          ]
         },
         {
           id: `optuna`,
@@ -412,13 +352,7 @@ print(grid.best_score_.round(3))`,
             `Optuna easy API with pruning`,
             `Define objective function returning metric`,
             `Used extensively in DL and Kaggle`
-          ],
-          pseudoCode: `Bayesian Optimization
-
-1. Bayesian methods learn from previous trials
-2. Optuna easy API with pruning
-3. Define objective function returning metric
-4. Used extensively in DL and Kaggle`
+          ]
         },
         {
           id: `avoid-leakage`,
@@ -434,13 +368,7 @@ print(grid.best_score_.round(3))`,
             `Validation set or CV for all tuning decisions`,
             `Data leakage inflates reported performance`,
             `Document all tuning choices for reproducibility`
-          ],
-          pseudoCode: `Avoiding Tuning Leakage
-
-1. Test set touched only once at end
-2. Validation set or CV for all tuning decisions
-3. Data leakage inflates reported performance
-4. Document all tuning choices for reproducibility`
+          ]
         }
       ],
       exercises: [
@@ -520,13 +448,7 @@ print(g.best_params_["n_estimators"])`,
             `Complex models: low bias, high variance`,
             `Goal: minimize total error not just training error`,
             `Irreducible error from inherent noise in data`
-          ],
-          pseudoCode: `The Tradeoff
-
-1. Simple models: high bias, low variance
-2. Complex models: low bias, high variance
-3. Goal: minimize total error not just training error
-4. Irreducible error from inherent noise in data`
+          ]
         },
         {
           id: `learning-curves`,
@@ -551,13 +473,7 @@ print(train_scores.mean(axis=1).round(3))`,
             `Converging curves suggest more data wont help (bias)`,
             `Diverging curves benefit from more data`,
             `validation_curve for hyperparameter diagnosis`
-          ],
-          pseudoCode: `Learning Curves
-
-1. Learning curves diagnose bias/variance
-2. Converging curves suggest more data wont help (bias)
-3. Diverging curves benefit from more data
-4. validation_curve for hyperparameter diagnosis`
+          ]
         },
         {
           id: `regularization-bv`,
@@ -573,13 +489,7 @@ print(train_scores.mean(axis=1).round(3))`,
             `Early stopping is implicit regularization`,
             `Dropout reduces co-adaptation (variance)`,
             `Ensemble methods reduce variance`
-          ],
-          pseudoCode: `Regularization Effects
-
-1. L2 ridge increases bias, reduces variance
-2. Early stopping is implicit regularization
-3. Dropout reduces co-adaptation (variance)
-4. Ensemble methods reduce variance`
+          ]
         },
         {
           id: `double-descent`,
@@ -595,13 +505,7 @@ print(train_scores.mean(axis=1).round(3))`,
             `Double descent in overparameterized regime`,
             `Explains why huge models can generalize`,
             `Active research area in ML theory`
-          ],
-          pseudoCode: `Double Descent
-
-1. Classical U-curve bias-variance tradeoff
-2. Double descent in overparameterized regime
-3. Explains why huge models can generalize
-4. Active research area in ML theory`
+          ]
         }
       ],
       exercises: [
@@ -686,13 +590,7 @@ print(len(shap_values))`,
             `Consistent and locally accurate explanations`,
             `TreeExplainer exact and fast for trees`,
             `Summary plots show global feature importance`
-          ],
-          pseudoCode: `SHAP Values
-
-1. SHAP values sum to prediction minus base rate
-2. Consistent and locally accurate explanations
-3. TreeExplainer exact and fast for trees
-4. Summary plots show global feature importance`
+          ]
         },
         {
           id: `lime`,
@@ -708,13 +606,7 @@ print(len(shap_values))`,
             `Local fidelity not global accuracy`,
             `Tabular, text, and image explanations`,
             `LIME can be unstable across runs`
-          ],
-          pseudoCode: `LIME
-
-1. Model-agnostic — works on any black box
-2. Local fidelity not global accuracy
-3. Tabular, text, and image explanations
-4. LIME can be unstable across runs`
+          ]
         },
         {
           id: `global`,
@@ -730,13 +622,7 @@ print(len(shap_values))`,
             `Local for individual decision audit`,
             `Partial dependence plots show marginal effects`,
             `ICE plots show heterogeneous effects`
-          ],
-          pseudoCode: `Global vs Local Interpretability
-
-1. Global for model understanding and feature selection
-2. Local for individual decision audit
-3. Partial dependence plots show marginal effects
-4. ICE plots show heterogeneous effects`
+          ]
         },
         {
           id: `fairness`,
@@ -752,13 +638,7 @@ print(len(shap_values))`,
             `Check if protected attributes drive predictions`,
             `Proxy variables encode protected information`,
             `Interpretability necessary not sufficient for fairness`
-          ],
-          pseudoCode: `Interpretability for Fairness
-
-1. GDPR right to explanation in EU
-2. Check if protected attributes drive predictions
-3. Proxy variables encode protected information
-4. Interpretability necessary not sufficient for fairness`
+          ]
         }
       ],
       exercises: [

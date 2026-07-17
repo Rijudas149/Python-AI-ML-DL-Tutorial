@@ -21,11 +21,13 @@ export function ExerciseEditor({
   const [code, setCode] = useState('');
   const [result, setResult] = useState<{ correct: boolean; message: string } | null>(null);
   const [checked, setChecked] = useState(false);
+  const [passed, setPassed] = useState(false);
 
   const handleVerify = () => {
     const verification = verifyPython(code, exercise.solution, exercise.alternateSolutions ?? []);
     setResult({ correct: verification.correct, message: verification.message });
     setChecked(true);
+    setPassed(verification.correct);
     if (verification.correct) onCorrect?.();
   };
 
@@ -33,6 +35,19 @@ export function ExerciseEditor({
     setCode('');
     setResult(null);
     setChecked(false);
+    setPassed(false);
+  };
+
+  const handleMarkComplete = () => {
+    if (!passed) {
+      setResult({
+        correct: false,
+        message: 'Run Check Answer successfully before marking this exercise complete.',
+      });
+      setChecked(true);
+      return;
+    }
+    onMarkComplete();
   };
 
   return (
@@ -43,9 +58,14 @@ export function ExerciseEditor({
       </div>
       <textarea
         id={`py-${exercise.id}`}
-        className="sql-editor"
+        className="exercise-code-editor"
         value={code}
-        onChange={(e) => { setCode(e.target.value); setResult(null); setChecked(false); }}
+        onChange={(e) => {
+          setCode(e.target.value);
+          setResult(null);
+          setChecked(false);
+          setPassed(false);
+        }}
         placeholder={'# Write your Python solution here\ndef solve():\n    pass'}
         spellCheck={false}
         rows={8}
@@ -60,7 +80,13 @@ export function ExerciseEditor({
         <button type="button" className="btn btn-secondary" onClick={onRevealSolution}>
           {solutionRevealed ? 'Hide Solution' : 'Show Solution'}
         </button>
-        <button type="button" className="btn btn-primary" onClick={onMarkComplete}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleMarkComplete}
+          disabled={!passed}
+          title={passed ? 'Mark exercise complete' : 'Pass Check Answer first'}
+        >
           Mark as Completed ✓
         </button>
       </div>

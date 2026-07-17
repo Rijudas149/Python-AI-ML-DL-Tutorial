@@ -32,13 +32,7 @@ print(round(pipe.predict([[5]])[0], 1))`,
             `High degree causes overfitting`,
             `Always use regularization with high degree`,
             `Works with multiple features — explosion of terms`
-          ],
-          pseudoCode: `Polynomial Regression
-
-1. PolynomialFeatures generates interaction terms
-2. High degree causes overfitting
-3. Always use regularization with high degree
-4. Works with multiple features — explosion of terms`
+          ]
         },
         {
           id: `ridge-lasso`,
@@ -62,13 +56,7 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
             `Ridge keeps all features with small weights`,
             `Lasso performs automatic feature selection`,
             `ElasticNet best when many correlated features`
-          ],
-          pseudoCode: `Ridge & Lasso
-
-1. alpha controls regularization strength
-2. Ridge keeps all features with small weights
-3. Lasso performs automatic feature selection
-4. ElasticNet best when many correlated features`
+          ]
         },
         {
           id: `assumptions`,
@@ -84,13 +72,7 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
             `Heteroscedasticity: use weighted least squares`,
             `Multicollinearity inflates coefficient variance`,
             `Outliers disproportionately affect OLS`
-          ],
-          pseudoCode: `Linear Regression Assumptions
-
-1. Check residual plots for patterns
-2. Heteroscedasticity: use weighted least squares
-3. Multicollinearity inflates coefficient variance
-4. Outliers disproportionately affect OLS`
+          ]
         },
         {
           id: `robust`,
@@ -106,13 +88,7 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
             `RANSAC fits to inlier consensus`,
             `Quantile regression for uncertainty bounds`,
             `Use when data has significant outliers`
-          ],
-          pseudoCode: `Robust Regression
-
-1. Huber loss transitions from L2 to L1 for outliers
-2. RANSAC fits to inlier consensus
-3. Quantile regression for uncertainty bounds
-4. Use when data has significant outliers`
+          ]
         }
       ],
       exercises: [
@@ -199,13 +175,7 @@ print(pipe.score(X, y))`,
             `Always scale features for KNN`,
             `Slow prediction for large datasets`,
             `Use ball_tree or kd_tree for efficiency`
-          ],
-          pseudoCode: `K-Nearest Neighbors
-
-1. k too small: overfitting, too large: underfitting
-2. Always scale features for KNN
-3. Slow prediction for large datasets
-4. Use ball_tree or kd_tree for efficiency`
+          ]
         },
         {
           id: `naive-bayes`,
@@ -227,13 +197,7 @@ print(clf.predict_proba(X[:3]).round(2))`,
             `Works well with small data`,
             `Independence assumption rarely true but works`,
             `MultinomialNB for text classification`
-          ],
-          pseudoCode: `Naive Bayes
-
-1. Fast training and prediction
-2. Works well with small data
-3. Independence assumption rarely true but works
-4. MultinomialNB for text classification`
+          ]
         },
         {
           id: `multiclass`,
@@ -249,13 +213,7 @@ print(clf.predict_proba(X[:3]).round(2))`,
             `OvO used by SVC with probability`,
             `Softmax ensures probabilities sum to 1`,
             `Multi-class metrics: macro vs weighted avg`
-          ],
-          pseudoCode: `Multi-class Strategies
-
-1. OvR default in sklearn for SVM, LR
-2. OvO used by SVC with probability
-3. Softmax ensures probabilities sum to 1
-4. Multi-class metrics: macro vs weighted avg`
+          ]
         },
         {
           id: `imbalanced`,
@@ -271,13 +229,7 @@ print(clf.predict_proba(X[:3]).round(2))`,
             `SMOTE generates synthetic minority samples`,
             `Adjust decision threshold for precision/recall tradeoff`,
             `Use PR-AUC not accuracy for imbalanced data`
-          ],
-          pseudoCode: `Imbalanced Classification
-
-1. class_weight="balanced" adjusts loss
-2. SMOTE generates synthetic minority samples
-3. Adjust decision threshold for precision/recall tradeoff
-4. Use PR-AUC not accuracy for imbalanced data`
+          ]
         }
       ],
       exercises: [
@@ -367,13 +319,7 @@ print(clf.n_support_)`,
             `C large: narrow margin, fewer errors`,
             `C small: wide margin, more errors allowed`,
             `Only support vectors affect decision boundary`
-          ],
-          pseudoCode: `Linear SVM
-
-1. Maximum margin principle
-2. C large: narrow margin, fewer errors
-3. C small: wide margin, more errors allowed
-4. Only support vectors affect decision boundary`
+          ]
         },
         {
           id: `kernel`,
@@ -395,13 +341,7 @@ print(clf.score(X, y))`,
             `RBF kernel handles non-linear boundaries`,
             `gamma controls influence radius of each point`,
             `Linear kernel for high-dimensional sparse text data`
-          ],
-          pseudoCode: `Kernel Trick
-
-1. Kernel trick avoids explicit high-D mapping
-2. RBF kernel handles non-linear boundaries
-3. gamma controls influence radius of each point
-4. Linear kernel for high-dimensional sparse text data`
+          ]
         },
         {
           id: `svc-params`,
@@ -417,13 +357,7 @@ print(clf.score(X, y))`,
             `gamma too high: overfitting to support vectors`,
             `LinearSVC faster for linear case on large data`,
             `NuSVM alternative parameterization`
-          ],
-          pseudoCode: `SVM Hyperparameters
-
-1. Scale features before SVM — critical
-2. gamma too high: overfitting to support vectors
-3. LinearSVC faster for linear case on large data
-4. NuSVM alternative parameterization`
+          ]
         },
         {
           id: `svr`,
@@ -439,13 +373,7 @@ print(clf.score(X, y))`,
             `epsilon controls tube width`,
             `Less common than RF/XGBoost for tabular regression`,
             `Effective in high-dimensional spaces`
-          ],
-          pseudoCode: `Support Vector Regression
-
-1. SVR finds tube containing most points
-2. epsilon controls tube width
-3. Less common than RF/XGBoost for tabular regression
-4. Effective in high-dimensional spaces`
+          ]
         }
       ],
       exercises: [
@@ -556,13 +484,7 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
             `Handles missing values natively`,
             `early_stopping_rounds prevents overfitting`,
             `GPU acceleration available`
-          ],
-          pseudoCode: `XGBoost
-
-1. L1/L2 regularization on leaf weights
-2. Handles missing values natively
-3. early_stopping_rounds prevents overfitting
-4. GPU acceleration available`
+          ]
         },
         {
           id: `lightgbm`,
@@ -578,13 +500,7 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
             `CatBoost best for high-cardinality categoricals`,
             `All three dominate tabular ML competitions`,
             `Feature importance from gain or split count`
-          ],
-          pseudoCode: `LightGBM & CatBoost
-
-1. LightGBM faster than XGBoost on large datasets
-2. CatBoost best for high-cardinality categoricals
-3. All three dominate tabular ML competitions
-4. Feature importance from gain or split count`
+          ]
         },
         {
           id: `tuning-gbm`,
@@ -600,13 +516,7 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
             `Lower learning_rate with more trees often better`,
             `subsample and colsample add randomness`,
             `Use early stopping on validation set`
-          ],
-          pseudoCode: `Tuning Gradient Boosting
-
-1. Start with defaults then tune learning_rate + n_estimators
-2. Lower learning_rate with more trees often better
-3. subsample and colsample add randomness
-4. Use early stopping on validation set`
+          ]
         }
       ],
       exercises: [
@@ -687,13 +597,7 @@ print(clf.n_estimators)`,
             `Boosting reduces bias (XGBoost)`,
             `Both reduce overfitting vs single model`,
             `Combining diverse models improves robustness`
-          ],
-          pseudoCode: `Bagging & Boosting
-
-1. Bagging reduces variance (Random Forest)
-2. Boosting reduces bias (XGBoost)
-3. Both reduce overfitting vs single model
-4. Combining diverse models improves robustness`
+          ]
         },
         {
           id: `voting`,
@@ -719,13 +623,7 @@ print(round(vote.score(X, y), 3))`,
             `Stacking learns optimal combination`,
             `Diverse base models improve ensemble`,
             `Stacking can overfit — use CV for meta-features`
-          ],
-          pseudoCode: `Voting & Stacking
-
-1. Soft voting usually better than hard
-2. Stacking learns optimal combination
-3. Diverse base models improve ensemble
-4. Stacking can overfit — use CV for meta-features`
+          ]
         },
         {
           id: `blending`,
@@ -741,13 +639,7 @@ print(round(vote.score(X, y), 3))`,
             `Weight by validation AUC or log-loss`,
             `Blending simpler than stacking`,
             `Kaggle solutions often ensemble 5-10 models`
-          ],
-          pseudoCode: `Blending Strategies
-
-1. Equal weight averaging is strong baseline
-2. Weight by validation AUC or log-loss
-3. Blending simpler than stacking
-4. Kaggle solutions often ensemble 5-10 models`
+          ]
         },
         {
           id: `diversity`,
@@ -763,13 +655,7 @@ print(round(vote.score(X, y), 3))`,
             `Decorrelate errors for maximum benefit`,
             `Random feature subsets in RF create diversity`,
             `Cross-validation stacking prevents overfitting`
-          ],
-          pseudoCode: `Ensemble Diversity
-
-1. Identical models add no value
-2. Decorrelate errors for maximum benefit
-3. Random feature subsets in RF create diversity
-4. Cross-validation stacking prevents overfitting`
+          ]
         }
       ],
       exercises: [

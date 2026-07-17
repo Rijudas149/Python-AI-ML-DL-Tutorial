@@ -32,13 +32,7 @@ print(d.bark())`,
             `self must be first parameter of instance methods`,
             `Instance attributes set in __init__ or elsewhere`,
             `Classes group data and behavior`
-          ],
-          pseudoCode: `Defining Classes
-
-1. __init__ is the constructor
-2. self must be first parameter of instance methods
-3. Instance attributes set in __init__ or elsewhere
-4. Classes group data and behavior`
+          ]
         },
         {
           id: `class-vs-instance`,
@@ -62,13 +56,7 @@ print(Counter.total)`,
             `Instance attributes unique per object`,
             `Avoid mutable class-level defaults`,
             `Use class methods for factory patterns`
-          ],
-          pseudoCode: `Class vs Instance Attributes
-
-1. Class attributes shared by all instances
-2. Instance attributes unique per object
-3. Avoid mutable class-level defaults
-4. Use class methods for factory patterns`
+          ]
         },
         {
           id: `methods`,
@@ -94,13 +82,7 @@ print(Date.from_string("2024-03-15").year)`,
             `staticmethod for utility functions in class namespace`,
             `Instance methods most common`,
             `Choose based on what data method needs`
-          ],
-          pseudoCode: `Instance, Class & Static Methods
-
-1. classmethod for alternative constructors
-2. staticmethod for utility functions in class namespace
-3. Instance methods most common
-4. Choose based on what data method needs`
+          ]
         },
         {
           id: `dunder`,
@@ -126,13 +108,7 @@ print(Vector(1, 2) + Vector(3, 4))`,
             `Operator overloading via dunder methods`,
             `__eq__ for equality comparison`,
             `Follow Python data model conventions`
-          ],
-          pseudoCode: `Special Methods (Dunder)
-
-1. __repr__ for developers, __str__ for users
-2. Operator overloading via dunder methods
-3. __eq__ for equality comparison
-4. Follow Python data model conventions`
+          ]
         }
       ],
       exercises: [
@@ -237,13 +213,7 @@ Woof`,
             `Override methods for specialized behavior`,
             `super() accesses parent methods`,
             `Polymorphism: same interface, different behavior`
-          ],
-          pseudoCode: `Basic Inheritance
-
-1. Inheritance enables code reuse
-2. Override methods for specialized behavior
-3. super() accesses parent methods
-4. Polymorphism: same interface, different behavior`
+          ]
         },
         {
           id: `mro`,
@@ -271,13 +241,7 @@ print([c.__name__ for c in D.mro()])`,
             `Diamond inheritance resolved by C3`,
             `Prefer composition over deep inheritance`,
             `Use mixins for shared behavior`
-          ],
-          pseudoCode: `Method Resolution Order (MRO)
-
-1. MRO determines method lookup order
-2. Diamond inheritance resolved by C3
-3. Prefer composition over deep inheritance
-4. Use mixins for shared behavior`
+          ]
         },
         {
           id: `abstract`,
@@ -308,13 +272,7 @@ print(Circle(5).area())`,
             `Cannot instantiate ABC with abstract methods`,
             `Useful for plugin architectures`,
             `Protocol (typing) is duck-typing alternative`
-          ],
-          pseudoCode: `Abstract Base Classes
-
-1. ABC enforces interface contracts
-2. Cannot instantiate ABC with abstract methods
-3. Useful for plugin architectures
-4. Protocol (typing) is duck-typing alternative`
+          ]
         },
         {
           id: `composition`,
@@ -330,13 +288,7 @@ print(Circle(5).area())`,
             `Easier to swap implementations`,
             `Inheritance for true is-a relationships only`,
             `Dependency injection supports composition`
-          ],
-          pseudoCode: `Composition Over Inheritance
-
-1. Composition reduces coupling
-2. Easier to swap implementations
-3. Inheritance for true is-a relationships only
-4. Dependency injection supports composition`
+          ]
         }
       ],
       exercises: [
@@ -436,13 +388,7 @@ print(acc.get_balance())`,
             `Name mangling prevents accidental override in subclasses`,
             `Public API should be minimal and stable`,
             `Document internal vs public attributes`
-          ],
-          pseudoCode: `Naming Conventions
-
-1. Python uses convention, not enforcement
-2. Name mangling prevents accidental override in subclasses
-3. Public API should be minimal and stable
-4. Document internal vs public attributes`
+          ]
         },
         {
           id: `property`,
@@ -471,13 +417,7 @@ print(t.fahrenheit)`,
             `Validation in setters protects invariants`,
             `Prefer properties over get/set methods`,
             `Use _prefix for backing storage`
-          ],
-          pseudoCode: `The @property Decorator
-
-1. Properties enable computed attributes
-2. Validation in setters protects invariants
-3. Prefer properties over get/set methods
-4. Use _prefix for backing storage`
+          ]
         },
         {
           id: `slots`,
@@ -493,13 +433,7 @@ print(t.fahrenheit)`,
             `Fixes allowed attributes at class definition`,
             `Breaks if multiple inheritance conflicts`,
             `Rarely needed unless profiling shows benefit`
-          ],
-          pseudoCode: `__slots__ for Memory
-
-1. __slots__ reduces memory per instance
-2. Fixes allowed attributes at class definition
-3. Breaks if multiple inheritance conflicts
-4. Rarely needed unless profiling shows benefit`
+          ]
         },
         {
           id: `dataclass-preview`,
@@ -524,13 +458,7 @@ print(Point(1.0, 2.0))`,
             `Type hints define fields`,
             `frozen=True for immutability`,
             `field(default_factory=list) for mutable defaults`
-          ],
-          pseudoCode: `dataclass Preview
-
-1. dataclass reduces boilerplate
-2. Type hints define fields
-3. frozen=True for immutability
-4. field(default_factory=list) for mutable defaults`
+          ]
         }
       ],
       exercises: [
@@ -635,13 +563,7 @@ print(animal_factory("dog").speak())`,
             `Easy to add new types`,
             `Registry pattern extends factory`,
             `Used heavily in ML model loading`
-          ],
-          pseudoCode: `Factory Pattern
-
-1. Factory centralizes object creation
-2. Easy to add new types
-3. Registry pattern extends factory
-4. Used heavily in ML model loading`
+          ]
         },
         {
           id: `strategy`,
@@ -671,13 +593,7 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
             `Open/closed principle — extend without modifying`,
             `Functions can serve as strategies in Python`,
             `Common in ML preprocessing pipelines`
-          ],
-          pseudoCode: `Strategy Pattern
-
-1. Strategy enables runtime algorithm selection
-2. Open/closed principle — extend without modifying
-3. Functions can serve as strategies in Python
-4. Common in ML preprocessing pipelines`
+          ]
         },
         {
           id: `observer`,
@@ -693,13 +609,7 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
             `Used in GUI event handling`,
             `Callbacks are lightweight Python observers`,
             `Consider asyncio for async event patterns`
-          ],
-          pseudoCode: `Observer Pattern
-
-1. Decouples subject from observers
-2. Used in GUI event handling
-3. Callbacks are lightweight Python observers
-4. Consider asyncio for async event patterns`
+          ]
         },
         {
           id: `singleton`,
@@ -715,13 +625,7 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
             `Avoid overusing Singleton pattern`,
             `Dependency injection preferred for testability`,
             `lru_cache can implement function singletons`
-          ],
-          pseudoCode: `Singleton & Module Pattern
-
-1. Module-level objects are singletons by default
-2. Avoid overusing Singleton pattern
-3. Dependency injection preferred for testability
-4. lru_cache can implement function singletons`
+          ]
         }
       ],
       exercises: [
@@ -820,13 +724,7 @@ print(render(Circle()))`,
             `No need to inherit from Protocol`,
             `runtime_checkable for isinstance checks`,
             `Preferred over ABC for flexible interfaces`
-          ],
-          pseudoCode: `typing.Protocol
-
-1. Protocol enables duck typing with type checking
-2. No need to inherit from Protocol
-3. runtime_checkable for isinstance checks
-4. Preferred over ABC for flexible interfaces`
+          ]
         },
         {
           id: `abc-vs-protocol`,
@@ -842,13 +740,7 @@ print(render(Circle()))`,
             `Protocol for flexible third-party integration`,
             `Both supported by mypy and pyright`,
             `ML frameworks use Protocol for tensor-like objects`
-          ],
-          pseudoCode: `ABC vs Protocol
-
-1. ABC for strict hierarchies and shared implementation
-2. Protocol for flexible third-party integration
-3. Both supported by mypy and pyright
-4. ML frameworks use Protocol for tensor-like objects`
+          ]
         },
         {
           id: `generic`,
@@ -875,13 +767,7 @@ print(b.item)`,
             `TypeVar defines type parameters`,
             `Python 3.12: class Box[T] syntax`,
             `Useful for containers and data structures`
-          ],
-          pseudoCode: `Generic Classes
-
-1. Generics preserve type information
-2. TypeVar defines type parameters
-3. Python 3.12: class Box[T] syntax
-4. Useful for containers and data structures`
+          ]
         },
         {
           id: `solid`,
@@ -897,13 +783,7 @@ print(b.item)`,
             `Open/Closed: extend without modifying`,
             `Liskov: subtypes must be substitutable`,
             `Apply pragmatically — not every class needs all five`
-          ],
-          pseudoCode: `SOLID Principles
-
-1. Single Responsibility: one reason to change
-2. Open/Closed: extend without modifying
-3. Liskov: subtypes must be substitutable
-4. Apply pragmatically — not every class needs all five`
+          ]
         }
       ],
       exercises: [

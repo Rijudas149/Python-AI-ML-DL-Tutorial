@@ -30,13 +30,7 @@ else:
             `Truthy/falsy evaluation drives conditionals`,
             `else is optional`,
             `Use elif for multiple branches`
-          ],
-          pseudoCode: `if Statements
-
-1. Indentation defines code blocks
-2. Truthy/falsy evaluation drives conditionals
-3. else is optional
-4. Use elif for multiple branches`
+          ]
         },
         {
           id: `elif`,
@@ -63,13 +57,7 @@ print(letter)`,
             `Order conditions from specific to general`,
             `else catches all remaining cases`,
             `Avoid deep nesting — refactor to functions`
-          ],
-          pseudoCode: `elif Chains
-
-1. Only one branch executes
-2. Order conditions from specific to general
-3. else catches all remaining cases
-4. Avoid deep nesting — refactor to functions`
+          ]
         },
         {
           id: `ternary`,
@@ -94,13 +82,7 @@ match parity:
             `match/case replaces long elif chains`,
             `Pattern matching supports destructuring`,
             `Use match for type-based dispatch`
-          ],
-          pseudoCode: `Ternary & Match-Case
-
-1. Ternary keeps simple assignments concise
-2. match/case replaces long elif chains
-3. Pattern matching supports destructuring
-4. Use match for type-based dispatch`
+          ]
         },
         {
           id: `guard`,
@@ -217,13 +199,7 @@ print(total)`,
             `range(start, stop, step) generates numbers`,
             `Never modify list while iterating`,
             `enumerate() gives index and value`
-          ],
-          pseudoCode: `for Loops
-
-1. for loops iterate iterables directly
-2. range(start, stop, step) generates numbers
-3. Never modify list while iterating
-4. enumerate() gives index and value`
+          ]
         },
         {
           id: `while-loop`,
@@ -245,13 +221,7 @@ print(f"Divided {count} times")`,
             `Always ensure loop termination`,
             `break exits loop immediately`,
             `continue skips to next iteration`
-          ],
-          pseudoCode: `while Loops
-
-1. while for unknown iteration count
-2. Always ensure loop termination
-3. break exits loop immediately
-4. continue skips to next iteration`
+          ]
         },
         {
           id: `loop-else`,
@@ -274,13 +244,7 @@ else:
             `break exits innermost loop only`,
             `continue skips rest of iteration body`,
             `Use for-else for search patterns`
-          ],
-          pseudoCode: `else, break, continue
-
-1. else on loops is rarely used but powerful
-2. break exits innermost loop only
-3. continue skips rest of iteration body
-4. Use for-else for search patterns`
+          ]
         },
         {
           id: `nested`,
@@ -302,13 +266,7 @@ Bob: 87`,
             `Nested loops can be O(n²) — watch performance`,
             `itertools.product for Cartesian products`,
             `List comprehensions often replace simple nested loops`
-          ],
-          pseudoCode: `Nested Loops & zip
-
-1. zip pairs elements from iterables
-2. Nested loops can be O(n²) — watch performance
-3. itertools.product for Cartesian products
-4. List comprehensions often replace simple nested loops`
+          ]
         }
       ],
       exercises: [
@@ -396,13 +354,7 @@ print(area(5))`,
             `Docstrings appear in help()`,
             `return exits immediately`,
             `Functions should do one thing well`
-          ],
-          pseudoCode: `Defining Functions
-
-1. Functions are first-class objects
-2. Docstrings appear in help()
-3. return exits immediately
-4. Functions should do one thing well`
+          ]
         },
         {
           id: `params`,
@@ -423,13 +375,7 @@ greet("Alice", "Hi", "admin", role="dev")`,
             `Never use mutable defaults like []`,
             `*args collects extra positional args`,
             `**kwargs collects extra keyword args`
-          ],
-          pseudoCode: `Parameter Types
-
-1. Default args evaluated once at definition
-2. Never use mutable defaults like []
-3. *args collects extra positional args
-4. **kwargs collects extra keyword args`
+          ]
         },
         {
           id: `unpack`,
@@ -451,13 +397,7 @@ print(add(*nums))`,
             `** unpacks dicts into keyword args`,
             `Useful for forwarding arguments`,
             `Python 3.8+ positional-only with /`
-          ],
-          pseudoCode: `Unpacking Arguments
-
-1. * unpacks sequences into positional args
-2. ** unpacks dicts into keyword args
-3. Useful for forwarding arguments
-4. Python 3.8+ positional-only with /`
+          ]
         },
         {
           id: `pure`,
@@ -473,13 +413,7 @@ print(add(*nums))`,
             `Separate computation from I/O`,
             `Avoid global mutable state`,
             `Use return values instead of printing inside logic`
-          ],
-          pseudoCode: `Pure Functions & Side Effects
-
-1. Pure functions are easier to test and reason about
-2. Separate computation from I/O
-3. Avoid global mutable state
-4. Use return values instead of printing inside logic`
+          ]
         }
       ],
       exercises: [
@@ -579,13 +513,7 @@ print(outer())`,
             `global modifies module-level names`,
             `nonlocal modifies enclosing function names`,
             `Avoid global state when possible`
-          ],
-          pseudoCode: `LEGB Scope Rule
-
-1. LEGB determines name lookup order
-2. global modifies module-level names
-3. nonlocal modifies enclosing function names
-4. Avoid global state when possible`
+          ]
         },
         {
           id: `closures`,
@@ -609,13 +537,7 @@ print(times3(7))`,
             `Closures enable partial application`,
             `Foundation for decorators`,
             `Captured variables are late-binding`
-          ],
-          pseudoCode: `Closures
-
-1. Inner functions remember enclosing variables
-2. Closures enable partial application
-3. Foundation for decorators
-4. Captured variables are late-binding`
+          ]
         },
         {
           id: `lambda`,
@@ -635,13 +557,7 @@ print(sorted_pairs)`,
             `Common as key= argument to sorted/map/filter`,
             `Prefer def for named reusable functions`,
             `No statements allowed in lambda body`
-          ],
-          pseudoCode: `Lambda Functions
-
-1. Lambda limited to single expression
-2. Common as key= argument to sorted/map/filter
-3. Prefer def for named reusable functions
-4. No statements allowed in lambda body`
+          ]
         },
         {
           id: `higher`,
@@ -662,13 +578,7 @@ print(squares)`,
             `List comprehensions often replace map/filter`,
             `Higher-order functions enable composition`,
             `functools.reduce for folding`
-          ],
-          pseudoCode: `Higher-Order Functions
-
-1. map/filter return iterators in Python 3
-2. List comprehensions often replace map/filter
-3. Higher-order functions enable composition
-4. functools.reduce for folding`
+          ]
         }
       ],
       exercises: [
@@ -751,13 +661,7 @@ print(squares)`,
             `Filter with trailing if clause`,
             `Nested comprehensions for 2D structures`,
             `Dont sacrifice readability for brevity`
-          ],
-          pseudoCode: `List Comprehensions
-
-1. Comprehensions are Pythonic for transformations
-2. Filter with trailing if clause
-3. Nested comprehensions for 2D structures
-4. Dont sacrifice readability for brevity`
+          ]
         },
         {
           id: `dict-set-comp`,
@@ -778,13 +682,7 @@ print(lengths, unique_lens)`,
             `Set comprehensions deduplicate automatically`,
             `Use for invertible transformations`,
             `Generator expressions use () for lazy evaluation`
-          ],
-          pseudoCode: `Dict & Set Comprehensions
-
-1. Dict comprehensions build mappings
-2. Set comprehensions deduplicate automatically
-3. Use for invertible transformations
-4. Generator expressions use () for lazy evaluation`
+          ]
         },
         {
           id: `generators`,
@@ -803,13 +701,7 @@ print(next(gen), next(gen), next(gen))`,
             `Memory O(1) regardless of range size`,
             `Exhausted generators cannot restart`,
             `Use for pipeline processing`
-          ],
-          pseudoCode: `Generator Expressions
-
-1. Generators yield one value at a time
-2. Memory O(1) regardless of range size
-3. Exhausted generators cannot restart
-4. Use for pipeline processing`
+          ]
         },
         {
           id: `iterators`,
@@ -828,13 +720,7 @@ print(next(it), next(it))`,
             `for loops use iterator protocol internally`,
             `Custom classes can implement __iter__/__next__`,
             `itertools module provides rich iterators`
-          ],
-          pseudoCode: `Iterator Protocol
-
-1. All iterables implement __iter__
-2. for loops use iterator protocol internally
-3. Custom classes can implement __iter__/__next__
-4. itertools module provides rich iterators`
+          ]
         }
       ],
       exercises: [

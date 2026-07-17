@@ -30,13 +30,7 @@ def test_add():
             `One logical behavior per test function`,
             `Tests must be deterministic and independent`,
             `Naming test_* enables automatic discovery`
-          ],
-          pseudoCode: `pytest Fundamentals
-
-1. Use plain assert — pytest rewrites failures richly
-2. One logical behavior per test function
-3. Tests must be deterministic and independent
-4. Naming test_* enables automatic discovery`
+          ]
         },
         {
           id: `fixtures`,
@@ -60,13 +54,7 @@ def test_index(sample_list, idx, val):
             `parametrize documents input/output cases explicitly`,
             `conftest.py centralizes shared fixtures`,
             `Choose fixture scope to balance speed vs isolation`
-          ],
-          pseudoCode: `Fixtures & Parametrize
-
-1. Fixtures replace repetitive setup code
-2. parametrize documents input/output cases explicitly
-3. conftest.py centralizes shared fixtures
-4. Choose fixture scope to balance speed vs isolation`
+          ]
         },
         {
           id: `unittest-mock`,
@@ -92,13 +80,7 @@ def test_fetch(mock_get):
             `Mocks verify both return values and call patterns`,
             `unittest.TestCase still valid; pytest is often preferred`,
             `Do not mock the function you are testing`
-          ],
-          pseudoCode: `unittest & Mocking
-
-1. Patch at the import site used by code under test
-2. Mocks verify both return values and call patterns
-3. unittest.TestCase still valid; pytest is often preferred
-4. Do not mock the function you are testing`
+          ]
         },
         {
           id: `coverage-ci`,
@@ -116,13 +98,7 @@ Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_ba
             `CI gates prevent merging broken code`,
             `Separate fast unit from slow integration tests`,
             `Mirror source layout in tests/ directory`
-          ],
-          pseudoCode: `Coverage & CI Integration
-
-1. Coverage highlights untested branches
-2. CI gates prevent merging broken code
-3. Separate fast unit from slow integration tests
-4. Mirror source layout in tests/ directory`
+          ]
         }
       ],
       exercises: [
@@ -209,13 +185,7 @@ Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if susp
             `Step vs next controls function entry`,
             `pytest --pdb stops at assertion failures`,
             `Remove breakpoints before committing`
-          ],
-          pseudoCode: `Interactive Debugging with pdb
-
-1. breakpoint() is the modern pdb entry point
-2. Step vs next controls function entry
-3. pytest --pdb stops at assertion failures
-4. Remove breakpoints before committing`
+          ]
         },
         {
           id: `logging`,
@@ -224,13 +194,7 @@ Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if susp
 
 \`logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")\`
 
-Use module loggers: \`logger = logging.getLogger(__name__)\`. Libraries log to loggers; applications configure handlers (console, file, JSON for observability stacks).
-
-**Applying Debugging, Logging & Tracebacks:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Structured Logging", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Use module loggers: \`logger = logging.getLogger(__name__)\`. Libraries log to loggers; applications configure handlers (console, file, JSON for observability stacks).`,
           example: `import logging
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -250,13 +214,7 @@ print(process(5))`,
             `Use __name__ for hierarchical logger names`,
             `Lazy % formatting avoids string work when disabled`,
             `Never log secrets or PII at INFO level`
-          ],
-          pseudoCode: `Structured Logging
-
-1. Log levels filter noise in production
-2. Use __name__ for hierarchical logger names
-3. Lazy % formatting avoids string work when disabled
-4. Never log secrets or PII at INFO level`
+          ]
         },
         {
           id: `tracebacks`,
@@ -280,38 +238,22 @@ keys: ['a']`,
             `Exception chaining preserves original cause`,
             `Inspect locals at failure line in pdb`,
             `Reproduce with minimal input before fixing`
-          ],
-          pseudoCode: `Reading Tracebacks
-
-1. Read traceback from bottom exception upward
-2. Exception chaining preserves original cause
-3. Inspect locals at failure line in pdb
-4. Reproduce with minimal input before fixing`
+          ]
         },
         {
           id: `debug-tools`,
           title: `Debug Tools & Practices`,
-          content: `IDEs (VS Code, PyCharm) offer visual breakpoints and variable watches. **ipdb** improves pdb with IPython syntax. **sentry** captures production exceptions with context.
+          content: `IDEs (VS Code, PyCharm) offer visual breakpoints and variable watches. **ipdb** improves pdb with IPython syntax.
 
-Maintain a debugging checklist: reproduce reliably, bisect git history (\`git bisect\`), add a failing test, fix, verify test passes. Rubber-duck explaining expected vs actual behavior.
+**sentry** captures production exceptions with context. Maintain a debugging checklist: reproduce reliably, bisect git history (\`git bisect\`), add a failing test, fix, verify test passes.
 
-**Applying Debugging, Logging & Tracebacks:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Debug Tools & Practices", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Rubber-duck explaining expected vs actual behavior.`,
           keyPoints: [
             `Always reproduce before attempting fixes`,
             `Add regression test for every bug fixed`,
             `git bisect finds introducing commit`,
             `Production errors need structured logs + traces`
-          ],
-          pseudoCode: `Debug Tools & Practices
-
-1. Always reproduce before attempting fixes
-2. Add regression test for every bug fixed
-3. git bisect finds introducing commit
-4. Production errors need structured logs + traces`
+          ]
         }
       ],
       exercises: [
@@ -381,15 +323,9 @@ except ZeroDivisionError as e:
         {
           id: `coroutines`,
           title: `Coroutines & Event Loop`,
-          content: `**async def** defines a coroutine function; calling it returns a coroutine object—it does not run until awaited. **await** suspends the coroutine until the awaited operation completes, yielding control to the event loop.
+          content: `**async def** defines a coroutine function; calling it returns a coroutine object—it does not run until awaited. **await** suspends the coroutine until the awaited operation completes, yielding control to the event loop. \`asyncio.run(main())\` creates a loop, runs \`main\`, and closes cleanly (Python 3.7+).
 
-\`asyncio.run(main())\` creates a loop, runs \`main\`, and closes cleanly (Python 3.7+). The loop schedules ready coroutines and I/O callbacks cooperatively—no preemptive threads.
-
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Coroutines & Event Loop", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+The loop schedules ready coroutines and I/O callbacks cooperatively—no preemptive threads.`,
           example: `import asyncio
 
 async def greet(name):
@@ -407,13 +343,7 @@ asyncio.run(main())`,
             `asyncio.run is the standard entry point`,
             `sleep(0) yields to other tasks`,
             `CPU-bound code blocks the entire loop`
-          ],
-          pseudoCode: `Coroutines & Event Loop
-
-1. async def creates coroutines; await drives them
-2. asyncio.run is the standard entry point
-3. sleep(0) yields to other tasks
-4. CPU-bound code blocks the entire loop`
+          ]
         },
         {
           id: `gather-tasks`,
@@ -422,11 +352,10 @@ asyncio.run(main())`,
 
 \`asyncio.wait_for(coro, timeout=5)\` raises \`TimeoutError\` on overrun. Use \`asyncio.Semaphore(n)\` to cap concurrent connections.
 
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Tasks, gather & Timeouts", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- gather runs coroutines concurrently on one thread
+- Tasks enable background work while awaiting others
+- Always set timeouts on external I/O
+- Semaphore prevents resource exhaustion`,
           example: `import asyncio
 
 async def work(n):
@@ -444,13 +373,7 @@ asyncio.run(main())`,
             `Tasks enable background work while awaiting others`,
             `Always set timeouts on external I/O`,
             `Semaphore prevents resource exhaustion`
-          ],
-          pseudoCode: `Tasks, gather & Timeouts
-
-1. gather runs coroutines concurrently on one thread
-2. Tasks enable background work while awaiting others
-3. Always set timeouts on external I/O
-4. Semaphore prevents resource exhaustion`
+          ]
         },
         {
           id: `aiohttp`,
@@ -459,11 +382,10 @@ asyncio.run(main())`,
 
 Respect rate limits and robots.txt when scraping. Handle \`aiohttp.ClientError\` and status codes explicitly.
 
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "aiohttp HTTP Basics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- One ClientSession per application lifecycle
+- async with ensures connection cleanup
+- Check resp.status before parsing body
+- Combine with Semaphore for polite concurrency`,
           example: `import asyncio
 import aiohttp
 
@@ -479,13 +401,7 @@ async def fetch_title():
             `async with ensures connection cleanup`,
             `Check resp.status before parsing body`,
             `Combine with Semaphore for polite concurrency`
-          ],
-          pseudoCode: `aiohttp HTTP Basics
-
-1. One ClientSession per application lifecycle
-2. async with ensures connection cleanup
-3. Check resp.status before parsing body
-4. Combine with Semaphore for polite concurrency`
+          ]
         },
         {
           id: `async-pitfalls`,
@@ -494,7 +410,10 @@ async def fetch_title():
 
 Mixing threads and asyncio requires \`loop.run_in_executor\`. For CPU work use **multiprocessing**, not more coroutines.
 
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Async Anti-Patterns", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Blocking calls freeze all coroutines on the loop
+- Un-awaited coroutines do not run
+- asyncio is for I/O concurrency not CPU parallelism
+- Use to_thread or ProcessPool for blocking/CPU work`,
           example: `import asyncio
 
 async def bad():
@@ -509,13 +428,7 @@ print(asyncio.run(bad()))`,
             `Un-awaited coroutines do not run`,
             `asyncio is for I/O concurrency not CPU parallelism`,
             `Use to_thread or ProcessPool for blocking/CPU work`
-          ],
-          pseudoCode: `Async Anti-Patterns
-
-1. Blocking calls freeze all coroutines on the loop
-2. Un-awaited coroutines do not run
-3. asyncio is for I/O concurrency not CPU parallelism
-4. Use to_thread or ProcessPool for blocking/CPU work`
+          ]
         }
       ],
       exercises: [
@@ -593,11 +506,10 @@ asyncio.run(main())`,
 
 Raw strings \`r"\\d+"\` avoid escaping backslashes. Match objects expose \`.group()\`, \`.start()\`, \`.end()\`. Compile repeated patterns: \`pat = re.compile(r"...")\`.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "re Module Basics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Prefer raw strings for regex patterns
+- search scans entire string; match anchors at start
+- compile() amortizes parsing cost in loops
+- group(1) returns first capturing parenthesis`,
           example: `import re
 text = "Order ID: 12345, total $67.89"
 id_match = re.search(r"ID: (\\d+)", text)
@@ -608,13 +520,7 @@ print(id_match.group(1) if id_match else None)`,
             `search scans entire string; match anchors at start`,
             `compile() amortizes parsing cost in loops`,
             `group(1) returns first capturing parenthesis`
-          ],
-          pseudoCode: `re Module Basics
-
-1. Prefer raw strings for regex patterns
-2. search scans entire string; match anchors at start
-3. compile() amortizes parsing cost in loops
-4. group(1) returns first capturing parenthesis`
+          ]
         },
         {
           id: `patterns`,
@@ -623,11 +529,10 @@ print(id_match.group(1) if id_match else None)`,
 
 **Anchors:** \`^\` start, \`$\` end, \`\\b\` word boundary. **Groups:** \`( ... )\` capture, \`(?: ... )\` non-capture, \`(?<name> ... )\` named.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Common Pattern Building Blocks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Validate patterns against edge cases
+- Non-capturing groups improve performance
+- Word boundaries prevent partial matches
+- Email regex is illustrative—not RFC-complete`,
           example: `import re
 emails = ["a@b.co", "bad@", "c@d.org"]
 pat = re.compile(r"^[\\w.+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")
@@ -639,13 +544,7 @@ print(valid)`,
             `Non-capturing groups improve performance`,
             `Word boundaries prevent partial matches`,
             `Email regex is illustrative—not RFC-complete`
-          ],
-          pseudoCode: `Common Pattern Building Blocks
-
-1. Validate patterns against edge cases
-2. Non-capturing groups improve performance
-3. Word boundaries prevent partial matches
-4. Email regex is illustrative—not RFC-complete`
+          ]
         },
         {
           id: `flags-groups`,
@@ -654,11 +553,10 @@ print(valid)`,
 
 \`re.split\` splits on pattern. Named groups via \`(?P<name>...)\`. **\`re.finditer\`** yields match objects memory-efficiently over large texts.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Flags & Extraction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- MULTILINE changes anchor behavior
+- Named groups clarify extraction code
+- finditer scales better than findall on huge files
+- VERBOSE allows comments in complex patterns`,
           example: `import re
 log = "2024-01-15 ERROR disk full\\n2024-01-16 INFO ok"
 for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
@@ -670,13 +568,7 @@ for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
             `Named groups clarify extraction code`,
             `finditer scales better than findall on huge files`,
             `VERBOSE allows comments in complex patterns`
-          ],
-          pseudoCode: `Flags & Extraction
-
-1. MULTILINE changes anchor behavior
-2. Named groups clarify extraction code
-3. finditer scales better than findall on huge files
-4. VERBOSE allows comments in complex patterns`
+          ]
         },
         {
           id: `regex-caveats`,
@@ -685,23 +577,16 @@ for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
 
 Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on long strings—test performance. Prefer explicit string methods when sufficient.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "When Not to Use Regex", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Do not parse HTML/XML with regex alone
+- Watch catastrophic backtracking on evil input
+- str.split/strip often beats regex for simple tasks
+- Unit test regex with representative samples`,
           keyPoints: [
             `Do not parse HTML/XML with regex alone`,
             `Watch catastrophic backtracking on evil input`,
             `str.split/strip often beats regex for simple tasks`,
             `Unit test regex with representative samples`
-          ],
-          pseudoCode: `When Not to Use Regex
-
-1. Do not parse HTML/XML with regex alone
-2. Watch catastrophic backtracking on evil input
-3. str.split/strip often beats regex for simple tasks
-4. Unit test regex with representative samples`
+          ]
         }
       ],
       exercises: [
@@ -767,40 +652,22 @@ print(re.sub(r" ", "_", "hello world"))`,
         {
           id: `gil`,
           title: `The Global Interpreter Lock`,
-          content: `CPython's **GIL** allows only one thread to execute Python bytecode at a time per process. Threads help **I/O-bound** work (waiting on network/disk) because threads release the GIL during I/O. **CPU-bound** Python loops do not parallelize across threads.
+          content: `CPython's **GIL** allows only one thread to execute Python bytecode at a time per process. Threads help **I/O-bound** work (waiting on network/disk) because threads release the GIL during I/O.
 
-Multiprocessing spawns separate interpreters—each with its own GIL—enabling true CPU parallelism at the cost of memory and IPC overhead.
-
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "The Global Interpreter Lock", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**CPU-bound** Python loops do not parallelize across threads. Multiprocessing spawns separate interpreters—each with its own GIL—enabling true CPU parallelism at the cost of memory and IPC overhead.`,
           keyPoints: [
             `GIL limits parallel CPU-bound threads in CPython`,
             `I/O-bound tasks still benefit from threads`,
             `multiprocessing bypasses GIL with separate processes`,
             `NumPy/C extensions may release GIL in C code`
-          ],
-          pseudoCode: `The Global Interpreter Lock
-
-1. GIL limits parallel CPU-bound threads in CPython
-2. I/O-bound tasks still benefit from threads
-3. multiprocessing bypasses GIL with separate processes
-4. NumPy/C extensions may release GIL in C code`
+          ]
         },
         {
           id: `threading`,
           title: `threading Module`,
-          content: `\`threading.Thread(target=func, args=(...))\` starts OS threads. **\`threading.Lock\`** protects shared mutable state. Prefer **\`concurrent.futures.ThreadPoolExecutor\`** for pool-based submission: \`executor.submit(fn, arg)\` and \`future.result()\`.
+          content: `\`threading.Thread(target=func, args=(...))\` starts OS threads. **\`threading.Lock\`** protects shared mutable state.
 
-Avoid data races—use queues (\`queue.Queue\`) for producer-consumer patterns instead of manual locking when possible.
-
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "threading Module", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Prefer **\`concurrent.futures.ThreadPoolExecutor\`** for pool-based submission: \`executor.submit(fn, arg)\` and \`future.result()\`. Avoid data races—use queues (\`queue.Queue\`) for producer-consumer patterns instead of manual locking when possible.`,
           example: `from concurrent.futures import ThreadPoolExecutor
 
 def fetch(n):
@@ -815,13 +682,7 @@ print(results)`,
             `Protect shared mutable state with locks`,
             `queue.Queue is thread-safe for handoff`,
             `Daemon threads exit when main exits`
-          ],
-          pseudoCode: `threading Module
-
-1. ThreadPoolExecutor simplifies thread pools
-2. Protect shared mutable state with locks
-3. queue.Queue is thread-safe for handoff
-4. Daemon threads exit when main exits`
+          ]
         },
         {
           id: `multiprocessing`,
@@ -830,11 +691,10 @@ print(results)`,
 
 On Windows, guard entry with \`if __name__ == "__main__":\` to prevent spawn recursion. Shared state via \`multiprocessing.Value\`, \`Array\`, or **\`Manager\`**—prefer immutable message passing.
 
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "multiprocessing Module", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Processes have higher startup cost than threads
+- Pickle requirement limits shared objects
+- Pool.map is simple for embarrassingly parallel maps
+- Prefer executors over raw Process for clarity`,
           example: `from multiprocessing import Pool
 
 def square(x):
@@ -849,38 +709,22 @@ if __name__ == "__main__":
             `Pickle requirement limits shared objects`,
             `Pool.map is simple for embarrassingly parallel maps`,
             `Prefer executors over raw Process for clarity`
-          ],
-          pseudoCode: `multiprocessing Module
-
-1. Processes have higher startup cost than threads
-2. Pickle requirement limits shared objects
-3. Pool.map is simple for embarrassingly parallel maps
-4. Prefer executors over raw Process for clarity`
+          ]
         },
         {
           id: `choosing`,
           title: `Choosing a Concurrency Model`,
-          content: `**asyncio**: many concurrent I/O connections, single-thread clarity. **threading**: blocking I/O libraries without async support. **multiprocessing**: CPU-heavy pure Python computation. **C extensions / NumPy**: may parallelize internally.
+          content: `**asyncio**: many concurrent I/O connections, single-thread clarity. **threading**: blocking I/O libraries without async support.
 
-Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O concurrency with CPU offload via \`loop.run_in_executor\`.
+**multiprocessing**: CPU-heavy pure Python computation. **C extensions / NumPy**: may parallelize internally.
 
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Choosing a Concurrency Model", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O concurrency with CPU offload via \`loop.run_in_executor\`.`,
           keyPoints: [
             `Match model to bottleneck: I/O vs CPU`,
             `Do not mix models without clear boundaries`,
             `Measure speedup—overhead can dominate small tasks`,
             `Document thread/process safety of shared resources`
-          ],
-          pseudoCode: `Choosing a Concurrency Model
-
-1. Match model to bottleneck: I/O vs CPU
-2. Do not mix models without clear boundaries
-3. Measure speedup—overhead can dominate small tasks
-4. Document thread/process safety of shared resources`
+          ]
         }
       ],
       exercises: [

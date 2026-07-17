@@ -44,18 +44,7 @@ x̄ = (1/n) ∑ x_i
 Median: middle of sorted data
 Mode: argmax frequency
 Trimmed mean: drop extremes
-Weighted: ∑ w_i x_i / ∑ w_i
-
-skewed data:
-mean → pulled by tail
-median → center of mass
-↑ median
-
-1. Mean sensitive to outliers
-2. Median robust for skew
-3. Mode for categorical peaks
-4. Batch norm tracks mean
-5. Report median for skewed metrics`
+Weighted: ∑ w_i x_i / ∑ w_i`
         },
         {
           id: `ds-spread`,
@@ -93,18 +82,7 @@ s² = (1/(n−1))∑(x_i−x̄)²
 σ = √Var(X)
 IQR = Q3 − Q1
 MAD = median(|x−median|)
-CV = σ/|μ|
-
-boxplot:
-max ─┬─
-med ─┤ box
-min ─┴─ outliers ·
-
-1. n−1 for unbiased sample var
-2. IQR robust to outliers
-3. Std for z-score scaling
-4. Boxplot visualizes quartiles
-5. Normalize before distance-based ML`
+CV = σ/|μ|`
         },
         {
           id: `ds-percentile`,
@@ -143,17 +121,7 @@ Q(p) = inf{x : F(x)≥p}
 Q1=25th, Q2=50th, Q3=75th
 Pinball loss for quantile τ
 p99 latency common SLA
-Percentile robust to extremes
-
-CDF F(x)
-↑ Q(0.95)
-95% below this value
-
-1. Percentiles invert CDF
-2. Pinball loss for quantile reg
-3. p95/p99 for tail behavior
-4. Clip using percentile bounds
-5. Quartiles in boxplots`
+Percentile robust to extremes`
         },
         {
           id: `ds-eda`,
@@ -195,21 +163,7 @@ describe(): count mean std min max
 Missing rate per column
 Class balance P(y)
 Train vs test distribution compare
-IQR outlier: x<Q1−1.5IQR or x>Q3+1.5IQR
-
-EDA checklist:
-□ shape dtypes
-□ missing values
-□ target balance
-□ feature histograms
-□ correlations
-□ train/test shift
-
-1. EDA before modeling mandatory
-2. Check imbalance early
-3. Correlation guides feature selection
-4. Distribution shift breaks models
-5. Automate reproducible profiles`
+IQR outlier: x<Q1−1.5IQR or x>Q3+1.5IQR`
         }
       ],
       exercises: [
@@ -309,18 +263,7 @@ SRS: each subset equally likely
 Stratified: proportional strata
 Bootstrap: resample n with replacement
 x̄ is RV across samples
-Selection bias if sample skewed
-
-population → sample → statistic
-Ω (big) ──draw──→ data (n)
-↓
-x̄, s²
-
-1. Representative sample critical
-2. Stratify for rare classes
-3. Bootstrap for CI without formulas
-4. Train/val/test splits are samples
-5. Temporal data needs special splits`
+Selection bias if sample skewed`
         },
         {
           id: `sc-se`,
@@ -358,18 +301,7 @@ SE(x̄) = σ/√n
 Estimate: SE ≈ s/√n
 95% CI: x̄ ± 1.96·SE
 SE decreases ∝ 1/√n
-Report metric ± SE or CI
-
-sampling distribution of x̄:
-bell narrows as n↑
-n=10  wide bell
-n=100 narrow bell
-
-1. SE quantifies estimate uncertainty
-2. Grows with √n not n
-3. CI from CLT approximate
-4. CV metrics need multiple folds
-5. Don't report point alone`
+Report metric ± SE or CI`
         },
         {
           id: `sc-clt`,
@@ -407,18 +339,7 @@ print("mean of means:", np.mean(means), "std:", np.std(means))`,
 p̂ approx N(p, p(1−p)/n)
 Requires finite σ²
 n≥30 rule of thumb
-Bootstrap if CLT doubtful
-
-sampling distribution:
-any population
-↓ average n samples
-≈ Normal for large n
-
-1. CLT enables inferential stats
-2. Applies to means and proportions
-3. Finite variance needed
-4. Bootstrap backup method
-5. Heavy tails need care`
+Bootstrap if CLT doubtful`
         },
         {
           id: `sc-ml`,
@@ -457,17 +378,7 @@ Hold-out: single test estimate
 K-fold: K metric samples
 Stratified: preserve P(y)
 Report mean±std over seeds
-Don't peek at test repeatedly
-
-train │ val │ test
-tune    pick   once
-test peeking → optimistic bias
-
-1. Fixed test set sacred
-2. CV for small data
-3. Stratify imbalanced labels
-4. Multiple seeds show stability
-5. A/B needs sequential care`
+Don't peek at test repeatedly`
         }
       ],
       exercises: [
@@ -570,18 +481,7 @@ p-value = P(T ≥ t_obs | H₀)
 Reject H₀ if p < α
 Type I: reject true H₀ (α)
 Type II: fail reject false H₀ (β)
-Power = 1 − β
-
-decision:
-p small → reject H₀
-p large → insufficient evidence
-α=0.05 threshold line
-
-1. p-value not prob H₀ true
-2. α controls false positives
-3. Power needs effect size + n
-4. Multiple tests need correction
-5. Fail to reject ≠ prove null`
+Power = 1 − β`
         },
         {
           id: `ht-tests`,
@@ -623,18 +523,7 @@ t = (x̄−μ₀)/(s/√n)
 χ² = ∑ (O−E)²/E
 Two-sample t: compare means
 Paired t: difference scores
-ANOVA: compare k means
-
-test selection tree:
-numeric 2 groups → t-test
-categorical table → χ²
->2 group means → ANOVA
-
-1. Match test to question
-2. Check assumptions
-3. t-test for means
-4. Chi-square for counts
-5. Nonparametric if needed`
+ANOVA: compare k means`
         },
         {
           id: `ht-ab`,
@@ -676,18 +565,7 @@ H₀: p_A = p_B
 z = (p̂_A−p̂_B)/SE_diff
 Power needs n, effect size, α
 Fixed horizon reduces peeking bias
-Practical vs statistical significance
-
-A/B split:
-users ──50/50──→ A (control)
-└──→ B (treatment)
-compare metric mean/rate
-
-1. Randomization avoids confounding
-2. Power analysis before test
-3. Peeking inflates false positives
-4. Check SRM on assignment
-5. Effect size matters for business`
+Practical vs statistical significance`
         },
         {
           id: `ht-ml`,
@@ -730,17 +608,7 @@ McNemar: paired classification errors
 Permutation: shuffle null
 Paired t on CV fold scores
 Correct for multiple comparisons
-Sig ≠ deploy decision
-
-model A vs B same test:
-both wrong → both right pairs
-McNemar uses discordant pairs
-
-1. Use paired tests same data
-2. Permutation flexible
-3. Correct multiple models
-4. CI better than p alone
-5. Engineering constraints matter`
+Sig ≠ deploy decision`
         }
       ],
       exercises: [
@@ -842,18 +710,7 @@ print(stats.t.interval(0.95, len(x)-1, loc=x.mean(), scale=se))`,
 Width ∝ 1/√n
 t* → 1.96 as n→∞
 Bootstrap percentile CI
-CI = plausible μ values
-
-CI as error bar:
-x̄ ────[====]────
-lower  upper
-wider = less precision
-
-1. CI frequency interpretation
-2. t for small samples
-3. Bootstrap when CLT weak
-4. Width shrinks with √n
-5. Always pair with estimate`
+CI = plausible μ values`
         },
         {
           id: `ci-prop`,
@@ -891,17 +748,7 @@ Wald: p̂ ± z√(p̂(1−p̂)/n)
 Wilson score interval (better)
 Agresti-Coull adjustment
 Exact binomial conservative
-Rare events need large n
-
-accuracy 0.92 on n=100:
-CI might [0.85, 0.96]
-n=10000 → much tighter
-
-1. Wald fails at extremes
-2. Wilson recommended
-3. Small test set wide CI
-4. Report CI with accuracy
-5. Rare class CIs very wide`
+Rare events need large n`
         },
         {
           id: `ci-diff`,
@@ -941,18 +788,7 @@ print("diff CI:", d-1.96*se, d+1.96*se)`,
 SE_diff independent groups
 Paired: CI on d_i = x_i−y_i
 Exclude 0 ↔ significant
-Overlap CI misleading for diff
-
-difference CI:
-0 inside CI → not significant
-0 outside → significant
-[====|----0----|====]
-
-1. Difference CI tests effect
-2. Overlap individual CIs misleading
-3. Paired uses difference scores
-4. Bootstrap for ratio metrics
-5. Exclude zero = significant`
+Overlap CI misleading for diff`
         },
         {
           id: `ci-ml`,
@@ -989,17 +825,7 @@ Bootstrap metrics on test set
 CV mean ± std approximate
 Conformal: distribution-free coverage
 Bayesian predictive intervals
-Nested CV for model selection
-
-metric report format:
-F1 = 0.87 (95% CI: 0.84–0.90)
-not just F1 = 0.87
-
-1. Always quantify metric uncertainty
-2. Bootstrap simple and flexible
-3. Conformal for prediction bands
-4. Nested CV reduces selection bias
-5. Leaderboards ignore uncertainty`
+Nested CV for model selection`
         }
       ],
       exercises: [
@@ -1103,19 +929,7 @@ min ||y − Xβ||²
 Normal eq: XᵀXβ = Xᵀy
 β = (XᵀX)⁻¹ Xᵀy
 ŷ = H y projection
-e = y − ŷ ⊥ Col(X)
-
-y vector projected onto
-column space of X:
-y
-╱  | e (residual)
-Col(X)
-
-1. OLS = orthogonal projection
-2. Normal equations from calculus
-3. Full rank needed unique β
-4. Polynomial via feature map
-5. Residuals orthogonal to fit`
+e = y − ŷ ⊥ Col(X)`
         },
         {
           id: `reg-assump`,
@@ -1153,18 +967,7 @@ E[ε|X] = 0
 Var(ε|X) = σ² (homoscedastic)
 No perfect collinearity
 ε ~ N(0,σ²) for t-tests
-VIF detects multicollinearity
-
-residual plot healthy:
-e │ ·  ·    random scatter
-└── predictor
-funnel → heteroscedasticity
-
-1. Check residuals systematically
-2. Funnel shape bad
-3. VIF>10 concern collinearity
-4. Normality for CI/p-values
-5. Regularize collinear features`
+VIF detects multicollinearity`
         },
         {
           id: `reg-infer`,
@@ -1203,18 +1006,7 @@ Var(β̂) = σ² (XᵀX)⁻¹
 s² = ||e||²/(n−p−1)
 t = β̂_j / SE(β̂_j)
 R² = 1 − SSE/SST
-Adj R² penalizes p
-
-R² interpretation:
-0 = no better than mean
-1 = perfect fit (overfit risk)
-adj R² down if useless feature added
-
-1. SE on coefficients for significance
-2. R² not always better high
-3. Adj R² compares models
-4. Prediction interval wider than CI mean
-5. F-test overall significance`
+Adj R² penalizes p`
         },
         {
           id: `reg-ml`,
@@ -1253,17 +1045,7 @@ Ridge: min ||y−Xβ||² + λ||β||²
 Lasso: L1 → sparsity
 GD scales big data
 Normal eq O(np²) expensive
-GLM generalizes linear model
-
-OLS → Ridge → Lasso
-add λ||β||²   add λ||β||₁
-shrink        select features
-
-1. Normal eq fine small p
-2. GD for deep/large data
-3. Ridge handles collinearity
-4. Lasso feature selection
-5. Logistic = linear + logit link`
+GLM generalizes linear model`
         }
       ],
       exercises: [

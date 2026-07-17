@@ -34,13 +34,7 @@ print(output.shape)`,
             `Key: what do I contain`,
             `Value: what information do I provide`,
             `Softmax weights sum to 1 over keys`
-          ],
-          pseudoCode: `Attention Intuition
-
-1. Query: what am I looking for
-2. Key: what do I contain
-3. Value: what information do I provide
-4. Softmax weights sum to 1 over keys`
+          ]
         },
         {
           id: `scaled`,
@@ -75,13 +69,7 @@ output = weights @ V`,
             `Parallel computation over sequence`,
             `O(n²) memory and compute in sequence length`,
             `Long-range dependencies in constant path length`
-          ],
-          pseudoCode: `Self-Attention
-
-1. Self-attention replaces recurrence
-2. Parallel computation over sequence
-3. O(n²) memory and compute in sequence length
-4. Long-range dependencies in constant path length`
+          ]
         },
         {
           id: `multi-head`,
@@ -104,13 +92,7 @@ print(out.shape, weights.shape)`,
             `Concat heads then linear projection`,
             `num_heads divides embed_dim evenly`,
             `Attention weights interpretable per head`
-          ],
-          pseudoCode: `Multi-Head Attention
-
-1. Multiple heads capture different relationship types
-2. Concat heads then linear projection
-3. num_heads divides embed_dim evenly
-4. Attention weights interpretable per head`
+          ]
         }
       ],
       exercises: [
@@ -207,13 +189,7 @@ print(2*2 / math.sqrt(4))`,
             `Cross-attention connects encoder to decoder`,
             `Decoder self-attention is masked`,
             `Encoder-only models (BERT) skip decoder`
-          ],
-          pseudoCode: `Transformer Decoder
-
-1. Causal mask for autoregressive generation
-2. Cross-attention connects encoder to decoder
-3. Decoder self-attention is masked
-4. Encoder-only models (BERT) skip decoder`
+          ]
         },
         {
           id: `ffn`,
@@ -229,13 +205,7 @@ print(2*2 / math.sqrt(4))`,
             `Majority of transformer parameters in FFN`,
             `GELU activation in modern transformers`,
             `MoE replaces FFN with mixture of experts at scale`
-          ],
-          pseudoCode: `Feed-Forward Network
-
-1. Same FFN applied to each position independently
-2. Majority of transformer parameters in FFN
-3. GELU activation in modern transformers
-4. MoE replaces FFN with mixture of experts at scale`
+          ]
         },
         {
           id: `layer-norm`,
@@ -251,13 +221,7 @@ print(2*2 / math.sqrt(4))`,
             `Normalizes last dimension (features)`,
             `Pre-norm enables deeper networks`,
             `RMSNorm simpler alternative used in LLaMA`
-          ],
-          pseudoCode: `Layer Normalization
-
-1. LayerNorm not BatchNorm in transformers
-2. Normalizes last dimension (features)
-3. Pre-norm enables deeper networks
-4. RMSNorm simpler alternative used in LLaMA`
+          ]
         }
       ],
       exercises: [
@@ -345,13 +309,7 @@ print(sinusoidal_pe(4, 8).shape)`,
             `Each dimension different wavelength`,
             `Added to input embeddings`,
             `Can extrapolate beyond training length somewhat`
-          ],
-          pseudoCode: `Sinusoidal Positional Encoding
-
-1. Sinusoidal encoding from original transformer paper
-2. Each dimension different wavelength
-3. Added to input embeddings
-4. Can extrapolate beyond training length somewhat`
+          ]
         },
         {
           id: `learned`,
@@ -367,13 +325,7 @@ print(sinusoidal_pe(4, 8).shape)`,
             `Cannot exceed max position embeddings`,
             `Rotary (RoPE) and ALiBi extend context`,
             `Position embeddings added to token embeddings`
-          ],
-          pseudoCode: `Learned Positional Embeddings
-
-1. Learned positions standard in GPT models
-2. Cannot exceed max position embeddings
-3. Rotary (RoPE) and ALiBi extend context
-4. Position embeddings added to token embeddings`
+          ]
         },
         {
           id: `rope`,
@@ -389,13 +341,7 @@ print(sinusoidal_pe(4, 8).shape)`,
             `Better length extrapolation than learned`,
             `Standard in modern open-source LLMs`,
             `Applied to Q and K before attention`
-          ],
-          pseudoCode: `Rotary Position Embedding (RoPE)
-
-1. RoPE encodes relative not absolute position
-2. Better length extrapolation than learned
-3. Standard in modern open-source LLMs
-4. Applied to Q and K before attention`
+          ]
         },
         {
           id: `alibi`,
@@ -411,13 +357,7 @@ print(sinusoidal_pe(4, 8).shape)`,
             `Strong length extrapolation`,
             `Relative position bias in attention scores`,
             `Multiple approaches coexist in modern models`
-          ],
-          pseudoCode: `ALiBi & Relative Positions
-
-1. ALiBi simple and effective
-2. Strong length extrapolation
-3. Relative position bias in attention scores
-4. Multiple approaches coexist in modern models`
+          ]
         }
       ],
       exercises: [
@@ -500,13 +440,7 @@ print(outputs.last_hidden_state.shape)`,
             `[MASK] token for MLM pretraining`,
             `Bidirectional context — sees left and right`,
             `Fine-tune with task-specific head on top`
-          ],
-          pseudoCode: `BERT Architecture
-
-1. [CLS] token representation for classification
-2. [MASK] token for MLM pretraining
-3. Bidirectional context — sees left and right
-4. Fine-tune with task-specific head on top`
+          ]
         },
         {
           id: `mlm`,
@@ -522,13 +456,7 @@ print(outputs.last_hidden_state.shape)`,
             `Forces model to understand context`,
             `MLM objective is denoising autoencoder`,
             `RoBERTa improves BERT training recipe`
-          ],
-          pseudoCode: `Masked Language Modeling
-
-1. 80% replace with [MASK], 10% random, 10% unchanged
-2. Forces model to understand context
-3. MLM objective is denoising autoencoder
-4. RoBERTa improves BERT training recipe`
+          ]
         },
         {
           id: `fine-tune`,
@@ -548,13 +476,7 @@ print(model.classifier)`,
             `Small learning rate critical for fine-tuning`,
             `Freeze early layers for very small datasets`,
             `HuggingFace Trainer simplifies fine-tuning`
-          ],
-          pseudoCode: `Fine-Tuning BERT
-
-1. Use AdamW optimizer with weight decay
-2. Small learning rate critical for fine-tuning
-3. Freeze early layers for very small datasets
-4. HuggingFace Trainer simplifies fine-tuning`
+          ]
         },
         {
           id: `encoder-models`,
@@ -570,13 +492,7 @@ print(model.classifier)`,
             `DeBERTa: disentangled attention`,
             `DistilBERT: 40% smaller, 97% performance`,
             `Encoder models for classification and retrieval`
-          ],
-          pseudoCode: `Modern Encoder Models
-
-1. RoBERTa: optimized BERT training
-2. DeBERTa: disentangled attention
-3. DistilBERT: 40% smaller, 97% performance
-4. Encoder models for classification and retrieval`
+          ]
         }
       ],
       exercises: [
@@ -658,13 +574,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
             `Decoder-only for generation tasks`,
             `Scaling laws: bigger = better performance`,
             `GPT-2, GPT-3, GPT-4 evolution`
-          ],
-          pseudoCode: `GPT Architecture
-
-1. Causal/autoregressive: predict P(x_t | x_<t)
-2. Decoder-only for generation tasks
-3. Scaling laws: bigger = better performance
-4. GPT-2, GPT-3, GPT-4 evolution`
+          ]
         },
         {
           id: `generation`,
@@ -680,13 +590,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
             `top-p (nucleus): sample from smallest set with cumulative prob p`,
             `top-k: sample from k most likely tokens`,
             `Repetition penalty reduces loops`
-          ],
-          pseudoCode: `Text Generation Strategies
-
-1. Temperature < 1 sharpens, > 1 flattens distribution
-2. top-p (nucleus): sample from smallest set with cumulative prob p
-3. top-k: sample from k most likely tokens
-4. Repetition penalty reduces loops`
+          ]
         },
         {
           id: `causal`,
@@ -702,13 +606,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
             `Causal mask prevents cheating (seeing future)`,
             `Cross-entropy loss on vocabulary`,
             `Trillions of tokens for frontier models`
-          ],
-          pseudoCode: `Causal Language Modeling
-
-1. CLM loss computed on all token positions
-2. Causal mask prevents cheating (seeing future)
-3. Cross-entropy loss on vocabulary
-4. Trillions of tokens for frontier models`
+          ]
         },
         {
           id: `scaling`,
@@ -724,13 +622,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
             `Chinchilla optimal compute allocation`,
             `Emergent abilities at scale debated`,
             `Efficiency improvements (MoE, quantization) extend scaling`
-          ],
-          pseudoCode: `Scaling Laws
-
-1. Kaplan scaling laws (OpenAI 2020)
-2. Chinchilla optimal compute allocation
-3. Emergent abilities at scale debated
-4. Efficiency improvements (MoE, quantization) extend scaling`
+          ]
         }
       ],
       exercises: [

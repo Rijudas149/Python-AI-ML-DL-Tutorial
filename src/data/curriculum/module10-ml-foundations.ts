@@ -27,13 +27,7 @@ export const module10Topics: Topic[] = [
             `Data quality determines ceiling performance`,
             `Always hold out test set until final evaluation`,
             `Iterate between EDA and feature engineering`
-          ],
-          pseudoCode: `The ML Workflow
-
-1. Start with problem definition not algorithms
-2. Data quality determines ceiling performance
-3. Always hold out test set until final evaluation
-4. Iterate between EDA and feature engineering`
+          ]
         },
         {
           id: `split`,
@@ -59,13 +53,7 @@ print(len(X_train), len(X_test))`,
             `stratify preserves class proportions`,
             `random_state for reproducibility`,
             `Typical split: 70-80% train, 20-30% test`
-          ],
-          pseudoCode: `train_test_split
-
-1. Never train on test data — data leakage
-2. stratify preserves class proportions
-3. random_state for reproducibility
-4. Typical split: 70-80% train, 20-30% test`
+          ]
         },
         {
           id: `preprocessing`,
@@ -91,13 +79,7 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
             `Pipeline ensures consistent train/test processing`,
             `ColumnTransformer for mixed feature types`,
             `Preprocessing choices affect model performance`
-          ],
-          pseudoCode: `Preprocessing Pipeline
-
-1. Fit preprocessor on training data only
-2. Pipeline ensures consistent train/test processing
-3. ColumnTransformer for mixed feature types
-4. Preprocessing choices affect model performance`
+          ]
         },
         {
           id: `baseline`,
@@ -113,13 +95,7 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
             `Baseline sets minimum acceptable performance`,
             `Simple models often competitive with complex ones`,
             `Occams razor — prefer simpler when equal performance`
-          ],
-          pseudoCode: `Baseline Models
-
-1. DummyClassifier/DummyRegressor for baselines
-2. Baseline sets minimum acceptable performance
-3. Simple models often competitive with complex ones
-4. Occams razor — prefer simpler when equal performance`
+          ]
         }
       ],
       exercises: [
@@ -209,13 +185,7 @@ print(model.coef_[0], model.intercept_)`,
             `Interpretable coefficients`,
             `Sensitive to outliers — use HuberRegressor`,
             `Ridge/Lasso add regularization`
-          ],
-          pseudoCode: `Linear Regression
-
-1. Assumes linear relationship
-2. Interpretable coefficients
-3. Sensitive to outliers — use HuberRegressor
-4. Ridge/Lasso add regularization`
+          ]
         },
         {
           id: `logistic`,
@@ -239,13 +209,7 @@ print(clf.predict([[2.5], [3.5]]))`,
             `Uses cross-entropy loss internally`,
             `Works well with linearly separable data`,
             `C parameter controls regularization strength`
-          ],
-          pseudoCode: `Logistic Regression
-
-1. Outputs probabilities not just labels
-2. Uses cross-entropy loss internally
-3. Works well with linearly separable data
-4. C parameter controls regularization strength`
+          ]
         },
         {
           id: `sigmoid`,
@@ -268,13 +232,7 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
             `Softmax outputs sum to 1`,
             `Decision boundary at 0.5 for binary`,
             `Logistic regression learns linear decision boundary`
-          ],
-          pseudoCode: `Sigmoid & Softmax
-
-1. Sigmoid squashes to probability range
-2. Softmax outputs sum to 1
-3. Decision boundary at 0.5 for binary
-4. Logistic regression learns linear decision boundary`
+          ]
         },
         {
           id: `interpret`,
@@ -290,13 +248,7 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
             `Feature scaling needed for coefficient comparison`,
             `Regularization shrinks coefficients toward zero`,
             `Linear models preferred when interpretability required`
-          ],
-          pseudoCode: `Interpretability
-
-1. Positive coefficient increases log-odds of class 1
-2. Feature scaling needed for coefficient comparison
-3. Regularization shrinks coefficients toward zero
-4. Linear models preferred when interpretability required`
+          ]
         }
       ],
       exercises: [
@@ -383,13 +335,7 @@ print(clf.score(X, y))`,
             `Handles mixed feature types naturally`,
             `Prone to overfitting without constraints`,
             `Fully interpretable — can visualize tree`
-          ],
-          pseudoCode: `Decision Trees
-
-1. max_depth controls complexity
-2. Handles mixed feature types naturally
-3. Prone to overfitting without constraints
-4. Fully interpretable — can visualize tree`
+          ]
         },
         {
           id: `rf`,
@@ -412,13 +358,7 @@ print(rf.score(X, y))`,
             `n_estimators more trees = lower variance`,
             `feature_importances_ for feature ranking`,
             `OOB score estimates generalization without validation set`
-          ],
-          pseudoCode: `Random Forests
-
-1. Bagging reduces overfitting vs single tree
-2. n_estimators more trees = lower variance
-3. feature_importances_ for feature ranking
-4. OOB score estimates generalization without validation set`
+          ]
         },
         {
           id: `hyperparams`,
@@ -434,13 +374,7 @@ print(rf.score(X, y))`,
             `min_samples_leaf prevents tiny leaves`,
             `max_features introduces randomness in RF`,
             `Pruning via cost-complexity parameter ccp_alpha`
-          ],
-          pseudoCode: `Tree Hyperparameters
-
-1. max_depth most impactful hyperparameter
-2. min_samples_leaf prevents tiny leaves
-3. max_features introduces randomness in RF
-4. Pruning via cost-complexity parameter ccp_alpha`
+          ]
         },
         {
           id: `when`,
@@ -456,13 +390,7 @@ print(rf.score(X, y))`,
             `Less effective on raw images/text without features`,
             `XGBoost/LightGBM often win Kaggle tabular`,
             `Random Forest good default before tuning`
-          ],
-          pseudoCode: `When to Use Trees
-
-1. Trees excel on structured/tabular data
-2. Less effective on raw images/text without features
-3. XGBoost/LightGBM often win Kaggle tabular
-4. Random Forest good default before tuning`
+          ]
         }
       ],
       exercises: [
@@ -558,13 +486,7 @@ weighted avg      0.714     0.714     0.714         7`,
             `Precision: of predicted positives, how many correct`,
             `Recall: of actual positives, how many found`,
             `F1 balances precision and recall`
-          ],
-          pseudoCode: `Classification Metrics
-
-1. Accuracy misleading for imbalanced classes
-2. Precision: of predicted positives, how many correct
-3. Recall: of actual positives, how many found
-4. F1 balances precision and recall`
+          ]
         },
         {
           id: `roc`,
@@ -580,13 +502,7 @@ weighted avg      0.714     0.714     0.714         7`,
             `Good for imbalanced binary classification`,
             `Choose threshold based on business cost`,
             `PR curve better for highly imbalanced data`
-          ],
-          pseudoCode: `ROC-AUC
-
-1. AUC measures ranking quality of predictions
-2. Good for imbalanced binary classification
-3. Choose threshold based on business cost
-4. PR curve better for highly imbalanced data`
+          ]
         },
         {
           id: `regression`,
@@ -611,13 +527,7 @@ print(round(r2_score(y_true, y_pred), 3))`,
             `RMSE in same units as target`,
             `R² proportion of variance explained`,
             `Use domain-appropriate metrics`
-          ],
-          pseudoCode: `Regression Metrics
-
-1. MSE penalizes large errors more than MAE
-2. RMSE in same units as target
-3. R² proportion of variance explained
-4. Use domain-appropriate metrics`
+          ]
         },
         {
           id: `confusion`,
@@ -633,13 +543,7 @@ print(round(r2_score(y_true, y_pred), 3))`,
             `Normalize for class imbalance visualization`,
             `Multi-class extends to n×n matrix`,
             `Cost-sensitive learning weights error types differently`
-          ],
-          pseudoCode: `Confusion Matrix
-
-1. TN, FP, FN, TP for binary case
-2. Normalize for class imbalance visualization
-3. Multi-class extends to n×n matrix
-4. Cost-sensitive learning weights error types differently`
+          ]
         }
       ],
       exercises: [
@@ -724,13 +628,7 @@ print(round(scores.mean(), 3), round(scores.std(), 3))`,
             `StratifiedKFold for classification`,
             `Mean score estimates generalization`,
             `Std indicates stability across folds`
-          ],
-          pseudoCode: `K-Fold Cross-Validation
-
-1. cv=5 or cv=10 common choices
-2. StratifiedKFold for classification
-3. Mean score estimates generalization
-4. Std indicates stability across folds`
+          ]
         },
         {
           id: `gridsearch`,
@@ -755,13 +653,7 @@ print(grid.best_params_)`,
             `RandomizedSearchCV for large spaces`,
             `Nested CV for unbiased performance estimate`,
             `Never tune on test set`
-          ],
-          pseudoCode: `GridSearchCV
-
-1. Search space size affects compute cost
-2. RandomizedSearchCV for large spaces
-3. Nested CV for unbiased performance estimate
-4. Never tune on test set`
+          ]
         },
         {
           id: `pipeline-cv`,
@@ -787,13 +679,7 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
             `Each fold fits scaler on train fold only`,
             `Same pipeline used for final model training`,
             `joblib.dump saves fitted pipeline`
-          ],
-          pseudoCode: `Pipeline + CV Together
-
-1. Pipeline + CV prevents preprocessing leakage
-2. Each fold fits scaler on train fold only
-3. Same pipeline used for final model training
-4. joblib.dump saves fitted pipeline`
+          ]
         },
         {
           id: `nested`,
@@ -809,13 +695,7 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
             `Inner CV selects hyperparameters`,
             `Prevents optimistic bias from tuning on same data`,
             `Computationally expensive but rigorous`
-          ],
-          pseudoCode: `Nested Cross-Validation
-
-1. Outer CV estimates model performance
-2. Inner CV selects hyperparameters
-3. Prevents optimistic bias from tuning on same data
-4. Computationally expensive but rigorous`
+          ]
         }
       ],
       exercises: [

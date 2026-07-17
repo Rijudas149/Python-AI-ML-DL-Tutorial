@@ -7,29 +7,8 @@ function sec(id, title, content, extra = {}) {
   return { id, title, content, ...extra };
 }
 
-const TRACK_ENRICHMENT = {
-  python: 'Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.',
-  data: 'Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.',
-  ml: 'These machine learning ideas appear in production systems, competitions, and research papers alike.',
-  dl: 'Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.',
-  ai: 'Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails.',
-};
-
-function enrichSectionContent(section, topicTitle, description, track) {
-  const minLen = 400;
-  if (!section.content || section.content.length >= minLen) return section.content;
-  const ctx = TRACK_ENRICHMENT[track] ?? TRACK_ENRICHMENT.ml;
-  return (
-    section.content +
-    `\n\n**Applying ${topicTitle}:** ${description} ${ctx} When studying "${section.title}", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`
-  );
-}
-
-function enrichSections(sections, topicTitle, description, track) {
-  return sections.map((s) => ({
-    ...s,
-    content: enrichSectionContent(s, topicTitle, description, track),
-  }));
+function enrichSections(sections) {
+  return sections;
 }
 
 function ex(id, question, solution, difficulty = 'easy', hint) {
@@ -44,7 +23,7 @@ function topic(id, title, description, level, sections, exercises, opts = {}) {
     description,
     level,
     track,
-    sections: enrichSections(sections, title, description, track),
+    sections: enrichSections(sections),
     exercises,
     estimatedMinutes: opts.estimatedMinutes ?? 30,
     ...(opts.prerequisites ? { prerequisites: opts.prerequisites } : {}),

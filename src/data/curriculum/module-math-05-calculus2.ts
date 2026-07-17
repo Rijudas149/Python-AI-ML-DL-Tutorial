@@ -48,19 +48,7 @@ print("∂f/∂x:", dfdx, "exact:", 2*x+3*y)`,
 ∇f = (∂f/∂x₁, ..., ∂f/∂x_n)ᵀ
 D_u f = ∇f · u
 Mixed partial: ∂²f/∂x∂y
-Clairaut: ∂²f/∂x∂y = ∂²f/∂y∂x (smooth)
-
-f(x,y) surface:
-fix y=y₀ → curve in x
-∂f/∂x = slope along x
-z
-╱│ slice at y₀
-
-1. Hold other vars constant
-2. Gradient stacks all partials
-3. Directional deriv projects gradient
-4. Mixed partials often commute
-5. Each weight has partial in NN`
+Clairaut: ∂²f/∂x∂y = ∂²f/∂y∂x (smooth)`
         },
         {
           id: `pd-geom`,
@@ -99,18 +87,7 @@ print("grad:", grad, "norm:", np.linalg.norm(grad))`,
 Steepest ascent direction
 ||∇f|| = max directional derivative
 −∇f = steepest descent
-Contour ⊥ gradient
-
-contour map + gradient:
-╭──╮  → ∇f points outward
-╱    ╲    from center min
-│  ·   │   at min: ∇f=0
-
-1. Gradient perpendicular to contours
-2. Descent opposite gradient
-3. Zero gradient at critical points
-4. Visualize on 2D slices
-5. Magnitude = steepness`
+Contour ⊥ gradient`
         },
         {
           id: `pd-higher`,
@@ -147,18 +124,7 @@ H_ij = ∂²f/∂x_i∂x_j
 H symmetric for C² f
 ∇²f = tr(H) (Laplacian)
 det(H) in multivariate transform
-Flat dir: small H eigenvalue
-
-H eigenvalues = curvatures:
-λ1 large: narrow valley
-λ2 small: flat along PC2
-condition number = λ_max/λ_min
-
-1. Hessian describes curvature
-2. Laplacian sums second partials
-3. Eigenvalues shape optimization
-4. Ill-conditioning from H ratio
-5. Fisher ≈ expected Hessian`
+Flat dir: small H eigenvalue`
         },
         {
           id: `pd-ml`,
@@ -197,18 +163,7 @@ print("dh/dx:", W.T, "shape matches x")`,
 Linear: ∂(Wx)/∂W = x
 Activation: diag(σ'(z))
 Batch grad = sum over samples
-autograd = automatic partials
-
-layer chain:
-x → z=Wx → h=σ(z) → L
-backward multiplies
-local partials upstream
-
-1. Backprop = chain of partials
-2. Linear layer grad w.r.t W outer product
-3. ReLU mask in backward
-4. Sum batch for weight update
-5. Verify custom ops manually`
+autograd = automatic partials`
         }
       ],
       exercises: [
@@ -311,19 +266,7 @@ print("∇L:", grad)`,
 max_{||u||=1} D_u f = ||∇f||
 ∇L(θ*) = 0 at stationary θ*
 Subgradient at non-smooth points
-∇L same shape as θ
-
-gradient field on hills:
-↗ ∇f
-hill peak
-↗ ↗
-valley: −∇f descent
-
-1. Gradient is a vector field
-2. Points uphill on loss
-3. Subgradients for ReLU kinks
-4. Shape must match parameters
-5. Numerical check validates autograd`
+∇L same shape as θ`
         },
         {
           id: `grad-descent`,
@@ -364,19 +307,7 @@ print("theta:", np.round(theta,4))`,
 η too large → diverge
 L-smooth: |∇f(x)−∇f(y)| ≤ L||x−y||
 Convex + proper η → global min
-Momentum: v_t = βv_{t-1}+∇L
-
-GD on bowl:
-θ_t ·──→ −∇L direction
-↘ toward minimum
-╲
-○ min
-
-1. Step opposite gradient
-2. LR critical hyperparameter
-3. Momentum helps ravines
-4. Non-convex landscapes complex
-5. Adaptive methods popular`
+Momentum: v_t = βv_{t-1}+∇L`
         },
         {
           id: `grad-proj`,
@@ -415,18 +346,7 @@ Proj_C(x) = argmin_{y∈C} ||y−x||
 Projected GD after each step
 Simplex: ∑p_i=1, p_i≥0
 Box: clip to [a,b]
-Prox for L1: soft threshold
-
-unconstrained step may leave C
-θ − η∇L  ·──→ outside
-↓ project back
-θ_new ∈ C
-
-1. Projection restores feasibility
-2. Simplex for probability params
-3. Prox handles L1 sparsity
-4. Box clip simple but effective
-5. Constraints in fair ML`
+Prox for L1: soft threshold`
         },
         {
           id: `grad-numerical`,
@@ -468,19 +388,7 @@ rel_err = |g_n − g_a| / (|g_n|+|g_a|+ε)
 Central diff preferred
 Check small param subsets
 Disable stochastic layers
-gradcheck in PyTorch
-
-grad check workflow:
-1. implement forward
-2. autograd backward
-3. finite diff compare
-4. fix mismatch layer
-
-1. Always gradcheck custom layers
-2. Relative error threshold ~1e-5
-3. Central diff more accurate
-4. Stochastic layers off during check
-5. Localize by checking per layer`
+gradcheck in PyTorch`
         }
       ],
       exercises: [
@@ -582,18 +490,7 @@ J_ij = ∂f_i / ∂x_j
 J_{f∘g} = J_f · J_g
 f: ℝⁿ→ℝ: ∇f ∈ ℝⁿ
 Linear approx: f(x+δ) ≈ f(x)+Jδ
-JVP/JVJP efficient in autodiff
-
-J matrix layout (m outputs, n inputs):
-x1  x2  x3
-f1 [ ∂  ∂  ∂ ]
-f2 [ ∂  ∂  ∂ ]
-
-1. Jacobian generalizes gradient
-2. Matrix dimensions m×n
-3. Chain = matrix multiply
-4. Full J too big—use JVP
-5. Convention varies row/col`
+JVP/JVJP efficient in autodiff`
         },
         {
           id: `cr-backprop`,
@@ -631,18 +528,7 @@ print("dL/dz:", y-t)`,
 Sum grads from all children
 ReLU mask: x>0
 Softmax+CE: ŷ − y
-Reverse-mode O(1) backward pass
-
-forward: x → z → h → L
-backward: dL/dh → dL/dz → dL/dx
-multiply local derivatives
-sum branches at splits
-
-1. Reverse-mode = backprop
-2. Store activations in forward
-3. Branch nodes sum gradients
-4. Fused CE+softmax simplifies
-5. Graph DAG structure`
+Reverse-mode O(1) backward pass`
         },
         {
           id: `cr-vector`,
@@ -681,18 +567,7 @@ print("dL/dW shape:", dL_dW.shape)`,
 ∂L/∂x = Wᵀ (∂L/∂y)
 Batch: sum over batch dim
 einsum for tensor contractions
-Shapes must align in chain
-
-y = Wx  (single sample)
-dL/dW = dL/dy · xᵀ
-dL/dx = Wᵀ · dL/dy
-outer product for weights
-
-1. Outer product for linear layer
-2. Transpose W for input grad
-3. Batch sums weight grads
-4. einsum prevents shape errors
-5. Verify with gradcheck`
+Shapes must align in chain`
         },
         {
           id: `cr-vanish`,
@@ -732,19 +607,7 @@ print("clipped:", grad)`,
 ∏ J_i large → exploding
 Sigmoid sat: σ'≤0.25
 ResNet: y=x+F(x) gradient highway
-clip: g ← g·min(1, τ/||g||)
-
-deep chain:
-J1·J2·...·J20
-each <1 → product → 0
-each >1 → product → ∞
-ResNet shortcut bypasses stack
-
-1. Depth multiplies Jacobians
-2. Saturated activations hurt
-3. Residual paths help flow
-4. Clip prevents explosion
-5. Good init critical`
+clip: g ← g·min(1, τ/||g||)`
         }
       ],
       exercises: [
@@ -844,18 +707,7 @@ H_ij = ∂²L/∂θ_i∂θ_j
 H symmetric for C² L
 Newton: Δθ = −H⁻¹∇L
 H PD → local strict min
-HVP without full H
-
-1D: H = f''(x)
-bowl f''>0    cap f''<0
-2D: eigenvalues of H
-both + → min
-
-1. Hessian = curvature matrix
-2. Newton uses full H
-3. Too large to store in DL
-4. HVP for truncated Newton
-5. Diagonal approx in adaptive opt`
+HVP without full H`
         },
         {
           id: `jh-newton`,
@@ -895,18 +747,7 @@ Newton: θ ← θ − H⁻¹∇L
 Quadratic conv near min
 BFGS: secant Hessian approx
 L-BFGS limited memory
-Natural grad: F⁻¹∇L
-
-Newton vs GD:
-GD: fixed η step
-Newton: adapts via H⁻¹
-auto-scales each direction
-
-1. Newton faster locally
-2. BFGS for moderate n
-3. L-BFGS in classical ML
-4. Rare in deep nets
-5. Natural grad Fisher precondition`
+Natural grad: F⁻¹∇L`
         },
         {
           id: `jh-jacobian-apps`,
@@ -944,17 +785,7 @@ log p(x) = log p(z) + log|det J|
 Adv examples: max ||δ|| s.t. misclassify
 p(y) = p(x) / |det ∂x/∂y|
 J maps velocity spaces
-log-det for numerical stability
-
-flow f: x → z
-density transforms by |det J|
-volume stretch = |det J|
-
-1. Flows need Jacobian determinant
-2. Adversarial uses input Jacobian
-3. Change of vars in density
-4. Log-det avoids underflow
-5. Robotics kinematics classic use`
+log-det for numerical stability`
         },
         {
           id: `jh-gauss-newton`,
@@ -994,18 +825,7 @@ H ≈ JᵀJ (Gauss-Newton)
 LM: (JᵀJ + λI)Δ = −Jᵀr
 For min ∑ r_i(θ)²
 λ large → gradient-like
-λ small → Gauss-Newton
-
-residual vector r(θ)
-linearize r near θ
-solve normal equations
-iterate θ
-
-1. GN for nonlinear least squares
-2. LM adds damping λ
-3. Jacobian of residuals key
-4. Used in classical fitting
-5. Bridge GN and GD via λ`
+λ small → Gauss-Newton`
         }
       ],
       exercises: [
@@ -1106,19 +926,7 @@ print("eig:", np.linalg.eigvalsh(H))`,
 H PD → strict local min
 H ND → strict local max
 H indefinite → saddle
-Convex f: local min = global min
-
-critical point types:
-min: bowl ∪
-max: cap ∩
-saddle: horse ╱╲
-all: ∇f=0
-
-1. Gradient zero necessary not sufficient
-2. Hessian classifies in smooth case
-3. Saddles common in high-D
-4. SGD noise helps escape
-5. Convex ⇒ nice global structure`
+Convex f: local min = global min`
         },
         {
           id: `mvo-convex`,
@@ -1159,18 +967,7 @@ f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)
 H ⪰ 0 ⇔ convex (C²)
 Convex + closed set → global min
 Linear + convex loss → convex problem
-Jensen: E[f(X)] ≥ f(E[X])
-
-convex: line segment above graph
-f(b) ·
-╲
-f(a) ·  ╲___ chord below graph
-
-1. Convex ⇒ no spurious local min
-2. H PSD characterizes smooth convex
-3. Logistic regression convex in w
-4. Deep nets non-convex
-5. Jensen key inequality`
+Jensen: E[f(X)] ≥ f(E[X])`
         },
         {
           id: `mvo-saddle`,
@@ -1206,18 +1003,7 @@ High-D: saddles dominate
 Strict saddle: mixed H eigenvalues
 Noise in SGD helps escape
 Plateaus: small gradient
-Overparam → many global-ish min
-
-saddle in 2D:
-down ↘  ↗ up
-╳
-up ↗  ↘ down
-
-1. Saddles not local minima
-2. High-D geometry counterintuitive
-3. SGD noise beneficial
-4. Plateaus confuse stopping
-5. Overparameterization helps`
+Overparam → many global-ish min`
         },
         {
           id: `mvo-global`,
@@ -1257,20 +1043,7 @@ Random restarts explore basins
 BayesOpt for hyperparam black-box
 Cosine annealing LR schedule
 Weight decay: θ ← (1−ηλ)θ
-Early stop on val loss
-
-optimization toolkit:
-init → SGD+momentum
-→ schedule LR
-→ regularize
-→ early stop
-→ ensemble
-
-1. No silver bullet for global opt
-2. Restarts cheap parallelism
-3. BayesOpt for HPO
-4. Regularization improves generalization
-5. Practice combines many heuristics`
+Early stop on val loss`
         }
       ],
       exercises: [

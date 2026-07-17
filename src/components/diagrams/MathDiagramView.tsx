@@ -370,6 +370,10 @@ export function MathDiagramView({ spec }: { spec: DiagramSpec }) {
     case 'bars':
       return <BarsView spec={spec} />;
     default:
-      return null;
+      return (
+        <p className="diagram-fallback">
+          Diagram preview unavailable for this topic. Refer to the explanation and formulas above.
+        </p>
+      );
   }
 }

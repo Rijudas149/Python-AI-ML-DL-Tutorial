@@ -31,13 +31,7 @@ print(clean_text("Hello, World! Visit https://example.com"))`,
             `Preserve meaningful punctuation for sentiment`,
             `Handle unicode and encoding issues`,
             `Modern tokenizers often skip manual cleaning`
-          ],
-          pseudoCode: `Text Cleaning
-
-1. Cleaning rules depend on task and domain
-2. Preserve meaningful punctuation for sentiment
-3. Handle unicode and encoding issues
-4. Modern tokenizers often skip manual cleaning`
+          ]
         },
         {
           id: `tokenize`,
@@ -53,13 +47,7 @@ print(clean_text("Hello, World! Visit https://example.com"))`,
             `BPE used in GPT — merges frequent pairs`,
             `WordPiece used in BERT — likelihood-based merges`,
             `SentencePiece language-agnostic tokenization`
-          ],
-          pseudoCode: `Tokenization Strategies
-
-1. Word tokenization simple but huge vocabularies
-2. BPE used in GPT — merges frequent pairs
-3. WordPiece used in BERT — likelihood-based merges
-4. SentencePiece language-agnostic tokenization`
+          ]
         },
         {
           id: `hf-tokenizer`,
@@ -80,13 +68,7 @@ print(encoded["input_ids"].shape)`,
             `attention_mask ignores padding tokens`,
             `truncation and max_length for fixed input`,
             `Batch encoding with padding=True`
-          ],
-          pseudoCode: `HuggingFace Tokenizers
-
-1. Pretrained tokenizers match model vocabularies
-2. attention_mask ignores padding tokens
-3. truncation and max_length for fixed input
-4. Batch encoding with padding=True`
+          ]
         },
         {
           id: `vocab`,
@@ -102,13 +84,7 @@ print(encoded["input_ids"].shape)`,
             `Special tokens have semantic roles in models`,
             `Vocab size affects embedding matrix size`,
             `Extend vocab for domain-specific tokens`
-          ],
-          pseudoCode: `Vocabulary & Special Tokens
-
-1. [PAD] token enables batch processing
-2. Special tokens have semantic roles in models
-3. Vocab size affects embedding matrix size
-4. Extend vocab for domain-specific tokens`
+          ]
         }
       ],
       exercises: [
@@ -185,13 +161,7 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
             `Skip-gram better for rare words`,
             `Negative sampling speeds training`,
             `king - man + woman ≈ queen classic example`
-          ],
-          pseudoCode: `Word2Vec
-
-1. Distributional hypothesis: context defines meaning
-2. Skip-gram better for rare words
-3. Negative sampling speeds training
-4. king - man + woman ≈ queen classic example`
+          ]
         },
         {
           id: `glove`,
@@ -207,13 +177,7 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
             `Often comparable to Word2Vec quality`,
             `Pretrained GloVe vectors widely available`,
             `Static embeddings — one vector per word regardless of context`
-          ],
-          pseudoCode: `GloVe
-
-1. GloVe uses global co-occurrence counts
-2. Often comparable to Word2Vec quality
-3. Pretrained GloVe vectors widely available
-4. Static embeddings — one vector per word regardless of context`
+          ]
         },
         {
           id: `nn-embed`,
@@ -236,13 +200,7 @@ print(embed(input_ids).shape)`,
             `Random init then learned via backprop`,
             `Pretrained embeddings can initialize layer`,
             `embed_dim typically 100-768`
-          ],
-          pseudoCode: `nn.Embedding Layer
-
-1. Embedding layer is lookup table of vectors
-2. Random init then learned via backprop
-3. Pretrained embeddings can initialize layer
-4. embed_dim typically 100-768`
+          ]
         },
         {
           id: `contextual`,
@@ -258,13 +216,7 @@ print(embed(input_ids).shape)`,
             `Contextual embeddings depend on sentence`,
             `BERT embeddings revolutionized NLP`,
             `Modern NLP uses contextual embeddings exclusively`
-          ],
-          pseudoCode: `Contextual Embeddings
-
-1. Static embeddings one vector per word type
-2. Contextual embeddings depend on sentence
-3. BERT embeddings revolutionized NLP
-4. Modern NLP uses contextual embeddings exclusively`
+          ]
         }
       ],
       exercises: [
@@ -350,13 +302,7 @@ print(out.shape, h_n.shape)`,
             `out contains all hidden states`,
             `h_n is final hidden state`,
             `Vanilla RNN rarely used — LSTM/GRU preferred`
-          ],
-          pseudoCode: `Vanilla RNN
-
-1. batch_first=True for intuitive dimensions
-2. out contains all hidden states
-3. h_n is final hidden state
-4. Vanilla RNN rarely used — LSTM/GRU preferred`
+          ]
         },
         {
           id: `lstm`,
@@ -380,13 +326,7 @@ print(out.shape)`,
             `Gates control information flow`,
             `num_layers stacks LSTM layers`,
             `dropout between LSTM layers when num_layers > 1`
-          ],
-          pseudoCode: `LSTM
-
-1. Cell state carries long-term memory
-2. Gates control information flow
-3. num_layers stacks LSTM layers
-4. dropout between LSTM layers when num_layers > 1`
+          ]
         },
         {
           id: `gru`,
@@ -402,13 +342,7 @@ print(out.shape)`,
             `Fewer parameters than LSTM`,
             `Often preferred when compute limited`,
             `Try both — dataset dependent performance`
-          ],
-          pseudoCode: `GRU
-
-1. GRU merges cell and hidden state
-2. Fewer parameters than LSTM
-3. Often preferred when compute limited
-4. Try both — dataset dependent performance`
+          ]
         },
         {
           id: `bidirectional`,
@@ -430,13 +364,7 @@ print(out.shape)  # hidden dim doubled`,
             `Not suitable for autoregressive generation`,
             `Standard for sequence classification`,
             `pack_padded_sequence for variable length`
-          ],
-          pseudoCode: `Bidirectional RNNs
-
-1. Output dimension doubles with bidirectional
-2. Not suitable for autoregressive generation
-3. Standard for sequence classification
-4. pack_padded_sequence for variable length`
+          ]
         }
       ],
       exercises: [
@@ -533,13 +461,7 @@ FOR each output step t:
             `Exposure bias: train/inference mismatch`,
             `Scheduled sampling gradually uses model predictions`,
             `Beam search for better inference decoding`
-          ],
-          pseudoCode: `Teacher Forcing
-
-1. Teacher forcing speeds convergence
-2. Exposure bias: train/inference mismatch
-3. Scheduled sampling gradually uses model predictions
-4. Beam search for better inference decoding`
+          ]
         },
         {
           id: `beam`,
@@ -555,13 +477,7 @@ FOR each output step t:
             `Beam search explores multiple hypotheses`,
             `Larger beam improves quality but slower`,
             `Length normalization prevents short outputs`
-          ],
-          pseudoCode: `Beam Search Decoding
-
-1. Greedy decoding may miss global optimum
-2. Beam search explores multiple hypotheses
-3. Larger beam improves quality but slower
-4. Length normalization prevents short outputs`
+          ]
         },
         {
           id: `apps`,
@@ -577,13 +493,7 @@ FOR each output step t:
             `Understanding seq2seq helps understand attention`,
             `Encoder-decoder pattern persists in T5, BART`,
             `Autoregressive generation core of LLMs`
-          ],
-          pseudoCode: `Seq2Seq Applications
-
-1. Transformers dominate seq2seq tasks now
-2. Understanding seq2seq helps understand attention
-3. Encoder-decoder pattern persists in T5, BART
-4. Autoregressive generation core of LLMs`
+          ]
         }
       ],
       exercises: [
@@ -663,13 +573,7 @@ print(list(zip(sentence, tags)))`,
             `Token-level classification with sequence context`,
             `CRF layer enforces valid tag transitions`,
             `spaCy provides production NER pipelines`
-          ],
-          pseudoCode: `NER Task Definition
-
-1. BIO/BIOES tagging schemes standard
-2. Token-level classification with sequence context
-3. CRF layer enforces valid tag transitions
-4. spaCy provides production NER pipelines`
+          ]
         },
         {
           id: `bi-lstm`,
@@ -685,13 +589,7 @@ print(list(zip(sentence, tags)))`,
             `BiLSTM captures context from both directions`,
             `Superseded by BERT fine-tuning for NER`,
             `Still useful for low-resource languages`
-          ],
-          pseudoCode: `BiLSTM-CRF
-
-1. CRF prevents invalid tag sequences
-2. BiLSTM captures context from both directions
-3. Superseded by BERT fine-tuning for NER
-4. Still useful for low-resource languages`
+          ]
         },
         {
           id: `bert-ner`,
@@ -707,13 +605,7 @@ print(list(zip(sentence, tags)))`,
             `Handle subword tokenization alignment`,
             `HuggingFace token-classification pipeline`,
             `Few-shot NER with LLM prompting emerging`
-          ],
-          pseudoCode: `BERT for NER
-
-1. Fine-tune pretrained BERT on labeled NER data
-2. Handle subword tokenization alignment
-3. HuggingFace token-classification pipeline
-4. Few-shot NER with LLM prompting emerging`
+          ]
         },
         {
           id: `applications`,
@@ -729,13 +621,7 @@ print(list(zip(sentence, tags)))`,
             `PII detection is privacy-focused NER`,
             `Clinical NER requires domain-specific models`,
             `Combine NER with relation extraction`
-          ],
-          pseudoCode: `NER Applications
-
-1. Build knowledge graphs from extracted entities
-2. PII detection is privacy-focused NER
-3. Clinical NER requires domain-specific models
-4. Combine NER with relation extraction`
+          ]
         }
       ],
       exercises: [

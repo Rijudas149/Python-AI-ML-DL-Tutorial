@@ -29,13 +29,7 @@ print(nums[1:4])`,
             `sort() modifies in place; sorted() returns new list`,
             `Slicing [start:stop:step] never includes stop index`,
             `Use copy() or list() for shallow copies`
-          ],
-          pseudoCode: `List Operations
-
-1. Lists are mutable ordered sequences
-2. sort() modifies in place; sorted() returns new list
-3. Slicing [start:stop:step] never includes stop index
-4. Use copy() or list() for shallow copies`
+          ]
         },
         {
           id: `tuples`,
@@ -55,13 +49,7 @@ print(f"({x}, {y})")
             `Use for heterogeneous fixed data`,
             `Unpacking works with any iterable`,
             `Single-element tuple needs trailing comma: (1,)`
-          ],
-          pseudoCode: `Tuples
-
-1. Tuples are immutable — hashable if elements are
-2. Use for heterogeneous fixed data
-3. Unpacking works with any iterable
-4. Single-element tuple needs trailing comma: (1,)`
+          ]
         },
         {
           id: `list-perf`,
@@ -77,13 +65,7 @@ print(f"({x}, {y})")
             `deque for queue operations`,
             `Lists for general-purpose ordered storage`,
             `Profile before optimizing`
-          ],
-          pseudoCode: `Performance Considerations
-
-1. Choose data structure based on access patterns
-2. deque for queue operations
-3. Lists for general-purpose ordered storage
-4. Profile before optimizing`
+          ]
         },
         {
           id: `nested`,
@@ -104,13 +86,7 @@ print([row[0] for row in matrix])`,
             `List comprehensions flatten or transform nested data`,
             `Copy carefully — nested lists share references`,
             `Consider numpy arrays for numeric matrices`
-          ],
-          pseudoCode: `Nested Structures
-
-1. Nested structures model grids and tables
-2. List comprehensions flatten or transform nested data
-3. Copy carefully — nested lists share references
-4. Consider numpy arrays for numeric matrices`
+          ]
         }
       ],
       exercises: [
@@ -193,13 +169,7 @@ N/A`,
             `Use get() to avoid KeyError`,
             `keys(), values(), items() for iteration`,
             `Dict comprehensions build dicts concisely`
-          ],
-          pseudoCode: `Dictionary Fundamentals
-
-1. Dicts preserve insertion order (Python 3.7+)
-2. Use get() to avoid KeyError
-3. keys(), values(), items() for iteration
-4. Dict comprehensions build dicts concisely`
+          ]
         },
         {
           id: `sets`,
@@ -221,13 +191,7 @@ print(a | b)`,
             `Fast membership testing with in`,
             `frozenset is immutable/hashable`,
             `Use sets for deduplication and set math`
-          ],
-          pseudoCode: `Sets
-
-1. Sets eliminate duplicates
-2. Fast membership testing with in
-3. frozenset is immutable/hashable
-4. Use sets for deduplication and set math`
+          ]
         },
         {
           id: `defaultdict`,
@@ -248,13 +212,7 @@ print(counts.most_common(2))`,
             `most_common(n) returns top n items`,
             `defaultdict avoids manual key existence checks`,
             `Use Counter for text and categorical analysis`
-          ],
-          pseudoCode: `defaultdict & Counter
-
-1. Counter is a dict subclass for counting
-2. most_common(n) returns top n items
-3. defaultdict avoids manual key existence checks
-4. Use Counter for text and categorical analysis`
+          ]
         },
         {
           id: `dict-merge`,
@@ -275,13 +233,7 @@ print(config)`,
             `Use for config and kwargs merging`,
             `Deep merge requires custom logic`,
             `Dict union operator | available in 3.9+`
-          ],
-          pseudoCode: `Merging & Updating Dicts
-
-1. Later keys override earlier in merge
-2. Use for config and kwargs merging
-3. Deep merge requires custom logic
-4. Dict union operator | available in 3.9+`
+          ]
         }
       ],
       exercises: [
@@ -368,13 +320,7 @@ print(stack)`,
             `O(1) operations at list end`,
             `Used in recursion and graph DFS`,
             `deque also supports append/pop`
-          ],
-          pseudoCode: `Stack (LIFO)
-
-1. append/pop from end implements stack
-2. O(1) operations at list end
-3. Used in recursion and graph DFS
-4. deque also supports append/pop`
+          ]
         },
         {
           id: `queue`,
@@ -397,13 +343,7 @@ deque(['task2', 'task3'])`,
             `FIFO for BFS and task scheduling`,
             `list.pop(0) is O(n) — avoid for queues`,
             `queue.Queue is thread-safe alternative`
-          ],
-          pseudoCode: `Queue (FIFO)
-
-1. deque provides O(1) appendleft/popleft
-2. FIFO for BFS and task scheduling
-3. list.pop(0) is O(n) — avoid for queues
-4. queue.Queue is thread-safe alternative`
+          ]
         },
         {
           id: `deque-features`,
@@ -425,13 +365,7 @@ print(list(recent))`,
             `Automatic eviction of oldest items`,
             `rotate(n) shifts elements circularly`,
             `Ideal for rolling statistics`
-          ],
-          pseudoCode: `deque Advanced Features
-
-1. maxlen creates sliding window buffer
-2. Automatic eviction of oldest items
-3. rotate(n) shifts elements circularly
-4. Ideal for rolling statistics`
+          ]
         },
         {
           id: `applications`,
@@ -447,13 +381,7 @@ print(list(recent))`,
             `BFS uses queue, DFS uses stack`,
             `Priority queues use heapq module`,
             `Consider thread safety for concurrent queues`
-          ],
-          pseudoCode: `Real-World Applications
-
-1. Match data structure to algorithm needs
-2. BFS uses queue, DFS uses stack
-3. Priority queues use heapq module
-4. Consider thread safety for concurrent queues`
+          ]
         }
       ],
       exercises: [
@@ -549,13 +477,7 @@ print(sorted(data, reverse=True))`,
             `key=function customizes sort criteria`,
             `Stable sort preserves equal element order`,
             `Timsort exploits partially sorted input`
-          ],
-          pseudoCode: `Sorting in Python
-
-1. sorted() preserves original list
-2. key=function customizes sort criteria
-3. Stable sort preserves equal element order
-4. Timsort exploits partially sorted input`
+          ]
         },
         {
           id: `custom-sort`,
@@ -575,13 +497,7 @@ print(by_grade)`,
             `Negate numeric key for descending`,
             `itemgetter is faster than lambda for simple access`,
             `Sort once, reuse for repeated queries`
-          ],
-          pseudoCode: `Custom Sort Keys
-
-1. Tuple keys enable multi-criteria sort
-2. Negate numeric key for descending
-3. itemgetter is faster than lambda for simple access
-4. Sort once, reuse for repeated queries`
+          ]
         },
         {
           id: `search`,
@@ -602,13 +518,7 @@ print(idx)`,
             `bisect finds insertion position`,
             `bisect_left vs bisect_right for duplicates`,
             `Use set/dict for O(1) lookup when possible`
-          ],
-          pseudoCode: `Linear & Binary Search
-
-1. Binary search requires sorted data
-2. bisect finds insertion position
-3. bisect_left vs bisect_right for duplicates
-4. Use set/dict for O(1) lookup when possible`
+          ]
         },
         {
           id: `complexity`,
@@ -624,13 +534,7 @@ print(idx)`,
             `Nested loops often imply O(n²)`,
             `Hash lookups are average O(1)`,
             `Sorting dominates many pipeline costs`
-          ],
-          pseudoCode: `Big-O Basics
-
-1. Big-O describes growth rate, not exact time
-2. Nested loops often imply O(n²)
-3. Hash lookups are average O(1)
-4. Sorting dominates many pipeline costs`
+          ]
         }
       ],
       exercises: [
@@ -714,13 +618,7 @@ print(p.x, p.y)`,
             `Named access improves readability`,
             `Use _replace for modified copies`,
             `dataclass is modern alternative`
-          ],
-          pseudoCode: `namedtuple
-
-1. Immutable like regular tuples
-2. Named access improves readability
-3. Use _replace for modified copies
-4. dataclass is modern alternative`
+          ]
         },
         {
           id: `chainmap`,
@@ -742,13 +640,7 @@ print(config["color"], config["size"])`,
             `Useful for layered configuration`,
             `Does not merge — searches sequentially`,
             `Modifications affect first dict in chain`
-          ],
-          pseudoCode: `ChainMap
-
-1. First dict in chain takes precedence
-2. Useful for layered configuration
-3. Does not merge — searches sequentially
-4. Modifications affect first dict in chain`
+          ]
         },
         {
           id: `ordered`,
@@ -764,13 +656,7 @@ print(config["color"], config["size"])`,
             `OrderedDict for LRU cache patterns`,
             `move_to_end for reordering`,
             `Consider functools.lru_cache for caching`
-          ],
-          pseudoCode: `OrderedDict & Modern Dicts
-
-1. Regular dict preserves insertion order since 3.7
-2. OrderedDict for LRU cache patterns
-3. move_to_end for reordering
-4. Consider functools.lru_cache for caching`
+          ]
         },
         {
           id: `heapq`,
@@ -792,13 +678,7 @@ print(heapq.heappop(heap))`,
             `heappush/heappop are O(log n)`,
             `heapify converts list to heap in O(n)`,
             `Use for top-k and scheduling problems`
-          ],
-          pseudoCode: `heapq — Priority Queues
-
-1. Min-heap — smallest element first
-2. heappush/heappop are O(log n)
-3. heapify converts list to heap in O(n)
-4. Use for top-k and scheduling problems`
+          ]
         }
       ],
       exercises: [

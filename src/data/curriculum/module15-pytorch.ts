@@ -29,13 +29,7 @@ print(a.dtype, b.shape, c.device)`,
             `dtype and device are tensor properties`,
             `torch.float32 default for DL`,
             `GPU tensors on cuda device`
-          ],
-          pseudoCode: `Creating Tensors
-
-1. Tensors analogous to NumPy ndarrays
-2. dtype and device are tensor properties
-3. torch.float32 default for DL
-4. GPU tensors on cuda device`
+          ]
         },
         {
           id: `ops`,
@@ -60,13 +54,7 @@ torch.Size([3, 4])`,
             `Broadcasting rules same as NumPy`,
             `Avoid in-place ops on tensors with grad`,
             `torch.einsum for complex tensor operations`
-          ],
-          pseudoCode: `Tensor Operations
-
-1. @ operator for matrix multiply
-2. Broadcasting rules same as NumPy
-3. Avoid in-place ops on tensors with grad
-4. torch.einsum for complex tensor operations`
+          ]
         },
         {
           id: `numpy-bridge`,
@@ -90,13 +78,7 @@ print(np_back)`,
             `GPU tensors must .cpu() before .numpy()`,
             `Convert dtype explicitly when needed`,
             `Use tensor for all DL computations`
-          ],
-          pseudoCode: `NumPy Interoperability
-
-1. Zero-copy between NumPy and CPU tensors
-2. GPU tensors must .cpu() before .numpy()
-3. Convert dtype explicitly when needed
-4. Use tensor for all DL computations`
+          ]
         },
         {
           id: `device`,
@@ -117,13 +99,7 @@ print(x.device)`,
             `Check cuda availability before GPU use`,
             `MPS device for Apple Silicon`,
             `torch.cuda.empty_cache() frees GPU memory`
-          ],
-          pseudoCode: `Device Management
-
-1. Always move model AND data to same device
-2. Check cuda availability before GPU use
-3. MPS device for Apple Silicon
-4. torch.cuda.empty_cache() frees GPU memory`
+          ]
         }
       ],
       exercises: [
@@ -207,13 +183,7 @@ print(x.grad)  # dy/dx = 2x + 2 = 8`,
             `backward() only on scalar loss`,
             `retain_graph=True for multiple backward passes`,
             `detach() stops gradient flow`
-          ],
-          pseudoCode: `requires_grad & backward
-
-1. Gradients accumulate — zero with optimizer.zero_grad()
-2. backward() only on scalar loss
-3. retain_graph=True for multiple backward passes
-4. detach() stops gradient flow`
+          ]
         },
         {
           id: `graph`,
@@ -229,13 +199,7 @@ print(x.grad)  # dy/dx = 2x + 2 = 8`,
             `Enables Python control flow in models`,
             `Contrast with TensorFlow static graphs (1.x)`,
             `torch.no_grad() disables graph for inference`
-          ],
-          pseudoCode: `Computational Graph
-
-1. Dynamic graph: rebuilt each forward pass
-2. Enables Python control flow in models
-3. Contrast with TensorFlow static graphs (1.x)
-4. torch.no_grad() disables graph for inference`
+          ]
         },
         {
           id: `leaf`,
@@ -257,13 +221,7 @@ print(layer.weight.is_leaf)`,
             `Non-leaf tensor gradients not retained by default`,
             `Register buffers for non-trainable state (BN stats)`,
             `model.parameters() yields all trainable params`
-          ],
-          pseudoCode: `Leaf Tensors & Parameters
-
-1. nn.Parameter automatically requires_grad
-2. Non-leaf tensor gradients not retained by default
-3. Register buffers for non-trainable state (BN stats)
-4. model.parameters() yields all trainable params`
+          ]
         },
         {
           id: `higher`,
@@ -279,13 +237,7 @@ print(layer.weight.is_leaf)`,
             `Meta-learning (MAML) uses higher-order grads`,
             `Expensive — rarely needed in standard training`,
             `torch.autograd.grad for explicit gradient computation`
-          ],
-          pseudoCode: `Higher-Order Gradients
-
-1. Second-order for Hessian-vector products
-2. Meta-learning (MAML) uses higher-order grads
-3. Expensive — rarely needed in standard training
-4. torch.autograd.grad for explicit gradient computation`
+          ]
         }
       ],
       exercises: [
@@ -381,13 +333,7 @@ print(model(torch.randn(5, 10)).shape)`,
             `Define layers in __init__ not forward`,
             `forward() defines computation graph`,
             `Sequential chains layers cleanly`
-          ],
-          pseudoCode: `nn.Module Basics
-
-1. super().__init__() required in __init__
-2. Define layers in __init__ not forward
-3. forward() defines computation graph
-4. Sequential chains layers cleanly`
+          ]
         },
         {
           id: `layers`,
@@ -403,13 +349,7 @@ print(model(torch.randn(5, 10)).shape)`,
             `Conv2d: spatial feature extraction`,
             `Embedding: lookup table for tokens`,
             `BatchNorm1d/2d for normalization`
-          ],
-          pseudoCode: `Common Layers
-
-1. Linear: fully connected layer
-2. Conv2d: spatial feature extraction
-3. Embedding: lookup table for tokens
-4. BatchNorm1d/2d for normalization`
+          ]
         },
         {
           id: `loss-opt`,
@@ -439,13 +379,7 @@ print(round(loss.item(), 4))`,
             `zero_grad before backward prevents accumulation`,
             `Adam default optimizer for most tasks`,
             `AdamW decouples weight decay from Adam`
-          ],
-          pseudoCode: `Loss Functions & Optimizers
-
-1. CrossEntropyLoss expects raw logits not softmax
-2. zero_grad before backward prevents accumulation
-3. Adam default optimizer for most tasks
-4. AdamW decouples weight decay from Adam`
+          ]
         },
         {
           id: `save`,
@@ -461,13 +395,7 @@ print(round(loss.item(), 4))`,
             `Save full checkpoint: model + optimizer + epoch`,
             `model.eval() before inference`,
             `torch.load with map_location for CPU loading`
-          ],
-          pseudoCode: `Saving & Loading Models
-
-1. state_dict saves learned parameters only
-2. Save full checkpoint: model + optimizer + epoch
-3. model.eval() before inference
-4. torch.load with map_location for CPU loading`
+          ]
         }
       ],
       exercises: [
@@ -560,13 +488,7 @@ print(batch_x.shape, batch_y.shape)`,
             `num_workers for parallel data loading`,
             `pin_memory=True speeds GPU transfer`,
             `Custom Dataset for any data source`
-          ],
-          pseudoCode: `Dataset & DataLoader
-
-1. DataLoader handles batching and shuffling
-2. num_workers for parallel data loading
-3. pin_memory=True speeds GPU transfer
-4. Custom Dataset for any data source`
+          ]
         },
         {
           id: `loop`,
@@ -597,13 +519,7 @@ print("Pattern defined")`,
             `model.eval() + torch.no_grad() for validation`,
             `Track metrics per epoch not per batch average`,
             `Set seed for reproducibility`
-          ],
-          pseudoCode: `Training Loop Pattern
-
-1. model.train() enables dropout/BN training mode
-2. model.eval() + torch.no_grad() for validation
-3. Track metrics per epoch not per batch average
-4. Set seed for reproducibility`
+          ]
         },
         {
           id: `transforms`,
@@ -619,13 +535,7 @@ print("Pattern defined")`,
             `Normalize with dataset mean/std`,
             `Apply augmentation only to training set`,
             `torchvision.datasets includes MNIST, CIFAR, ImageNet`
-          ],
-          pseudoCode: `Transforms & Augmentation
-
-1. ToTensor converts PIL to [C,H,W] float [0,1]
-2. Normalize with dataset mean/std
-3. Apply augmentation only to training set
-4. torchvision.datasets includes MNIST, CIFAR, ImageNet`
+          ]
         },
         {
           id: `scheduler`,
@@ -641,13 +551,7 @@ print("Pattern defined")`,
             `Warmup stabilizes transformer training`,
             `ReduceLROnPlateau reacts to val metric`,
             `Log learning rate alongside loss`
-          ],
-          pseudoCode: `Learning Rate Schedulers
-
-1. Cosine annealing popular for vision training
-2. Warmup stabilizes transformer training
-3. ReduceLROnPlateau reacts to val metric
-4. Log learning rate alongside loss`
+          ]
         }
       ],
       exercises: [
@@ -732,13 +636,7 @@ print(model(x).device)`,
             `Gradient accumulation simulates larger batches`,
             `DataParallel for multi-GPU (prefer DistributedDataParallel)`,
             `Clear cache between experiments`
-          ],
-          pseudoCode: `CUDA Training
-
-1. Batch size limited by GPU memory
-2. Gradient accumulation simulates larger batches
-3. DataParallel for multi-GPU (prefer DistributedDataParallel)
-4. Clear cache between experiments`
+          ]
         },
         {
           id: `amp`,
@@ -758,13 +656,7 @@ print("GradScaler ready")`,
             `GradScaler prevents gradient underflow`,
             `Minimal code change for significant speedup`,
             `BF16 on A100+ avoids some FP16 issues`
-          ],
-          pseudoCode: `Automatic Mixed Precision
-
-1. autocast runs ops in FP16 where safe
-2. GradScaler prevents gradient underflow
-3. Minimal code change for significant speedup
-4. BF16 on A100+ avoids some FP16 issues`
+          ]
         },
         {
           id: `compile`,
@@ -780,13 +672,7 @@ print("GradScaler ready")`,
             `Up to 30%+ speedup on compatible models`,
             `First run slower due to compilation`,
             `May not work with all dynamic models`
-          ],
-          pseudoCode: `torch.compile (PyTorch 2.0)
-
-1. PyTorch 2.0+ feature
-2. Up to 30%+ speedup on compatible models
-3. First run slower due to compilation
-4. May not work with all dynamic models`
+          ]
         },
         {
           id: `distributed`,
@@ -802,13 +688,7 @@ print("GradScaler ready")`,
             `Each GPU gets batch slice, syncs gradients`,
             `DeepSpeed ZeRO reduces memory for large models`,
             `FSDP for fully sharded data parallel`
-          ],
-          pseudoCode: `Distributed Training Preview
-
-1. DDP preferred over DataParallel
-2. Each GPU gets batch slice, syncs gradients
-3. DeepSpeed ZeRO reduces memory for large models
-4. FSDP for fully sharded data parallel`
+          ]
         }
       ],
       exercises: [

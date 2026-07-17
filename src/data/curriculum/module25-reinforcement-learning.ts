@@ -15,23 +15,16 @@ export const module25Topics: Topic[] = [
 
 **Policy** π(a|s) maps states to action distributions. Goal: maximize expected cumulative discounted return G_t = Σ γ^k R_{t+k+1}.
 
-**Applying MDPs, Rewards & Policies:** Formalize sequential decision making as Markov Decision Processes. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Markov Decision Processes", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- γ near 1 values long-term reward
+- Episodic tasks terminate; continuing tasks run forever
+- Environment non-stationarity breaks MDP assumptions
+- Partial observability → POMDP`,
           keyPoints: [
             `γ near 1 values long-term reward`,
             `Episodic tasks terminate; continuing tasks run forever`,
             `Environment non-stationarity breaks MDP assumptions`,
             `Partial observability → POMDP`
-          ],
-          pseudoCode: `Markov Decision Processes
-
-1. γ near 1 values long-term reward
-2. Episodic tasks terminate; continuing tasks run forever
-3. Environment non-stationarity breaks MDP assumptions
-4. Partial observability → POMDP`
+          ]
         },
         {
           id: `value-policy`,
@@ -40,11 +33,10 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 **Optimal** V* satisfies Bellman optimality; solving MDP = finding π* maximizing value.
 
-**Applying MDPs, Rewards & Policies:** Formalize sequential decision making as Markov Decision Processes. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Value Functions & Bellman", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- V describes how good states are under π
+- Q needed for control without knowing model
+- Bellman equations underpin dynamic programming
+- Optimal policy greedy w.r.t Q*`,
           example: `# Toy: two actions, deterministic reward
 gamma = 0.9
 r_step = -1  # cost per step
@@ -54,13 +46,7 @@ print("discount", gamma, "step cost", r_step)`,
             `Q needed for control without knowing model`,
             `Bellman equations underpin dynamic programming`,
             `Optimal policy greedy w.r.t Q*`
-          ],
-          pseudoCode: `Value Functions & Bellman
-
-1. V describes how good states are under π
-2. Q needed for control without knowing model
-3. Bellman equations underpin dynamic programming
-4. Optimal policy greedy w.r.t Q*`
+          ]
         },
         {
           id: `explore`,
@@ -69,23 +55,16 @@ print("discount", gamma, "step cost", r_step)`,
 
 Insufficient exploration traps agent in local optima.
 
-**Applying MDPs, Rewards & Policies:** Formalize sequential decision making as Markov Decision Processes. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Exploration vs Exploitation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- ε-greedy simple but wastes steps at low ε
+- Optimism under uncertainty encourages exploration
+- Bandits formalize A/B testing with regret
+- Non-stationary rewards need sliding windows`,
           keyPoints: [
             `ε-greedy simple but wastes steps at low ε`,
             `Optimism under uncertainty encourages exploration`,
             `Bandits formalize A/B testing with regret`,
             `Non-stationary rewards need sliding windows`
-          ],
-          pseudoCode: `Exploration vs Exploitation
-
-1. ε-greedy simple but wastes steps at low ε
-2. Optimism under uncertainty encourages exploration
-3. Bandits formalize A/B testing with regret
-4. Non-stationary rewards need sliding windows`
+          ]
         },
         {
           id: `rl-loop`,
@@ -94,23 +73,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Render for debugging; \`done\` flag ends episode; \`info\` dict carries diagnostics.
 
-**Applying MDPs, Rewards & Policies:** Formalize sequential decision making as Markov Decision Processes. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Agent-Environment Loop", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Gymnasium successor to OpenAI Gym
+- Seed env for reproducible episodes
+- Reward shaping accelerates learning but changes objective
+- Log episode return not only final step reward`,
           keyPoints: [
             `Gymnasium successor to OpenAI Gym`,
             `Seed env for reproducible episodes`,
             `Reward shaping accelerates learning but changes objective`,
             `Log episode return not only final step reward`
-          ],
-          pseudoCode: `Agent-Environment Loop
-
-1. Gymnasium successor to OpenAI Gym
-2. Seed env for reproducible episodes
-3. Reward shaping accelerates learning but changes objective
-4. Log episode return not only final step reward`
+          ]
         }
       ],
       exercises: [
@@ -178,11 +150,10 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Converges to Q* with sufficient visitation under tabular setting.
 
-**Applying Q-Learning & Bellman Updates:** Model-free temporal difference learning for optimal action-values. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Q-Learning Algorithm", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Learning rate α controls update magnitude
+- Off-policy: learns greedy target while exploring
+- Tabular Q fails on large state spaces
+- Max operator overestimates with function approximation`,
           example: `alpha, gamma = 0.5, 0.9
 Q_sa, r, max_Q_next = 1.0, 1.0, 2.0
 Q_sa += alpha * (r + gamma * max_Q_next - Q_sa)
@@ -193,13 +164,7 @@ print(round(Q_sa, 2))`,
             `Off-policy: learns greedy target while exploring`,
             `Tabular Q fails on large state spaces`,
             `Max operator overestimates with function approximation`
-          ],
-          pseudoCode: `Q-Learning Algorithm
-
-1. Learning rate α controls update magnitude
-2. Off-policy: learns greedy target while exploring
-3. Tabular Q fails on large state spaces
-4. Max operator overestimates with function approximation`
+          ]
         },
         {
           id: `td`,
@@ -208,23 +173,16 @@ print(round(Q_sa, 2))`,
 
 **SARSA** on-policy variant uses actual next action from behavior policy.
 
-**Applying Q-Learning & Bellman Updates:** Model-free temporal difference learning for optimal action-values. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Temporal Difference Learning", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Bootstrap trades bias for lower variance
+- SARSA safer near cliffs (on-policy)
+- n-step returns interpolate MC and TD
+- Eligibility traces credit long-range effects`,
           keyPoints: [
             `Bootstrap trades bias for lower variance`,
             `SARSA safer near cliffs (on-policy)`,
             `n-step returns interpolate MC and TD`,
             `Eligibility traces credit long-range effects`
-          ],
-          pseudoCode: `Temporal Difference Learning
-
-1. Bootstrap trades bias for lower variance
-2. SARSA safer near cliffs (on-policy)
-3. n-step returns interpolate MC and TD
-4. Eligibility traces credit long-range effects`
+          ]
         },
         {
           id: `tabular`,
@@ -233,46 +191,32 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 State encoding critical when applying tabular methods to raw observations.
 
-**Applying Q-Learning & Bellman Updates:** Model-free temporal difference learning for optimal action-values. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Tabular Methods & Gridworld", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Discretize continuous states carefully
+- Terminal states bootstrap with zero value
+- Reward scale affects learning rate tuning
+- Sync vs async multi-agent updates need care`,
           keyPoints: [
             `Discretize continuous states carefully`,
             `Terminal states bootstrap with zero value`,
             `Reward scale affects learning rate tuning`,
             `Sync vs async multi-agent updates need care`
-          ],
-          pseudoCode: `Tabular Methods & Gridworld
-
-1. Discretize continuous states carefully
-2. Terminal states bootstrap with zero value
-3. Reward scale affects learning rate tuning
-4. Sync vs async multi-agent updates need care`
+          ]
         },
         {
           id: `convergence`,
           title: `Convergence Conditions`,
           content: `Robbins-Monro conditions on α schedules. All (s,a) visited infinitely often in tabular case. Function approximation can diverge—use target networks and experience replay in deep RL.
 
-**Applying Q-Learning & Bellman Updates:** Model-free temporal difference learning for optimal action-values. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Convergence Conditions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies.
-
-Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Exploration schedule must not vanish too early
+- Deadly triad: function approx + bootstrapping + off-policy
+- Double Q-learning reduces overestimation
+- Monitor TD error magnitude during training`,
           keyPoints: [
             `Exploration schedule must not vanish too early`,
             `Deadly triad: function approx + bootstrapping + off-policy`,
             `Double Q-learning reduces overestimation`,
             `Monitor TD error magnitude during training`
-          ],
-          pseudoCode: `Convergence Conditions
-
-1. Exploration schedule must not vanish too early
-2. Deadly triad: function approx + bootstrapping + off-policy
-3. Double Q-learning reduces overestimation
-4. Monitor TD error magnitude during training`
+          ]
         }
       ],
       exercises: [
@@ -340,23 +284,16 @@ Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mi
 
 **Experience replay** stores transitions (s,a,r,s') in buffer; sample mini-batches breaking temporal correlation.
 
-**Applying Deep Q-Networks (DQN):** Combine Q-learning with neural networks and stabilization tricks. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "DQN Architecture", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Replay buffer size affects sample diversity
+- Target network updated slowly stabilizes training
+- Frame stacking for Atari partial observability
+- Reward clipping can help but changes objective`,
           keyPoints: [
             `Replay buffer size affects sample diversity`,
             `Target network updated slowly stabilizes training`,
             `Frame stacking for Atari partial observability`,
             `Reward clipping can help but changes objective`
-          ],
-          pseudoCode: `DQN Architecture
-
-1. Replay buffer size affects sample diversity
-2. Target network updated slowly stabilizes training
-3. Frame stacking for Atari partial observability
-4. Reward clipping can help but changes objective`
+          ]
         },
         {
           id: `improvements`,
@@ -365,23 +302,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 **Prioritized replay** samples high TD-error transitions more often.
 
-**Applying Deep Q-Networks (DQN):** Combine Q-learning with neural networks and stabilization tricks. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Double DQN & Dueling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Double DQN: online net selects, target evaluates
+- Dueling helps when action values similar
+- Prioritized replay needs importance sampling correction
+- Noisy nets replace ε-greedy exploration`,
           keyPoints: [
             `Double DQN: online net selects, target evaluates`,
             `Dueling helps when action values similar`,
             `Prioritized replay needs importance sampling correction`,
             `Noisy nets replace ε-greedy exploration`
-          ],
-          pseudoCode: `Double DQN & Dueling
-
-1. Double DQN: online net selects, target evaluates
-2. Dueling helps when action values similar
-3. Prioritized replay needs importance sampling correction
-4. Noisy nets replace ε-greedy exploration`
+          ]
         },
         {
           id: `atari`,
@@ -390,23 +320,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Training millions of steps—GPU acceleration essential.
 
-**Applying Deep Q-Networks (DQN):** Combine Q-learning with neural networks and stabilization tricks. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Atari & Visual Inputs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Preprocessing must match train and deploy
+- Sticky actions increase environment stochasticity
+- Human-normalized score compares to human players
+- Sim-to-real gap for robotics visuals`,
           keyPoints: [
             `Preprocessing must match train and deploy`,
             `Sticky actions increase environment stochasticity`,
             `Human-normalized score compares to human players`,
             `Sim-to-real gap for robotics visuals`
-          ],
-          pseudoCode: `Atari & Visual Inputs
-
-1. Preprocessing must match train and deploy
-2. Sticky actions increase environment stochasticity
-3. Human-normalized score compares to human players
-4. Sim-to-real gap for robotics visuals`
+          ]
         },
         {
           id: `limits-dqn`,
@@ -415,23 +338,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Modern baselines: Rainbow combines improvements; still largely superseded by policy gradient methods in complex domains.
 
-**Applying Deep Q-Networks (DQN):** Combine Q-learning with neural networks and stabilization tricks. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "DQN Limitations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Continuous action spaces need different algorithms
+- Hyperparameter sweeps expensive
+- Offline RL from fixed datasets active research area
+- Safety constraints rarely enforced in vanilla DQN`,
           keyPoints: [
             `Continuous action spaces need different algorithms`,
             `Hyperparameter sweeps expensive`,
             `Offline RL from fixed datasets active research area`,
             `Safety constraints rarely enforced in vanilla DQN`
-          ],
-          pseudoCode: `DQN Limitations
-
-1. Continuous action spaces need different algorithms
-2. Hyperparameter sweeps expensive
-3. Offline RL from fixed datasets active research area
-4. Safety constraints rarely enforced in vanilla DQN`
+          ]
         }
       ],
       exercises: [
@@ -499,23 +415,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Monte Carlo returns G_t from full episodes; high variance—use baselines subtracting learned value V(s).
 
-**Applying Policy Gradients Intro:** Optimize parameterized policies directly with gradient ascent on expected return. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "REINFORCE Algorithm", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- log-derivative trick enables gradient estimation
+- Baselines reduce variance without biasing gradient
+- On-policy: data from current π only
+- Credit assignment hard on long episodes`,
           keyPoints: [
             `log-derivative trick enables gradient estimation`,
             `Baselines reduce variance without biasing gradient`,
             `On-policy: data from current π only`,
             `Credit assignment hard on long episodes`
-          ],
-          pseudoCode: `REINFORCE Algorithm
-
-1. log-derivative trick enables gradient estimation
-2. Baselines reduce variance without biasing gradient
-3. On-policy: data from current π only
-4. Credit assignment hard on long episodes`
+          ]
         },
         {
           id: `actor-critic`,
@@ -524,23 +433,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 PPO default choice for many continuous control benchmarks.
 
-**Applying Policy Gradients Intro:** Optimize parameterized policies directly with gradient ascent on expected return. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Actor-Critic Methods", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Advantage A(s,a) = Q-V centers learning signal
+- PPO clip ratio stabilizes policy updates
+- Entropy bonus encourages exploration
+- GAE generalizes advantage estimation`,
           keyPoints: [
             `Advantage A(s,a) = Q-V centers learning signal`,
             `PPO clip ratio stabilizes policy updates`,
             `Entropy bonus encourages exploration`,
             `GAE generalizes advantage estimation`
-          ],
-          pseudoCode: `Actor-Critic Methods
-
-1. Advantage A(s,a) = Q-V centers learning signal
-2. PPO clip ratio stabilizes policy updates
-3. Entropy bonus encourages exploration
-4. GAE generalizes advantage estimation`
+          ]
         },
         {
           id: `continuous`,
@@ -549,23 +451,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 **DDPG/TD3/SAC** off-policy actor-critic for continuous control with replay buffers.
 
-**Applying Policy Gradients Intro:** Optimize parameterized policies directly with gradient ascent on expected return. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Continuous Action Spaces", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Reparameterization trick enables backprop through stochastic nodes
+- SAC maximizes entropy for robust exploration
+- Action bounds via squashing to [-1,1]
+- Simulators like MuJoCo standard benchmarks`,
           keyPoints: [
             `Reparameterization trick enables backprop through stochastic nodes`,
             `SAC maximizes entropy for robust exploration`,
             `Action bounds via squashing to [-1,1]`,
             `Simulators like MuJoCo standard benchmarks`
-          ],
-          pseudoCode: `Continuous Action Spaces
-
-1. Reparameterization trick enables backprop through stochastic nodes
-2. SAC maximizes entropy for robust exploration
-3. Action bounds via squashing to [-1,1]
-4. Simulators like MuJoCo standard benchmarks`
+          ]
         },
         {
           id: `pg-vs-value`,
@@ -574,23 +469,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Modern algorithms blend both: soft actor-critic, implicit Q-learning.
 
-**Applying Policy Gradients Intro:** Optimize parameterized policies directly with gradient ascent on expected return. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Policy vs Value Methods", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Stochastic policies useful in partially observable settings
+- Value methods excel discrete action ATARI historically
+- Hybrid methods dominate contemporary research
+- Choose based on action space and sample budget`,
           keyPoints: [
             `Stochastic policies useful in partially observable settings`,
             `Value methods excel discrete action ATARI historically`,
             `Hybrid methods dominate contemporary research`,
             `Choose based on action space and sample budget`
-          ],
-          pseudoCode: `Policy vs Value Methods
-
-1. Stochastic policies useful in partially observable settings
-2. Value methods excel discrete action ATARI historically
-3. Hybrid methods dominate contemporary research
-4. Choose based on action space and sample budget`
+          ]
         }
       ],
       exercises: [
@@ -658,23 +546,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Self-play generates curriculum—agents improve by competing with past versions.
 
-**Applying RL Applications:** Game AI, robotics overview, and deployment considerations. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Game Playing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- MCTS planning plus learned value/policy
+- Self-play requires careful opponent sampling
+- Imperfect information games need belief states
+- Compute cost enormous for frontier results`,
           keyPoints: [
             `MCTS planning plus learned value/policy`,
             `Self-play requires careful opponent sampling`,
             `Imperfect information games need belief states`,
             `Compute cost enormous for frontier results`
-          ],
-          pseudoCode: `Game Playing
-
-1. MCTS planning plus learned value/policy
-2. Self-play requires careful opponent sampling
-3. Imperfect information games need belief states
-4. Compute cost enormous for frontier results`
+          ]
         },
         {
           id: `robotics`,
@@ -683,23 +564,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Reward engineering: sparse success signal vs dense shaping tradeoffs.
 
-**Applying RL Applications:** Game AI, robotics overview, and deployment considerations. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Robotics & Sim-to-Real", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Sim-to-real gap from physics mismatch
+- Domain randomization improves robustness
+- Safety critical—constrain action magnitudes
+- Human demonstrations accelerate learning (imitation)`,
           keyPoints: [
             `Sim-to-real gap from physics mismatch`,
             `Domain randomization improves robustness`,
             `Safety critical—constrain action magnitudes`,
             `Human demonstrations accelerate learning (imitation)`
-          ],
-          pseudoCode: `Robotics & Sim-to-Real
-
-1. Sim-to-real gap from physics mismatch
-2. Domain randomization improves robustness
-3. Safety critical—constrain action magnitudes
-4. Human demonstrations accelerate learning (imitation)`
+          ]
         },
         {
           id: `recsys-rl`,
@@ -708,23 +582,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Counterfactual evaluation challenging due to exposure bias.
 
-**Applying RL Applications:** Game AI, robotics overview, and deployment considerations. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "RL in Recommendations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Reward long-term retention not only clicks
+- Off-policy eval uses logged propensities
+- Exploration in production needs guardrails
+- Simulator of user behavior often misspecified`,
           keyPoints: [
             `Reward long-term retention not only clicks`,
             `Off-policy eval uses logged propensities`,
             `Exploration in production needs guardrails`,
             `Simulator of user behavior often misspecified`
-          ],
-          pseudoCode: `RL in Recommendations
-
-1. Reward long-term retention not only clicks
-2. Off-policy eval uses logged propensities
-3. Exploration in production needs guardrails
-4. Simulator of user behavior often misspecified`
+          ]
         },
         {
           id: `deploy`,
@@ -733,23 +600,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Human oversight for irreversible actions; sandbox simulators for validation.
 
-**Applying RL Applications:** Game AI, robotics overview, and deployment considerations. These machine learning ideas appear in production systems, competitions, and research papers alike.
-
-When studying "Deployment & Safety", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Proxy rewards get gamed—Goodhart's law
+- Offline RL from historical logs avoids exploration risk
+- Interpretability harder than supervised models
+- Regulatory scrutiny on autonomous decisions`,
           keyPoints: [
             `Proxy rewards get gamed—Goodhart's law`,
             `Offline RL from historical logs avoids exploration risk`,
             `Interpretability harder than supervised models`,
             `Regulatory scrutiny on autonomous decisions`
-          ],
-          pseudoCode: `Deployment & Safety
-
-1. Proxy rewards get gamed—Goodhart's law
-2. Offline RL from historical logs avoids exploration risk
-3. Interpretability harder than supervised models
-4. Regulatory scrutiny on autonomous decisions`
+          ]
         }
       ],
       exercises: [

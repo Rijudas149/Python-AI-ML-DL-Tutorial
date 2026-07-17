@@ -52,19 +52,7 @@ A ∪ B = {x | x ∈ A or x ∈ B}
 A ∩ B = {x | x ∈ A and x ∈ B}
 A^c = {x ∈ U | x ∉ A}
 |A ∪ B| = |A| + |B| − |A ∩ B|
-P(A) = {S | S ⊆ A}
-
-Universal Set U
-│     │ A∩B│   │
-│  A only  B only│
-A∪B = entire shaded
-A∩B = center overlap
-
-1. ∈ tests membership; ⊆ tests subset
-2. Union/intersection follow De Morgan laws
-3. Inclusion-exclusion prevents double counting
-4. Power set grows exponentially
-5. Sets formalize sample spaces in probability`
+P(A) = {S | S ⊆ A}`
         },
         {
           id: `sets-ops`,
@@ -113,22 +101,7 @@ A \\ B = {x | x ∈ A, x ∉ B}
 A △ B = (A ∪ B) \\ (A ∩ B)
 |A × B| = |A| · |B|
 (A ∪ B)^c = A^c ∩ B^c
-Partition: ∪ P_i = U, P_i ∩ P_j = ∅ for i≠j
-
-A = {1,2,3}     B = {3,4,5}
-A ∪ B = {1,2,3,4,5}
-A ∩ B = {3}
-A \\ B = {1,2}
-B \\ A = {4,5}
-A × B (ordered pairs):
-(1,3) (1,4) (1,5)
-(2,3) (2,4) (2,5)
-
-1. Difference is not commutative
-2. Cartesian product size multiplies
-3. De Morgan helps simplify complements
-4. Partitions enable stratified splits
-5. Set ops mirror Boolean logic`
+Partition: ∪ P_i = U, P_i ∩ P_j = ∅ for i≠j`
         },
         {
           id: `sets-functions`,
@@ -171,20 +144,7 @@ f: A → B maps each a ∈ A to f(a) ∈ B
 Im(f) = {f(x) | x ∈ domain}
 Injective: f(x₁) = f(x₂) ⇒ x₁ = x₂
 Surjective: ∀ y ∈ B, ∃ x: f(x) = y
-Bijective ⇔ invertible function exists
-
-Domain A          Codomain B
-│ 1 │──────────────→│ a │
-│ 3 │──┼───────────→│ c │
-Each input → ONE output
-Multiple inputs may map to same output
-(not injective if 2,3 → same y)
-
-1. Functions require unique outputs per input
-2. Image may be smaller than codomain
-3. Injectivity matters for invertible transforms
-4. Preimages define decision boundaries
-5. Domain restrictions affect model validity`
+Bijective ⇔ invertible function exists`
         },
         {
           id: `sets-counting`,
@@ -231,22 +191,7 @@ P(n,k) = n! / (n−k)!
 C(n,k) = n! / (k!(n−k)!)
 C(n,k) = C(n, n−k)
 ∑_{k=0}^n C(n,k) = 2^n
-|A ∪ B ∪ C| uses inclusion-exclusion
-
-Choose 3 from {A,B,C,D}
-Combinations C(4,3)=4:
-ABC  ABD  ACD  BCD
-Permutations P(4,3)=24:
-ABC ACB BAC BCA ...
-n=4, k=3
-C(4,3) = 4!/(3!·1!) = 4
-P(4,3) = 4!/1! = 24
-
-1. Combinations ignore order
-2. Permutations count ordered arrangements
-3. Binomial coeffs appear in Bernoulli trials
-4. Multiplication principle for pipelines
-5. Inclusion-exclusion for overlapping events`
+|A ∪ B ∪ C| uses inclusion-exclusion`
         }
       ],
       exercises: [
@@ -358,20 +303,7 @@ f(x) = ax + b (linear)
 f(x) = ax² + bx + c (quadratic)
 f(−x) = f(x) ⇒ even; f(−x) = −f(x) ⇒ odd
 Range ⊆ codomain; image = actual outputs
-(f∘g)(x) = f(g(x))
-
-y
-│   ╱  f(x)=2x+1
-Domain: all x where defined
-Range: {f(x) : x ∈ domain}
-Vertical line test:
-│ crosses ≤ 1 point
-
-1. Each input maps to exactly one output
-2. Domain restrictions prevent undefined ops
-3. Composition chains transformations
-4. Even/odd symmetry simplifies integrals
-5. Range may differ from codomain`
+(f∘g)(x) = f(g(x))`
         },
         {
           id: `fn-types`,
@@ -414,19 +346,7 @@ relu: [0. 0. 2.]`,
 ReLU(x) = max(0, x)
 e^(a+b) = e^a · e^b
 log_b(x) = ln(x) / ln(b)
-Quadratic vertex: x = −b / (2a)
-
-Linear      Quadratic     Sigmoid
-╱           ∪            S-curve
-constant   one turn    bounded (0,1)
-slope      min/max
-ReLU: flat then ramp
-
-1. Linear models = affine transforms
-2. Sigmoid squashes to probabilities
-3. ReLU enables sparse activations
-4. Exponentials model growth/decay
-5. Log transforms skewed data`
+Quadratic vertex: x = −b / (2a)`
         },
         {
           id: `fn-compose`,
@@ -472,22 +392,7 @@ g(f(3)): 10`,
 f ∘ f⁻¹ = f⁻¹ ∘ f = I
 (f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹ (reverse order)
 Bijective ⇔ invertible on domain
-Chain: d/dx f(g(x)) = f'(g(x))·g'(x)
-
-x ──g──→ g(x) ──f──→ f(g(x))
-(f∘g): apply g first, then f
-Inverse reverses arrows:
-x ←─f⁻¹─ y ←─g⁻¹─ z
-f(g(x))
-↓ g
-↓ f
-output
-
-1. Composition order is critical
-2. Inverses undo transformations
-3. Only bijections have true inverses
-4. Neural nets are deep compositions
-5. Inverse order reverses on composition`
+Chain: d/dx f(g(x)) = f'(g(x))·g'(x)`
         },
         {
           id: `fn-transforms`,
@@ -532,19 +437,7 @@ z = (x − μ) / σ
 x_norm = (x − min) / (max − min)
 log1p(x) = ln(1 + x)
 K(x,x') = ⟨φ(x), φ(x')⟩
-Inverse transform for predictions in original units
-
-Raw x ──transform──→ z ──model──→ ŷ
-save μ, σ
-inference: same μ, σ
-Without inverse:
-predictions in wrong scale!
-
-1. Fit transforms on training data only
-2. Store params for deployment
-3. Log handles heavy tails
-4. Kernels avoid explicit φ
-5. Inverse restores interpretability`
+Inverse transform for predictions in original units`
         }
       ],
       exercises: [
@@ -655,22 +548,7 @@ b^y = x ⇔ y = log_b(x)
 ln(x) = log_e(x); e ≈ 2.71828
 log_b(xy) = log_b(x) + log_b(y)
 log_b(x^n) = n·log_b(x)
-Change of base: log_b(x) = ln(x) / ln(b)
-
-b^y = x
-y = log_b(x)
-Example: 2^3 = 8
-log_2(8) = 3
-ln maps (0,∞) → (−∞,∞)
-y
-│    ╱ ln(x)
-1
-
-1. Logs are inverse of exponentials
-2. Product rule enables log-sum tricks
-3. ln is standard in calculus/ML
-4. Domain strictly positive
-5. Log-likelihood replaces products with sums`
+Change of base: log_b(x) = ln(x) / ln(b)`
         },
         {
           id: `log-rules`,
@@ -710,21 +588,7 @@ log(x/y) = log(x) − log(y)
 ln(e^x) = x
 e^(ln x) = x for x > 0
 ln∑e^a = max(a) + ln∑e^(a−max(a))
-−log(p) = self-information
-
-log(ab) = log(a) + log(b)
-log(a/b) = log(a) - log(b)
-log(a^n) = n·log(a)
-Softmax stability:
-exp(1000) → overflow
-subtract max before exp:
-exp(a_i - max(a))
-
-1. Product→sum prevents underflow
-2. Log-sum-exp stabilizes softmax
-3. Change of base for any log
-4. −log p measures information content
-5. Domain x>0 for real logs`
+−log(p) = self-information`
         },
         {
           id: `exp-models`,
@@ -766,18 +630,7 @@ N(t) = N₀ · e^(kt)
 Half-life: t_{1/2} = ln(2) / |k|
 Softmax: p_i = e^z_i / ∑_j e^z_j
 A = P · e^(rt)
-η_t = η₀ · γ^t (LR decay)
-
-N(t)=N₀·e^(kt)
-k>0: growth ↗
-k<0: decay ↘
-Half-life: 50% remaining
-
-1. e is the natural growth base
-2. Softmax uses exponentials normalized
-3. Half-life from decay constant k
-4. Log-scale linearizes exponentials
-5. LR decay is exponential in steps`
+η_t = η₀ · γ^t (LR decay)`
         },
         {
           id: `log-ml`,
@@ -818,19 +671,7 @@ print("BCE:", np.round(bce,3), "mean:", np.round(bce.mean(),3))`,
 H(p,q) = −∑ p(x) log q(x)
 BCE = −[y log ŷ + (1−y) log(1−ŷ)]
 logit(p) = ln(p / (1−p))
-Perplexity = exp(−(1/N)∑ log p)
-
-Wrong confident prediction:
-ŷ=0.99, y=0 → −log(0.01) ≈ 4.6
-ŷ=0.6, y=0  → −log(0.4)  ≈ 0.9
-Log penalizes hubris!
-clip ŷ to [ε, 1−ε] before log
-
-1. Log turns products to sums
-2. CE is standard classification loss
-3. Logit links probs to linear models
-4. Clip before log avoids −∞
-5. Perplexity uses exp of avg NLL`
+Perplexity = exp(−(1/N)∑ log p)`
         }
       ],
       exercises: [
@@ -937,20 +778,7 @@ a_n = a₁ + (n−1)d
 d = a_{n+1} − a_n
 S_n = n(a₁ + a_n) / 2
 S_n = n(2a₁ + (n−1)d) / 2
-Linear schedule: x_n = x₀ + n·Δ
-
-a_n = 2, 5, 8, 11, 14 ...
-d = 3
-n:  1   2   3   4   5
-2   5   8  11  14
-└──+3─+3─+3─+3──
-S_5 = 5/2·(2+14) = 40
-
-1. Constant difference defines arithmetic
-2. Sum formula is O(1) not loop
-3. Linear LR warmup is arithmetic
-4. Grid search steps often arithmetic
-5. Index carefully: 0 vs 1 based`
+Linear schedule: x_n = x₀ + n·Δ`
         },
         {
           id: `seq-geom`,
@@ -993,20 +821,7 @@ a_n = a₁ · r^(n−1)
 S_n = a₁(1 − r^n) / (1 − r), r ≠ 1
 S_∞ = a₁ / (1 − r) if |r| < 1
 EMA: s_t = β s_{t−1} + (1−β) x_t
-LR: η_t = η₀ · γ^t
-
-r = 1/2: 8, 4, 2, 1, 0.5 ...
-each term × r
-8 → 4 → 2 → 1 → 0.5
-|r|<1: sum converges
-S∞ = 8/(1-0.5) = 16
-r>1: diverges
-
-1. Ratio r multiplies each term
-2. |r|<1 needed for infinite sum
-3. EMA uses geometric smoothing
-4. LR geometric decay common
-5. Geometric ↔ exponential link`
+LR: η_t = η₀ · γ^t`
         },
         {
           id: `seq-series`,
@@ -1049,21 +864,7 @@ geom: 1.998...`,
 ∑_{k=0}^∞ r^k = 1/(1−r), |r|<1
 Batch loss: L = (1/m) ∑_{i=1}^m L_i
 H_n = ∑_{k=1}^n 1/k ~ ln(n)
-Riemann: ∫f ≈ ∑ f(x_i) Δx
-
-∑_{k=1}^5 k = 1+2+3+4+5 = 15
-Sigma notation:
-n
-/__
-k=1
-Expands to explicit sum
-Compact for proofs & code
-
-1. Sigma notation standard in papers
-2. Partial sums monitor convergence
-3. Batch loss is mean over sum
-4. Geometric series closed form key
-5. Harmonic series diverges`
+Riemann: ∫f ≈ ∑ f(x_i) Δx`
         },
         {
           id: `seq-ml`,
@@ -1103,19 +904,7 @@ print("improvements:", np.round(improve,3))`,
 Momentum: v_t = β v_{t−1} + ∇L
 Cosine LR: η_t = η_min + ½(η_max−η_min)(1+cos(πt/T))
 Early stop when val loss plateaus
-Fixed point: x* = g(x*)
-
-Loss vs epoch:
-│ ╲___ plateau
-└────────── epoch
-Good: steady decrease
-Bad: oscillate / diverge
-
-1. Monitor sequences not single points
-2. Early stopping prevents overfit
-3. Schedule LR along iteration index
-4. Momentum smooths update sequence
-5. Convergence needs patience + tuning`
+Fixed point: x* = g(x*)`
         }
       ],
       exercises: [
@@ -1221,17 +1010,7 @@ z = a + bi, i² = −1
 |z| = √(a² + b²)
 z̄ = a − bi; z·z̄ = |z|²
 Re(z) = a, Im(z) = b
-Complex plane: (Re, Im) coordinates
-
-Im
-│    · z=a+bi
-|z| = distance from origin
-
-1. i² = −1 extends real algebra
-2. Modulus is Euclidean length
-3. Conjugate flips imaginary sign
-4. Complex plane aids visualization
-5. FFT relies on complex exponentials`
+Complex plane: (Re, Im) coordinates`
         },
         {
           id: `cx-polar`,
@@ -1275,21 +1054,7 @@ z = r·e^(iθ) = r(cos θ + i sin θ)
 e^(iθ) = cos θ + i sin θ (Euler)
 e^(iπ) + 1 = 0 (Euler identity)
 arg(z) = θ = atan2(b, a)
-|z₁·z₂| = |z₁|·|z₂|; arg(z₁z₂) = arg(z₁)+arg(z₂)
-
-Unit circle:
-Im
-│  e^(iπ/2)=i
-─1───┼───1 Re
-│  e^(−iπ/2)=−i
-θ increases counterclockwise
-r=1 on unit circle
-
-1. Polar form simplifies multiplication
-2. Euler links exp and trig
-3. arg uses atan2 for quadrant
-4. e^(iπ)+1=0 famous identity
-5. FFT = sum of e^(−i2πkn/N)`
+|z₁·z₂| = |z₁|·|z₂|; arg(z₁z₂) = arg(z₁)+arg(z₂)`
         },
         {
           id: `cx-ops`,
@@ -1332,19 +1097,7 @@ angles add: ...`,
 z/w = z·w̄ / |w|²
 e^(iθ₁)·e^(iθ₂) = e^(i(θ₁+θ₂))
 A* = conjugate transpose
-|λ|<1 ⇒ stable discrete dynamics
-
-Multiplication in polar:
-z1: r1∠θ1  ×  z2: r2∠θ2
-result: r1·r2 ∠ (θ1+θ2)
-lengths multiply
-angles add
-
-1. Multiply in polar by adding angles
-2. Division subtracts angles
-3. Hermitian for complex inner products
-4. Complex eigenvalues come in conjugate pairs
-5. Magnitude of eigenvalue = growth rate`
+|λ|<1 ⇒ stable discrete dynamics`
         },
         {
           id: `cx-fft`,
@@ -1385,19 +1138,7 @@ X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N)
 F{f*g} = F{f}·F{g}
 |X_k| = magnitude at frequency k
 arg(X_k) = phase at frequency k
-Inverse FFT reconstructs signal from spectrum
-
-Time domain     FFT     Frequency
-~~~~ waveform  ───→   |X(k)| bars
-low k: slow trends
-high k: fast oscillations
-e^(−i2πkn/N) = rotate + sample
-
-1. FFT is O(N log N) with fast algo
-2. Complex exponentials are DFT basis
-3. Magnitude spectrum common in features
-4. Phase matters for reconstruction
-5. Convolution via FFT saves compute`
+Inverse FFT reconstructs signal from spectrum`
         }
       ],
       exercises: [

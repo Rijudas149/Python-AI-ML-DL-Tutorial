@@ -48,18 +48,7 @@ print(0<=m<=1)`,
 Halfspace: {x : aᵀx ≤ b} convex
 Ball: {x : ||x|| ≤ r} convex
 Intersection of convex sets convex
-Polyhedron: Ax ≤ b convex
-
-convex set:
-x ●─────────● y
-all chord inside
-non-convex: hole or indent
-
-1. Line segment test for convexity
-2. Linear constraints → convex feasible
-3. Balls and halfspaces basic blocks
-4. NN loss generally non-convex
-5. Convex feasible + convex f → global min`
+Polyhedron: Ax ≤ b convex`
         },
         {
           id: `cvx-func`,
@@ -97,17 +86,7 @@ f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)
 1st order: tangent global underestimator
 2nd order: H ⪰ 0
 Strongly convex: H ⪰ μI
-Composition rules preserve convexity
-
-convex f:
-chord above graph
-──── chord below endpoints
-
-1. Tangent lies below for convex
-2. Hessian PSD test smooth case
-3. Strong convexity speeds GD
-4. Many losses convex in params
-5. Composition rules limited`
+Composition rules preserve convexity`
         },
         {
           id: `cvx-problems`,
@@ -146,17 +125,7 @@ min f(x) s.t. x ∈ C convex
 LP: linear f and constraints
 QP: ½xᵀPx+qᵀx
 Local = global if f convex on C
-KKT: ∇f + ∑λᵢ∇gᵢ = 0
-
-convex optimization landscape:
-single bowl → one global min
-non-convex: many valleys
-
-1. Convex problems globally tractable
-2. QP includes SVM
-3. KKT characterizes optimum
-4. DL non-convex exception
-5. cvxpy for prototyping`
+KKT: ∇f + ∑λᵢ∇gᵢ = 0`
         },
         {
           id: `cvx-ml`,
@@ -197,18 +166,7 @@ Logistic NLL convex in w
 Hinge loss convex
 MSE convex in linear β
 Hidden layers → non-convex
-λ||w||² preserves convexity
-
-convex ML losses (linear models):
-MSE bowl in w
-logistic bowl in w
-+ L2 still convex
-
-1. Linear models convex in weights
-2. Deep nets non-convex
-3. Convex surrogate losses common
-4. Regularization keeps convexity
-5. Local min may suffice in DL`
+λ||w||² preserves convexity`
         }
       ],
       exercises: [
@@ -310,18 +268,7 @@ L-smooth: ||∇f(x)−∇f(y)|| ≤ L||x−y||
 η ≤ 1/L for convex convergence
 Strongly convex: (1−ημ)^t rate
 SGD: E[||∇L||] → 0
-Non-convex: find stationary points
-
-η too big:
-bounce across valley
-diverge ↑
-η ok: steady descent ↘
-
-1. Step size bounded by 1/L
-2. Strong convexity linear rate
-3. SGD converges with decaying η
-4. Non-convex no global guarantee
-5. Stationary point necessary for min`
+Non-convex: find stationary points`
         },
         {
           id: `gd-momentum`,
@@ -362,17 +309,7 @@ v_t = β v_{t−1} + ∇L
 θ_t = θ_{t−1} − η v_t
 β ≈ 0.9 common
 Nesterov: grad at lookahead
-Accelerated O(1/t²) convex
-
-ravine without momentum:
-zigzag ╱╲╱╲
-momentum: smooth along valley ↓
-
-1. Momentum smooths oscillations
-2. Nesterov often faster
-3. β too high overshoots
-4. Adam default in DL
-5. Physics intuition helps tuning`
+Accelerated O(1/t²) convex`
         },
         {
           id: `gd-adaptive`,
@@ -412,18 +349,7 @@ AdaGrad: η/√(∑g²)
 Adam: m,v EMA of g,g²
 Bias corr: m/(1−β^t)
 AdamW: weight decay separate
-Warmup for transformers
-
-per-param learning rate:
-large |g| history → small step
-small |g| history → larger step
-Adam automates scaling
-
-1. Adaptive per parameter
-2. Adam popular default
-3. AdamW fixes weight decay
-4. SGD sometimes generalizes better
-5. Warmup prevents early instability`
+Warmup for transformers`
         },
         {
           id: `gd-sgd`,
@@ -462,18 +388,7 @@ print("batch grad mean:", grads.mean(), "full would use all data")`,
 Var ∝ 1/b batch size
 Linear scaling: η ∝ b heuristic
 Schedule: η_t = η₀/√t
-Distributed: average worker grads
-
-batch size tradeoff:
-b=1   noisy fast iter
-b=n   smooth expensive
-sweet spot GPU memory
-
-1. Mini-batch default in DL
-2. Larger batch more stable grad
-3. Linear scaling rule heuristic
-4. Decay η for convergence
-5. Distributed all-reduce grads`
+Distributed: average worker grads`
         }
       ],
       exercises: [
@@ -578,18 +493,7 @@ L(x,λ) = f(x) + λ g(x)
 ∇f(x*) + λ∇g(x*) = 0
 g(x*) = 0
 λ = shadow price
-∇f ∥ ∇g on constraint
-
-contour f touches constraint g=0:
-f=3 ──╮
-f=2 ──┼── tangent on g=0
-f=1    constraint curve
-
-1. Lagrange multipliers for equality
-2. Parallel gradients at optimum
-3. λ measures constraint cost
-4. Three eqs two vars + λ
-5. Projection for iterative solve`
+∇f ∥ ∇g on constraint`
         },
         {
           id: `lag-ineq`,
@@ -625,17 +529,7 @@ L = f + ∑λ_i g_i + ∑ν_j h_j
 λ_i ≥ 0
 λ_i g_i(x) = 0 (complementary slackness)
 Stationarity: ∇L = 0
-Convex: KKT sufficient
-
-active constraint g=0 at boundary
-inactive interior: λ=0
-boundary optimum: λ>0
-
-1. Inequalities add λ≥0
-2. Complementary slackness key
-3. SVM from KKT on margins
-4. Dual for bounds
-5. Convex KKT sufficient`
+Convex: KKT sufficient`
         },
         {
           id: `lag-dual`,
@@ -674,18 +568,7 @@ Dual: max_λ inf_x L(x,λ)
 Weak: d* ≤ p*
 Strong convex: d* = p*
 SVM dual: α kernel form
-Slater: strict feasibility → strong
-
-primal ↔ dual
-hard in x     maybe easy in λ
-easy in x     hard in λ
-pick easier side
-
-1. Dual provides lower bound
-2. Strong duality nice convexity
-3. SVM kernel trick from dual
-4. Slater condition common
-5. Game-theoretic view`
+Slater: strict feasibility → strong`
         },
         {
           id: `lag-ml`,
@@ -724,17 +607,7 @@ Penalty: f + ρ||g(x)||²
 Projection: simplex, ball
 TRPO: KL trust region
 Fairness: P(ŷ|A=a)=P(ŷ|A=b)
-Adversarial: min_θ max_φ loss
-
-fair ML constraint:
-optimize accuracy
-s.t. TPR equal across groups
-
-1. Penalties soften constraints
-2. Projection maintains feasibility
-3. TRPO uses KL ball
-4. Fairness as linear constraints
-5. Min-max for robust/adversarial`
+Adversarial: min_θ max_φ loss`
         }
       ],
       exercises: [
@@ -834,18 +707,7 @@ H(X) = −∑ p(x) log p(x)
 0 ≤ H(X) ≤ log |X|
 Uniform → max entropy
 H(X,Y) = H(X|Y) + H(Y)
-Indep: H(X,Y) = H(X)+H(Y)
-
-fair coin: H=1 bit
-certain: H=0
-p=0.9 biased: H low
-·─────────· peak at p=0.5
-
-1. Entropy measures uncertainty
-2. Uniform maximizes entropy
-3. Conditional reduces uncertainty
-4. Independent joint adds
-5. Used in tree splits`
+Indep: H(X,Y) = H(X)+H(Y)`
         },
         {
           id: `ent-ce`,
@@ -883,17 +745,7 @@ H(p,q) = −∑ p log q
 D_KL(p||q) = ∑ p log(p/q)
 D_KL ≥ 0, =0 iff p=q
 I(X;Y) = H(X) − H(X|Y)
-CE loss = H(one_hot, softmax)
-
-p true    q model
-CE = −∑ p log q
-KL = extra bits using q vs p
-
-1. CE common classification loss
-2. KL asymmetric divergence
-3. MI measures dependence
-4. VAE uses KL to prior
-5. InfoNCE for representation`
+CE loss = H(one_hot, softmax)`
         },
         {
           id: `ent-mi`,
@@ -936,17 +788,7 @@ I(X;Y) = H(X) − H(X|Y)
 I(X;Y) = 0 ⇔ indep
 I symmetric in X,Y
 Data processing: I(X;Z) ≤ I(X;Y) if Markov
-InfoNCE lower bound on MI
-
-MI high when knowing Y
-reduces uncertainty about X:
-X ←──strong link──→ Y
-
-1. MI detects nonlinear deps
-2. Hard to estimate high-D
-3. InfoNCE in SimCLR
-4. IB regularization
-5. Feature selection criterion`
+InfoNCE lower bound on MI`
         },
         {
           id: `ent-ml`,
@@ -984,18 +826,7 @@ Minimize H(y, ŷ) for classification
 Label smoothing: soft targets
 Info gain = H(parent) − H(children)
 Temperature T scales softmax entropy
-MDL: model + data encoding
-
-decision tree split:
-H=0.9 before
-H=0.4 after good split
-gain = 0.5
-
-1. CE = expected surprise
-2. Label smoothing prevents overconfidence
-3. Info gain for trees
-4. Temperature in distillation
-5. MDL balances fit and complexity`
+MDL: model + data encoding`
         }
       ],
       exercises: [
@@ -1094,17 +925,7 @@ print("Bernoulli MLE p:", x.mean())`,
 Equiv: min −∑ log p(x_i|θ)
 Bernoulli: p̂ = k/n
 Gaussian: μ̂ = x̄
-Invariance: g(θ̂) for g(θ)
-
-likelihood surface:
-peak at θ̂
-data most probable here
-
-1. MLE maximizes data probability
-2. Log converts product to sum
-3. NLL is standard loss
-4. Asymptotic efficiency
-5. Sample formulas for simple models`
+Invariance: g(θ̂) for g(θ)`
         },
         {
           id: `kl-mle`,
@@ -1142,17 +963,7 @@ min_θ E_p[−log q_θ] ⇔ min D_KL(p||q_θ)
 Empirical p = uniform on samples
 MLE on samples = KL minimizer
 D_KL(p||q) mode-seeking
-D_KL(q||p) mode-covering
-
-p_data vs q_model
-KL(p||q): q must cover p modes
-heavy penalty missing mass of p
-
-1. NLL ↔ KL to data distribution
-2. Empirical samples define p
-3. Asymmetric KL behavior
-4. Forward KL in standard MLE
-5. Reverse KL in some VI`
+D_KL(q||p) mode-covering`
         },
         {
           id: `mle-prop`,
@@ -1191,17 +1002,7 @@ p=0.6; print("I:", p*(1-p))`,
 I(θ) = E[(∂log p/∂θ)²]
 Cramér-Rao: Var ≥ 1/(nI(θ))
 Consistent under regularity
-Score = 0 at MLE
-
-Fisher info I(θ):
-curvature of log-likelihood
-sharp peak → low variance θ̂
-
-1. Asymptotic normality for CI
-2. Fisher info measures information
-3. Efficient among unbiased estimators
-4. Regularity conditions needed
-5. MAP adds prior bias`
+Score = 0 at MLE`
         },
         {
           id: `mle-ml`,
@@ -1241,18 +1042,7 @@ Softmax + CE = categorical MLE
 MSE ∝ Gaussian NLL (fixed σ)
 EM for latent variable models
 Diffusion: variational lower bound
-GAN ≠ MLE (implicit)
-
-deep generative:
-VAE: ELBO on log p(x)
-Diffusion: noise prediction ↔ bound
-GAN: adversarial not likelihood
-
-1. CE has MLE interpretation
-2. Generative models maximize likelihood
-3. EM classical latent MLE
-4. VAE optimizes ELBO
-5. Choose objective matching goal`
+GAN ≠ MLE (implicit)`
         }
       ],
       exercises: [

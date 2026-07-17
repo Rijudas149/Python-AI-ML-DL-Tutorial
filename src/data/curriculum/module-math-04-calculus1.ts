@@ -46,19 +46,7 @@ lim_{x→a} f(x) = L
 lim exists ⇔ lim⁻ = lim⁺
 lim_{x→∞} f(x) (horizontal asymptote)
 ε-δ formal definition
-0/0 → try L'Hôpital
-
-f(x) near a:
-L ─ ─ ─ ─ ─ target
-·    ·  f(x)
-a
-x→a, f(x)→L
-
-1. Limit ≠ function value at point
-2. Both sides must agree
-3. Infinity limits describe tails
-4. Foundation for derivatives
-5. L'Hôpital for indeterminate`
+0/0 → try L'Hôpital`
         },
         {
           id: `lim-rules`,
@@ -97,19 +85,7 @@ lim(f+g) = lim f + lim g
 lim(f/g) = lim f / lim g
 lim_{x→0} sin(x)/x = 1
 lim_{x→0} (e^x − 1)/x = 1
-Squeeze: g≤f≤h → same limit
-
-squeeze:
-h(x) ────────
-f(x) ~~~ squeezed
-g(x) ────────
-→ same limit L
-
-1. Limit laws combine simple limits
-2. sin(x)/x key trig limit
-3. Squeeze for bounded functions
-4. Continuity from limit = value
-5. Composition needs care at boundaries`
+Squeeze: g≤f≤h → same limit`
         },
         {
           id: `lim-cont`,
@@ -147,17 +123,7 @@ Continuous at a: lim_{x→a} f(x) = f(a)
 IVT: sign change → root
 EVT: continuous on [a,b] → max/min
 Removable: redefine at hole
-Jump: piecewise mismatch
-
-continuous: no break
-removable hole: ○
-jump:
-
-1. Continuous functions no jumps
-2. IVT finds roots bracketing
-3. Activations mostly continuous
-4. Discontinuities hurt gradients
-5. Piecewise needs match at joints`
+Jump: piecewise mismatch`
         },
         {
           id: `lim-ml`,
@@ -193,17 +159,7 @@ lim_{t→∞} L(θ_t) = L*
 η→0: GD → gradient flow
 softmax(z/T), T→0 → one-hot
 sigmoid(x), x→∞ → 1
-λ→∞: ridge → zero solution
-
-loss vs iteration:
-│     ────→ lim L*
-convergence = limit behavior
-
-1. Optimization seeks limiting minimum
-2. LR too large prevents convergence
-3. Temperature limits in softmax
-4. Regularization path limits interpretable
-5. Asymptotic analysis guides tuning`
+λ→∞: ridge → zero solution`
         }
       ],
       exercises: [
@@ -304,19 +260,7 @@ f'(x) = lim_{h→0} (f(x+h)−f(x))/h
 Tangent slope at x
 Differentiable ⇒ continuous
 ∂f/∂x_i partial derivative
-∇f = vector of partials
-
-secant → tangent as h→0
-f(x)
-╱ | rise
-╱  |/run = slope
-h→0
-
-1. Derivative = instantaneous rate
-2. Limit of secant slopes
-3. Gradient collects partials
-4. Non-differentiable at cusps
-5. Autodiff automates computation`
+∇f = vector of partials`
         },
         {
           id: `der-interp`,
@@ -357,19 +301,7 @@ f'(x)>0 → increasing
 f'(x)=0 → critical point
 f''(x)>0 → convex (local)
 Jacobian J_ij = ∂f_i/∂x_j
-Gradient descent: θ -= η∇L
-
-f'(x) sign:
-f'>0: climbing ↗
-f'<0: falling ↘
-f'=0: flat ─── (critical)
-GD goes opposite gradient ↓
-
-1. Gradient points uphill
-2. Descent uses negative gradient
-3. Jacobian for vector maps
-4. Hessian for curvature
-5. Critical points need second test`
+Gradient descent: θ -= η∇L`
         },
         {
           id: `der-numeric`,
@@ -410,18 +342,7 @@ Forward: (f(x+h)−f(x))/h
 Central: (f(x+h)−f(x−h))/(2h)
 Error central O(h²)
 h ≈ 1e-5 typical for float64
-gradient check in DL debugging
-
-trade-off in h:
-large h → truncation error
-small h → cancellation noise
-╲  ╱  sweet spot ~1e-5
-
-1. Central more accurate
-2. Balance truncation vs roundoff
-3. gradient check validates backprop
-4. np.gradient for discrete data
-5. Autodiff preferred in training`
+gradient check in DL debugging`
         },
         {
           id: `der-ml`,
@@ -462,18 +383,7 @@ print("grad:", grad)`,
 Saddle: grad=0 but not extremum
 Plateau: |∇L| ≈ 0 slow training
 ReLU subgradient at 0
-Flat minima may generalize better
-
-loss surface (2 params):
-╱╲  saddle
-╱ valley╲
-local min
-
-1. Stationary ≠ always minimum
-2. Saddles common in high-D
-3. Plateaus need adaptive LR
-4. Subgradients extend to ReLU
-5. Visualize 2D slices for intuition`
+Flat minima may generalize better`
         }
       ],
       exercises: [
@@ -576,18 +486,7 @@ d/dx x^n = n x^(n−1)
 d/dx e^x = e^x
 d/dx ln(x) = 1/x
 σ'(x) = σ(x)(1−σ(x))
-(f+g)' = f' + g'
-
-rule toolbox:
-power  product  quotient  chain
-↓       ↓        ↓        ↓
-combine for complex f(x)
-
-1. Power rule most common
-2. Sigmoid derivative product form
-3. Sum rule linearizes
-4. Build complex from simple
-5. Table speeds manual work`
+(f+g)' = f' + g'`
         },
         {
           id: `dr-product`,
@@ -628,16 +527,7 @@ print("product rule:", h1)`,
 (f/g)' = (f'g − fg')/g²
 d(u·v) = u'·v + u·v'
 d(AB) = A'B + AB'
-(1/g)' = −g'/g²
-
-(fg)': two terms
-├── product → f'g + fg'
-
-1. Product rule two-term split
-2. Quotient for ratios
-3. Matrix product needs order
-4. Softmax uses quotient structure
-5. Verify with numeric diff`
+(1/g)' = −g'/g²`
         },
         {
           id: `dr-chain`,
@@ -674,17 +564,7 @@ x=1.; inner=x**2+1; print(3*inner**2*2*x)`,
 ∂L/∂w = ∂L/∂y · ∂y/∂w
 Backprop = chain rule on graph
 Reverse-mode: one backward pass
-Jacobian product along path
-
-x → g → u → f → L
-dL/dx = dL/df · df/du · du/dx
-chain multiplies local derivatives
-
-1. Chain rule powers backprop
-2. Local grads multiply along path
-3. Reverse-mode efficient for DL
-4. Graph tracks computation
-5. Vanishing = product of small terms`
+Jacobian product along path`
         },
         {
           id: `dr-common`,
@@ -722,18 +602,7 @@ MSE: ∂L/∂ŷ = ŷ − y
 L2: ∂(λ||w||²)/∂w = 2λw
 Softmax+CE: ∂L/∂z = ŷ − y
 tanh': 1 − tanh²(x)
-ReLU': 1 if x>0 else 0
-
-CE + softmax magic:
-gradient w.r.t logits
-= predicted − true
-elegant single form
-
-1. MSE gradient simple residual
-2. Softmax+CE simplifies beautifully
-3. L2 adds 2λw to gradient
-4. Know activation derivatives
-5. Fused ops for stability`
+ReLU': 1 if x>0 else 0`
         }
       ],
       exercises: [
@@ -834,19 +703,7 @@ f(x) = ∑ f^(n)(a)/n! · (x−a)^n
 T₁: f(a) + f'(a)(x−a)
 Maclaurin: expand at 0
 e^x = ∑ x^n/n!
-sin(x) = ∑ (−1)^n x^(2n+1)/(2n+1)!
-
-local approx near a:
-f(x) ≈ tangent parabola
-╱ curve f
-╱___ approx
-a
-
-1. Taylor = local polynomial fit
-2. More terms → better approx
-3. Maclaurin common at origin
-4. e, sin, cos standard series
-5. Linearization = first-order Taylor`
+sin(x) = ∑ (−1)^n x^(2n+1)/(2n+1)!`
         },
         {
           id: `tay-approx`,
@@ -884,17 +741,7 @@ Error ~ f''(ξ)(x−a)²/2 (2nd order)
 Far from a: need more terms
 GD: first-order step
 Newton: second-order step
-Laplace approx: Taylor on log p
-
-error grows with |x-a|
-good:  ·── approx ≈ f
-bad:   ·── diverge far out
-
-1. Stay near expansion point
-2. Newton faster near minimum
-3. GD OK with small steps
-4. Laplace for Bayesian approx
-5. Big-O tracks leading error`
+Laplace approx: Taylor on log p`
         },
         {
           id: `tay-multivar`,
@@ -933,18 +780,7 @@ f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ
 H_ij = ∂²f/∂x_i∂x_j
 H positive definite → local min
 Mixed eigenvalues → saddle
-Gauss-Newton approx Hessian
-
-Hessian eigenvalues at critical:
-all + : bowl min
-all − : cap max
-mixed : saddle ╱╲
-
-1. Gradient is first-order term
-2. Hessian captures curvature
-3. Eigenvalues classify critical pts
-4. Saddles plague high-D opt
-5. Second-order methods use H`
+Gauss-Newton approx Hessian`
         },
         {
           id: `tay-ml`,
@@ -983,18 +819,7 @@ GD step from 1st order Taylor
 Newton from 2nd order model
 MAP + Laplace ≈ Gaussian posterior
 Small η: Taylor accurate
-Large η: higher terms matter
-
-η too large:
-linear approx breaks
-overshoot minimum
-oscillate diverge
-
-1. LR tied to Taylor validity
-2. Newton quadratic convergence local
-3. Laplace for uncertainty approx
-4. Linear models = local approx
-5. Higher-order methods costly`
+Large η: higher terms matter`
         }
       ],
       exercises: [
@@ -1099,18 +924,7 @@ print("trapz:", np.trapz(f(x),x), "exact:", 8/3)`,
 F(b) − F(a) if F' = f
 ∫ p(x)dx = 1 (PDF)
 E[X] = ∫ x p(x) dx
-Riemann: ∑ f(x_i) Δx
-
-∫_a^b f(x) dx = shaded area
-f(x)
-╱ area ╲
-─a────────b── x
-
-1. Integral accumulates infinitesimals
-2. FTC links derivative and integral
-3. PDF integrates to 1
-4. Expectation is integral
-5. Monte Carlo for high-D integrals`
+Riemann: ∑ f(x_i) Δx`
         },
         {
           id: `int-rules`,
@@ -1148,17 +962,7 @@ print("gaussian:", val, "sqrt pi:", np.sqrt(np.pi))`,
 ∫ e^x dx = e^x + C
 ∫ 1/x dx = ln|x| + C
 ∫ e^(−x²) dx = √π (over ℝ)
-By parts: ∫u dv = uv − ∫v du
-
-by parts picks u,dv:
-∫ u dv = u·v − ∫ v du
-choose u that simplifies when diff
-
-1. Substitution reverses chain rule
-2. By parts for products
-3. Gaussian integral famous
-4. Numerical quad when no closed form
-5. PDF normalization uses integrals`
+By parts: ∫u dv = uv − ∫v du`
         },
         {
           id: `int-prob`,
@@ -1197,18 +1001,7 @@ print("norm check:", np.trapz(p,x))`,
 F(x) = ∫_{−∞}^x p(t) dt
 E[g(X)] = ∫ g(x) p(x) dx
 Marginal: ∫ p(x,y) dy
-Change vars: multiply by |dx/dy|
-
-PDF normalization:
-area under p(x) = 1
-p(x)
-total area = 1
-
-1. PDF must integrate to 1
-2. CDF is cumulative integral
-3. Expectations are integrals
-4. Jacobian in multivariate change
-5. Evidence integral often hard`
+Change vars: multiply by |dx/dy|`
         },
         {
           id: `int-mc`,
@@ -1247,19 +1040,7 @@ E[f(X)] ≈ (1/N) ∑ f(x_i)
 Var ∝ 1/N
 Importance: weight by p/q
 MCMC for posterior expectations
-High-D: MC scales better than grid
-
-MC integration:
-sample · · · under p(x)
-average f(x_i)
-more samples → less error
-error ~ 1/√N
-
-1. MC for high-dimensional integrals
-2. Importance sampling reduces variance
-3. MCMC for Bayesian inference
-4. 1/√N convergence slow but general
-5. Dropout ≈ MC over masks`
+High-D: MC scales better than grid`
         }
       ],
       exercises: [

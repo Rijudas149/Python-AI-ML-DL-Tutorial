@@ -34,13 +34,7 @@ print("Plot saved")`,
             `Always label axes and add title`,
             `savefig before show in scripts`,
             `Use dpi=300 for publication quality`
-          ],
-          pseudoCode: `pyplot Interface
-
-1. plt.figure(figsize=(w,h)) sets size
-2. Always label axes and add title
-3. savefig before show in scripts
-4. Use dpi=300 for publication quality`
+          ]
         },
         {
           id: `oo-api`,
@@ -64,13 +58,7 @@ print("Subplots created")`,
             `subplots creates grid of axes`,
             `tight_layout prevents overlap`,
             `ax object methods vs plt functions`
-          ],
-          pseudoCode: `Object-Oriented API
-
-1. OO API preferred for complex figures
-2. subplots creates grid of axes
-3. tight_layout prevents overlap
-4. ax object methods vs plt functions`
+          ]
         },
         {
           id: `styles`,
@@ -86,13 +74,7 @@ print("Subplots created")`,
             `Consistent style across project`,
             `alpha for overlapping points`,
             `Avoid chartjunk — maximize data-ink ratio`
-          ],
-          pseudoCode: `Styles & Customization
-
-1. Use colorblind-safe palettes
-2. Consistent style across project
-3. alpha for overlapping points
-4. Avoid chartjunk — maximize data-ink ratio`
+          ]
         },
         {
           id: `anatomy`,
@@ -108,13 +90,7 @@ print("Subplots created")`,
             `Axes is single plot area`,
             `Multiple Axes per Figure`,
             `GridSpec for irregular layouts`
-          ],
-          pseudoCode: `Figure Anatomy
-
-1. Figure is top-level container
-2. Axes is single plot area
-3. Multiple Axes per Figure
-4. GridSpec for irregular layouts`
+          ]
         }
       ],
       exercises: [
@@ -204,13 +180,7 @@ print("Distribution plotted")`,
             `binwidth controls histogram granularity`,
             `displot is figure-level interface`,
             `Check distribution shape before modeling`
-          ],
-          pseudoCode: `Distribution Plots
-
-1. kde overlays smooth density estimate
-2. binwidth controls histogram granularity
-3. displot is figure-level interface
-4. Check distribution shape before modeling`
+          ]
         },
         {
           id: `relplot`,
@@ -233,13 +203,7 @@ print("Scatter with hue")`,
             `size/style add more dimensions`,
             `relplot for faceted relational plots`,
             `Avoid overplotting with alpha/jitter`
-          ],
-          pseudoCode: `Relational Plots
-
-1. hue encodes categorical variable
-2. size/style add more dimensions
-3. relplot for faceted relational plots
-4. Avoid overplotting with alpha/jitter`
+          ]
         },
         {
           id: `catplot`,
@@ -261,13 +225,7 @@ print("Boxplot created")`,
             `violinplot shows full distribution shape`,
             `barplot shows mean with confidence interval`,
             `order parameter controls x-axis order`
-          ],
-          pseudoCode: `Categorical Plots
-
-1. boxplot shows quartiles and outliers
-2. violinplot shows full distribution shape
-3. barplot shows mean with confidence interval
-4. order parameter controls x-axis order`
+          ]
         },
         {
           id: `heatmap`,
@@ -290,13 +248,7 @@ print("Correlation heatmap")`,
             `heatmap reveals multicollinearity`,
             `coolwarm diverging palette for correlations`,
             `Cluster related features visually`
-          ],
-          pseudoCode: `Heatmaps & Correlation
-
-1. corr() computes pairwise correlation
-2. heatmap reveals multicollinearity
-3. coolwarm diverging palette for correlations
-4. Cluster related features visually`
+          ]
         }
       ],
       exercises: [
@@ -385,13 +337,7 @@ print(fig.data[0].type)`,
             `Hover tooltips automatic`,
             `Export to HTML for sharing`,
             `color/discrete_map for custom colors`
-          ],
-          pseudoCode: `Plotly Express
-
-1. Plotly Express for quick interactive plots
-2. Hover tooltips automatic
-3. Export to HTML for sharing
-4. color/discrete_map for custom colors`
+          ]
         },
         {
           id: `plotly-graph`,
@@ -407,13 +353,7 @@ print(fig.data[0].type)`,
             `make_subplots for complex dashboards`,
             `Animation frames for time series`,
             `3D scatter and surface plots available`
-          ],
-          pseudoCode: `Graph Objects
-
-1. Graph Objects for custom charts
-2. make_subplots for complex dashboards
-3. Animation frames for time series
-4. 3D scatter and surface plots available`
+          ]
         },
         {
           id: `dash`,
@@ -429,13 +369,7 @@ print(fig.data[0].type)`,
             `dcc components for inputs`,
             `Callback decorators link inputs to outputs`,
             `Alternative: Streamlit for simpler apps`
-          ],
-          pseudoCode: `Dash Preview
-
-1. Dash for production dashboards
-2. dcc components for inputs
-3. Callback decorators link inputs to outputs
-4. Alternative: Streamlit for simpler apps`
+          ]
         },
         {
           id: `when`,
@@ -451,13 +385,7 @@ print(fig.data[0].type)`,
             `Matplotlib for static publication figures`,
             `Consider audience and medium`,
             `Performance degrades with millions of points`
-          ],
-          pseudoCode: `When to Use Plotly
-
-1. Plotly for interactive exploration
-2. Matplotlib for static publication figures
-3. Consider audience and medium
-4. Performance degrades with millions of points`
+          ]
         }
       ],
       exercises: [
@@ -537,13 +465,7 @@ print(fig.layout.title.text)`,
             `Bar charts start at zero`,
             `Avoid pie charts for many categories`,
             `Small multiples for comparison across groups`
-          ],
-          pseudoCode: `Choosing the Right Chart
-
-1. Match chart type to analytical question
-2. Bar charts start at zero
-3. Avoid pie charts for many categories
-4. Small multiples for comparison across groups`
+          ]
         },
         {
           id: `color`,
@@ -559,13 +481,7 @@ print(fig.layout.title.text)`,
             `Never use color as only differentiator`,
             `Consistent color mapping across charts`,
             `Highlight key data with accent color`
-          ],
-          pseudoCode: `Color Theory
-
-1. Colorblind-safe: viridis, ColorBrewer
-2. Never use color as only differentiator
-3. Consistent color mapping across charts
-4. Highlight key data with accent color`
+          ]
         },
         {
           id: `storytelling`,
@@ -581,13 +497,7 @@ print(fig.layout.title.text)`,
             `Remove gridlines and borders if not needed`,
             `Direct labeling beats legends`,
             `Guide viewer eye with annotations`
-          ],
-          pseudoCode: `Data Storytelling
-
-1. Title states the insight not the data
-2. Remove gridlines and borders if not needed
-3. Direct labeling beats legends
-4. Guide viewer eye with annotations`
+          ]
         },
         {
           id: `eda-workflow`,
@@ -603,13 +513,7 @@ print(fig.layout.title.text)`,
             `Check class balance in classification`,
             `Visualize residuals after modeling`,
             `Document findings for reproducibility`
-          ],
-          pseudoCode: `EDA Visualization Workflow
-
-1. pairplot for multivariate overview
-2. Check class balance in classification
-3. Visualize residuals after modeling
-4. Document findings for reproducibility`
+          ]
         }
       ],
       exercises: [
@@ -686,13 +590,7 @@ print(len(eda_checklist))`,
             `folium for interactive Leaflet maps`,
             `Projections matter for accurate area comparison`,
             `Geopy for geocoding addresses`
-          ],
-          pseudoCode: `Geospatial Visualization
-
-1. GeoPandas for shapefile/GeoJSON data
-2. folium for interactive Leaflet maps
-3. Projections matter for accurate area comparison
-4. Geopy for geocoding addresses`
+          ]
         },
         {
           id: `network`,
@@ -708,13 +606,7 @@ print(len(eda_checklist))`,
             `Layout algorithms affect readability`,
             `Node size/color encode attributes`,
             `Useful for social and knowledge graphs`
-          ],
-          pseudoCode: `Network Graphs
-
-1. networkx for graph algorithms
-2. Layout algorithms affect readability
-3. Node size/color encode attributes
-4. Useful for social and knowledge graphs`
+          ]
         },
         {
           id: `ml-viz`,
@@ -738,13 +630,7 @@ print(confusion_matrix(y_true, y_pred))`,
             `ROC-AUC visualizes threshold tradeoffs`,
             `Learning curves diagnose bias/variance`,
             `SHAP summary plots for feature importance`
-          ],
-          pseudoCode: `ML-Specific Visualizations
-
-1. Confusion matrix for classification errors
-2. ROC-AUC visualizes threshold tradeoffs
-3. Learning curves diagnose bias/variance
-4. SHAP summary plots for feature importance`
+          ]
         },
         {
           id: `tools`,
@@ -760,13 +646,7 @@ print(confusion_matrix(y_true, y_pred))`,
             `Altair declarative grammar of graphics`,
             `plotnine familiar to R users`,
             `Tool choice depends on data scale and output medium`
-          ],
-          pseudoCode: `Specialized Tools
-
-1. datashader aggregates millions of points
-2. Altair declarative grammar of graphics
-3. plotnine familiar to R users
-4. Tool choice depends on data scale and output medium`
+          ]
         }
       ],
       exercises: [

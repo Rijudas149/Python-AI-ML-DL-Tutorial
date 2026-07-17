@@ -5,7 +5,7 @@
  * - Generate pseudoCode from section-specific formulas / keyPoints only
  */
 
-import { sanitizeDiagramText, isDecorativeDiagramLine } from './diagram-sanitize.mjs';
+import { sanitizeDiagramText } from './diagram-sanitize.mjs';
 
 const ROBOTIC_BLOCK_PATTERNS = [
   /\n\n\*\*Why this matters:\*\*[\s\S]*?(?=\n\n\*\*|$)/gi,
@@ -26,6 +26,9 @@ const ROBOTIC_BLOCK_PATTERNS = [
   /\n\n\*\*[^*]+\*\* in the context of \*\*[^*]+\*\*:[^\n]*(?:\n(?!#)[^\n]*)*/gi,
   /\n\nTreat this as a loop, not a straight line:[^\n]*/gi,
   /\n\n\*\*Step-by-step workflow:\*\*\s*\n\n/gi,
+  /\n\n\*\*Applying [^*]+:\*\*[\s\S]*?Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project\./gi,
+  /\n\nWhen studying "[^"]+", connect theory to practice by predicting outputs before running examples, then explaining discrepancies\. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests\./gi,
+  /\n\nStrong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project\./gi,
 ];
 
 const ENRICHMENT_SECTION_IDS = /-(deep-theory|patterns|pitfalls|real-world)$/;
@@ -114,34 +117,15 @@ function formatContent(section, topic) {
   return splitDenseParagraphs(result);
 }
 
-function generatePseudoCode(section, topic) {
+function generatePseudoCode(section) {
   if (section.pseudoCode?.trim()) return section.pseudoCode;
 
+  if (!section.formulas?.length) return undefined;
+
   const lines = [`${section.title}`, ''];
-
-  if (section.formulas?.length) {
-    for (const formula of section.formulas.slice(0, 8)) {
-      lines.push(formula);
-    }
-    lines.push('');
+  for (const formula of section.formulas.slice(0, 8)) {
+    lines.push(formula);
   }
-
-  if (section.diagram?.trim()) {
-    for (const row of section.diagram
-      .split('\n')
-      .filter((l) => l.trim() && !isDecorativeDiagramLine(l))
-      .slice(0, 8)) {
-      lines.push(row.trim());
-    }
-    lines.push('');
-  }
-
-  if (section.keyPoints?.length) {
-    section.keyPoints.slice(0, 6).forEach((point, index) => {
-      lines.push(`${index + 1}. ${point}`);
-    });
-  }
-
   return lines.join('\n').trim();
 }
 
@@ -151,10 +135,13 @@ function generatePseudoCode(section, topic) {
  */
 export function applySqlTeacherStyle(section, topic) {
   const diagram = section.diagram ? sanitizeDiagramText(section.diagram) : section.diagram;
-  return {
+  const pseudoCode = generatePseudoCode({ ...section, diagram });
+  const next = {
     ...section,
     diagram,
     content: formatContent(section, topic),
-    pseudoCode: generatePseudoCode({ ...section, diagram }, topic),
   };
+  if (pseudoCode) next.pseudoCode = pseudoCode;
+  else delete next.pseudoCode;
+  return next;
 }

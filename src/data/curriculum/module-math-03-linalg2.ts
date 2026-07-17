@@ -47,19 +47,7 @@ det(I) = 1
 det(AB) = det(A)det(B)
 2×2: det = ad − bc
 det(A) = 0 ⇔ A singular
-det(Aᵀ) = det(A)
-
-2×2 area scaling:
-unit square ──A──→ parallelogram
-area × |det(A)|
-det>0: orientation preserved
-det<0: reflection
-
-1. Determinant = volume scale factor
-2. Zero det → not invertible
-3. Product rule for det of product
-4. Sign indicates orientation flip
-5. Used in Jacobian determinants`
+det(Aᵀ) = det(A)`
         },
         {
           id: `det-geom`,
@@ -98,17 +86,7 @@ print("area:", abs(np.linalg.det(np.column_stack([v1,v2]))))`,
 3D: |det| = volume
 det=0 → dimension collapse
 sign(det) = orientation
-|det J| in change of variables
-
-columns of A span shape:
-v2
-│╱ area = |det A|
-
-1. Columns as spanning vectors
-2. Zero volume → dependent columns
-3. Jacobian det for coordinate change
-4. Sign matters in oriented integrals
-5. Covariance det in MVN density`
+|det J| in change of variables`
         },
         {
           id: `det-prop`,
@@ -148,19 +126,7 @@ Triangular: det = ∏ diagonal
 Row swap → multiply det by −1
 det(A) = ∏ U_ii from LU
 log det(A) for PD via Cholesky
-slogdet for numerical stability
-
-Upper triangular U:
-[ * * * ]
-[ 0 * * ]
-[ 0 0 * ]
-det = u11 · u22 · u33
-
-1. Triangular det is easy product
-2. LU factorization for large n
-3. log det avoids overflow
-4. slogdet stable in numpy
-5. Cholesky for SPD matrices`
+slogdet for numerical stability`
         },
         {
           id: `det-ml`,
@@ -200,18 +166,7 @@ MVN norm: (2π)^(−n/2) |Σ|^(−1/2)
 det(Σ) = ∏ λ_i
 Flow: log p(z) = log p(f(x)) + log|det J|
 Regularize: Σ + λI
-det=0 → singular covariance
-
-Σ eigenvalues λ1,λ2:
-det(Σ) = λ1 · λ2
-one λ→0: flat direction
-det→0: no density in that dir
-
-1. MVN needs positive det Σ
-2. Eigenvalue product = determinant
-3. Flows use Jacobian determinant
-4. Ridge adds to diagonal for stability
-5. Singular cov → PCA rank drop`
+det=0 → singular covariance`
         }
       ],
       exercises: [
@@ -312,18 +267,7 @@ AA⁻¹ = A⁻¹A = I
 (AB)⁻¹ = B⁻¹A⁻¹
 (Aᵀ)⁻¹ = (A⁻¹)ᵀ
 A⁻¹ exists ⇔ det(A) ≠ 0
-Prefer solve(A,b) over inv(A)@b
-
-A ──→ y = Ax
-└── A⁻¹ ──┘
-A⁻¹ undoes A
-singular A: no inverse
-
-1. Inverse unique if exists
-2. Reverse order for product inverse
-3. Never invert ill-conditioned A
-4. Use solve for Ax=b
-5. Orthogonal: inverse = transpose`
+Prefer solve(A,b) over inv(A)@b`
         },
         {
           id: `inv-2x2`,
@@ -363,17 +307,7 @@ A⁻¹ = (1/det) [[d,−b], [−c,a]]
 det = ad − bc
 Singular when ad = bc
 adj(A)ᵀ / det(A)
-Large entries → ill-conditioned
-
-[[a b]⁻¹  =  1/(ad-bc) [[ d -b]
-[c d]]                    [-c  a]]
-swap a,d; negate b,c; divide
-
-1. Memorize 2×2 formula for speed
-2. Determinant in denominator critical
-3. Small det → unstable inverse
-4. Cofactor method generalizes
-5. Check condition number`
+Large entries → ill-conditioned`
         },
         {
           id: `inv-pinv`,
@@ -411,18 +345,7 @@ A⁺ via SVD: V Σ⁺ Uᵀ
 Least squares: x = A⁺b
 Minimum norm among LS solutions
 rank(A) = # nonzero σ
-pinv handles rectangular A
-
-SVD: A = U Σ Vᵀ
-invert nonzero σ only
-zero σ → 0 in Σ⁺
-robust for rank-deficient
-
-1. SVD basis for pseudo-inverse
-2. Works for non-square matrices
-3. Minimum norm solution
-4. Stable vs normal equations
-5. Used in lstsq implementations`
+pinv handles rectangular A`
         },
         {
           id: `inv-ml`,
@@ -463,18 +386,7 @@ OLS: β = (XᵀX)⁻¹ Xᵀy
 Ridge: (XᵀX + λI)⁻¹ Xᵀy
 Newton: Δθ = H⁻¹ ∇L
 Use solve not inv
-Woodbury for rank-k updates
-
-Normal equations path:
-XᵀX β = Xᵀy
-solve instead of inv(XᵀX)
-λI ridge stabilizes diagonal
-
-1. OLS needs full rank X
-2. Ridge guarantees invertibility
-3. Newton uses Hessian inverse
-4. solve() numerically superior
-5. Regularize ill-conditioned problems`
+Woodbury for rank-k updates`
         }
       ],
       exercises: [
@@ -575,19 +487,7 @@ Av = λv
 det(A − λI) = 0
 ∑ λ_i = tr(A)
 ∏ λ_i = det(A)
-Symmetric A → real λ, orthogonal v
-
-Av stretches v by λ
-v ──A──→ λv (same direction)
-λ>1: expand
-0<λ<1: shrink
-λ<0: flip + scale
-
-1. Eigenvectors unchanged in direction
-2. Characteristic polynomial for λ
-3. Symmetric case always real
-4. Trace and det from eigenvalues
-5. Stability from |λ| in dynamics`
+Symmetric A → real λ, orthogonal v`
         },
         {
           id: `eig-diag`,
@@ -626,18 +526,7 @@ A = V Λ V⁻¹
 Λ = diag(λ₁,...,λₙ)
 Symmetric: A = Q Λ Qᵀ
 A^k = V Λ^k V⁻¹
-Similar matrices: same eigenvalues
-
-A = V Λ V⁻¹
-V: eigenvector basis
-Λ: scale in that basis
-compute A^100 via Λ^100
-
-1. Diagonalization simplifies powers
-2. Orthogonal Q for symmetric A
-3. Independent eigenvectors required
-4. PCA = eigen decomposition Σ
-5. e^A via diagonal Λ`
+Similar matrices: same eigenvalues`
         },
         {
           id: `eig-pca`,
@@ -679,19 +568,7 @@ print("λ desc:", np.sort(w)[::-1])`,
 λ_i = variance along PC i
 Explained var: λ_i / ∑λ_j
 Keep top-k eigenvectors
-eigh for symmetric Σ
-
-PCA axes:
-max variance → PC1 (λ1)
-↗
-PC2 ↗  (λ2 smaller)
-project onto top k PCs
-
-1. Largest λ = most variance direction
-2. eigh preferred for covariance
-3. Whitening divides by √λ
-4. Zero λ = constant/redundant feature
-5. Explained ratio guides k choice`
+eigh for symmetric Σ`
         },
         {
           id: `eig-markov`,
@@ -730,19 +607,7 @@ P 1 = 1 for stochastic P
 π: Pᵀπ = π (stationary)
 Power method → dominant eigenvector
 PageRank = eigenvector of link matrix
-Spectral clustering uses Laplacian eigenvectors
-
-Power iteration:
-v₀ random
-v₁ = P v₀ / ||P v₀||
-v₂ = P v₁ / ||P v₁||
-→ stationary distribution
-
-1. λ=1 for stochastic matrices
-2. Power method simple but slow
-3. Second λ controls mixing
-4. Graph Laplacian eigenvectors cluster
-5. Dominant mode = long-run behavior`
+Spectral clustering uses Laplacian eigenvectors`
         }
       ],
       exercises: [
@@ -845,18 +710,7 @@ A = U Σ Vᵀ
 σ₁ ≥ σ₂ ≥ ... ≥ 0
 rank(A) = # nonzero σ
 σ_i(A) = √λ_i(AᵀA)
-U,V orthogonal
-
-A = U Σ Vᵀ
-m×m   m×n   n×n
-rot   scale rot
-σ1 ≥ σ2 ≥ ... ≥ 0
-
-1. SVD always exists
-2. Singular values non-negative
-3. Rank from nonzero σ count
-4. Related to AᵀA eigenvalues
-5. Orthogonal U,V rotate space`
+U,V orthogonal`
         },
         {
           id: `svd-lowrank`,
@@ -899,20 +753,7 @@ A_k = ∑_{i=1}^k σ_i u_i v_iᵀ
 min ||A − A_k||_F over rank k
 Energy: ∑_{i=1}^k σ_i² / ∑ σ_i²
 Truncation = denoising
-Matrix factorization ≈ low-rank SVD
-
-σ1 ████████ large
-σ2 ████
-σ3 ██
-σ4 █ noise
-σ5 ░ truncate here
-keep top k for compression
-
-1. Best low-rank in Frobenius norm
-2. Scree plot guides k
-3. Energy fraction from σ²
-4. Denoise by truncating tail
-5. Netflix-style factorization`
+Matrix factorization ≈ low-rank SVD`
         },
         {
           id: `svd-pinv`,
@@ -951,18 +792,7 @@ A⁺ = V Σ⁺ Uᵀ
 κ(A) = σ_max / σ_min
 Tiny σ → ill-conditioned
 lstsq uses SVD
-Truncate σ for regularization
-
-σ spectrum:
-σ_max ─────────────
-σ_min ─ (small gap → large κ)
-κ large: sensitive to noise
-
-1. Condition number from σ ratio
-2. Pinv inverts only large σ
-3. Truncate = regularized inverse
-4. Prefer lstsq over normal eq
-5. SVD reveals numerical rank`
+Truncate σ for regularization`
         },
         {
           id: `svd-ml`,
@@ -1001,18 +831,7 @@ PCA via SVD of centered X
 TruncatedSVD in sklearn
 Word embeddings from term-doc SVD
 Weight compression via SVD layers
-Randomized SVD for scale
-
-Rating matrix R ≈ U Vᵀ
-users × items
-low rank captures taste
-missing entries filled by UVᵀ
-
-1. SVD faster than XᵀX for tall X
-2. TruncatedSVD for dimension reduction
-3. Matrix completion uses low rank
-4. Compress neural weights with SVD
-5. Randomized algorithms for big data`
+Randomized SVD for scale`
         }
       ],
       exercises: [
@@ -1115,17 +934,7 @@ max wᵀΣw s.t. ||w||=1
 Solution w = eigenvector of Σ
 λ = variance along PC
 PCs orthogonal for symmetric Σ
-Equivalent: SVD of centered X
-
-scatter cloud:
-↗ PC1 (max spread)
-↗ PC2
-
-1. First PC = max variance direction
-2. Covariance eigenvectors = PCs
-3. Orthogonal PCs decorrelate
-4. Unsupervised—no labels
-5. SVD on X avoids Σ explicitly`
+Equivalent: SVD of centered X`
         },
         {
           id: `pca-proj`,
@@ -1166,17 +975,7 @@ z = W_kᵀ x (projection)
 x̂ = W_k W_kᵀ x (reconstruction)
 Error = ∑_{i>k} λ_i
 Explained var = λ_i / ∑λ_j
-Whitening: divide by √λ_i
-
-x ──W_kᵀ──→ z (k-dim)
-x̂ ←─W_k─── z
-info lost = tail λ
-
-1. Center data first
-2. Lower k → more compression
-3. Reconstruction error measurable
-4. Whitening for ML inputs
-5. Loadings show feature weights`
+Whitening: divide by √λ_i`
         },
         {
           id: `pca-kernel`,
@@ -1218,17 +1017,7 @@ K_ij = K(x_i, x_j)
 K̃ = H K H (centered kernel)
 Eigen K̃ → nonlinear PCs
 Implicit φ via kernel trick
-O(n³) eigen problem
-
-Linear PCA: straight projection
-Kernel PCA: curved manifold
-·    ·  ← bend into φ space
-
-1. Kernel avoids explicit φ
-2. Center kernel matrix
-3. Nonlinear structure capture
-4. Scales poorly with n
-5. Related to RBF embeddings`
+O(n³) eigen problem`
         },
         {
           id: `pca-practice`,
@@ -1269,19 +1058,7 @@ Standardize if scales differ
 Correlation PCA after z-score
 IncrementalPCA for big data
 95% variance rule for k
-Loadings interpret feature contribution
-
-unscaled trap:
-feature A: 0-1
-feature B: 0-1000
-PC1 ≈ B only!
-→ standardize first
-
-1. Always consider scaling
-2. Loadings aid interpretation
-3. Incremental for memory limits
-4. 95% rule common default
-5. PCA linear—nonlinear needs kernel`
+Loadings interpret feature contribution`
         }
       ],
       exercises: [

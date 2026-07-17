@@ -35,13 +35,7 @@ print(add(2, 3))`,
             `@syntax is syntactic sugar`,
             `wrapper must use *args, **kwargs`,
             `functools.wraps preserves metadata`
-          ],
-          pseudoCode: `Function Decorators
-
-1. Decorators wrap functions transparently
-2. @syntax is syntactic sugar
-3. wrapper must use *args, **kwargs
-4. functools.wraps preserves metadata`
+          ]
         },
         {
           id: `functools-wraps`,
@@ -66,13 +60,7 @@ print(fib(30))`,
             `wraps preserves function identity`,
             `partial creates specialized functions`,
             `Decorators with args need decorator factory`
-          ],
-          pseudoCode: `functools.wraps & functools
-
-1. lru_cache memoizes function results
-2. wraps preserves function identity
-3. partial creates specialized functions
-4. Decorators with args need decorator factory`
+          ]
         },
         {
           id: `param-decorator`,
@@ -108,13 +96,7 @@ Hello`,
             `Middle function receives wrapped function`,
             `Inner function receives call args`,
             `Flask/FastAPI routes use parameterized decorators`
-          ],
-          pseudoCode: `Decorators with Parameters
-
-1. Outer function receives decorator args
-2. Middle function receives wrapped function
-3. Inner function receives call args
-4. Flask/FastAPI routes use parameterized decorators`
+          ]
         },
         {
           id: `class-decorator`,
@@ -130,13 +112,7 @@ Hello`,
             `dataclass is a class decorator`,
             `Metaclasses customize class creation`,
             `Use decorators before metaclasses`
-          ],
-          pseudoCode: `Class Decorators
-
-1. Class decorators modify or register classes
-2. dataclass is a class decorator
-3. Metaclasses customize class creation
-4. Use decorators before metaclasses`
+          ]
         }
       ],
       exercises: [
@@ -243,13 +219,7 @@ for x in count_up(5):
             `State preserved between yields`,
             `Generators are single-pass iterators`,
             `Use for infinite sequences and pipelines`
-          ],
-          pseudoCode: `Generator Functions
-
-1. yield transforms function to generator
-2. State preserved between yields
-3. Generators are single-pass iterators
-4. Use for infinite sequences and pipelines`
+          ]
         },
         {
           id: `yield-from`,
@@ -271,13 +241,7 @@ print(list(chain([1,2], [3,4])))`,
             `send() enables two-way communication`,
             `throw() and close() control generator lifecycle`,
             `Foundation for async/await`
-          ],
-          pseudoCode: `yield from & send
-
-1. yield from simplifies generator delegation
-2. send() enables two-way communication
-3. throw() and close() control generator lifecycle
-4. Foundation for async/await`
+          ]
         },
         {
           id: `gen-expr`,
@@ -304,13 +268,7 @@ print(list(evens(read_nums())))`,
             `Lazy evaluation — no intermediate lists`,
             `Pattern used in ETL and streaming ML`,
             `itertools.chain and tee assist pipelines`
-          ],
-          pseudoCode: `Generator Pipelines
-
-1. Pipeline stages are composable generators
-2. Lazy evaluation — no intermediate lists
-3. Pattern used in ETL and streaming ML
-4. itertools.chain and tee assist pipelines`
+          ]
         },
         {
           id: `infinite`,
@@ -326,13 +284,7 @@ print(list(evens(read_nums())))`,
             `islice limits consumption`,
             `cycle and repeat from itertools`,
             `Careful with memory on accidental materialization`
-          ],
-          pseudoCode: `Infinite Generators
-
-1. Infinite generators model streams
-2. islice limits consumption
-3. cycle and repeat from itertools
-4. Careful with memory on accidental materialization`
+          ]
         }
       ],
       exercises: [
@@ -430,13 +382,7 @@ with Timer():
             `__exit__ receives exception info`,
             `Return True from __exit__ to suppress exception`,
             `File handling primary use case`
-          ],
-          pseudoCode: `The with Statement
-
-1. with guarantees cleanup even on exceptions
-2. __exit__ receives exception info
-3. Return True from __exit__ to suppress exception
-4. File handling primary use case`
+          ]
         },
         {
           id: `contextlib`,
@@ -465,13 +411,7 @@ content
             `yield separates enter and exit logic`,
             `ExitStack manages dynamic context count`,
             `suppress catches specific exceptions`
-          ],
-          pseudoCode: `contextlib Utilities
-
-1. contextmanager decorator simplifies creation
-2. yield separates enter and exit logic
-3. ExitStack manages dynamic context count
-4. suppress catches specific exceptions`
+          ]
         },
         {
           id: `file-context`,
@@ -492,13 +432,7 @@ print(len(lines), lines[0])`,
             `Specify encoding explicitly`,
             `Use json.load inside with block`,
             `Pathlib improves path handling`
-          ],
-          pseudoCode: `File Handling Pattern
-
-1. with open is the only correct file pattern
-2. Specify encoding explicitly
-3. Use json.load inside with block
-4. Pathlib improves path handling`
+          ]
         },
         {
           id: `async-context`,
@@ -514,13 +448,7 @@ print(len(lines), lines[0])`,
             `@asynccontextmanager decorator available`,
             `Used in FastAPI lifespan events`,
             `Ensure proper await in async contexts`
-          ],
-          pseudoCode: `Async Context Managers
-
-1. async with for asyncio resources
-2. @asynccontextmanager decorator available
-3. Used in FastAPI lifespan events
-4. Ensure proper await in async contexts`
+          ]
         }
       ],
       exercises: [
@@ -615,13 +543,7 @@ print(process([1, 5, 3, 9, 2]))`,
             `mypy/pyright check statically`,
             `Use from __future__ import annotations for forward refs`,
             `Gradual typing — add incrementally`
-          ],
-          pseudoCode: `Type Annotations
-
-1. Type hints are not enforced at runtime
-2. mypy/pyright check statically
-3. Use from __future__ import annotations for forward refs
-4. Gradual typing — add incrementally`
+          ]
         },
         {
           id: `dataclass`,
@@ -647,13 +569,7 @@ print(ModelConfig("mlp"))`,
             `frozen=True makes immutable`,
             `asdict() and astuple() for conversion`,
             `Preferred over namedtuple for mutable data`
-          ],
-          pseudoCode: `dataclasses Module
-
-1. default_factory for mutable defaults
-2. frozen=True makes immutable
-3. asdict() and astuple() for conversion
-4. Preferred over namedtuple for mutable data`
+          ]
         },
         {
           id: `pydantic`,
@@ -669,13 +585,7 @@ print(ModelConfig("mlp"))`,
             `Automatic JSON serialization`,
             `Used in FastAPI request/response models`,
             `Validate ML experiment configs with Pydantic`
-          ],
-          pseudoCode: `Pydantic & Validation
-
-1. Pydantic v2 uses Rust core — very fast
-2. Automatic JSON serialization
-3. Used in FastAPI request/response models
-4. Validate ML experiment configs with Pydantic`
+          ]
         },
         {
           id: `typing-advanced`,
@@ -691,13 +601,7 @@ print(ModelConfig("mlp"))`,
             `Literal for fixed value sets`,
             `Callable[[int, str], bool] for function types`,
             `Essential for large ML codebases`
-          ],
-          pseudoCode: `Advanced Typing
-
-1. TypedDict for structured dicts
-2. Literal for fixed value sets
-3. Callable[[int, str], bool] for function types
-4. Essential for large ML codebases`
+          ]
         }
       ],
       exercises: [
@@ -788,13 +692,7 @@ print("Organize code into focused modules")`,
             `Avoid import * — pollutes namespace`,
             `Use absolute imports in packages`,
             `__all__ controls from module import *`
-          ],
-          pseudoCode: `Import System
-
-1. One module per logical unit
-2. Avoid import * — pollutes namespace
-3. Use absolute imports in packages
-4. __all__ controls from module import *`
+          ]
         },
         {
           id: `packages`,
@@ -818,13 +716,7 @@ Use pyproject.toml for modern project config.
             `pyproject.toml replaces setup.py`,
             `__init__.py can expose public API`,
             `Namespace packages for large projects`
-          ],
-          pseudoCode: `Package Structure
-
-1. src/ layout prevents import confusion
-2. pyproject.toml replaces setup.py
-3. __init__.py can expose public API
-4. Namespace packages for large projects`
+          ]
         },
         {
           id: `publishing`,
@@ -840,13 +732,7 @@ Use pyproject.toml for modern project config.
             `README and LICENSE required for PyPI`,
             `Test with TestPyPI first`,
             `Pin dependencies in published packages`
-          ],
-          pseudoCode: `Publishing Packages
-
-1. Follow semantic versioning
-2. README and LICENSE required for PyPI
-3. Test with TestPyPI first
-4. Pin dependencies in published packages`
+          ]
         },
         {
           id: `stdlib`,
@@ -862,13 +748,7 @@ Use pyproject.toml for modern project config.
             `pathlib over os.path`,
             `logging over print for production`,
             `argparse or click for CLI tools`
-          ],
-          pseudoCode: `Essential Standard Library
-
-1. Know stdlib before adding dependencies
-2. pathlib over os.path
-3. logging over print for production
-4. argparse or click for CLI tools`
+          ]
         }
       ],
       exercises: [

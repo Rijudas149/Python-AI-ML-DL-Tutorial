@@ -30,13 +30,7 @@ print(out.shape)`,
             `stride reduces spatial size`,
             `Channels = feature maps (depth)`,
             `Parameter sharing: same filter across spatial locations`
-          ],
-          pseudoCode: `Convolution Operation
-
-1. padding preserves spatial dimensions
-2. stride reduces spatial size
-3. Channels = feature maps (depth)
-4. Parameter sharing: same filter across spatial locations`
+          ]
         },
         {
           id: `pooling`,
@@ -59,13 +53,7 @@ print(pool(x).shape)`,
             `Max pooling most common`,
             `Global Average Pooling replaces flatten + FC`,
             `AdaptiveAvgPool2d for variable input sizes`
-          ],
-          pseudoCode: `Pooling Layers
-
-1. Pooling reduces computation and overfitting
-2. Max pooling most common
-3. Global Average Pooling replaces flatten + FC
-4. AdaptiveAvgPool2d for variable input sizes`
+          ]
         },
         {
           id: `receptive`,
@@ -81,13 +69,7 @@ print(pool(x).shape)`,
             `Dilated convolutions expand field without pooling`,
             `Large receptive field needed for global context`,
             `Feature hierarchy: edges → parts → objects`
-          ],
-          pseudoCode: `Receptive Field
-
-1. Stacking conv layers expands receptive field
-2. Dilated convolutions expand field without pooling
-3. Large receptive field needed for global context
-4. Feature hierarchy: edges → parts → objects`
+          ]
         },
         {
           id: `cnn-arch`,
@@ -116,13 +98,7 @@ class SimpleCNN(nn.Module):
             `Spatial dimensions shrink with pooling`,
             `BatchNorm after conv stabilizes training`,
             `Data augmentation critical for small datasets`
-          ],
-          pseudoCode: `Basic CNN Architecture
-
-1. Feature extractor + classifier pattern
-2. Spatial dimensions shrink with pooling
-3. BatchNorm after conv stabilizes training
-4. Data augmentation critical for small datasets`
+          ]
         }
       ],
       exercises: [
@@ -201,13 +177,7 @@ print(nn.MaxPool2d(2)(torch.randn(1,16,32,32)).shape)`,
             `Simplicity aids understanding and transfer`,
             `Very parameter-heavy in FC layers`,
             `Superseded by ResNet but good baseline`
-          ],
-          pseudoCode: `VGG
-
-1. 3x3 conv stacks replace large filters
-2. Simplicity aids understanding and transfer
-3. Very parameter-heavy in FC layers
-4. Superseded by ResNet but good baseline`
+          ]
         },
         {
           id: `resnet`,
@@ -237,13 +207,7 @@ print(ResBlock(64)(torch.randn(1, 64, 32, 32)).shape)`,
             `1x1 conv projection when dimensions differ`,
             `ResNet-50/101 standard for transfer learning`,
             `BatchNorm before activation in modern variants`
-          ],
-          pseudoCode: `ResNet & Skip Connections
-
-1. Identity skip when dimensions match
-2. 1x1 conv projection when dimensions differ
-3. ResNet-50/101 standard for transfer learning
-4. BatchNorm before activation in modern variants`
+          ]
         },
         {
           id: `modern`,
@@ -259,13 +223,7 @@ print(ResBlock(64)(torch.randn(1, 64, 32, 32)).shape)`,
             `EfficientNet-B0 to B7 for different compute budgets`,
             `ConvNeXt competitive with vision transformers`,
             `Architecture search automates design`
-          ],
-          pseudoCode: `EfficientNet, ConvNeXt
-
-1. Compound scaling balances model dimensions
-2. EfficientNet-B0 to B7 for different compute budgets
-3. ConvNeXt competitive with vision transformers
-4. Architecture search automates design`
+          ]
         },
         {
           id: `torchvision`,
@@ -286,13 +244,7 @@ print(model.fc.in_features)  # 512 for resnet18`,
             `Replace final FC for your num_classes`,
             `Feature extraction: remove classifier head`,
             `Fine-tune all or freeze early layers`
-          ],
-          pseudoCode: `torchvision.models
-
-1. Pretrained weights from ImageNet
-2. Replace final FC for your num_classes
-3. Feature extraction: remove classifier head
-4. Fine-tune all or freeze early layers`
+          ]
         }
       ],
       exercises: [
@@ -380,13 +332,7 @@ print(model.fc.weight.requires_grad)`,
             `Fine-tune later layers with small LR`,
             `Pretrain on similar domain when possible`,
             `Replace classifier head always`
-          ],
-          pseudoCode: `Transfer Learning Strategies
-
-1. Freeze backbone when data is very small
-2. Fine-tune later layers with small LR
-3. Pretrain on similar domain when possible
-4. Replace classifier head always`
+          ]
         },
         {
           id: `finetune`,
@@ -402,13 +348,7 @@ print(model.fc.weight.requires_grad)`,
             `Unfreeze gradually from top to bottom`,
             `Strong augmentation when fine-tuning`,
             `Early stopping essential — overfits quickly`
-          ],
-          pseudoCode: `Fine-Tuning Best Practices
-
-1. LR for backbone << LR for head (10-100x)
-2. Unfreeze gradually from top to bottom
-3. Strong augmentation when fine-tuning
-4. Early stopping essential — overfits quickly`
+          ]
         },
         {
           id: `domain`,
@@ -424,13 +364,7 @@ print(model.fc.weight.requires_grad)`,
             `Self-supervised pretraining on target domain helps`,
             `SimCLR, MoCo for unsupervised pretraining`,
             `Foundation models reduce need for task-specific pretraining`
-          ],
-          pseudoCode: `Domain Adaptation
-
-1. Large domain gap reduces transfer benefit
-2. Self-supervised pretraining on target domain helps
-3. SimCLR, MoCo for unsupervised pretraining
-4. Foundation models reduce need for task-specific pretraining`
+          ]
         },
         {
           id: `hub`,
@@ -446,13 +380,7 @@ print(model.fc.weight.requires_grad)`,
             `timm.create_model with pretrained=True`,
             `Easy model ensembling with timm`,
             `Check license for commercial pretrained weights`
-          ],
-          pseudoCode: `PyTorch Hub & timm
-
-1. timm unified API for many architectures
-2. timm.create_model with pretrained=True
-3. Easy model ensembling with timm
-4. Check license for commercial pretrained weights`
+          ]
         }
       ],
       exercises: [
@@ -544,13 +472,7 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
             `mAP averaged over classes and IoU thresholds`,
             `Precision-recall tradeoff at confidence threshold`,
             `COCO dataset standard benchmark`
-          ],
-          pseudoCode: `Detection Metrics
-
-1. IoU > 0.5 typically considered match
-2. mAP averaged over classes and IoU thresholds
-3. Precision-recall tradeoff at confidence threshold
-4. COCO dataset standard benchmark`
+          ]
         },
         {
           id: `rcnn`,
@@ -566,13 +488,7 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
             `Faster R-CNN shares backbone with RPN`,
             `Anchor boxes at multiple scales/aspect ratios`,
             `Accurate but slower than one-stage`
-          ],
-          pseudoCode: `R-CNN Family
-
-1. Two-stage: propose then classify
-2. Faster R-CNN shares backbone with RPN
-3. Anchor boxes at multiple scales/aspect ratios
-4. Accurate but slower than one-stage`
+          ]
         },
         {
           id: `yolo`,
@@ -588,13 +504,7 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
             `YOLO v8/v9/v10 state-of-the-art speed/accuracy`,
             `Real-time on edge devices possible`,
             `Trade accuracy for speed vs two-stage`
-          ],
-          pseudoCode: `YOLO & One-Stage Detectors
-
-1. One-stage: direct bounding box prediction
-2. YOLO v8/v9/v10 state-of-the-art speed/accuracy
-3. Real-time on edge devices possible
-4. Trade accuracy for speed vs two-stage`
+          ]
         },
         {
           id: `tools`,
@@ -610,13 +520,7 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
             `Ultralytics YOLO easy API for training/inference`,
             `Export to ONNX/TensorRT for deployment`,
             `Custom dataset in COCO JSON format`
-          ],
-          pseudoCode: `Detection Tools
-
-1. Detectron2 research platform from Meta
-2. Ultralytics YOLO easy API for training/inference
-3. Export to ONNX/TensorRT for deployment
-4. Custom dataset in COCO JSON format`
+          ]
         }
       ],
       exercises: [
@@ -695,13 +599,7 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
             `Encoder downsamples, decoder upsamples`,
             `Dice loss common for imbalanced segmentation`,
             `Medical imaging primary application`
-          ],
-          pseudoCode: `Semantic Segmentation
-
-1. U-Net skip connections preserve spatial detail
-2. Encoder downsamples, decoder upsamples
-3. Dice loss common for imbalanced segmentation
-4. Medical imaging primary application`
+          ]
         },
         {
           id: `instance`,
@@ -717,13 +615,7 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
             `Mask R-CNN adds mask branch to Faster R-CNN`,
             `Each instance gets unique mask`,
             `Panoptic segmentation: semantic + instance`
-          ],
-          pseudoCode: `Instance Segmentation
-
-1. Combines detection and segmentation
-2. Mask R-CNN adds mask branch to Faster R-CNN
-3. Each instance gets unique mask
-4. Panoptic segmentation: semantic + instance`
+          ]
         },
         {
           id: `unet`,
@@ -743,13 +635,7 @@ print("Encoder -> Bottleneck -> Decoder + Skips")`,
             `Works well with limited training data`,
             `segmentation_models_pytorch library`,
             `Augment with elastic deformations for medical`
-          ],
-          pseudoCode: `U-Net Architecture
-
-1. Skip connections recover fine spatial details
-2. Works well with limited training data
-3. segmentation_models_pytorch library
-4. Augment with elastic deformations for medical`
+          ]
         },
         {
           id: `metrics-seg`,
@@ -765,13 +651,7 @@ print("Encoder -> Bottleneck -> Decoder + Skips")`,
             `Dice = 2|A∩B|/(|A|+|B|)`,
             `Boundary F1 for precise edge evaluation`,
             `Report per-class metrics not just mean`
-          ],
-          pseudoCode: `Segmentation Metrics
-
-1. Mean IoU averaged over classes
-2. Dice = 2|A∩B|/(|A|+|B|)
-3. Boundary F1 for precise edge evaluation
-4. Report per-class metrics not just mean`
+          ]
         }
       ],
       exercises: [

@@ -30,13 +30,7 @@ print(a.shape, b.shape, c, d)`,
             `shape tuple describes dimensions`,
             `arange for step-based ranges`,
             `linspace for evenly spaced floats`
-          ],
-          pseudoCode: `Creating Arrays
-
-1. ndarray is homogeneous — single dtype
-2. shape tuple describes dimensions
-3. arange for step-based ranges
-4. linspace for evenly spaced floats`
+          ]
         },
         {
           id: `dtype`,
@@ -60,13 +54,7 @@ int64`,
             `float32 saves memory in deep learning`,
             `astype creates copy with new dtype`,
             `dtype mismatch can cause subtle bugs`
-          ],
-          pseudoCode: `Data Types
-
-1. float64 default for floats
-2. float32 saves memory in deep learning
-3. astype creates copy with new dtype
-4. dtype mismatch can cause subtle bugs`
+          ]
         },
         {
           id: `attrs`,
@@ -90,13 +78,7 @@ print(a.reshape(2, 6))`,
             `reshape total elements must match`,
             `-1 in reshape auto-calculates dimension`,
             `ravel() returns flattened view`
-          ],
-          pseudoCode: `Array Attributes
-
-1. size = product of shape dimensions
-2. reshape total elements must match
-3. -1 in reshape auto-calculates dimension
-4. ravel() returns flattened view`
+          ]
         },
         {
           id: `vs-list`,
@@ -112,13 +94,7 @@ print(a.reshape(2, 6))`,
             `10-100x speedup typical for numeric ops`,
             `Memory efficient contiguous storage`,
             `Foundation for pandas, sklearn, pytorch`
-          ],
-          pseudoCode: `Arrays vs Python Lists
-
-1. Vectorization eliminates Python loops
-2. 10-100x speedup typical for numeric ops
-3. Memory efficient contiguous storage
-4. Foundation for pandas, sklearn, pytorch`
+          ]
         }
       ],
       exercises: [
@@ -207,13 +183,7 @@ print(b[:, -1])`,
             `Slicing creates views — beware aliasing`,
             `copy() for independent arrays`,
             `Boolean indexing for filtering`
-          ],
-          pseudoCode: `Array Indexing & Slicing
-
-1. Multidimensional indexing with commas
-2. Slicing creates views — beware aliasing
-3. copy() for independent arrays
-4. Boolean indexing for filtering`
+          ]
         },
         {
           id: `boolean`,
@@ -237,13 +207,7 @@ print(a[idx])`,
             `Fancy indexing with integer arrays`,
             `Boolean indexing returns copy`,
             `np.where for conditional replacement`
-          ],
-          pseudoCode: `Boolean & Fancy Indexing
-
-1. Boolean indexing for conditional selection
-2. Fancy indexing with integer arrays
-3. Boolean indexing returns copy
-4. np.where for conditional replacement`
+          ]
         },
         {
           id: `broadcast`,
@@ -266,13 +230,7 @@ print(a + b)`,
             `Trailing dimensions compared`,
             `Size-1 dimensions stretch`,
             `Essential for ML batch operations`
-          ],
-          pseudoCode: `Broadcasting Rules
-
-1. Broadcasting avoids explicit loops
-2. Trailing dimensions compared
-3. Size-1 dimensions stretch
-4. Essential for ML batch operations`
+          ]
         },
         {
           id: `vectorize`,
@@ -293,13 +251,7 @@ print(a.sum(), a.sum(axis=0), a.mean(axis=1))`,
             `axis=1 collapses columns (row-wise)`,
             `keepdims preserves dimensions`,
             `np.einsum for advanced tensor ops`
-          ],
-          pseudoCode: `Vectorized Operations
-
-1. axis=0 collapses rows (column-wise)
-2. axis=1 collapses columns (row-wise)
-3. keepdims preserves dimensions
-4. np.einsum for advanced tensor ops`
+          ]
         }
       ],
       exercises: [
@@ -386,13 +338,7 @@ print(A @ B)`,
             `Element-wise * is NOT matrix multiply`,
             `np.dot handles various dimensions`,
             `Order matters: AB ≠ BA generally`
-          ],
-          pseudoCode: `Matrix Multiplication
-
-1. @ operator for matrix multiplication
-2. Element-wise * is NOT matrix multiply
-3. np.dot handles various dimensions
-4. Order matters: AB ≠ BA generally`
+          ]
         },
         {
           id: `linalg`,
@@ -415,13 +361,7 @@ print(x)`,
             `SVD fundamental for PCA and ML`,
             `eig for eigenvalue problems`,
             `cond() checks matrix conditioning`
-          ],
-          pseudoCode: `np.linalg Module
-
-1. solve() numerically stable vs inv() @ b
-2. SVD fundamental for PCA and ML
-3. eig for eigenvalue problems
-4. cond() checks matrix conditioning`
+          ]
         },
         {
           id: `norm`,
@@ -444,13 +384,7 @@ print(np.sqrt(v @ v))`,
             `Norms measure vector magnitude`,
             `Distance matrices via broadcasting`,
             `Cosine similarity common in NLP/ML`
-          ],
-          pseudoCode: `Norms & Distances
-
-1. L2 norm is default Euclidean distance
-2. Norms measure vector magnitude
-3. Distance matrices via broadcasting
-4. Cosine similarity common in NLP/ML`
+          ]
         },
         {
           id: `applications`,
@@ -466,13 +400,7 @@ print(np.sqrt(v @ v))`,
             `SVD powers dimensionality reduction`,
             `Normal equations for linear regression`,
             `Use float32 for GPU efficiency`
-          ],
-          pseudoCode: `ML Applications
-
-1. All DL is matrix multiplication at core
-2. SVD powers dimensionality reduction
-3. Normal equations for linear regression
-4. Use float32 for GPU efficiency`
+          ]
         }
       ],
       exercises: [
@@ -562,13 +490,7 @@ print(rng.normal(0, 1, 5))`,
             `default_rng is modern API`,
             `normal(loc, scale, size) for Gaussian`,
             `choice for random sampling`
-          ],
-          pseudoCode: `Random Number Generation
-
-1. Always set seed for reproducibility
-2. default_rng is modern API
-3. normal(loc, scale, size) for Gaussian
-4. choice for random sampling`
+          ]
         },
         {
           id: `stats`,
@@ -591,13 +513,7 @@ print(np.percentile(data, [25, 50, 75]))`,
             `ddof=1 for sample standard deviation`,
             `percentile for quartiles and outliers`,
             `corrcoef for feature correlation analysis`
-          ],
-          pseudoCode: `Statistical Functions
-
-1. std default is population (ddof=0)
-2. ddof=1 for sample standard deviation
-3. percentile for quartiles and outliers
-4. corrcoef for feature correlation analysis`
+          ]
         },
         {
           id: `shuffle`,
@@ -619,13 +535,7 @@ print(perm)`,
             `permutation preserves original`,
             `choice(replace=False) for sampling without replacement`,
             `Bootstrap uses sampling with replacement`
-          ],
-          pseudoCode: `Shuffling & Sampling
-
-1. Shuffle before train/test split
-2. permutation preserves original
-3. choice(replace=False) for sampling without replacement
-4. Bootstrap uses sampling with replacement`
+          ]
         },
         {
           id: `distributions`,
@@ -641,13 +551,7 @@ print(perm)`,
             `Binomial for classification simulation`,
             `Distribution choice affects synthetic data`,
             `Scipy.stats for advanced distributions`
-          ],
-          pseudoCode: `Probability Distributions
-
-1. Normal distribution central to ML
-2. Binomial for classification simulation
-3. Distribution choice affects synthetic data
-4. Scipy.stats for advanced distributions`
+          ]
         }
       ],
       exercises: [
@@ -733,13 +637,7 @@ print(b[:5])`,
             `Ufuncs run at C speed`,
             `Broadcasting eliminates nested loops`,
             `Profile with %timeit before optimizing`
-          ],
-          pseudoCode: `Avoid Python Loops
-
-1. Python loops on arrays are slow
-2. Ufuncs run at C speed
-3. Broadcasting eliminates nested loops
-4. Profile with %timeit before optimizing`
+          ]
         },
         {
           id: `memory`,
@@ -755,13 +653,7 @@ print(b[:5])`,
             `Column-major in Fortran/MATLAB`,
             `Contiguous arrays faster for operations`,
             `ravel vs flatten — view vs copy`
-          ],
-          pseudoCode: `Memory Layout
-
-1. Row-major default in NumPy/C
-2. Column-major in Fortran/MATLAB
-3. Contiguous arrays faster for operations
-4. ravel vs flatten — view vs copy`
+          ]
         },
         {
           id: `einsum`,
@@ -782,13 +674,7 @@ print(np.einsum("ij,jk->ik", A, B))`,
             `Used in transformer attention`,
             `More readable than nested transpose/matmul`,
             `Optimize einsum path for performance`
-          ],
-          pseudoCode: `np.einsum
-
-1. einsum expresses complex tensor ops
-2. Used in transformer attention
-3. More readable than nested transpose/matmul
-4. Optimize einsum path for performance`
+          ]
         },
         {
           id: `numba`,
@@ -804,13 +690,7 @@ print(np.einsum("ij,jk->ik", A, B))`,
             `nopython mode for max speed`,
             `Cython for production extensions`,
             `Prefer vectorization first, JIT second`
-          ],
-          pseudoCode: `Numba & Cython Preview
-
-1. Numba JIT for custom numeric loops
-2. nopython mode for max speed
-3. Cython for production extensions
-4. Prefer vectorization first, JIT second`
+          ]
         }
       ],
       exercises: [

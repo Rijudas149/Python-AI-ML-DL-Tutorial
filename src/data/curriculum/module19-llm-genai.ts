@@ -25,13 +25,7 @@ Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabl
             `Open weights: LLaMA, Mistral, Qwen enable local deployment`,
             `Multimodal: GPT-4V, Gemini process images too`,
             `Context windows growing: 128K-1M tokens`
-          ],
-          pseudoCode: `LLM Landscape
-
-1. Frontier models from OpenAI, Anthropic, Google
-2. Open weights: LLaMA, Mistral, Qwen enable local deployment
-3. Multimodal: GPT-4V, Gemini process images too
-4. Context windows growing: 128K-1M tokens`
+          ]
         },
         {
           id: `capabilities`,
@@ -46,13 +40,7 @@ Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabl
             `Hallucination: confident but incorrect outputs`,
             `Tool use and RAG mitigate knowledge gaps`,
             `Reasoning improves with chain-of-thought`
-          ],
-          pseudoCode: `Capabilities & Limitations
-
-1. LLMs predict likely text not verified facts
-2. Hallucination: confident but incorrect outputs
-3. Tool use and RAG mitigate knowledge gaps
-4. Reasoning improves with chain-of-thought`
+          ]
         },
         {
           id: `tokens`,
@@ -74,13 +62,7 @@ print(f"Approx tokens: {len(text) // 4}")`,
             `Input + output tokens both billed`,
             `Longer context = higher cost and latency`,
             `Count tokens before API calls`
-          ],
-          pseudoCode: `Token Economics
-
-1. Tokens not words — subword units
-2. Input + output tokens both billed
-3. Longer context = higher cost and latency
-4. Count tokens before API calls`
+          ]
         },
         {
           id: `eval`,
@@ -96,13 +78,7 @@ print(f"Approx tokens: {len(text) // 4}")`,
             `HumanEval for code generation quality`,
             `Build domain-specific eval sets`,
             `Automated eval with stronger model as judge`
-          ],
-          pseudoCode: `LLM Evaluation
-
-1. No single benchmark captures all capabilities
-2. HumanEval for code generation quality
-3. Build domain-specific eval sets
-4. Automated eval with stronger model as judge`
+          ]
         }
       ],
       exercises: [
@@ -183,13 +159,7 @@ print(len(prompt))`,
             `Be specific about format, length, tone`,
             `Include examples for complex formats (few-shot)`,
             `Iterate and refine prompts empirically`
-          ],
-          pseudoCode: `Prompt Structure
-
-1. System prompt sets behavior and constraints
-2. Be specific about format, length, tone
-3. Include examples for complex formats (few-shot)
-4. Iterate and refine prompts empirically`
+          ]
         },
         {
           id: `cot`,
@@ -208,13 +178,7 @@ print("CoT improves reasoning")`,
             `Few-shot CoT: provide reasoning examples`,
             `Self-consistency: sample multiple chains, majority vote`,
             `Tree-of-thought for complex planning`
-          ],
-          pseudoCode: `Chain-of-Thought (CoT)
-
-1. Zero-shot CoT: add "think step by step"
-2. Few-shot CoT: provide reasoning examples
-3. Self-consistency: sample multiple chains, majority vote
-4. Tree-of-thought for complex planning`
+          ]
         },
         {
           id: `few-shot`,
@@ -230,13 +194,7 @@ print("CoT improves reasoning")`,
             `Order of examples affects performance`,
             `More examples help up to a point`,
             `Dynamic example retrieval from database`
-          ],
-          pseudoCode: `Few-Shot Learning
-
-1. Examples should be diverse and representative
-2. Order of examples affects performance
-3. More examples help up to a point
-4. Dynamic example retrieval from database`
+          ]
         },
         {
           id: `advanced-prompt`,
@@ -252,13 +210,7 @@ print("CoT improves reasoning")`,
             `Prompt chaining breaks complex tasks into steps`,
             `ReAct interleaves reasoning and tool calls`,
             `Test prompts systematically with eval sets`
-          ],
-          pseudoCode: `Advanced Techniques
-
-1. JSON mode ensures parseable output
-2. Prompt chaining breaks complex tasks into steps
-3. ReAct interleaves reasoning and tool calls
-4. Test prompts systematically with eval sets`
+          ]
         }
       ],
       exercises: [
@@ -362,13 +314,7 @@ print(embeddings.shape)`,
             `Chunk documents 256-512 tokens typically`,
             `Metadata filtering narrows search space`,
             `Re-rank retrieved results with cross-encoder`
-          ],
-          pseudoCode: `Embeddings for Retrieval
-
-1. Choose embedding model matching domain
-2. Chunk documents 256-512 tokens typically
-3. Metadata filtering narrows search space
-4. Re-rank retrieved results with cross-encoder`
+          ]
         },
         {
           id: `chunking`,
@@ -384,13 +330,7 @@ print(embeddings.shape)`,
             `Too large chunks dilute relevance`,
             `10-20% overlap between chunks common`,
             `Parent-child chunking for hierarchical retrieval`
-          ],
-          pseudoCode: `Document Chunking
-
-1. Too small chunks lose context
-2. Too large chunks dilute relevance
-3. 10-20% overlap between chunks common
-4. Parent-child chunking for hierarchical retrieval`
+          ]
         },
         {
           id: `eval-rag`,
@@ -406,13 +346,7 @@ print(embeddings.shape)`,
             `Faithfulness: answer grounded in retrieved context`,
             `RAGAS automated RAG evaluation`,
             `Human eval for production quality assurance`
-          ],
-          pseudoCode: `Evaluating RAG Systems
-
-1. Evaluate retrieval and generation separately
-2. Faithfulness: answer grounded in retrieved context
-3. RAGAS automated RAG evaluation
-4. Human eval for production quality assurance`
+          ]
         }
       ],
       exercises: [
@@ -488,13 +422,7 @@ print(steps)`,
             `Risk of catastrophic forgetting`,
             `Multi-GPU needed for 7B+ models`,
             `Learning rate much smaller than pretraining`
-          ],
-          pseudoCode: `Full Fine-Tuning
-
-1. Requires labeled instruction-response pairs
-2. Risk of catastrophic forgetting
-3. Multi-GPU needed for 7B+ models
-4. Learning rate much smaller than pretraining`
+          ]
         },
         {
           id: `lora`,
@@ -515,13 +443,7 @@ print("LoRA: W + B@A with low rank r")`,
             `Target q_proj, v_proj in attention layers`,
             `QLoRA: 4-bit quantized base + LoRA adapters`,
             `Merge adapters into base for deployment`
-          ],
-          pseudoCode: `LoRA (Low-Rank Adaptation)
-
-1. LoRA rank r controls capacity vs efficiency
-2. Target q_proj, v_proj in attention layers
-3. QLoRA: 4-bit quantized base + LoRA adapters
-4. Merge adapters into base for deployment`
+          ]
         },
         {
           id: `instruction`,
@@ -537,13 +459,7 @@ print("LoRA: W + B@A with low rank r")`,
             `Quality over quantity for instruction data`,
             `Covers diverse task types`,
             `Foundation for chat model behavior`
-          ],
-          pseudoCode: `Instruction Tuning
-
-1. Instruction format: ### Instruction / ### Response
-2. Quality over quantity for instruction data
-3. Covers diverse task types
-4. Foundation for chat model behavior`
+          ]
         },
         {
           id: `rlhf`,
@@ -559,13 +475,7 @@ print("LoRA: W + B@A with low rank r")`,
             `Reward model trained on human preference comparisons`,
             `PPO fine-tunes against reward model`,
             `DPO direct preference optimization — simpler pipeline`
-          ],
-          pseudoCode: `RLHF & DPO
-
-1. RLHF makes models helpful and harmless
-2. Reward model trained on human preference comparisons
-3. PPO fine-tunes against reward model
-4. DPO direct preference optimization — simpler pipeline`
+          ]
         }
       ],
       exercises: [
@@ -670,13 +580,7 @@ print(tools[0]["name"])`,
             `JSON schema defines valid parameters`,
             `Execute tool and return result to model`,
             `Multiple tools enable complex workflows`
-          ],
-          pseudoCode: `Function Calling / Tool Use
-
-1. Clear tool descriptions critical for selection
-2. JSON schema defines valid parameters
-3. Execute tool and return result to model
-4. Multiple tools enable complex workflows`
+          ]
         },
         {
           id: `frameworks`,
@@ -692,13 +596,7 @@ print(tools[0]["name"])`,
             `LlamaIndex optimized for data-connected apps`,
             `Multi-agent: specialized agents collaborate`,
             `Evaluate agent reliability before production`
-          ],
-          pseudoCode: `Agent Frameworks
-
-1. LangChain most popular orchestration framework
-2. LlamaIndex optimized for data-connected apps
-3. Multi-agent: specialized agents collaborate
-4. Evaluate agent reliability before production`
+          ]
         },
         {
           id: `safety`,
@@ -714,13 +612,7 @@ print(tools[0]["name"])`,
             `Validate and sanitize tool inputs/outputs`,
             `Human approval for irreversible actions`,
             `Monitor agent trajectories for unexpected behavior`
-          ],
-          pseudoCode: `Agent Safety
-
-1. Never give agents unrestricted system access
-2. Validate and sanitize tool inputs/outputs
-3. Human approval for irreversible actions
-4. Monitor agent trajectories for unexpected behavior`
+          ]
         }
       ],
       exercises: [

@@ -215,6 +215,7 @@ export function LessonContent({ content }: { content: string }) {
               </p>
             );
           case 'concept':
+            if (/^Applying\s/i.test(block.term)) return null;
             return (
               <article key={i} className="lesson-concept-card">
                 <h4 className="lesson-concept-term">{block.term}</h4>

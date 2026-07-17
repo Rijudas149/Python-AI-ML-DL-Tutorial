@@ -15,11 +15,10 @@ export const module22Topics: Topic[] = [
 
 Use context managers or explicit encoding (\`encoding="utf-8"\`) for text. \`Path.home()\`, \`.resolve()\` for absolute normalized paths.
 
-**Applying Files & Serialization:** Read and write files safely with pathlib, json, csv, and pickle. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "pathlib for Paths", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Path objects are immutable and expressive
+- Always specify encoding for text files
+- glob/rglob for pattern file discovery
+- resolve() removes .. and symlinks`,
           example: `from pathlib import Path
 p = Path("sample.txt")
 p.write_text("hello", encoding="utf-8")
@@ -30,13 +29,7 @@ print(p.read_text(encoding="utf-8"))`,
             `Always specify encoding for text files`,
             `glob/rglob for pattern file discovery`,
             `resolve() removes .. and symlinks`
-          ],
-          pseudoCode: `pathlib for Paths
-
-1. Path objects are immutable and expressive
-2. Always specify encoding for text files
-3. glob/rglob for pattern file discovery
-4. resolve() removes .. and symlinks`
+          ]
         },
         {
           id: `json-csv`,
@@ -45,11 +38,10 @@ print(p.read_text(encoding="utf-8"))`,
 
 For large CSVs, iterate rows instead of loading all into memory. Handle malformed rows with error policies or validation layers.
 
-**Applying Files & Serialization:** Read and write files safely with pathlib, json, csv, and pickle. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "JSON & CSV", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- json serializes dict/list primitives only
+- DictReader uses first row as field names
+- Stream large files line by line
+- Validate types after reading CSV strings`,
           example: `import json, csv, io
 buf = io.StringIO("name,score\\nAda,99\\n")
 rows = list(csv.DictReader(buf))
@@ -60,13 +52,7 @@ print(json.dumps(rows))`,
             `DictReader uses first row as field names`,
             `Stream large files line by line`,
             `Validate types after reading CSV strings`
-          ],
-          pseudoCode: `JSON & CSV
-
-1. json serializes dict/list primitives only
-2. DictReader uses first row as field names
-3. Stream large files line by line
-4. Validate types after reading CSV strings`
+          ]
         },
         {
           id: `pickle`,
@@ -75,23 +61,16 @@ print(json.dumps(rows))`,
 
 Use pickle for ephemeral caches or sklearn joblib models in controlled environments. Version your objects or use schema migrations when formats change.
 
-**Applying Files & Serialization:** Read and write files safely with pathlib, json, csv, and pickle. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Pickle & Security", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Never unpickle untrusted data
+- pickle is Python-specific not portable
+- joblib better for large numpy arrays
+- Prefer open formats for long-term storage`,
           keyPoints: [
             `Never unpickle untrusted data`,
             `pickle is Python-specific not portable`,
             `joblib better for large numpy arrays`,
             `Prefer open formats for long-term storage`
-          ],
-          pseudoCode: `Pickle & Security
-
-1. Never unpickle untrusted data
-2. pickle is Python-specific not portable
-3. joblib better for large numpy arrays
-4. Prefer open formats for long-term storage`
+          ]
         },
         {
           id: `io-patterns`,
@@ -100,7 +79,10 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Log paths on failure. On Windows mind path separators—pathlib abstracts this.
 
-**Applying Files & Serialization:** Read and write files safely with pathlib, json, csv, and pickle. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "I/O Patterns & Error Handling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Context managers guarantee file closure
+- Atomic replace prevents partial writes
+- Handle missing files explicitly
+- pathlib works cross-platform`,
           example: `from pathlib import Path
 def safe_read(path):
     p = Path(path)
@@ -115,13 +97,7 @@ print(safe_read("missing.txt") == "")`,
             `Atomic replace prevents partial writes`,
             `Handle missing files explicitly`,
             `pathlib works cross-platform`
-          ],
-          pseudoCode: `I/O Patterns & Error Handling
-
-1. Context managers guarantee file closure
-2. Atomic replace prevents partial writes
-3. Handle missing files explicitly
-4. pathlib works cross-platform`
+          ]
         }
       ],
       exercises: [
@@ -191,11 +167,10 @@ print(json.dumps({"x": 1}))`,
 
 Set headers: \`headers={"Authorization": "Bearer TOKEN"}\`. POST JSON: \`requests.post(url, json={"key": "val"})\`.
 
-**Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "requests Fundamentals", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Always set timeouts on external calls
+- raise_for_status converts HTTP errors to exceptions
+- json= parameter sets Content-Type automatically
+- Session objects reuse TCP connections`,
           example: `import requests
 resp = requests.get("https://httpbin.org/get", params={"q": "ml"}, timeout=10)
 resp.raise_for_status()
@@ -205,13 +180,7 @@ print(resp.json()["args"])  # requires network`,
             `raise_for_status converts HTTP errors to exceptions`,
             `json= parameter sets Content-Type automatically`,
             `Session objects reuse TCP connections`
-          ],
-          pseudoCode: `requests Fundamentals
-
-1. Always set timeouts on external calls
-2. raise_for_status converts HTTP errors to exceptions
-3. json= parameter sets Content-Type automatically
-4. Session objects reuse TCP connections`
+          ]
         },
         {
           id: `rest`,
@@ -220,23 +189,16 @@ print(resp.json()["args"])  # requires network`,
 
 Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).
 
-**Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "REST Conventions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Respect HTTP semantics in client design
+- Handle 429 with exponential backoff
+- Version APIs in path or header
+- Document required headers and rate limits`,
           keyPoints: [
             `Respect HTTP semantics in client design`,
             `Handle 429 with exponential backoff`,
             `Version APIs in path or header`,
             `Document required headers and rate limits`
-          ],
-          pseudoCode: `REST Conventions
-
-1. Respect HTTP semantics in client design
-2. Handle 429 with exponential backoff
-3. Version APIs in path or header
-4. Document required headers and rate limits`
+          ]
         },
         {
           id: `auth-errors`,
@@ -245,11 +207,10 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Validate response schema before use. Log correlation IDs from \`X-Request-ID\` headers for support tickets.
 
-**Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Authentication & Retries", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Store secrets in environment variables
+- Retry only idempotent requests safely
+- Backoff reduces thundering herd
+- Validate JSON shape before accessing keys`,
           example: `from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import requests
@@ -263,13 +224,7 @@ print(retry.total)`,
             `Retry only idempotent requests safely`,
             `Backoff reduces thundering herd`,
             `Validate JSON shape before accessing keys`
-          ],
-          pseudoCode: `Authentication & Retries
-
-1. Store secrets in environment variables
-2. Retry only idempotent requests safely
-3. Backoff reduces thundering herd
-4. Validate JSON shape before accessing keys`
+          ]
         },
         {
           id: `testing-apis`,
@@ -278,23 +233,16 @@ print(retry.total)`,
 
 Separate HTTP layer from business logic—pure functions parse JSON dicts; thin wrapper performs requests.
 
-**Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Testing API Clients", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Mock at HTTP boundary for unit tests
+- Integration tests hit sandboxes sparingly
+- Separate transport from parsing logic
+- Contract tests catch API drift early`,
           keyPoints: [
             `Mock at HTTP boundary for unit tests`,
             `Integration tests hit sandboxes sparingly`,
             `Separate transport from parsing logic`,
             `Contract tests catch API drift early`
-          ],
-          pseudoCode: `Testing API Clients
-
-1. Mock at HTTP boundary for unit tests
-2. Integration tests hit sandboxes sparingly
-3. Separate transport from parsing logic
-4. Contract tests catch API drift early`
+          ]
         }
       ],
       exercises: [
@@ -364,11 +312,10 @@ print(params["q"])`,
 
 BeautifulSoup tolerates malformed markup—still not a browser; dynamic JS sites need Playwright/Selenium.
 
-**Applying Web Scraping Basics:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "BeautifulSoup Parsing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- CSS selectors scale better than manual loops
+- strip=True cleans whitespace in text extraction
+- Static HTML only—JS rendering needs browser automation
+- Handle missing elements with if/defaults`,
           example: `from bs4 import BeautifulSoup
 html = "<html><body><p class=\\"item\\">A</p><p class=\\"item\\">B</p></body></html>"
 soup = BeautifulSoup(html, "html.parser")
@@ -379,13 +326,7 @@ print([p.get_text() for p in soup.select("p.item")])`,
             `strip=True cleans whitespace in text extraction`,
             `Static HTML only—JS rendering needs browser automation`,
             `Handle missing elements with if/defaults`
-          ],
-          pseudoCode: `BeautifulSoup Parsing
-
-1. CSS selectors scale better than manual loops
-2. strip=True cleans whitespace in text extraction
-3. Static HTML only—JS rendering needs browser automation
-4. Handle missing elements with if/defaults`
+          ]
         },
         {
           id: `fetch`,
@@ -394,23 +335,16 @@ print([p.get_text() for p in soup.select("p.item")])`,
 
 Cache responses during development. Do not scrape personal data without legal basis (GDPR).
 
-**Applying Web Scraping Basics:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Fetching Pages Responsibly", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Read Terms of Service before scraping
+- Throttle requests to avoid overloading servers
+- Identify your scraper in User-Agent string
+- Prefer official APIs when available`,
           keyPoints: [
             `Read Terms of Service before scraping`,
             `Throttle requests to avoid overloading servers`,
             `Identify your scraper in User-Agent string`,
             `Prefer official APIs when available`
-          ],
-          pseudoCode: `Fetching Pages Responsibly
-
-1. Read Terms of Service before scraping
-2. Throttle requests to avoid overloading servers
-3. Identify your scraper in User-Agent string
-4. Prefer official APIs when available`
+          ]
         },
         {
           id: `extract`,
@@ -419,11 +353,10 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Pipeline: fetch → parse → validate → persist. Log HTTP status and parse failures separately.
 
-**Applying Web Scraping Basics:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Structured Extraction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- urljoin resolves relative links correctly
+- Validate extracted fields against schema
+- Keep raw snapshots for debugging parser changes
+- pandas.read_html quick for simple tables`,
           example: `from urllib.parse import urljoin
 base = "https://example.com/courses/"
 print(urljoin(base, "../blog/post"))`,
@@ -432,13 +365,7 @@ print(urljoin(base, "../blog/post"))`,
             `Validate extracted fields against schema`,
             `Keep raw snapshots for debugging parser changes`,
             `pandas.read_html quick for simple tables`
-          ],
-          pseudoCode: `Structured Extraction
-
-1. urljoin resolves relative links correctly
-2. Validate extracted fields against schema
-3. Keep raw snapshots for debugging parser changes
-4. pandas.read_html quick for simple tables`
+          ]
         },
         {
           id: `ethics`,
@@ -447,23 +374,16 @@ print(urljoin(base, "../blog/post"))`,
 
 When in doubt, request permission or purchase data from licensed providers.
 
-**Applying Web Scraping Basics:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Ethical & Legal Considerations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Legal risk varies by jurisdiction and site ToS
+- Do not circumvent authentication or DRM
+- Anonymize and minimize collected personal data
+- Document purpose and retention policy`,
           keyPoints: [
             `Legal risk varies by jurisdiction and site ToS`,
             `Do not circumvent authentication or DRM`,
             `Anonymize and minimize collected personal data`,
             `Document purpose and retention policy`
-          ],
-          pseudoCode: `Ethical & Legal Considerations
-
-1. Legal risk varies by jurisdiction and site ToS
-2. Do not circumvent authentication or DRM
-3. Anonymize and minimize collected personal data
-4. Document purpose and retention policy`
+          ]
         }
       ],
       exercises: [
@@ -534,11 +454,10 @@ print(len(s.select("li")))`,
 
 Row factory \`sqlite3.Row\` enables dict-like access: \`conn.row_factory = sqlite3.Row\`.
 
-**Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Connecting & Cursors", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- :memory: database for tests
+- Context managers handle commit/rollback
+- Parameterized ? placeholders prevent SQL injection
+- Row factory improves readability`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.execute("CREATE TABLE t (id INTEGER PRIMARY KEY, name TEXT)")
@@ -550,13 +469,7 @@ print(conn.execute("SELECT name FROM t").fetchone()[0])`,
             `Context managers handle commit/rollback`,
             `Parameterized ? placeholders prevent SQL injection`,
             `Row factory improves readability`
-          ],
-          pseudoCode: `Connecting & Cursors
-
-1. :memory: database for tests
-2. Context managers handle commit/rollback
-3. Parameterized ? placeholders prevent SQL injection
-4. Row factory improves readability`
+          ]
         },
         {
           id: `sql`,
@@ -565,11 +478,10 @@ print(conn.execute("SELECT name FROM t").fetchone()[0])`,
 
 Use transactions for multi-step consistency: \`BEGIN\` … \`COMMIT\`. SQLite supports limited ALTER—plan schemas upfront.
 
-**Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "SQL Essentials in Python", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Foreign keys require PRAGMA foreign_keys=ON
+- Indexes speed lookups on large tables
+- Avoid SELECT * in production queries
+- executescript for migrations/bootstrap`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.executescript("""
@@ -586,13 +498,7 @@ print(row)`,
             `Indexes speed lookups on large tables`,
             `Avoid SELECT * in production queries`,
             `executescript for migrations/bootstrap`
-          ],
-          pseudoCode: `SQL Essentials in Python
-
-1. Foreign keys require PRAGMA foreign_keys=ON
-2. Indexes speed lookups on large tables
-3. Avoid SELECT * in production queries
-4. executescript for migrations/bootstrap`
+          ]
         },
         {
           id: `orm-alt`,
@@ -601,23 +507,16 @@ print(row)`,
 
 **SQLAlchemy** abstracts dialects; **Dataset** simplifies ad hoc exploration. Export with \`.dump\` or pandas \`read_sql\`.
 
-**Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "When to Upgrade from SQLite", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- SQLite single-writer limitation at scale
+- PostgreSQL for production web apps
+- SQLAlchemy eases migration between engines
+- Backup via sqlite3 .backup API or file copy`,
           keyPoints: [
             `SQLite single-writer limitation at scale`,
             `PostgreSQL for production web apps`,
             `SQLAlchemy eases migration between engines`,
             `Backup via sqlite3 .backup API or file copy`
-          ],
-          pseudoCode: `When to Upgrade from SQLite
-
-1. SQLite single-writer limitation at scale
-2. PostgreSQL for production web apps
-3. SQLAlchemy eases migration between engines
-4. Backup via sqlite3 .backup API or file copy`
+          ]
         },
         {
           id: `security`,
@@ -626,23 +525,16 @@ Strong practitioners capture these lessons in runbooks and reusable templates ra
 
 Encrypt sensitive columns at application level if needed—SQLite file encryption extensions exist but are not default.
 
-**Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "SQL Safety", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Parameter binding stops SQL injection
+- Validate integers and enums before queries
+- Separate read replicas conceptually even locally
+- Do not store plaintext passwords—hash them`,
           keyPoints: [
             `Parameter binding stops SQL injection`,
             `Validate integers and enums before queries`,
             `Separate read replicas conceptually even locally`,
             `Do not store plaintext passwords—hash them`
-          ],
-          pseudoCode: `SQL Safety
-
-1. Parameter binding stops SQL injection
-2. Validate integers and enums before queries
-3. Separate read replicas conceptually even locally
-4. Do not store plaintext passwords—hash them`
+          ]
         }
       ],
       exercises: [
@@ -716,11 +608,10 @@ print(c.execute("SELECT COUNT(*) FROM t").fetchone()[0])`,
 
 Schemas serve as contracts between services—version them alongside APIs.
 
-**Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "JSON Schema Validation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Validate at system boundaries
+- Schemas document API contracts
+- Combine with pydantic for Python models
+- Fail fast on malformed input`,
           example: `from jsonschema import validate
 schema = {"type": "object", "required": ["id"], "properties": {"id": {"type": "integer"}}}
 validate({"id": 1}, schema)
@@ -731,13 +622,7 @@ print("valid")`,
             `Schemas document API contracts`,
             `Combine with pydantic for Python models`,
             `Fail fast on malformed input`
-          ],
-          pseudoCode: `JSON Schema Validation
-
-1. Validate at system boundaries
-2. Schemas document API contracts
-3. Combine with pydantic for Python models
-4. Fail fast on malformed input`
+          ]
         },
         {
           id: `yaml`,
@@ -746,11 +631,10 @@ print("valid")`,
 
 Separate config from code; override with environment variables in twelve-factor apps.
 
-**Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "YAML Configuration", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- safe_load prevents arbitrary object construction
+- Keep secrets out of YAML in repos
+- Env var overrides for deployment-specific values
+- Lint config files in CI`,
           example: `import yaml
 cfg = yaml.safe_load("model:\\n  name: rf\\n  trees: 100\\n")
 print(cfg["model"]["trees"])`,
@@ -760,13 +644,7 @@ print(cfg["model"]["trees"])`,
             `Keep secrets out of YAML in repos`,
             `Env var overrides for deployment-specific values`,
             `Lint config files in CI`
-          ],
-          pseudoCode: `YAML Configuration
-
-1. safe_load prevents arbitrary object construction
-2. Keep secrets out of YAML in repos
-3. Env var overrides for deployment-specific values
-4. Lint config files in CI`
+          ]
         },
         {
           id: `parquet`,
@@ -775,11 +653,10 @@ print(cfg["model"]["trees"])`,
 
 Partition directories by date/key for large datasets. Not ideal for row-by-row OLTP.
 
-**Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Parquet Introduction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Columnar storage reduces I/O for analytics
+- Schema evolution requires careful migration
+- Combine with Snappy/Zstd compression
+- pandas/pyarrow common Python stack`,
           example: `import pandas as pd
 df = pd.DataFrame({"a": [1, 2], "b": ["x", "y"]})
 # df.to_parquet("out.parquet"); df2 = pd.read_parquet("out.parquet")
@@ -790,13 +667,7 @@ print(list(df.columns))`,
             `Schema evolution requires careful migration`,
             `Combine with Snappy/Zstd compression`,
             `pandas/pyarrow common Python stack`
-          ],
-          pseudoCode: `Parquet Introduction
-
-1. Columnar storage reduces I/O for analytics
-2. Schema evolution requires careful migration
-3. Combine with Snappy/Zstd compression
-4. pandas/pyarrow common Python stack`
+          ]
         },
         {
           id: `formats-choose`,
@@ -805,23 +676,16 @@ print(list(df.columns))`,
 
 Document encoding, timezone, and null conventions in data catalogs.
 
-**Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
-
-When studying "Choosing a Format", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
-
-Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+- Match format to consumer tooling
+- Columnar for read-heavy analytics
+- Row formats for transactional updates
+- Version datasets with DVC or similar`,
           keyPoints: [
             `Match format to consumer tooling`,
             `Columnar for read-heavy analytics`,
             `Row formats for transactional updates`,
             `Version datasets with DVC or similar`
-          ],
-          pseudoCode: `Choosing a Format
-
-1. Match format to consumer tooling
-2. Columnar for read-heavy analytics
-3. Row formats for transactional updates
-4. Version datasets with DVC or similar`
+          ]
         }
       ],
       exercises: [

@@ -1,3 +1,27 @@
+/** True when pseudoCode only repeats keyPoints (numbered list duplicate). */
+export function isRedundantPseudoCode(pseudoCode: string, keyPoints?: string[]): boolean {
+  if (!pseudoCode.trim() || !keyPoints?.length) return false;
+
+  const numbered = pseudoCode
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => /^\d+\.\s/.test(line))
+    .map((line) => line.replace(/^\d+\.\s+/, '').trim());
+
+  if (numbered.length === keyPoints.length && numbered.every((line, i) => line === keyPoints[i])) {
+    return true;
+  }
+
+  const normalized = pseudoCode
+    .replace(/^\d+\.\s+/gm, '')
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .join('\n');
+
+  return normalized === keyPoints.join('\n');
+}
+
 /** Estimate reading time from text (words / 200 wpm). */
 export function estimateReadingMinutes(text: string): number {
   const words = text.trim().split(/\s+/).filter(Boolean).length;

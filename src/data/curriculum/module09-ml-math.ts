@@ -30,13 +30,7 @@ print(dot, round(cos_sim, 4))`,
             `Dot product fundamental to neural networks`,
             `Cosine similarity for text/document similarity`,
             `Unit vectors have norm 1`
-          ],
-          pseudoCode: `Vectors & Dot Products
-
-1. Vectors are ordered lists of numbers
-2. Dot product fundamental to neural networks
-3. Cosine similarity for text/document similarity
-4. Unit vectors have norm 1`
+          ]
         },
         {
           id: `matrices`,
@@ -58,13 +52,7 @@ print(W @ x)  # 3x1 output`,
             `Weight matrix W maps input to output`,
             `Rank indicates independent dimensions`,
             `Singular matrices cannot be inverted`
-          ],
-          pseudoCode: `Matrix Operations
-
-1. ML layers are matrix multiplications
-2. Weight matrix W maps input to output
-3. Rank indicates independent dimensions
-4. Singular matrices cannot be inverted`
+          ]
         },
         {
           id: `eigen`,
@@ -80,13 +68,7 @@ print(W @ x)  # 3x1 output`,
             `Eigenvalues measure variance along directions`,
             `PCA uses eigendecomposition of covariance`,
             `SVD generalizes to non-square matrices`
-          ],
-          pseudoCode: `Eigenvalues & Eigenvectors
-
-1. Eigenvectors define principal directions
-2. Eigenvalues measure variance along directions
-3. PCA uses eigendecomposition of covariance
-4. SVD generalizes to non-square matrices`
+          ]
         },
         {
           id: `svd`,
@@ -102,13 +84,7 @@ print(W @ x)  # 3x1 output`,
             `Truncated SVD for dimensionality reduction`,
             `Singular values indicate importance`,
             `Low-rank approximation compresses data`
-          ],
-          pseudoCode: `SVD in ML
-
-1. SVD always exists for any matrix
-2. Truncated SVD for dimensionality reduction
-3. Singular values indicate importance
-4. Low-rank approximation compresses data`
+          ]
         }
       ],
       exercises: [
@@ -193,13 +169,7 @@ print(grad, np.linalg.norm(grad))`,
             `Negative gradient direction minimizes loss`,
             `Partial derivatives hold other variables fixed`,
             `Gradient is foundation of gradient descent`
-          ],
-          pseudoCode: `Derivatives & Gradients
-
-1. Gradient points uphill on loss surface
-2. Negative gradient direction minimizes loss
-3. Partial derivatives hold other variables fixed
-4. Gradient is foundation of gradient descent`
+          ]
         },
         {
           id: `chain-rule`,
@@ -241,13 +211,7 @@ print(mse_grad)`,
             `Cross-entropy gradient simplifies with softmax`,
             `Gradient magnitude indicates update size`,
             `Vanishing gradients plague deep networks`
-          ],
-          pseudoCode: `Gradients of Common Loss Functions
-
-1. MSE gradient proportional to error
-2. Cross-entropy gradient simplifies with softmax
-3. Gradient magnitude indicates update size
-4. Vanishing gradients plague deep networks`
+          ]
         },
         {
           id: `jacobian`,
@@ -263,13 +227,7 @@ print(mse_grad)`,
             `Hessian reveals convexity/concavity`,
             `Second-order methods converge faster but cost more`,
             `Most DL uses first-order (gradient) methods only`
-          ],
-          pseudoCode: `Jacobian & Hessian
-
-1. Jacobian generalizes gradient to vector outputs
-2. Hessian reveals convexity/concavity
-3. Second-order methods converge faster but cost more
-4. Most DL uses first-order (gradient) methods only`
+          ]
         }
       ],
       exercises: [
@@ -355,13 +313,7 @@ print(round(p_disease_given_pos, 4))`,
             `Prior × likelihood ∝ posterior`,
             `Base rate neglect is common error`,
             `Naive Bayes assumes feature independence`
-          ],
-          pseudoCode: `Probability Fundamentals
-
-1. Bayes theorem updates beliefs with evidence
-2. Prior × likelihood ∝ posterior
-3. Base rate neglect is common error
-4. Naive Bayes assumes feature independence`
+          ]
         },
         {
           id: `distributions`,
@@ -385,13 +337,7 @@ print(round(within_1std, 3))`,
             `Central Limit Theorem justifies normality`,
             `Bernoulli for binary classification targets`,
             `Choose distribution matching data generating process`
-          ],
-          pseudoCode: `Key Distributions
-
-1. Normal distribution ubiquitous in ML
-2. Central Limit Theorem justifies normality
-3. Bernoulli for binary classification targets
-4. Choose distribution matching data generating process`
+          ]
         },
         {
           id: `expectation`,
@@ -407,13 +353,7 @@ print(round(within_1std, 3))`,
             `Variance measures spread around mean`,
             `Covariance matrix for multivariate data`,
             `Correlation ∈ [-1, 1] is scale-invariant`
-          ],
-          pseudoCode: `Expectation & Variance
-
-1. Expectation is average outcome weighted by probability
-2. Variance measures spread around mean
-3. Covariance matrix for multivariate data
-4. Correlation ∈ [-1, 1] is scale-invariant`
+          ]
         },
         {
           id: `mle`,
@@ -429,13 +369,7 @@ print(round(within_1std, 3))`,
             `Log-likelihood easier to optimize (products → sums)`,
             `MLE can overfit with complex models`,
             `MAP adds prior for regularization`
-          ],
-          pseudoCode: `Maximum Likelihood Estimation
-
-1. MLE finds most probable parameters given data
-2. Log-likelihood easier to optimize (products → sums)
-3. MLE can overfit with complex models
-4. MAP adds prior for regularization`
+          ]
         }
       ],
       exercises: [
@@ -523,13 +457,7 @@ print(entropy([0.9, 0.1]))  # low uncertainty`,
             `Higher entropy = more uncertainty`,
             `Uniform distribution maximizes entropy`,
             `Decision trees use entropy for splitting`
-          ],
-          pseudoCode: `Entropy
-
-1. Entropy in bits when using log2
-2. Higher entropy = more uncertainty
-3. Uniform distribution maximizes entropy
-4. Decision trees use entropy for splitting`
+          ]
         },
         {
           id: `cross-entropy`,
@@ -553,13 +481,7 @@ print(round(cross_entropy(1, 0.9), 4))`,
             `Heavily penalizes confident wrong predictions`,
             `Numerical stability requires clipping`,
             `Equivalent to negative log-likelihood`
-          ],
-          pseudoCode: `Cross-Entropy Loss
-
-1. Cross-entropy is standard classification loss
-2. Heavily penalizes confident wrong predictions
-3. Numerical stability requires clipping
-4. Equivalent to negative log-likelihood`
+          ]
         },
         {
           id: `kl`,
@@ -575,13 +497,7 @@ print(round(cross_entropy(1, 0.9), 4))`,
             `Used in VAE loss and knowledge distillation`,
             `Not a true metric (no triangle inequality)`,
             `Minimizing cross-entropy ≈ minimizing KL to true distribution`
-          ],
-          pseudoCode: `KL Divergence
-
-1. KL divergence is asymmetric
-2. Used in VAE loss and knowledge distillation
-3. Not a true metric (no triangle inequality)
-4. Minimizing cross-entropy ≈ minimizing KL to true distribution`
+          ]
         },
         {
           id: `mutual-info`,
@@ -597,13 +513,7 @@ print(round(cross_entropy(1, 0.9), 4))`,
             `Zero iff variables are independent`,
             `Used in decision tree feature selection`,
             `Harder to estimate than correlation`
-          ],
-          pseudoCode: `Mutual Information
-
-1. Mutual information captures nonlinear dependencies
-2. Zero iff variables are independent
-3. Used in decision tree feature selection
-4. Harder to estimate than correlation`
+          ]
         }
       ],
       exercises: [
@@ -691,13 +601,7 @@ print(round(x, 6))`,
             `Too large α diverges, too small slow`,
             `Convergence when gradient near zero`,
             `Batch/mini-batch/stochastic variants`
-          ],
-          pseudoCode: `Gradient Descent
-
-1. Learning rate most important hyperparameter
-2. Too large α diverges, too small slow
-3. Convergence when gradient near zero
-4. Batch/mini-batch/stochastic variants`
+          ]
         },
         {
           id: `variants`,
@@ -734,13 +638,7 @@ print(round(x, 6))`,
             `Deep network loss surfaces are highly non-convex`,
             `Saddle points more common than local minima in high-D`,
             `Overparameterization helps optimization in DL`
-          ],
-          pseudoCode: `Convex vs Non-Convex
-
-1. Linear regression loss is convex
-2. Deep network loss surfaces are highly non-convex
-3. Saddle points more common than local minima in high-D
-4. Overparameterization helps optimization in DL`
+          ]
         },
         {
           id: `regularization`,
@@ -763,13 +661,7 @@ print(round(l2_penalty, 4))`,
             `L1 (lasso) drives weights to exactly zero`,
             `Regularization prevents overfitting`,
             `Weight decay in AdamW decouples L2 from adaptive rates`
-          ],
-          pseudoCode: `Regularization in Optimization
-
-1. L2 (ridge) shrinks weights toward zero
-2. L1 (lasso) drives weights to exactly zero
-3. Regularization prevents overfitting
-4. Weight decay in AdamW decouples L2 from adaptive rates`
+          ]
         }
       ],
       exercises: [

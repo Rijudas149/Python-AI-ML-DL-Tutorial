@@ -30,13 +30,7 @@ print(loaded.score(*load_iris(return_X_y=True)))`,
             `Save state_dict not entire PyTorch model`,
             `Version models with metadata (data, metrics, params)`,
             `Never unpickle untrusted files — security risk`
-          ],
-          pseudoCode: `Model Serialization
-
-1. joblib preferred over pickle for sklearn
-2. Save state_dict not entire PyTorch model
-3. Version models with metadata (data, metrics, params)
-4. Never unpickle untrusted files — security risk`
+          ]
         },
         {
           id: `fastapi`,
@@ -63,13 +57,7 @@ def predict(req: PredictRequest):
             `Pydantic validates request schemas`,
             `Load model once at startup not per request`,
             `Return probabilities not just class labels`
-          ],
-          pseudoCode: `FastAPI Model Serving
-
-1. FastAPI auto-generates OpenAPI docs
-2. Pydantic validates request schemas
-3. Load model once at startup not per request
-4. Return probabilities not just class labels`
+          ]
         },
         {
           id: `onnx`,
@@ -85,13 +73,7 @@ def predict(req: PredictRequest):
             `Graph optimizations in ONNX Runtime`,
             `Quantized ONNX models for edge deployment`,
             `Check operator compatibility before export`
-          ],
-          pseudoCode: `ONNX Runtime
-
-1. ONNX enables model portability
-2. Graph optimizations in ONNX Runtime
-3. Quantized ONNX models for edge deployment
-4. Check operator compatibility before export`
+          ]
         },
         {
           id: `batch-realtime`,
@@ -107,13 +89,7 @@ def predict(req: PredictRequest):
             `Real-time for user-facing applications`,
             `Feature store ensures train-serve consistency`,
             `Caching frequent predictions reduces load`
-          ],
-          pseudoCode: `Batch vs Real-Time Inference
-
-1. Batch for bulk predictions overnight
-2. Real-time for user-facing applications
-3. Feature store ensures train-serve consistency
-4. Caching frequent predictions reduces load`
+          ]
         }
       ],
       exercises: [
@@ -204,13 +180,7 @@ print(dockerfile.strip().split("\\n")[0])`,
             `Multi-stage builds reduce image size`,
             `.dockerignore excludes unnecessary files`,
             `Non-root user for security`
-          ],
-          pseudoCode: `Docker Basics for ML
-
-1. Pin base image version for reproducibility
-2. Multi-stage builds reduce image size
-3. .dockerignore excludes unnecessary files
-4. Non-root user for security`
+          ]
         },
         {
           id: `compose`,
@@ -226,13 +196,7 @@ print(dockerfile.strip().split("\\n")[0])`,
             `Define environment variables in compose file`,
             `Health checks ensure service readiness`,
             `Production: Kubernetes not Compose`
-          ],
-          pseudoCode: `Docker Compose
-
-1. Compose for local development stacks
-2. Define environment variables in compose file
-3. Health checks ensure service readiness
-4. Production: Kubernetes not Compose`
+          ]
         },
         {
           id: `cloud`,
@@ -248,13 +212,7 @@ print(dockerfile.strip().split("\\n")[0])`,
             `SageMaker endpoints for real-time inference`,
             `Vertex AI unified Google Cloud ML platform`,
             `Cost optimization: spot instances for training`
-          ],
-          pseudoCode: `Cloud ML Platforms
-
-1. Managed platforms reduce ops burden
-2. SageMaker endpoints for real-time inference
-3. Vertex AI unified Google Cloud ML platform
-4. Cost optimization: spot instances for training`
+          ]
         },
         {
           id: `cicd`,
@@ -270,13 +228,7 @@ print(dockerfile.strip().split("\\n")[0])`,
             `Gate deployment on validation metric thresholds`,
             `MLflow or W&B for experiment tracking`,
             `Model registry manages production model versions`
-          ],
-          pseudoCode: `CI/CD for ML
-
-1. Automated testing of data schemas and model metrics
-2. Gate deployment on validation metric thresholds
-3. MLflow or W&B for experiment tracking
-4. Model registry manages production model versions`
+          ]
         }
       ],
       exercises: [
@@ -351,13 +303,7 @@ print(dockerfile.strip().split("\\n")[0])`,
             `Log predictions for debugging and retraining`,
             `Alert on error rate spikes`,
             `Prometheus + Grafana common stack`
-          ],
-          pseudoCode: `Model Monitoring
-
-1. Monitor latency p50, p95, p99 percentiles
-2. Log predictions for debugging and retraining
-3. Alert on error rate spikes
-4. Prometheus + Grafana common stack`
+          ]
         },
         {
           id: `drift`,
@@ -381,13 +327,7 @@ print(round(pvalue, 6))`,
             `PSI (Population Stability Index) common in finance`,
             `Concept drift harder to detect without labels`,
             `Scheduled retraining addresses drift`
-          ],
-          pseudoCode: `Data Drift & Concept Drift
-
-1. KS test for numerical feature drift detection
-2. PSI (Population Stability Index) common in finance
-3. Concept drift harder to detect without labels
-4. Scheduled retraining addresses drift`
+          ]
         },
         {
           id: `evidently`,
@@ -403,13 +343,7 @@ print(round(pvalue, 6))`,
             `Great Expectations: data validation suites`,
             `Compare production vs reference distributions`,
             `Automated reports in CI/CD pipeline`
-          ],
-          pseudoCode: `Evidently AI & Tools
-
-1. Evidently: data drift and model performance reports
-2. Great Expectations: data validation suites
-3. Compare production vs reference distributions
-4. Automated reports in CI/CD pipeline`
+          ]
         },
         {
           id: `retraining`,
@@ -425,13 +359,7 @@ print(round(pvalue, 6))`,
             `Champion/challenger model comparison`,
             `Rollback capability essential`,
             `Label delay complicates monitoring`
-          ],
-          pseudoCode: `Retraining Strategies
-
-1. Define retraining triggers and schedule
-2. Champion/challenger model comparison
-3. Rollback capability essential
-4. Label delay complicates monitoring`
+          ]
         }
       ],
       exercises: [
@@ -506,13 +434,7 @@ print(round(pvalue, 6))`,
             `Protected attributes: race, gender, age, disability`,
             `Proxy variables encode protected attributes indirectly`,
             `Intersectionality: bias compounds across groups`
-          ],
-          pseudoCode: `Types of Bias
-
-1. Bias often originates in data not algorithm
-2. Protected attributes: race, gender, age, disability
-3. Proxy variables encode protected attributes indirectly
-4. Intersectionality: bias compounds across groups`
+          ]
         },
         {
           id: `fairness`,
@@ -535,13 +457,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `Choose metric based on domain and legal requirements`,
             `fairlearn library implements fairness metrics`,
             `Disparate impact ratio: 80% rule in US employment law`
-          ],
-          pseudoCode: `Fairness Metrics
-
-1. Fairness metrics often mutually incompatible
-2. Choose metric based on domain and legal requirements
-3. fairlearn library implements fairness metrics
-4. Disparate impact ratio: 80% rule in US employment law`
+          ]
         },
         {
           id: `mitigation`,
@@ -557,13 +473,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `In-processing adds fairness constraints to loss`,
             `Post-processing adjusts decision thresholds`,
             `Transparency about tradeoffs required`
-          ],
-          pseudoCode: `Bias Mitigation
-
-1. Pre-processing modifies training data
-2. In-processing adds fairness constraints to loss
-3. Post-processing adjusts decision thresholds
-4. Transparency about tradeoffs required`
+          ]
         },
         {
           id: `explain-ethics`,
@@ -579,13 +489,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `Algorithmic impact assessment for high-risk AI`,
             `Human oversight for consequential decisions`,
             `Document known failure modes and biases`
-          ],
-          pseudoCode: `Explainability & Accountability
-
-1. Model cards: intended use, training data, limitations
-2. Algorithmic impact assessment for high-risk AI
-3. Human oversight for consequential decisions
-4. Document known failure modes and biases`
+          ]
         }
       ],
       exercises: [
@@ -660,13 +564,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `Transparency: explainable decisions`,
             `Accountability: clear ownership and audit trails`,
             `Privacy: data minimization and consent`
-          ],
-          pseudoCode: `Responsible AI Principles
-
-1. Fairness: equitable outcomes across groups
-2. Transparency: explainable decisions
-3. Accountability: clear ownership and audit trails
-4. Privacy: data minimization and consent`
+          ]
         },
         {
           id: `eu-ai-act`,
@@ -682,13 +580,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `High-risk: hiring, credit, medical, law enforcement`,
             `Requires risk management and data governance`,
             `Global impact — affects any AI serving EU users`
-          ],
-          pseudoCode: `EU AI Act
-
-1. Prohibited: social scoring, manipulative AI
-2. High-risk: hiring, credit, medical, law enforcement
-3. Requires risk management and data governance
-4. Global impact — affects any AI serving EU users`
+          ]
         },
         {
           id: `privacy`,
@@ -704,13 +596,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `Federated learning: model travels to data`,
             `k-anonymity, l-diversity for anonymization`,
             `PII detection and redaction in training data`
-          ],
-          pseudoCode: `Privacy-Preserving ML
-
-1. Differential privacy mathematical privacy guarantee
-2. Federated learning: model travels to data
-3. k-anonymity, l-diversity for anonymization
-4. PII detection and redaction in training data`
+          ]
         },
         {
           id: `red-team`,
@@ -726,13 +612,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `Prompt injection: user overrides system instructions`,
             `Content filtering for harmful outputs`,
             `Safety training (RLHF) reduces but does not eliminate risks`
-          ],
-          pseudoCode: `Red Teaming & Safety
-
-1. Red team before deploying LLM applications
-2. Prompt injection: user overrides system instructions
-3. Content filtering for harmful outputs
-4. Safety training (RLHF) reduces but does not eliminate risks`
+          ]
         }
       ],
       exercises: [
