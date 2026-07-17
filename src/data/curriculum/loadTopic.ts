@@ -25,13 +25,29 @@ async function loadModuleTopics(moduleId: string): Promise<Topic[]> {
 }
 
 export async function loadTopic(id: string): Promise<Topic | undefined> {
-  const cached = topicCache.get(id);
+  const cached = getCachedTopic(id);
   if (cached) return cached;
 
   const summary = topicById[id];
   if (!summary) return undefined;
 
   const moduleTopics = await loadModuleTopics(summary.moduleId);
+  const topic = moduleTopics.find((t) => t.id === id);
+  if (topic) topicCache.set(id, topic);
+  return topic;
+}
+
+/** Returns a topic immediately when its module is already loaded (no async wait). */
+export function getCachedTopic(id: string): Topic | undefined {
+  const cached = topicCache.get(id);
+  if (cached) return cached;
+
+  const summary = topicById[id];
+  if (!summary) return undefined;
+
+  const moduleTopics = moduleCache.get(summary.moduleId);
+  if (!moduleTopics) return undefined;
+
   const topic = moduleTopics.find((t) => t.id === id);
   if (topic) topicCache.set(id, topic);
   return topic;

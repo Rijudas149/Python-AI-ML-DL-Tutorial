@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, memo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { allTopics, loadTopic, getAdjacentTopics } from '../data/curriculum';
+import { allTopics, loadTopic, getCachedTopic, getAdjacentTopics } from '../data/curriculum';
 import { useProgress } from '../context/ProgressContext';
 import { CodeBlock } from '../components/CodeBlock';
 import { LessonContent, TabularDisplay } from '../components/LessonContent';
@@ -9,12 +9,39 @@ import { BookmarkButton } from '../components/BookmarkButton';
 import { ReferenceList } from '../components/ReferenceList';
 import { FormulaList, DiagramBlock } from '../components/MathBlocks';
 import { ensureTopicProgress } from '../utils/progressStorage';
-import type { Topic, LessonSection } from '../types';
+import type { Topic, LessonSection, ProgressState } from '../types';
 
 function getInitialSection(topic: Topic, completedSections: string[]) {
   const firstIncomplete = topic.sections.findIndex((s) => !completedSections.includes(s.id));
   if (firstIncomplete === -1) return topic.sections.length > 0 ? topic.sections.length - 1 : 0;
   return firstIncomplete;
+}
+
+function applyTopicState(
+  loaded: Topic,
+  progressState: ProgressState,
+  setters: {
+    setTopic: (t: Topic) => void;
+    setActiveSection: (n: number) => void;
+    setShowExercises: (v: boolean) => void;
+    setShowNotes: (v: boolean) => void;
+    setRevealedSolutions: (s: Set<string>) => void;
+    setLoading: (v: boolean) => void;
+  },
+) {
+  const completed = ensureTopicProgress(progressState, loaded.id).sectionsCompleted;
+  const allSectionsDone = completed.length >= loaded.sections.length;
+  setters.setTopic(loaded);
+  setters.setShowNotes(false);
+  setters.setRevealedSolutions(new Set());
+  setters.setLoading(false);
+  if (allSectionsDone) {
+    setters.setShowExercises(true);
+    setters.setActiveSection(loaded.sections.length > 0 ? loaded.sections.length - 1 : 0);
+  } else {
+    setters.setShowExercises(false);
+    setters.setActiveSection(getInitialSection(loaded, completed));
+  }
 }
 
 const SectionContent = memo(function SectionContent({ section }: { section: LessonSection }) {
@@ -107,24 +134,36 @@ export function TopicLesson() {
     }
 
     let cancelled = false;
-    setLoading(true);
-    setActiveSection(0);
-    setShowExercises(false);
-    setShowNotes(false);
-    setRevealedSolutions(new Set());
+    const setters = {
+      setTopic,
+      setActiveSection,
+      setShowExercises,
+      setShowNotes,
+      setRevealedSolutions,
+      setLoading,
+    };
 
-    loadTopic(topicId).then((loaded) => {
+    const finish = (loaded: Topic | undefined) => {
       if (cancelled) return;
-      setTopic(loaded);
-      setLoading(false);
-      if (!loaded) return;
+      if (!loaded) {
+        setTopic(undefined);
+        setLoading(false);
+        return;
+      }
+      applyTopicState(loaded, progressRef.current, setters);
+    };
 
-      const completed = ensureTopicProgress(progressRef.current, loaded.id).sectionsCompleted;
-      const allSectionsDone = completed.length >= loaded.sections.length;
-      if (allSectionsDone) {
-        setShowExercises(true);
-      } else {
-        setActiveSection(getInitialSection(loaded, completed));
+    const cached = getCachedTopic(topicId);
+    if (cached) {
+      finish(cached);
+      return;
+    }
+
+    setLoading(true);
+    loadTopic(topicId).then(finish).catch(() => {
+      if (!cancelled) {
+        setTopic(undefined);
+        setLoading(false);
       }
     });
 

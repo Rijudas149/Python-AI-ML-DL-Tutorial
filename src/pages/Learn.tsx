@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { modules, allTopics, searchTopics, preloadTopic } from '../data/curriculum';
+import { modules, allTopics, searchTopics } from '../data/curriculum';
+import { warmTopic } from '../utils/prefetchLesson';
 import { useProgress } from '../context/ProgressContext';
 import type { Topic } from '../types';
 
@@ -136,7 +137,7 @@ export function Learn() {
                 const doneSteps = tp.sectionsCompleted.length + tp.exercisesCompleted.length;
                 const sectionPct = totalSteps ? Math.round((doneSteps / totalSteps) * 100) : 0;
                 return (
-                  <Link key={topic.id} to={`/learn/${topic.id}`} className="topic-card" onMouseEnter={() => preloadTopic(topic.id)}>
+                  <Link key={topic.id} to={`/learn/${topic.id}`} className="topic-card" onMouseEnter={() => warmTopic(topic.id)}>
                     <div className="topic-card-top">
                       <span className={`badge ${topic.level}`}>{topic.level}</span>
                       {tp.completed && <span className="done-badge">✓ Done</span>}

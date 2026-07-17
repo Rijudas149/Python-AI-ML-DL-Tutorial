@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { modules, allTopics } from '../data/curriculum';
 import { useProgress } from '../context/ProgressContext';
 import { getRoadmapSummary } from '../utils/roadmap';
+import { warmTopic } from '../utils/prefetchLesson';
 
 function getTopicOfDay(): (typeof allTopics)[0] {
   const dayIndex = Math.floor(Date.now() / 86400000) % allTopics.length;
@@ -60,7 +61,7 @@ export function Home() {
               <div className="progress-fill study" style={{ width: `${lastTopic.progressPct}%` }} />
             </div>
           </div>
-          <Link to={`/learn/${lastTopic.topicId}`} className="btn btn-primary">
+          <Link to={`/learn/${lastTopic.topicId}`} className="btn btn-primary" onMouseEnter={() => warmTopic(lastTopic.topicId)}>
             Resume →
           </Link>
         </div>

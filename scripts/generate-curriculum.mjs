@@ -159,6 +159,7 @@ function generateIndexFile() {
 
 export {
   loadTopic,
+  getCachedTopic,
   preloadTopic,
   preloadTopicModule,
   getAdjacentTopics,

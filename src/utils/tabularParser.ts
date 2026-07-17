@@ -51,14 +51,16 @@ export function parseTabularText(text: string): ParsedTable | null {
 }
 
 export function parseTableBlock(lines: string[], start: number): { table: ParsedTable; end: number } | null {
-  if (!isTableRow(lines[start]) && !lines[start].trim().includes('|')) return null;
+  const first = lines[start]?.trim() ?? '';
+  // Only treat pipe-delimited markdown rows as tables — not set notation like {x | x > 0}
+  if (!isTableRow(first)) return null;
 
   const tableLines: string[] = [];
   let i = start;
   while (i < lines.length) {
     const t = lines[i].trim();
     if (!t) break;
-    if (isTableRow(t) || isTableSeparator(t) || (tableLines.length > 0 && t.includes('|'))) {
+    if (isTableRow(t) || isTableSeparator(t)) {
       tableLines.push(t);
       i++;
       continue;

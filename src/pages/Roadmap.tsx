@@ -1,8 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useProgress } from '../context/ProgressContext';
-import { buildRoadmap, getRoadmapSummary, ROADMAP_PHASE_META } from '../utils/roadmap';
-import { preloadTopic } from '../data/curriculum';
+import { getRoadmapSummary, ROADMAP_PHASE_META } from '../utils/roadmap';
+import { preloadTopicModule } from '../data/curriculum';
+import { warmTopic, prefetchLessonPage } from '../utils/prefetchLesson';
 import type { TopicStatus } from '../utils/roadmap';
 
 const STATUS_LABELS: Record<TopicStatus, string> = {
@@ -21,13 +22,43 @@ const STATUS_CLASS: Record<TopicStatus, string> = {
   upcoming: 'roadmap-status-later',
 };
 
+function RoadmapTopicLink({ topicId, children, className }: { topicId: string; children: ReactNode; className?: string }) {
+  return (
+    <Link
+      to={`/learn/${topicId}`}
+      className={className}
+      onMouseEnter={() => warmTopic(topicId)}
+      onFocus={() => warmTopic(topicId)}
+      onMouseDown={() => warmTopic(topicId)}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export function Roadmap() {
   const { progress } = useProgress();
   const summary = useMemo(() => getRoadmapSummary(progress), [progress]);
-  const phases = useMemo(() => buildRoadmap(progress), [progress]);
-  const [expandedModules, setExpandedModules] = useState<Set<string>>(
-    () => new Set(phases.flatMap((p) => p.modules.map((m) => m.module.id)))
-  );
+  const phases = summary.phases;
+  const [expandedModules, setExpandedModules] = useState<Set<string>>(() => new Set());
+  const didInitExpand = useRef(false);
+
+  useEffect(() => {
+    prefetchLessonPage();
+    if (summary.nextTopic) warmTopic(summary.nextTopic.id);
+  }, [summary.nextTopic?.id]);
+
+  useEffect(() => {
+    if (didInitExpand.current) return;
+    didInitExpand.current = true;
+    const next = summary.nextTopic;
+    if (next) {
+      setExpandedModules(new Set([next.moduleId]));
+      return;
+    }
+    const firstModule = summary.currentPhase.modules[0]?.module.id;
+    if (firstModule) setExpandedModules(new Set([firstModule]));
+  }, [summary.nextTopic, summary.currentPhase]);
 
   const toggleModule = (id: string) => {
     setExpandedModules((prev) => {
@@ -69,11 +100,13 @@ export function Roadmap() {
         {summary.nextTopic && (
           <div className="roadmap-next-up">
             <span className="continue-label">Study Next</span>
-            <Link to={`/learn/${summary.nextTopic.id}`} className="roadmap-next-link">
+            <RoadmapTopicLink topicId={summary.nextTopic.id} className="roadmap-next-link">
               <strong>{summary.nextTopic.title}</strong>
               <span>{summary.nextTopic.module} · ~{summary.nextTopic.estimatedMinutes} min</span>
-            </Link>
-            <Link to={`/learn/${summary.nextTopic.id}`} className="btn btn-primary btn-sm">Start →</Link>
+            </RoadmapTopicLink>
+            <RoadmapTopicLink topicId={summary.nextTopic.id} className="btn btn-primary btn-sm">
+              Start →
+            </RoadmapTopicLink>
           </div>
         )}
       </div>
@@ -118,6 +151,7 @@ export function Roadmap() {
                         type="button"
                         className="roadmap-module-header"
                         onClick={() => toggleModule(module.id)}
+                        onMouseEnter={() => preloadTopicModule(module.id)}
                         aria-expanded={isOpen}
                       >
                         <span className="roadmap-module-toggle">{isOpen ? '▼' : '▶'}</span>
@@ -141,14 +175,14 @@ export function Roadmap() {
                               className={`roadmap-topic-item ${STATUS_CLASS[status]} ${status === 'next' ? 'roadmap-topic-current' : ''}`}
                             >
                               <span className="roadmap-topic-num">{globalIndex + 1}</span>
-                              <Link to={`/learn/${topic.id}`} className="roadmap-topic-link" onMouseEnter={() => preloadTopic(topic.id)}>
+                              <RoadmapTopicLink topicId={topic.id} className="roadmap-topic-link">
                                 <span className="roadmap-topic-title">{topic.title}</span>
                                 <span className="roadmap-topic-sub">
                                   <span className={`badge ${topic.level}`}>{topic.level}</span>
                                   ~{topic.estimatedMinutes} min · {topic.sectionCount} sections
                                   {tp > 0 && tp < 100 && ` · ${tp}%`}
                                 </span>
-                              </Link>
+                              </RoadmapTopicLink>
                               <span className={`roadmap-topic-status ${STATUS_CLASS[status]}`}>
                                 {STATUS_LABELS[status]}
                               </span>

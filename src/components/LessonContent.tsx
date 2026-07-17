@@ -69,7 +69,7 @@ function parseSection(section: string): ContentBlock[] {
     while (i < lines.length) {
       const t = lines[i].trim();
       if (!t) break;
-      if (t.startsWith('|') || (t.includes('|') && paraLines.length === 0 && /^\w.*\|/.test(t))) break;
+      if (t.startsWith('|')) break;
       if (/^-\s/.test(t) || /^\d+\.\s/.test(t) || /^#{3,4}\s/.test(t)) break;
       if (/^\*\*[^*]+\*\*:?\s*$/.test(t)) break;
       paraLines.push(lines[i]);
@@ -77,6 +77,9 @@ function parseSection(section: string): ContentBlock[] {
     }
     if (paraLines.length > 0) {
       blocks.push({ type: 'paragraph', text: paraLines.join('\n') });
+    } else {
+      // Safety: always advance to avoid infinite loops on unexpected syntax
+      i++;
     }
   }
 

@@ -7,6 +7,7 @@ export {
 
 export {
   loadTopic,
+  getCachedTopic,
   preloadTopic,
   preloadTopicModule,
   getAdjacentTopics,
