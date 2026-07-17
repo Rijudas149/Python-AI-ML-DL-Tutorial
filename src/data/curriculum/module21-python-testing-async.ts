@@ -226,7 +226,11 @@ Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if susp
 
 Use module loggers: \`logger = logging.getLogger(__name__)\`. Libraries log to loggers; applications configure handlers (console, file, JSON for observability stacks).
 
-**Applying Debugging, Logging & Tracebacks:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Structured Logging", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Debugging, Logging & Tracebacks:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Structured Logging", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import logging
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -291,7 +295,11 @@ keys: ['a']`,
 
 Maintain a debugging checklist: reproduce reliably, bisect git history (\`git bisect\`), add a failing test, fix, verify test passes. Rubber-duck explaining expected vs actual behavior.
 
-**Applying Debugging, Logging & Tracebacks:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Debug Tools & Practices", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Debugging, Logging & Tracebacks:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Debug Tools & Practices", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Always reproduce before attempting fixes`,
             `Add regression test for every bug fixed`,
@@ -377,7 +385,11 @@ except ZeroDivisionError as e:
 
 \`asyncio.run(main())\` creates a loop, runs \`main\`, and closes cleanly (Python 3.7+). The loop schedules ready coroutines and I/O callbacks cooperatively—no preemptive threads.
 
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Coroutines & Event Loop", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Coroutines & Event Loop", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import asyncio
 
 async def greet(name):
@@ -410,7 +422,11 @@ asyncio.run(main())`,
 
 \`asyncio.wait_for(coro, timeout=5)\` raises \`TimeoutError\` on overrun. Use \`asyncio.Semaphore(n)\` to cap concurrent connections.
 
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Tasks, gather & Timeouts", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Tasks, gather & Timeouts", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import asyncio
 
 async def work(n):
@@ -443,7 +459,11 @@ asyncio.run(main())`,
 
 Respect rate limits and robots.txt when scraping. Handle \`aiohttp.ClientError\` and status codes explicitly.
 
-**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "aiohttp HTTP Basics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Asyncio & Async/Await:** Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "aiohttp HTTP Basics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import asyncio
 import aiohttp
 
@@ -573,7 +593,11 @@ asyncio.run(main())`,
 
 Raw strings \`r"\\d+"\` avoid escaping backslashes. Match objects expose \`.group()\`, \`.start()\`, \`.end()\`. Compile repeated patterns: \`pat = re.compile(r"...")\`.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "re Module Basics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "re Module Basics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import re
 text = "Order ID: 12345, total $67.89"
 id_match = re.search(r"ID: (\\d+)", text)
@@ -599,7 +623,11 @@ print(id_match.group(1) if id_match else None)`,
 
 **Anchors:** \`^\` start, \`$\` end, \`\\b\` word boundary. **Groups:** \`( ... )\` capture, \`(?: ... )\` non-capture, \`(?<name> ... )\` named.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Common Pattern Building Blocks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Common Pattern Building Blocks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import re
 emails = ["a@b.co", "bad@", "c@d.org"]
 pat = re.compile(r"^[\\w.+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")
@@ -626,7 +654,11 @@ print(valid)`,
 
 \`re.split\` splits on pattern. Named groups via \`(?P<name>...)\`. **\`re.finditer\`** yields match objects memory-efficiently over large texts.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Flags & Extraction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Flags & Extraction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import re
 log = "2024-01-15 ERROR disk full\\n2024-01-16 INFO ok"
 for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
@@ -653,7 +685,11 @@ for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
 
 Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on long strings—test performance. Prefer explicit string methods when sufficient.
 
-**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "When Not to Use Regex", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regular Expressions with re:** Match, search, and transform text using Python's re module and common regex patterns. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "When Not to Use Regex", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Do not parse HTML/XML with regex alone`,
             `Watch catastrophic backtracking on evil input`,
@@ -735,7 +771,11 @@ print(re.sub(r" ", "_", "hello world"))`,
 
 Multiprocessing spawns separate interpreters—each with its own GIL—enabling true CPU parallelism at the cost of memory and IPC overhead.
 
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "The Global Interpreter Lock", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "The Global Interpreter Lock", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `GIL limits parallel CPU-bound threads in CPython`,
             `I/O-bound tasks still benefit from threads`,
@@ -756,7 +796,11 @@ Multiprocessing spawns separate interpreters—each with its own GIL—enabling 
 
 Avoid data races—use queues (\`queue.Queue\`) for producer-consumer patterns instead of manual locking when possible.
 
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "threading Module", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "threading Module", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from concurrent.futures import ThreadPoolExecutor
 
 def fetch(n):
@@ -786,7 +830,11 @@ print(results)`,
 
 On Windows, guard entry with \`if __name__ == "__main__":\` to prevent spawn recursion. Shared state via \`multiprocessing.Value\`, \`Array\`, or **\`Manager\`**—prefer immutable message passing.
 
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "multiprocessing Module", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "multiprocessing Module", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from multiprocessing import Pool
 
 def square(x):
@@ -816,7 +864,11 @@ if __name__ == "__main__":
 
 Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O concurrency with CPU offload via \`loop.run_in_executor\`.
 
-**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Choosing a Concurrency Model", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Threading, Multiprocessing & the GIL:** Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines.
+
+When studying "Choosing a Concurrency Model", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Match model to bottleneck: I/O vs CPU`,
             `Do not mix models without clear boundaries`,

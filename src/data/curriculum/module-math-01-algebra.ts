@@ -15,7 +15,9 @@ export const moduleMath01Topics: Topic[] = [
 
 Subsets satisfy A ⊆ B when every element of A is in B. The **power set** P(A) is the set of all subsets; |P(A)| = 2^|A|. In data science, feature sets, label sets, and train/validation splits are all set-theoretic.
 
-Venn diagrams visualize unions and intersections. Countable vs uncountable sets matter when discussing discrete vs continuous random variables. Set-builder notation {x ∈ ℝ | x > 0} defines infinite sets compactly and appears in constraint definitions for optimization.`,
+Venn diagrams visualize unions and intersections. Countable vs uncountable sets matter when discussing discrete vs continuous random variables.
+
+Set-builder notation {x ∈ ℝ | x > 0} defines infinite sets compactly and appears in constraint definitions for optimization.`,
           formulas: [
             `A ∪ B = {x | x ∈ A or x ∈ B}`,
             `A ∩ B = {x | x ∈ A and x ∈ B}`,
@@ -494,7 +496,9 @@ output
 
 **Log1p** handles count data. **Box-Cox** stabilizes variance. Kernel tricks implicitly map to high-D via φ(x) without computing φ.
 
-Activation functions are pointwise nonlinear transforms. Invertible transforms enable density estimation. Always track whether transforms applied at train time must be reused at inference with saved μ, σ parameters to avoid train-serve skew and incorrect predictions in production.`,
+Activation functions are pointwise nonlinear transforms. Invertible transforms enable density estimation.
+
+Always track whether transforms applied at train time must be reused at inference with saved μ, σ parameters to avoid train-serve skew and incorrect predictions in production.`,
           formulas: [
             `z = (x − μ) / σ`,
             `x_norm = (x − min) / (max − min)`,
@@ -1347,7 +1351,9 @@ angles add
           title: `Complex Numbers in Signal & ML`,
           content: `**Discrete Fourier Transform** X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N) decomposes signals into frequency components. Convolution theorem: FFT(domain) multiplies in frequency domain. Spectral analysis of time series uses |X_k|.
 
-Complex activations appear in specialized architectures. Phase arg(X_k) carries timing information. np.fft.fft returns complex array. Understanding e^(iωt) as rotating vector clarifies periodic patterns in sequential data and audio feature extraction pipelines.`,
+Complex activations appear in specialized architectures. Phase arg(X_k) carries timing information. np.fft.fft returns complex array.
+
+Understanding e^(iωt) as rotating vector clarifies periodic patterns in sequential data and audio feature extraction pipelines.`,
           formulas: [
             `X_k = ∑_{n=0}^{N−1} x_n e^(−i2πkn/N)`,
             `F{f*g} = F{f}·F{g}`,

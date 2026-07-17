@@ -4,16 +4,25 @@ import { parseTableBlock, parseTabularText, type ParsedTable } from '../utils/ta
 
 type ContentBlock =
   | { type: 'paragraph'; text: string }
+  | { type: 'lead'; text: string }
+  | { type: 'concept'; term: string; text: string }
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
   | { type: 'code'; code: string }
   | { type: 'heading'; level: 3 | 4; text: string }
   | { type: 'table'; headers: string[]; rows: string[][] };
 
-function parseSection(section: string): ContentBlock[] {
+function parseInlineHeading(line: string): { term: string; text: string } | null {
+  const m = line.match(/^\*\*([^*]+)\*\*:?\s+([\s\S]+)$/);
+  if (!m) return null;
+  return { term: m[1].replace(/:$/, '').trim(), text: m[2].trim() };
+}
+
+function parseSection(section: string, isFirstSection: boolean): ContentBlock[] {
   const lines = section.split('\n');
   const blocks: ContentBlock[] = [];
   let i = 0;
+  let firstParagraph = isFirstSection;
 
   while (i < lines.length) {
     const line = lines[i];
@@ -35,6 +44,7 @@ function parseSection(section: string): ContentBlock[] {
       const level = trimmed.startsWith('####') ? 4 : 3;
       blocks.push({ type: 'heading', level, text: trimmed.replace(/^#{3,4}\s+/, '') });
       i++;
+      firstParagraph = false;
       continue;
     }
 
@@ -42,6 +52,7 @@ function parseSection(section: string): ContentBlock[] {
       const text = trimmed.replace(/\*\*/g, '').replace(/:$/, '').trim();
       blocks.push({ type: 'heading', level: 4, text });
       i++;
+      firstParagraph = false;
       continue;
     }
 
@@ -52,6 +63,7 @@ function parseSection(section: string): ContentBlock[] {
         i++;
       }
       blocks.push({ type: 'ul', items });
+      firstParagraph = false;
       continue;
     }
 
@@ -62,6 +74,7 @@ function parseSection(section: string): ContentBlock[] {
         i++;
       }
       blocks.push({ type: 'ol', items });
+      firstParagraph = false;
       continue;
     }
 
@@ -75,8 +88,20 @@ function parseSection(section: string): ContentBlock[] {
       paraLines.push(lines[i]);
       i++;
     }
+
     if (paraLines.length > 0) {
-      blocks.push({ type: 'paragraph', text: paraLines.join('\n') });
+      const text = paraLines.join('\n').trim();
+      const inline = parseInlineHeading(text.replace(/\n/g, ' '));
+
+      if (inline && inline.text.length > 0) {
+        blocks.push({ type: 'concept', term: inline.term, text: inline.text });
+      } else if (firstParagraph) {
+        blocks.push({ type: 'lead', text });
+        firstParagraph = false;
+      } else {
+        blocks.push({ type: 'paragraph', text });
+      }
+      firstParagraph = false;
     } else {
       i++;
     }
@@ -88,11 +113,13 @@ function parseSection(section: string): ContentBlock[] {
 function parseContent(content: string): ContentBlock[] {
   const blocks: ContentBlock[] = [];
   const parts = content.split(/```([\s\S]*?)```/g);
+  let isFirstSection = true;
 
   for (let i = 0; i < parts.length; i++) {
     if (i % 2 === 1) {
       const code = parts[i].trim();
       if (code) blocks.push({ type: 'code', code });
+      isFirstSection = false;
       continue;
     }
 
@@ -102,7 +129,9 @@ function parseContent(content: string): ContentBlock[] {
     for (const section of text.split(/\n\n+/)) {
       const trimmed = section.trim();
       if (!trimmed) continue;
-      blocks.push(...parseSection(trimmed));
+      const parsed = parseSection(trimmed, isFirstSection);
+      blocks.push(...parsed);
+      if (parsed.length > 0) isFirstSection = false;
     }
   }
 
@@ -116,10 +145,18 @@ function InlineText({ text }: { text: string }) {
     <>
       {parts.map((part, i) => {
         if (part.startsWith('**') && part.endsWith('**')) {
-          return <strong key={i}>{part.slice(2, -2)}</strong>;
+          return (
+            <strong key={i} className="lesson-term">
+              {part.slice(2, -2)}
+            </strong>
+          );
         }
         if (part.startsWith('`') && part.endsWith('`')) {
-          return <code key={i} className="inline-code">{part.slice(1, -1)}</code>;
+          return (
+            <code key={i} className="inline-code">
+              {part.slice(1, -1)}
+            </code>
+          );
         }
         return <span key={i}>{part}</span>;
       })}
@@ -134,7 +171,9 @@ function DataTable({ headers, rows, className = '' }: ParsedTable & { className?
         <thead>
           <tr>
             {headers.map((header, j) => (
-              <th key={j}><InlineText text={header} /></th>
+              <th key={j}>
+                <InlineText text={header} />
+              </th>
             ))}
           </tr>
         </thead>
@@ -142,7 +181,9 @@ function DataTable({ headers, rows, className = '' }: ParsedTable & { className?
           {rows.map((row, j) => (
             <tr key={j}>
               {row.map((cell, k) => (
-                <td key={k}><InlineText text={cell} /></td>
+                <td key={k}>
+                  <InlineText text={cell} />
+                </td>
               ))}
             </tr>
           ))}
@@ -164,9 +205,24 @@ export function LessonContent({ content }: { content: string }) {
   const blocks = useMemo(() => parseContent(content), [content]);
 
   return (
-    <div className="lesson-prose">
+    <div className="lesson-prose lesson-prose-structured">
       {blocks.map((block, i) => {
         switch (block.type) {
+          case 'lead':
+            return (
+              <p key={i} className="lesson-lead">
+                <InlineText text={block.text} />
+              </p>
+            );
+          case 'concept':
+            return (
+              <article key={i} className="lesson-concept-card">
+                <h4 className="lesson-concept-term">{block.term}</h4>
+                <p className="lesson-concept-body">
+                  <InlineText text={block.text} />
+                </p>
+              </article>
+            );
           case 'paragraph':
             return (
               <p key={i} className="lesson-paragraph">
@@ -180,17 +236,24 @@ export function LessonContent({ content }: { content: string }) {
             );
           case 'ul':
             return (
-              <ul key={i} className="lesson-list">
+              <ul key={i} className="lesson-list lesson-concept-list">
                 {block.items.map((item, j) => (
-                  <li key={j}><InlineText text={item} /></li>
+                  <li key={j}>
+                    <InlineText text={item} />
+                  </li>
                 ))}
               </ul>
             );
           case 'ol':
             return (
-              <ol key={i} className="lesson-list lesson-list-ordered">
+              <ol key={i} className="lesson-list lesson-step-list">
                 {block.items.map((item, j) => (
-                  <li key={j}><InlineText text={item} /></li>
+                  <li key={j}>
+                    <span className="lesson-step-num">{j + 1}</span>
+                    <span className="lesson-step-text">
+                      <InlineText text={item} />
+                    </span>
+                  </li>
                 ))}
               </ol>
             );
@@ -201,10 +264,13 @@ export function LessonContent({ content }: { content: string }) {
               </div>
             );
           case 'heading':
-            if (block.level === 4) {
-              return <h4 key={i} className="lesson-subheading">{block.text}</h4>;
-            }
-            return <h3 key={i} className="lesson-subheading">{block.text}</h3>;
+            return (
+              <div key={i} className="lesson-section-divider">
+                <span className="lesson-section-divider-line" />
+                <h4 className="lesson-subheading">{block.text}</h4>
+                <span className="lesson-section-divider-line" />
+              </div>
+            );
           case 'table':
             return <DataTable key={i} headers={block.headers} rows={block.rows} />;
           default:

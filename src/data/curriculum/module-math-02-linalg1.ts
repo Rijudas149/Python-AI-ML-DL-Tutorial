@@ -65,7 +65,9 @@ tail at origin, head at (3,4)
           title: `Norms & Distance`,
           content: `**L2 norm** (Euclidean): ||v||₂ = √(∑vᵢ²). **L1 norm**: ||v||₁ = ∑|vᵢ|. Distance d(u,v) = ||u−v||₂.
 
-L2 norm relates to dot product: ||v||² = v·v. Regularization in ML uses L1 (Lasso) and L2 (Ridge) penalties. Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes Euclidean norm efficiently for high-dimensional embeddings and batch feature normalization pipelines.`,
+L2 norm relates to dot product: ||v||² = v·v. Regularization in ML uses L1 (Lasso) and L2 (Ridge) penalties.
+
+Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes Euclidean norm efficiently for high-dimensional embeddings and batch feature normalization pipelines.`,
           formulas: [
             `||v||₂ = √(∑ vᵢ²)`,
             `||v||₁ = ∑ |vᵢ|`,
@@ -878,7 +880,9 @@ k must match inner dim
           title: `Transpose & Trace`,
           content: `**Transpose** (AB)ᵀ = BᵀAᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)).
 
-Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `(AB)ᵀ = BᵀAᵀ`,
             `tr(A) = ∑ A_ii`,
@@ -982,7 +986,9 @@ Singular: squashes dim
 
 Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow.
 
-Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `h = σ(Wx + b)`,
             `Batch: H = σ(XWᵀ + B)`,
@@ -1098,7 +1104,9 @@ print(np.allclose((A@B).T, B.T@A.T))`,
 
 Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system.
 
-Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Ax = b`,
             `Consistent ⇔ b ∈ Col(A)`,
@@ -1254,7 +1262,9 @@ Overdetermined: more eqs than unknowns
 
 Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values.
 
-Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `rank(A) = dim Col(A)`,
             `rank(A) + nullity(A) = n`,

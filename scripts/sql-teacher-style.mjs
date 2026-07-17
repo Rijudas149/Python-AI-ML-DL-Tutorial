@@ -64,20 +64,54 @@ function isWellStructured(content) {
   return false;
 }
 
+function splitDenseParagraphs(content) {
+  const paragraphs = content.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
+  const out = [];
+
+  for (const para of paragraphs) {
+    if (/^-\s/m.test(para) || /^\d+\.\s/m.test(para) || /^#{3,4}\s/m.test(para)) {
+      out.push(para);
+      continue;
+    }
+    if (para.length < 260) {
+      out.push(para);
+      continue;
+    }
+
+    const sentences = para
+      .split(/(?<=[.!?])\s+(?=[A-Z*("'])/)
+      .map((s) => s.trim())
+      .filter((s) => s.length > 12);
+
+    if (sentences.length <= 2) {
+      out.push(para);
+      continue;
+    }
+
+    for (let i = 0; i < sentences.length; i += 2) {
+      out.push(sentences.slice(i, i + 2).join(' '));
+    }
+  }
+
+  return out.join('\n\n');
+}
+
 function formatContent(section, topic) {
   if (ENRICHMENT_SECTION_IDS.test(section.id)) return section.content;
 
   const raw = stripRoboticBlocks(section.content);
   if (!raw) return raw;
 
-  if (isWellStructured(raw)) return raw;
+  let result = raw;
 
-  if (/^-\s/m.test(raw) || /^\d+\.\s/m.test(raw)) return raw;
+  if (!isWellStructured(raw) && !/^-\s/m.test(raw) && !/^\d+\.\s/m.test(raw)) {
+    const sentences = splitSentences(raw);
+    if (sentences.length > 2) {
+      result = groupParagraphs(sentences, sentences.length >= 6 ? 3 : 2).join('\n\n');
+    }
+  }
 
-  const sentences = splitSentences(raw);
-  if (sentences.length <= 2) return raw;
-
-  return groupParagraphs(sentences, sentences.length >= 6 ? 3 : 2).join('\n\n');
+  return splitDenseParagraphs(result);
 }
 
 function generatePseudoCode(section, topic) {

@@ -15,7 +15,11 @@ export const module26Topics: Topic[] = [
 
 Loss drives G to match data distribution implicitly without explicit likelihood.
 
-**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "GAN Architecture", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "GAN Architecture", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Latent z usually Gaussian or uniform`,
             `D too strong prevents G learning—balance capacity`,
@@ -36,7 +40,11 @@ Loss drives G to match data distribution implicitly without explicit likelihood.
 
 Progressive growing and StyleGAN scale to photorealistic faces.
 
-**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "DCGAN & Convolutional GANs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "DCGAN & Convolutional GANs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import torch
 z = torch.randn(4, 100)
 print(z.shape)`,
@@ -61,7 +69,11 @@ print(z.shape)`,
 
 Track FID during training; early stopping when FID degrades.
 
-**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Training Tricks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Training Tricks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `WGAN-GP replaces weight clipping`,
             `EMA generator smoother outputs`,
@@ -82,7 +94,11 @@ Track FID during training; early stopping when FID degrades.
 
 **CycleGAN** unpaired translation via cycle consistency loss.
 
-**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Conditional GANs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Conditional GANs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Projection discriminator injects class info`,
             `Pix2Pix needs aligned pairs`,
@@ -162,7 +178,11 @@ Track FID during training; early stopping when FID degrades.
 
 Loss = reconstruction + KL(q(z|x) || p(z)) with prior p(z)=N(0,I).
 
-**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "VAE Framework", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "VAE Framework", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Reparameterization enables backprop through sampling`,
             `KL regularizes latent space smoothness`,
@@ -183,7 +203,11 @@ Loss = reconstruction + KL(q(z|x) || p(z)) with prior p(z)=N(0,I).
 
 Visualization with t-SNE/UMAP on encoded z for cluster structure.
 
-**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Latent Space Geometry", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Latent Space Geometry", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import torch
 mu = torch.zeros(1, 2)
 logvar = torch.zeros(1, 2)
@@ -211,7 +235,11 @@ print(z.shape)`,
 
 VAEs provide approximate likelihood—useful for anomaly detection via reconstruction error.
 
-**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "VAE Variants", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "VAE Variants", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `VQ-VAE enables autoregressive priors over codes`,
             `Hierarchical latents capture multi-scale structure`,
@@ -232,7 +260,11 @@ VAEs provide approximate likelihood—useful for anomaly detection via reconstru
 
 Evaluate log-likelihood estimates (ELBO) and reconstruction FID for comparisons.
 
-**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Sampling & Evaluation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Sampling & Evaluation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `ELBO lower bound on log p(x)`,
             `Importance sampling tightens likelihood bound`,
@@ -312,7 +344,11 @@ Evaluate log-likelihood estimates (ELBO) and reconstruction FID for comparisons.
 
 Schedule β_t linear or cosine controls noise injection rate.
 
-**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Forward Diffusion Process", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Forward Diffusion Process", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Closed-form q(x_t|x_0) enables training targets`,
             `Cosine schedule often better than linear β`,
@@ -333,7 +369,11 @@ Schedule β_t linear or cosine controls noise injection rate.
 
 Sampling iterates from x_T down to x_0.
 
-**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Reverse Denoising", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Reverse Denoising", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import torch
 T = 1000
 t = torch.tensor([500])
@@ -359,7 +399,11 @@ print(t.item())`,
 
 Scale s>1 increases prompt adherence, may reduce diversity.
 
-**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Classifier-Free Guidance", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Classifier-Free Guidance", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Guidance scale s trades fidelity vs diversity`,
             `Dropout rate ~10% during training`,
@@ -380,7 +424,11 @@ Scale s>1 increases prompt adherence, may reduce diversity.
 
 Open weights enable local generation; safety filters and watermarking increasingly required.
 
-**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Applications & Tools", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Applications & Tools", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Latent diffusion runs in VAE compressed space`,
             `ControlNet adds spatial conditioning`,
@@ -460,7 +508,11 @@ Open weights enable local generation; safety filters and watermarking increasing
 
 **AdaIN** adaptive instance norm enables arbitrary style in single forward pass.
 
-**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Neural Style Transfer", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Neural Style Transfer", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Gram matrix captures texture statistics`,
             `Content/style weight tradeoff visual quality`,
@@ -481,7 +533,11 @@ Open weights enable local generation; safety filters and watermarking increasing
 
 Applications: horses↔zebras, summer↔winter, photo↔sketch.
 
-**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "CycleGAN", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "CycleGAN", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Cycle loss enforces structural consistency`,
             `Patch discriminator for local realism`,
@@ -502,7 +558,11 @@ Applications: horses↔zebras, summer↔winter, photo↔sketch.
 
 Style mixing interpolates different w layers for disentangled control.
 
-**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "StyleGAN Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "StyleGAN Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `W space more disentangled than Z`,
             `Progressive training grows resolution`,
@@ -523,7 +583,11 @@ Style mixing interpolates different w layers for disentangled control.
 
 Watermarking and provenance metadata (C2PA) emerging standards.
 
-**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Creative Applications", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Creative Applications", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Disclose synthetic media in production pipelines`,
             `Style from living artists needs licensing`,
@@ -603,7 +667,11 @@ Watermarking and provenance metadata (C2PA) emerging standards.
 
 **Lower FID better**—sensitive to mode coverage and quality. Requires sufficient sample count (50k common).
 
-**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Fréchet Inception Distance (FID)", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Fréchet Inception Distance (FID)", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `FID detects mode collapse better than IS`,
             `Inception features biased to ImageNet statistics`,
@@ -624,7 +692,11 @@ Watermarking and provenance metadata (C2PA) emerging standards.
 
 Less used alone—does not compare to real data directly.
 
-**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Inception Score (IS)", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Inception Score (IS)", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `High IS can fool with sharp but unrealistic images`,
             `Splits IS into quality and diversity components`,
@@ -645,7 +717,11 @@ Less used alone—does not compare to real data directly.
 
 LLM-as-judge emerging for text generation with bias caveats.
 
-**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Human Evaluation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Human Evaluation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Human eval gold standard but expensive`,
             `Rater agreement metrics (Cohen's kappa)`,
@@ -666,7 +742,11 @@ LLM-as-judge emerging for text generation with bias caveats.
 
 Track memorization metrics detecting training set copying.
 
-**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Precision, Recall & CLIP Score", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs.
+
+When studying "Precision, Recall & CLIP Score", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `High precision low recall indicates mode dropping`,
             `CLIP score correlates with caption match not aesthetics`,

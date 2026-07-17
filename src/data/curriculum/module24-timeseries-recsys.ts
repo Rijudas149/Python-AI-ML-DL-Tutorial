@@ -15,7 +15,11 @@ export const module24Topics: Topic[] = [
 
 \`statsmodels.tsa.seasonal_decompose\` visualizes components. Domain knowledge picks period: 7 for daily weekly pattern, 12 for monthly seasonality in annual data.
 
-**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Trend, Seasonality & Noise", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Trend, Seasonality & Noise", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import pandas as pd
 idx = pd.date_range("2020-01-01", periods=24, freq="MS")
 ts = pd.Series(range(24), index=idx)
@@ -41,7 +45,11 @@ print(len(ts))`,
 
 ARIMA(p,d,q): d differencing orders; p AR terms; q MA terms on residuals.
 
-**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Stationarity & Differencing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Stationarity & Differencing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Non-stationary series break many model assumptions`,
             `ADF p-value low → reject unit root (stationary)`,
@@ -62,7 +70,11 @@ ARIMA(p,d,q): d differencing orders; p AR terms; q MA terms on residuals.
 
 Train on rolling windows for realistic evaluation—random splits leak future into past.
 
-**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "ARIMA Modeling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "ARIMA Modeling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import numpy as np
 y = np.random.randn(100).cumsum()
 print(len(y))`,
@@ -86,7 +98,11 @@ print(len(y))`,
 
 Prophet and neural approaches complement classical SARIMA on messy business series with holidays.
 
-**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "SARIMA", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "SARIMA", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Seasonal order (P,D,Q,s) requires sufficient history`,
             `Multiple seasonalities need complex models`,
@@ -169,7 +185,11 @@ print(len(pd.date_range("2024-01-01", periods=12, freq="MS")))`,
 
 Tune \`changepoint_prior_scale\` for flexibility vs overfit.
 
-**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Facebook Prophet", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Facebook Prophet", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import pandas as pd
 df = pd.DataFrame({"ds": pd.date_range("2023-01-01", periods=5), "y": [1,2,3,4,5]})
 print(list(df.columns))`,
@@ -194,7 +214,11 @@ print(list(df.columns))`,
 
 \`HistGradientBoostingRegressor\` on lag features competes with Prophet on tabularized series.
 
-**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "sklearn Time Series Splits", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "sklearn Time Series Splits", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from sklearn.model_selection import TimeSeriesSplit
 import numpy as np
 tscv = TimeSeriesSplit(n_splits=3)
@@ -220,7 +244,11 @@ print(len(list(tscv.split(np.arange(20).reshape(-1,1)))))`,
 
 Probabilistic forecasts: prediction intervals from Prophet or quantile regression.
 
-**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Forecast Metrics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Forecast Metrics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Choose metric aligned to business cost`,
             `MAPE unstable for intermittent demand`,
@@ -241,7 +269,11 @@ Probabilistic forecasts: prediction intervals from Prophet or quantile regressio
 
 Combine statistical and ML forecasts in ensembles weighted by recent performance.
 
-**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Production Forecast Pipelines", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Production Forecast Pipelines", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Automate retrain on new observations`,
             `Alert when error exceeds baseline`,
@@ -323,7 +355,11 @@ print(len(list(TimeSeriesSplit(2).split(np.arange(10)))))`,
 
 **Surprise** library implements SVD; deep MF adds nonlinearities.
 
-**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Matrix Factorization", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Matrix Factorization", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Sparsity: most user-item pairs unobserved`,
             `Regularization prevents overfitting embeddings`,
@@ -344,7 +380,11 @@ print(len(list(TimeSeriesSplit(2).split(np.arange(10)))))`,
 
 Similarity: cosine, Pearson correlation. k nearest neighbors trade bias/variance.
 
-**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Neighborhood Methods", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Neighborhood Methods", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import numpy as np
 u = np.array([1,0,1]); v = np.array([1,1,0])
 print(round(u@v/(np.linalg.norm(u)*np.linalg.norm(v)),2))`,
@@ -369,7 +409,11 @@ print(round(u@v/(np.linalg.norm(u)*np.linalg.norm(v)),2))`,
 
 BPR pairwise ranking loss popular for top-K recommendation.
 
-**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Implicit Feedback", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Implicit Feedback", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Implicit signals abundant but ambiguous`,
             `Weight by dwell time or purchase`,
@@ -390,7 +434,11 @@ BPR pairwise ranking loss popular for top-K recommendation.
 
 Online A/B tests measure click-through and revenue—the ground truth.
 
-**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Evaluating Recommenders", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Evaluating Recommenders", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Temporal split mimics deployment`,
             `Novelty and diversity metrics beyond accuracy`,
@@ -471,7 +519,11 @@ print(np.dot([1,0],[0,1])==0)`,
 
 Build **item profile** vector summarizing attributes; user profile = aggregate of liked item vectors (weighted average).
 
-**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Item Feature Representations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Item Feature Representations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Rich features reduce cold-start for new items`,
             `Embeddings capture semantic similarity`,
@@ -492,7 +544,11 @@ Build **item profile** vector summarizing attributes; user profile = aggregate o
 
 Hybrid: blend content scores with collaborative scores for coverage.
 
-**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Scoring & Retrieval", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Scoring & Retrieval", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import numpy as np
 p=np.array([0.8,0.2]); i=np.array([0.6,0.4])
 print((p@i)/(np.linalg.norm(p)*np.linalg.norm(i))>0)`,
@@ -517,7 +573,11 @@ print((p@i)/(np.linalg.norm(p)*np.linalg.norm(i))>0)`,
 
 Two-tower neural networks embed users and items separately for fast retrieval.
 
-**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Learning to Rank", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Learning to Rank", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Pointwise vs pairwise vs listwise ranking losses`,
             `Two-tower enables billion-scale retrieval`,
@@ -538,7 +598,11 @@ Two-tower neural networks embed users and items separately for fast retrieval.
 
 Mitigate with exploration, diversity re-ranking, or hybrid CF.
 
-**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Content-Based Limits", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Content-Based Limits", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Explicit diversity objectives in re-ranking`,
             `Explore/exploit tradeoff in bandits`,
@@ -618,7 +682,11 @@ Mitigate with exploration, diversity re-ranking, or hybrid CF.
 
 **Confusion matrix** on minority rows reveals false negatives cost (e.g., missed fraud).
 
-**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Why Accuracy Fails", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Why Accuracy Fails", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from sklearn.metrics import recall_score
 print(recall_score([0,0,1,1],[0,0,0,0]))`,
           output: `0.0`,
@@ -642,7 +710,11 @@ print(recall_score([0,0,1,1],[0,0,0,0]))`,
 
 Apply resampling **inside CV folds** on training only to prevent leakage.
 
-**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "SMOTE & Resampling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "SMOTE & Resampling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `SMOTE in imblearn pipeline with CV`,
             `Borderline-SMOTE focuses on hard examples`,
@@ -663,7 +735,11 @@ Apply resampling **inside CV folds** on training only to prevent leakage.
 
 Cost-sensitive learning assigns higher penalty to minority errors.
 
-**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Class Weights & Thresholds", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Class Weights & Thresholds", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from sklearn.linear_model import LogisticRegression
 print(LogisticRegression(class_weight="balanced").class_weight)`,
           output: `balanced`,
@@ -687,7 +763,11 @@ print(LogisticRegression(class_weight="balanced").class_weight)`,
 
 Slice metrics by segment— imbalance may vary by region or product line.
 
-**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Metrics & Monitoring", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike.
+
+When studying "Metrics & Monitoring", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Production SLA on minority class recall`,
             `Alert when prediction distribution drifts`,

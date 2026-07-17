@@ -15,7 +15,11 @@ export const module23Topics: Topic[] = [
 
 \`curve_fit\` fits nonlinear models to data by least squares. Always inspect residuals and initial guesses—optimization finds local optima.
 
-**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "scipy.optimize", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "scipy.optimize", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy.optimize import minimize
 import numpy as np
 f = lambda x: (x[0]-2)**2 + (x[1]+1)**2
@@ -42,7 +46,11 @@ print(np.round(res.x, 2))`,
 
 Watch singularities and infinite limits—split integration domains or transform variables.
 
-**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Integration & ODEs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Integration & ODEs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy import integrate
 val, err = integrate.quad(lambda x: x**2, 0, 1)
 print(round(val, 3), err < 1e-8)`,
@@ -67,7 +75,11 @@ print(round(val, 3), err < 1e-8)`,
 
 Extrapolation outside sample range is unreliable—clamp or model uncertainty explicitly.
 
-**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Interpolation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Interpolation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy.interpolate import interp1d
 import numpy as np
 x = np.array([0, 1, 2])
@@ -95,7 +107,11 @@ print(float(f(1.5)))`,
 
 Reproducibility: fix random seeds in stochastic routines and document numerical tolerances.
 
-**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "SciPy in the Stack", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "SciPy in the Stack", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `SciPy functions expect ndarray inputs`,
             `Vectorize where possible before Python loops`,
@@ -177,7 +193,11 @@ print(minimize(lambda x: (x[0]-3)**2, [0]).x[0])`,
 
 **p-value**: probability of observing data at least as extreme as yours if H₀ were true. Reject H₀ if p < α—not "probability H₀ is true".
 
-**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Null & Alternative Hypotheses", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Null & Alternative Hypotheses", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Pre-register α to avoid p-hacking`,
             `p-value is not effect size`,
@@ -198,7 +218,11 @@ print(minimize(lambda x: (x[0]-3)**2, [0]).x[0])`,
 
 Check with Q-Q plots and report effect size (Cohen's d).
 
-**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "t-Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "t-Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy import stats
 import numpy as np
 a = np.random.normal(0, 1, 100)
@@ -226,7 +250,11 @@ print(stat > 0, 0 <= p <= 1)`,
 
 Expected frequencies should be ≥5 in most cells; combine categories otherwise.
 
-**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Chi-Square Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Chi-Square Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy.stats import chi2_contingency
 import numpy as np
 table = np.array([[10, 20], [30, 40]])
@@ -253,7 +281,11 @@ print(dof, expected.shape)`,
 
 **Bayesian** approaches quantify posterior belief; frequentist p-values answer a different question—do not conflate.
 
-**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Interpreting Results Responsibly", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Interpreting Results Responsibly", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Effect size and CI matter more than p alone`,
             `Power analysis plans sample size ex ante`,
@@ -336,7 +368,11 @@ print(chi2_contingency([[5,5],[10,10]])[2] == 1)`,
 
 \`loc\` and \`scale\` shift/scale distributions: \`norm(loc=mu, scale=sigma)\`.
 
-**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Random Variables in scipy.stats", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Random Variables in scipy.stats", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy import stats
 import numpy as np
 samples = stats.norm.rvs(loc=0, scale=1, size=1000, random_state=42)
@@ -362,7 +398,11 @@ print(abs(np.mean(samples)) < 0.1)`,
 
 Overfitting parametric forms misleads—compare models with AIC/BIC or nonparametric KDE.
 
-**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Fitting Distributions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Fitting Distributions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `from scipy import stats
 import numpy as np
 data = stats.norm.rvs(5, 2, size=500, random_state=0)
@@ -389,7 +429,11 @@ print(abs(mu - 5) < 0.5)`,
 
 Monte Carlo integrates expectations by drawing samples—error shrinks as O(1/√n).
 
-**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Sampling Strategies", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Sampling Strategies", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import numpy as np
 rng = np.random.default_rng(0)
 boot_means = [rng.choice([1,2,3,4,5], size=5, replace=True).mean() for _ in range(1000)]
@@ -415,7 +459,11 @@ print(len(boot_means))`,
 
 For proportions, use binomial or normal approx with care when np(1-p) small.
 
-**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Central Limit Theorem", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Central Limit Theorem", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `CLT applies to sample means not individual draws`,
             `Finite variance assumption matters`,
@@ -497,7 +545,11 @@ print(norm.cdf(0))`,
 
 Check **linearity**, **homoscedasticity** (Breusch-Pagan), **residual normality** for inference validity.
 
-**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "OLS Linear Regression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "OLS Linear Regression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import statsmodels.formula.api as smf
 import pandas as pd
 df = pd.DataFrame({"y": [1,2,3,4], "x": [0,1,2,3]})
@@ -524,7 +576,11 @@ print(round(model.params["x"], 2))`,
 
 Class imbalance requires class weights or resampling—accuracy alone misleads.
 
-**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Logistic Regression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Logistic Regression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `import statsmodels.formula.api as smf
 import pandas as pd
 df = pd.DataFrame({"y": [0,0,1,1], "x": [0,1,2,3]})
@@ -550,7 +606,11 @@ print(len(res.params))`,
 
 Transform targets (log) or use GLMs when residuals show systematic patterns.
 
-**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Regression Diagnostics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Regression Diagnostics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Robust SE when variance not constant`,
             `Cross-validation for predictive performance`,
@@ -571,7 +631,11 @@ Transform targets (log) or use GLMs when residuals show systematic patterns.
 
 Publishing requires reporting limitations, data collection, and missing data handling.
 
-**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Inference vs Prediction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Inference vs Prediction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Coefficients answer "what if x increases by 1?"`,
             `Regularization biases coefficients but improves prediction`,
@@ -658,7 +722,11 @@ print(len(r.params)==2)`,
 
 For conjugate pairs (Beta-Binomial, Normal-Normal) posteriors have closed form. Otherwise use MCMC (**PyMC**, **Stan**) or variational inference.
 
-**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Bayes' Theorem", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Bayes' Theorem", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           example: `# Beta-Binomial: prior Beta(1,1) uniform, 8 heads 2 tails
 alpha, beta = 1+8, 1+2
 mean = alpha / (alpha + beta)
@@ -684,7 +752,11 @@ print(round(mean, 2))`,
 
 Avoid improper priors unless you understand measure theory implications. Document prior choices in reports.
 
-**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Choosing Priors", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Choosing Priors", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Sensitivity analysis builds stakeholder trust`,
             `Hierarchical priors pool information across groups`,
@@ -705,7 +777,11 @@ Avoid improper priors unless you understand measure theory implications. Documen
 
 Computation cost limits model complexity—start simple, add hierarchy incrementally.
 
-**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Sampling the Posterior", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Sampling the Posterior", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `R-hat > 1.01 suggests poor mixing`,
             `Longer chains or reparameterization help`,
@@ -726,7 +802,11 @@ Computation cost limits model complexity—start simple, add hierarchy increment
 
 Calibration plots compare predicted probabilities to observed frequencies—critical in decision systems.
 
-**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Bayesian ML Connections", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
+**Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis.
+
+When studying "Bayesian ML Connections", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests.
+
+Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.`,
           keyPoints: [
             `Uncertainty quantification aids risk-sensitive decisions`,
             `Ensembles approximate Bayesian model averaging loosely`,

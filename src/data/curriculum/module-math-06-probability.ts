@@ -165,7 +165,9 @@ A ────→ affects ──── B
 
 Probabilistic classifiers output P(y|x). Calibration: predicted probs match frequencies. **Expected risk** E[L(y,ŷ)].
 
-Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Accuracy = P(correct)`,
             `Precision = TP/(TP+FP)`,
@@ -530,7 +532,9 @@ lo=np.log(0.8/0.2); print(lo, 1/(1+np.exp(-lo)))`,
 
 CDF F(x)=P(X≤x) non-decreasing. Support set where p>0 or f>0. Mixed distributions combine atoms and density.
 
-Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `PMF: p(x) = P(X=x) discrete`,
             `PDF: P(a≤X≤b) = ∫_a^b f(x)dx`,
@@ -789,7 +793,9 @@ print(X.mean(), X.var())`,
 
 **Categorical** multi-class generalization of Bernoulli. Geometric: trials until first success. MLE for Bernoulli p is sample mean.
 
-Poisson regression for count targets. Classification labels often categorical RVs. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Poisson regression for count targets. Classification labels often categorical RVs.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Bernoulli: P(X=1)=p`,
             `Binomial: C(n,k)p^k(1−p)^(n−k)`,
@@ -1051,7 +1057,9 @@ k=np.arange(7); print(stats.poisson.pmf(k,3))`,
 
 Joint captures full dependence structure. **Covariance matrix** Σ_ij=Cov(X_i,X_j). Multivariate data rows as samples from joint.
 
-Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized).
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `p(x,y) joint PMF/PDF`,
             `p(x) = ∑_y p(x,y) marginal`,

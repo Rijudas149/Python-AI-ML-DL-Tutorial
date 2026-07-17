@@ -15,7 +15,9 @@ export const moduleMath08Topics: Topic[] = [
 
 **Intersection** of convex sets convex. Non-convex: donut, two blobs. Convex feasible region in optimization guarantees global min if objective convex.
 
-Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `λx + (1−λ)y ∈ C for x,y∈C, λ∈[0,1]`,
             `Halfspace: {x : aᵀx ≤ b} convex`,
@@ -114,7 +116,9 @@ chord above graph
 
 **SDP** matrix constraints. cvxpy models convex problems. Local min = global for convex f on convex C. **KKT conditions** necessary sufficient for convex.
 
-Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `min f(x) s.t. x ∈ C convex`,
             `LP: linear f and constraints`,
@@ -161,7 +165,9 @@ non-convex: many valleys
 
 **Convex relaxations** for hard problems. **Surrogate losses** convex upper bounds. Understanding which part convex helps debug optimization.
 
-Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Logistic NLL convex in w`,
             `Hinge loss convex`,
@@ -638,7 +644,9 @@ boundary optimum: λ>0
 
 Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure.
 
-Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Dual: max_λ inf_x L(x,λ)`,
             `Weak: d* ≤ p*`,
@@ -686,7 +694,9 @@ pick easier side
 
 **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint.
 
-Augmented Lagrangian combines both. Constrained DL growing area for safe deployment. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Augmented Lagrangian combines both. Constrained DL growing area for safe deployment.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Penalty: f + ρ||g(x)||²`,
             `Projection: simplex, ball`,
@@ -1101,7 +1111,9 @@ data most probable here
           title: `MLE Minimizes KL`,
           content: `Minimizing E_x[−log q_θ(x)] over θ equivalent minimizing D_KL(p_data||q_θ) since H(p) constant w.r.t. θ. **Empirical risk** replaces expectation with sample mean—MLE on empirical distribution. Model q close to p in KL sense.
 
-Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra. **Reverse KL** used in some VI variants mode covering vs seeking tradeoff. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra. **Reverse KL** used in some VI variants mode covering vs seeking tradeoff.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `min_θ E_p[−log q_θ] ⇔ min D_KL(p||q_θ)`,
             `Empirical p = uniform on samples`,
@@ -1149,7 +1161,9 @@ heavy penalty missing mass of p
 
 Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible.
 
-Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `√n(θ̂−θ) → N(0, I(θ)⁻¹)`,
             `I(θ) = E[(∂log p/∂θ)²]`,

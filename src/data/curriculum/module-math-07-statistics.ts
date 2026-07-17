@@ -111,7 +111,9 @@ min ─┴─ outliers ·
           title: `Percentiles & Quantiles`,
           content: `p-th percentile: p% data below. **Quartiles** Q1=25%, Q2=median, Q3=75%. Quantile function Q(p) inverse CDF.
 
-Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers. Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring.
+Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers.
+
+Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring.
 
 Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
@@ -325,7 +327,9 @@ x̄, s²
           title: `Standard Error`,
           content: `**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT). Compare models using SE of metric difference.
 
-Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `SE(x̄) = σ/√n`,
             `Estimate: SE ≈ s/√n`,
@@ -534,7 +538,9 @@ print(np.std(m), 1/np.sqrt(12*40))`,
 
 Reject H₀ if p<α (significance level, often 0.05). **Type I error** false positive rate α. **Type II** β false negative.
 
-Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `p-value = P(T ≥ t_obs | H₀)`,
             `Reject H₀ if p < α`,
@@ -803,7 +809,9 @@ se=np.sqrt(p1*(1-p1)/n1+p2*(1-p2)/n2); print(se)`,
           title: `CI for Mean`,
           content: `95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval). Bootstrapping: resample B times, percentile CI from bootstrap distribution.
 
-BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `95% CI: x̄ ± t*·s/√n`,
             `Width ∝ 1/√n`,

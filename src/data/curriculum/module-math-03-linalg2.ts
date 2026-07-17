@@ -11,7 +11,9 @@ export const moduleMath03Topics: Topic[] = [
         {
           id: `det-def`,
           title: `Determinant Definition`,
-          content: `The **determinant** det(A) is a scalar for square A∈ℝ^{n×n}. det(A) measures signed volume scaling factor of linear transform A. det(A)=0 iff A is singular (non-invertible). For 2×2: det[[a,b],[c,d]]=ad−bc. det(Aᵀ)=det(A). det(AB)=det(A)det(B). Swapping two rows flips sign.
+          content: `The **determinant** det(A) is a scalar for square A∈ℝ^{n×n}. det(A) measures signed volume scaling factor of linear transform A. det(A)=0 iff A is singular (non-invertible). For 2×2: det[[a,b],[c,d]]=ad−bc. det(Aᵀ)=det(A). det(AB)=det(A)det(B).
+
+Swapping two rows flips sign.
 
 Multiplying row by k multiplies det by k. Cofactor expansion works recursively. Determinants appear in change of variables in integrals and multivariate Gaussian normalization.`,
           formulas: [
@@ -64,7 +66,9 @@ det<0: reflection
           title: `Geometric Meaning`,
           content: `Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves orientation. In 3D, |det| = volume of parallelepiped.
 
-Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx. Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.
+Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx.
+
+Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.
 
 Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
@@ -640,7 +644,9 @@ compute A^100 via Λ^100
           title: `Eigenvalues in PCA`,
           content: `Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions. Sort λ descending; keep top k for dimensionality reduction.
 
-Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig. Zero eigenvalues indicate redundant features or rank deficiency. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig. Zero eigenvalues indicate redundant features or rank deficiency.
+
+Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
           formulas: [
             `Σ v_i = λ_i v_i`,
             `λ_i = variance along PC i`,

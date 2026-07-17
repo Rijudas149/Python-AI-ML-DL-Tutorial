@@ -53,6 +53,9 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
           <span className="lesson-panel-icon">📖</span>
           Explanation
         </div>
+        <p className="lesson-panel-hint lesson-explain-hint">
+          Key terms are highlighted — read the opening summary first, then work through each block below.
+        </p>
         <LessonContent content={section.content} />
       </section>
 
