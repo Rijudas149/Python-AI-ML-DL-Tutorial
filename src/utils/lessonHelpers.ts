@@ -51,7 +51,7 @@ export function buildStudySheet(topic: {
   description: string;
   track: string;
   level: string;
-  sections: Array<{ title: string; keyPoints?: string[] }>;
+  sections: Array<{ title: string; keyPoints?: string[]; formulas?: string[] }>;
 }): string {
   const lines = [
     `# ${topic.title} — Study Sheet`,
@@ -65,11 +65,19 @@ export function buildStudySheet(topic: {
 
   for (const section of topic.sections) {
     lines.push(`## ${section.title}`);
+    if (section.formulas?.length) {
+      lines.push('');
+      lines.push('**Key formulas:**');
+      for (const f of section.formulas) {
+        lines.push(`- ${f}`);
+      }
+    }
     if (section.keyPoints?.length) {
+      lines.push('');
       for (const kp of section.keyPoints) {
         lines.push(`- ${kp}`);
       }
-    } else {
+    } else if (!section.formulas?.length) {
       lines.push('- Review explanation and run the code example.');
     }
     lines.push('');

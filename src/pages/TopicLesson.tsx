@@ -8,8 +8,11 @@ import { ExerciseEditor } from '../components/ExerciseEditor';
 import { BookmarkButton } from '../components/BookmarkButton';
 import { ReferenceList } from '../components/ReferenceList';
 import { FormulaList, DiagramBlock } from '../components/MathBlocks';
+import { LessonReadingProgress } from '../components/LessonReadingProgress';
+import { InlineMathText } from '../components/InlineMathText';
 import { ensureTopicProgress } from '../utils/progressStorage';
 import { estimateReadingMinutes, extractKeyTerms, buildStudySheet, isRedundantPseudoCode } from '../utils/lessonHelpers';
+import { warmTopic } from '../utils/prefetchLesson';
 import type { Topic, LessonSection, ProgressState, TopicSummary } from '../types';
 
 function getInitialSection(topic: Topic, completedSections: string[]) {
@@ -74,7 +77,9 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
       )}
 
       {section.formulas && section.formulas.length > 0 && (
-        <FormulaList formulas={section.formulas} />
+        <div id="section-formulas">
+          <FormulaList formulas={section.formulas} />
+        </div>
       )}
 
       {section.diagram && <DiagramBlock diagram={section.diagram} />}
@@ -111,7 +116,7 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
             {section.keyPoints.map((kp, i) => (
               <li key={i}>
                 <span className="takeaway-check">✓</span>
-                {kp}
+                <InlineMathText text={kp} />
               </li>
             ))}
           </ul>
@@ -250,6 +255,25 @@ export function TopicLesson() {
     }
   };
 
+  const handleDownloadStudySheet = () => {
+    if (!topic) return;
+    const sheet = buildStudySheet(topic);
+    const blob = new Blob([sheet], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `${topic.id}-study-sheet.md`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+    setCopyStatus('Study sheet downloaded!');
+    setTimeout(() => setCopyStatus(''), 2500);
+  };
+
+  useEffect(() => {
+    if (prevTopic) warmTopic(prevTopic.id);
+    if (nextTopic) warmTopic(nextTopic.id);
+  }, [prevTopic?.id, nextTopic?.id]);
+
   if (loading) {
     return (
       <div className="page-loader">
@@ -292,6 +316,7 @@ export function TopicLesson() {
 
   return (
     <div className={`page lesson-page${focusMode ? ' lesson-focus-mode' : ''}`}>
+      <LessonReadingProgress />
       <nav className="breadcrumb">
         <Link to="/learn">Learn</Link> / <span>{topic.module}</span> / <span>{topic.title}</span>
       </nav>
@@ -316,10 +341,18 @@ export function TopicLesson() {
             <button
               type="button"
               className="btn btn-ghost btn-sm"
+              onClick={handleDownloadStudySheet}
+              title="Download key takeaways as a Markdown file"
+            >
+              ⬇ Download
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm"
               onClick={handleCopyStudySheet}
               title="Copy all key takeaways as a study sheet"
             >
-              📄 Study Sheet
+              📄 Copy Sheet
             </button>
             <button
               type="button"
@@ -404,6 +437,11 @@ export function TopicLesson() {
                   Section {activeSection + 1} of {topic.sections.length} · ~{sectionReadMin} min read
                 </span>
                 <h2>{section.title}</h2>
+                {section.formulas && section.formulas.length > 0 && (
+                  <a href="#section-formulas" className="lesson-jump-formulas">
+                    Jump to formulas ↓
+                  </a>
+                )}
                 {sectionTerms.length > 0 && (
                   <div className="lesson-key-terms">
                     <span className="lesson-key-terms-label">Key terms:</span>
@@ -443,11 +481,10 @@ export function TopicLesson() {
                       <span className="done-badge">✓ Done</span>
                     )}
                   </div>
-                  <p className="exercise-question">{ex.question}</p>
                   {ex.hint && (
                     <details className="hint-details">
                       <summary>💡 Hint</summary>
-                      <p>{ex.hint}</p>
+                      <p><InlineMathText text={ex.hint} /></p>
                     </details>
                   )}
                   <ExerciseEditor
@@ -485,7 +522,11 @@ export function TopicLesson() {
 
           <nav className="topic-nav-footer">
             {prevTopic ? (
-              <Link to={`/learn/${prevTopic.id}`} className="topic-nav-link prev">
+              <Link
+                to={`/learn/${prevTopic.id}`}
+                className="topic-nav-link prev"
+                onMouseEnter={() => warmTopic(prevTopic.id)}
+              >
                 <span className="topic-nav-label">← Previous Topic</span>
                 <span className="topic-nav-title">{prevTopic.title}</span>
               </Link>
@@ -493,7 +534,11 @@ export function TopicLesson() {
               <div />
             )}
             {nextTopic ? (
-              <Link to={`/learn/${nextTopic.id}`} className="topic-nav-link next">
+              <Link
+                to={`/learn/${nextTopic.id}`}
+                className="topic-nav-link next"
+                onMouseEnter={() => warmTopic(nextTopic.id)}
+              >
                 <span className="topic-nav-label">Next Topic →</span>
                 <span className="topic-nav-title">{nextTopic.title}</span>
               </Link>

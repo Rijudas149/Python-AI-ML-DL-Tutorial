@@ -4224,6 +4224,112 @@ body {
   color: var(--text-primary);
 }
 
+/* Reading progress */
+.lesson-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 200;
+  background: transparent;
+  pointer-events: none;
+}
+
+.lesson-reading-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--study), var(--accent));
+  transition: width 0.15s ease-out;
+  box-shadow: 0 0 8px var(--study);
+}
+
+/* Fill-in-the-blank exercises */
+.exercise-question-display {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.fill-in-exercise {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.fill-in-exercise label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.fill-in-input {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.fill-in-input:focus {
+  outline: none;
+  border-color: var(--study);
+  box-shadow: 0 0 0 3px var(--study-soft);
+}
+
+.fill-in-hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.fill-in-solution {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.fill-in-solution-code {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* KaTeX theme alignment */
+.katex {
+  color: var(--text-primary);
+}
+
+.math-formula-inline .katex {
+  font-size: 1.02em;
+}
+
+.lesson-jump-formulas {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--study);
+  text-decoration: none;
+}
+
+.lesson-jump-formulas:hover {
+  text-decoration: underline;
+}
+
+.lesson-prose .math-formula-inline,
+.lesson-concept-body .math-formula-inline,
+.takeaway-list .math-formula-inline,
+.exercise-question-display .math-formula-inline {
+  margin: 0 0.12em;
+  vertical-align: baseline;
+}
+
 .related-topics-panel {
   margin-top: 2rem;
   padding: 1.25rem;

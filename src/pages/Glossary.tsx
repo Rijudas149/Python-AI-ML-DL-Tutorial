@@ -1,10 +1,17 @@
-import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { GLOSSARY } from '../data/glossary';
 
 export function Glossary() {
-  const [query, setQuery] = useState('');
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get('q') ?? '';
+  const [query, setQuery] = useState(initialQuery);
   const [trackFilter, setTrackFilter] = useState<string>('all');
+
+  useEffect(() => {
+    const q = searchParams.get('q');
+    if (q) setQuery(q);
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();

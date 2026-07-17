@@ -48,9 +48,9 @@ const SYMBOLS: [RegExp, string][] = [
   [/△/g, '\\triangle'],
   [/⇒/g, '\\Rightarrow'],
   [/⇔/g, '\\Leftrightarrow'],
-  [/→/g, '\\to'],
-  [/←/g, '\\leftarrow'],
-  [/↔/g, '\\leftrightarrow'],
+  [/→/g, ' \\to '],
+  [/←/g, ' \\leftarrow '],
+  [/↔/g, ' \\leftrightarrow '],
   [/≤/g, '\\leq'],
   [/≥/g, '\\geq'],
   [/≠/g, '\\neq'],
@@ -84,15 +84,11 @@ const SYMBOLS: [RegExp, string][] = [
   [/½/g, '\\frac{1}{2}'],
 ];
 
-const PROSE_PHRASES = [
-  'maps each', 'uses inclusion-exclusion', 'horizontal asymptote', 'formal definition',
-  'linear combination', 'draws without replacement', 'equally likely', 'reverse order',
-  'on domain', 'complementary slackness', 'reconstruction', 'nonlinear PCs', 'via SVD',
-  'if disjoint', 'if equally likely', 'try L\'Hôpital', 'try L\'Hopital',
-  'actual outputs', 'invertible function exists', 'change of variables',
-  'unbiased if random sample', 'parallel to constraint', 'zero at MLE',
-  'for g', 'for x', 'on d', 'on constraint', 'to nonlinear PCs',
-];
+const MATH_FUNCTIONS = ['sin', 'cos', 'tan', 'cot', 'sec', 'csc', 'log', 'ln', 'exp', 'max', 'min', 'det', 'dim', 'rank'];
+
+function normalizeSpaces(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
 
 function convertAccents(text: string): string {
   return text
@@ -135,17 +131,14 @@ function convertSubSup(text: string): string {
   return out;
 }
 
-/** Set difference uses ASCII `\` in source — convert before LaTeX `\commands` exist. */
+/** Set difference: ASCII `\` with spaces only, before LaTeX commands exist. */
 function convertSetDifference(text: string): string {
   return text.replace(/([A-Za-z0-9)\]}])\s+\\\s+([A-Za-z0-9(\[{])/g, '$1 \\setminus $2');
 }
 
+/** Only escape set-builder braces like {x | x ∈ A}, never subscripts. */
 function escapeSetBraces(text: string): string {
-  return text.replace(/\{([^{}]*)\}/g, (match, inner) => {
-    const isSet =
-      /\s\|\s|\\mid|\\in|\\notin|\\cup|\\cap|\\subseteq|\\subset| or | and |,/.test(inner) ||
-      /^[xSUA-Za-z]\s/.test(inner);
-    if (!isSet) return match;
+  return text.replace(/\{([^{}]*\|[^{}]*)\}/g, (_, inner) => {
     const body = inner.replace(/\s\|\s/g, ' \\mid ');
     return `\\{${body}\\}`;
   });
@@ -155,7 +148,7 @@ function convertFractions(text: string): string {
   return text.replace(
     /(\([^)]+\)|[A-Za-z0-9\\^_()[\]!|+\-{}]+)\s*\/\s*(\([^)]+\)|[A-Za-z0-9\\^_()[\]!|+\-{}]+)/g,
     (_, num, den) => {
-      if (/^(if|or|and|for|to|on|via|try)$/i.test(num.trim())) return `${num}/${den}`;
+      if (/^(if|or|and|for|on|via|try|exists)$/i.test(num.trim())) return `${num}/${den}`;
       if (num.includes('\\frac') || den.includes('\\frac')) return `${num}/${den}`;
       return `\\frac{${num.trim()}}{${den.trim()}}`;
     },
@@ -168,54 +161,146 @@ function convertNorms(text: string): string {
 
 function convertLim(text: string): string {
   return text
-    .replace(/\blim_\{([^}]+)\}/g, (_, sub) => `\\lim_{${sub.replace(/→/g, '\\to')}}`)
-    .replace(/\blim\b/g, '\\lim');
+    .replace(/\blim_\{([^}]+)\}/g, (_, sub) => {
+      const cleaned = normalizeSpaces(sub.replace(/→/g, ' \\to '));
+      return `\\lim_{${cleaned}}`;
+    })
+    .replace(/\blim\s+exists\b/gi, '\\lim \\text{exists}')
+    .replace(/(?<!\\)\blim\b/g, '\\lim');
 }
 
-function wrapLabelsAndNotes(text: string): string {
-  let s = text;
+function convertTrig(text: string): string {
+  let out = text;
+  for (const fn of MATH_FUNCTIONS) {
+    out = out.replace(new RegExp(`\\b${fn}\\s*\\(`, 'g'), `\\${fn}(`);
+  }
+  return out;
+}
 
-  s = s.replace(/^([A-Za-z][A-Za-z0-9\s/-]{0,40}):\s*/, (_, label) => `\\text{${label.trim()}: }`);
-  s = s.replace(/\s+\(([^()=^_{}\\|]+)\)\s*$/, (_, note) => ` \\text{(${note.trim()})}`);
+function parseFormulaParts(formula: string): {
+  math: string;
+  note: string | null;
+  label: string | null;
+  arrowNote: boolean;
+} {
+  let math = formula.trim();
+  let note: string | null = null;
+  let label: string | null = null;
+  let arrowNote = false;
 
-  for (const phrase of PROSE_PHRASES) {
-    const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-    s = s.replace(re, (m) => ` \\text{${m}} `);
+  const labelMatch = math.match(/^([A-Za-z][A-Za-z0-9\s/'-]{0,40}):\s*(.+)$/);
+  if (labelMatch && !labelMatch[1].includes('=')) {
+    label = labelMatch[1].trim();
+    math = labelMatch[2].trim();
   }
 
-  s = s.replace(/\bto\b(?=\s+[a-z])/g, (m) => ` \\text{${m}} `);
-  s = s.replace(/\bfor\b(?=\s+[a-z≠])/gi, (m) => ` \\text{${m}} `);
-  s = s.replace(/\bif\b(?=\s+\|)/g, (m) => ` \\text{${m}} `);
+  const noteMatch = math.match(/^(.+?)\s+\(([^()]+)\)\s*$/);
+  if (noteMatch && /^[a-zA-Z\s'-]+$/.test(noteMatch[2].trim())) {
+    math = noteMatch[1].trim();
+    note = noteMatch[2].trim();
+  }
 
-  s = s.replace(/\s+(\#[^\s=]+)/g, (_, rest) => ` ${rest.replace(/#/g, '\\#')}`);
-  s = s.replace(/(^|\s)#(?=\s)/g, '$1\\# ');
+  const arrowProse = math.match(/^(.+→\s*)(.+)$/);
+  if (!note && arrowProse) {
+    const lhs = arrowProse[1].replace(/→\s*$/, '').trim();
+    const rhs = arrowProse[2].trim();
+    const lhsMathLike =
+      (/^[\d\\=^_().+\-/\s]+$/.test(lhs) || /lim_|\\frac|[εθλμσδαβγ]/.test(lhs)) &&
+      !/\b[a-z]{4,}\b/i.test(lhs);
+    if (lhsMathLike && !/[=^_\\|{}(~%]|^\d/.test(rhs)) {
+      math = lhs;
+      note = rhs;
+      arrowNote = true;
+    }
+  }
+
+  const trailingWords = math.match(/^(.+?)\s+([A-Za-z][A-Za-z\s'-]{2,})$/);
+  if (!note && trailingWords && /^[a-zA-Z\s'-]+$/.test(trailingWords[2].trim())) {
+    math = trailingWords[1].trim();
+    note = trailingWords[2].trim();
+  }
+
+  return { math, note, label, arrowNote };
+}
+
+function convertMathCore(math: string): string {
+  let s = math;
+
+  s = convertSetDifference(s);
+  s = convertAccents(s);
+  s = convertSqrt(s);
+  s = convertSubSup(s);
+  s = convertLim(s);
+
+  for (const [re, latex] of SYMBOLS) s = s.replace(re, latex);
+
+  s = convertNorms(s);
+  s = convertFractions(s);
+  s = convertTrig(s);
+  s = escapeSetBraces(s);
+  s = s.replace(/\biff\b/gi, '\\iff');
   s = s.replace(/\bargmax\b/g, '\\operatorname{argmax}');
   s = s.replace(/\bargmin\b/g, '\\operatorname{argmin}');
+  s = s.replace(/(^|\s)#(?=\s)/g, '$1\\# ');
 
-  return s.replace(/\s+/g, ' ').trim();
+  return normalizeSpaces(s);
+}
+
+function formatNote(note: string): string {
+  return `\\text{${note}}`;
+}
+
+function formatLabel(label: string): string {
+  return `\\text{${label}: }`;
 }
 
 /** Main entry: curriculum formula string → LaTeX for KaTeX. */
 export function toLatex(formula: string): string {
   if (!formula.trim()) return formula;
 
-  let s = formula.trim();
+  let raw = formula.trim();
+  if (raw.startsWith('$$') && raw.endsWith('$$')) raw = raw.slice(2, -2).trim();
+  if (raw.startsWith('$') && raw.endsWith('$') && raw.length > 2) raw = raw.slice(1, -1).trim();
 
-  if (s.startsWith('$$') && s.endsWith('$$')) s = s.slice(2, -2).trim();
-  if (s.startsWith('$') && s.endsWith('$') && s.length > 2) s = s.slice(1, -1).trim();
+  const { math, note, label, arrowNote } = parseFormulaParts(raw);
+  const parts: string[] = [];
 
-  s = convertSetDifference(s);
-  s = convertAccents(s);
-  s = convertSqrt(s);
-  s = convertSubSup(s);
+  if (label) parts.push(formatLabel(label));
 
-  for (const [re, latex] of SYMBOLS) s = s.replace(re, latex);
+  const core = convertMathCore(math);
 
-  s = convertLim(s);
-  s = convertNorms(s);
-  s = convertFractions(s);
-  s = escapeSetBraces(s);
-  s = wrapLabelsAndNotes(s);
+  if (/^[A-Za-z][A-Za-z0-9\s/-]{0,30}$/.test(math.trim()) && !/[=^_∑∫→←\\]/.test(math)) {
+    parts.push(`\\text{${math.trim()}}`);
+  } else {
+    parts.push(core);
+  }
 
-  return s.replace(/\s+/g, ' ').trim();
+  if (note) {
+    parts.push(arrowNote ? `\\to ${formatNote(note)}` : formatNote(note));
+  }
+
+  return normalizeSpaces(parts.join(' '));
+}
+
+/** Wrap plain-text math fragments in $...$ for inline rendering in lesson prose. */
+export function autoWrapMathInProse(text: string): string {
+  if (!text || text.includes('$')) return text;
+
+  let s = text;
+  const wrap = (match: string) => `$${match}$`;
+
+  s = s.replace(/\blim_\{[^}]+\}\s*=\s*[^$.,;\n]+/g, wrap);
+  s = s.replace(/\blim_\{[^}]+\}\s+[a-zA-Z]+\([^)]*\)\/[^$.,;\n]+/g, wrap);
+  s = s.replace(/lim_\{[^}]+\}/g, wrap);
+  s = s.replace(/\b\d+\/\d+\b/g, wrap);
+  s = s.replace(/[a-zA-Z0-9()]+\→[a-zA-Z0-9∞⁺⁻]+/g, wrap);
+  s = s.replace(/f'\([^)]*\)|f''\([^)]*\)/g, wrap);
+  s = s.replace(/ε-δ|ε−δ/g, wrap);
+  s = s.replace(/\blim\b(?!\s*_\{)/g, (m, offset, full) => {
+    const rest = full.slice(offset);
+    const expr = rest.match(/^lim\s+[^$.,;\n]+?(?=\s+(?:means|if|when|from|as\b)|[.,;\n]|$)/i);
+    return expr ? wrap(expr[0]) : m;
+  });
+
+  return s;
 }

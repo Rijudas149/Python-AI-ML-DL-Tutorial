@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { CodeBlock } from './CodeBlock';
+import { InlineMathText } from './InlineMathText';
 import { parseTableBlock, parseTabularText, type ParsedTable } from '../utils/tabularParser';
 
 type ContentBlock =
@@ -139,29 +140,7 @@ function parseContent(content: string): ContentBlock[] {
 }
 
 function InlineText({ text }: { text: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
-
-  return (
-    <>
-      {parts.map((part, i) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-          return (
-            <strong key={i} className="lesson-term">
-              {part.slice(2, -2)}
-            </strong>
-          );
-        }
-        if (part.startsWith('`') && part.endsWith('`')) {
-          return (
-            <code key={i} className="inline-code">
-              {part.slice(1, -1)}
-            </code>
-          );
-        }
-        return <span key={i}>{part}</span>;
-      })}
-    </>
-  );
+  return <InlineMathText text={text} />;
 }
 
 function DataTable({ headers, rows, className = '' }: ParsedTable & { className?: string }) {
