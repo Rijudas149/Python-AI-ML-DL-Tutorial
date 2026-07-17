@@ -1760,21 +1760,20 @@ export const MATH_MODULES = [
           {
             id: "lim-def",
             title: "Limit Definition",
-            content: "lim_{x→a} f(x) = L means f(x) approaches L as x approaches a (not necessarily f(a)=L). **One-sided limits**: from left x→a⁻, from right x→a⁺. Limit exists iff both one-sided limits agree. **Limits at infinity** describe asymptotic behavior. Sequential characterization connects to series convergence. ε-δ definition formalizes: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits enable defining derivative as limit of difference quotient. L'Hôpital handles 0/0 indeterminate forms.",
+            content: "lim_{x→a} f(x) = L means f(x) gets arbitrarily close to L as x approaches a — the limit need not equal f(a). **One-sided limits** x→a⁻ and x→a⁺ must agree for the two-sided limit to exist. **Limits at infinity** describe horizontal asymptotes and long-run behavior. The ε-δ definition makes this precise: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits are the foundation for derivatives and integrals.",
             formulas: [
               "lim_{x→a} f(x) = L",
               "lim exists ⇔ lim⁻ = lim⁺",
               "lim_{x→∞} f(x) (horizontal asymptote)",
-              "ε-δ formal definition",
-              "0/0 → try L'Hôpital"
+              "ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε"
             ],
-            diagram: "   f(x) near a:\n\n        L ─ ─ ─ ─ ─ target\n          ·  ·\n        ·    ·  f(x)\n          ·\n        ────┼──── x\n            a\n\n   x→a, f(x)→L",
+            diagram: "   f(x) near a:\n\n        L ─ ─ ─ ─ ─ target\n          ·  ·\n        ·    ·  f(x)\n          ·\n        ────┼──── x\n            a\n\n   lim_{x→a} f(x) = L",
             keyPoints: [
               "Limit ≠ function value at point",
-              "Both sides must agree",
-              "Infinity limits describe tails",
-              "Foundation for derivatives",
-              "L'Hôpital for indeterminate"
+              "Both one-sided limits must agree",
+              "Infinity limits describe asymptotes",
+              "ε-δ formalizes closeness",
+              "Foundation for derivatives"
             ],
             example: "import numpy as np\nf = lambda x: (x**2-1)/(x-1)\nx = np.array([0.9,0.99,0.999,1.001,1.01])\nprint(\"f(x):\", f(x))",
             output: "f(x) → 2 as x→1"
@@ -1782,7 +1781,7 @@ export const MATH_MODULES = [
           {
             id: "lim-rules",
             title: "Limit Laws",
-            content: "If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M if M≠0. Polynomials continuous everywhere. Rational continuous except zeros of denominator. lim_{x→0} sin(x)/x = 1 fundamental. lim_{x→0} (e^x−1)/x = 1. Squeeze theorem bounds limits. Composition: lim f(g(x)) if inner limit in domain. These laws justify term-by-term differentiation and integration in power series. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M when M≠0. Polynomials and sums/products of continuous functions inherit limits term by term. Key special limits: lim_{x→0} sin(x)/x = 1 and lim_{x→0} (e^x−1)/x = 1. The **squeeze theorem** traps f between g and h with the same limit. Composition rules apply when inner limits stay in the domain.",
             formulas: [
               "lim(f+g) = lim f + lim g",
               "lim(f/g) = lim f / lim g",
@@ -1800,6 +1799,28 @@ export const MATH_MODULES = [
             ],
             example: "import numpy as np\nx = np.linspace(-0.1,0.1,5); x=x[x!=0]\nprint(\"sin(x)/x:\", np.sin(x)/x)",
             output: "→ 1 near 0"
+          },
+          {
+            id: "lim-lhopital",
+            title: "L'Hôpital's Rule",
+            content: "Direct substitution sometimes yields an **indeterminate form** — most commonly 0/0 or ∞/∞ — where the limit is not obvious from the ratio alone. **L'Hôpital's rule** says: if f and g are differentiable near a, g'(x)≠0 near a, and lim f(x)=lim g(x)=0 (or both →±∞), then lim_{x→a} f(x)/g(x) = lim_{x→a} f'(x)/g'(x) whenever the right-hand limit exists. Apply repeatedly if the result is still indeterminate. Other forms (0·∞, ∞−∞, 0⁰, 1^∞) require algebra first — rewrite into 0/0 or ∞/∞. Always verify conditions; the rule can fail if derivatives oscillate without a limit.",
+            formulas: [
+              "0/0 or ∞/∞ → try L'Hôpital",
+              "lim_{x→a} f/g = lim_{x→a} f'/g' (conditions apply)",
+              "Repeat until determinate or limit found",
+              "0·∞ → rewrite as 0/(1/∞)",
+              "Example: lim_{x→0} sin(x)/x = lim cos(x)/1 = 1"
+            ],
+            diagram: "   L'Hôpital for 0/0 at a:\n\n        L ─ ─ ─ ─ ─ limit of f/g\n          ·  ·\n        ·    ·  f(x)/g(x)\n          ·\n        ────┼──── x\n            a\n\n   lim f/g = lim f'/g'",
+            keyPoints: [
+              "Works on 0/0 and ∞/∞ directly",
+              "Differentiate numerator and denominator",
+              "May need several applications",
+              "Rewrite other indeterminate forms first",
+              "Check that derivative limit exists"
+            ],
+            example: "import sympy as sp\nx = sp.Symbol('x')\nexpr = (sp.exp(x) - 1) / x\nprint(\"limit:\", sp.limit(expr, x, 0))\nprint(\"L'Hopital check:\", sp.limit(sp.diff(sp.exp(x)-1,x)/sp.diff(x,x), x, 0))",
+            output: "limit: 1"
           },
           {
             id: "lim-cont",
@@ -1858,9 +1879,15 @@ export const MATH_MODULES = [
             question: "Estimate lim (x²-4)/(x-2) as x→2.",
             solution: "import numpy as np\nx=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))",
             difficulty: "easy"
+          },
+          {
+            id: "ex-lim-3",
+            question: "Use SymPy to evaluate lim (e^x − 1)/x as x→0 (L'Hôpital form).",
+            solution: "import sympy as sp\nx=sp.Symbol('x')\nprint(sp.limit((sp.exp(x)-1)/x, x, 0))",
+            difficulty: "medium"
           }
         ],
-        estimatedMinutes: 35
+        estimatedMinutes: 45
       },
       {
         id: "math-derivatives",

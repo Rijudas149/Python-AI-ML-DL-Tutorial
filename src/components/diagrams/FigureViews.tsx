@@ -25,6 +25,8 @@ export function FigureView({ spec }: { spec: FigureSpec }) {
       return <AngleFigure spec={spec} />;
     case 'vector':
       return <VectorFigure spec={spec} />;
+    case 'limit':
+      return <LimitFigure spec={spec} />;
     default:
       return null;
   }
@@ -223,6 +225,55 @@ function VectorFigure({ spec }: { spec: Extract<FigureSpec, { type: 'vector' }> 
       </text>
       <text x={ox + 20} y={oy - 20} fill={D.muted} fontSize="12">
         |v| = {mag}
+      </text>
+    </DiagramCanvas>
+  );
+}
+
+function LimitFigure({ spec }: { spec: Extract<FigureSpec, { type: 'limit' }> }) {
+  const ox = 70;
+  const oy = 220;
+  const ax = 220;
+  const ly = 80;
+  const curve = `M ${ox + 20} ${oy - 30} Q ${ax - 40} ${ly + 35}, ${ax - 8} ${ly + 18} M ${ax + 8} ${ly + 18} Q ${ax + 50} ${ly + 35}, ${ox + 340} ${oy - 25}`;
+
+  return (
+    <DiagramCanvas viewBox="0 0 440 280" label={spec.title ?? 'Limit as x approaches a'}>
+      <PanelBg w={440} h={280} />
+      {[100, 140, 180, 220].map((g) => (
+        <line key={g} x1={ox} y1={g} x2="390" y2={g} stroke="rgba(148,163,184,0.1)" strokeWidth="1" />
+      ))}
+      <line x1={ox} y1={oy} x2="390" y2={oy} stroke={D.border} strokeWidth="2" markerEnd="url(#dg-arrow)" />
+      <line x1={ox} y1={oy} x2={ox} y2="50" stroke={D.border} strokeWidth="2" markerEnd="url(#dg-arrow)" />
+      <text x="398" y={oy + 18} fill={D.muted} fontSize="13">
+        x
+      </text>
+      <text x={ox - 18} y="58" fill={D.muted} fontSize="13">
+        y
+      </text>
+      <line x1={ox} y1={ly} x2="390" y2={ly} stroke={D.indigo} strokeWidth="1.5" strokeDasharray="8 6" opacity="0.85" />
+      <text x="394" y={ly + 5} fill={D.indigo} fontSize="14" fontWeight="700">
+        {spec.limitLabel}
+      </text>
+      <line x1={ax} y1={oy - 6} x2={ax} y2={oy + 14} stroke={D.text} strokeWidth="2" />
+      <text x={ax} y={oy + 32} textAnchor="middle" fill={D.text} fontSize="14" fontWeight="700">
+        {spec.pointLabel}
+      </text>
+      <circle cx={ax} cy={ly + 18} r="7" fill={D.panel} stroke={D.rose} strokeWidth="2" />
+      <path d={curve} fill="none" stroke="url(#dg-emerald)" strokeWidth="3" strokeLinecap="round" filter="url(#dg-glow)" />
+      {[
+        [ax - 55, ly + 28],
+        [ax - 28, ly + 22],
+        [ax + 28, ly + 22],
+        [ax + 55, ly + 28],
+      ].map(([cx, cy], i) => (
+        <circle key={i} cx={cx} cy={cy} r="4" fill={D.emerald} opacity="0.85" />
+      ))}
+      <text x={ax + 70} y={ly + 8} fill={D.emerald} fontSize="12" fontWeight="600">
+        f(x)
+      </text>
+      <text x="220" y="36" textAnchor="middle" fill={D.muted} fontSize="12" fontWeight="600">
+        lim<sub>x→{spec.pointLabel}</sub> f(x) = {spec.limitLabel}
       </text>
     </DiagramCanvas>
   );

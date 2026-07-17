@@ -31,6 +31,12 @@ export type FigureSpec =
       vx: number;
       vy: number;
       magnitude?: string;
+    }
+  | {
+      type: 'limit';
+      pointLabel: string;
+      limitLabel: string;
+      title?: string;
     };
 
 function parseMapping(lines: string[]): FigureSpec | null {
@@ -110,13 +116,33 @@ function parseMatrixFigure(lines: string[]): FigureSpec | null {
 function parsePipelineFigure(lines: string[]): FigureSpec | null {
   const line = lines.find((l) => /→/.test(l) && l.split(/→/).length >= 3);
   if (!line) return null;
+  if (/f\s*\(|lim_|,\s*f|,\s*L\b/i.test(line)) return null;
   const nodes = line
     .split(/→/)
     .map((p) => p.replace(/[─\-_|·\[\]()]/g, ' ').replace(/\s+/g, ' ').trim())
     .filter((p) => p.length > 0 && p.length < 30);
   if (nodes.length < 2) return null;
+  if (nodes.some((n) => /[(),]/.test(n))) return null;
   if (nodes.some((n) => /\b(each|input|output|may|not)\b/i.test(n))) return null;
   return { type: 'pipeline', nodes };
+}
+
+function parseLimitFigure(lines: string[]): FigureSpec | null {
+  const blob = lines.join('\n');
+  const hasLimitContext = /near\s+a|f\(x\)|x→a|lim_|target|indeterminate|l.?h[oô]pital/i.test(blob);
+  const hasHorizontalL = /\bL\s*[─\-]|target/i.test(blob);
+  const hasAxisMarker = /[┼─┼]/.test(blob) && /\ba\b/.test(blob);
+  if (!hasLimitContext || !hasHorizontalL || !hasAxisMarker) return null;
+
+  const titleLine = lines.find((l) => /near|f\(x\)|limit|l.?h[oô]pital/i.test(l));
+  const pointLabel = lines.find((l) => /^\s*[a-z]\s*$/.test(l))?.trim() ?? 'a';
+
+  return {
+    type: 'limit',
+    pointLabel,
+    limitLabel: 'L',
+    title: titleLine?.replace(/[:.]\s*$/, '').trim(),
+  };
 }
 
 function parseAngle(lines: string[]): FigureSpec | null {
@@ -147,6 +173,7 @@ export function parseAsciiFigure(lines: string[]): FigureSpec | null {
     parseMapping(lines) ??
     parseMatrixFigure(lines) ??
     parseVectorFigure(lines) ??
+    parseLimitFigure(lines) ??
     parseAxes(lines) ??
     parseAngle(lines) ??
     parsePipelineFigure(lines)

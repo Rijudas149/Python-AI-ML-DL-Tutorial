@@ -6,6 +6,7 @@ const TYPE_ICONS: Record<Reference['type'], string> = {
   book: '📚',
   documentation: '📖',
   video: '🎬',
+  article: '📝',
 };
 
 interface ReferenceListProps {
@@ -24,7 +25,7 @@ export function ReferenceList({ references, title = 'Further Reading', compact =
         {title}
       </div>
       <p className="reference-panel-hint">
-        Curated resources from Stanford, MIT, Oxford, arXiv, and official documentation.
+        Curated courses, textbooks, documentation, and web articles from Khan Academy, Paul&apos;s Online Notes, MIT, OpenStax, and more.
       </p>
       <ul className="reference-list">
         {references.map((ref) => (

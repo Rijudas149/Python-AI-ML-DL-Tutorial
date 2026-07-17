@@ -2,7 +2,7 @@ export interface Reference {
   id: string;
   title: string;
   source: string;
-  type: 'course' | 'paper' | 'book' | 'documentation' | 'video';
+  type: 'course' | 'paper' | 'book' | 'documentation' | 'video' | 'article';
   url: string;
   description: string;
 }

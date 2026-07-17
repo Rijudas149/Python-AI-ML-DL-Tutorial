@@ -21,12 +21,15 @@ function isTitleLine(line: string): boolean {
 
 function parsePipelineLine(line: string): string[] | null {
   if (!/→/.test(line)) return null;
+  if (/f\s*\(|lim_|,\s*f|,\s*L\b/i.test(line)) return null;
+  if (/,/.test(line)) return null;
   const nodes = line
     .split(/→/)
     .map((p) => p.replace(/[─\-_|·\[\]()]/g, ' ').replace(/\s+/g, ' ').trim())
     .filter((p) => p.length > 0);
   if (nodes.length < 2) return null;
   if (nodes.some((n) => n.length > 28)) return null;
+  if (nodes.some((n) => /[(),]/.test(n))) return null;
   if (nodes.some((n) => /\b(each|may|one|the|if|not|same|input|output)\b/i.test(n))) return null;
   return nodes;
 }

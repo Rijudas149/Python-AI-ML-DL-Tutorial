@@ -998,18 +998,20 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 35,
-          sectionCount: 4,
-          exerciseCount: 2,
+          estimatedMinutes: 45,
+          sectionCount: 5,
+          exerciseCount: 3,
           sectionIds: [
             `lim-def`,
             `lim-rules`,
+            `lim-lhopital`,
             `lim-cont`,
             `lim-ml`
           ],
           exerciseIds: [
             `ex-lim-1`,
-            `ex-lim-2`
+            `ex-lim-2`,
+            `ex-lim-3`
           ]
         },
         {
@@ -5179,18 +5181,20 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 35,
-    sectionCount: 4,
-    exerciseCount: 2,
+    estimatedMinutes: 45,
+    sectionCount: 5,
+    exerciseCount: 3,
     sectionIds: [
       `lim-def`,
       `lim-rules`,
+      `lim-lhopital`,
       `lim-cont`,
       `lim-ml`
     ],
     exerciseIds: [
       `ex-lim-1`,
-      `ex-lim-2`
+      `ex-lim-2`,
+      `ex-lim-3`
     ]
   },
   {
@@ -9142,18 +9146,20 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 35,
-      sectionCount: 4,
-      exerciseCount: 2,
+      estimatedMinutes: 45,
+      sectionCount: 5,
+      exerciseCount: 3,
       sectionIds: [
         `lim-def`,
         `lim-rules`,
+        `lim-lhopital`,
         `lim-cont`,
         `lim-ml`
       ],
       exerciseIds: [
         `ex-lim-1`,
-        `ex-lim-2`
+        `ex-lim-2`,
+        `ex-lim-3`
       ]
     },
   'math-derivatives': {

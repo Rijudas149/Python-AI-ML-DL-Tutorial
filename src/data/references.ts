@@ -298,6 +298,30 @@ export const allReferences: Reference[] = [
       description: `Interactive micro-course covering Python essentials for data science.`
     },
     {
+      id: `khan-derivatives`,
+      title: `Derivatives — Khan Academy`,
+      source: `Khan Academy`,
+      type: `article`,
+      url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new`,
+      description: `Definition of the derivative, rules, and applications with worked examples.`
+    },
+    {
+      id: `khan-lhopital`,
+      title: `L'Hôpital's Rule — Khan Academy`,
+      source: `Khan Academy`,
+      type: `article`,
+      url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/a/lhopitals-rule`,
+      description: `Step-by-step guide to evaluating 0/0 and ∞/∞ indeterminate forms with practice problems.`
+    },
+    {
+      id: `khan-limits`,
+      title: `Limits and Continuity — Khan Academy`,
+      source: `Khan Academy`,
+      type: `article`,
+      url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new`,
+      description: `Interactive lessons on limits, one-sided limits, squeeze theorem, and continuity.`
+    },
+    {
       id: `khan-multivariable-calc`,
       title: `Multivariable Calculus — Khan Academy`,
       source: `Khan Academy`,
@@ -560,6 +584,30 @@ export const allReferences: Reference[] = [
       type: `documentation`,
       url: `https://pandas.pydata.org/docs/user_guide/timeseries.html`,
       description: `DatetimeIndex, resampling, and time-based aggregations.`
+    },
+    {
+      id: `pauls-derivatives`,
+      title: `Derivatives — Paul's Online Math Notes`,
+      source: `Paul's Online Notes`,
+      type: `article`,
+      url: `https://tutorial.math.lamar.edu/classes/calci/derivatives.aspx`,
+      description: `Definition, interpretation, and derivative rules with many practice problems.`
+    },
+    {
+      id: `pauls-lhopital`,
+      title: `L'Hôpital's Rule — Paul's Online Math Notes`,
+      source: `Paul's Online Notes`,
+      type: `article`,
+      url: `https://tutorial.math.lamar.edu/classes/calci/lhospitalsrule.aspx`,
+      description: `Worked examples for indeterminate forms and when to apply the rule repeatedly.`
+    },
+    {
+      id: `pauls-limits`,
+      title: `Limits — Paul's Online Math Notes`,
+      source: `Paul's Online Notes`,
+      type: `article`,
+      url: `https://tutorial.math.lamar.edu/classes/calci/limitsintro.aspx`,
+      description: `Clear calculus I notes on limit definition, laws, one-sided limits, and continuity.`
     },
     {
       id: `peft-docs`,

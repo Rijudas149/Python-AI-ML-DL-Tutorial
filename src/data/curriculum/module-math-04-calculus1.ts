@@ -11,29 +11,28 @@ export const moduleMath04Topics: Topic[] = [
         {
           id: `lim-def`,
           title: `Limit Definition`,
-          content: `lim_{x→a} f(x) = L means f(x) approaches L as x approaches a (not necessarily f(a)=L). **One-sided limits**: from left x→a⁻, from right x→a⁺. Limit exists iff both one-sided limits agree.
+          content: `lim_{x→a} f(x) = L means f(x) gets arbitrarily close to L as x approaches a — the limit need not equal f(a). **One-sided limits** x→a⁻ and x→a⁺ must agree for the two-sided limit to exist.
 
-**Limits at infinity** describe asymptotic behavior. Sequential characterization connects to series convergence. ε-δ definition formalizes: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits enable defining derivative as limit of difference quotient.
+**Limits at infinity** describe horizontal asymptotes and long-run behavior. The ε-δ definition makes this precise: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε.
 
-L'Hôpital handles 0/0 indeterminate forms.`,
+Limits are the foundation for derivatives and integrals.`,
           formulas: [
             `lim_{x→a} f(x) = L`,
             `lim exists ⇔ lim⁻ = lim⁺`,
             `lim_{x→∞} f(x) (horizontal asymptote)`,
-            `ε-δ formal definition`,
-            `0/0 → try L'Hôpital`
+            `ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε`
           ],
           diagram: `f(x) near a:
         L ─ ─ ─ ─ ─ target
         ·    ·  f(x)
             a
-   x→a, f(x)→L`,
+   lim_{x→a} f(x) = L`,
           keyPoints: [
             `Limit ≠ function value at point`,
-            `Both sides must agree`,
-            `Infinity limits describe tails`,
-            `Foundation for derivatives`,
-            `L'Hôpital for indeterminate`
+            `Both one-sided limits must agree`,
+            `Infinity limits describe asymptotes`,
+            `ε-δ formalizes closeness`,
+            `Foundation for derivatives`
           ],
           example: `import numpy as np
 f = lambda x: (x**2-1)/(x-1)
@@ -45,17 +44,16 @@ print("f(x):", f(x))`,
 lim_{x→a} f(x) = L
 lim exists ⇔ lim⁻ = lim⁺
 lim_{x→∞} f(x) (horizontal asymptote)
-ε-δ formal definition
-0/0 → try L'Hôpital`
+ε-δ: ∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε`
         },
         {
           id: `lim-rules`,
           title: `Limit Laws`,
-          content: `If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M if M≠0. Polynomials continuous everywhere. Rational continuous except zeros of denominator. lim_{x→0} sin(x)/x = 1 fundamental. lim_{x→0} (e^x−1)/x = 1.
+          content: `If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M when M≠0. Polynomials and sums/products of continuous functions inherit limits term by term.
 
-Squeeze theorem bounds limits. Composition: lim f(g(x)) if inner limit in domain. These laws justify term-by-term differentiation and integration in power series.
+Key special limits: lim_{x→0} sin(x)/x = 1 and lim_{x→0} (e^x−1)/x = 1. The **squeeze theorem** traps f between g and h with the same limit.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Composition rules apply when inner limits stay in the domain.`,
           formulas: [
             `lim(f+g) = lim f + lim g`,
             `lim(f/g) = lim f / lim g`,
@@ -86,6 +84,47 @@ lim(f/g) = lim f / lim g
 lim_{x→0} sin(x)/x = 1
 lim_{x→0} (e^x − 1)/x = 1
 Squeeze: g≤f≤h → same limit`
+        },
+        {
+          id: `lim-lhopital`,
+          title: `L'Hôpital's Rule`,
+          content: `Direct substitution sometimes yields an **indeterminate form** — most commonly 0/0 or ∞/∞ — where the limit is not obvious from the ratio alone. **L'Hôpital's rule** says: if f and g are differentiable near a, g'(x)≠0 near a, and lim f(x)=lim g(x)=0 (or both →±∞), then lim_{x→a} f(x)/g(x) = lim_{x→a} f'(x)/g'(x) whenever the right-hand limit exists.
+
+Apply repeatedly if the result is still indeterminate. Other forms (0·∞, ∞−∞, 0⁰, 1^∞) require algebra first — rewrite into 0/0 or ∞/∞.
+
+Always verify conditions; the rule can fail if derivatives oscillate without a limit.`,
+          formulas: [
+            `0/0 or ∞/∞ → try L'Hôpital`,
+            `lim_{x→a} f/g = lim_{x→a} f'/g' (conditions apply)`,
+            `Repeat until determinate or limit found`,
+            `0·∞ → rewrite as 0/(1/∞)`,
+            `Example: lim_{x→0} sin(x)/x = lim cos(x)/1 = 1`
+          ],
+          diagram: `L'Hôpital for 0/0 at a:
+        L ─ ─ ─ ─ ─ limit of f/g
+        ·    ·  f(x)/g(x)
+            a
+   lim f/g = lim f'/g'`,
+          keyPoints: [
+            `Works on 0/0 and ∞/∞ directly`,
+            `Differentiate numerator and denominator`,
+            `May need several applications`,
+            `Rewrite other indeterminate forms first`,
+            `Check that derivative limit exists`
+          ],
+          example: `import sympy as sp
+x = sp.Symbol('x')
+expr = (sp.exp(x) - 1) / x
+print("limit:", sp.limit(expr, x, 0))
+print("L'Hopital check:", sp.limit(sp.diff(sp.exp(x)-1,x)/sp.diff(x,x), x, 0))`,
+          output: `limit: 1`,
+          pseudoCode: `L'Hôpital's Rule
+
+0/0 or ∞/∞ → try L'Hôpital
+lim_{x→a} f/g = lim_{x→a} f'/g' (conditions apply)
+Repeat until determinate or limit found
+0·∞ → rewrite as 0/(1/∞)
+Example: lim_{x→0} sin(x)/x = lim cos(x)/1 = 1`
         },
         {
           id: `lim-cont`,
@@ -176,11 +215,43 @@ x=np.array([1e-1,1e-2,1e-3]); print(np.sin(x)/x)`,
           solution: `import numpy as np
 x=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))`,
           difficulty: `easy`
+        },
+        {
+          id: `ex-lim-3`,
+          question: `Use SymPy to evaluate lim (e^x − 1)/x as x→0 (L'Hôpital form).`,
+          solution: `import sympy as sp
+x=sp.Symbol('x')
+print(sp.limit((sp.exp(x)-1)/x, x, 0))`,
+          difficulty: `medium`
         }
       ],
-      estimatedMinutes: 35,
+      estimatedMinutes: 45,
       module: `module-math-04`,
       references: [
+        {
+          id: `khan-limits`,
+          title: `Limits and Continuity — Khan Academy`,
+          source: `Khan Academy`,
+          type: `article`,
+          url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new`,
+          description: `Interactive lessons on limits, one-sided limits, squeeze theorem, and continuity.`
+        },
+        {
+          id: `pauls-limits`,
+          title: `Limits — Paul's Online Math Notes`,
+          source: `Paul's Online Notes`,
+          type: `article`,
+          url: `https://tutorial.math.lamar.edu/classes/calci/limitsintro.aspx`,
+          description: `Clear calculus I notes on limit definition, laws, one-sided limits, and continuity.`
+        },
+        {
+          id: `khan-lhopital`,
+          title: `L'Hôpital's Rule — Khan Academy`,
+          source: `Khan Academy`,
+          type: `article`,
+          url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new/ab-5-4/a/lhopitals-rule`,
+          description: `Step-by-step guide to evaluating 0/0 and ∞/∞ indeterminate forms with practice problems.`
+        },
         {
           id: `3blue1brown-calculus`,
           title: `Essence of Calculus`,
@@ -188,30 +259,6 @@ x=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))`,
           type: `video`,
           url: `https://www.3blue1brown.com/topics/calculus`,
           description: `Geometric intuition for derivatives, integrals, and the chain rule.`
-        },
-        {
-          id: `khan-multivariable-calc`,
-          title: `Multivariable Calculus — Khan Academy`,
-          source: `Khan Academy`,
-          type: `course`,
-          url: `https://www.khanacademy.org/math/multivariable-calculus`,
-          description: `Partial derivatives and gradients essential for neural network training.`
-        },
-        {
-          id: `goodfellow-dl-book`,
-          title: `Deep Learning`,
-          source: `MIT Press`,
-          type: `book`,
-          url: `https://www.deeplearningbook.org/`,
-          description: `Comprehensive free textbook covering neural networks, optimization, and architectures.`
-        },
-        {
-          id: `cs229-optimization`,
-          title: `CS229 Lecture Notes — Optimization`,
-          source: `Stanford CS229`,
-          type: `course`,
-          url: `https://cs229.stanford.edu/notes2022fall/main_notes.pdf`,
-          description: `Gradient descent, Newton's method, and convergence analysis for ML.`
         }
       ]
     },
@@ -407,6 +454,22 @@ w=3.; print(2*w)`,
       module: `module-math-04`,
       references: [
         {
+          id: `khan-derivatives`,
+          title: `Derivatives — Khan Academy`,
+          source: `Khan Academy`,
+          type: `article`,
+          url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new`,
+          description: `Definition of the derivative, rules, and applications with worked examples.`
+        },
+        {
+          id: `pauls-derivatives`,
+          title: `Derivatives — Paul's Online Math Notes`,
+          source: `Paul's Online Notes`,
+          type: `article`,
+          url: `https://tutorial.math.lamar.edu/classes/calci/derivatives.aspx`,
+          description: `Definition, interpretation, and derivative rules with many practice problems.`
+        },
+        {
           id: `3blue1brown-calculus`,
           title: `Essence of Calculus`,
           source: `3Blue1Brown`,
@@ -415,28 +478,12 @@ w=3.; print(2*w)`,
           description: `Geometric intuition for derivatives, integrals, and the chain rule.`
         },
         {
-          id: `khan-multivariable-calc`,
-          title: `Multivariable Calculus — Khan Academy`,
-          source: `Khan Academy`,
-          type: `course`,
-          url: `https://www.khanacademy.org/math/multivariable-calculus`,
-          description: `Partial derivatives and gradients essential for neural network training.`
-        },
-        {
           id: `pytorch-autograd`,
           title: `PyTorch Autograd Mechanics`,
           source: `PyTorch`,
           type: `documentation`,
           url: `https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html`,
           description: `Automatic differentiation and computational graph construction.`
-        },
-        {
-          id: `goodfellow-dl-book`,
-          title: `Deep Learning`,
-          source: `MIT Press`,
-          type: `book`,
-          url: `https://www.deeplearningbook.org/`,
-          description: `Comprehensive free textbook covering neural networks, optimization, and architectures.`
         }
       ]
     },
@@ -626,36 +673,36 @@ x=0.; inner=3*x+1; print(5*inner**4*3)`,
       module: `module-math-04`,
       references: [
         {
+          id: `khan-derivatives`,
+          title: `Derivatives — Khan Academy`,
+          source: `Khan Academy`,
+          type: `article`,
+          url: `https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new`,
+          description: `Definition of the derivative, rules, and applications with worked examples.`
+        },
+        {
+          id: `pauls-derivatives`,
+          title: `Derivatives — Paul's Online Math Notes`,
+          source: `Paul's Online Notes`,
+          type: `article`,
+          url: `https://tutorial.math.lamar.edu/classes/calci/derivatives.aspx`,
+          description: `Definition, interpretation, and derivative rules with many practice problems.`
+        },
+        {
+          id: `pauls-lhopital`,
+          title: `L'Hôpital's Rule — Paul's Online Math Notes`,
+          source: `Paul's Online Notes`,
+          type: `article`,
+          url: `https://tutorial.math.lamar.edu/classes/calci/lhospitalsrule.aspx`,
+          description: `Worked examples for indeterminate forms and when to apply the rule repeatedly.`
+        },
+        {
           id: `3blue1brown-calculus`,
           title: `Essence of Calculus`,
           source: `3Blue1Brown`,
           type: `video`,
           url: `https://www.3blue1brown.com/topics/calculus`,
           description: `Geometric intuition for derivatives, integrals, and the chain rule.`
-        },
-        {
-          id: `khan-multivariable-calc`,
-          title: `Multivariable Calculus — Khan Academy`,
-          source: `Khan Academy`,
-          type: `course`,
-          url: `https://www.khanacademy.org/math/multivariable-calculus`,
-          description: `Partial derivatives and gradients essential for neural network training.`
-        },
-        {
-          id: `pytorch-autograd`,
-          title: `PyTorch Autograd Mechanics`,
-          source: `PyTorch`,
-          type: `documentation`,
-          url: `https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html`,
-          description: `Automatic differentiation and computational graph construction.`
-        },
-        {
-          id: `goodfellow-dl-book`,
-          title: `Deep Learning`,
-          source: `MIT Press`,
-          type: `book`,
-          url: `https://www.deeplearningbook.org/`,
-          description: `Comprehensive free textbook covering neural networks, optimization, and architectures.`
         }
       ]
     },
