@@ -11,13 +11,19 @@ export const moduleMath02Topics: Topic[] = [
         {
           id: `vec-basics`,
           title: `Vector Definition`,
-          content: `A **vector** v ∈ ℝⁿ is an ordered n-tuple (v₁, v₂, ..., vₙ). Geometrically, vectors represent magnitude and direction. **Vector addition** is component-wise: u+v = (u₁+v₁, ...).
+          content: `A **vector** v ∈ ℝⁿ is an ordered n-tuple (v₁, v₂, ..., vₙ). Geometrically, vectors represent magnitude and direction. **Vector addition** is component-wise: u+v = (u₁+v₁, ...). **Scalar multiplication** cv scales each component. The **zero vector** 0 is the additive identity. Vectors in data science represent feature rows, embeddings, and gradients. Column vs row vectors matter for matrix multiplication conventions. A **vector space** satisfies closure under addition and scalar multiplication with axioms from linear algebra.
 
-**Scalar multiplication** cv scales each component. The **zero vector** 0 is the additive identity. Vectors in data science represent feature rows, embeddings, and gradients.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Vector Definition" here directly affects how confidently you can build, debug, and ship math projects.
 
-Column vs row vectors matter for matrix multiplication conventions. A **vector space** satisfies closure under addition and scalar multiplication with axioms from linear algebra.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Vector Definition** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `v = (v₁, v₂, ..., vₙ) ∈ ℝⁿ`,
             `u + v = (u₁+v₁, ..., uₙ+vₙ)`,
@@ -58,7 +64,7 @@ Key relationships:
   0 = (0, ..., 0)
   Span{v₁,...,v_k} = all linear combinations
 
-Diagram (summary):
+Visual summary:
   2D vector v = (3, 4)
   y
   │    ╱ v
@@ -69,23 +75,32 @@ Diagram (summary):
   │
   tail at origin, head at (3,4)
 
-Checklist:
+Study checklist:
   1. Vectors are ordered tuples
   2. Addition is component-wise
   3. Scalars stretch/shrink vectors
   4. Column vectors default in ML
-  5. Span is set of all combinations`
+  5. Span is set of all combinations
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
         },
         {
           id: `vec-norm`,
           title: `Norms & Distance`,
-          content: `**L2 norm** (Euclidean): ||v||₂ = √(∑vᵢ²). **L1 norm**: ||v||₁ = ∑|vᵢ|. **L∞ norm**: max|vᵢ|.
+          content: `**L2 norm** (Euclidean): ||v||₂ = √(∑vᵢ²). **L1 norm**: ||v||₁ = ∑|vᵢ|. **L∞ norm**: max|vᵢ|. Unit vector v̂ = v/||v||. Distance d(u,v) = ||u−v||₂. L2 norm relates to dot product: ||v||² = v·v. Regularization in ML uses L1 (Lasso) and L2 (Ridge) penalties. Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes Euclidean norm efficiently for high-dimensional embeddings and batch feature normalization pipelines.
 
-Unit vector v̂ = v/||v||. Distance d(u,v) = ||u−v||₂. L2 norm relates to dot product: ||v||² = v·v.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Norms & Distance" here directly affects how confidently you can build, debug, and ship math projects.
 
-Regularization in ML uses L1 (Lasso) and L2 (Ridge) penalties. Cosine similarity uses normalized dot product. np.linalg.norm(v, ord=2) computes Euclidean norm efficiently for high-dimensional embeddings and batch feature normalization pipelines.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Norms & Distance** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `||v||₂ = √(∑ vᵢ²)`,
             `||v||₁ = ∑ |vᵢ|`,
@@ -125,7 +140,7 @@ Key relationships:
   v̂ = v / ||v||₂
   d(u,v) = ||u − v||₂
 
-Diagram (summary):
+Visual summary:
   ||v|| = length of arrow
   ╱|
   ╱ |
@@ -135,23 +150,32 @@ Diagram (summary):
   3
   ||v|| = √(3²+4²) = 5
 
-Checklist:
+Study checklist:
   1. L2 is standard Euclidean length
   2. L1 encourages sparsity in ML
   3. Unit vectors have norm 1
   4. Distance is norm of difference
-  5. Norms measure vector size`
+  5. Norms measure vector size
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
         },
         {
           id: `vec-span`,
           title: `Linear Combinations & Span`,
-          content: `Linear combination: c₁v₁ + c₂v₂ + ... + c_k v_k. **Span** of vectors is all possible combinations. Vectors are **linearly independent** if no vector is a combination of others.
+          content: `Linear combination: c₁v₁ + c₂v₂ + ... + c_k v_k. **Span** of vectors is all possible combinations. Vectors are **linearly independent** if no vector is a combination of others. Basis: independent set spanning the space. Dimension = size of basis. In PCA, principal components form an orthonormal basis. Feature columns spanning ℝⁿ determine rank of design matrix. Redundant features create linear dependence causing multicollinearity in regression.
 
-Basis: independent set spanning the space. Dimension = size of basis. In PCA, principal components form an orthonormal basis.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Linear Combinations & Span" here directly affects how confidently you can build, debug, and ship math projects.
 
-Feature columns spanning ℝⁿ determine rank of design matrix. Redundant features create linear dependence causing multicollinearity in regression.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Linear Combinations & Span** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `c₁v₁ + ... + c_k v_k = linear combination`,
             `Span{v₁,...,v_k} ⊆ vector space`,
@@ -193,7 +217,7 @@ Key relationships:
   Basis: independent + spanning
   dim(V) = |basis|
 
-Diagram (summary):
+Visual summary:
   v1 ────→  v2 ────→
   \\         /
   \\       /
@@ -204,23 +228,32 @@ Diagram (summary):
   │
   │  · · ·
 
-Checklist:
+Study checklist:
   1. Span is all weighted sums
   2. Independence = no redundancy
   3. Basis minimal spanning set
   4. Rank = dimension of column space
-  5. Dependent columns → singular XᵀX`
+  5. Dependent columns → singular XᵀX
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
         },
         {
           id: `vec-ml`,
           title: `Vectors in Data Science`,
-          content: `Each data point is a feature vector x ∈ ℝᵈ. **Embeddings** map discrete IDs to dense vectors. **Gradients** ∇L are vectors pointing uphill in loss.
+          content: `Each data point is a feature vector x ∈ ℝᵈ. **Embeddings** map discrete IDs to dense vectors. **Gradients** ∇L are vectors pointing uphill in loss. Batch stacking creates matrix X ∈ ℝ^{m×d}. Normalization scales feature vectors. Nearest neighbor search uses L2 distance in embedding space. Word2vec learns vector representations where similar words are close. Vectorized numpy operations apply element-wise ops without Python loops for speed.
 
-Batch stacking creates matrix X ∈ ℝ^{m×d}. Normalization scales feature vectors. Nearest neighbor search uses L2 distance in embedding space.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Vectors in Data Science" here directly affects how confidently you can build, debug, and ship math projects.
 
-Word2vec learns vector representations where similar words are close. Vectorized numpy operations apply element-wise ops without Python loops for speed.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Vectors in Data Science** in the context of **Vectors & Vector Spaces**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `x ∈ ℝᵈ feature vector`,
             `X ∈ ℝ^{m×d} design matrix`,
@@ -262,7 +295,7 @@ Key relationships:
   cos(θ) = (u·v)/(||u|| ||v||)
   Embedding: id → ℝᵈ
 
-Diagram (summary):
+Visual summary:
   Dataset as matrix:
   x₁ ──→ row 1 of X
   x₂ ──→ row 2 of X
@@ -272,12 +305,179 @@ Diagram (summary):
   rows = samples
   │
 
-Checklist:
+Study checklist:
   1. Rows often = samples in sklearn
   2. Gradients same shape as params
   3. Embeddings capture semantics
   4. Vectorization speeds computation
-  5. Normalize features before distance`
+  5. Normalize features before distance
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-vectors-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Vectors & Vector Spaces** sits in the **math** track of the Data Science Master curriculum. Learn vector notation, norms, unit vectors, and linear combinations in ℝⁿ.
+
+**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+
+For **math-vectors**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Vectors & Vector Spaces
+meta = {"topic_id": "math-vectors", "track": "math", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `math-vectors math beginner`,
+          keyPoints: [
+            `Core theory of Vectors & Vector Spaces ties to the math track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Vectors & Vector Spaces ties to the math track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-vectors-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Vectors & Vector Spaces**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-vectors**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for math-vectors
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("math-vectors", "Vectors & Vector Spaces")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `math-vectors Vectors`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with math ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with math ecosystem conventions
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-vectors-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Vectors & Vector Spaces** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
+
+When stuck on **math-vectors**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("math-vectors", "Vectors & Vector Spaces")
+debug_step("section_count", 4)`,
+          output: `[math-vectors] 'Vectors & Vector Spaces' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-vectors-real-world`,
+          title: `Real-World Applications`,
+          content: `**Vectors & Vector Spaces** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
+
+Teams shipping features around **math-vectors** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Vectors & Vector Spaces
+skills = ["math", "beginner", "math-vectors"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: math, beginner, math-vectors`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Vectors & Vector Spaces to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Vectors & Vector Spaces to adjacent topics in the same track
+
+Topic: Vectors & Vector Spaces
+Track: math | Level: beginner`
         }
       ],
       exercises: [
@@ -296,7 +496,7 @@ v=np.array([3.,4.]); print(v/np.linalg.norm(v))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 35,
+      estimatedMinutes: 124,
       module: `module-math-02`,
       references: [
         {
@@ -351,13 +551,19 @@ v=np.array([3.,4.]); print(v/np.linalg.norm(v))`,
         {
           id: `dot-def`,
           title: `Dot Product Definition`,
-          content: `**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Orthogonal when u·v=0.
+          content: `**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Orthogonal when u·v=0. Bilinear and symmetric. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v. In ML, dot product scores attention queries against keys. Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Bilinear and symmetric. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v. In ML, dot product scores attention queries against keys.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Dot Product Definition" here directly affects how confidently you can build, debug, and ship math projects.
 
-Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Dot Product Definition** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `u · v = ∑ uᵢ vᵢ = uᵀv`,
             `u · v = ||u|| ||v|| cos θ`,
@@ -398,7 +604,7 @@ Key relationships:
   proj_v(u) = (u·v / v·v) v
   Wx = dot products of W rows with x
 
-Diagram (summary):
+Visual summary:
   u · v = |u||v|cosθ
   v
   ╱
@@ -408,25 +614,32 @@ Diagram (summary):
   θ=90: cos=0, dot=0
   │
 
-Checklist:
+Study checklist:
   1. Dot product sums pairwise products
   2. Measures alignment via cosine
   3. Zero dot = orthogonal
   4. Linear layers are dot products
-  5. Attention uses scaled dot products`
+  5. Attention uses scaled dot products
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
         },
         {
           id: `dot-geom`,
           title: `Geometric Interpretation`,
-          content: `Angle between vectors: cos θ = (u·v)/(||u|| ||v||). **Cosine similarity** ignores magnitude, focuses on direction—common for text embeddings.
+          content: `Angle between vectors: cos θ = (u·v)/(||u|| ||v||). **Cosine similarity** ignores magnitude, focuses on direction—common for text embeddings. Cauchy-Schwarz: |u·v| ≤ ||u|| ||v||. Triangle inequality on norms. Dot product positive when acute angle, negative when obtuse. Normalizing before dot gives cosine in [−1,1]. In recommendation systems, user and item embeddings with high cosine predict preference.
 
-Cauchy-Schwarz: |u·v| ≤ ||u|| ||v||. Triangle inequality on norms.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Geometric Interpretation" here directly affects how confidently you can build, debug, and ship math projects.
 
-Dot product positive when acute angle, negative when obtuse. Normalizing before dot gives cosine in [−1,1].
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-In recommendation systems, user and item embeddings with high cosine predict preference.
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
 
-**Geometric Interpretation** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `cos θ = (u·v) / (||u|| ||v||)`,
             `|u·v| ≤ ||u|| ||v|| (Cauchy-Schwarz)`,
@@ -466,7 +679,7 @@ Key relationships:
   cosine sim ∈ [−1, 1] after normalize
   u·u = ||u||² ≥ 0
 
-Diagram (summary):
+Visual summary:
   cosine similarity scale:
   1.0  same direction  →→→
   0.0  orthogonal      →↑
@@ -476,23 +689,32 @@ Diagram (summary):
   │  · · ·
   └──────────
 
-Checklist:
+Study checklist:
   1. Cosine ignores vector length
   2. Cauchy-Schwarz bounds dot product
   3. Sign of dot indicates angle type
   4. Used in semantic search
-  5. Self-dot gives squared norm`
+  5. Self-dot gives squared norm
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
         },
         {
           id: `cross-3d`,
           title: `Cross Product in 3D`,
-          content: `**Cross product** u×v ∈ ℝ³ perpendicular to both u and v. ||u×v|| = ||u|| ||v|| sin θ = area of parallelogram. Right-hand rule determines direction. u×v = −v×u anti-commutative. i×j=k standard basis.
+          content: `**Cross product** u×v ∈ ℝ³ perpendicular to both u and v. ||u×v|| = ||u|| ||v|| sin θ = area of parallelogram. Right-hand rule determines direction. u×v = −v×u anti-commutative. i×j=k standard basis. Used in 3D graphics, torque, and normal vectors for surfaces. In 2D, pseudo-scalar u_x v_y − u_y v_x gives signed area. Cross product less common in standard ML but appears in geometric deep learning and physics-informed nets.
 
-Used in 3D graphics, torque, and normal vectors for surfaces. In 2D, pseudo-scalar u_x v_y − u_y v_x gives signed area.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Cross Product in 3D" here directly affects how confidently you can build, debug, and ship math projects.
 
-Cross product less common in standard ML but appears in geometric deep learning and physics-informed nets.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Cross Product in 3D** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `u × v ⟂ u and ⟂ v`,
             `||u × v|| = ||u|| ||v|| sin θ`,
@@ -531,7 +753,7 @@ Key relationships:
   i × j = k (right-hand rule)
   Area = ||u × v||
 
-Diagram (summary):
+Visual summary:
   u × v points up from plane
   v ╱
   ╱
@@ -541,25 +763,32 @@ Diagram (summary):
   right-hand rule:
   curl fingers u→v, thumb = u×v
 
-Checklist:
+Study checklist:
   1. Cross product only in 3D (or 7D exotic)
   2. Gives perpendicular vector
   3. Magnitude = parallelogram area
   4. Anti-commutative
-  5. Normals for 3D rendering`
+  5. Normals for 3D rendering
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
         },
         {
           id: `dot-attn`,
           title: `Dot Products in Neural Networks`,
-          content: `**Attention** score e_ij = q_i·k_j / √d measures query-key compatibility. Scaled dot prevents softmax saturation at large d.
+          content: `**Attention** score e_ij = q_i·k_j / √d measures query-key compatibility. Scaled dot prevents softmax saturation at large d. **Linear classification** sign(w·x + b) is perceptron. Matrix multiply C=AB: C_ij = row_i(A)·col_j(B). GPU accelerates batched dot products. Kernel SVM uses implicit dot products in feature space. Understanding dot products clarifies why weight initialization scale affects activation variance and training stability.
 
-**Linear classification** sign(w·x + b) is perceptron. Matrix multiply C=AB: C_ij = row_i(A)·col_j(B).
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Dot Products in Neural Networks" here directly affects how confidently you can build, debug, and ship math projects.
 
-GPU accelerates batched dot products. Kernel SVM uses implicit dot products in feature space.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-Understanding dot products clarifies why weight initialization scale affects activation variance and training stability.
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
 
-**Dot Products in Neural Networks** in the context of **Dot Product & Cross Product**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `Attention: softmax(QKᵀ/√d) V`,
             `score_ij = q_i · k_j / √d`,
@@ -599,7 +828,7 @@ Key relationships:
   Perceptron: sign(w·x + b)
   K(x,x') = φ(x)·φ(x') kernel trick
 
-Diagram (summary):
+Visual summary:
   Q  Kᵀ  →  scores  → softmax  →  weights
   q1 · k1  q1 · k2  q1 · k3
   q2 · k1  q2 · k2  q2 · k3
@@ -609,12 +838,179 @@ Diagram (summary):
   └──────────
   (see formulas above)
 
-Checklist:
+Study checklist:
   1. Matrix multiply = batch dots
   2. Scale by √d in transformers
   3. Softmax turns scores to weights
   4. Linear layers are dot + bias
-  5. Kernel = dot in feature space`
+  5. Kernel = dot in feature space
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-dot-cross-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Dot Product & Cross Product** sits in the **math** track of the Data Science Master curriculum. Inner products measure similarity; cross products find orthogonal vectors in 3D.
+
+**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+
+For **math-dot-cross**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Dot Product & Cross Product
+meta = {"topic_id": "math-dot-cross", "track": "math", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `math-dot-cross math beginner`,
+          keyPoints: [
+            `Core theory of Dot Product & Cross Product ties to the math track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Dot Product & Cross Product ties to the math track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-dot-cross-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Dot Product & Cross Product**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-dot-cross**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for math-dot-cross
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("math-dot-cross", "Dot Product & Cross Product")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `math-dot-cross Dot`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with math ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with math ecosystem conventions
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-dot-cross-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Dot Product & Cross Product** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
+
+When stuck on **math-dot-cross**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("math-dot-cross", "Dot Product & Cross Product")
+debug_step("section_count", 4)`,
+          output: `[math-dot-cross] 'Dot Product & Cross Product' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
+        },
+        {
+          id: `math-dot-cross-real-world`,
+          title: `Real-World Applications`,
+          content: `**Dot Product & Cross Product** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
+
+Teams shipping features around **math-dot-cross** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Dot Product & Cross Product
+skills = ["math", "beginner", "math-dot-cross"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: math, beginner, math-dot-cross`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Dot Product & Cross Product to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Dot Product & Cross Product to adjacent topics in the same track
+
+Topic: Dot Product & Cross Product
+Track: math | Level: beginner`
         }
       ],
       exercises: [
@@ -634,7 +1030,7 @@ print(np.dot(u,v)/(np.linalg.norm(u)*np.linalg.norm(v)))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 35,
+      estimatedMinutes: 124,
       module: `module-math-02`,
       references: [
         {
@@ -689,15 +1085,19 @@ print(np.dot(u,v)/(np.linalg.norm(u)*np.linalg.norm(v)))`,
         {
           id: `mat-basics`,
           title: `Matrix Structure`,
-          content: `An m×n **matrix** A has m rows and n columns; entry A_ij at row i, column j. **Identity** I_n has 1s on diagonal.
+          content: `An m×n **matrix** A has m rows and n columns; entry A_ij at row i, column j. Square matrices m=n. **Identity** I_n has 1s on diagonal. **Zero matrix** all zeros. **Diagonal** matrix has off-diagonal zeros. **Symmetric** A=Aᵀ. Matrices represent linear transforms, datasets (samples×features), and weight layers. Transpose Aᵀ flips rows/columns. Storage order (row-major in C/numpy) affects cache performance in large matrix ops.
 
-**Zero matrix** all zeros. **Diagonal** matrix has off-diagonal zeros.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Matrix Structure" here directly affects how confidently you can build, debug, and ship math projects.
 
-Matrices represent linear transforms, datasets (samples×features), and weight layers. Transpose Aᵀ flips rows/columns.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-Storage order (row-major in C/numpy) affects cache performance in large matrix ops.
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
 
-**Matrix Structure** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `A ∈ ℝ^{m×n}; entry A_ij`,
             `(Aᵀ)_ij = A_ji`,
@@ -738,7 +1138,7 @@ Key relationships:
   Symmetric: A = Aᵀ
   Diagonal: A_ij=0 for i≠j
 
-Diagram (summary):
+Visual summary:
   2×3 matrix A:
   col1 col2 col3
   r1 [ a11  a12  a13 ]
@@ -748,23 +1148,34 @@ Diagram (summary):
   │  · · ·
   └──────────
 
-Checklist:
+Study checklist:
   1. First index = row, second = column
   2. Transpose swaps indices
   3. Identity leaves vectors unchanged
   4. Symmetric matrices have real eigenvalues
-  5. Shape must align for multiply`
+  5. Shape must align for multiply
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
         },
         {
           id: `mat-mv`,
           title: `Matrix-Vector Multiplication`,
-          content: `Ax for A∈ℝ^{m×n}, x∈ℝ^n produces y∈ℝ^m where y_i = ∑_j A_ij x_j = row_i(A)·x. Each output component is dot product of row with x. Geometrically, A transforms x to new space.
+          content: `**Matrix-Vector Multiplication** is essential to **Matrices & Matrix Notation**. Understand matrix dimensions, special matrices, and matrix-vector multiplication. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-**Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns.
+Ax for A∈ℝ^{m×n}, x∈ℝ^n produces y∈ℝ^m where y_i = ∑_j A_ij x_j = row_i(A)·x. Each output component is dot product of row with x. Geometrically, A transforms x to new space. **Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns. Row picture: dot products of rows with x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Row picture: dot products of rows with x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Matrix-Vector Multiplication" here directly affects how confidently you can build, debug, and ship math projects.
 
-**Matrix-Vector Multiplication** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `y = Ax, y_i = ∑_j A_ij x_j`,
             `Ax = x₁a₁ + x₂a₂ + ... (column view)`,
@@ -803,7 +1214,7 @@ Key relationships:
   (BA)x = B(Ax)
   W ∈ ℝ^{out×in} for y=Wx
 
-Diagram (summary):
+Visual summary:
   A (m×n)  ×  x (n×1)  =  y (m×1)
   [ row1 ]     [x1]      [r1·x]
   [ row2 ]  ·  [x2]  =   [r2·x]
@@ -814,23 +1225,32 @@ Diagram (summary):
   (see formulas above)
   │
 
-Checklist:
+Study checklist:
   1. Columns of A span output space
   2. Rows of A define hyperplanes
   3. Shape: (m×n)(n×1)=(m×1)
   4. Neural layer = matrix-vector + bias
-  5. Composition = matrix multiply`
+  5. Composition = matrix multiply
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
         },
         {
           id: `mat-special`,
           title: `Special Matrices`,
-          content: `**Orthogonal** Q: QᵀQ=I; preserves lengths and angles. **Positive definite** symmetric A with xᵀAx>0 for x≠0—Hessians at minima.
+          content: `**Orthogonal** Q: QᵀQ=I; preserves lengths and angles. **Positive definite** symmetric A with xᵀAx>0 for x≠0—Hessians at minima. **Toeplitz** constant diagonals in time series. **Sparse** mostly zeros—efficient storage. **Stochastic** rows sum to 1—Markov chains. **Projection** P²=P. Understanding special structure enables faster algorithms (e.g., eigendecomposition for symmetric matrices always exists with real eigenvalues).
 
-**Toeplitz** constant diagonals in time series. **Sparse** mostly zeros—efficient storage.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Special Matrices" here directly affects how confidently you can build, debug, and ship math projects.
 
-**Stochastic** rows sum to 1—Markov chains. Understanding special structure enables faster algorithms (e.g., eigendecomposition for symmetric matrices always exists with real eigenvalues).
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Special Matrices** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `Orthogonal: QᵀQ = I`,
             `Symmetric: A = Aᵀ`,
@@ -869,7 +1289,7 @@ Key relationships:
   Projection: P² = P
   Stochastic: rows sum to 1
 
-Diagram (summary):
+Visual summary:
   Orthogonal rotation Q:
   x ──Q──→ Qx
   ||x|| = ||Qx||
@@ -879,23 +1299,34 @@ Diagram (summary):
   │  · · ·
   └──────────
 
-Checklist:
+Study checklist:
   1. Orthogonal = rotation/reflection
   2. Symmetric → real eigenvalues
   3. PSD matrices define valid covariances
   4. Sparse matrices save memory
-  5. Structure enables fast solvers`
+  5. Structure enables fast solvers
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
         },
         {
           id: `mat-data`,
           title: `Matrices as Data Tables`,
-          content: `Design matrix X ∈ ℝ^{n×p}: n samples, p features. Target vector y ∈ ℝ^n. Covariance Σ = (1/n)XᵀX (centered).
+          content: `**Matrices as Data Tables** is essential to **Matrices & Matrix Notation**. Understand matrix dimensions, special matrices, and matrix-vector multiplication. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Correlation from normalized covariance. Batch tensor (batch, features) in deep learning. Missing values require imputation before matrix ops.
+Design matrix X ∈ ℝ^{n×p}: n samples, p features. Target vector y ∈ ℝ^n. Covariance Σ = (1/n)XᵀX (centered). Correlation from normalized covariance. Batch tensor (batch, features) in deep learning. Missing values require imputation before matrix ops. One-hot encoding creates sparse binary columns. Feature scaling applies column-wise transforms. Matrix view connects tabular data to linear algebra algorithms throughout sklearn and pytorch.
 
-One-hot encoding creates sparse binary columns. Feature scaling applies column-wise transforms. Matrix view connects tabular data to linear algebra algorithms throughout sklearn and pytorch.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Matrices as Data Tables" here directly affects how confidently you can build, debug, and ship math projects.
 
-**Matrices as Data Tables** in the context of **Matrices & Matrix Notation**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `X ∈ ℝ^{n×p} design matrix`,
             `Σ = (1/n) X̃ᵀ X̃ (centered covariance)`,
@@ -935,7 +1366,7 @@ Key relationships:
   One-hot: identity columns per category
   Batch: stack rows for mini-batch GD
 
-Diagram (summary):
+Visual summary:
   X = features table
   sample │ f1  f2  f3
   ───────┼────────────
@@ -945,12 +1376,179 @@ Diagram (summary):
   each row = one observation
   │
 
-Checklist:
+Study checklist:
   1. Rows = samples in sklearn convention
   2. Columns = features/variables
   3. Center columns before covariance
   4. Matrix form enables vectorized fit
-  5. Batches are submatrices of data`
+  5. Batches are submatrices of data
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrices-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Matrices & Matrix Notation** sits in the **math** track of the Data Science Master curriculum. Understand matrix dimensions, special matrices, and matrix-vector multiplication.
+
+**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+
+For **math-matrices**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Matrices & Matrix Notation
+meta = {"topic_id": "math-matrices", "track": "math", "level": "intermediate"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `math-matrices math intermediate`,
+          keyPoints: [
+            `Core theory of Matrices & Matrix Notation ties to the math track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Matrices & Matrix Notation ties to the math track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrices-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Matrices & Matrix Notation**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-matrices**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for math-matrices
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("math-matrices", "Matrices & Matrix Notation")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `math-matrices Matrices`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with math ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with math ecosystem conventions
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrices-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Matrices & Matrix Notation** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
+
+When stuck on **math-matrices**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("math-matrices", "Matrices & Matrix Notation")
+debug_step("section_count", 4)`,
+          output: `[math-matrices] 'Matrices & Matrix Notation' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrices-real-world`,
+          title: `Real-World Applications`,
+          content: `**Matrices & Matrix Notation** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
+
+Teams shipping features around **math-matrices** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Matrices & Matrix Notation
+skills = ["math", "intermediate", "math-matrices"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: math, intermediate, math-matrices`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Matrices & Matrix Notation to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Matrices & Matrix Notation to adjacent topics in the same track
+
+Topic: Matrices & Matrix Notation
+Track: math | Level: intermediate`
         }
       ],
       exercises: [
@@ -969,7 +1567,7 @@ I=np.eye(3); x=np.array([1,2,3.]); print(I@x)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 35,
+      estimatedMinutes: 124,
       module: `module-math-02`,
       references: [
         {
@@ -1024,13 +1622,19 @@ I=np.eye(3); x=np.array([1,2,3.]); print(I@x)`,
         {
           id: `mm-def`,
           title: `Matrix Multiplication`,
-          content: `For A∈ℝ^{m×k}, B∈ℝ^{k×n}, product C=AB ∈ ℝ^{m×n} with C_ij = ∑_l A_il B_lj. **Inner dimensions must match** (k). NOT commutative: AB≠BA generally.
+          content: `For A∈ℝ^{m×k}, B∈ℝ^{k×n}, product C=AB ∈ ℝ^{m×n} with C_ij = ∑_l A_il B_lj. **Inner dimensions must match** (k). NOT commutative: AB≠BA generally. Associative: (AB)C=A(BC). Distributive over addition. Each C_ij is dot product of row i of A with column j of B. Chain of layers composes weight matrices. Strassen and blocked multiplication optimize large products on hardware. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Associative: (AB)C=A(BC). Distributive over addition. Each C_ij is dot product of row i of A with column j of B.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Matrix Multiplication" here directly affects how confidently you can build, debug, and ship math projects.
 
-Chain of layers composes weight matrices. Strassen and blocked multiplication optimize large products on hardware. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Matrix Multiplication** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `C = AB, C_ij = ∑_l A_il B_lj`,
             `A: m×k, B: k×n → C: m×n`,
@@ -1070,7 +1674,7 @@ Key relationships:
   (AB)C = A(BC)
   (AB)ᵀ = BᵀAᵀ
 
-Diagram (summary):
+Visual summary:
   (m×k) · (k×n) = (m×n)
   A         B         C
   [ * * ] · [ * * ] = [ * * ]
@@ -1080,25 +1684,32 @@ Diagram (summary):
   │
   │  · · ·
 
-Checklist:
+Study checklist:
   1. Inner dimension must align
   2. Order matters in multiplication
   3. Transpose reverses product order
   4. Each entry = row·column dot
-  5. Composition of linear maps`
+  5. Composition of linear maps
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
         },
         {
           id: `mm-prop`,
           title: `Transpose & Trace`,
-          content: `**Transpose** (AB)ᵀ = BᵀAᵀ. Symmetric A iff A=Aᵀ.
+          content: `**Transpose** (AB)ᵀ = BᵀAᵀ. Symmetric A iff A=Aᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)). Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)).
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Transpose & Trace" here directly affects how confidently you can build, debug, and ship math projects.
 
-Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
 
-**Transpose & Trace** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `(AB)ᵀ = BᵀAᵀ`,
             `tr(A) = ∑ A_ii`,
@@ -1138,7 +1749,7 @@ Key relationships:
   ||A||_F = √(tr(AᵀA))
   (Aᵀ)ᵀ = A
 
-Diagram (summary):
+Visual summary:
   Transpose flip:
   A = [1 2]     Aᵀ = [1 3]
   [3 4]          [2 4]
@@ -1148,23 +1759,32 @@ Diagram (summary):
   └──────────
   (see formulas above)
 
-Checklist:
+Study checklist:
   1. Transpose reverses multiply order
   2. Trace invariant under cyclic permute
   3. Frobenius norm for matrix size
   4. Symmetric matrices ↔ quadratic forms
-  5. Gradients use transpose heavily`
+  5. Gradients use transpose heavily
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
         },
         {
           id: `mm-inv-det`,
           title: `Preview: Inverse & Determinant`,
-          content: `Square matrix A **invertible** if ∃A⁻¹ with AA⁻¹=I. det(A)≠0 iff invertible. det(AB)=det(A)det(B). Inverse of 2×2: (1/det)[[d,−b],[−c,a]].
+          content: `Square matrix A **invertible** if ∃A⁻¹ with AA⁻¹=I. det(A)≠0 iff invertible. det(AB)=det(A)det(B). Inverse of 2×2: (1/det)[[d,−b],[−c,a]]. Singular matrices collapse dimension—non-invertible transform. Near-singular causes numerical instability. Condition number κ(A)=||A|| ||A⁻¹|| measures sensitivity. We'll deepen inverses and determinants in the next module; here we preview their role in solving Ax=b.
 
-Singular matrices collapse dimension—non-invertible transform. Near-singular causes numerical instability.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Preview: Inverse & Determinant" here directly affects how confidently you can build, debug, and ship math projects.
 
-Condition number κ(A)=||A|| ||A⁻¹|| measures sensitivity. We'll deepen inverses and determinants in the next module; here we preview their role in solving Ax=b.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Preview: Inverse & Determinant** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `AA⁻¹ = A⁻¹A = I`,
             `det(A) ≠ 0 ⇔ A invertible`,
@@ -1204,7 +1824,7 @@ Key relationships:
   2×2: A⁻¹ = (1/det)[[d,-b],[-c,a]]
   κ(A) = ||A|| · ||A⁻¹||
 
-Diagram (summary):
+Visual summary:
   Invertible: full rank
   x ──A──→ y
   x ←─A⁻¹─ y
@@ -1214,23 +1834,34 @@ Diagram (summary):
   │
   │  · · ·
 
-Checklist:
+Study checklist:
   1. Inverse undoes linear map
   2. Zero determinant = singular
   3. Ill-conditioned = hard to invert
   4. Rank deficient → no unique inverse
-  5. Preview for linear systems topic`
+  5. Preview for linear systems topic
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
         },
         {
           id: `mm-nn`,
           title: `Matrix Ops in Neural Nets`,
-          content: `Fully connected layer: h = σ(Wx+b). Backprop: ∂L/∂W = (∂L/∂H)ᵀ X. Weight matrices learned by gradient descent.
+          content: `**Matrix Ops in Neural Nets** is essential to **Matrix Operations**. Matrix multiplication, transpose rules, and properties of matrix arithmetic. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow.
+Fully connected layer: h = σ(Wx+b). Batch: H = σ(XWᵀ+B). Backprop: ∂L/∂W = (∂L/∂H)ᵀ X. Weight matrices learned by gradient descent. Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow. Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Matrix Ops in Neural Nets" here directly affects how confidently you can build, debug, and ship math projects.
 
-**Matrix Ops in Neural Nets** in the context of **Matrix Operations**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `h = σ(Wx + b)`,
             `Batch: H = σ(XWᵀ + B)`,
@@ -1270,7 +1901,7 @@ Key relationships:
   Residual: y = x + F(x)
   He init: W ~ N(0, 2/fan_in)
 
-Diagram (summary):
+Visual summary:
   Layer stack:
   x → W1 → σ → W2 → σ → ... → ŷ
   n0   n1      n2
@@ -1280,12 +1911,179 @@ Diagram (summary):
   │  · · ·
   └──────────
 
-Checklist:
+Study checklist:
   1. Check shapes at every layer
   2. Batch dim adds leading axis
   3. Transpose in batch forward pass
   4. Init scale affects training
-  5. Residual eases deep gradients`
+  5. Residual eases deep gradients
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrix-ops-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Matrix Operations** sits in the **math** track of the Data Science Master curriculum. Matrix multiplication, transpose rules, and properties of matrix arithmetic.
+
+**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+
+For **math-matrix-ops**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Matrix Operations
+meta = {"topic_id": "math-matrix-ops", "track": "math", "level": "intermediate"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `math-matrix-ops math intermediate`,
+          keyPoints: [
+            `Core theory of Matrix Operations ties to the math track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Matrix Operations ties to the math track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrix-ops-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Matrix Operations**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-matrix-ops**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for math-matrix-ops
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("math-matrix-ops", "Matrix Operations")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `math-matrix-ops Matrix`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with math ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with math ecosystem conventions
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrix-ops-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Matrix Operations** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
+
+When stuck on **math-matrix-ops**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("math-matrix-ops", "Matrix Operations")
+debug_step("section_count", 4)`,
+          output: `[math-matrix-ops] 'Matrix Operations' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-matrix-ops-real-world`,
+          title: `Real-World Applications`,
+          content: `**Matrix Operations** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
+
+Teams shipping features around **math-matrix-ops** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Matrix Operations
+skills = ["math", "intermediate", "math-matrix-ops"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: math, intermediate, math-matrix-ops`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Matrix Operations to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Matrix Operations to adjacent topics in the same track
+
+Topic: Matrix Operations
+Track: math | Level: intermediate`
         }
       ],
       exercises: [
@@ -1306,7 +2104,7 @@ print(np.allclose((A@B).T, B.T@A.T))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 35,
+      estimatedMinutes: 124,
       module: `module-math-02`,
       references: [
         {
@@ -1361,13 +2159,19 @@ print(np.allclose((A@B).T, B.T@A.T))`,
         {
           id: `ls-form`,
           title: `System Formulation`,
-          content: `Linear system Ax=b: A∈ℝ^{m×n}, x∈ℝ^n unknown, b∈ℝ^m. **Consistent** if ∃x solution. Unique solution when A square and invertible.
+          content: `Linear system Ax=b: A∈ℝ^{m×n}, x∈ℝ^n unknown, b∈ℝ^m. **Consistent** if ∃x solution. Unique solution when A square and invertible. Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system. Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "System Formulation" here directly affects how confidently you can build, debug, and ship math projects.
 
-Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**System Formulation** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `Ax = b`,
             `Consistent ⇔ b ∈ Col(A)`,
@@ -1407,7 +2211,7 @@ Key relationships:
   Least squares: min ||Ax − b||₂
   rank(A) = dim Col(A)
 
-Diagram (summary):
+Visual summary:
   2 equations, 2 unknowns:
   a11 x1 + a12 x2 = b1   ── line 1
   a21 x1 + a22 x2 = b2   ── line 2
@@ -1417,23 +2221,32 @@ Diagram (summary):
   │
   │  · · ·
 
-Checklist:
+Study checklist:
   1. Geometric: intersection of hyperplanes
   2. Square full rank → unique solution
   3. Overdetermined → least squares
   4. Rank determines consistency
-  5. Regression is Ax=b`
+  5. Regression is Ax=b
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
         },
         {
           id: `ls-elim`,
           title: `Gaussian Elimination`,
-          content: `**Gaussian elimination** row-reduces [A|b] to upper triangular form then back-substitutes. **Elementary row ops**: swap rows, scale row, add multiple of row to another.
+          content: `**Gaussian elimination** row-reduces [A|b] to upper triangular form then back-substitutes. **Elementary row ops**: swap rows, scale row, add multiple of row to another. **Pivoting** swaps rows to avoid zero pivot and reduce error. LU decomposition: A=LU with L lower, U upper triangular. np.linalg.solve uses optimized LAPACK. Partial pivoting improves numerical stability for ill-conditioned systems.
 
-**Pivoting** swaps rows to avoid zero pivot and reduce error. LU decomposition: A=LU with L lower, U upper triangular. np.linalg.solve uses optimized LAPACK.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Gaussian Elimination" here directly affects how confidently you can build, debug, and ship math projects.
 
-Partial pivoting improves numerical stability for ill-conditioned systems.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Gaussian Elimination** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `Elementary ops preserve solution set`,
             `Forward elimination → upper triangular U`,
@@ -1472,7 +2285,7 @@ Key relationships:
   A = LU factorization
   Partial pivoting: max |pivot|
 
-Diagram (summary):
+Visual summary:
   [A|b] → row ops → [U|c]
   [ 2  1 | 4 ]     [ 1  1 | 3 ]
   [ 1  1 | 3 ]  →  [ 0  1 | 2 ]
@@ -1482,25 +2295,32 @@ Diagram (summary):
   └──────────
   (see formulas above)
 
-Checklist:
+Study checklist:
   1. Row ops don't change solutions
   2. Pivot avoids division by zero
   3. LU enables fast multiple rhs
   4. Upper triangular easy to solve
-  5. Pivoting improves accuracy`
+  5. Pivoting improves accuracy
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
         },
         {
           id: `ls-lsq`,
           title: `Least Squares Solution`,
-          content: `When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb.
+          content: `When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb. Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible. **Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases. Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible. **Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Least Squares Solution" here directly affects how confidently you can build, debug, and ship math projects.
 
-Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
 
-**Least Squares Solution** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `min ||Ax − b||₂²`,
             `Normal eq: AᵀAx = Aᵀb`,
@@ -1540,7 +2360,7 @@ Key relationships:
   A⁺ pseudo-inverse
   lstsq via QR/SVD preferred
 
-Diagram (summary):
+Visual summary:
   Overdetermined: more eqs than unknowns
   ·  ·  ·  ·  data points
   ╲
@@ -1551,23 +2371,32 @@ Diagram (summary):
   └──────────
   (see formulas above)
 
-Checklist:
+Study checklist:
   1. LS minimizes squared residuals
   2. Normal equations from calculus
   3. AᵀA may be ill-conditioned
   4. Pseudo-inverse generalizes inverse
-  5. Regression = least squares`
+  5. Regression = least squares
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
         },
         {
           id: `ls-rank`,
           title: `Rank & Null Space`,
-          content: `**Column space** Col(A) = {Ax | x∈ℝ^n}. **Null space** Null(A) = {x | Ax=0}. Rank-nullity: rank(A)+dim(Null(A))=n.
+          content: `**Column space** Col(A) = {Ax | x∈ℝ^n}. **Null space** Null(A) = {x | Ax=0}. Rank-nullity: rank(A)+dim(Null(A))=n. Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values. Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values.
+**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Rank & Null Space" here directly affects how confidently you can build, debug, and ship math projects.
 
-Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Rank & Null Space** in the context of **Linear Systems & Gaussian Elimination**: Work through the example below with pen and paper first, then verify in code. The formulas and diagram connect directly to how models learn and how you debug numerical issues.`,
+**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+
+**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+
+**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
           formulas: [
             `rank(A) = dim Col(A)`,
             `rank(A) + nullity(A) = n`,
@@ -1606,7 +2435,7 @@ Key relationships:
   Full rank ⇔ columns independent
   rank via SVD = # nonzero σ
 
-Diagram (summary):
+Visual summary:
   Rank = # pivot columns
   Full rank columns:
   [ * * ]  rank 2
@@ -1616,12 +2445,179 @@ Diagram (summary):
   [ 2  4 ]  col2 = 2·col1
   │
 
-Checklist:
+Study checklist:
   1. Rank measures independent info
   2. Null space = directions A kills
   3. Redundant features lower rank
   4. SVD robust for rank detection
-  5. Nullity counts free variables`
+  5. Nullity counts free variables
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-linear-systems-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Linear Systems & Gaussian Elimination** sits in the **math** track of the Data Science Master curriculum. Solve Ax=b via elimination, rank, and solution existence/uniqueness.
+
+**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+
+For **math-linear-systems**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Linear Systems & Gaussian Elimination
+meta = {"topic_id": "math-linear-systems", "track": "math", "level": "intermediate"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `math-linear-systems math intermediate`,
+          keyPoints: [
+            `Core theory of Linear Systems & Gaussian Elimination ties to the math track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Linear Systems & Gaussian Elimination ties to the math track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-linear-systems-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Linear Systems & Gaussian Elimination**. Work through formulas by hand on small examples before scaling to code. Use numpy to verify matrix identities, plot functions to build intuition, and connect each formula to its sklearn/pytorch counterpart.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **math-linear-systems**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for math-linear-systems
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("math-linear-systems", "Linear Systems & Gaussian Elimination")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `math-linear-systems Linear`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with math ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with math ecosystem conventions
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-linear-systems-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Linear Systems & Gaussian Elimination** often hit predictable walls. Memorizing formulas without understanding assumptions; confusing correlation with causation; matrix dimension mismatches; dividing by zero in poorly conditioned systems; ignoring units and scale in optimization.
+
+When stuck on **math-linear-systems**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("math-linear-systems", "Linear Systems & Gaussian Elimination")
+debug_step("section_count", 4)`,
+          output: `[math-linear-systems] 'Linear Systems & Gaussian Elimination' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
+        },
+        {
+          id: `math-linear-systems-real-world`,
+          title: `Real-World Applications`,
+          content: `**Linear Systems & Gaussian Elimination** shows up wherever **math** skills meet business constraints. Interview loops test linear algebra and probability; researchers derive gradients for novel architectures; engineers debug NaN losses by checking Jacobians and learning rates against mathematical theory.
+
+Teams shipping features around **math-linear-systems** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Linear Systems & Gaussian Elimination
+skills = ["math", "intermediate", "math-linear-systems"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: math, intermediate, math-linear-systems`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Linear Systems & Gaussian Elimination to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Linear Systems & Gaussian Elimination to adjacent topics in the same track
+
+Topic: Linear Systems & Gaussian Elimination
+Track: math | Level: intermediate`
         }
       ],
       exercises: [
@@ -1641,7 +2637,7 @@ print(np.linalg.lstsq(X,y,rcond=None)[0])`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 35,
+      estimatedMinutes: 124,
       module: `module-math-02`,
       references: [
         {

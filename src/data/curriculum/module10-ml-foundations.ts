@@ -11,29 +11,69 @@ export const module10Topics: Topic[] = [
         {
           id: `pipeline`,
           title: `The ML Workflow`,
-          content: `Feature engineering 5.
+          content: `**The ML Workflow** follows 9 disciplined stages. Each step builds on the previous — skipping early stages leads to unreliable results later.
 
-**The ML Workflow** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Step-by-step workflow:**
+
+1. **Define problem** — Clarify the business question, success metric, and constraints before touching data or models.
+2. **Collect data** — Gather representative data with documented provenance, consent, and versioning.
+3. **EDA** — Explore distributions, missingness, correlations, and outliers to guide cleaning and features.
+4. **Feature engineering** — Transform raw columns into informative signals while avoiding leakage from future information.
+5. **Model selection** — Select algorithms suited to the problem type, data size, and interpretability requirements.
+6. **Train** — Fit parameters on training data with proper cross-validation and reproducible seeds.
+7. **Evaluate** — Measure generalization on held-out data using metrics aligned to business goals.
+8. **Deploy** — Package the model with monitoring, rollback plans, and latency/cost budgets.
+9. **Monitor** — Track drift, performance decay, and data quality in production over time.
+
+Treat this as a loop, not a straight line: insights from evaluation and monitoring often send you back to EDA or feature engineering.`,
           keyPoints: [
             `Start with problem definition not algorithms`,
             `Data quality determines ceiling performance`,
             `Always hold out test set until final evaluation`,
-            `Iterate between EDA and feature engineering`
+            `Iterate between EDA and feature engineering`,
+            `The ML Workflow is a foundational piece of ML Workflow & train_test_split`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: The ML Workflow
+meta = {
+    "topic": "ml-workflow",
+    "section": "pipeline",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-workflow
+section: pipeline
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: The ML Workflow
 
-Checklist:
+Study checklist:
   1. Start with problem definition not algorithms
   2. Data quality determines ceiling performance
   3. Always hold out test set until final evaluation
-  4. Iterate between EDA and feature engineering`
+  4. Iterate between EDA and feature engineering
+  5. The ML Workflow is a foundational piece of ML Workflow & train_test_split
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
         },
         {
           id: `split`,
           title: `train_test_split`,
-          content: `Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).
+          content: `**train_test_split** is essential to **ML Workflow & train_test_split**. End-to-end machine learning pipeline with scikit-learn. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-**train_test_split** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).
+
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "train_test_split" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -48,24 +88,37 @@ print(len(X_train), len(X_test))`,
             `Never train on test data — data leakage`,
             `stratify preserves class proportions`,
             `random_state for reproducibility`,
-            `Typical split: 70-80% train, 20-30% test`
+            `Typical split: 70-80% train, 20-30% test`,
+            `train_test_split is a foundational piece of ML Workflow & train_test_split`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: train_test_split
 
-Checklist:
+Study checklist:
   1. Never train on test data — data leakage
   2. stratify preserves class proportions
   3. random_state for reproducibility
-  4. Typical split: 70-80% train, 20-30% test`
+  4. Typical split: 70-80% train, 20-30% test
+  5. train_test_split is a foundational piece of ML Workflow & train_test_split
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
         },
         {
           id: `preprocessing`,
           title: `Preprocessing Pipeline`,
-          content: `StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model.
+          content: `**Preprocessing Pipeline** is essential to **ML Workflow & train_test_split**. End-to-end machine learning pipeline with scikit-learn. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Prevents leakage by fitting on train only.
+StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model. Prevents leakage by fitting on train only.
 
-**Preprocessing Pipeline** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Preprocessing Pipeline" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -80,37 +133,232 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
             `Fit preprocessor on training data only`,
             `Pipeline ensures consistent train/test processing`,
             `ColumnTransformer for mixed feature types`,
-            `Preprocessing choices affect model performance`
+            `Preprocessing choices affect model performance`,
+            `Preprocessing Pipeline is a foundational piece of ML Workflow & train_test_split`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Preprocessing Pipeline
 
-Checklist:
+Study checklist:
   1. Fit preprocessor on training data only
   2. Pipeline ensures consistent train/test processing
   3. ColumnTransformer for mixed feature types
-  4. Preprocessing choices affect model performance`
+  4. Preprocessing choices affect model performance
+  5. Preprocessing Pipeline is a foundational piece of ML Workflow & train_test_split
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
         },
         {
           id: `baseline`,
           title: `Baseline Models`,
-          content: `Always establish baseline before complex models.
+          content: `**Baseline Models** is essential to **ML Workflow & train_test_split**. End-to-end machine learning pipeline with scikit-learn. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Mean predictor for regression, majority class for classification.
+Always establish baseline before complex models. Mean predictor for regression, majority class for classification. Beat baseline first.
 
-**Baseline Models** in the context of **ML Workflow & train_test_split**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Baseline Models" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `DummyClassifier/DummyRegressor for baselines`,
             `Baseline sets minimum acceptable performance`,
             `Simple models often competitive with complex ones`,
-            `Occams razor — prefer simpler when equal performance`
+            `Occams razor — prefer simpler when equal performance`,
+            `Baseline Models is a foundational piece of ML Workflow & train_test_split`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: Baseline Models
+meta = {
+    "topic": "ml-workflow",
+    "section": "baseline",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-workflow
+section: baseline
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: Baseline Models
 
-Checklist:
+Study checklist:
   1. DummyClassifier/DummyRegressor for baselines
   2. Baseline sets minimum acceptable performance
   3. Simple models often competitive with complex ones
-  4. Occams razor — prefer simpler when equal performance`
+  4. Occams razor — prefer simpler when equal performance
+  5. Baseline Models is a foundational piece of ML Workflow & train_test_split
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-workflow-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**ML Workflow & train_test_split** sits in the **ml** track of the Data Science Master curriculum. End-to-end machine learning pipeline with scikit-learn.
+
+**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+
+For **ml-workflow**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for ML Workflow & train_test_split
+meta = {"topic_id": "ml-workflow", "track": "ml", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `ml-workflow ml beginner`,
+          keyPoints: [
+            `Core theory of ML Workflow & train_test_split ties to the ml track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of ML Workflow & train_test_split ties to the ml track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-workflow-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **ML Workflow & train_test_split**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-workflow**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for ml-workflow
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("ml-workflow", "ML Workflow & train_test_split")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `ml-workflow ML`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with ml ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with ml ecosystem conventions
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-workflow-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **ML Workflow & train_test_split** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
+
+When stuck on **ml-workflow**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("ml-workflow", "ML Workflow & train_test_split")
+debug_step("section_count", 4)`,
+          output: `[ml-workflow] 'ML Workflow & train_test_split' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-workflow-real-world`,
+          title: `Real-World Applications`,
+          content: `**ML Workflow & train_test_split** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
+
+Teams shipping features around **ml-workflow** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for ML Workflow & train_test_split
+skills = ["ml", "beginner", "ml-workflow"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: ml, beginner, ml-workflow`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect ML Workflow & train_test_split to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect ML Workflow & train_test_split to adjacent topics in the same track
+
+Topic: ML Workflow & train_test_split
+Track: ml | Level: beginner`
         }
       ],
       exercises: [
@@ -134,7 +382,7 @@ print(len(pipe.steps))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 124,
       module: `module-10`,
       references: [
         {
@@ -181,11 +429,17 @@ print(len(pipe.steps))`,
         {
           id: `linear-reg`,
           title: `Linear Regression`,
-          content: `Minimizes MSE. sklearn: LinearRegression().
+          content: `**Linear Regression** is essential to **Linear & Logistic Regression**. Foundation supervised learning algorithms. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Closed-form or iterative solution.
+ŷ = wᵀx + b. Minimizes MSE. sklearn: LinearRegression(). Closed-form or iterative solution.
 
-**Linear Regression** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Linear Regression" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.linear_model import LinearRegression
 import numpy as np
 
@@ -198,24 +452,37 @@ print(model.coef_[0], model.intercept_)`,
             `Assumes linear relationship`,
             `Interpretable coefficients`,
             `Sensitive to outliers — use HuberRegressor`,
-            `Ridge/Lasso add regularization`
+            `Ridge/Lasso add regularization`,
+            `Linear Regression is a foundational piece of Linear & Logistic Regression`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Linear Regression
 
-Checklist:
+Study checklist:
   1. Assumes linear relationship
   2. Interpretable coefficients
   3. Sensitive to outliers — use HuberRegressor
-  4. Ridge/Lasso add regularization`
+  4. Ridge/Lasso add regularization
+  5. Linear Regression is a foundational piece of Linear & Logistic Regression
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
         },
         {
           id: `logistic`,
           title: `Logistic Regression`,
-          content: `Predicts P(y=1|x) via sigmoid: σ(wᵀx).
+          content: `**Logistic Regression** is essential to **Linear & Logistic Regression**. Foundation supervised learning algorithms. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Despite name, is classification algorithm. sklearn: LogisticRegression().
+Predicts P(y=1|x) via sigmoid: σ(wᵀx). Despite name, is classification algorithm. sklearn: LogisticRegression().
 
-**Logistic Regression** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Logistic Regression" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.linear_model import LogisticRegression
 import numpy as np
 
@@ -228,24 +495,37 @@ print(clf.predict([[2.5], [3.5]]))`,
             `Outputs probabilities not just labels`,
             `Uses cross-entropy loss internally`,
             `Works well with linearly separable data`,
-            `C parameter controls regularization strength`
+            `C parameter controls regularization strength`,
+            `Logistic Regression is a foundational piece of Linear & Logistic Regression`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Logistic Regression
 
-Checklist:
+Study checklist:
   1. Outputs probabilities not just labels
   2. Uses cross-entropy loss internally
   3. Works well with linearly separable data
-  4. C parameter controls regularization strength`
+  4. C parameter controls regularization strength
+  5. Logistic Regression is a foundational piece of Linear & Logistic Regression
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
         },
         {
           id: `sigmoid`,
           title: `Sigmoid & Softmax`,
-          content: `Sigmoid: σ(z) = 1/(1+e⁻ᶻ).
+          content: `**Sigmoid & Softmax** is essential to **Linear & Logistic Regression**. Foundation supervised learning algorithms. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.
+Sigmoid: σ(z) = 1/(1+e⁻ᶻ). Maps to (0,1). Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.
 
-**Sigmoid & Softmax** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Sigmoid & Softmax" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `import numpy as np
 
 def sigmoid(z):
@@ -257,39 +537,232 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
             `Sigmoid squashes to probability range`,
             `Softmax outputs sum to 1`,
             `Decision boundary at 0.5 for binary`,
-            `Logistic regression learns linear decision boundary`
+            `Logistic regression learns linear decision boundary`,
+            `Sigmoid & Softmax is a foundational piece of Linear & Logistic Regression`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Sigmoid & Softmax
 
-Checklist:
+Study checklist:
   1. Sigmoid squashes to probability range
   2. Softmax outputs sum to 1
   3. Decision boundary at 0.5 for binary
-  4. Logistic regression learns linear decision boundary`
+  4. Logistic regression learns linear decision boundary
+  5. Sigmoid & Softmax is a foundational piece of Linear & Logistic Regression
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
         },
         {
           id: `interpret`,
           title: `Interpretability`,
-          content: `Coefficients show feature importance and direction.
+          content: `**Interpretability** is essential to **Linear & Logistic Regression**. Foundation supervised learning algorithms. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Odds ratio = e^coefficient.
+Coefficients show feature importance and direction. Odds ratio = e^coefficient. SHAP values for individual predictions.
 
-SHAP values for individual predictions.
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Interpretability" here directly affects how confidently you can build, debug, and ship ml projects.
 
-**Interpretability** in the context of **Linear & Logistic Regression**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `Positive coefficient increases log-odds of class 1`,
             `Feature scaling needed for coefficient comparison`,
             `Regularization shrinks coefficients toward zero`,
-            `Linear models preferred when interpretability required`
+            `Linear models preferred when interpretability required`,
+            `Interpretability is a foundational piece of Linear & Logistic Regression`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: Interpretability
+meta = {
+    "topic": "ml-linear",
+    "section": "interpret",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-linear
+section: interpret
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: Interpretability
 
-Checklist:
+Study checklist:
   1. Positive coefficient increases log-odds of class 1
   2. Feature scaling needed for coefficient comparison
   3. Regularization shrinks coefficients toward zero
-  4. Linear models preferred when interpretability required`
+  4. Linear models preferred when interpretability required
+  5. Interpretability is a foundational piece of Linear & Logistic Regression
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-linear-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Linear & Logistic Regression** sits in the **ml** track of the Data Science Master curriculum. Foundation supervised learning algorithms.
+
+**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+
+For **ml-linear**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Linear & Logistic Regression
+meta = {"topic_id": "ml-linear", "track": "ml", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `ml-linear ml beginner`,
+          keyPoints: [
+            `Core theory of Linear & Logistic Regression ties to the ml track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Linear & Logistic Regression ties to the ml track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-linear-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Linear & Logistic Regression**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-linear**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for ml-linear
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("ml-linear", "Linear & Logistic Regression")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `ml-linear Linear`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with ml ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with ml ecosystem conventions
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-linear-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Linear & Logistic Regression** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
+
+When stuck on **ml-linear**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("ml-linear", "Linear & Logistic Regression")
+debug_step("section_count", 4)`,
+          output: `[ml-linear] 'Linear & Logistic Regression' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-linear-real-world`,
+          title: `Real-World Applications`,
+          content: `**Linear & Logistic Regression** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
+
+Teams shipping features around **ml-linear** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Linear & Logistic Regression
+skills = ["ml", "beginner", "ml-linear"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: ml, beginner, ml-linear`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Linear & Logistic Regression to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Linear & Logistic Regression to adjacent topics in the same track
+
+Topic: Linear & Logistic Regression
+Track: ml | Level: beginner`
         }
       ],
       exercises: [
@@ -310,7 +783,7 @@ print(sigmoid(0))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 124,
       module: `module-10`,
       references: [
         {
@@ -357,13 +830,17 @@ print(sigmoid(0))`,
         {
           id: `dt`,
           title: `Decision Trees`,
-          content: `Split data by feature thresholds maximizing information gain.
+          content: `**Decision Trees** is essential to **Decision Trees & Random Forests**. Tree-based models for classification and regression. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Non-parametric, handles non-linear relationships.
+Split data by feature thresholds maximizing information gain. Non-parametric, handles non-linear relationships. Prone to overfitting.
 
-Prone to overfitting.
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Decision Trees" here directly affects how confidently you can build, debug, and ship ml projects.
 
-**Decision Trees** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
@@ -376,24 +853,37 @@ print(clf.score(X, y))`,
             `max_depth controls complexity`,
             `Handles mixed feature types naturally`,
             `Prone to overfitting without constraints`,
-            `Fully interpretable — can visualize tree`
+            `Fully interpretable — can visualize tree`,
+            `Decision Trees is a foundational piece of Decision Trees & Random Forests`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Decision Trees
 
-Checklist:
+Study checklist:
   1. max_depth controls complexity
   2. Handles mixed feature types naturally
   3. Prone to overfitting without constraints
-  4. Fully interpretable — can visualize tree`
+  4. Fully interpretable — can visualize tree
+  5. Decision Trees is a foundational piece of Decision Trees & Random Forests
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
         },
         {
           id: `rf`,
           title: `Random Forests`,
-          content: `Ensemble of trees on bootstrap samples with random feature subsets.
+          content: `**Random Forests** is essential to **Decision Trees & Random Forests**. Tree-based models for classification and regression. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).
+Ensemble of trees on bootstrap samples with random feature subsets. Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).
 
-**Random Forests** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Random Forests" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 
@@ -405,59 +895,278 @@ print(rf.score(X, y))`,
             `Bagging reduces overfitting vs single tree`,
             `n_estimators more trees = lower variance`,
             `feature_importances_ for feature ranking`,
-            `OOB score estimates generalization without validation set`
+            `OOB score estimates generalization without validation set`,
+            `Random Forests is a foundational piece of Decision Trees & Random Forests`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Random Forests
 
-Checklist:
+Study checklist:
   1. Bagging reduces overfitting vs single tree
   2. n_estimators more trees = lower variance
   3. feature_importances_ for feature ranking
-  4. OOB score estimates generalization without validation set`
+  4. OOB score estimates generalization without validation set
+  5. Random Forests is a foundational piece of Decision Trees & Random Forests
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
         },
         {
           id: `hyperparams`,
           title: `Tree Hyperparameters`,
-          content: `max_depth, min_samples_split, min_samples_leaf, max_features.
+          content: `**Tree Hyperparameters** is essential to **Decision Trees & Random Forests**. Tree-based models for classification and regression. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Tune with GridSearchCV or RandomizedSearchCV.
+max_depth, min_samples_split, min_samples_leaf, max_features. Tune with GridSearchCV or RandomizedSearchCV.
 
-**Tree Hyperparameters** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Tree Hyperparameters" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `max_depth most impactful hyperparameter`,
             `min_samples_leaf prevents tiny leaves`,
             `max_features introduces randomness in RF`,
-            `Pruning via cost-complexity parameter ccp_alpha`
+            `Pruning via cost-complexity parameter ccp_alpha`,
+            `Tree Hyperparameters is a foundational piece of Decision Trees & Random Forests`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: Tree Hyperparameters
+meta = {
+    "topic": "ml-trees",
+    "section": "hyperparams",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-trees
+section: hyperparams
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: Tree Hyperparameters
 
-Checklist:
+Study checklist:
   1. max_depth most impactful hyperparameter
   2. min_samples_leaf prevents tiny leaves
   3. max_features introduces randomness in RF
-  4. Pruning via cost-complexity parameter ccp_alpha`
+  4. Pruning via cost-complexity parameter ccp_alpha
+  5. Tree Hyperparameters is a foundational piece of Decision Trees & Random Forests
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
         },
         {
           id: `when`,
           title: `When to Use Trees`,
-          content: `Tabular data, mixed types, non-linear relationships, feature interactions.
+          content: `**When to Use Trees** is essential to **Decision Trees & Random Forests**. Tree-based models for classification and regression. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Often top performer with gradient boosting.
+Tabular data, mixed types, non-linear relationships, feature interactions. Often top performer with gradient boosting.
 
-**When to Use Trees** in the context of **Decision Trees & Random Forests**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "When to Use Trees" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `Trees excel on structured/tabular data`,
             `Less effective on raw images/text without features`,
             `XGBoost/LightGBM often win Kaggle tabular`,
-            `Random Forest good default before tuning`
+            `Random Forest good default before tuning`,
+            `When to Use Trees is a foundational piece of Decision Trees & Random Forests`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: When to Use Trees
+meta = {
+    "topic": "ml-trees",
+    "section": "when",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-trees
+section: when
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: When to Use Trees
 
-Checklist:
+Study checklist:
   1. Trees excel on structured/tabular data
   2. Less effective on raw images/text without features
   3. XGBoost/LightGBM often win Kaggle tabular
-  4. Random Forest good default before tuning`
+  4. Random Forest good default before tuning
+  5. When to Use Trees is a foundational piece of Decision Trees & Random Forests
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-trees-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Decision Trees & Random Forests** sits in the **ml** track of the Data Science Master curriculum. Tree-based models for classification and regression.
+
+**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+
+For **ml-trees**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Decision Trees & Random Forests
+meta = {"topic_id": "ml-trees", "track": "ml", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `ml-trees ml beginner`,
+          keyPoints: [
+            `Core theory of Decision Trees & Random Forests ties to the ml track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Decision Trees & Random Forests ties to the ml track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-trees-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Decision Trees & Random Forests**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-trees**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for ml-trees
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("ml-trees", "Decision Trees & Random Forests")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `ml-trees Decision`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with ml ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with ml ecosystem conventions
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-trees-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Decision Trees & Random Forests** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
+
+When stuck on **ml-trees**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("ml-trees", "Decision Trees & Random Forests")
+debug_step("section_count", 4)`,
+          output: `[ml-trees] 'Decision Trees & Random Forests' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-trees-real-world`,
+          title: `Real-World Applications`,
+          content: `**Decision Trees & Random Forests** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
+
+Teams shipping features around **ml-trees** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Decision Trees & Random Forests
+skills = ["ml", "beginner", "ml-trees"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: ml, beginner, ml-trees`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Decision Trees & Random Forests to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Decision Trees & Random Forests to adjacent topics in the same track
+
+Topic: Decision Trees & Random Forests
+Track: ml | Level: beginner`
         }
       ],
       exercises: [
@@ -482,7 +1191,7 @@ print(len(rf.feature_importances_))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 124,
       module: `module-10`,
       references: [
         {
@@ -529,13 +1238,17 @@ print(len(rf.feature_importances_))`,
         {
           id: `classification`,
           title: `Classification Metrics`,
-          content: `Accuracy: correct/total.
+          content: `**Classification Metrics** is essential to **Model Evaluation Metrics**. Accuracy, precision, recall, F1, ROC-AUC, MSE, R². At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Precision: TP/(TP+FP).
+Accuracy: correct/total. Precision: TP/(TP+FP). Recall: TP/(TP+FN). F1: harmonic mean of precision and recall.
 
-F1: harmonic mean of precision and recall.
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Classification Metrics" here directly affects how confidently you can build, debug, and ship ml projects.
 
-**Classification Metrics** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.metrics import classification_report
 
 y_true = [0, 1, 1, 0, 1, 1, 0, 0]
@@ -553,50 +1266,83 @@ weighted avg      0.714     0.714     0.714         7`,
             `Accuracy misleading for imbalanced classes`,
             `Precision: of predicted positives, how many correct`,
             `Recall: of actual positives, how many found`,
-            `F1 balances precision and recall`
+            `F1 balances precision and recall`,
+            `Classification Metrics is a foundational piece of Model Evaluation Metrics`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Classification Metrics
 
-Checklist:
+Study checklist:
   1. Accuracy misleading for imbalanced classes
   2. Precision: of predicted positives, how many correct
   3. Recall: of actual positives, how many found
-  4. F1 balances precision and recall`
+  4. F1 balances precision and recall
+  5. Classification Metrics is a foundational piece of Model Evaluation Metrics
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
         },
         {
           id: `roc`,
           title: `ROC-AUC`,
-          content: `ROC plots TPR vs FPR at various thresholds.
+          content: `**ROC-AUC** is essential to **Model Evaluation Metrics**. Accuracy, precision, recall, F1, ROC-AUC, MSE, R². At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-AUC = area under curve. 0.5 = random, 1.0 = perfect.
+ROC plots TPR vs FPR at various thresholds. AUC = area under curve. 0.5 = random, 1.0 = perfect. Threshold-independent metric.
 
-Threshold-independent metric.
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "ROC-AUC" here directly affects how confidently you can build, debug, and ship ml projects.
 
-**ROC-AUC** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `AUC measures ranking quality of predictions`,
             `Good for imbalanced binary classification`,
             `Choose threshold based on business cost`,
-            `PR curve better for highly imbalanced data`
+            `PR curve better for highly imbalanced data`,
+            `ROC-AUC is a foundational piece of Model Evaluation Metrics`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: ROC-AUC
+meta = {
+    "topic": "ml-metrics",
+    "section": "roc",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-metrics
+section: roc
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: ROC-AUC
 
-Checklist:
+Study checklist:
   1. AUC measures ranking quality of predictions
   2. Good for imbalanced binary classification
   3. Choose threshold based on business cost
-  4. PR curve better for highly imbalanced data`
+  4. PR curve better for highly imbalanced data
+  5. ROC-AUC is a foundational piece of Model Evaluation Metrics
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
         },
         {
           id: `regression`,
           title: `Regression Metrics`,
-          content: `MAE robust to outliers.
+          content: `**Regression Metrics** is essential to **Model Evaluation Metrics**. Accuracy, precision, recall, F1, ROC-AUC, MSE, R². At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-R² = 1 - SS_res/SS_tot.
+MSE, RMSE, MAE, R². MAE robust to outliers. R² = 1 - SS_res/SS_tot. Negative R² means worse than mean predictor.
 
-Negative R² means worse than mean predictor.
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Regression Metrics" here directly affects how confidently you can build, debug, and ship ml projects.
 
-**Regression Metrics** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
@@ -610,37 +1356,232 @@ print(round(r2_score(y_true, y_pred), 3))`,
             `MSE penalizes large errors more than MAE`,
             `RMSE in same units as target`,
             `R² proportion of variance explained`,
-            `Use domain-appropriate metrics`
+            `Use domain-appropriate metrics`,
+            `Regression Metrics is a foundational piece of Model Evaluation Metrics`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Regression Metrics
 
-Checklist:
+Study checklist:
   1. MSE penalizes large errors more than MAE
   2. RMSE in same units as target
   3. R² proportion of variance explained
-  4. Use domain-appropriate metrics`
+  4. Use domain-appropriate metrics
+  5. Regression Metrics is a foundational piece of Model Evaluation Metrics
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
         },
         {
           id: `confusion`,
           title: `Confusion Matrix`,
-          content: `2×2 (or n×n) table of predicted vs actual.
+          content: `**Confusion Matrix** is essential to **Model Evaluation Metrics**. Accuracy, precision, recall, F1, ROC-AUC, MSE, R². At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Derive all classification metrics from it.
+2×2 (or n×n) table of predicted vs actual. Derive all classification metrics from it.
 
-**Confusion Matrix** in the context of **Model Evaluation Metrics**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Confusion Matrix" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `TN, FP, FN, TP for binary case`,
             `Normalize for class imbalance visualization`,
             `Multi-class extends to n×n matrix`,
-            `Cost-sensitive learning weights error types differently`
+            `Cost-sensitive learning weights error types differently`,
+            `Confusion Matrix is a foundational piece of Model Evaluation Metrics`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: Confusion Matrix
+meta = {
+    "topic": "ml-metrics",
+    "section": "confusion",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-metrics
+section: confusion
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: Confusion Matrix
 
-Checklist:
+Study checklist:
   1. TN, FP, FN, TP for binary case
   2. Normalize for class imbalance visualization
   3. Multi-class extends to n×n matrix
-  4. Cost-sensitive learning weights error types differently`
+  4. Cost-sensitive learning weights error types differently
+  5. Confusion Matrix is a foundational piece of Model Evaluation Metrics
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-metrics-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Model Evaluation Metrics** sits in the **ml** track of the Data Science Master curriculum. Accuracy, precision, recall, F1, ROC-AUC, MSE, R².
+
+**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+
+For **ml-metrics**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Model Evaluation Metrics
+meta = {"topic_id": "ml-metrics", "track": "ml", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `ml-metrics ml beginner`,
+          keyPoints: [
+            `Core theory of Model Evaluation Metrics ties to the ml track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Model Evaluation Metrics ties to the ml track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-metrics-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Model Evaluation Metrics**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-metrics**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for ml-metrics
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("ml-metrics", "Model Evaluation Metrics")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `ml-metrics Model`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with ml ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with ml ecosystem conventions
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-metrics-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Model Evaluation Metrics** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
+
+When stuck on **ml-metrics**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("ml-metrics", "Model Evaluation Metrics")
+debug_step("section_count", 4)`,
+          output: `[ml-metrics] 'Model Evaluation Metrics' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-metrics-real-world`,
+          title: `Real-World Applications`,
+          content: `**Model Evaluation Metrics** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
+
+Teams shipping features around **ml-metrics** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Model Evaluation Metrics
+skills = ["ml", "beginner", "ml-metrics"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: ml, beginner, ml-metrics`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Model Evaluation Metrics to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Model Evaluation Metrics to adjacent topics in the same track
+
+Topic: Model Evaluation Metrics
+Track: ml | Level: beginner`
         }
       ],
       exercises: [
@@ -659,7 +1600,7 @@ print(round(mean_squared_error([1,2,3], [1.1, 2.2, 2.8]), 3))`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 124,
       module: `module-10`,
       references: [
         {
@@ -706,13 +1647,17 @@ print(round(mean_squared_error([1,2,3], [1.1, 2.2, 2.8]), 3))`,
         {
           id: `kfold`,
           title: `K-Fold Cross-Validation`,
-          content: `Split data into k folds.
+          content: `**K-Fold Cross-Validation** is essential to **Cross-Validation & Pipelines**. Robust evaluation with k-fold CV and end-to-end pipelines. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Train on k-1, validate on 1.
+Split data into k folds. Train on k-1, validate on 1. Repeat k times. cross_val_score reports mean ± std.
 
-Repeat k times. cross_val_score reports mean ± std.
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "K-Fold Cross-Validation" here directly affects how confidently you can build, debug, and ship ml projects.
 
-**K-Fold Cross-Validation** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -725,24 +1670,37 @@ print(round(scores.mean(), 3), round(scores.std(), 3))`,
             `cv=5 or cv=10 common choices`,
             `StratifiedKFold for classification`,
             `Mean score estimates generalization`,
-            `Std indicates stability across folds`
+            `Std indicates stability across folds`,
+            `K-Fold Cross-Validation is a foundational piece of Cross-Validation & Pipelines`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: K-Fold Cross-Validation
 
-Checklist:
+Study checklist:
   1. cv=5 or cv=10 common choices
   2. StratifiedKFold for classification
   3. Mean score estimates generalization
-  4. Std indicates stability across folds`
+  4. Std indicates stability across folds
+  5. K-Fold Cross-Validation is a foundational piece of Cross-Validation & Pipelines
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
         },
         {
           id: `gridsearch`,
           title: `GridSearchCV`,
-          content: `Exhaustive search over hyperparameter grid with cross-validation.
+          content: `**GridSearchCV** is essential to **Cross-Validation & Pipelines**. Robust evaluation with k-fold CV and end-to-end pipelines. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Returns best params and score.
+Exhaustive search over hyperparameter grid with cross-validation. Returns best params and score.
 
-**GridSearchCV** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "GridSearchCV" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.datasets import load_iris
@@ -756,22 +1714,37 @@ print(grid.best_params_)`,
             `Search space size affects compute cost`,
             `RandomizedSearchCV for large spaces`,
             `Nested CV for unbiased performance estimate`,
-            `Never tune on test set`
+            `Never tune on test set`,
+            `GridSearchCV is a foundational piece of Cross-Validation & Pipelines`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: GridSearchCV
 
-Checklist:
+Study checklist:
   1. Search space size affects compute cost
   2. RandomizedSearchCV for large spaces
   3. Nested CV for unbiased performance estimate
-  4. Never tune on test set`
+  4. Never tune on test set
+  5. GridSearchCV is a foundational piece of Cross-Validation & Pipelines
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
         },
         {
           id: `pipeline-cv`,
           title: `Pipeline + CV Together`,
-          content: `Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.
+          content: `**Pipeline + CV Together** is essential to **Cross-Validation & Pipelines**. Robust evaluation with k-fold CV and end-to-end pipelines. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-**Pipeline + CV Together** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.
+
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Pipeline + CV Together" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
@@ -786,37 +1759,232 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
             `Pipeline + CV prevents preprocessing leakage`,
             `Each fold fits scaler on train fold only`,
             `Same pipeline used for final model training`,
-            `joblib.dump saves fitted pipeline`
+            `joblib.dump saves fitted pipeline`,
+            `Pipeline + CV Together is a foundational piece of Cross-Validation & Pipelines`,
+            `Connect this section to the ml track and beginner expectations`
           ],
           pseudoCode: `CONCEPT: Pipeline + CV Together
 
-Checklist:
+Study checklist:
   1. Pipeline + CV prevents preprocessing leakage
   2. Each fold fits scaler on train fold only
   3. Same pipeline used for final model training
-  4. joblib.dump saves fitted pipeline`
+  4. joblib.dump saves fitted pipeline
+  5. Pipeline + CV Together is a foundational piece of Cross-Validation & Pipelines
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
         },
         {
           id: `nested`,
           title: `Nested Cross-Validation`,
-          content: `Outer loop for evaluation, inner loop for hyperparameter tuning.
+          content: `**Nested Cross-Validation** is essential to **Cross-Validation & Pipelines**. Robust evaluation with k-fold CV and end-to-end pipelines. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
 
-Unbiased estimate of generalization.
+Outer loop for evaluation, inner loop for hyperparameter tuning. Unbiased estimate of generalization.
 
-**Nested Cross-Validation** in the context of **Cross-Validation & Pipelines**: During model building, these ideas guide feature choices, algorithm selection, and evaluation. Run the example, study the output, and confirm each takeaway against what you observe.`,
+**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Nested Cross-Validation" here directly affects how confidently you can build, debug, and ship ml projects.
+
+**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+
+**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
           keyPoints: [
             `Outer CV estimates model performance`,
             `Inner CV selects hyperparameters`,
             `Prevents optimistic bias from tuning on same data`,
-            `Computationally expensive but rigorous`
+            `Computationally expensive but rigorous`,
+            `Nested Cross-Validation is a foundational piece of Cross-Validation & Pipelines`,
+            `Connect this section to the ml track and beginner expectations`
           ],
+          example: `# Concept check: Nested Cross-Validation
+meta = {
+    "topic": "ml-cv",
+    "section": "nested",
+    "track": "ml",
+    "level": "beginner",
+}
+for key, value in meta.items():
+    print(f"{key}: {value}")`,
+          output: `topic: ml-cv
+section: nested
+track: ml
+level: beginner`,
           pseudoCode: `CONCEPT: Nested Cross-Validation
 
-Checklist:
+Study checklist:
   1. Outer CV estimates model performance
   2. Inner CV selects hyperparameters
   3. Prevents optimistic bias from tuning on same data
-  4. Computationally expensive but rigorous`
+  4. Computationally expensive but rigorous
+  5. Nested Cross-Validation is a foundational piece of Cross-Validation & Pipelines
+  6. Connect this section to the ml track and beginner expectations
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-cv-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `**Cross-Validation & Pipelines** sits in the **ml** track of the Data Science Master curriculum. Robust evaluation with k-fold CV and end-to-end pipelines.
+
+**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+
+For **ml-cv**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
+
+**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+          example: `# Concept check for Cross-Validation & Pipelines
+meta = {"topic_id": "ml-cv", "track": "ml", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `ml-cv ml beginner`,
+          keyPoints: [
+            `Core theory of Cross-Validation & Pipelines ties to the ml track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ],
+          pseudoCode: `CONCEPT: Deep Theory & Concepts
+
+Study checklist:
+  1. Core theory of Cross-Validation & Pipelines ties to the ml track
+  2. Connect definitions to inputs, outputs, and evaluation criteria
+  3. Identify assumptions that break in production or at scale
+  4. Relate this topic to prerequisites and follow-on modules
+  5. Use paper/documentation cross-checks to validate intuition
+  6. Sketch diagrams before implementing from memory
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-cv-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `Professionals reuse patterns that encode lessons from **Cross-Validation & Pipelines**. Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For **ml-cv**, extract a minimal working example you can paste into interviews or design docs.
+
+**Recommended workflow:**
+
+1. Reproduce the canonical example from earlier sections exactly.
+2. Vary one parameter at a time and log what changes.
+3. Capture results in a notebook cell or short markdown log.
+4. Promote stable patterns into shared utilities only after the second reuse.
+
+**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+          example: `# Idiomatic pattern snapshot for ml-cv
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("ml-cv", "Cross-Validation & Pipelines")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `ml-cv Cross-Validation`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with ml ecosystem conventions`
+          ],
+          pseudoCode: `CONCEPT: Practical Patterns & Idioms
+
+Study checklist:
+  1. Start from canonical examples before abstracting helpers
+  2. One change at a time when experimenting
+  3. Prefer readable names over clever one-liners
+  4. Promote patterns to shared code only after reuse
+  5. Document invariants your pattern relies on
+  6. Align style with ml ecosystem conventions
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-cv-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `Learners working on **Cross-Validation & Pipelines** often hit predictable walls. Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.
+
+When stuck on **ml-cv**, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment — and test each hypothesis independently.
+
+**Debugging checklist:**
+
+- Verify assumptions listed in earlier sections.
+- Compare actual vs expected intermediate values.
+- Check for off-by-one errors and unit mismatches.
+- Confirm library versions match the tutorial environment.
+- Build a minimal reproducible example before asking for help.
+
+**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("ml-cv", "Cross-Validation & Pipelines")
+debug_step("section_count", 4)`,
+          output: `[ml-cv] 'Cross-Validation & Pipelines' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ],
+          pseudoCode: `CONCEPT: Common Pitfalls & Debugging
+
+Study checklist:
+  1. Reduce to the smallest failing example
+  2. Log intermediate values with types
+  3. Bisect changes with git or notebook history
+  4. Separate data bugs from logic bugs
+  5. Record seeds, versions, and hardware context
+  6. Fix root cause—not symptoms with silent catches
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
+        },
+        {
+          id: `ml-cv-real-world`,
+          title: `Real-World Applications`,
+          content: `**Cross-Validation & Pipelines** shows up wherever **ml** skills meet business constraints. ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.
+
+Teams shipping features around **ml-cv** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
+
+**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+          example: `# Portfolio bullet generator for Cross-Validation & Pipelines
+skills = ["ml", "beginner", "ml-cv"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: ml, beginner, ml-cv`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Cross-Validation & Pipelines to adjacent topics in the same track`
+          ],
+          pseudoCode: `CONCEPT: Real-World Applications
+
+Study checklist:
+  1.  Tie lessons to portfolio projects with measurable outcomes
+  2. Explain tradeoffs to technical and non-technical audiences
+  3. Plan deployment, monitoring, and maintenance early
+  4. Document ethical and privacy implications where relevant
+  5. Iterate with user feedback—not only offline metrics
+  6. Connect Cross-Validation & Pipelines to adjacent topics in the same track
+
+Topic: Cross-Validation & Pipelines
+Track: ml | Level: beginner`
         }
       ],
       exercises: [
@@ -841,7 +2009,7 @@ print(p.steps[1][1].__class__.__name__)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 124,
       module: `module-10`,
       references: [
         {

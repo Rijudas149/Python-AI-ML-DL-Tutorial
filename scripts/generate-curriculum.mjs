@@ -8,6 +8,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES } from './references-data.mjs';
 import { deepenTopicContent } from './content-deepening.mjs';
+import { expandTopicContent } from './content-expansion.mjs';
 import { applySqlTeacherStyle } from './sql-teacher-style.mjs';
 import { ADDITIONAL_MODULES } from './additional-curriculum.mjs';
 import { MATH_MODULES } from './math-curriculum.mjs';
@@ -48,13 +49,14 @@ function enrichSection(section, topic) {
 function enrichTopic(topic) {
   const track = topic.track ?? 'python';
   const topicCtx = { ...topic, track };
+  const expanded = expandTopicContent(topicCtx);
+  const deepened = deepenTopicContent(expanded);
   const withSections = {
-    ...topic,
-    sections: topic.sections.map((s) => enrichSection(s, topicCtx)),
-  };
-  const deepened = deepenTopicContent(withSections);
-  return {
     ...deepened,
+    sections: deepened.sections.map((s) => enrichSection(s, topicCtx)),
+  };
+  return {
+    ...withSections,
     references: TOPIC_REFERENCES[topic.id] ?? TRACK_REFERENCES[track] ?? [],
   };
 }
@@ -176,6 +178,10 @@ export function searchTopics(query: string): TopicSummary[] {
 
 export function getTopicsByTrack(track: Topic['track']): TopicSummary[] {
   return allTopics.filter((t) => t.track === track);
+}
+
+export function getTopicsByModule(moduleName: string): TopicSummary[] {
+  return allTopics.filter((t) => t.module === moduleName);
 }
 `;
 }

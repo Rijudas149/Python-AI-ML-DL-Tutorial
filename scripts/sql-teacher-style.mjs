@@ -10,11 +10,6 @@
 const FILLER_PATTERNS = [
   /\n\n\*\*Extended exploration[\s\S]*?(?=\n\n|$)/gi,
   /\n\n\*\*Conceptual depth:\*\*[\s\S]*?(?=\n\n|$)/gi,
-  /\n\n\*\*Why this matters for[\s\S]*?(?=\n\n|$)/gi,
-  /\n\n## Deep Theory[\s\S]*?(?=\n\n## |$)/gi,
-  /\n\n## Practical Patterns[\s\S]*?(?=\n\n## |$)/gi,
-  /\n\n## Common Pitfalls[\s\S]*?(?=\n\n## |$)/gi,
-  /\n\n## Real-World Applications[\s\S]*?(?=\n\n## |$)/gi,
 ];
 
 const TRACK_CLOSING = {
@@ -47,7 +42,11 @@ function splitSentences(text) {
   const parts = normalized.split(/(?<=[.!?])\s+(?=[A-Z*("'])/);
   return parts
     .map((s) => s.trim())
-    .filter((s) => s.length > 20);
+    .filter((s) => {
+      if (s.length <= 20) return false;
+      if (/^\d+\.\s/.test(s)) return false;
+      return true;
+    });
 }
 
 function groupParagraphs(sentences, targetSize = 2) {
@@ -62,7 +61,13 @@ function groupParagraphs(sentences, targetSize = 2) {
 function isWellStructured(content) {
   const paragraphs = content.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
   if (paragraphs.length < 3) return false;
-  return paragraphs.every((p) => p.length >= 60 && p.length <= 700);
+
+  const hasLists = /^-\s/m.test(content) || /^\d+\.\s/m.test(content);
+  const hasHeadings = /^#{3,4}\s/m.test(content) || /\*\*[^*]+:\*\*\s/m.test(content);
+
+  if (hasLists || hasHeadings) return true;
+
+  return paragraphs.every((p) => p.length >= 60 && p.length <= 900);
 }
 
 function closingParagraph(topic, section) {
@@ -76,6 +81,10 @@ function formatContent(section, topic) {
   if (!raw) return raw;
 
   if (isWellStructured(raw)) {
+    return raw;
+  }
+
+  if (/^-\s/m.test(raw) || /^\d+\.\s/m.test(raw) || /^#{3,4}\s/m.test(raw)) {
     return raw;
   }
 
@@ -93,7 +102,7 @@ function formatContent(section, topic) {
   }
 
   const last = paragraphs[paragraphs.length - 1] ?? '';
-  if (!/example below|run the|work through|try the/i.test(last)) {
+  if (!/example below|run the|work through|try the|hands-on/i.test(last)) {
     paragraphs.push(closingParagraph(topic, section));
   }
 
@@ -107,31 +116,30 @@ function generatePseudoCode(section, topic) {
 
   if (section.formulas?.length) {
     lines.push('Key relationships:');
-    for (const formula of section.formulas.slice(0, 6)) {
+    for (const formula of section.formulas.slice(0, 8)) {
       lines.push(`  ${formula}`);
     }
     lines.push('');
   }
 
   if (section.diagram?.trim()) {
-    lines.push('Diagram (summary):');
-    for (const row of section.diagram.split('\n').filter((l) => l.trim()).slice(0, 10)) {
+    lines.push('Visual summary:');
+    for (const row of section.diagram.split('\n').filter((l) => l.trim()).slice(0, 12)) {
       lines.push(`  ${row.trim()}`);
     }
     lines.push('');
   }
 
   if (section.keyPoints?.length) {
-    lines.push('Checklist:');
-    section.keyPoints.slice(0, 5).forEach((point, index) => {
+    lines.push('Study checklist:');
+    section.keyPoints.slice(0, 6).forEach((point, index) => {
       lines.push(`  ${index + 1}. ${point}`);
     });
+    lines.push('');
   }
 
-  if (lines.length <= 2) {
-    lines.push(`Topic: ${topic.title}`);
-    lines.push(`Track: ${topic.track ?? 'general'}`);
-  }
+  lines.push(`Topic: ${topic.title}`);
+  lines.push(`Track: ${topic.track ?? 'general'} | Level: ${topic.level}`);
 
   return lines.join('\n');
 }

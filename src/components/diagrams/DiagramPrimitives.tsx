@@ -2,45 +2,48 @@ import type { ReactNode } from 'react';
 import type { CurveShape } from '../../types/diagram';
 
 export const D = {
-  emerald: '#10b981',
-  emeraldSoft: 'rgba(16, 185, 129, 0.22)',
-  indigo: '#818cf8',
-  indigoSoft: 'rgba(129, 140, 248, 0.22)',
-  rose: '#fb7185',
-  roseSoft: 'rgba(251, 113, 133, 0.22)',
-  amber: '#fbbf24',
-  sky: '#38bdf8',
-  border: 'var(--border-strong, #475569)',
-  text: 'var(--text-primary, #e2e8f0)',
-  muted: 'var(--text-muted, #94a3b8)',
-  surface: 'var(--bg-secondary, #1e293b)',
-  panel: 'var(--code-bg, #0f172a)',
+  emerald: 'var(--diagram-emerald, #059669)',
+  emeraldSoft: 'var(--diagram-emerald-soft, rgba(5, 150, 105, 0.14))',
+  indigo: 'var(--diagram-indigo, #6366f1)',
+  indigoSoft: 'var(--diagram-indigo-soft, rgba(99, 102, 241, 0.12))',
+  rose: 'var(--diagram-rose, #e11d48)',
+  roseSoft: 'var(--diagram-rose-soft, rgba(225, 29, 72, 0.1))',
+  amber: 'var(--diagram-amber, #d97706)',
+  sky: 'var(--diagram-sky, #0284c7)',
+  border: 'var(--diagram-grid, var(--border-strong, #d4c9bb))',
+  text: 'var(--text-primary, #1a1614)',
+  muted: 'var(--text-muted, #9a8f82)',
+  surface: 'var(--diagram-zone-surface, #f8f6f3)',
+  panel: 'var(--diagram-zone-bg, #fffdf9)',
+  surfaceTop: 'var(--diagram-surface-top, #ffffff)',
+  surfaceBottom: 'var(--diagram-surface-bottom, #f5f0e8)',
+  shadow: 'var(--diagram-shadow, rgba(26, 22, 20, 0.08))',
 };
 
 export function SvgDefs() {
   return (
     <defs>
       <linearGradient id="dg-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#34d399" />
-        <stop offset="100%" stopColor="#059669" />
+        <stop offset="0%" stopColor={D.emerald} stopOpacity="0.85" />
+        <stop offset="100%" stopColor={D.emerald} />
       </linearGradient>
       <linearGradient id="dg-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#a5b4fc" />
-        <stop offset="100%" stopColor="#6366f1" />
+        <stop offset="0%" stopColor={D.indigo} stopOpacity="0.85" />
+        <stop offset="100%" stopColor={D.indigo} />
       </linearGradient>
       <linearGradient id="dg-rose" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#fda4af" />
-        <stop offset="100%" stopColor="#e11d48" />
+        <stop offset="0%" stopColor={D.rose} stopOpacity="0.85" />
+        <stop offset="100%" stopColor={D.rose} />
       </linearGradient>
       <linearGradient id="dg-surface" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="rgba(30, 41, 59, 0.95)" />
-        <stop offset="100%" stopColor="rgba(15, 23, 42, 0.98)" />
+        <stop offset="0%" stopColor={D.surfaceTop} />
+        <stop offset="100%" stopColor={D.surfaceBottom} />
       </linearGradient>
       <filter id="dg-shadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000" floodOpacity="0.35" />
+        <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.12" />
       </filter>
       <filter id="dg-glow" x="-30%" y="-30%" width="160%" height="160%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feGaussianBlur stdDeviation="2" result="blur" />
         <feMerge>
           <feMergeNode in="blur" />
           <feMergeNode in="SourceGraphic" />
@@ -111,7 +114,6 @@ export function MiniAxes({
   const x1 = ox;
   const y1 = oy;
   const x2 = ox + w;
-  const y2 = oy;
   const top = oy - h;
 
   const paths: Record<CurveShape, string> = {
@@ -129,9 +131,9 @@ export function MiniAxes({
 
   return (
     <g>
-      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={D.border} strokeWidth="1.5" />
+      <line x1={x1} y1={y1} x2={x2} y2={y1} stroke={D.border} strokeWidth="1.5" />
       <line x1={x1} y1={y1} x2={x1} y2={top} stroke={D.border} strokeWidth="1.5" />
-      <path d={paths[curve]} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" filter="url(#dg-glow)" />
+      <path d={paths[curve]} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
       {label && (
         <text x={(x1 + x2) / 2} y={top - 6} textAnchor="middle" fill={D.muted} fontSize="10" fontWeight="600">
           {label.slice(0, 16)}

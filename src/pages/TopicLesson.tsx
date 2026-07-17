@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, memo } from 'react';
+import { useState, useEffect, useRef, memo, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { allTopics, loadTopic, getCachedTopic, getAdjacentTopics } from '../data/curriculum';
+import { allTopics, loadTopic, getCachedTopic, getAdjacentTopics, getTopicsByModule } from '../data/curriculum';
 import { useProgress } from '../context/ProgressContext';
 import { CodeBlock } from '../components/CodeBlock';
 import { LessonContent, TabularDisplay } from '../components/LessonContent';
@@ -9,7 +9,8 @@ import { BookmarkButton } from '../components/BookmarkButton';
 import { ReferenceList } from '../components/ReferenceList';
 import { FormulaList, DiagramBlock } from '../components/MathBlocks';
 import { ensureTopicProgress } from '../utils/progressStorage';
-import type { Topic, LessonSection, ProgressState } from '../types';
+import { estimateReadingMinutes, extractKeyTerms, buildStudySheet } from '../utils/lessonHelpers';
+import type { Topic, LessonSection, ProgressState, TopicSummary } from '../types';
 
 function getInitialSection(topic: Topic, completedSections: string[]) {
   const firstIncomplete = topic.sections.findIndex((s) => !completedSections.includes(s.id));
@@ -123,6 +124,8 @@ export function TopicLesson() {
   const [activeSection, setActiveSection] = useState(0);
   const [showExercises, setShowExercises] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
+  const [focusMode, setFocusMode] = useState(false);
+  const [copyStatus, setCopyStatus] = useState('');
   const [revealedSolutions, setRevealedSolutions] = useState<Set<string>>(new Set());
   const lastTick = useRef(Date.now());
 
@@ -214,6 +217,32 @@ export function TopicLesson() {
   const adjacent = topicId ? getAdjacentTopics(topicId) : { prev: undefined, next: undefined };
   const { prev: prevTopic, next: nextTopic } = adjacent;
 
+  const relatedTopics = useMemo((): TopicSummary[] => {
+    if (!topic) return [];
+    return getTopicsByModule(topic.module).filter((t: TopicSummary) => t.id !== topic.id).slice(0, 4);
+  }, [topic]);
+
+  const sectionTerms = useMemo(() => (section ? extractKeyTerms(section.content) : []), [section]);
+
+  const sectionReadMin = useMemo(() => {
+    if (!section) return 1;
+    const text = [section.content, section.pseudoCode, section.example].filter(Boolean).join('\n');
+    return estimateReadingMinutes(text);
+  }, [section]);
+
+  const handleCopyStudySheet = async () => {
+    if (!topic) return;
+    const sheet = buildStudySheet(topic);
+    try {
+      await navigator.clipboard.writeText(sheet);
+      setCopyStatus('Study sheet copied!');
+      setTimeout(() => setCopyStatus(''), 2500);
+    } catch {
+      setCopyStatus('Copy failed — try again');
+      setTimeout(() => setCopyStatus(''), 2500);
+    }
+  };
+
   if (loading) {
     return (
       <div className="page-loader">
@@ -255,7 +284,7 @@ export function TopicLesson() {
   };
 
   return (
-    <div className="page lesson-page">
+    <div className={`page lesson-page${focusMode ? ' lesson-focus-mode' : ''}`}>
       <nav className="breadcrumb">
         <Link to="/learn">Learn</Link> / <span>{topic.module}</span> / <span>{topic.title}</span>
       </nav>
@@ -269,6 +298,22 @@ export function TopicLesson() {
           </div>
           <div className="lesson-header-actions">
             <BookmarkButton type="topic" id={topic.id} label={topic.title} />
+            <button
+              type="button"
+              className={`btn btn-ghost btn-sm ${focusMode ? 'active' : ''}`}
+              onClick={() => setFocusMode((v) => !v)}
+              title="Hide sidebar for distraction-free reading"
+            >
+              {focusMode ? '📋 Exit Focus' : '🎯 Focus Mode'}
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm"
+              onClick={handleCopyStudySheet}
+              title="Copy all key takeaways as a study sheet"
+            >
+              📄 Study Sheet
+            </button>
             <button
               type="button"
               className={`btn btn-ghost btn-sm ${showNotes ? 'active' : ''}`}
@@ -289,8 +334,11 @@ export function TopicLesson() {
           <div className="progress-bar sm">
             <div className="progress-fill study" style={{ width: `${topicPct}%` }} />
           </div>
-          <span className="lesson-topic-progress-label">{topicPct}% complete · ~{topic.estimatedMinutes} min</span>
+          <span className="lesson-topic-progress-label">
+            {topicPct}% complete · ~{topic.estimatedMinutes} min · {topic.sections.length} sections
+          </span>
         </div>
+        {copyStatus && <p className="lesson-copy-status">{copyStatus}</p>}
       </header>
 
       {showNotes && (
@@ -346,9 +394,17 @@ export function TopicLesson() {
             <>
               <div className="lesson-section-header">
                 <span className="lesson-section-badge">
-                  Section {activeSection + 1} of {topic.sections.length}
+                  Section {activeSection + 1} of {topic.sections.length} · ~{sectionReadMin} min read
                 </span>
                 <h2>{section.title}</h2>
+                {sectionTerms.length > 0 && (
+                  <div className="lesson-key-terms">
+                    <span className="lesson-key-terms-label">Key terms:</span>
+                    {sectionTerms.map((term) => (
+                      <span key={term} className="lesson-term-chip">{term}</span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <SectionContent key={section.id} section={section} />
@@ -401,6 +457,20 @@ export function TopicLesson() {
 
           {topic.references && topic.references.length > 0 && (
             <ReferenceList references={topic.references} title="Further Reading — Stanford, MIT, Oxford & Papers" />
+          )}
+
+          {relatedTopics.length > 0 && (
+            <section className="related-topics-panel">
+              <h3>Related in {topic.module}</h3>
+              <div className="related-topics-grid">
+                {relatedTopics.map((rt) => (
+                  <Link key={rt.id} to={`/learn/${rt.id}`} className="related-topic-card">
+                    <span className={`badge ${rt.level}`}>{rt.level}</span>
+                    <span className="related-topic-title">{rt.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
           )}
 
           <nav className="topic-nav-footer">

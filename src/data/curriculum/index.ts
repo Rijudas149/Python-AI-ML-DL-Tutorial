@@ -37,3 +37,7 @@ export function searchTopics(query: string): TopicSummary[] {
 export function getTopicsByTrack(track: Topic['track']): TopicSummary[] {
   return allTopics.filter((t) => t.track === track);
 }
+
+export function getTopicsByModule(moduleName: string): TopicSummary[] {
+  return allTopics.filter((t) => t.module === moduleName);
+}
