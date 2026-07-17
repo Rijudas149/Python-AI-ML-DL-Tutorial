@@ -66,10 +66,33 @@ export interface ProgressState {
 export type Theme = 'light' | 'dark';
 export type BookmarkType = 'topic';
 
+export interface TopicSummary {
+  id: string;
+  title: string;
+  description: string;
+  level: Topic['level'];
+  module: string;
+  moduleId: string;
+  track: Topic['track'];
+  estimatedMinutes: number;
+  sectionCount: number;
+  exerciseCount: number;
+  sectionIds: string[];
+  exerciseIds: string[];
+}
+
+export interface ModuleCatalog {
+  id: string;
+  name: string;
+  track: Topic['track'];
+  description: string;
+  topics: TopicSummary[];
+}
+
 export interface ModuleInfo {
   id: string;
   name: string;
   track: Topic['track'];
   description: string;
-  topics: Topic[];
+  topics: TopicSummary[];
 }

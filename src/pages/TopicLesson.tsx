@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, memo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getTopicById, getAdjacentTopics, allTopics } from '../data/curriculum';
+import { allTopics, loadTopic, getAdjacentTopics } from '../data/curriculum';
 import { useProgress } from '../context/ProgressContext';
 import { CodeBlock } from '../components/CodeBlock';
 import { LessonContent, TabularDisplay } from '../components/LessonContent';
@@ -8,44 +8,129 @@ import { ExerciseEditor } from '../components/ExerciseEditor';
 import { BookmarkButton } from '../components/BookmarkButton';
 import { ReferenceList } from '../components/ReferenceList';
 import { FormulaList, DiagramBlock } from '../components/MathBlocks';
+import { ensureTopicProgress } from '../utils/progressStorage';
+import type { Topic, LessonSection } from '../types';
 
-function getInitialSection(topic: NonNullable<ReturnType<typeof getTopicById>>, completedSections: string[]) {
+function getInitialSection(topic: Topic, completedSections: string[]) {
   const firstIncomplete = topic.sections.findIndex((s) => !completedSections.includes(s.id));
   if (firstIncomplete === -1) return topic.sections.length > 0 ? topic.sections.length - 1 : 0;
   return firstIncomplete;
 }
 
+const SectionContent = memo(function SectionContent({ section }: { section: LessonSection }) {
+  return (
+    <div className="lesson-flow">
+      <section className="lesson-panel lesson-panel-explain">
+        <div className="lesson-panel-label">
+          <span className="lesson-panel-icon">📖</span>
+          Explanation
+        </div>
+        <LessonContent content={section.content} />
+      </section>
+
+      {section.formulas && section.formulas.length > 0 && (
+        <FormulaList formulas={section.formulas} />
+      )}
+
+      {section.diagram && <DiagramBlock diagram={section.diagram} />}
+
+      {section.pseudoCode && (
+        <section className="lesson-panel lesson-panel-pseudo">
+          <div className="lesson-panel-label">
+            <span className="lesson-panel-icon">🧩</span>
+            Step-by-Step Logic
+          </div>
+          <CodeBlock code={section.pseudoCode} language="pseudo" />
+        </section>
+      )}
+
+      {section.example && (
+        <section className="lesson-panel lesson-panel-example">
+          <div className="lesson-panel-label">
+            <span className="lesson-panel-icon">💻</span>
+            Try This Code
+          </div>
+          <p className="lesson-panel-hint">Copy the code below and run it in Python, Jupyter, or VS Code.</p>
+          <CodeBlock code={section.example} language="python" />
+        </section>
+      )}
+
+      {section.output && (
+        <section className="lesson-panel lesson-panel-output">
+          <div className="lesson-panel-label">
+            <span className="lesson-panel-icon">✅</span>
+            Expected Output
+          </div>
+          <p className="lesson-panel-hint">Your result should look similar to this.</p>
+          <TabularDisplay text={section.output} />
+        </section>
+      )}
+
+      {section.keyPoints && (
+        <section className="lesson-panel lesson-panel-takeaways">
+          <div className="lesson-panel-label">
+            <span className="lesson-panel-icon">💡</span>
+            Key Takeaways
+          </div>
+          <ul className="takeaway-list">
+            {section.keyPoints.map((kp, i) => (
+              <li key={i}>
+                <span className="takeaway-check">✓</span>
+                {kp}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+  );
+});
+
 export function TopicLesson() {
   const { topicId } = useParams<{ topicId: string }>();
-  const topic = topicId ? getTopicById(topicId) : undefined;
-  const { markSectionComplete, markExerciseComplete, addStudyTime, getTopicProgress, getNote, setNote } = useProgress();
-  const topicProgress = topic ? getTopicProgress(topic.id) : null;
+  const { markSectionComplete, markExerciseComplete, addStudyTime, getTopicProgress, getNote, setNote, progress } = useProgress();
+  const progressRef = useRef(progress);
+  progressRef.current = progress;
+  const [topic, setTopic] = useState<Topic | undefined>();
+  const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState(0);
   const [showExercises, setShowExercises] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [revealedSolutions, setRevealedSolutions] = useState<Set<string>>(new Set());
-  const [initialized, setInitialized] = useState(false);
-  const contentRef = useRef<HTMLElement>(null);
   const lastTick = useRef(Date.now());
 
   useEffect(() => {
-    if (!topic || initialized) return;
-    const completed = topicProgress?.sectionsCompleted ?? [];
-    const allSectionsDone = completed.length >= topic.sections.length;
-    if (allSectionsDone) {
-      setShowExercises(true);
-    } else {
-      setActiveSection(getInitialSection(topic, completed));
+    if (!topicId) {
+      setTopic(undefined);
+      setLoading(false);
+      return;
     }
-    setInitialized(true);
-  }, [topic, topicProgress, initialized]);
 
-  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
     setActiveSection(0);
-    setInitialized(false);
     setShowExercises(false);
     setShowNotes(false);
     setRevealedSolutions(new Set());
+
+    loadTopic(topicId).then((loaded) => {
+      if (cancelled) return;
+      setTopic(loaded);
+      setLoading(false);
+      if (!loaded) return;
+
+      const completed = ensureTopicProgress(progressRef.current, loaded.id).sectionsCompleted;
+      const allSectionsDone = completed.length >= loaded.sections.length;
+      if (allSectionsDone) {
+        setShowExercises(true);
+      } else {
+        setActiveSection(getInitialSection(loaded, completed));
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [topicId]);
 
   useEffect(() => {
@@ -66,7 +151,7 @@ export function TopicLesson() {
   }, [topicId, addStudyTime]);
 
   useEffect(() => {
-    contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [activeSection, showExercises, topicId]);
 
   useEffect(() => {
@@ -83,16 +168,14 @@ export function TopicLesson() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [topic, activeSection, showExercises]);
 
-  if (!topic) {
-    return (
-      <div className="page">
-        <h1>Topic not found</h1>
-        <Link to="/learn">Back to Learn</Link>
-      </div>
-    );
-  }
+  const topicIndex = topic ? allTopics.findIndex((t) => t.id === topic.id) : -1;
+  const sectionIndex = topic ? Math.min(activeSection, topic.sections.length - 1) : 0;
+  const section = topic?.sections[sectionIndex];
+  const tp = topic ? getTopicProgress(topic.id) : null;
+  const adjacent = topicId ? getAdjacentTopics(topicId) : { prev: undefined, next: undefined };
+  const { prev: prevTopic, next: nextTopic } = adjacent;
 
-  if (!initialized || topic.sections.length === 0) {
+  if (loading) {
     return (
       <div className="page-loader">
         <div className="page-loader-spinner" />
@@ -101,20 +184,15 @@ export function TopicLesson() {
     );
   }
 
-  const sectionIndex = Math.min(activeSection, topic.sections.length - 1);
-  const section = topic.sections[sectionIndex];
-  if (!section) {
+  if (!topic || !section || !tp) {
     return (
       <div className="page">
-        <h1>Lesson unavailable</h1>
-        <p>This topic has no readable sections yet.</p>
+        <h1>Topic not found</h1>
         <Link to="/learn">Back to Learn</Link>
       </div>
     );
   }
-  const { prev: prevTopic, next: nextTopic } = getAdjacentTopics(topic.id);
-  const topicIndex = allTopics.findIndex((t) => t.id === topic.id);
-  const tp = getTopicProgress(topic.id);
+
   const totalSteps = topic.sections.length + topic.exercises.length;
   const doneSteps = tp.sectionsCompleted.length + tp.exercisesCompleted.length;
   const topicPct = totalSteps ? Math.round((doneSteps / totalSteps) * 100) : 0;
@@ -224,7 +302,7 @@ export function TopicLesson() {
           </ul>
         </aside>
 
-        <article className="lesson-content" ref={contentRef}>
+        <article className="lesson-content">
           {!showExercises ? (
             <>
               <div className="lesson-section-header">
@@ -234,72 +312,7 @@ export function TopicLesson() {
                 <h2>{section.title}</h2>
               </div>
 
-              <div className="lesson-flow">
-                <section className="lesson-panel lesson-panel-explain">
-                  <div className="lesson-panel-label">
-                    <span className="lesson-panel-icon">📖</span>
-                    Explanation
-                  </div>
-                  <LessonContent content={section.content} />
-                </section>
-
-                {section.formulas && section.formulas.length > 0 && (
-                  <FormulaList formulas={section.formulas} />
-                )}
-
-                {section.diagram && (
-                  <DiagramBlock diagram={section.diagram} />
-                )}
-
-                {section.pseudoCode && (
-                  <section className="lesson-panel lesson-panel-pseudo">
-                    <div className="lesson-panel-label">
-                      <span className="lesson-panel-icon">🧩</span>
-                      Step-by-Step Logic
-                    </div>
-                    <CodeBlock code={section.pseudoCode} language="pseudo" />
-                  </section>
-                )}
-
-                {section.example && (
-                  <section className="lesson-panel lesson-panel-example">
-                    <div className="lesson-panel-label">
-                      <span className="lesson-panel-icon">💻</span>
-                      Try This Code
-                    </div>
-                    <p className="lesson-panel-hint">Copy the code below and run it in Python, Jupyter, or VS Code.</p>
-                    <CodeBlock code={section.example} language="python" />
-                  </section>
-                )}
-
-                {section.output && (
-                  <section className="lesson-panel lesson-panel-output">
-                    <div className="lesson-panel-label">
-                      <span className="lesson-panel-icon">✅</span>
-                      Expected Output
-                    </div>
-                    <p className="lesson-panel-hint">Your result should look similar to this.</p>
-                    <TabularDisplay text={section.output} />
-                  </section>
-                )}
-
-                {section.keyPoints && (
-                  <section className="lesson-panel lesson-panel-takeaways">
-                    <div className="lesson-panel-label">
-                      <span className="lesson-panel-icon">💡</span>
-                      Key Takeaways
-                    </div>
-                    <ul className="takeaway-list">
-                      {section.keyPoints.map((kp, i) => (
-                        <li key={i}>
-                          <span className="takeaway-check">✓</span>
-                          {kp}
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-              </div>
+              <SectionContent key={section.id} section={section} />
 
               <div className="lesson-nav-buttons">
                 {activeSection > 0 && (

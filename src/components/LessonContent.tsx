@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { CodeBlock } from './CodeBlock';
 import { parseTableBlock, parseTabularText, type ParsedTable } from '../utils/tabularParser';
 
@@ -158,7 +159,7 @@ export function TabularDisplay({ text, language = 'output' }: { text: string; la
 }
 
 export function LessonContent({ content }: { content: string }) {
-  const blocks = parseContent(content);
+  const blocks = useMemo(() => parseContent(content), [content]);
 
   return (
     <div className="lesson-prose">

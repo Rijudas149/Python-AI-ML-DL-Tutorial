@@ -1,10 +1,10 @@
 import { modules, allTopics } from '../data/curriculum';
-import type { Topic, TopicProgress, ProgressState } from '../types';
+import type { Topic, TopicSummary, TopicProgress, ProgressState } from '../types';
 
 export type TopicStatus = 'completed' | 'in-progress' | 'next' | 'available' | 'upcoming';
 
 export interface RoadmapTopic {
-  topic: Topic;
+  topic: TopicSummary;
   globalIndex: number;
   moduleIndex: number;
   topicIndex: number;
@@ -80,9 +80,9 @@ export const ROADMAP_PHASE_META: Record<
   },
 };
 
-function getTopicProgressPct(topic: Topic, tp?: TopicProgress): number {
+function getTopicProgressPct(topic: TopicSummary, tp?: TopicProgress): number {
   if (!tp) return 0;
-  const total = topic.sections.length + topic.exercises.length;
+  const total = topic.sectionCount + topic.exerciseCount;
   if (total === 0) return 0;
   const done = tp.sectionsCompleted.length + tp.exercisesCompleted.length;
   return Math.round((done / total) * 100);

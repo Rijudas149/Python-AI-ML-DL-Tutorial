@@ -86,49 +86,93 @@ ${topicsStr}
 `;
 }
 
-function generateIndexFile(modules) {
-  const imports = modules
-    .map((m) => `import { ${m.exportName} } from './${m.fileName}';`)
+function buildTopicSummary(topic, mod) {
+  const full = enrichTopic({ ...topic, module: mod.id });
+  return {
+    id: full.id,
+    title: full.title,
+    description: full.description,
+    level: full.level,
+    module: mod.name,
+    moduleId: mod.id,
+    track: full.track ?? mod.track,
+    estimatedMinutes: full.estimatedMinutes ?? 35,
+    sectionCount: full.sections.length,
+    exerciseCount: full.exercises.length,
+    sectionIds: full.sections.map((s) => s.id),
+    exerciseIds: full.exercises.map((e) => e.id),
+  };
+}
+
+function generateCatalogFile(catalogModules) {
+  const loaderEntries = catalogModules
+    .map(
+      (m) =>
+        `  '${m.id}': () => import('./${m.fileName}').then((m) => m.${m.exportName}),`,
+    )
     .join('\n');
-  const moduleEntries = modules
+
+  const moduleEntries = catalogModules
     .map(
       (m) => `  {
     id: '${m.id}',
     name: '${m.name.replace(/'/g, "\\'")}',
     track: '${m.track}',
     description: \`${escapeBacktick(m.description)}\`,
-    topics: ${m.exportName},
+    topics: ${serializeValue(m.topics, 3)},
   }`,
     )
     .join(',\n');
-  const spreadTopics = modules.map((m) => `  ...${m.exportName}`).join(',\n');
 
-  return `${imports}
+  const allTopicEntries = catalogModules.flatMap((m) => m.topics);
+  const topicByIdEntries = allTopicEntries
+    .map((t) => `  '${t.id}': ${serializeValue(t, 2)}`)
+    .join(',\n');
 
-import type { Topic, ModuleInfo } from '../../types';
+  return `import type { ModuleCatalog, TopicSummary } from '../../types';
 
-export const modules: ModuleInfo[] = [
+export const moduleLoaders: Record<string, () => Promise<import('../../types').Topic[]>> = {
+${loaderEntries}
+};
+
+export const modules: ModuleCatalog[] = [
 ${moduleEntries}
 ];
 
-export const allTopics: Topic[] = [
-${spreadTopics}
+export const allTopics: TopicSummary[] = [
+${allTopicEntries.map((t) => `  ${serializeValue(t, 1)}`).join(',\n')}
 ];
 
-export function getTopicById(id: string): Topic | undefined {
+export const topicById: Record<string, TopicSummary> = {
+${topicByIdEntries}
+};
+`;
+}
+
+function generateIndexFile() {
+  return `export {
+  modules,
+  allTopics,
+  topicById,
+  moduleLoaders,
+} from './catalog';
+
+export {
+  loadTopic,
+  preloadTopic,
+  preloadTopicModule,
+  getAdjacentTopics,
+  clearTopicCache,
+} from './loadTopic';
+
+import { allTopics } from './catalog';
+import type { TopicSummary, Topic } from '../../types';
+
+export function getTopicById(id: string): TopicSummary | undefined {
   return allTopics.find((t) => t.id === id);
 }
 
-export function getAdjacentTopics(id: string): { prev?: Topic; next?: Topic } {
-  const idx = allTopics.findIndex((t) => t.id === id);
-  if (idx === -1) return {};
-  return {
-    prev: idx > 0 ? allTopics[idx - 1] : undefined,
-    next: idx < allTopics.length - 1 ? allTopics[idx + 1] : undefined,
-  };
-}
-
-export function searchTopics(query: string): Topic[] {
+export function searchTopics(query: string): TopicSummary[] {
   const q = query.toLowerCase().trim();
   if (!q) return [];
   return allTopics.filter(
@@ -141,7 +185,7 @@ export function searchTopics(query: string): Topic[] {
   );
 }
 
-export function getTopicsByTrack(track: Topic['track']): Topic[] {
+export function getTopicsByTrack(track: Topic['track']): TopicSummary[] {
   return allTopics.filter((t) => t.track === track);
 }
 `;
@@ -2147,16 +2191,32 @@ const MODULES = [
 mkdirSync(OUT_DIR, { recursive: true });
 
 let totalTopics = 0;
+const catalogModules = [];
 
 for (const mod of MODULES) {
   const filePath = join(OUT_DIR, `${mod.fileName}.ts`);
   writeFileSync(filePath, generateModuleFile(mod), 'utf8');
   totalTopics += mod.topics.length;
+
+  catalogModules.push({
+    id: mod.id,
+    name: mod.name,
+    track: mod.track,
+    description: mod.description,
+    fileName: mod.fileName,
+    exportName: mod.exportName,
+    topics: mod.topics.map((t) => buildTopicSummary(t, mod)),
+  });
+
   console.log(`  ✓ ${mod.fileName}.ts (${mod.topics.length} topics)`);
 }
 
+const catalogPath = join(OUT_DIR, 'catalog.ts');
+writeFileSync(catalogPath, generateCatalogFile(catalogModules), 'utf8');
+console.log(`  ✓ catalog.ts (lightweight index)`);
+
 const indexPath = join(OUT_DIR, 'index.ts');
-writeFileSync(indexPath, generateIndexFile(MODULES), 'utf8');
+writeFileSync(indexPath, generateIndexFile(), 'utf8');
 console.log(`  ✓ index.ts`);
 
 const refsPath = join(__dirname, '..', 'src', 'data', 'references.ts');

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { modules, allTopics, searchTopics } from '../data/curriculum';
+import { modules, allTopics, searchTopics, preloadTopic } from '../data/curriculum';
 import { useProgress } from '../context/ProgressContext';
 import type { Topic } from '../types';
 
@@ -132,11 +132,11 @@ export function Learn() {
             <div className="topic-list">
               {topics.map((topic) => {
                 const tp = getTopicProgress(topic.id);
-                const totalSteps = topic.sections.length + topic.exercises.length;
+                const totalSteps = topic.sectionCount + topic.exerciseCount;
                 const doneSteps = tp.sectionsCompleted.length + tp.exercisesCompleted.length;
                 const sectionPct = totalSteps ? Math.round((doneSteps / totalSteps) * 100) : 0;
                 return (
-                  <Link key={topic.id} to={`/learn/${topic.id}`} className="topic-card">
+                  <Link key={topic.id} to={`/learn/${topic.id}`} className="topic-card" onMouseEnter={() => preloadTopic(topic.id)}>
                     <div className="topic-card-top">
                       <span className={`badge ${topic.level}`}>{topic.level}</span>
                       {tp.completed && <span className="done-badge">✓ Done</span>}
@@ -147,8 +147,8 @@ export function Learn() {
                     <h3>{topic.title}</h3>
                     <p>{topic.description}</p>
                     <div className="topic-meta">
-                      <span>{topic.sections.length} sections</span>
-                      <span>{topic.exercises.length} exercises</span>
+                      <span>{topic.sectionCount} sections</span>
+                      <span>{topic.exerciseCount} exercises</span>
                       <span>~{topic.estimatedMinutes} min</span>
                     </div>
                     <div className="progress-bar sm">

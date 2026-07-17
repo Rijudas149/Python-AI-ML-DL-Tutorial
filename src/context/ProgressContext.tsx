@@ -67,8 +67,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
             sectionsCompleted,
             lastVisited: new Date().toISOString(),
             completed:
-              sectionsCompleted.length >= (topic?.sections.length ?? 0) &&
-              tp.exercisesCompleted.length >= (topic?.exercises.length ?? 0),
+              sectionsCompleted.length >= (topic?.sectionCount ?? 0) &&
+              tp.exercisesCompleted.length >= (topic?.exerciseCount ?? 0),
           },
         },
       };
@@ -92,8 +92,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
             exercisesCompleted,
             lastVisited: new Date().toISOString(),
             completed:
-              exercisesCompleted.length >= (topic?.exercises.length ?? 0) &&
-              tp.sectionsCompleted.length >= (topic?.sections.length ?? 0),
+              exercisesCompleted.length >= (topic?.exerciseCount ?? 0) &&
+              tp.sectionsCompleted.length >= (topic?.sectionCount ?? 0),
           },
         },
       };
@@ -112,8 +112,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
           ...prev.topics,
           [topicId]: {
             ...ensureTopicProgress(prev, topicId),
-            sectionsCompleted: topic.sections.map((s) => s.id),
-            exercisesCompleted: topic.exercises.map((e) => e.id),
+            sectionsCompleted: topic.sectionIds,
+            exercisesCompleted: topic.exerciseIds,
             completed: true,
             lastVisited: new Date().toISOString(),
           },
@@ -174,7 +174,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     );
     const topic = allTopics.find((t) => t.id === latest.topicId);
     if (!topic) return null;
-    const total = topic.sections.length + topic.exercises.length;
+    const total = topic.sectionCount + topic.exerciseCount;
     const done = latest.sectionsCompleted.length + latest.exercisesCompleted.length;
     return {
       topicId: topic.id,

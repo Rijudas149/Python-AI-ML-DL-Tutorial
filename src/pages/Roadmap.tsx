@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useProgress } from '../context/ProgressContext';
 import { buildRoadmap, getRoadmapSummary, ROADMAP_PHASE_META } from '../utils/roadmap';
+import { preloadTopic } from '../data/curriculum';
 import type { TopicStatus } from '../utils/roadmap';
 
 const STATUS_LABELS: Record<TopicStatus, string> = {
@@ -140,11 +141,11 @@ export function Roadmap() {
                               className={`roadmap-topic-item ${STATUS_CLASS[status]} ${status === 'next' ? 'roadmap-topic-current' : ''}`}
                             >
                               <span className="roadmap-topic-num">{globalIndex + 1}</span>
-                              <Link to={`/learn/${topic.id}`} className="roadmap-topic-link">
+                              <Link to={`/learn/${topic.id}`} className="roadmap-topic-link" onMouseEnter={() => preloadTopic(topic.id)}>
                                 <span className="roadmap-topic-title">{topic.title}</span>
                                 <span className="roadmap-topic-sub">
                                   <span className={`badge ${topic.level}`}>{topic.level}</span>
-                                  ~{topic.estimatedMinutes} min · {topic.sections.length} sections
+                                  ~{topic.estimatedMinutes} min · {topic.sectionCount} sections
                                   {tp > 0 && tp < 100 && ` · ${tp}%`}
                                 </span>
                               </Link>
