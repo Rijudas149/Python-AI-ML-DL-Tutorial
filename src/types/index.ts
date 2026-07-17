@@ -24,7 +24,7 @@ export interface LessonSection {
   example?: string;
   output?: string;
   keyPoints?: string[];
-  /** Mathematical formulas (LaTeX-style plain text) */
+  /** Mathematical formulas (Unicode / partial LaTeX, rendered with KaTeX) */
   formulas?: string[];
   /** ASCII or structured diagram */
   diagram?: string;

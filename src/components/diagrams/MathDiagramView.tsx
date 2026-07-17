@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { DiagramSpec } from '../../types/diagram';
+import { MathFormula } from '../MathFormula';
 import { FigureView } from './FigureViews';
 import {
   D,
@@ -38,7 +39,7 @@ function LiteralView({ spec }: { spec: Extract<DiagramSpec, { type: 'literal' }>
           <ol className="diagram-formula-list">
             {c.formulas.map((f, i) => (
               <li key={i}>
-                <code>{f}</code>
+                <MathFormula formula={f} display={false} />
               </li>
             ))}
           </ol>

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { parseDiagram } from '../utils/diagramParser';
 import { MathDiagramView } from './diagrams/MathDiagramView';
+import { MathFormula } from './MathFormula';
 
 interface FormulaListProps {
   formulas: string[];
@@ -14,13 +15,13 @@ export function FormulaList({ formulas }: FormulaListProps) {
         <span className="lesson-panel-icon">📐</span>
         Key Formulas
       </div>
-      <ul className="formula-list">
+      <ol className="formula-list">
         {formulas.map((formula, i) => (
           <li key={i} className="formula-item">
-            <span className="formula-text">{formula}</span>
+            <MathFormula formula={formula} display />
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   );
 }

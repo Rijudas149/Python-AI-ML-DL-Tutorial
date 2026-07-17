@@ -3609,14 +3609,41 @@ body {
 }
 
 .formula-item {
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 1.25rem;
   border-radius: 8px;
   background: var(--bg-tertiary);
   border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
 }
 
-.formula-text {
-  font-family: 'JetBrains Mono', 'Cambria Math', 'Times New Roman', serif;
+.formula-item .math-formula-display {
+  width: 100%;
+}
+
+.math-formula {
+  color: var(--text-primary);
+}
+
+.math-formula-display {
+  display: block;
+  text-align: center;
+  overflow-x: auto;
+  padding: 0.15rem 0;
+}
+
+.math-formula-display .katex {
+  font-size: 1.2em;
+}
+
+.math-formula-inline .katex {
+  font-size: 1.05em;
+}
+
+.math-formula-fallback {
+  font-family: 'Cambria Math', 'Times New Roman', serif;
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text-primary);
@@ -3854,19 +3881,16 @@ body {
 }
 
 .diagram-formula-list li {
-  padding: 0.6rem 0.75rem;
+  padding: 0.6rem 0.85rem;
   border-radius: 8px;
   background: var(--diagram-formula-bg);
   border-left: 3px solid var(--study);
+  display: flex;
+  align-items: center;
 }
 
-.diagram-formula-list code {
-  font-family: 'JetBrains Mono', 'Cambria Math', serif;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--text-primary);
-  white-space: pre-wrap;
-  word-break: break-word;
+.diagram-formula-list .math-formula-inline {
+  width: 100%;
 }
 
 .diagram-note-list {
