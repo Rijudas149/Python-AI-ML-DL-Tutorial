@@ -41,6 +41,7 @@ export function TopicLesson() {
   }, [topic, topicProgress, initialized]);
 
   useEffect(() => {
+    setActiveSection(0);
     setInitialized(false);
     setShowExercises(false);
     setShowNotes(false);
@@ -91,7 +92,26 @@ export function TopicLesson() {
     );
   }
 
-  const section = topic.sections[activeSection];
+  if (!initialized || topic.sections.length === 0) {
+    return (
+      <div className="page-loader">
+        <div className="page-loader-spinner" />
+        <p>Loading lesson...</p>
+      </div>
+    );
+  }
+
+  const sectionIndex = Math.min(activeSection, topic.sections.length - 1);
+  const section = topic.sections[sectionIndex];
+  if (!section) {
+    return (
+      <div className="page">
+        <h1>Lesson unavailable</h1>
+        <p>This topic has no readable sections yet.</p>
+        <Link to="/learn">Back to Learn</Link>
+      </div>
+    );
+  }
   const { prev: prevTopic, next: nextTopic } = getAdjacentTopics(topic.id);
   const topicIndex = allTopics.findIndex((t) => t.id === topic.id);
   const tp = getTopicProgress(topic.id);

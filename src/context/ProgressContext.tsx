@@ -2,16 +2,7 @@ import { createContext, useContext, useCallback, type ReactNode } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import type { ProgressState, TopicProgress, BookmarkType } from '../types';
 import { allTopics } from '../data/curriculum';
-
-const defaultProgress: ProgressState = {
-  topics: {},
-  bookmarks: [],
-  notes: {},
-  totalStudySeconds: 0,
-  studySessions: 0,
-  streakDays: 0,
-  lastStudyDate: '',
-};
+import { defaultProgress, ensureTopicProgress, normalizeProgress } from '../utils/progressStorage';
 
 function todayStr() {
   return new Date().toISOString().slice(0, 10);
@@ -51,21 +42,13 @@ interface ProgressContextType {
 
 const ProgressContext = createContext<ProgressContextType | null>(null);
 
-function ensureTopicProgress(state: ProgressState, topicId: string): TopicProgress {
-  return (
-    state.topics[topicId] ?? {
-      topicId,
-      sectionsCompleted: [],
-      exercisesCompleted: [],
-      studyTimeSeconds: 0,
-      lastVisited: new Date().toISOString(),
-      completed: false,
-    }
-  );
-}
-
 export function ProgressProvider({ children }: { children: ReactNode }) {
-  const [progress, setProgress] = useLocalStorage<ProgressState>('dsm-progress', defaultProgress, ['dl-master-progress']);
+  const [progress, setProgress] = useLocalStorage<ProgressState>(
+    'dsm-progress',
+    defaultProgress,
+    ['dl-master-progress'],
+    normalizeProgress,
+  );
 
   const markSectionComplete = useCallback((topicId: string, sectionId: string) => {
     setProgress((prev) => {

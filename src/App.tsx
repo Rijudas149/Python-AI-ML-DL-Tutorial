@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { ProgressProvider } from './context/ProgressContext';
 import { Layout } from './components/Layout';
@@ -21,6 +21,11 @@ function PageLoader() {
   );
 }
 
+function TopicLessonRoute() {
+  const { topicId } = useParams<{ topicId: string }>();
+  return <TopicLesson key={topicId} />;
+}
+
 function App() {
   return (
     <ThemeProvider>
@@ -31,7 +36,7 @@ function App() {
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route path="learn" element={<Learn />} />
-                <Route path="learn/:topicId" element={<TopicLesson />} />
+                <Route path="learn/:topicId" element={<TopicLessonRoute />} />
                 <Route path="bookmarks" element={<Bookmarks />} />
                 <Route path="references" element={<References />} />
                 <Route path="glossary" element={<Glossary />} />
