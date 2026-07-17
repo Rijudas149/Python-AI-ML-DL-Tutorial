@@ -87,7 +87,11 @@ Track: ml | Level: advanced`
         {
           id: `arima`,
           title: `ARIMA Modeling`,
-          content: `**ARIMA Modeling** is essential to **Time Series Foundations**. Decompose series, check stationarity, and fit ARIMA models. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ARIMA Modeling** — what you need to know:
+
+- **Core idea:** Decompose series, check stationarity, and fit ARIMA models.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Fit with \`ARIMA(endog, order=(p,d,q))\`. Select orders via AIC on grid search or \`auto_arima\` (pmdarima). Residual diagnostics: Ljung-Box test on autocorrelation.
 
@@ -95,13 +99,29 @@ Train on rolling windows for realistic evaluation—random splits leak future in
 
 **Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "ARIMA Modeling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "ARIMA Modeling" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **ARIMA Modeling** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 y = np.random.randn(100).cumsum()
 print(len(y))`,
@@ -135,11 +155,23 @@ Prophet and neural approaches complement classical SARIMA on messy business seri
 
 **Applying Time Series Foundations:** Decompose series, check stationarity, and fit ARIMA models. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "SARIMA", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "SARIMA" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **SARIMA** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Seasonal order (P,D,Q,s) requires sufficient history`,
             `Multiple seasonalities need complex models`,
@@ -179,13 +211,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Time Series Foundations** sits in the **ml** track of the Data Science Master curriculum. Decompose series, check stationarity, and fit ARIMA models.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-timeseries**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Time Series Foundations
 meta = {"topic_id": "ml-timeseries", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -220,12 +258,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-timeseries
 from dataclasses import dataclass
 
@@ -273,7 +313,9 @@ When stuck on **ml-timeseries**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -310,9 +352,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-timeseries** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Time Series Foundations
 skills = ["ml", "advanced", "ml-timeseries"]
 print("Built project applying:", ", ".join(skills))`,
@@ -417,13 +464,29 @@ Tune \`changepoint_prior_scale\` for flexibility vs overfit.
 
 **Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Facebook Prophet", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Facebook Prophet" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Facebook Prophet** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 df = pd.DataFrame({"ds": pd.date_range("2023-01-01", periods=5), "y": [1,2,3,4,5]})
 print(list(df.columns))`,
@@ -458,13 +521,29 @@ Track: ml | Level: advanced`
 
 **Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "sklearn Time Series Splits", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "sklearn Time Series Splits" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **sklearn Time Series Splits** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.model_selection import TimeSeriesSplit
 import numpy as np
 tscv = TimeSeriesSplit(n_splits=3)
@@ -500,11 +579,23 @@ Probabilistic forecasts: prediction intervals from Prophet or quantile regressio
 
 **Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Forecast Metrics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Forecast Metrics" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Forecast Metrics** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Choose metric aligned to business cost`,
             `MAPE unstable for intermittent demand`,
@@ -542,7 +633,11 @@ Track: ml | Level: advanced`
         {
           id: `pipeline`,
           title: `Production Forecast Pipelines`,
-          content: `**Production Forecast Pipelines** is essential to **Forecasting with Prophet & sklearn**. Practical forecasting pipelines for business time series. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Production Forecast Pipelines** — what you need to know:
+
+- **Core idea:** Practical forecasting pipelines for business time series.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Schedule retraining, monitor forecast error drift, version datasets with as-of timestamps. Feature store stores point-in-time correct lags.
 
@@ -550,11 +645,23 @@ Combine statistical and ML forecasts in ensembles weighted by recent performance
 
 **Applying Forecasting with Prophet & sklearn:** Practical forecasting pipelines for business time series. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Production Forecast Pipelines", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Production Forecast Pipelines" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Production Forecast Pipelines** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Automate retrain on new observations`,
             `Alert when error exceeds baseline`,
@@ -594,13 +701,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Forecasting with Prophet & sklearn** sits in the **ml** track of the Data Science Master curriculum. Practical forecasting pipelines for business time series.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-forecasting**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Forecasting with Prophet & sklearn
 meta = {"topic_id": "ml-forecasting", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -635,12 +748,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-forecasting
 from dataclasses import dataclass
 
@@ -688,7 +803,9 @@ When stuck on **ml-forecasting**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -725,9 +842,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-forecasting** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Forecasting with Prophet & sklearn
 skills = ["ml", "advanced", "ml-forecasting"]
 print("Built project applying:", ", ".join(skills))`,
@@ -831,11 +953,23 @@ print(len(list(TimeSeriesSplit(2).split(np.arange(10)))))`,
 
 **Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Matrix Factorization", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Matrix Factorization" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Matrix Factorization** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Sparsity: most user-item pairs unobserved`,
             `Regularization prevents overfitting embeddings`,
@@ -873,7 +1007,11 @@ Track: ml | Level: advanced`
         {
           id: `neighborhood`,
           title: `Neighborhood Methods`,
-          content: `**Neighborhood Methods** is essential to **Collaborative Filtering**. Recommend items from user-item interaction patterns. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Neighborhood Methods** — what you need to know:
+
+- **Core idea:** Recommend items from user-item interaction patterns.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 User-based CF: similar users' ratings predict target. Item-based CF: similar items to those user liked—stable when users >> items.
 
@@ -881,13 +1019,29 @@ Similarity: cosine, Pearson correlation. k nearest neighbors trade bias/variance
 
 **Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Neighborhood Methods", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Neighborhood Methods" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Neighborhood Methods** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 u = np.array([1,0,1]); v = np.array([1,1,0])
 print(round(u@v/(np.linalg.norm(u)*np.linalg.norm(v)),2))`,
@@ -922,11 +1076,23 @@ BPR pairwise ranking loss popular for top-K recommendation.
 
 **Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Implicit Feedback", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Implicit Feedback" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Implicit Feedback** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Implicit signals abundant but ambiguous`,
             `Weight by dwell time or purchase`,
@@ -970,11 +1136,23 @@ Online A/B tests measure click-through and revenue—the ground truth.
 
 **Applying Collaborative Filtering:** Recommend items from user-item interaction patterns. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Evaluating Recommenders", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Evaluating Recommenders" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Evaluating Recommenders** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Temporal split mimics deployment`,
             `Novelty and diversity metrics beyond accuracy`,
@@ -1014,13 +1192,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Collaborative Filtering** sits in the **ml** track of the Data Science Master curriculum. Recommend items from user-item interaction patterns.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-recsys-collab**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Collaborative Filtering
 meta = {"topic_id": "ml-recsys-collab", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1055,12 +1239,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-recsys-collab
 from dataclasses import dataclass
 
@@ -1108,7 +1294,9 @@ When stuck on **ml-recsys-collab**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1145,9 +1333,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-recsys-collab** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Collaborative Filtering
 skills = ["ml", "advanced", "ml-recsys-collab"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1244,7 +1437,11 @@ print(np.dot([1,0],[0,1])==0)`,
         {
           id: `features`,
           title: `Item Feature Representations`,
-          content: `**Item Feature Representations** is essential to **Content-Based Filtering**. Recommend from item features and user preference profiles. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Item Feature Representations** — what you need to know:
+
+- **Core idea:** Recommend from item features and user preference profiles.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Text: TF-IDF or embeddings from sentence transformers. Images: CNN embeddings. Metadata: one-hot or learned embeddings.
 
@@ -1252,11 +1449,23 @@ Build **item profile** vector summarizing attributes; user profile = aggregate o
 
 **Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Item Feature Representations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Item Feature Representations" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Item Feature Representations** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Rich features reduce cold-start for new items`,
             `Embeddings capture semantic similarity`,
@@ -1300,13 +1509,29 @@ Hybrid: blend content scores with collaborative scores for coverage.
 
 **Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Scoring & Retrieval", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Scoring & Retrieval" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Scoring & Retrieval** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 p=np.array([0.8,0.2]); i=np.array([0.6,0.4])
 print((p@i)/(np.linalg.norm(p)*np.linalg.norm(i))>0)`,
@@ -1341,11 +1566,23 @@ Two-tower neural networks embed users and items separately for fast retrieval.
 
 **Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Learning to Rank", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Learning to Rank" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Learning to Rank** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Pointwise vs pairwise vs listwise ranking losses`,
             `Two-tower enables billion-scale retrieval`,
@@ -1383,7 +1620,11 @@ Track: ml | Level: advanced`
         {
           id: `limits`,
           title: `Content-Based Limits`,
-          content: `**Content-Based Limits** is essential to **Content-Based Filtering**. Recommend from item features and user preference profiles. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Content-Based Limits** — what you need to know:
+
+- **Core idea:** Recommend from item features and user preference profiles.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Filter bubbles—only similar items recommended. Lack of serendipity vs collaborative discovery. Feature maintenance cost when catalog changes.
 
@@ -1391,11 +1632,23 @@ Mitigate with exploration, diversity re-ranking, or hybrid CF.
 
 **Applying Content-Based Filtering:** Recommend from item features and user preference profiles. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Content-Based Limits", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Content-Based Limits" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Content-Based Limits** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Explicit diversity objectives in re-ranking`,
             `Explore/exploit tradeoff in bandits`,
@@ -1435,13 +1688,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Content-Based Filtering** sits in the **ml** track of the Data Science Master curriculum. Recommend from item features and user preference profiles.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-recsys-content**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Content-Based Filtering
 meta = {"topic_id": "ml-recsys-content", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1476,12 +1735,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-recsys-content
 from dataclasses import dataclass
 
@@ -1529,7 +1790,9 @@ When stuck on **ml-recsys-content**, reproduce with the smallest input, enable v
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1566,9 +1829,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-recsys-content** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Content-Based Filtering
 skills = ["ml", "advanced", "ml-recsys-content"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1670,13 +1938,29 @@ Track: ml | Level: advanced`
 
 **Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Why Accuracy Fails", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Why Accuracy Fails" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Why Accuracy Fails** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.metrics import recall_score
 print(recall_score([0,0,1,1],[0,0,0,0]))`,
           output: `0.0`,
@@ -1710,11 +1994,23 @@ Apply resampling **inside CV folds** on training only to prevent leakage.
 
 **Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "SMOTE & Resampling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "SMOTE & Resampling" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **SMOTE & Resampling** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `SMOTE in imblearn pipeline with CV`,
             `Borderline-SMOTE focuses on hard examples`,
@@ -1758,13 +2054,29 @@ Cost-sensitive learning assigns higher penalty to minority errors.
 
 **Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Class Weights & Thresholds", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Class Weights & Thresholds" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Class Weights & Thresholds** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.linear_model import LogisticRegression
 print(LogisticRegression(class_weight="balanced").class_weight)`,
           output: `balanced`,
@@ -1798,11 +2110,23 @@ Slice metrics by segment— imbalance may vary by region or product line.
 
 **Applying Imbalanced Classification:** Handle skewed classes with resampling, weights, and proper metrics. These machine learning ideas appear in production systems, competitions, and research papers alike. When studying "Metrics & Monitoring", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Metrics & Monitoring" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Metrics & Monitoring** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Production SLA on minority class recall`,
             `Alert when prediction distribution drifts`,
@@ -1842,13 +2166,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Imbalanced Classification** sits in the **ml** track of the Data Science Master curriculum. Handle skewed classes with resampling, weights, and proper metrics.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-imbalanced**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Imbalanced Classification
 meta = {"topic_id": "ml-imbalanced", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1883,12 +2213,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-imbalanced
 from dataclasses import dataclass
 
@@ -1936,7 +2268,9 @@ When stuck on **ml-imbalanced**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1973,9 +2307,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-imbalanced** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Imbalanced Classification
 skills = ["ml", "advanced", "ml-imbalanced"]
 print("Built project applying:", ", ".join(skills))`,

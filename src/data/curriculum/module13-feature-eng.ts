@@ -11,17 +11,37 @@ export const module13Topics: Topic[] = [
         {
           id: `scaling`,
           title: `Scaling Methods`,
-          content: `**Scaling Methods** is essential to **Feature Scaling & Encoding**. Prepare features for ML algorithms. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Scaling Methods** — what you need to know:
+
+- **Core idea:** Prepare features for ML algorithms.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 StandardScaler: zero mean unit variance. MinMaxScaler: [0,1] range. RobustScaler: uses median/IQR, robust to outliers.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Scaling Methods" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Scaling Methods** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.preprocessing import StandardScaler
 import numpy as np
 
@@ -52,17 +72,37 @@ Track: ml | Level: advanced`
         {
           id: `encoding`,
           title: `Categorical Encoding`,
-          content: `**Categorical Encoding** is essential to **Feature Scaling & Encoding**. Prepare features for ML algorithms. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Categorical Encoding** — what you need to know:
+
+- **Core idea:** Prepare features for ML algorithms.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 OneHotEncoder for nominal categories. OrdinalEncoder for ordered categories. Target encoding for high cardinality.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Categorical Encoding" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Categorical Encoding** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 
@@ -93,15 +133,31 @@ Track: ml | Level: advanced`
         {
           id: `binning`,
           title: `Binning & Discretization`,
-          content: `**Binning & Discretization** is essential to **Feature Scaling & Encoding**. Prepare features for ML algorithms. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Binning & Discretization** — what you need to know:
+
+- **Core idea:** Prepare features for ML algorithms.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 KBinsDiscretizer converts continuous to ordinal bins. Can capture non-linear relationships for linear models.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Binning & Discretization" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Binning & Discretization** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Equal-width vs equal-frequency binning`,
             `Can improve linear model performance`,
@@ -139,17 +195,37 @@ Track: ml | Level: advanced`
         {
           id: `datetime-fe`,
           title: `Datetime Feature Engineering`,
-          content: `**Datetime Feature Engineering** is essential to **Feature Scaling & Encoding**. Prepare features for ML algorithms. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Datetime Feature Engineering** — what you need to know:
+
+- **Core idea:** Prepare features for ML algorithms.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Extract hour, day, month, is_weekend, cyclical encoding (sin/cos). Critical for time series and transactional data.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Datetime Feature Engineering" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Datetime Feature Engineering** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -183,13 +259,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Feature Scaling & Encoding** sits in the **ml** track of the Data Science Master curriculum. Prepare features for ML algorithms.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-scaling**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Feature Scaling & Encoding
 meta = {"topic_id": "ml-scaling", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -224,12 +306,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-scaling
 from dataclasses import dataclass
 
@@ -277,7 +361,9 @@ When stuck on **ml-scaling**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -314,9 +400,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-scaling** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Feature Scaling & Encoding
 skills = ["ml", "advanced", "ml-scaling"]
 print("Built project applying:", ", ".join(skills))`,
@@ -408,17 +499,37 @@ print(OneHotEncoder(sparse_output=False).fit_transform([["A"],["B"],["A"]]))`,
         {
           id: `filter`,
           title: `Filter Methods`,
-          content: `**Filter Methods** is essential to **Feature Selection**. Choose most informative features to reduce dimensionality and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Filter Methods** — what you need to know:
+
+- **Core idea:** Choose most informative features to reduce dimensionality and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Select features by statistical test independent of model. SelectKBest, chi2, mutual_info_classif, f_classif.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Filter Methods" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Filter Methods** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.feature_selection import SelectKBest, f_classif
 from sklearn.datasets import load_iris
 
@@ -450,17 +561,37 @@ Track: ml | Level: advanced`
         {
           id: `wrapper`,
           title: `Wrapper Methods`,
-          content: `**Wrapper Methods** is essential to **Feature Selection**. Choose most informative features to reduce dimensionality and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Wrapper Methods** — what you need to know:
+
+- **Core idea:** Choose most informative features to reduce dimensionality and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 RFE (Recursive Feature Elimination) trains model and removes least important features iteratively.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Wrapper Methods" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Wrapper Methods** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -492,15 +623,31 @@ Track: ml | Level: advanced`
         {
           id: `embedded`,
           title: `Embedded Methods`,
-          content: `**Embedded Methods** is essential to **Feature Selection**. Choose most informative features to reduce dimensionality and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Embedded Methods** — what you need to know:
+
+- **Core idea:** Choose most informative features to reduce dimensionality and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Feature selection during model training. Lasso zeroes coefficients. Tree feature_importances_.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Embedded Methods" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Embedded Methods** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `L1 regularization built-in feature selection`,
             `Tree importance from split gain`,
@@ -538,15 +685,31 @@ Track: ml | Level: advanced`
         {
           id: `importance`,
           title: `Permutation Importance`,
-          content: `**Permutation Importance** is essential to **Feature Selection**. Choose most informative features to reduce dimensionality and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Permutation Importance** — what you need to know:
+
+- **Core idea:** Choose most informative features to reduce dimensionality and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Shuffle feature values and measure performance drop. Model-agnostic, detects features model relies on.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Permutation Importance" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Permutation Importance** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `More reliable than tree default importance`,
             `Computes drop in validation metric`,
@@ -586,13 +749,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Feature Selection** sits in the **ml** track of the Data Science Master curriculum. Choose most informative features to reduce dimensionality and overfitting.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-feature-sel**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Feature Selection
 meta = {"topic_id": "ml-feature-sel", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -627,12 +796,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-feature-sel
 from dataclasses import dataclass
 
@@ -680,7 +851,9 @@ When stuck on **ml-feature-sel**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -717,9 +890,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-feature-sel** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Feature Selection
 skills = ["ml", "advanced", "ml-feature-sel"]
 print("Built project applying:", ", ".join(skills))`,
@@ -814,17 +992,37 @@ print(sum(RFE(LogisticRegression(max_iter=200), n_features_to_select=1).fit(X, y
         {
           id: `grid`,
           title: `Grid Search`,
-          content: `**Grid Search** is essential to **Hyperparameter Tuning**. Systematic search for optimal model configuration. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Grid Search** — what you need to know:
+
+- **Core idea:** Systematic search for optimal model configuration.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Exhaustive search over parameter grid. GridSearchCV with cv for robust evaluation.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Grid Search" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Grid Search** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -857,15 +1055,31 @@ Track: ml | Level: advanced`
         {
           id: `random`,
           title: `Random Search`,
-          content: `**Random Search** is essential to **Hyperparameter Tuning**. Systematic search for optimal model configuration. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Random Search** — what you need to know:
+
+- **Core idea:** Systematic search for optimal model configuration.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 RandomizedSearchCV samples from distributions. Often finds good params faster than grid search (Bergstra & Bengio, 2012).
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Random Search" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Random Search** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Sample from log-uniform for learning rates`,
             `n_iter controls number of trials`,
@@ -903,15 +1117,31 @@ Track: ml | Level: advanced`
         {
           id: `optuna`,
           title: `Bayesian Optimization`,
-          content: `**Bayesian Optimization** is essential to **Hyperparameter Tuning**. Systematic search for optimal model configuration. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Bayesian Optimization** — what you need to know:
+
+- **Core idea:** Systematic search for optimal model configuration.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Optuna, Hyperopt use past trials to guide search. TPE sampler models good regions. State-of-the-art for DL hyperparameter tuning.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Bayesian Optimization" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Bayesian Optimization** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Bayesian methods learn from previous trials`,
             `Optuna easy API with pruning`,
@@ -949,15 +1179,31 @@ Track: ml | Level: advanced`
         {
           id: `avoid-leakage`,
           title: `Avoiding Tuning Leakage`,
-          content: `**Avoiding Tuning Leakage** is essential to **Hyperparameter Tuning**. Systematic search for optimal model configuration. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Avoiding Tuning Leakage** — what you need to know:
+
+- **Core idea:** Systematic search for optimal model configuration.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Never peek at test set during tuning. Use nested CV or separate validation set. Report final metric on held-out test only once.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Avoiding Tuning Leakage" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Avoiding Tuning Leakage** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Test set touched only once at end`,
             `Validation set or CV for all tuning decisions`,
@@ -997,13 +1243,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Hyperparameter Tuning** sits in the **ml** track of the Data Science Master curriculum. Systematic search for optimal model configuration.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-hyperparam**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Hyperparameter Tuning
 meta = {"topic_id": "ml-hyperparam", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1038,12 +1290,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-hyperparam
 from dataclasses import dataclass
 
@@ -1091,7 +1345,9 @@ When stuck on **ml-hyperparam**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1128,9 +1384,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-hyperparam** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Hyperparameter Tuning
 skills = ["ml", "advanced", "ml-hyperparam"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1223,15 +1484,31 @@ print(g.best_params_["n_estimators"])`,
         {
           id: `tradeoff`,
           title: `The Tradeoff`,
-          content: `**The Tradeoff** is essential to **Bias-Variance Tradeoff**. Understanding underfitting and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**The Tradeoff** — what you need to know:
+
+- **Core idea:** Understanding underfitting and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Bias: error from wrong assumptions (underfitting). Variance: error from sensitivity to training data (overfitting). Total error = bias² + variance + irreducible noise.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "The Tradeoff" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **The Tradeoff** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Simple models: high bias, low variance`,
             `Complex models: low bias, high variance`,
@@ -1269,17 +1546,37 @@ Track: ml | Level: advanced`
         {
           id: `learning-curves`,
           title: `Learning Curves`,
-          content: `**Learning Curves** is essential to **Bias-Variance Tradeoff**. Understanding underfitting and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Learning Curves** — what you need to know:
+
+- **Core idea:** Understanding underfitting and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Plot train/validation score vs training set size. High bias: both low. High variance: large gap between train and val.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Learning Curves" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Learning Curves** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.model_selection import learning_curve
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
@@ -1313,15 +1610,31 @@ Track: ml | Level: advanced`
         {
           id: `regularization-bv`,
           title: `Regularization Effects`,
-          content: `**Regularization Effects** is essential to **Bias-Variance Tradeoff**. Understanding underfitting and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Regularization Effects** — what you need to know:
+
+- **Core idea:** Understanding underfitting and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Regularization increases bias slightly but reduces variance dramatically. Sweet spot via cross-validation.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Regularization Effects" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Regularization Effects** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `L2 ridge increases bias, reduces variance`,
             `Early stopping is implicit regularization`,
@@ -1359,15 +1672,31 @@ Track: ml | Level: advanced`
         {
           id: `double-descent`,
           title: `Double Descent`,
-          content: `**Double Descent** is essential to **Bias-Variance Tradeoff**. Understanding underfitting and overfitting. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Double Descent** — what you need to know:
+
+- **Core idea:** Understanding underfitting and overfitting.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Modern overparameterized models can exhibit double descent — error decreases, increases, then decreases again beyond interpolation threshold.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Double Descent" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Double Descent** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Classical U-curve bias-variance tradeoff`,
             `Double descent in overparameterized regime`,
@@ -1407,13 +1736,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Bias-Variance Tradeoff** sits in the **ml** track of the Data Science Master curriculum. Understanding underfitting and overfitting.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-bias-variance**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Bias-Variance Tradeoff
 meta = {"topic_id": "ml-bias-variance", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1448,12 +1783,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-bias-variance
 from dataclasses import dataclass
 
@@ -1501,7 +1838,9 @@ When stuck on **ml-bias-variance**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1538,9 +1877,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-bias-variance** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Bias-Variance Tradeoff
 skills = ["ml", "advanced", "ml-bias-variance"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1629,17 +1973,37 @@ print(diagnosis)`,
         {
           id: `shap`,
           title: `SHAP Values`,
-          content: `**SHAP Values** is essential to **Model Interpretability (SHAP, LIME)**. Explain model predictions for trust and debugging. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**SHAP Values** — what you need to know:
+
+- **Core idea:** Explain model predictions for trust and debugging.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 SHapley Additive exPlanations: fair allocation of prediction to each feature based on game theory. shap.TreeExplainer for tree models.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "SHAP Values" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **SHAP Values** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import shap
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -1673,15 +2037,31 @@ Track: ml | Level: advanced`
         {
           id: `lime`,
           title: `LIME`,
-          content: `**LIME** is essential to **Model Interpretability (SHAP, LIME)**. Explain model predictions for trust and debugging. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LIME** — what you need to know:
+
+- **Core idea:** Explain model predictions for trust and debugging.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Local Interpretable Model-agnostic Explanations. Perturb input, observe prediction changes, fit simple local model.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "LIME" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **LIME** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Model-agnostic — works on any black box`,
             `Local fidelity not global accuracy`,
@@ -1719,15 +2099,31 @@ Track: ml | Level: advanced`
         {
           id: `global`,
           title: `Global vs Local Interpretability`,
-          content: `**Global vs Local Interpretability** is essential to **Model Interpretability (SHAP, LIME)**. Explain model predictions for trust and debugging. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Global vs Local Interpretability** — what you need to know:
+
+- **Core idea:** Explain model predictions for trust and debugging.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Global: overall feature importance (permutation, SHAP summary). Local: why this specific prediction (SHAP force plot, LIME).
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Global vs Local Interpretability" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Global vs Local Interpretability** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Global for model understanding and feature selection`,
             `Local for individual decision audit`,
@@ -1765,15 +2161,31 @@ Track: ml | Level: advanced`
         {
           id: `fairness`,
           title: `Interpretability for Fairness`,
-          content: `**Interpretability for Fairness** is essential to **Model Interpretability (SHAP, LIME)**. Explain model predictions for trust and debugging. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Interpretability for Fairness** — what you need to know:
+
+- **Core idea:** Explain model predictions for trust and debugging.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Explainability required for regulated domains. Detect proxy discrimination through feature importance analysis.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Interpretability for Fairness" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Interpretability for Fairness** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `GDPR right to explanation in EU`,
             `Check if protected attributes drive predictions`,
@@ -1813,13 +2225,19 @@ Track: ml | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Model Interpretability (SHAP, LIME)** sits in the **ml** track of the Data Science Master curriculum. Explain model predictions for trust and debugging.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-interpret**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Model Interpretability (SHAP, LIME)
 meta = {"topic_id": "ml-interpret", "track": "ml", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1854,12 +2272,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-interpret
 from dataclasses import dataclass
 
@@ -1907,7 +2327,9 @@ When stuck on **ml-interpret**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1944,9 +2366,14 @@ Track: ml | Level: advanced`
 
 Teams shipping features around **ml-interpret** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Model Interpretability (SHAP, LIME)
 skills = ["ml", "advanced", "ml-interpret"]
 print("Built project applying:", ", ".join(skills))`,

@@ -11,17 +11,37 @@ export const module12Topics: Topic[] = [
         {
           id: `kmeans`,
           title: `K-Means Clustering`,
-          content: `**K-Means Clustering** is essential to **Clustering (K-Means, DBSCAN)**. Group similar data points without labels. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**K-Means Clustering** — what you need to know:
+
+- **Core idea:** Group similar data points without labels.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Partition data into k clusters minimizing within-cluster variance. Initialize centroids, assign, update, repeat.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "K-Means Clustering" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **K-Means Clustering** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.cluster import KMeans
 import numpy as np
 
@@ -53,17 +73,37 @@ Track: ml | Level: beginner`
         {
           id: `dbscan`,
           title: `DBSCAN`,
-          content: `**DBSCAN** is essential to **Clustering (K-Means, DBSCAN)**. Group similar data points without labels. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**DBSCAN** — what you need to know:
+
+- **Core idea:** Group similar data points without labels.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Density-based clustering. No need to specify k. Finds arbitrary shapes. Labels noise as -1.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "DBSCAN" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **DBSCAN** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_moons
 
@@ -94,15 +134,31 @@ Track: ml | Level: beginner`
         {
           id: `hierarchical`,
           title: `Hierarchical Clustering`,
-          content: `**Hierarchical Clustering** is essential to **Clustering (K-Means, DBSCAN)**. Group similar data points without labels. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Hierarchical Clustering** — what you need to know:
+
+- **Core idea:** Group similar data points without labels.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Agglomerative: bottom-up merging. Dendrogram visualizes hierarchy. No preset k needed.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Hierarchical Clustering" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Hierarchical Clustering** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Ward linkage minimizes variance increase`,
             `Dendrogram cut determines k`,
@@ -140,15 +196,31 @@ Track: ml | Level: beginner`
         {
           id: `eval-cluster`,
           title: `Cluster Evaluation`,
-          content: `**Cluster Evaluation** is essential to **Clustering (K-Means, DBSCAN)**. Group similar data points without labels. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Cluster Evaluation** — what you need to know:
+
+- **Core idea:** Group similar data points without labels.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz. No ground truth needed.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Cluster Evaluation" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Cluster Evaluation** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Silhouette: cohesion vs separation`,
             `Higher silhouette = better defined clusters`,
@@ -188,13 +260,19 @@ Track: ml | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Clustering (K-Means, DBSCAN)** sits in the **ml** track of the Data Science Master curriculum. Group similar data points without labels.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-clustering**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Clustering (K-Means, DBSCAN)
 meta = {"topic_id": "ml-clustering", "track": "ml", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -229,12 +307,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-clustering
 from dataclasses import dataclass
 
@@ -282,7 +362,9 @@ When stuck on **ml-clustering**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -319,9 +401,14 @@ Track: ml | Level: beginner`
 
 Teams shipping features around **ml-clustering** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Clustering (K-Means, DBSCAN)
 skills = ["ml", "beginner", "ml-clustering"]
 print("Built project applying:", ", ".join(skills))`,
@@ -417,17 +504,37 @@ print(round(silhouette_score(X, km.labels_), 3))`,
         {
           id: `pca`,
           title: `Principal Component Analysis`,
-          content: `**Principal Component Analysis** is essential to **Dimensionality Reduction (PCA, t-SNE)**. Reduce feature dimensions while preserving structure. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Principal Component Analysis** — what you need to know:
+
+- **Core idea:** Reduce feature dimensions while preserving structure.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Find orthogonal directions of maximum variance. PCA(n_components=k) for compression and visualization.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Principal Component Analysis" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Principal Component Analysis** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.decomposition import PCA
 from sklearn.datasets import load_iris
 
@@ -459,15 +566,31 @@ Track: ml | Level: beginner`
         {
           id: `tsne`,
           title: `t-SNE`,
-          content: `**t-SNE** is essential to **Dimensionality Reduction (PCA, t-SNE)**. Reduce feature dimensions while preserving structure. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**t-SNE** — what you need to know:
+
+- **Core idea:** Reduce feature dimensions while preserving structure.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Non-linear dimensionality reduction for visualization. Preserves local structure. t-SNE(n_components=2, perplexity=30).
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "t-SNE" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **t-SNE** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `t-SNE for visualization only not preprocessing`,
             `perplexity balances local/global structure`,
@@ -505,15 +628,31 @@ Track: ml | Level: beginner`
         {
           id: `lda`,
           title: `Linear Discriminant Analysis`,
-          content: `**Linear Discriminant Analysis** is essential to **Dimensionality Reduction (PCA, t-SNE)**. Reduce feature dimensions while preserving structure. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Linear Discriminant Analysis** — what you need to know:
+
+- **Core idea:** Reduce feature dimensions while preserving structure.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Supervised dimensionality reduction. Maximizes class separation. LDA for dimensionality reduction before classification.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Linear Discriminant Analysis" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Linear Discriminant Analysis** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Uses class labels unlike PCA`,
             `Max k-1 components for k classes`,
@@ -551,15 +690,31 @@ Track: ml | Level: beginner`
         {
           id: `autoencoder`,
           title: `Autoencoders Preview`,
-          content: `**Autoencoders Preview** is essential to **Dimensionality Reduction (PCA, t-SNE)**. Reduce feature dimensions while preserving structure. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Autoencoders Preview** — what you need to know:
+
+- **Core idea:** Reduce feature dimensions while preserving structure.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Neural network compresses input to bottleneck then reconstructs. Non-linear dimensionality reduction. Foundation for VAE.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Autoencoders Preview" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Autoencoders Preview** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Encoder compresses, decoder reconstructs`,
             `Bottleneck layer is reduced representation`,
@@ -599,13 +754,19 @@ Track: ml | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Dimensionality Reduction (PCA, t-SNE)** sits in the **ml** track of the Data Science Master curriculum. Reduce feature dimensions while preserving structure.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-dimred**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Dimensionality Reduction (PCA, t-SNE)
 meta = {"topic_id": "ml-dimred", "track": "ml", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -640,12 +801,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-dimred
 from dataclasses import dataclass
 
@@ -693,7 +856,9 @@ When stuck on **ml-dimred**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -730,9 +895,14 @@ Track: ml | Level: beginner`
 
 Teams shipping features around **ml-dimred** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Dimensionality Reduction (PCA, t-SNE)
 skills = ["ml", "beginner", "ml-dimred"]
 print("Built project applying:", ", ".join(skills))`,
@@ -826,17 +996,37 @@ print(round(PCA().fit(X).explained_variance_ratio_[0], 3))`,
         {
           id: `isolation`,
           title: `Isolation Forest`,
-          content: `**Isolation Forest** is essential to **Anomaly Detection**. Identify outliers and novel patterns in data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Isolation Forest** — what you need to know:
+
+- **Core idea:** Identify outliers and novel patterns in data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Randomly partition data; anomalies isolated in fewer splits. IsolationForest(contamination=0.1).
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Isolation Forest" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Isolation Forest** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.ensemble import IsolationForest
 import numpy as np
 
@@ -868,15 +1058,31 @@ Track: ml | Level: beginner`
         {
           id: `lof`,
           title: `Local Outlier Factor`,
-          content: `**Local Outlier Factor** is essential to **Anomaly Detection**. Identify outliers and novel patterns in data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Local Outlier Factor** — what you need to know:
+
+- **Core idea:** Identify outliers and novel patterns in data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Compare local density of point to neighbors. Points in sparse regions are outliers.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Local Outlier Factor" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Local Outlier Factor** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `LOF score near 1 for normal points`,
             `High LOF = outlier relative to neighbors`,
@@ -914,15 +1120,31 @@ Track: ml | Level: beginner`
         {
           id: `oneclass`,
           title: `One-Class SVM`,
-          content: `**One-Class SVM** is essential to **Anomaly Detection**. Identify outliers and novel patterns in data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**One-Class SVM** — what you need to know:
+
+- **Core idea:** Identify outliers and novel patterns in data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Learn boundary around normal data. OneClassSVM(nu=0.1). Useful when anomalies rare in training.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "One-Class SVM" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **One-Class SVM** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Train only on normal data`,
             `nu controls upper bound on outliers`,
@@ -960,15 +1182,31 @@ Track: ml | Level: beginner`
         {
           id: `applications`,
           title: `Anomaly Detection Applications`,
-          content: `**Anomaly Detection Applications** is essential to **Anomaly Detection**. Identify outliers and novel patterns in data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Anomaly Detection Applications** — what you need to know:
+
+- **Core idea:** Identify outliers and novel patterns in data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Fraud detection, network intrusion, manufacturing defects, system monitoring. Often unsupervised or semi-supervised.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Anomaly Detection Applications" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Anomaly Detection Applications** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Anomalies often rare — class imbalance extreme`,
             `Combine domain rules with ML`,
@@ -1008,13 +1246,19 @@ Track: ml | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Anomaly Detection** sits in the **ml** track of the Data Science Master curriculum. Identify outliers and novel patterns in data.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-anomaly**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Anomaly Detection
 meta = {"topic_id": "ml-anomaly", "track": "ml", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1049,12 +1293,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-anomaly
 from dataclasses import dataclass
 
@@ -1102,7 +1348,9 @@ When stuck on **ml-anomaly**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1139,9 +1387,14 @@ Track: ml | Level: beginner`
 
 Teams shipping features around **ml-anomaly** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Anomaly Detection
 skills = ["ml", "beginner", "ml-anomaly"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1237,15 +1490,31 @@ print(np.sum(p == -1))`,
         {
           id: `apriori`,
           title: `Apriori Algorithm`,
-          content: `**Apriori Algorithm** is essential to **Association Rules**. Find frequent itemsets and association rules in transactional data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Apriori Algorithm** — what you need to know:
+
+- **Core idea:** Find frequent itemsets and association rules in transactional data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Find frequent itemsets meeting minimum support threshold. Generate rules with confidence and lift metrics.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Apriori Algorithm" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Apriori Algorithm** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Support: frequency of itemset in transactions`,
             `Confidence: P(B|A) for rule A→B`,
@@ -1283,17 +1552,37 @@ Track: ml | Level: beginner`
         {
           id: `metrics`,
           title: `Support, Confidence, Lift`,
-          content: `**Support, Confidence, Lift** is essential to **Association Rules**. Find frequent itemsets and association rules in transactional data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Support, Confidence, Lift** — what you need to know:
+
+- **Core idea:** Find frequent itemsets and association rules in transactional data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Support(A→B) = P(A∪B). Confidence = P(B|A). Lift = confidence/P(B). Lift=1 means independent.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Support, Confidence, Lift" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Support, Confidence, Lift** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# Example: 100 transactions
 # {bread, milk}: 20 transactions -> support = 0.20
 # bread alone: 40, milk given bread: 15
@@ -1323,15 +1612,31 @@ Track: ml | Level: beginner`
         {
           id: `mlxtend`,
           title: `mlxtend Library`,
-          content: `**mlxtend Library** is essential to **Association Rules**. Find frequent itemsets and association rules in transactional data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**mlxtend Library** — what you need to know:
+
+- **Core idea:** Find frequent itemsets and association rules in transactional data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 from mlxtend.frequent_patterns import apriori, association_rules. Convert transactions to one-hot encoded DataFrame first.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "mlxtend Library" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **mlxtend Library** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `One-hot encode transactions for apriori`,
             `min_support filters frequent itemsets`,
@@ -1369,15 +1674,31 @@ Track: ml | Level: beginner`
         {
           id: `applications`,
           title: `Recommendation & Retail`,
-          content: `**Recommendation & Retail** is essential to **Association Rules**. Find frequent itemsets and association rules in transactional data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Recommendation & Retail** — what you need to know:
+
+- **Core idea:** Find frequent itemsets and association rules in transactional data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Product recommendations, shelf layout, cross-selling. Collaborative filtering shares mathematical foundations.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Recommendation & Retail" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Recommendation & Retail** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Amazon "customers also bought" uses association`,
             `Rules complement collaborative filtering`,
@@ -1417,13 +1738,19 @@ Track: ml | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Association Rules** sits in the **ml** track of the Data Science Master curriculum. Find frequent itemsets and association rules in transactional data.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-association**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Association Rules
 meta = {"topic_id": "ml-association", "track": "ml", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1458,12 +1785,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-association
 from dataclasses import dataclass
 
@@ -1511,7 +1840,9 @@ When stuck on **ml-association**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1548,9 +1879,14 @@ Track: ml | Level: beginner`
 
 Teams shipping features around **ml-association** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Association Rules
 skills = ["ml", "beginner", "ml-association"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1639,17 +1975,37 @@ print(support)`,
         {
           id: `gmm`,
           title: `GMM Fundamentals`,
-          content: `**GMM Fundamentals** is essential to **Gaussian Mixture Models**. Probabilistic clustering with soft assignments. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**GMM Fundamentals** — what you need to know:
+
+- **Core idea:** Probabilistic clustering with soft assignments.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Mixture of k Gaussian distributions. Each point has probability of belonging to each cluster. EM algorithm for fitting.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "GMM Fundamentals" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **GMM Fundamentals** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.mixture import GaussianMixture
 import numpy as np
 
@@ -1680,15 +2036,31 @@ Track: ml | Level: beginner`
         {
           id: `em`,
           title: `Expectation-Maximization`,
-          content: `**Expectation-Maximization** is essential to **Gaussian Mixture Models**. Probabilistic clustering with soft assignments. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Expectation-Maximization** — what you need to know:
+
+- **Core idea:** Probabilistic clustering with soft assignments.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 E-step: compute responsibilities (posterior probabilities). M-step: update parameters maximizing expected log-likelihood.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Expectation-Maximization" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Expectation-Maximization** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `REPEAT until convergence:
     E-step: compute P(cluster|point) for each point
     M-step: update means, covariances, weights`,
@@ -1717,15 +2089,31 @@ level: beginner`
         {
           id: `vs-kmeans`,
           title: `GMM vs K-Means`,
-          content: `**GMM vs K-Means** is essential to **Gaussian Mixture Models**. Probabilistic clustering with soft assignments. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**GMM vs K-Means** — what you need to know:
+
+- **Core idea:** Probabilistic clustering with soft assignments.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 K-Means is special case of GMM with equal spherical covariances. GMM more flexible but more parameters.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "GMM vs K-Means" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **GMM vs K-Means** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `K-Means: hard assignments, spherical clusters`,
             `GMM: soft assignments, elliptical clusters`,
@@ -1763,15 +2151,31 @@ Track: ml | Level: beginner`
         {
           id: `applications-gmm`,
           title: `Applications`,
-          content: `**Applications** is essential to **Gaussian Mixture Models**. Probabilistic clustering with soft assignments. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Applications** — what you need to know:
+
+- **Core idea:** Probabilistic clustering with soft assignments.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Applications" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Applications** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `score_samples gives log-likelihood per point`,
             `Low likelihood points are anomalies`,
@@ -1811,13 +2215,19 @@ Track: ml | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Gaussian Mixture Models** sits in the **ml** track of the Data Science Master curriculum. Probabilistic clustering with soft assignments.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-gmm**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Gaussian Mixture Models
 meta = {"topic_id": "ml-gmm", "track": "ml", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1852,12 +2262,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-gmm
 from dataclasses import dataclass
 
@@ -1905,7 +2317,9 @@ When stuck on **ml-gmm**, reproduce with the smallest input, enable verbose logg
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1942,9 +2356,14 @@ Track: ml | Level: beginner`
 
 Teams shipping features around **ml-gmm** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Gaussian Mixture Models
 skills = ["ml", "beginner", "ml-gmm"]
 print("Built project applying:", ", ".join(skills))`,

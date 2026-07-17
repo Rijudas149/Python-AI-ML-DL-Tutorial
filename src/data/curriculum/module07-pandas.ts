@@ -11,17 +11,37 @@ export const module07Topics: Topic[] = [
         {
           id: `series`,
           title: `Series`,
-          content: `**Series** is essential to **Series & DataFrames**. Pandas one-dimensional Series and two-dimensional DataFrames. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Series** — what you need to know:
+
+- **Core idea:** Pandas one-dimensional Series and two-dimensional DataFrames.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Series is labeled 1D array. Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Series" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Series** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 s = pd.Series([10, 20, 30], index=["a", "b", "c"])
@@ -55,17 +75,37 @@ Track: data | Level: beginner`
         {
           id: `dataframe`,
           title: `DataFrame Creation`,
-          content: `**DataFrame Creation** is essential to **Series & DataFrames**. Pandas one-dimensional Series and two-dimensional DataFrames. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**DataFrame Creation** — what you need to know:
+
+- **Core idea:** Pandas one-dimensional Series and two-dimensional DataFrames.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 From dict of lists, CSV, JSON, SQL. Columns are Series. .head(), .info(), .describe() for exploration.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "DataFrame Creation" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **DataFrame Creation** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -107,17 +147,37 @@ Track: data | Level: beginner`
         {
           id: `selection`,
           title: `Column & Row Selection`,
-          content: `**Column & Row Selection** is essential to **Series & DataFrames**. Pandas one-dimensional Series and two-dimensional DataFrames. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Column & Row Selection** — what you need to know:
+
+- **Core idea:** Pandas one-dimensional Series and two-dimensional DataFrames.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j]. Avoid chained indexing.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Column & Row Selection" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Column & Row Selection** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"A": [1,2,3], "B": [4,5,6], "C": [7,8,9]})
@@ -149,15 +209,31 @@ Track: data | Level: beginner`
         {
           id: `dtypes`,
           title: `Data Types`,
-          content: `**Data Types** is essential to **Series & DataFrames**. Pandas one-dimensional Series and two-dimensional DataFrames. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Data Types** — what you need to know:
+
+- **Core idea:** Pandas one-dimensional Series and two-dimensional DataFrames.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Data Types" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Data Types** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `category dtype saves memory for repeated strings`,
             `Parse dates early with to_datetime`,
@@ -197,13 +273,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Series & DataFrames** sits in the **data** track of the Data Science Master curriculum. Pandas one-dimensional Series and two-dimensional DataFrames.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **pd-dataframes**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Series & DataFrames
 meta = {"topic_id": "pd-dataframes", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -238,12 +320,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pd-dataframes
 from dataclasses import dataclass
 
@@ -291,7 +375,9 @@ When stuck on **pd-dataframes**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -328,9 +414,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **pd-dataframes** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Series & DataFrames
 skills = ["data", "beginner", "pd-dataframes"]
 print("Built project applying:", ", ".join(skills))`,
@@ -422,17 +513,37 @@ print(df[df["score"] > 86])`,
         {
           id: `boolean`,
           title: `Boolean Filtering`,
-          content: `**Boolean Filtering** is essential to **Indexing, Filtering & Selection**. Advanced indexing with query, isin, and boolean masks. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Boolean Filtering** — what you need to know:
+
+- **Core idea:** Advanced indexing with query, isin, and boolean masks.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 df[df["col"] > value], combine with & | ~. Parentheses required: \`(df.A > 0) & (df.B < 10)\`.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Boolean Filtering" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Boolean Filtering** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"age": [22, 35, 45, 28], "salary": [50000, 80000, 95000, 60000]})
@@ -464,17 +575,37 @@ Track: data | Level: beginner`
         {
           id: `query`,
           title: `query() Method`,
-          content: `**query() Method** is essential to **Indexing, Filtering & Selection**. Advanced indexing with query, isin, and boolean masks. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**query() Method** — what you need to know:
+
+- **Core idea:** Advanced indexing with query, isin, and boolean masks.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 df.query("age > 25 and salary > 55000") — cleaner for complex filters. Use @ for external variables.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "query() Method" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **query() Method** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"x": [1, 5, 3, 8], "y": [2, 4, 6, 10]})
@@ -506,17 +637,37 @@ Track: data | Level: beginner`
         {
           id: `assign`,
           title: `assign() & apply()`,
-          content: `**assign() & apply()** is essential to **Indexing, Filtering & Selection**. Advanced indexing with query, isin, and boolean masks. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**assign() & apply()** — what you need to know:
+
+- **Core idea:** Advanced indexing with query, isin, and boolean masks.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "assign() & apply()" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **assign() & apply()** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"a": [1, 2, 3], "b": [4, 5, 6]})
@@ -550,17 +701,37 @@ Track: data | Level: beginner`
         {
           id: `sort`,
           title: `Sorting & Ranking`,
-          content: `**Sorting & Ranking** is essential to **Indexing, Filtering & Selection**. Advanced indexing with query, isin, and boolean masks. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Sorting & Ranking** — what you need to know:
+
+- **Core idea:** Advanced indexing with query, isin, and boolean masks.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Sorting & Ranking" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Sorting & Ranking** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"name": ["Bob", "Alice", "Charlie"], "score": [87, 95, 92]})
@@ -591,13 +762,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Indexing, Filtering & Selection** sits in the **data** track of the Data Science Master curriculum. Advanced indexing with query, isin, and boolean masks.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **pd-indexing**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Indexing, Filtering & Selection
 meta = {"topic_id": "pd-indexing", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -632,12 +809,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pd-indexing
 from dataclasses import dataclass
 
@@ -685,7 +864,9 @@ When stuck on **pd-indexing**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -722,9 +903,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **pd-indexing** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Indexing, Filtering & Selection
 skills = ["data", "beginner", "pd-indexing"]
 print("Built project applying:", ", ".join(skills))`,
@@ -816,17 +1002,37 @@ print(df.assign(double=lambda x: x["value"] * 2))`,
         {
           id: `groupby`,
           title: `groupby Basics`,
-          content: `**groupby Basics** is essential to **GroupBy & Aggregations**. Split-apply-combine pattern for grouped analysis. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**groupby Basics** — what you need to know:
+
+- **Core idea:** Split-apply-combine pattern for grouped analysis.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate. Multiple columns: groupby(["a","b"]).
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "groupby Basics" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **groupby Basics** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -862,17 +1068,37 @@ Track: data | Level: beginner`
         {
           id: `agg`,
           title: `Multiple Aggregations`,
-          content: `**Multiple Aggregations** is essential to **GroupBy & Aggregations**. Split-apply-combine pattern for grouped analysis. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Multiple Aggregations** — what you need to know:
+
+- **Core idea:** Split-apply-combine pattern for grouped analysis.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 .agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Multiple Aggregations" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Multiple Aggregations** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"group": ["A","A","B","B"], "val": [10, 20, 30, 40]})
@@ -905,17 +1131,37 @@ Track: data | Level: beginner`
         {
           id: `pivot`,
           title: `pivot_table & crosstab`,
-          content: `**pivot_table & crosstab** is essential to **GroupBy & Aggregations**. Split-apply-combine pattern for grouped analysis. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**pivot_table & crosstab** — what you need to know:
+
+- **Core idea:** Split-apply-combine pattern for grouped analysis.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 pivot_table for multidimensional summaries. pd.crosstab for frequency tables.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "pivot_table & crosstab" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **pivot_table & crosstab** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -948,15 +1194,31 @@ Track: data | Level: beginner`
         {
           id: `window`,
           title: `Rolling & Expanding Windows`,
-          content: `**Rolling & Expanding Windows** is essential to **GroupBy & Aggregations**. Split-apply-combine pattern for grouped analysis. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Rolling & Expanding Windows** — what you need to know:
+
+- **Core idea:** Split-apply-combine pattern for grouped analysis.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 rolling(window).mean() for moving averages. expanding() for cumulative stats. Essential for time series.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Rolling & Expanding Windows" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Rolling & Expanding Windows** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `rolling for sliding window statistics`,
             `expanding for cumulative metrics`,
@@ -996,13 +1258,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**GroupBy & Aggregations** sits in the **data** track of the Data Science Master curriculum. Split-apply-combine pattern for grouped analysis.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **pd-groupby**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for GroupBy & Aggregations
 meta = {"topic_id": "pd-groupby", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1037,12 +1305,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pd-groupby
 from dataclasses import dataclass
 
@@ -1090,7 +1360,9 @@ When stuck on **pd-groupby**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1127,9 +1399,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **pd-groupby** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for GroupBy & Aggregations
 skills = ["data", "beginner", "pd-groupby"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1221,17 +1498,37 @@ print(df.groupby("dept").agg(avg_score=("score", "mean")))`,
         {
           id: `merge`,
           title: `merge Operations`,
-          content: `**merge Operations** is essential to **Merging, Joining & Reshaping**. Combine DataFrames with merge, concat, join. Reshape with melt and pivot. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**merge Operations** — what you need to know:
+
+- **Core idea:** Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 pd.merge(left, right, on="key", how="inner|outer|left|right"). SQL-like joins on column values.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "merge Operations" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **merge Operations** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 orders = pd.DataFrame({"id": [1, 2], "product_id": [101, 102]})
@@ -1264,17 +1561,37 @@ Track: data | Level: beginner`
         {
           id: `concat`,
           title: `concat & append`,
-          content: `**concat & append** is essential to **Merging, Joining & Reshaping**. Combine DataFrames with merge, concat, join. Reshape with melt and pivot. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**concat & append** — what you need to know:
+
+- **Core idea:** Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "concat & append" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **concat & append** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df1 = pd.DataFrame({"A": [1, 2]})
@@ -1309,15 +1626,31 @@ Track: data | Level: beginner`
         {
           id: `reshape`,
           title: `melt & pivot`,
-          content: `**melt & pivot** is essential to **Merging, Joining & Reshaping**. Combine DataFrames with merge, concat, join. Reshape with melt and pivot. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**melt & pivot** — what you need to know:
+
+- **Core idea:** Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "melt & pivot" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **melt & pivot** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `melt essential for tidy data format`,
             `Tidy data: one row per observation`,
@@ -1355,15 +1688,31 @@ Track: data | Level: beginner`
         {
           id: `join-index`,
           title: `Index-based Joins`,
-          content: `**Index-based Joins** is essential to **Merging, Joining & Reshaping**. Combine DataFrames with merge, concat, join. Reshape with melt and pivot. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Index-based Joins** — what you need to know:
+
+- **Core idea:** Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 df1.join(df2, on="key") or join on index. set_index before join for index alignment.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Index-based Joins" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Index-based Joins** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Set index for repeated join operations`,
             `join method on DataFrame uses indexes`,
@@ -1403,13 +1752,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Merging, Joining & Reshaping** sits in the **data** track of the Data Science Master curriculum. Combine DataFrames with merge, concat, join. Reshape with melt and pivot.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **pd-merge**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Merging, Joining & Reshaping
 meta = {"topic_id": "pd-merge", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1444,12 +1799,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pd-merge
 from dataclasses import dataclass
 
@@ -1497,7 +1854,9 @@ When stuck on **pd-merge**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1534,9 +1893,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **pd-merge** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Merging, Joining & Reshaping
 skills = ["data", "beginner", "pd-merge"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1630,17 +1994,37 @@ print(pd.concat([df1, df2]))`,
         {
           id: `missing`,
           title: `Handling Missing Data`,
-          content: `**Handling Missing Data** is essential to **Missing Data & Time Series**. Handle NaN values and work with datetime indices. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Handling Missing Data** — what you need to know:
+
+- **Core idea:** Handle NaN values and work with datetime indices.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 isna(), notna(), dropna(), fillna(). interpolate() for gap filling. Missingness patterns matter for ML.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Handling Missing Data" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Handling Missing Data** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -1674,17 +2058,37 @@ Track: data | Level: beginner`
         {
           id: `datetime`,
           title: `Datetime Operations`,
-          content: `**Datetime Operations** is essential to **Missing Data & Time Series**. Handle NaN values and work with datetime indices. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Datetime Operations** — what you need to know:
+
+- **Core idea:** Handle NaN values and work with datetime indices.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Datetime Operations" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Datetime Operations** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -1717,15 +2121,31 @@ Track: data | Level: beginner`
         {
           id: `tz`,
           title: `Timezones`,
-          content: `**Timezones** is essential to **Missing Data & Time Series**. Handle NaN values and work with datetime indices. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Timezones** — what you need to know:
+
+- **Core idea:** Handle NaN values and work with datetime indices.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 tz_localize and tz_convert for timezone-aware datetimes. Critical for global data pipelines.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Timezones" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Timezones** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Store UTC, convert for display`,
             `tz_localize assigns timezone`,
@@ -1763,15 +2183,31 @@ Track: data | Level: beginner`
         {
           id: `ts-features`,
           title: `Time Series Features for ML`,
-          content: `**Time Series Features for ML** is essential to **Missing Data & Time Series**. Handle NaN values and work with datetime indices. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Time Series Features for ML** — what you need to know:
+
+- **Core idea:** Handle NaN values and work with datetime indices.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Time Series Features for ML" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Time Series Features for ML** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Lag features capture temporal dependencies`,
             `Rolling windows for local trends`,
@@ -1811,13 +2247,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Missing Data & Time Series** sits in the **data** track of the Data Science Master curriculum. Handle NaN values and work with datetime indices.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **pd-missing**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Missing Data & Time Series
 meta = {"topic_id": "pd-missing", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1852,12 +2294,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pd-missing
 from dataclasses import dataclass
 
@@ -1905,7 +2349,9 @@ When stuck on **pd-missing**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1942,9 +2388,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **pd-missing** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Missing Data & Time Series
 skills = ["data", "beginner", "pd-missing"]
 print("Built project applying:", ", ".join(skills))`,

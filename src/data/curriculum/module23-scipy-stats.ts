@@ -52,13 +52,29 @@ Watch singularities and infinite limits—split integration domains or transform
 
 **Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Integration & ODEs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Integration & ODEs" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Integration & ODEs** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from scipy import integrate
 val, err = integrate.quad(lambda x: x**2, 0, 1)
 print(round(val, 3), err < 1e-8)`,
@@ -93,13 +109,29 @@ Extrapolation outside sample range is unreliable—clamp or model uncertainty ex
 
 **Applying SciPy Numerical Tools:** Use scipy.optimize, integrate, and interpolate for scientific computing tasks. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Interpolation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Interpolation" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Interpolation** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from scipy.interpolate import interp1d
 import numpy as np
 x = np.array([0, 1, 2])
@@ -175,13 +207,19 @@ Track: data | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**SciPy Numerical Tools** sits in the **data** track of the Data Science Master curriculum. Use scipy.optimize, integrate, and interpolate for scientific computing tasks.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **scipy-basics**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for SciPy Numerical Tools
 meta = {"topic_id": "scipy-basics", "track": "data", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -216,12 +254,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for scipy-basics
 from dataclasses import dataclass
 
@@ -269,7 +309,9 @@ When stuck on **scipy-basics**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -306,9 +348,14 @@ Track: data | Level: intermediate`
 
 Teams shipping features around **scipy-basics** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for SciPy Numerical Tools
 skills = ["data", "intermediate", "scipy-basics"]
 print("Built project applying:", ", ".join(skills))`,
@@ -454,13 +501,29 @@ Check with Q-Q plots and report effect size (Cohen's d).
 
 **Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "t-Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "t-Tests" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **t-Tests** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from scipy import stats
 import numpy as np
 a = np.random.normal(0, 1, 100)
@@ -498,13 +561,29 @@ Expected frequencies should be ≥5 in most cells; combine categories otherwise.
 
 **Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Chi-Square Tests", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Chi-Square Tests" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Chi-Square Tests** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from scipy.stats import chi2_contingency
 import numpy as np
 table = np.array([[10, 20], [30, 40]])
@@ -541,11 +620,23 @@ Track: data | Level: intermediate`
 
 **Applying Hypothesis Testing:** Apply t-tests, chi-square tests, and interpret p-values responsibly. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Interpreting Results Responsibly", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Interpreting Results Responsibly" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Interpreting Results Responsibly** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Effect size and CI matter more than p alone`,
             `Power analysis plans sample size ex ante`,
@@ -585,13 +676,19 @@ Track: data | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Hypothesis Testing** sits in the **data** track of the Data Science Master curriculum. Apply t-tests, chi-square tests, and interpret p-values responsibly.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **stats-hypothesis**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Hypothesis Testing
 meta = {"topic_id": "stats-hypothesis", "track": "data", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -626,12 +723,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for stats-hypothesis
 from dataclasses import dataclass
 
@@ -679,7 +778,9 @@ When stuck on **stats-hypothesis**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -716,9 +817,14 @@ Track: data | Level: intermediate`
 
 Teams shipping features around **stats-hypothesis** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Hypothesis Testing
 skills = ["data", "intermediate", "stats-hypothesis"]
 print("Built project applying:", ", ".join(skills))`,
@@ -823,13 +929,29 @@ print(chi2_contingency([[5,5],[10,10]])[2] == 1)`,
 
 **Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Random Variables in scipy.stats", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Random Variables in scipy.stats" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Random Variables in scipy.stats** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from scipy import stats
 import numpy as np
 samples = stats.norm.rvs(loc=0, scale=1, size=1000, random_state=42)
@@ -865,13 +987,29 @@ Overfitting parametric forms misleads—compare models with AIC/BIC or nonparame
 
 **Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Fitting Distributions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Fitting Distributions" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Fitting Distributions** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from scipy import stats
 import numpy as np
 data = stats.norm.rvs(5, 2, size=500, random_state=0)
@@ -902,7 +1040,11 @@ Track: data | Level: intermediate`
         {
           id: `sampling`,
           title: `Sampling Strategies`,
-          content: `**Sampling Strategies** is essential to **Probability Distributions**. Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Sampling Strategies** — what you need to know:
+
+- **Core idea:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Simple random sampling, stratified sampling (preserve class proportions), bootstrap resampling for CI estimation (\`np.random.choice\` with replace).
 
@@ -910,13 +1052,29 @@ Monte Carlo integrates expectations by drawing samples—error shrinks as O(1/�
 
 **Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Sampling Strategies", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Sampling Strategies" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Sampling Strategies** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 rng = np.random.default_rng(0)
 boot_means = [rng.choice([1,2,3,4,5], size=5, replace=True).mean() for _ in range(1000)]
@@ -946,7 +1104,11 @@ Track: data | Level: intermediate`
         {
           id: `clt`,
           title: `Central Limit Theorem`,
-          content: `**Central Limit Theorem** is essential to **Probability Distributions**. Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Central Limit Theorem** — what you need to know:
+
+- **Core idea:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sum/mean of iid samples with finite variance approaches normal as n grows—explains widespread normal approximations. Does not fix heavy-tailed single-draw risk.
 
@@ -954,11 +1116,23 @@ For proportions, use binomial or normal approx with care when np(1-p) small.
 
 **Applying Probability Distributions:** Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Central Limit Theorem", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Central Limit Theorem" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Central Limit Theorem** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `CLT applies to sample means not individual draws`,
             `Finite variance assumption matters`,
@@ -998,13 +1172,19 @@ Track: data | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Probability Distributions** sits in the **data** track of the Data Science Master curriculum. Model uncertainty with scipy.stats: PDFs, CDFs, sampling, and fitting.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **stats-distributions**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Probability Distributions
 meta = {"topic_id": "stats-distributions", "track": "data", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1039,12 +1219,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for stats-distributions
 from dataclasses import dataclass
 
@@ -1092,7 +1274,9 @@ When stuck on **stats-distributions**, reproduce with the smallest input, enable
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1129,9 +1313,14 @@ Track: data | Level: intermediate`
 
 Teams shipping features around **stats-distributions** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Probability Distributions
 skills = ["data", "intermediate", "stats-distributions"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1235,13 +1424,29 @@ Check **linearity**, **homoscedasticity** (Breusch-Pagan), **residual normality*
 
 **Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "OLS Linear Regression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "OLS Linear Regression" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **OLS Linear Regression** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import statsmodels.formula.api as smf
 import pandas as pd
 df = pd.DataFrame({"y": [1,2,3,4], "x": [0,1,2,3]})
@@ -1278,13 +1483,29 @@ Class imbalance requires class weights or resampling—accuracy alone misleads.
 
 **Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Logistic Regression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Logistic Regression" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Logistic Regression** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import statsmodels.formula.api as smf
 import pandas as pd
 df = pd.DataFrame({"y": [0,0,1,1], "x": [0,1,2,3]})
@@ -1314,7 +1535,11 @@ Track: data | Level: intermediate`
         {
           id: `diagnostics`,
           title: `Regression Diagnostics`,
-          content: `**Regression Diagnostics** is essential to **Regression with statsmodels**. Ordinary least squares and logistic regression for inference-rich modeling. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Regression Diagnostics** — what you need to know:
+
+- **Core idea:** Ordinary least squares and logistic regression for inference-rich modeling.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Influential points: Cook's distance. Heteroscedasticity robust SE: \`cov_type="HC3"\`. VIF quantifies multicollinearity. Out-of-sample validation on holdout prevents overfitting narrative.
 
@@ -1322,11 +1547,23 @@ Transform targets (log) or use GLMs when residuals show systematic patterns.
 
 **Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Regression Diagnostics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Regression Diagnostics" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Regression Diagnostics** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Robust SE when variance not constant`,
             `Cross-validation for predictive performance`,
@@ -1370,11 +1607,23 @@ Publishing requires reporting limitations, data collection, and missing data han
 
 **Applying Regression with statsmodels:** Ordinary least squares and logistic regression for inference-rich modeling. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Inference vs Prediction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Inference vs Prediction" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Inference vs Prediction** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Coefficients answer "what if x increases by 1?"`,
             `Regularization biases coefficients but improves prediction`,
@@ -1414,13 +1663,19 @@ Track: data | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Regression with statsmodels** sits in the **data** track of the Data Science Master curriculum. Ordinary least squares and logistic regression for inference-rich modeling.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **stats-regression**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Regression with statsmodels
 meta = {"topic_id": "stats-regression", "track": "data", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1455,12 +1710,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for stats-regression
 from dataclasses import dataclass
 
@@ -1508,7 +1765,9 @@ When stuck on **stats-regression**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1545,9 +1804,14 @@ Track: data | Level: intermediate`
 
 Teams shipping features around **stats-regression** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Regression with statsmodels
 skills = ["data", "intermediate", "stats-regression"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1690,11 +1954,23 @@ Avoid improper priors unless you understand measure theory implications. Documen
 
 **Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Choosing Priors", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Choosing Priors" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Choosing Priors** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Sensitivity analysis builds stakeholder trust`,
             `Hierarchical priors pool information across groups`,
@@ -1738,11 +2014,23 @@ Computation cost limits model complexity—start simple, add hierarchy increment
 
 **Applying Bayesian Inference Intro:** Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview. Sound data reasoning prevents costly modeling mistakes and accelerates exploratory analysis. When studying "Sampling the Posterior", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Sampling the Posterior" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Sampling the Posterior** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `R-hat > 1.01 suggests poor mixing`,
             `Longer chains or reparameterization help`,
@@ -1824,13 +2112,19 @@ Track: data | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Bayesian Inference Intro** sits in the **data** track of the Data Science Master curriculum. Update beliefs with data using Bayes' theorem, priors, and posterior sampling overview.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **stats-bayes**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Bayesian Inference Intro
 meta = {"topic_id": "stats-bayes", "track": "data", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1865,12 +2159,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for stats-bayes
 from dataclasses import dataclass
 
@@ -1918,7 +2214,9 @@ When stuck on **stats-bayes**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1955,9 +2253,14 @@ Track: data | Level: advanced`
 
 Teams shipping features around **stats-bayes** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Bayesian Inference Intro
 skills = ["data", "advanced", "stats-bayes"]
 print("Built project applying:", ", ".join(skills))`,

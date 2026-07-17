@@ -13,17 +13,41 @@ export const moduleMath03Topics: Topic[] = [
           title: `Determinant Definition`,
           content: `The **determinant** det(A) is a scalar for square A∈ℝ^{n×n}. det(A) measures signed volume scaling factor of linear transform A. det(A)=0 iff A is singular (non-invertible). For 2×2: det[[a,b],[c,d]]=ad−bc. det(Aᵀ)=det(A). det(AB)=det(A)det(B). Swapping two rows flips sign. Multiplying row by k multiplies det by k. Cofactor expansion works recursively. Determinants appear in change of variables in integrals and multivariate Gaussian normalization.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Determinant Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Determinant Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `det(I) = 1`,
             `det(AB) = det(A)det(B)`,
@@ -31,16 +55,11 @@ export const moduleMath03Topics: Topic[] = [
             `det(A) = 0 ⇔ A singular`,
             `det(Aᵀ) = det(A)`
           ],
-          diagram: `   2×2 area scaling:
-
+          diagram: `2×2 area scaling:
    unit square ──A──→ parallelogram
    area × |det(A)|
-
    det>0: orientation preserved
-   det<0: reflection
-   │
-   │  · · ·
-   └──────────`,
+   det<0: reflection`,
           keyPoints: [
             `Determinant = volume scale factor`,
             `Zero det → not invertible`,
@@ -69,9 +88,6 @@ Visual summary:
   area × |det(A)|
   det>0: orientation preserved
   det<0: reflection
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Determinant = volume scale factor
@@ -86,21 +102,49 @@ Track: math | Level: intermediate`
         {
           id: `det-geom`,
           title: `Geometric Meaning`,
-          content: `**Geometric Meaning** is essential to **Determinants**. Compute and interpret determinants as volume scaling and invertibility tests. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Geometric Meaning** — what you need to know:
+
+- **Core idea:** Compute and interpret determinants as volume scaling and invertibility tests.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves orientation. In 3D, |det| = volume of parallelepiped. Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx. Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Geometric Meaning" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Geometric Meaning** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `|det([v1 v2])| = parallelogram area`,
             `3D: |det| = volume`,
@@ -108,16 +152,9 @@ Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves
             `sign(det) = orientation`,
             `|det J| in change of variables`
           ],
-          diagram: `   columns of A span shape:
-
+          diagram: `columns of A span shape:
       v2
-      │╱
-      │╱ area = |det A|
-      │╱
-      └──── v1
-   │
-   │  · · ·
-   └──────────`,
+      │╱ area = |det A|`,
           keyPoints: [
             `Columns as spanning vectors`,
             `Zero volume → dependent columns`,
@@ -141,13 +178,7 @@ Key relationships:
 Visual summary:
   columns of A span shape:
   v2
-  │╱
   │╱ area = |det A|
-  │╱
-  └──── v1
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Columns as spanning vectors
@@ -162,21 +193,49 @@ Track: math | Level: intermediate`
         {
           id: `det-prop`,
           title: `Properties & Computation`,
-          content: `**Properties & Computation** is essential to **Determinants**. Compute and interpret determinants as volume scaling and invertibility tests. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Properties & Computation** — what you need to know:
+
+- **Core idea:** Compute and interpret determinants as volume scaling and invertibility tests.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Triangular matrix: det = product of diagonal entries. Row operations: adding multiple of row doesn't change det; swapping flips sign; scaling row scales det. LU: det(A)=det(L)det(U)=∏U_ii. O(n³) via elimination vs O(n!) naive cofactor. log(det(A)) via log-sum for positive definite matrices in likelihoods. np.linalg.slogdet returns sign and log-abs-det stably. For large PD matrices, Cholesky gives log det = 2∑log(diag(L)).
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Properties & Computation" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Properties & Computation** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Triangular: det = ∏ diagonal`,
             `Row swap → multiply det by −1`,
@@ -184,16 +243,11 @@ Triangular matrix: det = product of diagonal entries. Row operations: adding mul
             `log det(A) for PD via Cholesky`,
             `slogdet for numerical stability`
           ],
-          diagram: `   Upper triangular U:
-
+          diagram: `Upper triangular U:
    [ * * * ]
    [ 0 * * ]
    [ 0 0 * ]
-
-   det = u11 · u22 · u33
-   │
-   │  · · ·
-   └──────────`,
+   det = u11 · u22 · u33`,
           keyPoints: [
             `Triangular det is easy product`,
             `LU factorization for large n`,
@@ -221,9 +275,6 @@ Visual summary:
   [ 0 * * ]
   [ 0 0 * ]
   det = u11 · u22 · u33
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Triangular det is easy product
@@ -238,21 +289,49 @@ Track: math | Level: intermediate`
         {
           id: `det-ml`,
           title: `Determinants in ML`,
-          content: `**Determinants in ML** is essential to **Determinants**. Compute and interpret determinants as volume scaling and invertibility tests. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Determinants in ML** — what you need to know:
+
+- **Core idea:** Compute and interpret determinants as volume scaling and invertibility tests.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Multivariate Gaussian: p(x)=exp(−½(x−μ)ᵀΣ⁻¹(x−μ))/√((2π)ⁿdet Σ). Zero det Σ → degenerate distribution. Normalizing flows track log|det ∂f/∂x| for density transformation. Volume preservation in invertible nets requires |det J|=1. PCA uses det(Σ) related to product of eigenvalues. Regularization adds λI ensuring det(Σ+λI)>0. Matrix determinant lemma useful in Gaussian process updates. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Determinants in ML" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Determinants in ML** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `MVN norm: (2π)^(−n/2) |Σ|^(−1/2)`,
             `det(Σ) = ∏ λ_i`,
@@ -260,16 +339,10 @@ Multivariate Gaussian: p(x)=exp(−½(x−μ)ᵀΣ⁻¹(x−μ))/√((2π)ⁿdet
             `Regularize: Σ + λI`,
             `det=0 → singular covariance`
           ],
-          diagram: `   Σ eigenvalues λ1,λ2:
-
+          diagram: `Σ eigenvalues λ1,λ2:
    det(Σ) = λ1 · λ2
-
    one λ→0: flat direction
-   det→0: no density in that dir
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   det→0: no density in that dir`,
           keyPoints: [
             `MVN needs positive det Σ`,
             `Eigenvalue product = determinant`,
@@ -297,10 +370,6 @@ Visual summary:
   det(Σ) = λ1 · λ2
   one λ→0: flat direction
   det→0: no density in that dir
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. MVN needs positive det Σ
@@ -317,13 +386,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Determinants** sits in the **math** track of the Data Science Master curriculum. Compute and interpret determinants as volume scaling and invertibility tests.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-determinants**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Determinants
 meta = {"topic_id": "math-determinants", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -358,12 +433,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-determinants
 from dataclasses import dataclass
 
@@ -411,7 +488,9 @@ When stuck on **math-determinants**, reproduce with the smallest input, enable v
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -448,9 +527,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-determinants** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Determinants
 skills = ["math", "intermediate", "math-determinants"]
 print("Built project applying:", ", ".join(skills))`,
@@ -549,21 +633,49 @@ print(np.allclose(np.linalg.det(A@B), np.linalg.det(A)*np.linalg.det(B)))`,
         {
           id: `inv-def`,
           title: `Inverse Definition`,
-          content: `**Inverse Definition** is essential to **Matrix Inverse**. Compute and apply matrix inverses for solving systems and understanding transformations. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Inverse Definition** — what you need to know:
+
+- **Core idea:** Compute and apply matrix inverses for solving systems and understanding transformations.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 A⁻¹ satisfies AA⁻¹=A⁻¹A=I for square invertible A. Unique when exists. (AB)⁻¹=B⁻¹A⁻¹ reverse order like transpose. (Aᵀ)⁻¹=(A⁻¹)ᵀ. Inverse undoes linear transform: if y=Ax then x=A⁻¹y. Not all matrices invert—singular when det=0. Never invert large dense matrices explicitly in production; prefer solve(A,b). Inverse of orthogonal Q is Qᵀ. Diagonal inverse inverts diagonal entries. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Inverse Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Inverse Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `AA⁻¹ = A⁻¹A = I`,
             `(AB)⁻¹ = B⁻¹A⁻¹`,
@@ -571,16 +683,10 @@ A⁻¹ satisfies AA⁻¹=A⁻¹A=I for square invertible A. Unique when exists. 
             `A⁻¹ exists ⇔ det(A) ≠ 0`,
             `Prefer solve(A,b) over inv(A)@b`
           ],
-          diagram: `   A ──→ y = Ax
-   ↑         │
+          diagram: `A ──→ y = Ax
    └── A⁻¹ ──┘
-
    A⁻¹ undoes A
-   singular A: no inverse
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   singular A: no inverse`,
           keyPoints: [
             `Inverse unique if exists`,
             `Reverse order for product inverse`,
@@ -604,14 +710,9 @@ Key relationships:
 
 Visual summary:
   A ──→ y = Ax
-  ↑         │
   └── A⁻¹ ──┘
   A⁻¹ undoes A
   singular A: no inverse
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Inverse unique if exists
@@ -626,21 +727,49 @@ Track: math | Level: intermediate`
         {
           id: `inv-2x2`,
           title: `2×2 Inverse Formula`,
-          content: `**2×2 Inverse Formula** is essential to **Matrix Inverse**. Compute and apply matrix inverses for solving systems and understanding transformations. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**2×2 Inverse Formula** — what you need to know:
+
+- **Core idea:** Compute and apply matrix inverses for solving systems and understanding transformations.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 For A=[[a,b],[c,d]], A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]] when det≠0. Adjugate divided by determinant. Quick hand calculation useful for intuition. Cofactor matrix transpose divided by det generalizes to n×n. Singular when rows proportional: [1,2] and [2,4]. Near-singular when det≈0 causes huge entries in A⁻¹—ill-conditioning. Always check cond(A) before trusting explicit inverse. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "2×2 Inverse Formula" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **2×2 Inverse Formula** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A⁻¹ = (1/det) [[d,−b], [−c,a]]`,
             `det = ad − bc`,
@@ -648,16 +777,9 @@ For A=[[a,b],[c,d]], A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]] when det≠0. Adjug
             `adj(A)ᵀ / det(A)`,
             `Large entries → ill-conditioned`
           ],
-          diagram: `   [[a b]⁻¹  =  1/(ad-bc) [[ d -b]
+          diagram: `[[a b]⁻¹  =  1/(ad-bc) [[ d -b]
     [c d]]                    [-c  a]]
-
-   swap a,d; negate b,c; divide
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   swap a,d; negate b,c; divide`,
           keyPoints: [
             `Memorize 2×2 formula for speed`,
             `Determinant in denominator critical`,
@@ -685,12 +807,6 @@ Visual summary:
   [[a b]⁻¹  =  1/(ad-bc) [[ d -b]
   [c d]]                    [-c  a]]
   swap a,d; negate b,c; divide
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Memorize 2×2 formula for speed
@@ -707,17 +823,41 @@ Track: math | Level: intermediate`
           title: `Pseudo-Inverse`,
           content: `**Moore-Penrose pseudo-inverse** A⁺ generalizes inverse for non-square or singular A. SVD: A=UΣVᵀ, A⁺=VΣ⁺Uᵀ where Σ⁺ inverts non-zero singular values. Least squares minimum-norm: x=A⁺b. np.linalg.pinv uses SVD. Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Pseudo-Inverse" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Pseudo-Inverse** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A⁺ via SVD: V Σ⁺ Uᵀ`,
             `Least squares: x = A⁺b`,
@@ -725,16 +865,10 @@ Track: math | Level: intermediate`
             `rank(A) = # nonzero σ`,
             `pinv handles rectangular A`
           ],
-          diagram: `   SVD: A = U Σ Vᵀ
-
+          diagram: `SVD: A = U Σ Vᵀ
    invert nonzero σ only
    zero σ → 0 in Σ⁺
-
-   robust for rank-deficient
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   robust for rank-deficient`,
           keyPoints: [
             `SVD basis for pseudo-inverse`,
             `Works for non-square matrices`,
@@ -760,10 +894,6 @@ Visual summary:
   invert nonzero σ only
   zero σ → 0 in Σ⁺
   robust for rank-deficient
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. SVD basis for pseudo-inverse
@@ -778,21 +908,49 @@ Track: math | Level: intermediate`
         {
           id: `inv-ml`,
           title: `Inverse in Regression`,
-          content: `**Inverse in Regression** is essential to **Matrix Inverse**. Compute and apply matrix inverses for solving systems and understanding transformations. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Inverse in Regression** — what you need to know:
+
+- **Core idea:** Compute and apply matrix inverses for solving systems and understanding transformations.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Closed-form OLS: β=(XᵀX)⁻¹Xᵀy when XᵀX invertible. Ridge: β=(XᵀX+λI)⁻¹Xᵀy always invertible for λ>0. Newton step: Δθ=H⁻¹∇L uses Hessian inverse. Fisher information inverse gives Cramér-Rao bound. Avoid explicit inverse—use np.linalg.solve(XTX, XTy). Woodbury matrix identity efficient for low-rank updates. Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Inverse in Regression" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Inverse in Regression** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `OLS: β = (XᵀX)⁻¹ Xᵀy`,
             `Ridge: (XᵀX + λI)⁻¹ Xᵀy`,
@@ -800,16 +958,10 @@ Closed-form OLS: β=(XᵀX)⁻¹Xᵀy when XᵀX invertible. Ridge: β=(XᵀX+λ
             `Use solve not inv`,
             `Woodbury for rank-k updates`
           ],
-          diagram: `   Normal equations path:
-
+          diagram: `Normal equations path:
    XᵀX β = Xᵀy
    solve instead of inv(XᵀX)
-
-   λI ridge stabilizes diagonal
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   λI ridge stabilizes diagonal`,
           keyPoints: [
             `OLS needs full rank X`,
             `Ridge guarantees invertibility`,
@@ -838,10 +990,6 @@ Visual summary:
   XᵀX β = Xᵀy
   solve instead of inv(XᵀX)
   λI ridge stabilizes diagonal
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. OLS needs full rank X
@@ -858,13 +1006,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Matrix Inverse** sits in the **math** track of the Data Science Master curriculum. Compute and apply matrix inverses for solving systems and understanding transformations.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-inverse**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Matrix Inverse
 meta = {"topic_id": "math-inverse", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -899,12 +1053,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-inverse
 from dataclasses import dataclass
 
@@ -952,7 +1108,9 @@ When stuck on **math-inverse**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -989,9 +1147,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-inverse** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Matrix Inverse
 skills = ["math", "intermediate", "math-inverse"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1092,17 +1255,41 @@ print(np.linalg.pinv(X)@y)`,
           title: `Eigenvalue Problem`,
           content: `Av = λv: v≠0 is **eigenvector**, λ is **eigenvalue**. A acts on eigenvector by scaling only. det(A−λI)=0 characteristic polynomial roots give eigenvalues. Sum of eigenvalues = tr(A). Product = det(A). For symmetric A, real eigenvalues and orthogonal eigenvectors (spectral theorem). Power iteration finds dominant eigenvalue. Eigenvalues determine stability of linear dynamical systems x_{t+1}=Ax_t: |λ|<1 stable.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Eigenvalue Problem" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Eigenvalue Problem** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Av = λv`,
             `det(A − λI) = 0`,
@@ -1110,16 +1297,11 @@ print(np.linalg.pinv(X)@y)`,
             `∏ λ_i = det(A)`,
             `Symmetric A → real λ, orthogonal v`
           ],
-          diagram: `   Av stretches v by λ
-
+          diagram: `Av stretches v by λ
       v ──A──→ λv (same direction)
-
    λ>1: expand
    0<λ<1: shrink
-   λ<0: flip + scale
-   │
-   │  · · ·
-   └──────────`,
+   λ<0: flip + scale`,
           keyPoints: [
             `Eigenvectors unchanged in direction`,
             `Characteristic polynomial for λ`,
@@ -1148,9 +1330,6 @@ Visual summary:
   λ>1: expand
   0<λ<1: shrink
   λ<0: flip + scale
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Eigenvectors unchanged in direction
@@ -1165,21 +1344,49 @@ Track: math | Level: intermediate`
         {
           id: `eig-diag`,
           title: `Diagonalization`,
-          content: `**Diagonalization** is essential to **Eigenvalues & Eigenvectors**. Diagonalization, spectral theory, and dynamics via eigen decomposition. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Diagonalization** — what you need to know:
+
+- **Core idea:** Diagonalization, spectral theory, and dynamics via eigen decomposition.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 If A has n independent eigenvectors, A=VΛV⁻¹ with Λ diagonal eigenvalues, V columns eigenvectors. A^k = VΛ^k V⁻¹ simplifies matrix powers. Symmetric: A=QΛQᵀ with Q orthogonal. Not all matrices diagonalizable—defective Jordan form needed. Similar matrices share eigenvalues. PCA covariance diagonalized by eigenvectors. Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Diagonalization" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Diagonalization** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A = V Λ V⁻¹`,
             `Λ = diag(λ₁,...,λₙ)`,
@@ -1187,16 +1394,10 @@ If A has n independent eigenvectors, A=VΛV⁻¹ with Λ diagonal eigenvalues, V
             `A^k = V Λ^k V⁻¹`,
             `Similar matrices: same eigenvalues`
           ],
-          diagram: `   A = V Λ V⁻¹
-
+          diagram: `A = V Λ V⁻¹
    V: eigenvector basis
    Λ: scale in that basis
-
-   compute A^100 via Λ^100
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   compute A^100 via Λ^100`,
           keyPoints: [
             `Diagonalization simplifies powers`,
             `Orthogonal Q for symmetric A`,
@@ -1223,10 +1424,6 @@ Visual summary:
   V: eigenvector basis
   Λ: scale in that basis
   compute A^100 via Λ^100
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Diagonalization simplifies powers
@@ -1241,21 +1438,49 @@ Track: math | Level: intermediate`
         {
           id: `eig-pca`,
           title: `Eigenvalues in PCA`,
-          content: `**Eigenvalues in PCA** is essential to **Eigenvalues & Eigenvectors**. Diagonalization, spectral theory, and dynamics via eigen decomposition. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Eigenvalues in PCA** — what you need to know:
+
+- **Core idea:** Diagonalization, spectral theory, and dynamics via eigen decomposition.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions. Sort λ descending; keep top k for dimensionality reduction. Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig. Whitening scales by 1/√λ. Zero eigenvalues indicate redundant features or rank deficiency. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Eigenvalues in PCA" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Eigenvalues in PCA** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Σ v_i = λ_i v_i`,
             `λ_i = variance along PC i`,
@@ -1263,16 +1488,11 @@ Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors =
             `Keep top-k eigenvectors`,
             `eigh for symmetric Σ`
           ],
-          diagram: `   PCA axes:
-
+          diagram: `PCA axes:
    max variance → PC1 (λ1)
         ↗
    PC2 ↗  (λ2 smaller)
-
-   project onto top k PCs
-   │
-   │  · · ·
-   └──────────`,
+   project onto top k PCs`,
           keyPoints: [
             `Largest λ = most variance direction`,
             `eigh preferred for covariance`,
@@ -1302,9 +1522,6 @@ Visual summary:
   ↗
   PC2 ↗  (λ2 smaller)
   project onto top k PCs
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Largest λ = most variance direction
@@ -1319,21 +1536,49 @@ Track: math | Level: intermediate`
         {
           id: `eig-markov`,
           title: `Eigenvalues in Markov & PageRank`,
-          content: `**Eigenvalues in Markov & PageRank** is essential to **Eigenvalues & Eigenvectors**. Diagonalization, spectral theory, and dynamics via eigen decomposition. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Eigenvalues in Markov & PageRank** — what you need to know:
+
+- **Core idea:** Diagonalization, spectral theory, and dynamics via eigen decomposition.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Stochastic matrix P (rows sum 1): largest eigenvalue λ₁=1 with stationary distribution π as eigenvector Pᵀπ=π. Power method: repeat v←Pv/||Pv|| converges to dominant eigenvector. Google PageRank solves eigenvalue problem on web graph. Markov chain mixing time related to second eigenvalue magnitude. Reversible chains have real eigenvalues. Spectral clustering uses eigenvectors of graph Laplacian—connects linear algebra to unsupervised learning.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Eigenvalues in Markov & PageRank" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Eigenvalues in Markov & PageRank** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `P 1 = 1 for stochastic P`,
             `π: Pᵀπ = π (stationary)`,
@@ -1341,16 +1586,11 @@ Stochastic matrix P (rows sum 1): largest eigenvalue λ₁=1 with stationary dis
             `PageRank = eigenvector of link matrix`,
             `Spectral clustering uses Laplacian eigenvectors`
           ],
-          diagram: `   Power iteration:
-
+          diagram: `Power iteration:
    v₀ random
    v₁ = P v₀ / ||P v₀||
    v₂ = P v₁ / ||P v₁||
-   ...
-   → stationary distribution
-   │
-   │  · · ·
-   └──────────`,
+   → stationary distribution`,
           keyPoints: [
             `λ=1 for stochastic matrices`,
             `Power method simple but slow`,
@@ -1378,11 +1618,7 @@ Visual summary:
   v₀ random
   v₁ = P v₀ / ||P v₀||
   v₂ = P v₁ / ||P v₁||
-  ...
   → stationary distribution
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. λ=1 for stochastic matrices
@@ -1399,13 +1635,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Eigenvalues & Eigenvectors** sits in the **math** track of the Data Science Master curriculum. Diagonalization, spectral theory, and dynamics via eigen decomposition.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-eigen**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Eigenvalues & Eigenvectors
 meta = {"topic_id": "math-eigen", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1440,12 +1682,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-eigen
 from dataclasses import dataclass
 
@@ -1493,7 +1737,9 @@ When stuck on **math-eigen**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1530,9 +1776,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-eigen** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Eigenvalues & Eigenvectors
 skills = ["math", "intermediate", "math-eigen"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1634,17 +1885,41 @@ print(np.allclose(np.trace(A), w.sum()))`,
           title: `SVD Definition`,
           content: `Any A∈ℝ^{m×n} factors as A=UΣVᵀ where U∈ℝ^{m×m} orthogonal, V∈ℝ^{n×n} orthogonal, Σ∈ℝ^{m×n} diagonal with σ₁≥σ₂≥...≥0 **singular values**. Rank(A)=#nonzero σ. Compact SVD uses only positive σ columns. SVD always exists—more general than eigendecomposition. σ_i² = eigenvalues of AᵀA (and AAᵀ). First right singular vector maximizes ||Av||/||v||. Foundation for PCA, recommender systems, and latent semantic analysis.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "SVD Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **SVD Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A = U Σ Vᵀ`,
             `σ₁ ≥ σ₂ ≥ ... ≥ 0`,
@@ -1652,16 +1927,10 @@ print(np.allclose(np.trace(A), w.sum()))`,
             `σ_i(A) = √λ_i(AᵀA)`,
             `U,V orthogonal`
           ],
-          diagram: `   A = U Σ Vᵀ
-
+          diagram: `A = U Σ Vᵀ
    m×m   m×n   n×n
    rot   scale rot
-
-   σ1 ≥ σ2 ≥ ... ≥ 0
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   σ1 ≥ σ2 ≥ ... ≥ 0`,
           keyPoints: [
             `SVD always exists`,
             `Singular values non-negative`,
@@ -1689,10 +1958,6 @@ Visual summary:
   m×m   m×n   n×n
   rot   scale rot
   σ1 ≥ σ2 ≥ ... ≥ 0
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. SVD always exists
@@ -1707,21 +1972,49 @@ Track: math | Level: advanced`
         {
           id: `svd-lowrank`,
           title: `Low-Rank Approximation`,
-          content: `**Low-Rank Approximation** is essential to **Singular Value Decomposition**. Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Low-Rank Approximation** — what you need to know:
+
+- **Core idea:** Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Eckart-Young: best rank-k approximation A_k = ∑_{i=1}^k σ_i u_i v_iᵀ minimizes ||A−A_k||_F. Truncate small σ for compression/denoising. **Effective rank** from σ decay. Image compression keeps top k singular values. Noise often in small σ components. Recommender matrix factorization approximates R≈UVᵀ low rank. Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ². Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Low-Rank Approximation" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Low-Rank Approximation** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A_k = ∑_{i=1}^k σ_i u_i v_iᵀ`,
             `min ||A − A_k||_F over rank k`,
@@ -1729,16 +2022,12 @@ Eckart-Young: best rank-k approximation A_k = ∑_{i=1}^k σ_i u_i v_iᵀ minimi
             `Truncation = denoising`,
             `Matrix factorization ≈ low-rank SVD`
           ],
-          diagram: `   σ1 ████████ large
+          diagram: `σ1 ████████ large
    σ2 ████
    σ3 ██
    σ4 █ noise
    σ5 ░ truncate here
-
-   keep top k for compression
-   │
-   │  · · ·
-   └──────────`,
+   keep top k for compression`,
           keyPoints: [
             `Best low-rank in Frobenius norm`,
             `Scree plot guides k`,
@@ -1769,9 +2058,6 @@ Visual summary:
   σ4 █ noise
   σ5 ░ truncate here
   keep top k for compression
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Best low-rank in Frobenius norm
@@ -1786,21 +2072,49 @@ Track: math | Level: advanced`
         {
           id: `svd-pinv`,
           title: `SVD & Pseudo-Inverse`,
-          content: `**SVD & Pseudo-Inverse** is essential to **Singular Value Decomposition**. Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**SVD & Pseudo-Inverse** — what you need to know:
+
+- **Core idea:** Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition number κ(A)=σ_max/σ_min. Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "SVD & Pseudo-Inverse" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **SVD & Pseudo-Inverse** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A⁺ = V Σ⁺ Uᵀ`,
             `κ(A) = σ_max / σ_min`,
@@ -1808,16 +2122,10 @@ A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition numbe
             `lstsq uses SVD`,
             `Truncate σ for regularization`
           ],
-          diagram: `   σ spectrum:
-
+          diagram: `σ spectrum:
    σ_max ─────────────
    σ_min ─ (small gap → large κ)
-
-   κ large: sensitive to noise
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   κ large: sensitive to noise`,
           keyPoints: [
             `Condition number from σ ratio`,
             `Pinv inverts only large σ`,
@@ -1844,10 +2152,6 @@ Visual summary:
   σ_max ─────────────
   σ_min ─ (small gap → large κ)
   κ large: sensitive to noise
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Condition number from σ ratio
@@ -1862,21 +2166,49 @@ Track: math | Level: advanced`
         {
           id: `svd-ml`,
           title: `SVD in ML Pipelines`,
-          content: `**SVD in ML Pipelines** is essential to **Singular Value Decomposition**. Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**SVD in ML Pipelines** — what you need to know:
+
+- **Core idea:** Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Latent Semantic Analysis: SVD on term-document matrix. Collaborative filtering: SVD on rating matrix. PCA via SVD of centered X: faster than XᵀX for tall matrices. np.linalg.svd(X, full_matrices=False) on n×p data. Neural network weight SVD for compression. Randomized SVD (sklearn) for huge sparse matrices. Understanding SVD clarifies why truncated decompositions reduce parameters while preserving structure.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "SVD in ML Pipelines" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **SVD in ML Pipelines** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `PCA via SVD of centered X`,
             `TruncatedSVD in sklearn`,
@@ -1884,16 +2216,10 @@ Latent Semantic Analysis: SVD on term-document matrix. Collaborative filtering: 
             `Weight compression via SVD layers`,
             `Randomized SVD for scale`
           ],
-          diagram: `   Rating matrix R ≈ U Vᵀ
-
+          diagram: `Rating matrix R ≈ U Vᵀ
    users × items
    low rank captures taste
-
-   missing entries filled by UVᵀ
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   missing entries filled by UVᵀ`,
           keyPoints: [
             `SVD faster than XᵀX for tall X`,
             `TruncatedSVD for dimension reduction`,
@@ -1922,10 +2248,6 @@ Visual summary:
   users × items
   low rank captures taste
   missing entries filled by UVᵀ
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. SVD faster than XᵀX for tall X
@@ -1942,13 +2264,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Singular Value Decomposition** sits in the **math** track of the Data Science Master curriculum. Factor matrices with SVD for compression, pseudoinverse, and low-rank approximation.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-svd**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Singular Value Decomposition
 meta = {"topic_id": "math-svd", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1983,12 +2311,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-svd
 from dataclasses import dataclass
 
@@ -2036,7 +2366,9 @@ When stuck on **math-svd**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2073,9 +2405,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-svd** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Singular Value Decomposition
 skills = ["math", "advanced", "math-svd"]
 print("Built project applying:", ", ".join(skills))`,
@@ -2174,21 +2511,49 @@ A1=s[0]*np.outer(U[:,0],VT[0]); print(np.round(A1,2))`,
         {
           id: `pca-goal`,
           title: `Variance Maximization`,
-          content: `**Variance Maximization** is essential to **PCA Mathematics**. Principal component analysis as variance maximization and spectral decomposition. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Variance Maximization** — what you need to know:
+
+- **Core idea:** Principal component analysis as variance maximization and spectral decomposition.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 PCA finds unit vector w maximizing Var(Xw)=wᵀΣw subject to ||w||=1. Solution: w = top eigenvector of covariance Σ. Second PC orthogonal to first, maximizes remaining variance. Iteratively: eigenvectors of Σ sorted by λ. Equivalent to SVD of centered data matrix. Minimizes reconstruction error of rank-k projection. Geometric: rotate to align with max spread axes. No labels needed—unsupervised linear dimensionality reduction.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Variance Maximization" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Variance Maximization** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `max wᵀΣw s.t. ||w||=1`,
             `Solution w = eigenvector of Σ`,
@@ -2196,16 +2561,9 @@ PCA finds unit vector w maximizing Var(Xw)=wᵀΣw subject to ||w||=1. Solution:
             `PCs orthogonal for symmetric Σ`,
             `Equivalent: SVD of centered X`
           ],
-          diagram: `   scatter cloud:
-
-        ·  ·
-      · ·· ·
-        ·  ·
+          diagram: `scatter cloud:
       ↗ PC1 (max spread)
-     ↗ PC2
-   │
-   │  · · ·
-   └──────────`,
+     ↗ PC2`,
           keyPoints: [
             `First PC = max variance direction`,
             `Covariance eigenvectors = PCs`,
@@ -2232,14 +2590,8 @@ Key relationships:
 
 Visual summary:
   scatter cloud:
-  ·  ·
-  · ·· ·
-  ·  ·
   ↗ PC1 (max spread)
   ↗ PC2
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. First PC = max variance direction
@@ -2254,21 +2606,49 @@ Track: math | Level: advanced`
         {
           id: `pca-proj`,
           title: `Projection & Reconstruction`,
-          content: `**Projection & Reconstruction** is essential to **PCA Mathematics**. Principal component analysis as variance maximization and spectral decomposition. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Projection & Reconstruction** — what you need to know:
+
+- **Core idea:** Principal component analysis as variance maximization and spectral decomposition.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Project x to k dims: z = W_kᵀ x where W_k columns top k eigenvectors. Reconstruct x̂ = W_k z = W_k W_kᵀ x. Reconstruction error ||x−x̂||² sum of trailing eigenvalues ∑_{i>k}λ_i. Mean centering essential before PCA. Explained variance ratio guides k. Whitened coords: z_i = w_iᵀx/√λ_i have unit variance. Biplot visualizes samples and feature loadings together. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Projection & Reconstruction" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Projection & Reconstruction** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `z = W_kᵀ x (projection)`,
             `x̂ = W_k W_kᵀ x (reconstruction)`,
@@ -2276,16 +2656,9 @@ Project x to k dims: z = W_kᵀ x where W_k columns top k eigenvectors. Reconstr
             `Explained var = λ_i / ∑λ_j`,
             `Whitening: divide by √λ_i`
           ],
-          diagram: `   x ──W_kᵀ──→ z (k-dim)
+          diagram: `x ──W_kᵀ──→ z (k-dim)
    x̂ ←─W_k─── z
-
-   info lost = tail λ
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   info lost = tail λ`,
           keyPoints: [
             `Center data first`,
             `Lower k → more compression`,
@@ -2314,12 +2687,6 @@ Visual summary:
   x ──W_kᵀ──→ z (k-dim)
   x̂ ←─W_k─── z
   info lost = tail λ
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Center data first
@@ -2334,21 +2701,49 @@ Track: math | Level: advanced`
         {
           id: `pca-kernel`,
           title: `Kernel PCA Preview`,
-          content: `**Kernel PCA Preview** is essential to **PCA Mathematics**. Principal component analysis as variance maximization and spectral decomposition. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Kernel PCA Preview** — what you need to know:
+
+- **Core idea:** Principal component analysis as variance maximization and spectral decomposition.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Kernel PCA applies PCA in feature space via kernel matrix K_ij=K(x_i,x_j) without explicit φ(x). Center K: K̃ = H K H with H=I−11ᵀ/n. Eigenvectors of K̃ give nonlinear PCs. Captures nonlinear structure linear PCA misses. Computationally O(n³)— costly for large n. Connection to spectral methods and graph embeddings. Choose kernel (RBF, polynomial) controls implicit feature space geometry. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Kernel PCA Preview" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Kernel PCA Preview** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `K_ij = K(x_i, x_j)`,
             `K̃ = H K H (centered kernel)`,
@@ -2356,16 +2751,9 @@ Kernel PCA applies PCA in feature space via kernel matrix K_ij=K(x_i,x_j) withou
             `Implicit φ via kernel trick`,
             `O(n³) eigen problem`
           ],
-          diagram: `   Linear PCA: straight projection
-
+          diagram: `Linear PCA: straight projection
    Kernel PCA: curved manifold
-      ·  ·
-    ·    ·  ← bend into φ space
-      ·  ·
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+    ·    ·  ← bend into φ space`,
           keyPoints: [
             `Kernel avoids explicit φ`,
             `Center kernel matrix`,
@@ -2394,13 +2782,7 @@ Key relationships:
 Visual summary:
   Linear PCA: straight projection
   Kernel PCA: curved manifold
-  ·  ·
   ·    ·  ← bend into φ space
-  ·  ·
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Kernel avoids explicit φ
@@ -2415,21 +2797,49 @@ Track: math | Level: advanced`
         {
           id: `pca-practice`,
           title: `PCA Practical Considerations`,
-          content: `**PCA Practical Considerations** is essential to **PCA Mathematics**. Principal component analysis as variance maximization and spectral decomposition. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**PCA Practical Considerations** — what you need to know:
+
+- **Core idea:** Principal component analysis as variance maximization and spectral decomposition.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Scale features before PCA if units differ—or PCA chases largest-scale feature. Correlation matrix PCA when variables standardized. Incremental PCA for streaming/large data. Randomized PCA approximate top components fast. Interpret loadings: which features drive each PC. Beware PCA on mixed categorical/numeric without encoding. For visualization, project to PC1-PC2. Cumulative variance plot selects k for 95% retention common in pipelines.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "PCA Practical Considerations" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **PCA Practical Considerations** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Standardize if scales differ`,
             `Correlation PCA after z-score`,
@@ -2437,16 +2847,11 @@ Scale features before PCA if units differ—or PCA chases largest-scale feature.
             `95% variance rule for k`,
             `Loadings interpret feature contribution`
           ],
-          diagram: `   unscaled trap:
-
+          diagram: `unscaled trap:
    feature A: 0-1
    feature B: 0-1000
    PC1 ≈ B only!
-
-   → standardize first
-   │
-   │  · · ·
-   └──────────`,
+   → standardize first`,
           keyPoints: [
             `Always consider scaling`,
             `Loadings aid interpretation`,
@@ -2475,9 +2880,6 @@ Visual summary:
   feature B: 0-1000
   PC1 ≈ B only!
   → standardize first
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Always consider scaling
@@ -2494,13 +2896,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**PCA Mathematics** sits in the **math** track of the Data Science Master curriculum. Principal component analysis as variance maximization and spectral decomposition.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-pca-math**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for PCA Mathematics
 meta = {"topic_id": "math-pca-math", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -2535,12 +2943,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-pca-math
 from dataclasses import dataclass
 
@@ -2588,7 +2998,9 @@ When stuck on **math-pca-math**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2625,9 +3037,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-pca-math** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for PCA Mathematics
 skills = ["math", "advanced", "math-pca-math"]
 print("Built project applying:", ", ".join(skills))`,

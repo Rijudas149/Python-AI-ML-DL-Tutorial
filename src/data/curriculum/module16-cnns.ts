@@ -11,17 +11,37 @@ export const module16Topics: Topic[] = [
         {
           id: `conv2d`,
           title: `Convolution Operation`,
-          content: `**Convolution Operation** is essential to **Convolutional Layers**. Spatial feature extraction with convolution and pooling. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Convolution Operation** — what you need to know:
+
+- **Core idea:** Spatial feature extraction with convolution and pooling.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Filter slides over input computing dot products. Learns local patterns: edges, textures, shapes. nn.Conv2d(in_channels, out_channels, kernel_size).
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Convolution Operation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Convolution Operation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -54,17 +74,37 @@ Track: dl | Level: beginner`
         {
           id: `pooling`,
           title: `Pooling Layers`,
-          content: `**Pooling Layers** is essential to **Convolutional Layers**. Spatial feature extraction with convolution and pooling. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Pooling Layers** — what you need to know:
+
+- **Core idea:** Spatial feature extraction with convolution and pooling.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 MaxPool2d: takes maximum in window. AvgPool2d: average. Reduces spatial dimensions, provides translation invariance.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Pooling Layers" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Pooling Layers** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -96,15 +136,31 @@ Track: dl | Level: beginner`
         {
           id: `receptive`,
           title: `Receptive Field`,
-          content: `**Receptive Field** is essential to **Convolutional Layers**. Spatial feature extraction with convolution and pooling. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Receptive Field** — what you need to know:
+
+- **Core idea:** Spatial feature extraction with convolution and pooling.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Each neuron sees a region of input. Receptive field grows with depth and pooling. Deep layers capture global context.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Receptive Field" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Receptive Field** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Stacking conv layers expands receptive field`,
             `Dilated convolutions expand field without pooling`,
@@ -142,17 +198,37 @@ Track: dl | Level: beginner`
         {
           id: `cnn-arch`,
           title: `Basic CNN Architecture`,
-          content: `**Basic CNN Architecture** is essential to **Convolutional Layers**. Spatial feature extraction with convolution and pooling. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Basic CNN Architecture** — what you need to know:
+
+- **Core idea:** Spatial feature extraction with convolution and pooling.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Conv → ReLU → Pool repeated, then Flatten → FC → output. Modern: all conv without large FC layers.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Basic CNN Architecture" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Basic CNN Architecture** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch.nn as nn
 
 class SimpleCNN(nn.Module):
@@ -192,13 +268,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Convolutional Layers** sits in the **dl** track of the Data Science Master curriculum. Spatial feature extraction with convolution and pooling.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-conv**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Convolutional Layers
 meta = {"topic_id": "dl-conv", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -233,12 +315,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-conv
 from dataclasses import dataclass
 
@@ -286,7 +370,9 @@ When stuck on **dl-conv**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -323,9 +409,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-conv** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Convolutional Layers
 skills = ["dl", "beginner", "dl-conv"]
 print("Built project applying:", ", ".join(skills))`,
@@ -417,15 +508,31 @@ print(nn.MaxPool2d(2)(torch.randn(1,16,32,32)).shape)`,
         {
           id: `vgg`,
           title: `VGG`,
-          content: `**VGG** is essential to **CNN Architectures (ResNet, VGG)**. Landmark architectures that shaped computer vision. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**VGG** — what you need to know:
+
+- **Core idea:** Landmark architectures that shaped computer vision.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Small 3×3 filters stacked deeply. Simple uniform architecture. VGG16/19 widely used for transfer learning baseline.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "VGG" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **VGG** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `3x3 conv stacks replace large filters`,
             `Simplicity aids understanding and transfer`,
@@ -463,17 +570,37 @@ Track: dl | Level: beginner`
         {
           id: `resnet`,
           title: `ResNet & Skip Connections`,
-          content: `**ResNet & Skip Connections** is essential to **CNN Architectures (ResNet, VGG)**. Landmark architectures that shaped computer vision. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ResNet & Skip Connections** — what you need to know:
+
+- **Core idea:** Landmark architectures that shaped computer vision.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Residual blocks: output = F(x) + x. Skip connections solve vanishing gradient, enable 100+ layer networks.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "ResNet & Skip Connections" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **ResNet & Skip Connections** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -512,15 +639,31 @@ Track: dl | Level: beginner`
         {
           id: `modern`,
           title: `EfficientNet, ConvNeXt`,
-          content: `**EfficientNet, ConvNeXt** is essential to **CNN Architectures (ResNet, VGG)**. Landmark architectures that shaped computer vision. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**EfficientNet, ConvNeXt** — what you need to know:
+
+- **Core idea:** Landmark architectures that shaped computer vision.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 EfficientNet scales depth/width/resolution jointly. ConvNeXt modernizes ResNet with transformer-inspired design.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "EfficientNet, ConvNeXt" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **EfficientNet, ConvNeXt** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Compound scaling balances model dimensions`,
             `EfficientNet-B0 to B7 for different compute budgets`,
@@ -558,17 +701,37 @@ Track: dl | Level: beginner`
         {
           id: `torchvision`,
           title: `torchvision.models`,
-          content: `**torchvision.models** is essential to **CNN Architectures (ResNet, VGG)**. Landmark architectures that shaped computer vision. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**torchvision.models** — what you need to know:
+
+- **Core idea:** Landmark architectures that shaped computer vision.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Pretrained models: resnet50, efficientnet_b0, vit_b_16. weights=ResNet50_Weights.IMAGENET1K_V2.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "torchvision.models" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **torchvision.models** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from torchvision import models
 
 model = models.resnet18(weights=None)
@@ -600,13 +763,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**CNN Architectures (ResNet, VGG)** sits in the **dl** track of the Data Science Master curriculum. Landmark architectures that shaped computer vision.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-cnn-arch**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for CNN Architectures (ResNet, VGG)
 meta = {"topic_id": "dl-cnn-arch", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -641,12 +810,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-cnn-arch
 from dataclasses import dataclass
 
@@ -694,7 +865,9 @@ When stuck on **dl-cnn-arch**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -731,9 +904,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-cnn-arch** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for CNN Architectures (ResNet, VGG)
 skills = ["dl", "beginner", "dl-cnn-arch"]
 print("Built project applying:", ", ".join(skills))`,
@@ -825,17 +1003,37 @@ print((F_x + x).tolist())`,
         {
           id: `strategy`,
           title: `Transfer Learning Strategies`,
-          content: `**Transfer Learning Strategies** is essential to **Transfer Learning**. Leverage pretrained models for new tasks with limited data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Transfer Learning Strategies** — what you need to know:
+
+- **Core idea:** Leverage pretrained models for new tasks with limited data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Feature extraction: freeze backbone, train head. Fine-tuning: unfreeze some/all layers with low LR. More data → more fine-tuning.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Transfer Learning Strategies" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Transfer Learning Strategies** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch.nn as nn
 from torchvision import models
 
@@ -869,15 +1067,31 @@ Track: dl | Level: beginner`
         {
           id: `finetune`,
           title: `Fine-Tuning Best Practices`,
-          content: `**Fine-Tuning Best Practices** is essential to **Transfer Learning**. Leverage pretrained models for new tasks with limited data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Fine-Tuning Best Practices** — what you need to know:
+
+- **Core idea:** Leverage pretrained models for new tasks with limited data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Discriminative learning rates: lower LR for early layers. Gradual unfreezing. Monitor val loss carefully.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Fine-Tuning Best Practices" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Fine-Tuning Best Practices** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `LR for backbone << LR for head (10-100x)`,
             `Unfreeze gradually from top to bottom`,
@@ -915,15 +1129,31 @@ Track: dl | Level: beginner`
         {
           id: `domain`,
           title: `Domain Adaptation`,
-          content: `**Domain Adaptation** is essential to **Transfer Learning**. Leverage pretrained models for new tasks with limited data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Domain Adaptation** — what you need to know:
+
+- **Core idea:** Leverage pretrained models for new tasks with limited data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Pretrained on ImageNet, fine-tune on medical/satellite/etc. Domain gap affects transfer quality.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Domain Adaptation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Domain Adaptation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Large domain gap reduces transfer benefit`,
             `Self-supervised pretraining on target domain helps`,
@@ -961,15 +1191,31 @@ Track: dl | Level: beginner`
         {
           id: `hub`,
           title: `PyTorch Hub & timm`,
-          content: `**PyTorch Hub & timm** is essential to **Transfer Learning**. Leverage pretrained models for new tasks with limited data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**PyTorch Hub & timm** — what you need to know:
+
+- **Core idea:** Leverage pretrained models for new tasks with limited data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.hub.load for pretrained models. timm (PyTorch Image Models) library with 500+ architectures.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "PyTorch Hub & timm" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **PyTorch Hub & timm** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `timm unified API for many architectures`,
             `timm.create_model with pretrained=True`,
@@ -1009,13 +1255,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Transfer Learning** sits in the **dl** track of the Data Science Master curriculum. Leverage pretrained models for new tasks with limited data.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-transfer**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Transfer Learning
 meta = {"topic_id": "dl-transfer", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1050,12 +1302,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-transfer
 from dataclasses import dataclass
 
@@ -1103,7 +1357,9 @@ When stuck on **dl-transfer**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1140,9 +1396,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-transfer** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Transfer Learning
 skills = ["dl", "beginner", "dl-transfer"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1237,17 +1498,37 @@ print(all(not p.requires_grad for p in m.parameters()))`,
         {
           id: `metrics-det`,
           title: `Detection Metrics`,
-          content: `**Detection Metrics** is essential to **Object Detection**. Locate and classify multiple objects in images. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Detection Metrics** — what you need to know:
+
+- **Core idea:** Locate and classify multiple objects in images.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 IoU (Intersection over Union) measures box overlap. mAP (mean Average Precision) standard benchmark metric.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Detection Metrics" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Detection Metrics** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def iou(box1, box2):
     x1 = max(box1[0], box2[0]); y1 = max(box1[1], box2[1])
     x2 = min(box1[2], box2[2]); y2 = min(box1[3], box2[3])
@@ -1282,15 +1563,31 @@ Track: dl | Level: beginner`
         {
           id: `rcnn`,
           title: `R-CNN Family`,
-          content: `**R-CNN Family** is essential to **Object Detection**. Locate and classify multiple objects in images. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**R-CNN Family** — what you need to know:
+
+- **Core idea:** Locate and classify multiple objects in images.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Two-stage: RPN proposes regions, classifier refines. Faster R-CNN real-time capable. Mask R-CNN adds segmentation.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "R-CNN Family" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **R-CNN Family** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Two-stage: propose then classify`,
             `Faster R-CNN shares backbone with RPN`,
@@ -1328,15 +1625,31 @@ Track: dl | Level: beginner`
         {
           id: `yolo`,
           title: `YOLO & One-Stage Detectors`,
-          content: `**YOLO & One-Stage Detectors** is essential to **Object Detection**. Locate and classify multiple objects in images. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**YOLO & One-Stage Detectors** — what you need to know:
+
+- **Core idea:** Locate and classify multiple objects in images.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 YOLO: single pass prediction grid. SSD, RetinaNet with focal loss. Faster, good for real-time applications.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "YOLO & One-Stage Detectors" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **YOLO & One-Stage Detectors** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `One-stage: direct bounding box prediction`,
             `YOLO v8/v9/v10 state-of-the-art speed/accuracy`,
@@ -1374,15 +1687,31 @@ Track: dl | Level: beginner`
         {
           id: `tools`,
           title: `Detection Tools`,
-          content: `**Detection Tools** is essential to **Object Detection**. Locate and classify multiple objects in images. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Detection Tools** — what you need to know:
+
+- **Core idea:** Locate and classify multiple objects in images.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torchvision.models.detection, ultralytics YOLO, Detectron2 (Meta). Pretrained on COCO.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Detection Tools" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Detection Tools** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Detectron2 research platform from Meta`,
             `Ultralytics YOLO easy API for training/inference`,
@@ -1422,13 +1751,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Object Detection** sits in the **dl** track of the Data Science Master curriculum. Locate and classify multiple objects in images.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-detection**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Object Detection
 meta = {"topic_id": "dl-detection", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1463,12 +1798,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-detection
 from dataclasses import dataclass
 
@@ -1516,7 +1853,9 @@ When stuck on **dl-detection**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1553,9 +1892,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-detection** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Object Detection
 skills = ["dl", "beginner", "dl-detection"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1647,15 +1991,31 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
         {
           id: `semantic`,
           title: `Semantic Segmentation`,
-          content: `**Semantic Segmentation** is essential to **Image Segmentation**. Pixel-level classification: semantic and instance segmentation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Semantic Segmentation** — what you need to know:
+
+- **Core idea:** Pixel-level classification: semantic and instance segmentation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Classify every pixel. FCN, U-Net, DeepLab architectures. Encoder-decoder with skip connections.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Semantic Segmentation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Semantic Segmentation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `U-Net skip connections preserve spatial detail`,
             `Encoder downsamples, decoder upsamples`,
@@ -1693,15 +2053,31 @@ Track: dl | Level: beginner`
         {
           id: `instance`,
           title: `Instance Segmentation`,
-          content: `**Instance Segmentation** is essential to **Image Segmentation**. Pixel-level classification: semantic and instance segmentation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Instance Segmentation** — what you need to know:
+
+- **Core idea:** Pixel-level classification: semantic and instance segmentation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Detect and segment each object instance separately. Mask R-CNN: detection + mask head per ROI.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Instance Segmentation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Instance Segmentation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Combines detection and segmentation`,
             `Mask R-CNN adds mask branch to Faster R-CNN`,
@@ -1739,17 +2115,37 @@ Track: dl | Level: beginner`
         {
           id: `unet`,
           title: `U-Net Architecture`,
-          content: `**U-Net Architecture** is essential to **Image Segmentation**. Pixel-level classification: semantic and instance segmentation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**U-Net Architecture** — what you need to know:
+
+- **Core idea:** Pixel-level classification: semantic and instance segmentation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Symmetric encoder-decoder with skip connections. Concatenates encoder features to decoder. Excellent for biomedical segmentation.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "U-Net Architecture" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **U-Net Architecture** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# U-Net concept: encoder path downsamples, decoder upsamples
 # Skip connections concatenate features at each level
 print("Encoder -> Bottleneck -> Decoder + Skips")`,
@@ -1778,15 +2174,31 @@ Track: dl | Level: beginner`
         {
           id: `metrics-seg`,
           title: `Segmentation Metrics`,
-          content: `**Segmentation Metrics** is essential to **Image Segmentation**. Pixel-level classification: semantic and instance segmentation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Segmentation Metrics** — what you need to know:
+
+- **Core idea:** Pixel-level classification: semantic and instance segmentation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 IoU per class (Jaccard index). Dice coefficient. Pixel accuracy misleading with class imbalance.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Segmentation Metrics" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Segmentation Metrics** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Mean IoU averaged over classes`,
             `Dice = 2|A∩B|/(|A|+|B|)`,
@@ -1826,13 +2238,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Image Segmentation** sits in the **dl** track of the Data Science Master curriculum. Pixel-level classification: semantic and instance segmentation.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-segmentation**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Image Segmentation
 meta = {"topic_id": "dl-segmentation", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1867,12 +2285,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-segmentation
 from dataclasses import dataclass
 
@@ -1920,7 +2340,9 @@ When stuck on **dl-segmentation**, reproduce with the smallest input, enable ver
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1957,9 +2379,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-segmentation** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Image Segmentation
 skills = ["dl", "beginner", "dl-segmentation"]
 print("Built project applying:", ", ".join(skills))`,

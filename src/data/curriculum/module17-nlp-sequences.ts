@@ -11,17 +11,37 @@ export const module17Topics: Topic[] = [
         {
           id: `clean`,
           title: `Text Cleaning`,
-          content: `**Text Cleaning** is essential to **Text Preprocessing & Tokenization**. Prepare raw text for neural network input. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Text Cleaning** — what you need to know:
+
+- **Core idea:** Prepare raw text for neural network input.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace. Domain-specific rules matter.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Text Cleaning" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Text Cleaning** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import re
 
 def clean_text(text):
@@ -55,15 +75,31 @@ Track: dl | Level: beginner`
         {
           id: `tokenize`,
           title: `Tokenization Strategies`,
-          content: `**Tokenization Strategies** is essential to **Text Preprocessing & Tokenization**. Prepare raw text for neural network input. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Tokenization Strategies** — what you need to know:
+
+- **Core idea:** Prepare raw text for neural network input.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Word-level, subword (BPE, WordPiece, SentencePiece), character-level. Subword balances vocabulary size and OOV handling.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Tokenization Strategies" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Tokenization Strategies** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Word tokenization simple but huge vocabularies`,
             `BPE used in GPT — merges frequent pairs`,
@@ -101,17 +137,37 @@ Track: dl | Level: beginner`
         {
           id: `hf-tokenizer`,
           title: `HuggingFace Tokenizers`,
-          content: `**HuggingFace Tokenizers** is essential to **Text Preprocessing & Tokenization**. Prepare raw text for neural network input. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**HuggingFace Tokenizers** — what you need to know:
+
+- **Core idea:** Prepare raw text for neural network input.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 AutoTokenizer.from_pretrained("bert-base-uncased"). Returns input_ids, attention_mask. Handles padding and truncation.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "HuggingFace Tokenizers" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **HuggingFace Tokenizers** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
@@ -141,15 +197,31 @@ Track: dl | Level: beginner`
         {
           id: `vocab`,
           title: `Vocabulary & Special Tokens`,
-          content: `**Vocabulary & Special Tokens** is essential to **Text Preprocessing & Tokenization**. Prepare raw text for neural network input. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Vocabulary & Special Tokens** — what you need to know:
+
+- **Core idea:** Prepare raw text for neural network input.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 [CLS], [SEP], [PAD], [UNK], [MASK]. Vocabulary maps tokens to integer IDs.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Vocabulary & Special Tokens" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Vocabulary & Special Tokens** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `[PAD] token enables batch processing`,
             `Special tokens have semantic roles in models`,
@@ -189,13 +261,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Text Preprocessing & Tokenization** sits in the **dl** track of the Data Science Master curriculum. Prepare raw text for neural network input.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **nlp-preprocess**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Text Preprocessing & Tokenization
 meta = {"topic_id": "nlp-preprocess", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -230,12 +308,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for nlp-preprocess
 from dataclasses import dataclass
 
@@ -283,7 +363,9 @@ When stuck on **nlp-preprocess**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -320,9 +402,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **nlp-preprocess** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Text Preprocessing & Tokenization
 skills = ["dl", "beginner", "nlp-preprocess"]
 print("Built project applying:", ", ".join(skills))`,
@@ -412,15 +499,31 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
         {
           id: `word2vec`,
           title: `Word2Vec`,
-          content: `**Word2Vec** is essential to **Word Embeddings (Word2Vec, GloVe)**. Dense vector representations capturing semantic meaning. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Word2Vec** — what you need to know:
+
+- **Core idea:** Dense vector representations capturing semantic meaning.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Skip-gram: predict context from word. CBOW: predict word from context. Similar words have similar vectors.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Word2Vec" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Word2Vec** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Distributional hypothesis: context defines meaning`,
             `Skip-gram better for rare words`,
@@ -458,15 +561,31 @@ Track: dl | Level: beginner`
         {
           id: `glove`,
           title: `GloVe`,
-          content: `**GloVe** is essential to **Word Embeddings (Word2Vec, GloVe)**. Dense vector representations capturing semantic meaning. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**GloVe** — what you need to know:
+
+- **Core idea:** Dense vector representations capturing semantic meaning.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Global Vectors: factorizes co-occurrence matrix. Combines global statistics with local context methods.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "GloVe" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **GloVe** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `GloVe uses global co-occurrence counts`,
             `Often comparable to Word2Vec quality`,
@@ -504,17 +623,37 @@ Track: dl | Level: beginner`
         {
           id: `nn-embed`,
           title: `nn.Embedding Layer`,
-          content: `**nn.Embedding Layer** is essential to **Word Embeddings (Word2Vec, GloVe)**. Dense vector representations capturing semantic meaning. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**nn.Embedding Layer** — what you need to know:
+
+- **Core idea:** Dense vector representations capturing semantic meaning.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.nn.Embedding(vocab_size, embed_dim). Lookup table learned during training. Padding index for [PAD].
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "nn.Embedding Layer" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **nn.Embedding Layer** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -546,15 +685,31 @@ Track: dl | Level: beginner`
         {
           id: `contextual`,
           title: `Contextual Embeddings`,
-          content: `**Contextual Embeddings** is essential to **Word Embeddings (Word2Vec, GloVe)**. Dense vector representations capturing semantic meaning. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Contextual Embeddings** — what you need to know:
+
+- **Core idea:** Dense vector representations capturing semantic meaning.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 ELMo, BERT produce different vectors per context. "bank" (river) vs "bank" (financial) get different embeddings.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Contextual Embeddings" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Contextual Embeddings** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Static embeddings one vector per word type`,
             `Contextual embeddings depend on sentence`,
@@ -594,13 +749,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Word Embeddings (Word2Vec, GloVe)** sits in the **dl** track of the Data Science Master curriculum. Dense vector representations capturing semantic meaning.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **nlp-embeddings**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Word Embeddings (Word2Vec, GloVe)
 meta = {"topic_id": "nlp-embeddings", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -635,12 +796,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for nlp-embeddings
 from dataclasses import dataclass
 
@@ -688,7 +851,9 @@ When stuck on **nlp-embeddings**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -725,9 +890,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **nlp-embeddings** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Word Embeddings (Word2Vec, GloVe)
 skills = ["dl", "beginner", "nlp-embeddings"]
 print("Built project applying:", ", ".join(skills))`,
@@ -818,17 +988,37 @@ print(e(torch.tensor([1, 5, 3])).shape)`,
         {
           id: `rnn`,
           title: `Vanilla RNN`,
-          content: `**Vanilla RNN** is essential to **RNNs & LSTMs**. Recurrent networks for sequential data processing. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Vanilla RNN** — what you need to know:
+
+- **Core idea:** Recurrent networks for sequential data processing.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t). Processes sequences step by step. Vanishing gradient limits long sequences.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Vanilla RNN" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Vanilla RNN** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -861,17 +1051,37 @@ Track: dl | Level: beginner`
         {
           id: `lstm`,
           title: `LSTM`,
-          content: `**LSTM** is essential to **RNNs & LSTMs**. Recurrent networks for sequential data processing. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LSTM** — what you need to know:
+
+- **Core idea:** Recurrent networks for sequential data processing.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Long Short-Term Memory: cell state + gates (forget, input, output). Solves vanishing gradient for longer sequences.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "LSTM" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **LSTM** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -904,15 +1114,31 @@ Track: dl | Level: beginner`
         {
           id: `gru`,
           title: `GRU`,
-          content: `**GRU** is essential to **RNNs & LSTMs**. Recurrent networks for sequential data processing. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**GRU** — what you need to know:
+
+- **Core idea:** Recurrent networks for sequential data processing.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Gated Recurrent Unit: simplified LSTM with 2 gates. Fewer parameters, often comparable performance.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "GRU" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **GRU** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `GRU merges cell and hidden state`,
             `Fewer parameters than LSTM`,
@@ -950,17 +1176,37 @@ Track: dl | Level: beginner`
         {
           id: `bidirectional`,
           title: `Bidirectional RNNs`,
-          content: `**Bidirectional RNNs** is essential to **RNNs & LSTMs**. Recurrent networks for sequential data processing. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Bidirectional RNNs** — what you need to know:
+
+- **Core idea:** Recurrent networks for sequential data processing.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Process sequence forward and backward. Concatenate outputs. Captures past and future context.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Bidirectional RNNs" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Bidirectional RNNs** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch.nn as nn
 
 bilstm = nn.LSTM(10, 16, batch_first=True, bidirectional=True)
@@ -993,13 +1239,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**RNNs & LSTMs** sits in the **dl** track of the Data Science Master curriculum. Recurrent networks for sequential data processing.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **nlp-rnn**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for RNNs & LSTMs
 meta = {"topic_id": "nlp-rnn", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1034,12 +1286,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for nlp-rnn
 from dataclasses import dataclass
 
@@ -1087,7 +1341,9 @@ When stuck on **nlp-rnn**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1124,9 +1380,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **nlp-rnn** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for RNNs & LSTMs
 skills = ["dl", "beginner", "nlp-rnn"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1217,15 +1478,31 @@ print(out.shape)`,
         {
           id: `seq2seq`,
           title: `Encoder-Decoder`,
-          content: `**Encoder-Decoder** is essential to **Seq2Seq & Attention Preview**. Encoder-decoder architecture for translation and summarization. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Encoder-Decoder** — what you need to know:
+
+- **Core idea:** Encoder-decoder architecture for translation and summarization.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Encoder RNN compresses input to context vector. Decoder RNN generates output sequence. Bottleneck problem with long sequences.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Encoder-Decoder" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Encoder-Decoder** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `encoder_hidden = encode(input_sequence)
 FOR each output step t:
     decoder_hidden, output_t = decode(decoder_hidden, encoder_hidden)`,
@@ -1254,15 +1531,31 @@ level: beginner`
         {
           id: `teacher`,
           title: `Teacher Forcing`,
-          content: `**Teacher Forcing** is essential to **Seq2Seq & Attention Preview**. Encoder-decoder architecture for translation and summarization. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Teacher Forcing** — what you need to know:
+
+- **Core idea:** Encoder-decoder architecture for translation and summarization.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 During training, feed ground truth previous token as decoder input. At inference, feed model own prediction.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Teacher Forcing" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Teacher Forcing** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Teacher forcing speeds convergence`,
             `Exposure bias: train/inference mismatch`,
@@ -1300,15 +1593,31 @@ Track: dl | Level: beginner`
         {
           id: `beam`,
           title: `Beam Search Decoding`,
-          content: `**Beam Search Decoding** is essential to **Seq2Seq & Attention Preview**. Encoder-decoder architecture for translation and summarization. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Beam Search Decoding** — what you need to know:
+
+- **Core idea:** Encoder-decoder architecture for translation and summarization.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Keep top-k partial sequences at each step. Balance exploration vs greedy decoding. beam_width typically 4-8.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Beam Search Decoding" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Beam Search Decoding** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Greedy decoding may miss global optimum`,
             `Beam search explores multiple hypotheses`,
@@ -1346,15 +1655,31 @@ Track: dl | Level: beginner`
         {
           id: `apps`,
           title: `Seq2Seq Applications`,
-          content: `**Seq2Seq Applications** is essential to **Seq2Seq & Attention Preview**. Encoder-decoder architecture for translation and summarization. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Seq2Seq Applications** — what you need to know:
+
+- **Core idea:** Encoder-decoder architecture for translation and summarization.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Machine translation, text summarization, chatbots, code generation. Mostly replaced by transformers but conceptually important.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Seq2Seq Applications" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Seq2Seq Applications** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Transformers dominate seq2seq tasks now`,
             `Understanding seq2seq helps understand attention`,
@@ -1394,13 +1719,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Seq2Seq & Attention Preview** sits in the **dl** track of the Data Science Master curriculum. Encoder-decoder architecture for translation and summarization.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **nlp-seq2seq**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Seq2Seq & Attention Preview
 meta = {"topic_id": "nlp-seq2seq", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1435,12 +1766,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for nlp-seq2seq
 from dataclasses import dataclass
 
@@ -1488,7 +1821,9 @@ When stuck on **nlp-seq2seq**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1525,9 +1860,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **nlp-seq2seq** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Seq2Seq & Attention Preview
 skills = ["dl", "beginner", "nlp-seq2seq"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1615,17 +1955,37 @@ Track: dl | Level: beginner`
         {
           id: `ner-task`,
           title: `NER Task Definition`,
-          content: `**NER Task Definition** is essential to **Named Entity Recognition**. Token-level sequence labeling for entity extraction. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**NER Task Definition** — what you need to know:
+
+- **Core idea:** Token-level sequence labeling for entity extraction.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Identify and classify entities: PERSON, ORG, LOC, DATE. BIO tagging: B-PER (begin), I-PER (inside), O (outside).
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "NER Task Definition" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **NER Task Definition** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# BIO tags for "John works at Google"
 # John: B-PER, works: O, at: O, Google: B-ORG
 sentence = ["John", "works", "at", "Google"]
@@ -1655,15 +2015,31 @@ Track: dl | Level: beginner`
         {
           id: `bi-lstm`,
           title: `BiLSTM-CRF`,
-          content: `**BiLSTM-CRF** is essential to **Named Entity Recognition**. Token-level sequence labeling for entity extraction. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**BiLSTM-CRF** — what you need to know:
+
+- **Core idea:** Token-level sequence labeling for entity extraction.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Classic NER architecture: embeddings → BiLSTM → CRF. CRF learns transition constraints between tags.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "BiLSTM-CRF" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **BiLSTM-CRF** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `CRF prevents invalid tag sequences`,
             `BiLSTM captures context from both directions`,
@@ -1701,15 +2077,31 @@ Track: dl | Level: beginner`
         {
           id: `bert-ner`,
           title: `BERT for NER`,
-          content: `**BERT for NER** is essential to **Named Entity Recognition**. Token-level sequence labeling for entity extraction. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**BERT for NER** — what you need to know:
+
+- **Core idea:** Token-level sequence labeling for entity extraction.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Fine-tune BERT with token classification head. Align subword tokens to labels. State-of-the-art on CoNLL benchmarks.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "BERT for NER" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **BERT for NER** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Fine-tune pretrained BERT on labeled NER data`,
             `Handle subword tokenization alignment`,
@@ -1747,15 +2139,31 @@ Track: dl | Level: beginner`
         {
           id: `applications`,
           title: `NER Applications`,
-          content: `**NER Applications** is essential to **Named Entity Recognition**. Token-level sequence labeling for entity extraction. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**NER Applications** — what you need to know:
+
+- **Core idea:** Token-level sequence labeling for entity extraction.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "NER Applications" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **NER Applications** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Build knowledge graphs from extracted entities`,
             `PII detection is privacy-focused NER`,
@@ -1795,13 +2203,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Named Entity Recognition** sits in the **dl** track of the Data Science Master curriculum. Token-level sequence labeling for entity extraction.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **nlp-ner**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Named Entity Recognition
 meta = {"topic_id": "nlp-ner", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1836,12 +2250,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for nlp-ner
 from dataclasses import dataclass
 
@@ -1889,7 +2305,9 @@ When stuck on **nlp-ner**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1926,9 +2344,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **nlp-ner** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Named Entity Recognition
 skills = ["dl", "beginner", "nlp-ner"]
 print("Built project applying:", ", ".join(skills))`,

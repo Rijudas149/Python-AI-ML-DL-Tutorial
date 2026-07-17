@@ -11,7 +11,11 @@ export const module28Topics: Topic[] = [
         {
           id: `structure`,
           title: `Project Structure`,
-          content: `**Project Structure** is essential to **ML Portfolio Projects**. Build showcase projects demonstrating end-to-end ML skills. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Project Structure** — what you need to know:
+
+- **Core idea:** Build showcase projects demonstrating end-to-end ML skills.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Strong portfolio project: problem statement, data, EDA, modeling, evaluation, deployment demo, README with architecture diagram. **Reproducible** Dockerfile or Colab with pinned deps.
 
@@ -19,11 +23,23 @@ Host on GitHub with clear license; include tests for data pipeline functions.
 
 **Applying ML Portfolio Projects:** Build showcase projects demonstrating end-to-end ML skills. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Project Structure", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Project Structure" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Project Structure** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `README answers what/why/how/results in 2 minutes`,
             `Makefile or script reproduces end-to-end run`,
@@ -61,7 +77,11 @@ Track: ai | Level: intermediate`
         {
           id: `ideas`,
           title: `Project Ideas by Track`,
-          content: `**Project Ideas by Track** is essential to **ML Portfolio Projects**. Build showcase projects demonstrating end-to-end ML skills. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Project Ideas by Track** — what you need to know:
+
+- **Core idea:** Build showcase projects demonstrating end-to-end ML skills.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Tabular: churn prediction with SHAP. CV: custom object detector. NLP: RAG chatbot on domain docs. DL: fine-tune small LLM with LoRA.
 
@@ -69,11 +89,23 @@ Pick problems you can discuss deeply in interviews—not tutorial clones without
 
 **Applying ML Portfolio Projects:** Build showcase projects demonstrating end-to-end ML skills. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Project Ideas by Track", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Project Ideas by Track" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Project Ideas by Track** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Add unique angle: new dataset or metric`,
             `Show MLOps: logging, config, CI`,
@@ -111,7 +143,11 @@ Track: ai | Level: intermediate`
         {
           id: `presentation`,
           title: `Presenting Results`,
-          content: `**Presenting Results** is essential to **ML Portfolio Projects**. Build showcase projects demonstrating end-to-end ML skills. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Presenting Results** — what you need to know:
+
+- **Core idea:** Build showcase projects demonstrating end-to-end ML skills.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Lead with business metric movement not only accuracy. Visualize errors—confusion matrix slices, failure cases. Link to blog post walking through decisions.
 
@@ -119,11 +155,23 @@ Quantify: "Reduced false negatives 18% at same precision."
 
 **Applying ML Portfolio Projects:** Build showcase projects demonstrating end-to-end ML skills. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Presenting Results", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Presenting Results" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Presenting Results** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Tailor narrative to audience technical level`,
             `Before/after comparisons resonate`,
@@ -167,11 +215,23 @@ Contributions signal collaboration skills beyond solo Kaggle.
 
 **Applying ML Portfolio Projects:** Build showcase projects demonstrating end-to-end ML skills. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Contributing to Open Source", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Contributing to Open Source" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Contributing to Open Source** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Read CONTRIBUTING.md before PR`,
             `One focused PR better than giant dump`,
@@ -211,13 +271,19 @@ Track: ai | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**ML Portfolio Projects** sits in the **ai** track of the Data Science Master curriculum. Build showcase projects demonstrating end-to-end ML skills.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **cap-portfolio**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for ML Portfolio Projects
 meta = {"topic_id": "cap-portfolio", "track": "ai", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -252,12 +318,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for cap-portfolio
 from dataclasses import dataclass
 
@@ -305,7 +373,9 @@ When stuck on **cap-portfolio**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -342,9 +412,14 @@ Track: ai | Level: intermediate`
 
 Teams shipping features around **cap-portfolio** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for ML Portfolio Projects
 skills = ["ai", "intermediate", "cap-portfolio"]
 print("Built project applying:", ", ".join(skills))`,
@@ -446,11 +521,23 @@ Discussion forum gold for domain tips; verify leaks independently.
 
 **Applying Kaggle Competition Strategy:** Structured approach to competitive ML and learning from kernels. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Competition Workflow", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Competition Workflow" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Competition Workflow** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Replicate baseline before complex models`,
             `Local CV strategy mirrors test if possible`,
@@ -488,7 +575,11 @@ Track: ai | Level: intermediate`
         {
           id: `features`,
           title: `Feature Engineering on Kaggle`,
-          content: `**Feature Engineering on Kaggle** is essential to **Kaggle Competition Strategy**. Structured approach to competitive ML and learning from kernels. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Feature Engineering on Kaggle** — what you need to know:
+
+- **Core idea:** Structured approach to competitive ML and learning from kernels.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Tabular: target encoding with CV to prevent leak, interactions, aggregations by group. Text: TF-IDF, transformers. Image: augmentations, pseudo-labeling.
 
@@ -496,11 +587,23 @@ Tabular: target encoding with CV to prevent leak, interactions, aggregations by 
 
 **Applying Kaggle Competition Strategy:** Structured approach to competitive ML and learning from kernels. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Feature Engineering on Kaggle", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Feature Engineering on Kaggle" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Feature Engineering on Kaggle** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `GroupKFold when groups in data`,
             `Target encode with inner CV folds`,
@@ -544,11 +647,23 @@ Diminishing returns after 4-5 uncorrelated strong models—know when to stop.
 
 **Applying Kaggle Competition Strategy:** Structured approach to competitive ML and learning from kernels. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Ensembling & Stacking", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Ensembling & Stacking" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Ensembling & Stacking** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Diversity beats ten similar GBDTs`,
             `OOF predictions prevent stack leakage`,
@@ -586,7 +701,11 @@ Track: ai | Level: intermediate`
         {
           id: `mindset`,
           title: `Learning Mindset`,
-          content: `**Learning Mindset** is essential to **Kaggle Competition Strategy**. Structured approach to competitive ML and learning from kernels. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Learning Mindset** — what you need to know:
+
+- **Core idea:** Structured approach to competitive ML and learning from kernels.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Top placements optional—learning transferable. Study winning solutions post-competition. Reimplement core trick in clean repo.
 
@@ -594,11 +713,23 @@ Team up to split EDA and modeling; communicate daily during crunch.
 
 **Applying Kaggle Competition Strategy:** Structured approach to competitive ML and learning from kernels. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Learning Mindset", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Learning Mindset" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Learning Mindset** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Post-mortem writeups solidify learning`,
             `Do not burn out on leaderboard chasing`,
@@ -638,13 +769,19 @@ Track: ai | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Kaggle Competition Strategy** sits in the **ai** track of the Data Science Master curriculum. Structured approach to competitive ML and learning from kernels.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **cap-kaggle**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Kaggle Competition Strategy
 meta = {"topic_id": "cap-kaggle", "track": "ai", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -679,12 +816,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for cap-kaggle
 from dataclasses import dataclass
 
@@ -732,7 +871,9 @@ When stuck on **cap-kaggle**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -769,9 +910,14 @@ Track: ai | Level: intermediate`
 
 Teams shipping features around **cap-kaggle** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Kaggle Competition Strategy
 skills = ["ai", "intermediate", "cap-kaggle"]
 print("Built project applying:", ", ".join(skills))`,
@@ -867,7 +1013,11 @@ Track: ai | Level: intermediate`
         {
           id: `ml-fundamentals`,
           title: `ML Concept Questions`,
-          content: `**ML Concept Questions** is essential to **ML Interview Preparation**. ML fundamentals, coding, system design, and behavioral preparation. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ML Concept Questions** — what you need to know:
+
+- **Core idea:** ML fundamentals, coding, system design, and behavioral preparation.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Expect bias-variance, regularization, gradient descent variants, evaluation metrics, precision-recall tradeoff, ROC vs PR curves. Derive logistic loss intuitively.
 
@@ -875,11 +1025,23 @@ Expect bias-variance, regularization, gradient descent variants, evaluation metr
 
 **Applying ML Interview Preparation:** ML fundamentals, coding, system design, and behavioral preparation. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "ML Concept Questions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "ML Concept Questions" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **ML Concept Questions** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Explain simply then add nuance if prompted`,
             `Connect formulas to use cases`,
@@ -917,7 +1079,11 @@ Track: ai | Level: intermediate`
         {
           id: `coding`,
           title: `ML Coding Interviews`,
-          content: `**ML Coding Interviews** is essential to **ML Interview Preparation**. ML fundamentals, coding, system design, and behavioral preparation. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ML Coding Interviews** — what you need to know:
+
+- **Core idea:** ML fundamentals, coding, system design, and behavioral preparation.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Implement k-means, softmax, batch norm forward pass, BFS. pandas/sklearn snippets: groupby, merge, train_test_split with stratify.
 
@@ -925,13 +1091,29 @@ LeetCode medium arrays/strings still common for MLE roles at big tech.
 
 **Applying ML Interview Preparation:** ML fundamentals, coding, system design, and behavioral preparation. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "ML Coding Interviews", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "ML Coding Interviews" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **ML Coding Interviews** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def softmax(x):
     import numpy as np
     e = np.exp(x - np.max(x))
@@ -962,7 +1144,11 @@ Track: ai | Level: intermediate`
         {
           id: `system-design`,
           title: `ML System Design`,
-          content: `**ML System Design** is essential to **ML Interview Preparation**. ML fundamentals, coding, system design, and behavioral preparation. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ML System Design** — what you need to know:
+
+- **Core idea:** ML fundamentals, coding, system design, and behavioral preparation.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Design recommendation feed, fraud detection, search ranking. Cover data, features, model, serving, monitoring, A/B test, failure modes.
 
@@ -970,11 +1156,23 @@ Scale: batch vs online features, approximate NN retrieval, cache hot predictions
 
 **Applying ML Interview Preparation:** ML fundamentals, coding, system design, and behavioral preparation. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "ML System Design", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "ML System Design" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **ML System Design** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Start from requirements and SLAs`,
             `Draw data flow diagram`,
@@ -1018,11 +1216,23 @@ Ask interviewers about team ML maturity, deployment frequency, research vs produ
 
 **Applying ML Interview Preparation:** ML fundamentals, coding, system design, and behavioral preparation. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Behavioral & STAR", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Behavioral & STAR" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Behavioral & STAR** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Quantify impact in STAR results`,
             `Failure stories show growth`,
@@ -1062,13 +1272,19 @@ Track: ai | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**ML Interview Preparation** sits in the **ai** track of the Data Science Master curriculum. ML fundamentals, coding, system design, and behavioral preparation.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **cap-interview**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for ML Interview Preparation
 meta = {"topic_id": "cap-interview", "track": "ai", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1103,12 +1319,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for cap-interview
 from dataclasses import dataclass
 
@@ -1156,7 +1374,9 @@ When stuck on **cap-interview**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1193,9 +1413,14 @@ Track: ai | Level: intermediate`
 
 Teams shipping features around **cap-interview** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for ML Interview Preparation
 skills = ["ai", "intermediate", "cap-interview"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1292,7 +1517,11 @@ print(1/(1+math.exp(0)))`,
         {
           id: `reading`,
           title: `How to Read a Paper`,
-          content: `**How to Read a Paper** is essential to **Reading Papers & Reproduction**. Efficiently understand research papers and reproduce key results. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**How to Read a Paper** — what you need to know:
+
+- **Core idea:** Efficiently understand research papers and reproduce key results.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 First pass: title, abstract, figures, conclusion. Second: intro, method skim, experiments. Third: full math and related work.
 
@@ -1300,11 +1529,23 @@ First pass: title, abstract, figures, conclusion. Second: intro, method skim, ex
 
 **Applying Reading Papers & Reproduction:** Efficiently understand research papers and reproduce key results. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "How to Read a Paper", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "How to Read a Paper" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **How to Read a Paper** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Abstract claims vs evidence in experiments`,
             `Compare to prior SOTA tables fairly`,
@@ -1348,11 +1589,23 @@ Track: ai | Level: advanced`
 
 **Applying Reading Papers & Reproduction:** Efficiently understand research papers and reproduce key results. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Venues & Preprints", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Venues & Preprints" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Venues & Preprints** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Peer review not perfect but filters noise`,
             `arXiv version may update—note date`,
@@ -1396,11 +1649,23 @@ Track: ai | Level: advanced`
 
 **Applying Reading Papers & Reproduction:** Efficiently understand research papers and reproduce key results. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Reproducing Results", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Reproducing Results" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Reproducing Results** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Hidden hyperparameters in appendix or code`,
             `Data preprocessing must match exactly`,
@@ -1438,7 +1703,11 @@ Track: ai | Level: advanced`
         {
           id: `contribute`,
           title: `From Reading to Contributing`,
-          content: `**From Reading to Contributing** is essential to **Reading Papers & Reproduction**. Efficiently understand research papers and reproduce key results. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**From Reading to Contributing** — what you need to know:
+
+- **Core idea:** Efficiently understand research papers and reproduce key results.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Identify extension: new dataset, ablation, efficiency improvement. Write reproducible experiment script; open source with clear README.
 
@@ -1446,11 +1715,23 @@ Workshop and short papers valid first publication paths.
 
 **Applying Reading Papers & Reproduction:** Efficiently understand research papers and reproduce key results. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "From Reading to Contributing", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "From Reading to Contributing" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **From Reading to Contributing** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Negative results valuable if well executed`,
             `Collaborate via Twitter/Discord research groups`,
@@ -1490,13 +1771,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Reading Papers & Reproduction** sits in the **ai** track of the Data Science Master curriculum. Efficiently understand research papers and reproduce key results.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **cap-research**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Reading Papers & Reproduction
 meta = {"topic_id": "cap-research", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1531,12 +1818,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for cap-research
 from dataclasses import dataclass
 
@@ -1584,7 +1873,9 @@ When stuck on **cap-research**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1621,9 +1912,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **cap-research** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Reading Papers & Reproduction
 skills = ["ai", "advanced", "cap-research"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1725,11 +2021,23 @@ Titles vary—read job descriptions not only labels.
 
 **Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Role Definitions", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Role Definitions" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Role Definitions** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `DS leans stats and product analytics`,
             `MLE leans software and systems`,
@@ -1767,7 +2075,11 @@ Track: ai | Level: intermediate`
         {
           id: `skills`,
           title: `Skill Progression`,
-          content: `**Skill Progression** is essential to **Career Paths in ML/AI**. Roles, skills, and growth paths for ML engineers, data scientists, and researchers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Skill Progression** — what you need to know:
+
+- **Core idea:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Foundation: Python, SQL, ML basics. Mid: deep learning, cloud, experiment tracking. Senior: system design, mentoring, cross-team influence.
 
@@ -1775,11 +2087,23 @@ Foundation: Python, SQL, ML basics. Mid: deep learning, cloud, experiment tracki
 
 **Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Skill Progression", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Skill Progression" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Skill Progression** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Communication as important as coding`,
             `Business context distinguishes senior ICs`,
@@ -1817,7 +2141,11 @@ Track: ai | Level: intermediate`
         {
           id: `job-search`,
           title: `Job Search Tactics`,
-          content: `**Job Search Tactics** is essential to **Career Paths in ML/AI**. Roles, skills, and growth paths for ML engineers, data scientists, and researchers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Job Search Tactics** — what you need to know:
+
+- **Core idea:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Tailor resume bullets to metrics. LinkedIn + referrals strongest channel. Portfolio and GitHub linked prominently.
 
@@ -1825,11 +2153,23 @@ Prepare 30-second pitch and 2-minute project deep dive.
 
 **Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Job Search Tactics", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Job Search Tactics" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Job Search Tactics** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Referrals bypass resume filters`,
             `Apply to teams not only companies`,
@@ -1867,7 +2207,11 @@ Track: ai | Level: intermediate`
         {
           id: `growth`,
           title: `Long-Term Growth`,
-          content: `**Long-Term Growth** is essential to **Career Paths in ML/AI**. Roles, skills, and growth paths for ML engineers, data scientists, and researchers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Long-Term Growth** — what you need to know:
+
+- **Core idea:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Staff/principal paths: technical leadership without people management optional. Manager track: team delivery and hiring.
 
@@ -1875,11 +2219,23 @@ Contribute to standards, RFCs, internal platforms—impact multiplier.
 
 **Applying Career Paths in ML/AI:** Roles, skills, and growth paths for ML engineers, data scientists, and researchers. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Long-Term Growth", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Long-Term Growth" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Long-Term Growth** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Document and teach to scale influence`,
             `Balance depth with organizational awareness`,
@@ -1919,13 +2275,19 @@ Track: ai | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Career Paths in ML/AI** sits in the **ai** track of the Data Science Master curriculum. Roles, skills, and growth paths for ML engineers, data scientists, and researchers.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **cap-career**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Career Paths in ML/AI
 meta = {"topic_id": "cap-career", "track": "ai", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1960,12 +2322,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for cap-career
 from dataclasses import dataclass
 
@@ -2013,7 +2377,9 @@ When stuck on **cap-career**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2050,9 +2416,14 @@ Track: ai | Level: intermediate`
 
 Teams shipping features around **cap-career** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Career Paths in ML/AI
 skills = ["ai", "intermediate", "cap-career"]
 print("Built project applying:", ", ".join(skills))`,

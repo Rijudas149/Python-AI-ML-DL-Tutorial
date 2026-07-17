@@ -11,17 +11,37 @@ export const module08Topics: Topic[] = [
         {
           id: `pyplot`,
           title: `pyplot Interface`,
-          content: `**pyplot Interface** is essential to **Matplotlib Basics**. Create line, scatter, bar, and histogram plots with pyplot and OO API. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**pyplot Interface** — what you need to know:
+
+- **Core idea:** Create line, scatter, bar, and histogram plots with pyplot and OO API.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 import matplotlib.pyplot as plt. plt.plot(), scatter(), bar(), hist(). plt.xlabel, title, legend, show/savefig.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "pyplot Interface" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **pyplot Interface** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import matplotlib.pyplot as plt
 
 x = [1, 2, 3, 4, 5]
@@ -58,17 +78,37 @@ Track: data | Level: beginner`
         {
           id: `oo-api`,
           title: `Object-Oriented API`,
-          content: `**Object-Oriented API** is essential to **Matplotlib Basics**. Create line, scatter, bar, and histogram plots with pyplot and OO API. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Object-Oriented API** — what you need to know:
+
+- **Core idea:** Create line, scatter, bar, and histogram plots with pyplot and OO API.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 fig, ax = plt.subplots() — preferred for multiple plots. ax.plot(), ax.set_xlabel(). More control than pyplot.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Object-Oriented API" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Object-Oriented API** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import matplotlib.pyplot as plt
 
 fig, axes = plt.subplots(1, 2, figsize=(10, 4))
@@ -101,15 +141,31 @@ Track: data | Level: beginner`
         {
           id: `styles`,
           title: `Styles & Customization`,
-          content: `**Styles & Customization** is essential to **Matplotlib Basics**. Create line, scatter, bar, and histogram plots with pyplot and OO API. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Styles & Customization** — what you need to know:
+
+- **Core idea:** Create line, scatter, bar, and histogram plots with pyplot and OO API.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 plt.style.use("seaborn-v0_8"). Colors, markers, linewidth, alpha transparency. Colorblind-friendly palettes.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Styles & Customization" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Styles & Customization** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Use colorblind-safe palettes`,
             `Consistent style across project`,
@@ -147,15 +203,31 @@ Track: data | Level: beginner`
         {
           id: `anatomy`,
           title: `Figure Anatomy`,
-          content: `**Figure Anatomy** is essential to **Matplotlib Basics**. Create line, scatter, bar, and histogram plots with pyplot and OO API. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Figure Anatomy** — what you need to know:
+
+- **Core idea:** Create line, scatter, bar, and histogram plots with pyplot and OO API.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Figure contains Axes contains Lines/Patches/Text. fig.add_subplot, GridSpec for complex layouts.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Figure Anatomy" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Figure Anatomy** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Figure is top-level container`,
             `Axes is single plot area`,
@@ -195,13 +267,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Matplotlib Basics** sits in the **data** track of the Data Science Master curriculum. Create line, scatter, bar, and histogram plots with pyplot and OO API.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **viz-matplotlib**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Matplotlib Basics
 meta = {"topic_id": "viz-matplotlib", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -236,12 +314,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for viz-matplotlib
 from dataclasses import dataclass
 
@@ -289,7 +369,9 @@ When stuck on **viz-matplotlib**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -326,9 +408,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **viz-matplotlib** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Matplotlib Basics
 skills = ["data", "beginner", "viz-matplotlib"]
 print("Built project applying:", ", ".join(skills))`,
@@ -423,17 +510,37 @@ print("2 subplots created")`,
         {
           id: `distplot`,
           title: `Distribution Plots`,
-          content: `**Distribution Plots** is essential to **Seaborn Statistical Plots**. High-level statistical visualizations built on matplotlib. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Distribution Plots** — what you need to know:
+
+- **Core idea:** High-level statistical visualizations built on matplotlib.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 sns.histplot, kdeplot, displot for distributions. rugplot for individual observations.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Distribution Plots" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Distribution Plots** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
@@ -466,17 +573,37 @@ Track: data | Level: beginner`
         {
           id: `relplot`,
           title: `Relational Plots`,
-          content: `**Relational Plots** is essential to **Seaborn Statistical Plots**. High-level statistical visualizations built on matplotlib. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Relational Plots** — what you need to know:
+
+- **Core idea:** High-level statistical visualizations built on matplotlib.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 scatterplot, lineplot, relplot. hue for color grouping, size for third dimension.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Relational Plots" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Relational Plots** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -508,17 +635,37 @@ Track: data | Level: beginner`
         {
           id: `catplot`,
           title: `Categorical Plots`,
-          content: `**Categorical Plots** is essential to **Seaborn Statistical Plots**. High-level statistical visualizations built on matplotlib. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Categorical Plots** — what you need to know:
+
+- **Core idea:** High-level statistical visualizations built on matplotlib.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 boxplot, violinplot, barplot, countplot. Compare distributions across categories.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Categorical Plots" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Categorical Plots** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -549,17 +696,37 @@ Track: data | Level: beginner`
         {
           id: `heatmap`,
           title: `Heatmaps & Correlation`,
-          content: `**Heatmaps & Correlation** is essential to **Seaborn Statistical Plots**. High-level statistical visualizations built on matplotlib. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Heatmaps & Correlation** — what you need to know:
+
+- **Core idea:** High-level statistical visualizations built on matplotlib.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 sns.heatmap for correlation matrices. annot=True shows values. Essential for EDA in ML.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Heatmaps & Correlation" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Heatmaps & Correlation** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -593,13 +760,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Seaborn Statistical Plots** sits in the **data** track of the Data Science Master curriculum. High-level statistical visualizations built on matplotlib.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **viz-seaborn**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Seaborn Statistical Plots
 meta = {"topic_id": "viz-seaborn", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -634,12 +807,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for viz-seaborn
 from dataclasses import dataclass
 
@@ -687,7 +862,9 @@ When stuck on **viz-seaborn**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -724,9 +901,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **viz-seaborn** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Seaborn Statistical Plots
 skills = ["data", "beginner", "viz-seaborn"]
 print("Built project applying:", ", ".join(skills))`,
@@ -821,17 +1003,37 @@ print("done")`,
         {
           id: `plotly-express`,
           title: `Plotly Express`,
-          content: `**Plotly Express** is essential to **Plotly Interactive Viz**. Interactive charts for exploration and dashboards. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Plotly Express** — what you need to know:
+
+- **Core idea:** Interactive charts for exploration and dashboards.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 px.scatter, px.line, px.bar — high-level API. Automatic interactivity: hover, zoom, pan.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Plotly Express" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Plotly Express** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import plotly.express as px
 import pandas as pd
 
@@ -863,15 +1065,31 @@ Track: data | Level: beginner`
         {
           id: `plotly-graph`,
           title: `Graph Objects`,
-          content: `**Graph Objects** is essential to **Plotly Interactive Viz**. Interactive charts for exploration and dashboards. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Graph Objects** — what you need to know:
+
+- **Core idea:** Interactive charts for exploration and dashboards.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 go.Figure, go.Scatter for fine control. Subplots with make_subplots. Animations with frames.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Graph Objects" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Graph Objects** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Graph Objects for custom charts`,
             `make_subplots for complex dashboards`,
@@ -909,15 +1127,31 @@ Track: data | Level: beginner`
         {
           id: `dash`,
           title: `Dash Preview`,
-          content: `**Dash Preview** is essential to **Plotly Interactive Viz**. Interactive charts for exploration and dashboards. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Dash Preview** — what you need to know:
+
+- **Core idea:** Interactive charts for exploration and dashboards.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Plotly Dash builds web dashboards in pure Python. Callbacks for interactivity.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Dash Preview" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Dash Preview** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Dash for production dashboards`,
             `dcc components for inputs`,
@@ -955,15 +1189,31 @@ Track: data | Level: beginner`
         {
           id: `when`,
           title: `When to Use Plotly`,
-          content: `**When to Use Plotly** is essential to **Plotly Interactive Viz**. Interactive charts for exploration and dashboards. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**When to Use Plotly** — what you need to know:
+
+- **Core idea:** Interactive charts for exploration and dashboards.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Exploration and dashboards: Plotly. Publications: Matplotlib/Seaborn. Large data: datashader.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "When to Use Plotly" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **When to Use Plotly** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Plotly for interactive exploration`,
             `Matplotlib for static publication figures`,
@@ -1003,13 +1253,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Plotly Interactive Viz** sits in the **data** track of the Data Science Master curriculum. Interactive charts for exploration and dashboards.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **viz-plotly**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Plotly Interactive Viz
 meta = {"topic_id": "viz-plotly", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1044,12 +1300,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for viz-plotly
 from dataclasses import dataclass
 
@@ -1097,7 +1355,9 @@ When stuck on **viz-plotly**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1134,9 +1394,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **viz-plotly** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Plotly Interactive Viz
 skills = ["data", "beginner", "viz-plotly"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1229,15 +1494,31 @@ print(fig.layout.title.text)`,
         {
           id: `chart-selection`,
           title: `Choosing the Right Chart`,
-          content: `**Choosing the Right Chart** is essential to **Dashboard Design Principles**. Visual encoding, chart selection, and storytelling with data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Choosing the Right Chart** — what you need to know:
+
+- **Core idea:** Visual encoding, chart selection, and storytelling with data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Comparison: bar. Distribution: histogram/violin. Relationship: scatter. Composition: stacked bar/pie (sparingly). Time: line.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Choosing the Right Chart" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Choosing the Right Chart** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Match chart type to analytical question`,
             `Bar charts start at zero`,
@@ -1275,15 +1556,31 @@ Track: data | Level: beginner`
         {
           id: `color`,
           title: `Color Theory`,
-          content: `**Color Theory** is essential to **Dashboard Design Principles**. Visual encoding, chart selection, and storytelling with data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Color Theory** — what you need to know:
+
+- **Core idea:** Visual encoding, chart selection, and storytelling with data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sequential for magnitude. Diverging for deviation from midpoint. Categorical for distinct groups. Max 6-8 categorical colors.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Color Theory" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Color Theory** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Colorblind-safe: viridis, ColorBrewer`,
             `Never use color as only differentiator`,
@@ -1321,15 +1618,31 @@ Track: data | Level: beginner`
         {
           id: `storytelling`,
           title: `Data Storytelling`,
-          content: `**Data Storytelling** is essential to **Dashboard Design Principles**. Visual encoding, chart selection, and storytelling with data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Data Storytelling** — what you need to know:
+
+- **Core idea:** Visual encoding, chart selection, and storytelling with data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Lead with insight, not chart. Annotate key points. Remove clutter. One message per visualization.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Data Storytelling" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Data Storytelling** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Title states the insight not the data`,
             `Remove gridlines and borders if not needed`,
@@ -1367,15 +1680,31 @@ Track: data | Level: beginner`
         {
           id: `eda-workflow`,
           title: `EDA Visualization Workflow`,
-          content: `**EDA Visualization Workflow** is essential to **Dashboard Design Principles**. Visual encoding, chart selection, and storytelling with data. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**EDA Visualization Workflow** — what you need to know:
+
+- **Core idea:** Visual encoding, chart selection, and storytelling with data.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Univariate → bivariate → multivariate. Check distributions, correlations, outliers, missing patterns before modeling.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "EDA Visualization Workflow" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **EDA Visualization Workflow** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `pairplot for multivariate overview`,
             `Check class balance in classification`,
@@ -1415,13 +1744,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Dashboard Design Principles** sits in the **data** track of the Data Science Master curriculum. Visual encoding, chart selection, and storytelling with data.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **viz-design**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Dashboard Design Principles
 meta = {"topic_id": "viz-design", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1456,12 +1791,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for viz-design
 from dataclasses import dataclass
 
@@ -1509,7 +1846,9 @@ When stuck on **viz-design**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1546,9 +1885,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **viz-design** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Dashboard Design Principles
 skills = ["data", "beginner", "viz-design"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1638,15 +1982,31 @@ print(len(eda_checklist))`,
         {
           id: `geopandas`,
           title: `Geospatial Visualization`,
-          content: `**Geospatial Visualization** is essential to **Geospatial & Specialized Charts**. Maps, network graphs, and domain-specific visualizations. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Geospatial Visualization** — what you need to know:
+
+- **Core idea:** Maps, network graphs, and domain-specific visualizations.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 GeoPandas extends pandas with geometry. choropleth maps, point maps. folium for interactive maps.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Geospatial Visualization" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Geospatial Visualization** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `GeoPandas for shapefile/GeoJSON data`,
             `folium for interactive Leaflet maps`,
@@ -1684,15 +2044,31 @@ Track: data | Level: beginner`
         {
           id: `network`,
           title: `Network Graphs`,
-          content: `**Network Graphs** is essential to **Geospatial & Specialized Charts**. Maps, network graphs, and domain-specific visualizations. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Network Graphs** — what you need to know:
+
+- **Core idea:** Maps, network graphs, and domain-specific visualizations.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 networkx + matplotlib/plotly for graph visualization. Nodes and edges for relationship data.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Network Graphs" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Network Graphs** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `networkx for graph algorithms`,
             `Layout algorithms affect readability`,
@@ -1730,17 +2106,37 @@ Track: data | Level: beginner`
         {
           id: `ml-viz`,
           title: `ML-Specific Visualizations`,
-          content: `**ML-Specific Visualizations** is essential to **Geospatial & Specialized Charts**. Maps, network graphs, and domain-specific visualizations. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ML-Specific Visualizations** — what you need to know:
+
+- **Core idea:** Maps, network graphs, and domain-specific visualizations.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Confusion matrix heatmap, ROC curves, learning curves, feature importance bar charts, decision boundaries.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "ML-Specific Visualizations" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **ML-Specific Visualizations** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.metrics import confusion_matrix
 import numpy as np
 
@@ -1773,15 +2169,31 @@ Track: data | Level: beginner`
         {
           id: `tools`,
           title: `Specialized Tools`,
-          content: `**Specialized Tools** is essential to **Geospatial & Specialized Charts**. Maps, network graphs, and domain-specific visualizations. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Specialized Tools** — what you need to know:
+
+- **Core idea:** Maps, network graphs, and domain-specific visualizations.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 datashader for big data viz. plotnine (ggplot2 port). altair for declarative viz. Choose tool for scale and audience.
 
-**Why this matters:** Data quality and reproducible transforms determine whether models learn signal or noise. Mastering "Specialized Tools" here directly affects how confidently you can build, debug, and ship data projects.
+**Why this matters:**
 
-**Professional habits:** Profile dtypes, null rates, and cardinality before any modeling step. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Data quality and reproducible transforms determine whether models learn signal or noise.
+- Mastering **Specialized Tools** directly affects how confidently you can build, debug, and ship data projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Profile dtypes, null rates, and cardinality before any modeling step.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Train/test leakage, silent dtype coercion, and Cartesian joins that explode row counts.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `datashader aggregates millions of points`,
             `Altair declarative grammar of graphics`,
@@ -1821,13 +2233,19 @@ Track: data | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Geospatial & Specialized Charts** sits in the **data** track of the Data Science Master curriculum. Maps, network graphs, and domain-specific visualizations.
 
-**Theoretical foundation:** Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.
+**Theoretical foundation:**
+
+- Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling.
+- Every aggregation encodes assumptions about granularity and time.
 
 For **viz-specialized**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Geospatial & Specialized Charts
 meta = {"topic_id": "viz-specialized", "track": "data", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1862,12 +2280,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for viz-specialized
 from dataclasses import dataclass
 
@@ -1915,7 +2335,9 @@ When stuck on **viz-specialized**, reproduce with the smallest input, enable ver
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1952,9 +2374,14 @@ Track: data | Level: beginner`
 
 Teams shipping features around **viz-specialized** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Geospatial & Specialized Charts
 skills = ["data", "beginner", "viz-specialized"]
 print("Built project applying:", ", ".join(skills))`,

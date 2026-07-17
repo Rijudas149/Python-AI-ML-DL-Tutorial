@@ -11,17 +11,37 @@ export const module14Topics: Topic[] = [
         {
           id: `perceptron`,
           title: `The Perceptron`,
-          content: `**The Perceptron** is essential to **Neural Network Basics**. Perceptrons, multi-layer networks, and forward propagation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**The Perceptron** — what you need to know:
+
+- **Core idea:** Perceptrons, multi-layer networks, and forward propagation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Single neuron: output = activation(w·x + b). Stacked layers create MLP (Multi-Layer Perceptron). Universal function approximator with enough hidden units.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "The Perceptron" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **The Perceptron** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def forward(X, W, b, activation=np.tanh):
@@ -54,15 +74,31 @@ Track: dl | Level: beginner`
         {
           id: `mlp`,
           title: `Multi-Layer Perceptron`,
-          content: `**Multi-Layer Perceptron** is essential to **Neural Network Basics**. Perceptrons, multi-layer networks, and forward propagation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Multi-Layer Perceptron** — what you need to know:
+
+- **Core idea:** Perceptrons, multi-layer networks, and forward propagation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Input layer → hidden layer(s) → output layer. Each layer: linear transform + non-linear activation. Depth enables hierarchical feature learning.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Multi-Layer Perceptron" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Multi-Layer Perceptron** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `FOR each layer L:
     z = W_L @ a_{L-1} + b_L
     a_L = activation(z)`,
@@ -91,17 +127,37 @@ level: beginner`
         {
           id: `forward`,
           title: `Forward Propagation`,
-          content: `**Forward Propagation** is essential to **Neural Network Basics**. Perceptrons, multi-layer networks, and forward propagation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Forward Propagation** — what you need to know:
+
+- **Core idea:** Perceptrons, multi-layer networks, and forward propagation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Pass input through network layer by layer to produce prediction. Matrix operations enable batch processing.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Forward Propagation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Forward Propagation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -138,15 +194,31 @@ Track: dl | Level: beginner`
         {
           id: `capacity`,
           title: `Network Capacity`,
-          content: `**Network Capacity** is essential to **Neural Network Basics**. Perceptrons, multi-layer networks, and forward propagation. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Network Capacity** — what you need to know:
+
+- **Core idea:** Perceptrons, multi-layer networks, and forward propagation.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 More parameters = more capacity to fit complex functions. Risk overfitting with too much capacity on small data.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Network Capacity" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Network Capacity** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Parameters = weights + biases count`,
             `Capacity must match data complexity`,
@@ -186,13 +258,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Neural Network Basics** sits in the **dl** track of the Data Science Master curriculum. Perceptrons, multi-layer networks, and forward propagation.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-nn-basics**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Neural Network Basics
 meta = {"topic_id": "dl-nn-basics", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -227,12 +305,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-nn-basics
 from dataclasses import dataclass
 
@@ -280,7 +360,9 @@ When stuck on **dl-nn-basics**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -317,9 +399,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-nn-basics** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Neural Network Basics
 skills = ["dl", "beginner", "dl-nn-basics"]
 print("Built project applying:", ", ".join(skills))`,
@@ -409,17 +496,37 @@ print(relu(np.array([-1, 0, 2])))`,
         {
           id: `relu`,
           title: `ReLU & Variants`,
-          content: `**ReLU & Variants** is essential to **Activation Functions**. Non-linear functions enabling networks to learn complex patterns. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ReLU & Variants** — what you need to know:
+
+- **Core idea:** Non-linear functions enabling networks to learn complex patterns.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 ReLU: max(0, x). Default for hidden layers. Leaky ReLU, PReLU, ELU address dying ReLU problem.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "ReLU & Variants" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **ReLU & Variants** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -454,17 +561,37 @@ Track: dl | Level: beginner`
         {
           id: `sigmoid-tanh`,
           title: `Sigmoid & Tanh`,
-          content: `**Sigmoid & Tanh** is essential to **Activation Functions**. Non-linear functions enabling networks to learn complex patterns. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Sigmoid & Tanh** — what you need to know:
+
+- **Core idea:** Non-linear functions enabling networks to learn complex patterns.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sigmoid: (0,1) for binary output. Tanh: (-1,1) zero-centered. Vanishing gradient in deep networks limits hidden layer use.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Sigmoid & Tanh" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Sigmoid & Tanh** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def sigmoid(z): return 1 / (1 + np.exp(-z))
@@ -498,17 +625,37 @@ Track: dl | Level: beginner`
         {
           id: `softmax`,
           title: `Softmax`,
-          content: `**Softmax** is essential to **Activation Functions**. Non-linear functions enabling networks to learn complex patterns. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Softmax** — what you need to know:
+
+- **Core idea:** Non-linear functions enabling networks to learn complex patterns.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ. Outputs sum to 1. Combined with cross-entropy loss.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Softmax" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Softmax** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def softmax(z):
@@ -541,15 +688,31 @@ Track: dl | Level: beginner`
         {
           id: `modern`,
           title: `Modern Activations`,
-          content: `**Modern Activations** is essential to **Activation Functions**. Non-linear functions enabling networks to learn complex patterns. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Modern Activations** — what you need to know:
+
+- **Core idea:** Non-linear functions enabling networks to learn complex patterns.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 GELU (Gaussian Error Linear Unit) in BERT/GPT. Swish/SiLU: x·sigmoid(x). Smooth activations help deep transformers.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Modern Activations" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Modern Activations** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `GELU: x * Φ(x) where Φ is CDF of standard normal`,
             `Swish smooth near zero unlike ReLU`,
@@ -589,13 +752,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Activation Functions** sits in the **dl** track of the Data Science Master curriculum. Non-linear functions enabling networks to learn complex patterns.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-activations**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Activation Functions
 meta = {"topic_id": "dl-activations", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -630,12 +799,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-activations
 from dataclasses import dataclass
 
@@ -683,7 +854,9 @@ When stuck on **dl-activations**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -720,9 +893,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-activations** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Activation Functions
 skills = ["dl", "beginner", "dl-activations"]
 print("Built project applying:", ", ".join(skills))`,
@@ -817,17 +995,37 @@ print(round(x / (1 + np.exp(-1.702 * x)), 4))`,
         {
           id: `mse`,
           title: `MSE & MAE Loss`,
-          content: `**MSE & MAE Loss** is essential to **Loss Functions**. Objective functions that neural networks minimize during training. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**MSE & MAE Loss** — what you need to know:
+
+- **Core idea:** Objective functions that neural networks minimize during training.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 MSE: mean((y-ŷ)²). Differentiable, penalizes large errors. MAE: mean(|y-ŷ|). Robust to outliers.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "MSE & MAE Loss" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **MSE & MAE Loss** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def mse_loss(y_true, y_pred):
@@ -859,17 +1057,37 @@ Track: dl | Level: beginner`
         {
           id: `ce`,
           title: `Cross-Entropy Loss`,
-          content: `**Cross-Entropy Loss** is essential to **Loss Functions**. Objective functions that neural networks minimize during training. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Cross-Entropy Loss** — what you need to know:
+
+- **Core idea:** Objective functions that neural networks minimize during training.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Binary: -[y log(ŷ) + (1-y)log(1-ŷ)]. Categorical: -Σ yᵢ log(ŷᵢ). Standard for classification.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Cross-Entropy Loss" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Cross-Entropy Loss** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -902,15 +1120,31 @@ Track: dl | Level: beginner`
         {
           id: `multi-task`,
           title: `Multi-Task & Custom Losses`,
-          content: `**Multi-Task & Custom Losses** is essential to **Loss Functions**. Objective functions that neural networks minimize during training. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Multi-Task & Custom Losses** — what you need to know:
+
+- **Core idea:** Objective functions that neural networks minimize during training.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Combine losses with weights: L = α·L₁ + β·L₂. Custom losses for ranking, contrastive learning, GANs.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Multi-Task & Custom Losses" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Multi-Task & Custom Losses** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Weight task losses by importance or uncertainty`,
             `Contrastive loss for embeddings (SimCLR, triplet)`,
@@ -948,15 +1182,31 @@ Track: dl | Level: beginner`
         {
           id: `monitor`,
           title: `Monitoring Loss`,
-          content: `**Monitoring Loss** is essential to **Loss Functions**. Objective functions that neural networks minimize during training. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Monitoring Loss** — what you need to know:
+
+- **Core idea:** Objective functions that neural networks minimize during training.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Track train and validation loss. Divergence indicates overfitting. Plateau suggests learning rate adjustment needed.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Monitoring Loss" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Monitoring Loss** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Loss should decrease during training`,
             `Val loss increasing while train decreases = overfit`,
@@ -996,13 +1246,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Loss Functions** sits in the **dl** track of the Data Science Master curriculum. Objective functions that neural networks minimize during training.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-loss**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Loss Functions
 meta = {"topic_id": "dl-loss", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1037,12 +1293,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-loss
 from dataclasses import dataclass
 
@@ -1090,7 +1348,9 @@ When stuck on **dl-loss**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1127,9 +1387,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-loss** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Loss Functions
 skills = ["dl", "beginner", "dl-loss"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1219,15 +1484,31 @@ print(-np.log(1 - 0.1))`,
         {
           id: `concept`,
           title: `Backpropagation Concept`,
-          content: `**Backpropagation Concept** is essential to **Backpropagation**. Computing gradients through the computational graph via chain rule. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Backpropagation Concept** — what you need to know:
+
+- **Core idea:** Computing gradients through the computational graph via chain rule.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Forward pass computes output and loss. Backward pass applies chain rule from loss to each parameter. Efficient via dynamic programming on computational graph.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Backpropagation Concept" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Backpropagation Concept** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `FOR layer L from output to input:
     dL/dz_L = upstream_gradient * activation_derivative
     dL/dW_L = dL/dz_L @ a_{L-1}^T
@@ -1258,17 +1539,37 @@ level: beginner`
         {
           id: `manual`,
           title: `Manual Backprop Example`,
-          content: `**Manual Backprop Example** is essential to **Backpropagation**. Computing gradients through the computational graph via chain rule. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Manual Backprop Example** — what you need to know:
+
+- **Core idea:** Computing gradients through the computational graph via chain rule.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 2-layer network backprop by hand builds intuition. Matrix calculus for weight gradients.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Manual Backprop Example" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Manual Backprop Example** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 # Simple gradient descent on f(w) = w^2
@@ -1303,15 +1604,31 @@ Track: dl | Level: beginner`
         {
           id: `autograd`,
           title: `Automatic Differentiation`,
-          content: `**Automatic Differentiation** is essential to **Backpropagation**. Computing gradients through the computational graph via chain rule. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Automatic Differentiation** — what you need to know:
+
+- **Core idea:** Computing gradients through the computational graph via chain rule.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Automatic Differentiation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Automatic Differentiation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Autograd builds computational graph dynamically`,
             `tensor.backward() triggers reverse pass`,
@@ -1349,15 +1666,31 @@ Track: dl | Level: beginner`
         {
           id: `vanishing`,
           title: `Vanishing & Exploding Gradients`,
-          content: `**Vanishing & Exploding Gradients** is essential to **Backpropagation**. Computing gradients through the computational graph via chain rule. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Vanishing & Exploding Gradients** — what you need to know:
+
+- **Core idea:** Computing gradients through the computational graph via chain rule.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially. Solutions: ReLU, residual connections, gradient clipping, proper initialization.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Vanishing & Exploding Gradients" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Vanishing & Exploding Gradients** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Vanishing: gradients near zero in early layers`,
             `Exploding: gradients overflow — clip to max norm`,
@@ -1397,13 +1730,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Backpropagation** sits in the **dl** track of the Data Science Master curriculum. Computing gradients through the computational graph via chain rule.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-backprop**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Backpropagation
 meta = {"topic_id": "dl-backprop", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1438,12 +1777,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-backprop
 from dataclasses import dataclass
 
@@ -1491,7 +1832,9 @@ When stuck on **dl-backprop**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1528,9 +1871,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-backprop** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Backpropagation
 skills = ["dl", "beginner", "dl-backprop"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1622,17 +1970,37 @@ print(round(x, 2))`,
         {
           id: `init`,
           title: `Weight Initialization`,
-          content: `**Weight Initialization** is essential to **Weight Initialization & Regularization**. Starting weights and techniques to prevent overfitting. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Weight Initialization** — what you need to know:
+
+- **Core idea:** Starting weights and techniques to prevent overfitting.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid. He/Kaiming: scale by √(2/n_in) for ReLU. Bad init slows or prevents convergence.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Weight Initialization" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Weight Initialization** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 n_in, n_out = 256, 128
@@ -1663,17 +2031,37 @@ Track: dl | Level: beginner`
         {
           id: `dropout`,
           title: `Dropout`,
-          content: `**Dropout** is essential to **Weight Initialization & Regularization**. Starting weights and techniques to prevent overfitting. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Dropout** — what you need to know:
+
+- **Core idea:** Starting weights and techniques to prevent overfitting.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Randomly zero neurons during training with probability p. Prevents co-adaptation. Scale by 1/(1-p) at inference or use inverted dropout.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Dropout" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Dropout** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 
 def dropout(x, p=0.5, training=True):
@@ -1709,15 +2097,31 @@ Track: dl | Level: beginner`
         {
           id: `batchnorm`,
           title: `Batch Normalization`,
-          content: `**Batch Normalization** is essential to **Weight Initialization & Regularization**. Starting weights and techniques to prevent overfitting. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Batch Normalization** — what you need to know:
+
+- **Core idea:** Starting weights and techniques to prevent overfitting.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Normalize layer inputs across batch: (x-μ)/σ. Learnable scale γ and shift β. Stabilizes training, allows higher learning rates.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Batch Normalization" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Batch Normalization** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Normalizes intermediate activations`,
             `Acts as regularizer`,
@@ -1755,15 +2159,31 @@ Track: dl | Level: beginner`
         {
           id: `early-stop`,
           title: `Early Stopping & Data Augmentation`,
-          content: `**Early Stopping & Data Augmentation** is essential to **Weight Initialization & Regularization**. Starting weights and techniques to prevent overfitting. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Early Stopping & Data Augmentation** — what you need to know:
+
+- **Core idea:** Starting weights and techniques to prevent overfitting.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Stop training when validation loss stops improving. Data augmentation artificially expands training set.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Early Stopping & Data Augmentation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Early Stopping & Data Augmentation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Early stopping simplest regularization`,
             `Save checkpoint at best val loss`,
@@ -1803,13 +2223,19 @@ Track: dl | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Weight Initialization & Regularization** sits in the **dl** track of the Data Science Master curriculum. Starting weights and techniques to prevent overfitting.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **dl-init-reg**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Weight Initialization & Regularization
 meta = {"topic_id": "dl-init-reg", "track": "dl", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1844,12 +2270,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for dl-init-reg
 from dataclasses import dataclass
 
@@ -1897,7 +2325,9 @@ When stuck on **dl-init-reg**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1934,9 +2364,14 @@ Track: dl | Level: beginner`
 
 Teams shipping features around **dl-init-reg** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Weight Initialization & Regularization
 skills = ["dl", "beginner", "dl-init-reg"]
 print("Built project applying:", ", ".join(skills))`,

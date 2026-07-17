@@ -13,17 +13,41 @@ export const moduleMath08Topics: Topic[] = [
           title: `Convex Sets`,
           content: `Set C **convex** if λx+(1−λ)y∈C for all x,y∈C, λ∈[0,1]. Line segment between any two points stays in set. Examples: halfspaces, balls, polyhedra {x:Ax≤b}. **Intersection** of convex sets convex. Non-convex: donut, two blobs. Convex feasible region in optimization guarantees global min if objective convex. Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Convex Sets" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Convex Sets** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `λx + (1−λ)y ∈ C for x,y∈C, λ∈[0,1]`,
             `Halfspace: {x : aᵀx ≤ b} convex`,
@@ -31,16 +55,10 @@ export const moduleMath08Topics: Topic[] = [
             `Intersection of convex sets convex`,
             `Polyhedron: Ax ≤ b convex`
           ],
-          diagram: `   convex set:
-
+          diagram: `convex set:
    x ●─────────● y
         all chord inside
-
-   non-convex: hole or indent
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   non-convex: hole or indent`,
           keyPoints: [
             `Line segment test for convexity`,
             `Linear constraints → convex feasible`,
@@ -68,10 +86,6 @@ Visual summary:
   x ●─────────● y
   all chord inside
   non-convex: hole or indent
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Line segment test for convexity
@@ -88,17 +102,41 @@ Track: math | Level: advanced`
           title: `Convex Functions`,
           content: `f convex if epigraph above graph convex: f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). **First-order**: f(y)≥f(x)+∇f(x)ᵀ(y−x)—tangent below graph. **Second-order**: H⪰0 PSD. Examples: x², e^x, −log x (x>0), ||x||₂. Sums and non-negative combos preserve convexity. **Strongly convex** μ>0: H⪰μI unique min faster convergence. Cross-entropy convex in logits; MSE convex in linear params. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Convex Functions" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Convex Functions** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)`,
             `1st order: tangent global underestimator`,
@@ -106,16 +144,9 @@ Track: math | Level: advanced`
             `Strongly convex: H ⪰ μI`,
             `Composition rules preserve convexity`
           ],
-          diagram: `   convex f:
-
+          diagram: `convex f:
    chord above graph
-        ╱ f
-       ╱
-   ──── chord below endpoints
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   ──── chord below endpoints`,
           keyPoints: [
             `Tangent lies below for convex`,
             `Hessian PSD test smooth case`,
@@ -140,13 +171,7 @@ Key relationships:
 Visual summary:
   convex f:
   chord above graph
-  ╱ f
-  ╱
   ──── chord below endpoints
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Tangent lies below for convex
@@ -163,17 +188,41 @@ Track: math | Level: advanced`
           title: `Convex Problem Forms`,
           content: `**LP** linear objective+constraints. **QP** quadratic objective linear constraints—SVM dual. **SOCP** second-order cone. **SDP** matrix constraints. cvxpy models convex problems. Local min = global for convex f on convex C. **KKT conditions** necessary sufficient for convex. Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Convex Problem Forms" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Convex Problem Forms** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `min f(x) s.t. x ∈ C convex`,
             `LP: linear f and constraints`,
@@ -181,16 +230,9 @@ Track: math | Level: advanced`
             `Local = global if f convex on C`,
             `KKT: ∇f + ∑λᵢ∇gᵢ = 0`
           ],
-          diagram: `   convex optimization landscape:
-
+          diagram: `convex optimization landscape:
    single bowl → one global min
-
-   non-convex: many valleys
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   non-convex: many valleys`,
           keyPoints: [
             `Convex problems globally tractable`,
             `QP includes SVM`,
@@ -215,11 +257,6 @@ Visual summary:
   convex optimization landscape:
   single bowl → one global min
   non-convex: many valleys
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Convex problems globally tractable
@@ -234,21 +271,49 @@ Track: math | Level: advanced`
         {
           id: `cvx-ml`,
           title: `Convexity in ML Losses`,
-          content: `**Convexity in ML Losses** is essential to **Convex Optimization**. Convex sets, convex functions, and why convex problems are tractable. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Convexity in ML Losses** — what you need to know:
+
+- **Core idea:** Convex sets, convex functions, and why convex problems are tractable.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Logistic loss convex in w. SVM hinge convex. Lasso problem convex but not strictly. Neural net hidden layers break convexity. **Convex relaxations** for hard problems. **Surrogate losses** convex upper bounds. Understanding which part convex helps debug optimization. Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Convexity in ML Losses" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Convexity in ML Losses** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Logistic NLL convex in w`,
             `Hinge loss convex`,
@@ -256,16 +321,10 @@ Logistic loss convex in w. SVM hinge convex. Lasso problem convex but not strict
             `Hidden layers → non-convex`,
             `λ||w||² preserves convexity`
           ],
-          diagram: `   convex ML losses (linear models):
-
+          diagram: `convex ML losses (linear models):
    MSE bowl in w
    logistic bowl in w
-   + L2 still convex
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   + L2 still convex`,
           keyPoints: [
             `Linear models convex in weights`,
             `Deep nets non-convex`,
@@ -292,11 +351,6 @@ Visual summary:
   MSE bowl in w
   logistic bowl in w
   + L2 still convex
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Linear models convex in weights
@@ -313,13 +367,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Convex Optimization** sits in the **math** track of the Data Science Master curriculum. Convex sets, convex functions, and why convex problems are tractable.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-convex**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Convex Optimization
 meta = {"topic_id": "math-convex", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -354,12 +414,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-convex
 from dataclasses import dataclass
 
@@ -407,7 +469,9 @@ When stuck on **math-convex**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -444,9 +508,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-convex** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Convex Optimization
 skills = ["math", "advanced", "math-convex"]
 print("Built project applying:", ", ".join(skills))`,
@@ -548,17 +617,41 @@ x=max(1,3.); print(x, (x-3)**2)`,
           title: `Convergence Conditions`,
           content: `For L-smooth convex f: GD with η≤1/L converges to global min rate O(1/t). **Strongly convex** μ: linear rate O((1−ημ)^t). Too large η diverges. **PL condition** weaker than strong convexity still linear. Non-convex: convergence to stationary point ||∇f||→0. Stochastic GD adds noise but averages out. Lower bounds: first-order methods limited for high-D black-box. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Convergence Conditions" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Convergence Conditions** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `L-smooth: ||∇f(x)−∇f(y)|| ≤ L||x−y||`,
             `η ≤ 1/L for convex convergence`,
@@ -566,16 +659,10 @@ x=max(1,3.); print(x, (x-3)**2)`,
             `SGD: E[||∇L||] → 0`,
             `Non-convex: find stationary points`
           ],
-          diagram: `   η too big:
-
+          diagram: `η too big:
    bounce across valley
    diverge ↑
-
-   η ok: steady descent ↘
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   η ok: steady descent ↘`,
           keyPoints: [
             `Step size bounded by 1/L`,
             `Strong convexity linear rate`,
@@ -602,10 +689,6 @@ Visual summary:
   bounce across valley
   diverge ↑
   η ok: steady descent ↘
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Step size bounded by 1/L
@@ -622,17 +705,41 @@ Track: math | Level: advanced`
           title: `Momentum & Nesterov`,
           content: `**Momentum** v_t=βv_{t−1}+∇L; θ_t=θ_{t−1}−ηv_t accumulates velocity dampens oscillation in ravines. β≈0.9 typical. **Nesterov** lookahead gradient evaluates ahead. Heavy ball method physics analogy. Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Momentum & Nesterov" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Momentum & Nesterov** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `v_t = β v_{t−1} + ∇L`,
             `θ_t = θ_{t−1} − η v_t`,
@@ -640,16 +747,9 @@ Track: math | Level: advanced`
             `Nesterov: grad at lookahead`,
             `Accelerated O(1/t²) convex`
           ],
-          diagram: `   ravine without momentum:
-
+          diagram: `ravine without momentum:
    zigzag ╱╲╱╲
-
-   momentum: smooth along valley ↓
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   momentum: smooth along valley ↓`,
           keyPoints: [
             `Momentum smooths oscillations`,
             `Nesterov often faster`,
@@ -678,11 +778,6 @@ Visual summary:
   ravine without momentum:
   zigzag ╱╲╱╲
   momentum: smooth along valley ↓
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Momentum smooths oscillations
@@ -699,17 +794,41 @@ Track: math | Level: advanced`
           title: `Adaptive Methods`,
           content: `**AdaGrad** accumulates squared grads—small steps for frequent features. **RMSprop** exponential moving average fixes AdaGrad decay. **Adam** m_t,v_t moments; bias correction; default lr 1e-3. **AdamW** decoupled weight decay. Per-parameter η adapts to geometry. Not always better than SGD+momentum on some vision tasks. Warmup stabilizes early Adam training in transformers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Adaptive Methods" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Adaptive Methods** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `AdaGrad: η/√(∑g²)`,
             `Adam: m,v EMA of g,g²`,
@@ -717,16 +836,10 @@ Track: math | Level: advanced`
             `AdamW: weight decay separate`,
             `Warmup for transformers`
           ],
-          diagram: `   per-param learning rate:
-
+          diagram: `per-param learning rate:
    large |g| history → small step
    small |g| history → larger step
-
-   Adam automates scaling
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   Adam automates scaling`,
           keyPoints: [
             `Adaptive per parameter`,
             `Adam popular default`,
@@ -754,10 +867,6 @@ Visual summary:
   large |g| history → small step
   small |g| history → larger step
   Adam automates scaling
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Adaptive per parameter
@@ -774,17 +883,41 @@ Track: math | Level: advanced`
           title: `SGD & Mini-batch`,
           content: `Full batch GD expensive; **SGD** one sample noisy gradient cheap. Mini-batch balances variance and compute. Unbiased E[∇L_batch]=∇L if uniform sample. Variance O(1/b) decreases with batch b. **Learning rate schedule** decay η_t. Large batch needs larger η linear scaling rule heuristic. Generalization: small batch noise may help escape sharp minima. Distributed SGD averages gradients across workers.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "SGD & Mini-batch" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **SGD & Mini-batch** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `∇L_batch unbiased if random sample`,
             `Var ∝ 1/b batch size`,
@@ -792,16 +925,10 @@ Track: math | Level: advanced`
             `Schedule: η_t = η₀/√t`,
             `Distributed: average worker grads`
           ],
-          diagram: `   batch size tradeoff:
-
+          diagram: `batch size tradeoff:
    b=1   noisy fast iter
    b=n   smooth expensive
-
-   sweet spot GPU memory
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   sweet spot GPU memory`,
           keyPoints: [
             `Mini-batch default in DL`,
             `Larger batch more stable grad`,
@@ -828,10 +955,6 @@ Visual summary:
   b=1   noisy fast iter
   b=n   smooth expensive
   sweet spot GPU memory
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Mini-batch default in DL
@@ -848,13 +971,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Gradient Descent Theory** sits in the **math** track of the Data Science Master curriculum. Convergence rates, step size, momentum, and adaptive methods.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-gradient-descent-math**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Gradient Descent Theory
 meta = {"topic_id": "math-gradient-descent-math", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -889,12 +1018,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-gradient-descent-math
 from dataclasses import dataclass
 
@@ -942,7 +1073,9 @@ When stuck on **math-gradient-descent-math**, reproduce with the smallest input,
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -979,9 +1112,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-gradient-descent-math** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Gradient Descent Theory
 skills = ["math", "advanced", "math-gradient-descent-math"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1087,17 +1225,41 @@ for b in [1,100]:
           title: `Equality Constraints`,
           content: `Minimize f(x) s.t. g(x)=0. **Lagrange function** L(x,λ)=f(x)+λg(x). Optimality: ∇_x L=0 and g(x)=0. λ is shadow price—sensitivity of optimal value to constraint. Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Equality Constraints" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Equality Constraints** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `L(x,λ) = f(x) + λ g(x)`,
             `∇f(x*) + λ∇g(x*) = 0`,
@@ -1105,16 +1267,10 @@ for b in [1,100]:
             `λ = shadow price`,
             `∇f ∥ ∇g on constraint`
           ],
-          diagram: `   contour f touches constraint g=0:
-
+          diagram: `contour f touches constraint g=0:
       f=3 ──╮
       f=2 ──┼── tangent on g=0
-      f=1    constraint curve
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+      f=1    constraint curve`,
           keyPoints: [
             `Lagrange multipliers for equality`,
             `Parallel gradients at optimum`,
@@ -1140,11 +1296,6 @@ Visual summary:
   f=3 ──╮
   f=2 ──┼── tangent on g=0
   f=1    constraint curve
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Lagrange multipliers for equality
@@ -1161,17 +1312,41 @@ Track: math | Level: advanced`
           title: `KKT Conditions`,
           content: `Inequality g(x)≤0: KKT adds **complementary slackness** λ≥0, λg(x)=0. If constraint inactive g<0 then λ=0. **Karush-Kuhn-Tucker** necessary; sufficient for convex. General form: min f s.t g_i≤0, h_j=0. Stationarity ∇f+∑λ_i∇g_i+∑ν_j∇h_j=0. Dual problem provides lower bounds. SVM derivation uses KKT on margin constraints. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "KKT Conditions" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **KKT Conditions** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `L = f + ∑λ_i g_i + ∑ν_j h_j`,
             `λ_i ≥ 0`,
@@ -1179,16 +1354,9 @@ Track: math | Level: advanced`
             `Stationarity: ∇L = 0`,
             `Convex: KKT sufficient`
           ],
-          diagram: `   active constraint g=0 at boundary
-
+          diagram: `active constraint g=0 at boundary
    inactive interior: λ=0
-
-   boundary optimum: λ>0
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   boundary optimum: λ>0`,
           keyPoints: [
             `Inequalities add λ≥0`,
             `Complementary slackness key`,
@@ -1212,11 +1380,6 @@ Visual summary:
   active constraint g=0 at boundary
   inactive interior: λ=0
   boundary optimum: λ>0
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Inequalities add λ≥0
@@ -1233,17 +1396,41 @@ Track: math | Level: advanced`
           title: `Duality`,
           content: `**Dual function** q(λ)=inf_x L(x,λ). Dual problem max q(λ) s.t λ≥0. Weak duality: dual≤primal. Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure. Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Duality" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Duality** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Dual: max_λ inf_x L(x,λ)`,
             `Weak: d* ≤ p*`,
@@ -1251,16 +1438,10 @@ Track: math | Level: advanced`
             `SVM dual: α kernel form`,
             `Slater: strict feasibility → strong`
           ],
-          diagram: `   primal ↔ dual
-
+          diagram: `primal ↔ dual
    hard in x     maybe easy in λ
    easy in x     hard in λ
-
-   pick easier side
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   pick easier side`,
           keyPoints: [
             `Dual provides lower bound`,
             `Strong duality nice convexity`,
@@ -1285,10 +1466,6 @@ Visual summary:
   hard in x     maybe easy in λ
   easy in x     hard in λ
   pick easier side
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Dual provides lower bound
@@ -1305,17 +1482,41 @@ Track: math | Level: advanced`
           title: `Constraints in ML`,
           content: `**Fairness constraints** demographic parity bounds. **Adversarial** training min-max. **Trust region** TRPO KL constraint. **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint. Augmented Lagrangian combines both. Constrained DL growing area for safe deployment. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Constraints in ML" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Constraints in ML** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Penalty: f + ρ||g(x)||²`,
             `Projection: simplex, ball`,
@@ -1323,16 +1524,9 @@ Track: math | Level: advanced`
             `Fairness: P(ŷ|A=a)=P(ŷ|A=b)`,
             `Adversarial: min_θ max_φ loss`
           ],
-          diagram: `   fair ML constraint:
-
+          diagram: `fair ML constraint:
    optimize accuracy
-   s.t. TPR equal across groups
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   s.t. TPR equal across groups`,
           keyPoints: [
             `Penalties soften constraints`,
             `Projection maintains feasibility`,
@@ -1357,12 +1551,6 @@ Visual summary:
   fair ML constraint:
   optimize accuracy
   s.t. TPR equal across groups
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Penalties soften constraints
@@ -1379,13 +1567,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Lagrange Multipliers** sits in the **math** track of the Data Science Master curriculum. Equality constraints, KKT conditions, and constrained optimization.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-lagrange**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Lagrange Multipliers
 meta = {"topic_id": "math-lagrange", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1420,12 +1614,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-lagrange
 from dataclasses import dataclass
 
@@ -1473,7 +1669,9 @@ When stuck on **math-lagrange**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1510,9 +1708,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-lagrange** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Lagrange Multipliers
 skills = ["math", "advanced", "math-lagrange"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1609,21 +1812,49 @@ v=np.ones(3)/3; print(v, v.sum())`,
         {
           id: `ent-def`,
           title: `Shannon Entropy`,
-          content: `**Shannon Entropy** is essential to **Entropy & Information**. Shannon entropy, cross-entropy, and mutual information. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Shannon Entropy** — what you need to know:
+
+- **Core idea:** Shannon entropy, cross-entropy, and mutual information.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 H(X)=−∑ p(x) log p(x) (discrete) uncertainty in bits if log₂, nats if ln. Maximum log K for uniform K outcomes. H≥0 with equality iff certain. **Joint entropy** H(X,Y). **Conditional** H(X|Y)=H(X,Y)−H(Y). Independent: H(X,Y)=H(X)+H(Y). Entropy rate of stochastic process. High entropy = unpredictable. Low entropy = compressible. Decision trees split to reduce entropy (ID3). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Shannon Entropy" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Shannon Entropy** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `H(X) = −∑ p(x) log p(x)`,
             `0 ≤ H(X) ≤ log |X|`,
@@ -1631,16 +1862,10 @@ H(X)=−∑ p(x) log p(x) (discrete) uncertainty in bits if log₂, nats if ln. 
             `H(X,Y) = H(X|Y) + H(Y)`,
             `Indep: H(X,Y) = H(X)+H(Y)`
           ],
-          diagram: `   fair coin: H=1 bit
+          diagram: `fair coin: H=1 bit
    certain: H=0
-
    p=0.9 biased: H low
-   ·─────────· peak at p=0.5
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   ·─────────· peak at p=0.5`,
           keyPoints: [
             `Entropy measures uncertainty`,
             `Uniform maximizes entropy`,
@@ -1666,11 +1891,6 @@ Visual summary:
   certain: H=0
   p=0.9 biased: H low
   ·─────────· peak at p=0.5
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Entropy measures uncertainty
@@ -1687,17 +1907,41 @@ Track: math | Level: advanced`
           title: `Cross-Entropy & KL`,
           content: `**Cross-entropy** H(p,q)=−∑p log q≥H(p) with equality if p=q. **KL divergence** D_KL(p||q)=∑p log(p/q)=H(p,q)−H(p)≥0. Not symmetric. Used as loss when p true, q model. **Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Cross-Entropy & KL" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Cross-Entropy & KL** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `H(p,q) = −∑ p log q`,
             `D_KL(p||q) = ∑ p log(p/q)`,
@@ -1705,16 +1949,9 @@ Track: math | Level: advanced`
             `I(X;Y) = H(X) − H(X|Y)`,
             `CE loss = H(one_hot, softmax)`
           ],
-          diagram: `   p true    q model
-
+          diagram: `p true    q model
    CE = −∑ p log q
-   KL = extra bits using q vs p
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   KL = extra bits using q vs p`,
           keyPoints: [
             `CE common classification loss`,
             `KL asymmetric divergence`,
@@ -1740,12 +1977,6 @@ Visual summary:
   p true    q model
   CE = −∑ p log q
   KL = extra bits using q vs p
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. CE common classification loss
@@ -1760,21 +1991,49 @@ Track: math | Level: advanced`
         {
           id: `ent-mi`,
           title: `Mutual Information`,
-          content: `**Mutual Information** is essential to **Entropy & Information**. Shannon entropy, cross-entropy, and mutual information. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Mutual Information** — what you need to know:
+
+- **Core idea:** Shannon entropy, cross-entropy, and mutual information.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 I(X;Y)≥0 zero iff independent. Symmetric unlike KL. Captures nonlinear dependence unlike correlation. Difficult to estimate high-D—MINE neural estimator. **Information bottleneck** tradeoff compress X while predict Y. Feature selection via MI with target. Data processing inequality: processing cannot increase MI. Used in contrastive self-supervised learning InfoNCE bound. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Mutual Information" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Mutual Information** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `I(X;Y) = H(X) − H(X|Y)`,
             `I(X;Y) = 0 ⇔ indep`,
@@ -1782,16 +2041,9 @@ I(X;Y)≥0 zero iff independent. Symmetric unlike KL. Captures nonlinear depende
             `Data processing: I(X;Z) ≤ I(X;Y) if Markov`,
             `InfoNCE lower bound on MI`
           ],
-          diagram: `   MI high when knowing Y
+          diagram: `MI high when knowing Y
    reduces uncertainty about X:
-
-   X ←──strong link──→ Y
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   X ←──strong link──→ Y`,
           keyPoints: [
             `MI detects nonlinear deps`,
             `Hard to estimate high-D`,
@@ -1822,12 +2074,6 @@ Visual summary:
   MI high when knowing Y
   reduces uncertainty about X:
   X ←──strong link──→ Y
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. MI detects nonlinear deps
@@ -1844,17 +2090,41 @@ Track: math | Level: advanced`
           title: `Information in ML`,
           content: `Classification CE minimizes H(true, pred). Label smoothing softens one-hot targets increases H. **Regularization** as limiting information in weights. **Minimum description length** principle. Decision tree information gain = reduction in H. Softmax temperature scales entropy of predictions. Calibration affects cross-entropy at deployment. Understanding bits/nats clarifies loss magnitude interpretation.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Information in ML" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Information in ML** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Minimize H(y, ŷ) for classification`,
             `Label smoothing: soft targets`,
@@ -1862,16 +2132,10 @@ Track: math | Level: advanced`
             `Temperature T scales softmax entropy`,
             `MDL: model + data encoding`
           ],
-          diagram: `   decision tree split:
-
+          diagram: `decision tree split:
    H=0.9 before
    H=0.4 after good split
-   gain = 0.5
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   gain = 0.5`,
           keyPoints: [
             `CE = expected surprise`,
             `Label smoothing prevents overconfidence`,
@@ -1897,11 +2161,6 @@ Visual summary:
   H=0.9 before
   H=0.4 after good split
   gain = 0.5
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. CE = expected surprise
@@ -1918,13 +2177,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Entropy & Information** sits in the **math** track of the Data Science Master curriculum. Shannon entropy, cross-entropy, and mutual information.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-entropy-math**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Entropy & Information
 meta = {"topic_id": "math-entropy-math", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1959,12 +2224,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-entropy-math
 from dataclasses import dataclass
 
@@ -2012,7 +2279,9 @@ When stuck on **math-entropy-math**, reproduce with the smallest input, enable v
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2049,9 +2318,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-entropy-math** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Entropy & Information
 skills = ["math", "advanced", "math-entropy-math"]
 print("Built project applying:", ", ".join(skills))`,
@@ -2152,17 +2426,41 @@ print(np.sum(p*np.log(p/q)))`,
           title: `Maximum Likelihood`,
           content: `Given i.i.d. samples, **MLE** θ̂=argmax_θ ∏ p(x_i|θ)=argmax ∑ log p(x_i|θ). Maximizes probability of observed data. Invariance: g(θ) MLE is g(θ̂). Asymptotically unbiased efficient under regularity. **Log-likelihood** ℓ(θ) concave for many exponential family models. Negative log-likelihood as loss to minimize. Bernoulli MLE p̂=k/n. Gaussian μ̂=x̄, σ̂ sample std (biased MLE divides n not n−1). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Maximum Likelihood" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Maximum Likelihood** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `θ̂_MLE = argmax ∑ log p(x_i|θ)`,
             `Equiv: min −∑ log p(x_i|θ)`,
@@ -2170,16 +2468,9 @@ print(np.sum(p*np.log(p/q)))`,
             `Gaussian: μ̂ = x̄`,
             `Invariance: g(θ̂) for g(θ)`
           ],
-          diagram: `   likelihood surface:
-
+          diagram: `likelihood surface:
    peak at θ̂
-        ╱╲
-       ╱  ╲
-      ╱    ╲___
-   data most probable here
-   │
-   │  · · ·
-   └──────────`,
+   data most probable here`,
           keyPoints: [
             `MLE maximizes data probability`,
             `Log converts product to sum`,
@@ -2203,13 +2494,7 @@ Key relationships:
 Visual summary:
   likelihood surface:
   peak at θ̂
-  ╱╲
-  ╱  ╲
-  ╱    ╲___
   data most probable here
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. MLE maximizes data probability
@@ -2226,17 +2511,41 @@ Track: math | Level: advanced`
           title: `MLE Minimizes KL`,
           content: `Minimizing E_x[−log q_θ(x)] over θ equivalent minimizing D_KL(p_data||q_θ) since H(p) constant w.r.t. θ. **Empirical risk** replaces expectation with sample mean—MLE on empirical distribution. Model q close to p in KL sense. Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra. **Reverse KL** used in some VI variants mode covering vs seeking tradeoff. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "MLE Minimizes KL" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **MLE Minimizes KL** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `min_θ E_p[−log q_θ] ⇔ min D_KL(p||q_θ)`,
             `Empirical p = uniform on samples`,
@@ -2244,16 +2553,9 @@ Track: math | Level: advanced`
             `D_KL(p||q) mode-seeking`,
             `D_KL(q||p) mode-covering`
           ],
-          diagram: `   p_data vs q_model
-
+          diagram: `p_data vs q_model
    KL(p||q): q must cover p modes
-   heavy penalty missing mass of p
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   heavy penalty missing mass of p`,
           keyPoints: [
             `NLL ↔ KL to data distribution`,
             `Empirical samples define p`,
@@ -2279,12 +2581,6 @@ Visual summary:
   p_data vs q_model
   KL(p||q): q must cover p modes
   heavy penalty missing mass of p
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. NLL ↔ KL to data distribution
@@ -2301,17 +2597,41 @@ Track: math | Level: advanced`
           title: `Properties of MLE`,
           content: `**Consistency** θ̂→θ true as n→∞. **Asymptotic normality** √n(θ̂−θ)→N(0,I(θ)⁻¹). **Fisher information** I(θ)=E[(∂log p/∂θ)²]. Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible. Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Properties of MLE" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Properties of MLE** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `√n(θ̂−θ) → N(0, I(θ)⁻¹)`,
             `I(θ) = E[(∂log p/∂θ)²]`,
@@ -2319,16 +2639,9 @@ Track: math | Level: advanced`
             `Consistent under regularity`,
             `Score = 0 at MLE`
           ],
-          diagram: `   Fisher info I(θ):
-
+          diagram: `Fisher info I(θ):
    curvature of log-likelihood
-   sharp peak → low variance θ̂
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   sharp peak → low variance θ̂`,
           keyPoints: [
             `Asymptotic normality for CI`,
             `Fisher info measures information`,
@@ -2353,12 +2666,6 @@ Visual summary:
   Fisher info I(θ):
   curvature of log-likelihood
   sharp peak → low variance θ̂
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Asymptotic normality for CI
@@ -2375,17 +2682,41 @@ Track: math | Level: advanced`
           title: `MLE in Deep Learning`,
           content: `Categorical NLL = cross-entropy MLE for softmax. Gaussian output MSE ∝ Gaussian NLL. **Likelihood-based** generative models maximize log p(x|θ) directly. **Contrastive divergence** approximates MLE for RBMs. **EM algorithm** MLE with latent variables E-step expectation M-step maximize. Diffusion models variational bound on log-likelihood. GANs not pure MLE—adversarial game. Understanding MLE clarifies why minimizing CE is principled probabilistic modeling.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "MLE in Deep Learning" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **MLE in Deep Learning** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Softmax + CE = categorical MLE`,
             `MSE ∝ Gaussian NLL (fixed σ)`,
@@ -2393,16 +2724,10 @@ Track: math | Level: advanced`
             `Diffusion: variational lower bound`,
             `GAN ≠ MLE (implicit)`
           ],
-          diagram: `   deep generative:
-
+          diagram: `deep generative:
    VAE: ELBO on log p(x)
    Diffusion: noise prediction ↔ bound
-   GAN: adversarial not likelihood
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   GAN: adversarial not likelihood`,
           keyPoints: [
             `CE has MLE interpretation`,
             `Generative models maximize likelihood`,
@@ -2430,11 +2755,6 @@ Visual summary:
   VAE: ELBO on log p(x)
   Diffusion: noise prediction ↔ bound
   GAN: adversarial not likelihood
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. CE has MLE interpretation
@@ -2451,13 +2771,19 @@ Track: math | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**KL Divergence & MLE** sits in the **math** track of the Data Science Master curriculum. Maximum likelihood estimation and its connection to minimizing KL.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-kl-mle**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for KL Divergence & MLE
 meta = {"topic_id": "math-kl-mle", "track": "math", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -2492,12 +2818,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-kl-mle
 from dataclasses import dataclass
 
@@ -2545,7 +2873,9 @@ When stuck on **math-kl-mle**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2582,9 +2912,14 @@ Track: math | Level: advanced`
 
 Teams shipping features around **math-kl-mle** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for KL Divergence & MLE
 skills = ["math", "advanced", "math-kl-mle"]
 print("Built project applying:", ", ".join(skills))`,

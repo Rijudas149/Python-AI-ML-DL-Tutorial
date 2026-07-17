@@ -51,13 +51,29 @@ For large CSVs, iterate rows instead of loading all into memory. Handle malforme
 
 **Applying Files & Serialization:** Read and write files safely with pathlib, json, csv, and pickle. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "JSON & CSV", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "JSON & CSV" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **JSON & CSV** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import json, csv, io
 buf = io.StringIO("name,score\\nAda,99\\n")
 rows = list(csv.DictReader(buf))
@@ -129,7 +145,11 @@ Track: python | Level: intermediate`
         {
           id: `io-patterns`,
           title: `I/O Patterns & Error Handling`,
-          content: `**I/O Patterns & Error Handling** is essential to **Files & Serialization**. Read and write files safely with pathlib, json, csv, and pickle. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**I/O Patterns & Error Handling** — what you need to know:
+
+- **Core idea:** Read and write files safely with pathlib, json, csv, and pickle.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Use \`with open(...) as f:\` for automatic close. Catch \`FileNotFoundError\`, \`PermissionError\`. Atomic writes: write to temp file then \`replace()\`.
 
@@ -137,13 +157,29 @@ Log paths on failure. On Windows mind path separators—pathlib abstracts this.
 
 **Applying Files & Serialization:** Read and write files safely with pathlib, json, csv, and pickle. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "I/O Patterns & Error Handling", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "I/O Patterns & Error Handling" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **I/O Patterns & Error Handling** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from pathlib import Path
 def safe_read(path):
     p = Path(path)
@@ -179,13 +215,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Files & Serialization** sits in the **python** track of the Data Science Master curriculum. Read and write files safely with pathlib, json, csv, and pickle.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-files**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Files & Serialization
 meta = {"topic_id": "py-files", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -220,12 +262,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-files
 from dataclasses import dataclass
 
@@ -273,7 +317,9 @@ When stuck on **py-files**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -310,9 +356,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-files** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Files & Serialization
 skills = ["python", "intermediate", "py-files"]
 print("Built project applying:", ", ".join(skills))`,
@@ -416,13 +467,29 @@ Set headers: \`headers={"Authorization": "Bearer TOKEN"}\`. POST JSON: \`request
 
 **Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "requests Fundamentals", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "requests Fundamentals" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **requests Fundamentals** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import requests
 resp = requests.get("https://httpbin.org/get", params={"q": "ml"}, timeout=10)
 resp.raise_for_status()
@@ -499,13 +566,29 @@ Validate response schema before use. Log correlation IDs from \`X-Request-ID\` h
 
 **Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Authentication & Retries", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Authentication & Retries" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Authentication & Retries** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import requests
@@ -544,11 +627,23 @@ Separate HTTP layer from business logic—pure functions parse JSON dicts; thin 
 
 **Applying HTTP & REST APIs:** Consume REST APIs with requests: methods, headers, auth, and error handling. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Testing API Clients", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Testing API Clients" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Testing API Clients** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Mock at HTTP boundary for unit tests`,
             `Integration tests hit sandboxes sparingly`,
@@ -588,13 +683,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**HTTP & REST APIs** sits in the **python** track of the Data Science Master curriculum. Consume REST APIs with requests: methods, headers, auth, and error handling.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-apis**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for HTTP & REST APIs
 meta = {"topic_id": "py-apis", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -629,12 +730,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-apis
 from dataclasses import dataclass
 
@@ -682,7 +785,9 @@ When stuck on **py-apis**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -719,9 +824,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-apis** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for HTTP & REST APIs
 skills = ["python", "intermediate", "py-apis"]
 print("Built project applying:", ", ".join(skills))`,
@@ -859,11 +969,23 @@ Cache responses during development. Do not scrape personal data without legal ba
 
 **Applying Web Scraping Basics:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Fetching Pages Responsibly", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Fetching Pages Responsibly" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Fetching Pages Responsibly** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Read Terms of Service before scraping`,
             `Throttle requests to avoid overloading servers`,
@@ -901,7 +1023,11 @@ Track: python | Level: intermediate`
         {
           id: `extract`,
           title: `Structured Extraction`,
-          content: `**Structured Extraction** is essential to **Web Scraping Basics**. Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Structured Extraction** — what you need to know:
+
+- **Core idea:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Normalize URLs with \`urllib.parse.urljoin\`. Extract tables with \`pandas.read_html\` when suitable. Store raw HTML snapshots for reproducibility before parsing logic changes.
 
@@ -909,13 +1035,29 @@ Pipeline: fetch → parse → validate → persist. Log HTTP status and parse fa
 
 **Applying Web Scraping Basics:** Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Structured Extraction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Structured Extraction" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Structured Extraction** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from urllib.parse import urljoin
 base = "https://example.com/courses/"
 print(urljoin(base, "../blog/post"))`,
@@ -987,13 +1129,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Web Scraping Basics** sits in the **python** track of the Data Science Master curriculum. Extract data with BeautifulSoup while respecting ethics, robots.txt, and rate limits.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-web-scrape**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Web Scraping Basics
 meta = {"topic_id": "py-web-scrape", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1028,12 +1176,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-web-scrape
 from dataclasses import dataclass
 
@@ -1081,7 +1231,9 @@ When stuck on **py-web-scrape**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1118,9 +1270,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-web-scrape** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Web Scraping Basics
 skills = ["python", "intermediate", "py-web-scrape"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1225,13 +1382,29 @@ Row factory \`sqlite3.Row\` enables dict-like access: \`conn.row_factory = sqlit
 
 **Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Connecting & Cursors", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Connecting & Cursors" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Connecting & Cursors** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.execute("CREATE TABLE t (id INTEGER PRIMARY KEY, name TEXT)")
@@ -1268,13 +1441,29 @@ Use transactions for multi-step consistency: \`BEGIN\` … \`COMMIT\`. SQLite su
 
 **Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "SQL Essentials in Python", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "SQL Essentials in Python" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **SQL Essentials in Python** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.executescript("""
@@ -1310,7 +1499,11 @@ Track: python | Level: intermediate`
         {
           id: `orm-alt`,
           title: `When to Upgrade from SQLite`,
-          content: `**When to Upgrade from SQLite** is essential to **SQLite with Python**. Use sqlite3 for embedded relational storage, parameterized queries, and transactions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**When to Upgrade from SQLite** — what you need to know:
+
+- **Core idea:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 SQLite suits local apps, prototypes, and tests. Concurrent writers serialize—use PostgreSQL/MySQL for multi-user web backends.
 
@@ -1318,11 +1511,23 @@ SQLite suits local apps, prototypes, and tests. Concurrent writers serialize—u
 
 **Applying SQLite with Python:** Use sqlite3 for embedded relational storage, parameterized queries, and transactions. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "When to Upgrade from SQLite", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "When to Upgrade from SQLite" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **When to Upgrade from SQLite** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `SQLite single-writer limitation at scale`,
             `PostgreSQL for production web apps`,
@@ -1404,13 +1609,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**SQLite with Python** sits in the **python** track of the Data Science Master curriculum. Use sqlite3 for embedded relational storage, parameterized queries, and transactions.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-sqlite**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for SQLite with Python
 meta = {"topic_id": "py-sqlite", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1445,12 +1656,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-sqlite
 from dataclasses import dataclass
 
@@ -1498,7 +1711,9 @@ When stuck on **py-sqlite**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1535,9 +1750,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-sqlite** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for SQLite with Python
 skills = ["python", "intermediate", "py-sqlite"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1645,13 +1865,29 @@ Schemas serve as contracts between services—version them alongside APIs.
 
 **Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "JSON Schema Validation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "JSON Schema Validation" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **JSON Schema Validation** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from jsonschema import validate
 schema = {"type": "object", "required": ["id"], "properties": {"id": {"type": "integer"}}}
 validate({"id": 1}, schema)
@@ -1687,13 +1923,29 @@ Separate config from code; override with environment variables in twelve-factor 
 
 **Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "YAML Configuration", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "YAML Configuration" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **YAML Configuration** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import yaml
 cfg = yaml.safe_load("model:\\n  name: rf\\n  trees: 100\\n")
 print(cfg["model"]["trees"])`,
@@ -1728,13 +1980,29 @@ Partition directories by date/key for large datasets. Not ideal for row-by-row O
 
 **Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Parquet Introduction", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Parquet Introduction" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Parquet Introduction** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pandas as pd
 df = pd.DataFrame({"a": [1, 2], "b": ["x", "y"]})
 # df.to_parquet("out.parquet"); df2 = pd.read_parquet("out.parquet")
@@ -1764,7 +2032,11 @@ Track: python | Level: intermediate`
         {
           id: `formats-choose`,
           title: `Choosing a Format`,
-          content: `**Choosing a Format** is essential to **Advanced Serialization**. JSON Schema validation, YAML config, and columnar Parquet introduction. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Choosing a Format** — what you need to know:
+
+- **Core idea:** JSON Schema validation, YAML config, and columnar Parquet introduction.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 JSON for APIs and configs. CSV for human spreadsheet interchange. Parquet for ML datasets and warehouses. Avro/Protobuf for streaming schemas. Pick based on readers, schema needs, and size.
 
@@ -1772,11 +2044,23 @@ Document encoding, timezone, and null conventions in data catalogs.
 
 **Applying Advanced Serialization:** JSON Schema validation, YAML config, and columnar Parquet introduction. Python skills here transfer directly to notebooks, automation scripts, API services, and ML pipelines. When studying "Choosing a Format", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Choosing a Format" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Choosing a Format** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Match format to consumer tooling`,
             `Columnar for read-heavy analytics`,
@@ -1816,13 +2100,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Advanced Serialization** sits in the **python** track of the Data Science Master curriculum. JSON Schema validation, YAML config, and columnar Parquet introduction.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-serialization**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Advanced Serialization
 meta = {"topic_id": "py-serialization", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1857,12 +2147,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-serialization
 from dataclasses import dataclass
 
@@ -1910,7 +2202,9 @@ When stuck on **py-serialization**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1947,9 +2241,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-serialization** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Advanced Serialization
 skills = ["python", "intermediate", "py-serialization"]
 print("Built project applying:", ", ".join(skills))`,

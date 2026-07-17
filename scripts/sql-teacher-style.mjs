@@ -2,10 +2,12 @@
  * SQL Teacher writing style (from SQL_Teacher curriculum):
  * - Short paragraphs (2–3 sentences), separated by blank lines
  * - **Bold** key terms on first introduction
- * - Logical flow: definition → intuition → application → practice prompt
- * - pseudoCode block for concept structure (not bullets in body text)
+ * - Bullet lists when explaining new concepts (full sentences per bullet)
+ * - pseudoCode block for concept structure
  * - keyPoints / example / output stay as separate section fields
  */
+
+import { sanitizeDiagramText, isDecorativeDiagramLine } from './diagram-sanitize.mjs';
 
 const FILLER_PATTERNS = [
   /\n\n\*\*Extended exploration[\s\S]*?(?=\n\n|$)/gi,
@@ -70,6 +72,43 @@ function isWellStructured(content) {
   return paragraphs.every((p) => p.length >= 60 && p.length <= 900);
 }
 
+function ensureExplanationBullets(content) {
+  const headings = [
+    'Why this matters',
+    'Professional habits',
+    'Common mistakes',
+    'Hands-on practice',
+    'Mathematical foundation',
+    'Visual guide',
+    'Theoretical foundation',
+    'Study approach',
+    'Recommended workflow',
+    'Debugging checklist',
+    'Career narrative',
+    'Portfolio tip',
+    'Pattern mindset',
+    'Expert habit',
+  ];
+
+  let out = content;
+  for (const heading of headings) {
+    const re = new RegExp(`\\*\\*${heading.replace(/ /g, ' ')}:\\*\\*\\s+([^\\n]+)`, 'g');
+    out = out.replace(re, (match, body) => {
+      if (/\n-\s/.test(match)) return match;
+      const trimmed = body.trim();
+      const sentences = trimmed
+        .split(/(?<=[.!?])\s+(?=[A-Z*("'])/)
+        .map((s) => s.trim())
+        .filter((s) => s.length > 12);
+      if (sentences.length <= 1) {
+        return `**${heading}:**\n\n- ${trimmed}`;
+      }
+      return `**${heading}:**\n\n${sentences.map((s) => `- ${s}`).join('\n')}`;
+    });
+  }
+  return out;
+}
+
 function closingParagraph(topic, section) {
   const track = topic.track ?? 'python';
   const hook = TRACK_CLOSING[track] ?? TRACK_CLOSING.ml;
@@ -81,11 +120,11 @@ function formatContent(section, topic) {
   if (!raw) return raw;
 
   if (isWellStructured(raw)) {
-    return raw;
+    return ensureExplanationBullets(raw);
   }
 
   if (/^-\s/m.test(raw) || /^\d+\.\s/m.test(raw) || /^#{3,4}\s/m.test(raw)) {
-    return raw;
+    return ensureExplanationBullets(raw);
   }
 
   const sentences = splitSentences(raw);
@@ -106,7 +145,7 @@ function formatContent(section, topic) {
     paragraphs.push(closingParagraph(topic, section));
   }
 
-  return paragraphs.join('\n\n');
+  return ensureExplanationBullets(paragraphs.join('\n\n'));
 }
 
 function generatePseudoCode(section, topic) {
@@ -124,7 +163,10 @@ function generatePseudoCode(section, topic) {
 
   if (section.diagram?.trim()) {
     lines.push('Visual summary:');
-    for (const row of section.diagram.split('\n').filter((l) => l.trim()).slice(0, 12)) {
+    for (const row of section.diagram
+      .split('\n')
+      .filter((l) => l.trim() && !isDecorativeDiagramLine(l))
+      .slice(0, 12)) {
       lines.push(`  ${row.trim()}`);
     }
     lines.push('');
@@ -149,9 +191,12 @@ function generatePseudoCode(section, topic) {
  * @param {object} topic - needs title, track
  */
 export function applySqlTeacherStyle(section, topic) {
-  return {
+  const diagram = section.diagram ? sanitizeDiagramText(section.diagram) : section.diagram;
+  const styled = {
     ...section,
+    diagram,
     content: formatContent(section, topic),
-    pseudoCode: generatePseudoCode(section, topic),
+    pseudoCode: generatePseudoCode({ ...section, diagram }, topic),
   };
+  return styled;
 }

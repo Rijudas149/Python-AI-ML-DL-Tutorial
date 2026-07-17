@@ -15,13 +15,29 @@ export const module02Topics: Topic[] = [
 
 Indentation (4 spaces) defines blocks — no braces required.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "if Statements" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **if Statements** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `score = 85
 if score >= 60:
     print("Pass")
@@ -52,17 +68,37 @@ Track: python | Level: beginner`
         {
           id: `elif`,
           title: `elif Chains`,
-          content: `**elif Chains** is essential to **Conditionals (if/elif/else)**. Branch execution based on boolean conditions. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**elif Chains** — what you need to know:
+
+- **Core idea:** Branch execution based on boolean conditions.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Chain conditions with \`elif\` (else-if). Only the first true branch executes. Order matters — put specific conditions first.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "elif Chains" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **elif Chains** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `grade = 72
 if grade >= 90:
     letter = "A"
@@ -100,13 +136,29 @@ Track: python | Level: beginner`
           title: `Ternary & Match-Case`,
           content: `Ternary: \`x if condition else y\`. Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Ternary & Match-Case" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Ternary & Match-Case** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `n = 4
 parity = "even" if n % 2 == 0 else "odd"
 
@@ -142,13 +194,29 @@ Track: python | Level: beginner`
           title: `Guard Clauses`,
           content: `Return early with **guard clauses** instead of deep nesting. Improves readability in validation logic.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Guard Clauses" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Guard Clauses** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `FUNCTION process(data):
     IF data is None: RETURN
     IF not valid(data): RETURN
@@ -173,13 +241,19 @@ Track: python | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Conditionals (if/elif/else)** sits in the **python** track of the Data Science Master curriculum. Branch execution based on boolean conditions.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-conditionals**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Conditionals (if/elif/else)
 meta = {"topic_id": "py-conditionals", "track": "python", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -214,12 +288,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-conditionals
 from dataclasses import dataclass
 
@@ -267,7 +343,9 @@ When stuck on **py-conditionals**, reproduce with the smallest input, enable ver
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -304,9 +382,14 @@ Track: python | Level: beginner`
 
 Teams shipping features around **py-conditionals** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Conditionals (if/elif/else)
 skills = ["python", "beginner", "py-conditionals"]
 print("Built project applying:", ", ".join(skills))`,
@@ -405,17 +488,37 @@ print(m)`,
         {
           id: `for-loop`,
           title: `for Loops`,
-          content: `**for Loops** is essential to **Loops (for/while)**. Iterate over sequences and repeat actions with for and while loops. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**for Loops** — what you need to know:
+
+- **Core idea:** Iterate over sequences and repeat actions with for and while loops.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 \`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges. Use \`range(n)\` for counting loops.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "for Loops" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **for Loops** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `total = 0
 for i in range(1, 6):
     total += i
@@ -445,17 +548,37 @@ Track: python | Level: beginner`
         {
           id: `while-loop`,
           title: `while Loops`,
-          content: `**while Loops** is essential to **Loops (for/while)**. Iterate over sequences and repeat actions with for and while loops. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**while Loops** — what you need to know:
+
+- **Core idea:** Iterate over sequences and repeat actions with for and while loops.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 \`while condition:\` repeats until condition is falsy. Ensure the loop variable changes to avoid infinite loops.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "while Loops" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **while Loops** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `n, count = 10, 0
 while n > 1:
     n //= 2
@@ -486,17 +609,37 @@ Track: python | Level: beginner`
         {
           id: `loop-else`,
           title: `else, break, continue`,
-          content: `**else, break, continue** is essential to **Loops (for/while)**. Iterate over sequences and repeat actions with for and while loops. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**else, break, continue** — what you need to know:
+
+- **Core idea:** Iterate over sequences and repeat actions with for and while loops.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "else, break, continue" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **else, break, continue** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `for n in [2, 4, 6, 7, 8]:
     if n % 2 != 0:
         print(f"Found odd: {n}")
@@ -528,17 +671,37 @@ Track: python | Level: beginner`
         {
           id: `nested`,
           title: `Nested Loops & zip`,
-          content: `**Nested Loops & zip** is essential to **Loops (for/while)**. Iterate over sequences and repeat actions with for and while loops. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Nested Loops & zip** — what you need to know:
+
+- **Core idea:** Iterate over sequences and repeat actions with for and while loops.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Nest loops for 2D iteration. Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Nested Loops & zip" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Nested Loops & zip** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `names = ["Alice", "Bob"]
 scores = [95, 87]
 for name, score in zip(names, scores):
@@ -571,13 +734,19 @@ Track: python | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Loops (for/while)** sits in the **python** track of the Data Science Master curriculum. Iterate over sequences and repeat actions with for and while loops.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-loops**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Loops (for/while)
 meta = {"topic_id": "py-loops", "track": "python", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -612,12 +781,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-loops
 from dataclasses import dataclass
 
@@ -665,7 +836,9 @@ When stuck on **py-loops**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -702,9 +875,14 @@ Track: python | Level: beginner`
 
 Teams shipping features around **py-loops** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Loops (for/while)
 skills = ["python", "beginner", "py-loops"]
 print("Built project applying:", ", ".join(skills))`,
@@ -801,13 +979,29 @@ print(total)`,
           title: `Defining Functions`,
           content: `Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`. **Docstrings** document behavior.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Defining Functions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Defining Functions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def area(radius):
     """Calculate circle area."""
     return 3.14159 * radius ** 2
@@ -840,13 +1034,29 @@ Track: python | Level: beginner`
           title: `Parameter Types`,
           content: `Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict). Order: positional, defaults, *args, keyword-only, **kwargs.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Parameter Types" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Parameter Types** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def greet(name, greeting="Hello", *tags, **meta):
     print(greeting, name, tags, meta)
 
@@ -878,13 +1088,29 @@ Track: python | Level: beginner`
           title: `Unpacking Arguments`,
           content: `Unpack iterables with \`*\`: \`func(*args)\`. Unpack dicts with \`**\`: \`func(**kwargs)\`.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Unpacking Arguments" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Unpacking Arguments** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def add(a, b, c):
     return a + b + c
 
@@ -915,15 +1141,31 @@ Track: python | Level: beginner`
         {
           id: `pure`,
           title: `Pure Functions & Side Effects`,
-          content: `**Pure Functions & Side Effects** is essential to **Functions & Parameters**. Define reusable blocks with def, parameters, return values, and docstrings. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Pure Functions & Side Effects** — what you need to know:
+
+- **Core idea:** Define reusable blocks with def, parameters, return values, and docstrings.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Pure functions: same input → same output, no side effects. Prefer pure functions for testability. Side effects: I/O, mutation, global state.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Pure Functions & Side Effects" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Pure Functions & Side Effects** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Pure functions are easier to test and reason about`,
             `Separate computation from I/O`,
@@ -963,13 +1205,19 @@ Track: python | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Functions & Parameters** sits in the **python** track of the Data Science Master curriculum. Define reusable blocks with def, parameters, return values, and docstrings.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-functions**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Functions & Parameters
 meta = {"topic_id": "py-functions", "track": "python", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1004,12 +1252,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-functions
 from dataclasses import dataclass
 
@@ -1057,7 +1307,9 @@ When stuck on **py-functions**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1094,9 +1346,14 @@ Track: python | Level: beginner`
 
 Teams shipping features around **py-functions** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Functions & Parameters
 skills = ["python", "beginner", "py-functions"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1199,13 +1456,29 @@ print(factorial(5))`,
           title: `LEGB Scope Rule`,
           content: `Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in. Use \`global\` and \`nonlocal\` to modify outer bindings.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "LEGB Scope Rule" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **LEGB Scope Rule** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `x = "global"
 
 def outer():
@@ -1244,13 +1517,29 @@ Track: python | Level: beginner`
           title: `Closures`,
           content: `A **closure** captures variables from enclosing scope. Enables factory functions and decorators.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Closures" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Closures** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def make_multiplier(n):
     def multiply(x):
         return x * n
@@ -1283,17 +1572,37 @@ Track: python | Level: beginner`
         {
           id: `lambda`,
           title: `Lambda Functions`,
-          content: `**Lambda Functions** is essential to **Scope, Closures & Lambda**. LEGB scope rule, closures, and anonymous functions. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Lambda Functions** — what you need to know:
+
+- **Core idea:** LEGB scope rule, closures, and anonymous functions.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 \`lambda args: expression\` creates anonymous one-line functions. Use for short callbacks; prefer def for anything complex.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Lambda Functions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Lambda Functions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `pairs = [(3, "c"), (1, "a"), (2, "b")]
 sorted_pairs = sorted(pairs, key=lambda x: x[0])
 print(sorted_pairs)`,
@@ -1322,17 +1631,37 @@ Track: python | Level: beginner`
         {
           id: `higher`,
           title: `Higher-Order Functions`,
-          content: `**Higher-Order Functions** is essential to **Scope, Closures & Lambda**. LEGB scope rule, closures, and anonymous functions. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Higher-Order Functions** — what you need to know:
+
+- **Core idea:** LEGB scope rule, closures, and anonymous functions.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`. Functional style complements loops.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Higher-Order Functions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Higher-Order Functions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `nums = [1, 2, 3, 4, 5]
 evens = list(filter(lambda x: x % 2 == 0, nums))
 squares = list(map(lambda x: x**2, evens))
@@ -1364,13 +1693,19 @@ Track: python | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Scope, Closures & Lambda** sits in the **python** track of the Data Science Master curriculum. LEGB scope rule, closures, and anonymous functions.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-scope**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Scope, Closures & Lambda
 meta = {"topic_id": "py-scope", "track": "python", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1405,12 +1740,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-scope
 from dataclasses import dataclass
 
@@ -1458,7 +1795,9 @@ When stuck on **py-scope**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1495,9 +1834,14 @@ Track: python | Level: beginner`
 
 Teams shipping features around **py-scope** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Scope, Closures & Lambda
 skills = ["python", "beginner", "py-scope"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1590,17 +1934,37 @@ print(sorted(words, key=lambda w: len(w)))`,
         {
           id: `list-comp`,
           title: `List Comprehensions`,
-          content: `**List Comprehensions** is essential to **Comprehensions & Iterators**. List/dict/set comprehensions and the iterator protocol. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**List Comprehensions** — what you need to know:
+
+- **Core idea:** List/dict/set comprehensions and the iterator protocol.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Syntax: \`[expr for item in iterable if condition]\`. Concise, readable, and often faster than equivalent loops.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "List Comprehensions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **List Comprehensions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `squares = [x**2 for x in range(10) if x % 2 == 0]
 print(squares)`,
           output: `[0, 4, 16, 36, 64]`,
@@ -1628,17 +1992,37 @@ Track: python | Level: beginner`
         {
           id: `dict-set-comp`,
           title: `Dict & Set Comprehensions`,
-          content: `**Dict & Set Comprehensions** is essential to **Comprehensions & Iterators**. List/dict/set comprehensions and the iterator protocol. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Dict & Set Comprehensions** — what you need to know:
+
+- **Core idea:** List/dict/set comprehensions and the iterator protocol.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Dict: \`{k: v for ...}\`. Set: \`{expr for ...}\`. Powerful for building lookup tables.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Dict & Set Comprehensions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Dict & Set Comprehensions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `words = ["apple", "banana", "cherry"]
 lengths = {w: len(w) for w in words}
 unique_lens = {len(w) for w in words}
@@ -1668,17 +2052,37 @@ Track: python | Level: beginner`
         {
           id: `generators`,
           title: `Generator Expressions`,
-          content: `**Generator Expressions** is essential to **Comprehensions & Iterators**. List/dict/set comprehensions and the iterator protocol. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Generator Expressions** — what you need to know:
+
+- **Core idea:** List/dict/set comprehensions and the iterator protocol.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 \`(expr for x in iter)\` creates a lazy generator. Memory-efficient for large datasets — values computed on demand.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Generator Expressions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Generator Expressions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `gen = (x**2 for x in range(1000000))
 print(next(gen), next(gen), next(gen))`,
           output: `0 1 4`,
@@ -1706,17 +2110,37 @@ Track: python | Level: beginner`
         {
           id: `iterators`,
           title: `Iterator Protocol`,
-          content: `**Iterator Protocol** is essential to **Comprehensions & Iterators**. List/dict/set comprehensions and the iterator protocol. At the **beginner** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Iterator Protocol** — what you need to know:
+
+- **Core idea:** List/dict/set comprehensions and the iterator protocol.
+- **Level (beginner):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Iterator Protocol" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Iterator Protocol** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `it = iter([10, 20, 30])
 print(next(it), next(it))`,
           output: `10 20`,
@@ -1746,13 +2170,19 @@ Track: python | Level: beginner`
           title: `Deep Theory & Concepts`,
           content: `**Comprehensions & Iterators** sits in the **python** track of the Data Science Master curriculum. List/dict/set comprehensions and the iterator protocol.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-comprehensions**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the beginner level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Comprehensions & Iterators
 meta = {"topic_id": "py-comprehensions", "track": "python", "level": "beginner"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1787,12 +2217,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-comprehensions
 from dataclasses import dataclass
 
@@ -1840,7 +2272,9 @@ When stuck on **py-comprehensions**, reproduce with the smallest input, enable v
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1877,9 +2311,14 @@ Track: python | Level: beginner`
 
 Teams shipping features around **py-comprehensions** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Comprehensions & Iterators
 skills = ["python", "beginner", "py-comprehensions"]
 print("Built project applying:", ", ".join(skills))`,

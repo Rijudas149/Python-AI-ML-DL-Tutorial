@@ -11,17 +11,37 @@ export const module11Topics: Topic[] = [
         {
           id: `poly`,
           title: `Polynomial Regression`,
-          content: `**Polynomial Regression** is essential to **Regression Techniques**. Polynomial, ridge, lasso, and elastic net regression. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Polynomial Regression** — what you need to know:
+
+- **Core idea:** Polynomial, ridge, lasso, and elastic net regression.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Add polynomial features: x, x², x³. PolynomialFeatures(degree=2). Captures non-linear relationships with linear model.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Polynomial Regression" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Polynomial Regression** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import Pipeline
@@ -56,17 +76,37 @@ Track: ml | Level: intermediate`
         {
           id: `ridge-lasso`,
           title: `Ridge & Lasso`,
-          content: `**Ridge & Lasso** is essential to **Regression Techniques**. Polynomial, ridge, lasso, and elastic net regression. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Ridge & Lasso** — what you need to know:
+
+- **Core idea:** Polynomial, ridge, lasso, and elastic net regression.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Ridge (L2): shrinks coefficients. Lasso (L1): drives some to zero — feature selection. ElasticNet combines both.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Ridge & Lasso" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Ridge & Lasso** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.linear_model import Ridge, Lasso
 import numpy as np
 
@@ -99,15 +139,31 @@ Track: ml | Level: intermediate`
         {
           id: `assumptions`,
           title: `Linear Regression Assumptions`,
-          content: `**Linear Regression Assumptions** is essential to **Regression Techniques**. Polynomial, ridge, lasso, and elastic net regression. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Linear Regression Assumptions** — what you need to know:
+
+- **Core idea:** Polynomial, ridge, lasso, and elastic net regression.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Linearity, independence, homoscedasticity, normality of residuals. Violations affect inference not always prediction.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Linear Regression Assumptions" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Linear Regression Assumptions** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Check residual plots for patterns`,
             `Heteroscedasticity: use weighted least squares`,
@@ -145,15 +201,31 @@ Track: ml | Level: intermediate`
         {
           id: `robust`,
           title: `Robust Regression`,
-          content: `**Robust Regression** is essential to **Regression Techniques**. Polynomial, ridge, lasso, and elastic net regression. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Robust Regression** — what you need to know:
+
+- **Core idea:** Polynomial, ridge, lasso, and elastic net regression.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 HuberRegressor, RANSAC for outlier resistance. Quantile regression for conditional quantiles.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Robust Regression" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Robust Regression** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Huber loss transitions from L2 to L1 for outliers`,
             `RANSAC fits to inlier consensus`,
@@ -193,13 +265,19 @@ Track: ml | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Regression Techniques** sits in the **ml** track of the Data Science Master curriculum. Polynomial, ridge, lasso, and elastic net regression.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-regression**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Regression Techniques
 meta = {"topic_id": "ml-regression", "track": "ml", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -234,12 +312,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-regression
 from dataclasses import dataclass
 
@@ -287,7 +367,9 @@ When stuck on **ml-regression**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -324,9 +406,14 @@ Track: ml | Level: intermediate`
 
 Teams shipping features around **ml-regression** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Regression Techniques
 skills = ["ml", "intermediate", "ml-regression"]
 print("Built project applying:", ", ".join(skills))`,
@@ -417,17 +504,37 @@ print(Ridge(1.0).fit([[1],[2]], [1,2]).predict([[3]])[0])`,
         {
           id: `knn`,
           title: `K-Nearest Neighbors`,
-          content: `**K-Nearest Neighbors** is essential to **Classification Algorithms**. KNN, Naive Bayes, and multi-class strategies. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**K-Nearest Neighbors** — what you need to know:
+
+- **Core idea:** KNN, Naive Bayes, and multi-class strategies.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Classify by majority vote of k nearest training points. Lazy learner — no training phase. Scale features first!
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "K-Nearest Neighbors" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **K-Nearest Neighbors** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
@@ -461,17 +568,37 @@ Track: ml | Level: intermediate`
         {
           id: `naive-bayes`,
           title: `Naive Bayes`,
-          content: `**Naive Bayes** is essential to **Classification Algorithms**. KNN, Naive Bayes, and multi-class strategies. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Naive Bayes** — what you need to know:
+
+- **Core idea:** KNN, Naive Bayes, and multi-class strategies.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 P(y|x) ∝ P(y)ΠP(xᵢ|y). Assumes feature independence. GaussianNB, MultinomialNB, BernoulliNB variants.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Naive Bayes" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Naive Bayes** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_iris
 
@@ -502,15 +629,31 @@ Track: ml | Level: intermediate`
         {
           id: `multiclass`,
           title: `Multi-class Strategies`,
-          content: `**Multi-class Strategies** is essential to **Classification Algorithms**. KNN, Naive Bayes, and multi-class strategies. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Multi-class Strategies** — what you need to know:
+
+- **Core idea:** KNN, Naive Bayes, and multi-class strategies.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 One-vs-Rest (OvR): k binary classifiers. One-vs-One (OvO): k(k-1)/2 classifiers. Softmax for neural networks.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Multi-class Strategies" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Multi-class Strategies** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `OvR default in sklearn for SVM, LR`,
             `OvO used by SVC with probability`,
@@ -548,15 +691,31 @@ Track: ml | Level: intermediate`
         {
           id: `imbalanced`,
           title: `Imbalanced Classification`,
-          content: `**Imbalanced Classification** is essential to **Classification Algorithms**. KNN, Naive Bayes, and multi-class strategies. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Imbalanced Classification** — what you need to know:
+
+- **Core idea:** KNN, Naive Bayes, and multi-class strategies.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 SMOTE oversampling, class_weight parameter, threshold tuning. Focus on recall for minority class when costly to miss.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Imbalanced Classification" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Imbalanced Classification** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `class_weight="balanced" adjusts loss`,
             `SMOTE generates synthetic minority samples`,
@@ -596,13 +755,19 @@ Track: ml | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Classification Algorithms** sits in the **ml** track of the Data Science Master curriculum. KNN, Naive Bayes, and multi-class strategies.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-classification**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Classification Algorithms
 meta = {"topic_id": "ml-classification", "track": "ml", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -637,12 +802,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-classification
 from dataclasses import dataclass
 
@@ -690,7 +857,9 @@ When stuck on **ml-classification**, reproduce with the smallest input, enable v
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -727,9 +896,14 @@ Track: ml | Level: intermediate`
 
 Teams shipping features around **ml-classification** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Classification Algorithms
 skills = ["ml", "intermediate", "ml-classification"]
 print("Built project applying:", ", ".join(skills))`,
@@ -824,17 +998,37 @@ print(GaussianNB().fit(X, y).predict_proba(X[:1])[0].sum())`,
         {
           id: `svm-linear`,
           title: `Linear SVM`,
-          content: `**Linear SVM** is essential to **Support Vector Machines**. Maximum margin classifiers with kernel trick. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Linear SVM** — what you need to know:
+
+- **Core idea:** Maximum margin classifiers with kernel trick.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Finds hyperplane maximizing margin between classes. Support vectors are critical training points. C parameter trades margin vs misclassification.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Linear SVM" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Linear SVM** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.svm import SVC
 import numpy as np
 
@@ -867,17 +1061,37 @@ Track: ml | Level: intermediate`
         {
           id: `kernel`,
           title: `Kernel Trick`,
-          content: `**Kernel Trick** is essential to **Support Vector Machines**. Maximum margin classifiers with kernel trick. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Kernel Trick** — what you need to know:
+
+- **Core idea:** Maximum margin classifiers with kernel trick.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Map to higher dimensions without explicit computation. RBF (Gaussian) most popular: K(x,x') = exp(-γ||x-x'||²).
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Kernel Trick" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Kernel Trick** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.svm import SVC
 from sklearn.datasets import make_moons
 
@@ -908,15 +1122,31 @@ Track: ml | Level: intermediate`
         {
           id: `svc-params`,
           title: `SVM Hyperparameters`,
-          content: `**SVM Hyperparameters** is essential to **Support Vector Machines**. Maximum margin classifiers with kernel trick. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**SVM Hyperparameters** — what you need to know:
+
+- **Core idea:** Maximum margin classifiers with kernel trick.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 C, kernel, gamma, degree. GridSearchCV essential. probability=True enables predict_proba (slower).
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "SVM Hyperparameters" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **SVM Hyperparameters** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Scale features before SVM — critical`,
             `gamma too high: overfitting to support vectors`,
@@ -954,15 +1184,31 @@ Track: ml | Level: intermediate`
         {
           id: `svr`,
           title: `Support Vector Regression`,
-          content: `**Support Vector Regression** is essential to **Support Vector Machines**. Maximum margin classifiers with kernel trick. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Support Vector Regression** — what you need to know:
+
+- **Core idea:** Maximum margin classifiers with kernel trick.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 SVR for regression. Epsilon-insensitive loss ignores errors within ε tube. Kernel trick applies to regression too.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Support Vector Regression" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Support Vector Regression** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `SVR finds tube containing most points`,
             `epsilon controls tube width`,
@@ -1002,13 +1248,19 @@ Track: ml | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Support Vector Machines** sits in the **ml** track of the Data Science Master curriculum. Maximum margin classifiers with kernel trick.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-svm**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Support Vector Machines
 meta = {"topic_id": "ml-svm", "track": "ml", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1043,12 +1295,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-svm
 from dataclasses import dataclass
 
@@ -1096,7 +1350,9 @@ When stuck on **ml-svm**, reproduce with the smallest input, enable verbose logg
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1133,9 +1389,14 @@ Track: ml | Level: intermediate`
 
 Teams shipping features around **ml-svm** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Support Vector Machines
 skills = ["ml", "intermediate", "ml-svm"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1230,15 +1491,31 @@ print(clf.support_vectors_.shape[0])`,
         {
           id: `gbm`,
           title: `Gradient Boosting Concept`,
-          content: `**Gradient Boosting Concept** is essential to **Gradient Boosting (XGBoost/LightGBM)**. State-of-the-art ensemble methods for tabular data. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Gradient Boosting Concept** — what you need to know:
+
+- **Core idea:** State-of-the-art ensemble methods for tabular data.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sequentially add trees correcting previous errors. Each tree fits negative gradient of loss. Learning_rate shrinks each contribution.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Gradient Boosting Concept" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Gradient Boosting Concept** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `model = initial prediction
 FOR t in 1..T:
     compute residuals/gradients
@@ -1269,17 +1546,37 @@ level: intermediate`
         {
           id: `xgboost`,
           title: `XGBoost`,
-          content: `**XGBoost** is essential to **Gradient Boosting (XGBoost/LightGBM)**. State-of-the-art ensemble methods for tabular data. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**XGBoost** — what you need to know:
+
+- **Core idea:** State-of-the-art ensemble methods for tabular data.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Optimized gradient boosting with regularization, parallel tree construction, handling missing values. xgboost.XGBClassifier().
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "XGBoost" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **XGBoost** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from xgboost import XGBClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import cross_val_score
@@ -1312,15 +1609,31 @@ Track: ml | Level: intermediate`
         {
           id: `lightgbm`,
           title: `LightGBM & CatBoost`,
-          content: `**LightGBM & CatBoost** is essential to **Gradient Boosting (XGBoost/LightGBM)**. State-of-the-art ensemble methods for tabular data. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LightGBM & CatBoost** — what you need to know:
+
+- **Core idea:** State-of-the-art ensemble methods for tabular data.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 LightGBM: leaf-wise growth, faster on large data. CatBoost: handles categoricals natively, ordered boosting.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "LightGBM & CatBoost" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **LightGBM & CatBoost** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `LightGBM faster than XGBoost on large datasets`,
             `CatBoost best for high-cardinality categoricals`,
@@ -1358,15 +1671,31 @@ Track: ml | Level: intermediate`
         {
           id: `tuning-gbm`,
           title: `Tuning Gradient Boosting`,
-          content: `**Tuning Gradient Boosting** is essential to **Gradient Boosting (XGBoost/LightGBM)**. State-of-the-art ensemble methods for tabular data. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Tuning Gradient Boosting** — what you need to know:
+
+- **Core idea:** State-of-the-art ensemble methods for tabular data.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Key params: n_estimators, learning_rate, max_depth, subsample, colsample_bytree, reg_alpha/lambda.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Tuning Gradient Boosting" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Tuning Gradient Boosting** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Start with defaults then tune learning_rate + n_estimators`,
             `Lower learning_rate with more trees often better`,
@@ -1406,13 +1735,19 @@ Track: ml | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Gradient Boosting (XGBoost/LightGBM)** sits in the **ml** track of the Data Science Master curriculum. State-of-the-art ensemble methods for tabular data.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-boosting**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Gradient Boosting (XGBoost/LightGBM)
 meta = {"topic_id": "ml-boosting", "track": "ml", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1447,12 +1782,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-boosting
 from dataclasses import dataclass
 
@@ -1500,7 +1837,9 @@ When stuck on **ml-boosting**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1537,9 +1876,14 @@ Track: ml | Level: intermediate`
 
 Teams shipping features around **ml-boosting** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Gradient Boosting (XGBoost/LightGBM)
 skills = ["ml", "intermediate", "ml-boosting"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1633,15 +1977,31 @@ print(clf.n_estimators)`,
         {
           id: `bagging`,
           title: `Bagging & Boosting`,
-          content: `**Bagging & Boosting** is essential to **Ensemble Methods**. Bagging, boosting, stacking, and voting classifiers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Bagging & Boosting** — what you need to know:
+
+- **Core idea:** Bagging, boosting, stacking, and voting classifiers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Bagging (Bootstrap Aggregating): parallel training on random subsets, average/vote. Boosting: sequential error correction.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Bagging & Boosting" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Bagging & Boosting** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Bagging reduces variance (Random Forest)`,
             `Boosting reduces bias (XGBoost)`,
@@ -1679,17 +2039,37 @@ Track: ml | Level: intermediate`
         {
           id: `voting`,
           title: `Voting & Stacking`,
-          content: `**Voting & Stacking** is essential to **Ensemble Methods**. Bagging, boosting, stacking, and voting classifiers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Voting & Stacking** — what you need to know:
+
+- **Core idea:** Bagging, boosting, stacking, and voting classifiers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 VotingClassifier: hard vote (majority) or soft vote (average probabilities). StackingClassifier: meta-learner on base model predictions.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Voting & Stacking" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Voting & Stacking** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sklearn.ensemble import VotingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -1724,15 +2104,31 @@ Track: ml | Level: intermediate`
         {
           id: `blending`,
           title: `Blending Strategies`,
-          content: `**Blending Strategies** is essential to **Ensemble Methods**. Bagging, boosting, stacking, and voting classifiers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Blending Strategies** — what you need to know:
+
+- **Core idea:** Bagging, boosting, stacking, and voting classifiers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Simple average of model predictions often competitive. Weighted average by validation performance.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Blending Strategies" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Blending Strategies** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Equal weight averaging is strong baseline`,
             `Weight by validation AUC or log-loss`,
@@ -1770,15 +2166,31 @@ Track: ml | Level: intermediate`
         {
           id: `diversity`,
           title: `Ensemble Diversity`,
-          content: `**Ensemble Diversity** is essential to **Ensemble Methods**. Bagging, boosting, stacking, and voting classifiers. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Ensemble Diversity** — what you need to know:
+
+- **Core idea:** Bagging, boosting, stacking, and voting classifiers.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Ensembles work when models make different errors. Diversity from: different algorithms, features, data subsets, random seeds.
 
-**Why this matters:** Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff. Mastering "Ensemble Diversity" here directly affects how confidently you can build, debug, and ship ml projects.
+**Why this matters:**
 
-**Professional habits:** Establish baselines, stratify splits, and report confidence intervals — not single scores. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff.
+- Mastering **Ensemble Diversity** directly affects how confidently you can build, debug, and ship ml projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Overfitting small datasets, tuning on test data, and ignoring class imbalance. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Establish baselines, stratify splits, and report confidence intervals — not single scores.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Overfitting small datasets, tuning on test data, and ignoring class imbalance.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Identical models add no value`,
             `Decorrelate errors for maximum benefit`,
@@ -1818,13 +2230,19 @@ Track: ml | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Ensemble Methods** sits in the **ml** track of the Data Science Master curriculum. Bagging, boosting, stacking, and voting classifiers.
 
-**Theoretical foundation:** Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
+**Theoretical foundation:**
+
+- Learning algorithms minimize expected risk on unseen data.
+- Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.
 
 For **ml-ensemble**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Ensemble Methods
 meta = {"topic_id": "ml-ensemble", "track": "ml", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1859,12 +2277,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ml-ensemble
 from dataclasses import dataclass
 
@@ -1912,7 +2332,9 @@ When stuck on **ml-ensemble**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1949,9 +2371,14 @@ Track: ml | Level: intermediate`
 
 Teams shipping features around **ml-ensemble** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Ensemble Methods
 skills = ["ml", "intermediate", "ml-ensemble"]
 print("Built project applying:", ", ".join(skills))`,

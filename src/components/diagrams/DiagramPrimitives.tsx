@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { CurveShape } from '../../types/diagram';
+import { filterDiagramNotes } from '../../utils/diagramSanitize';
 
 export const D = {
   emerald: 'var(--diagram-emerald, #059669)',
@@ -144,7 +145,7 @@ export function MiniAxes({
 }
 
 export function Footnotes({ lines }: { lines: string[] }) {
-  const items = lines.filter((l) => l.trim() && !/^[\s│·|]+$/.test(l)).slice(0, 5);
+  const items = filterDiagramNotes(lines).slice(0, 5);
   if (!items.length) return null;
   return (
     <ul className="diagram-footnotes">

@@ -17,13 +17,29 @@ Cosine similarity standard; normalize vectors for dot product equivalence.
 
 **Applying Embeddings & Vector Databases:** Semantic search with embeddings and ANN indexes (FAISS, Chroma). Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Text Embeddings", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Text Embeddings" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Text Embeddings** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 a = np.array([1.0, 0.0]); b = np.array([0.9, 0.1])
 a /= np.linalg.norm(a); b /= np.linalg.norm(b)
@@ -59,11 +75,23 @@ Track: ai | Level: advanced`
 
 **Applying Embeddings & Vector Databases:** Semantic search with embeddings and ANN indexes (FAISS, Chroma). Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "FAISS & ANN Search", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "FAISS & ANN Search" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **FAISS & ANN Search** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `HNSW good default for many workloads`,
             `Product quantization compresses vectors`,
@@ -107,11 +135,23 @@ Reciprocal rank fusion merges ranked lists from multiple retrievers.
 
 **Applying Embeddings & Vector Databases:** Semantic search with embeddings and ANN indexes (FAISS, Chroma). Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Hybrid Search", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Hybrid Search" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Hybrid Search** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Hybrid reduces failure modes of either alone`,
             `RRF simple robust fusion without tuning`,
@@ -149,7 +189,11 @@ Track: ai | Level: advanced`
         {
           id: `ops`,
           title: `Operational Concerns`,
-          content: `**Operational Concerns** is essential to **Embeddings & Vector Databases**. Semantic search with embeddings and ANN indexes (FAISS, Chroma). At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Operational Concerns** — what you need to know:
+
+- **Core idea:** Semantic search with embeddings and ANN indexes (FAISS, Chroma).
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Chunk documents, embed, upsert with metadata (source, date). Monitor query latency p95, recall@k on eval set, index size growth.
 
@@ -157,11 +201,23 @@ Version embedding model in index metadata for migrations.
 
 **Applying Embeddings & Vector Databases:** Semantic search with embeddings and ANN indexes (FAISS, Chroma). Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Operational Concerns", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Operational Concerns" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Operational Concerns** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Chunk size 256-512 tokens typical starting point`,
             `Stale index when source docs update`,
@@ -201,13 +257,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Embeddings & Vector Databases** sits in the **ai** track of the Data Science Master curriculum. Semantic search with embeddings and ANN indexes (FAISS, Chroma).
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 Embeddings map discrete tokens or documents into dense vectors where semantic similarity approximates cosine distance. Approximate nearest neighbor (ANN) indexes trade recall for speed at billion scale.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Embeddings & Vector Databases
 meta = {"topic_id": "ai-vectors", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -242,12 +304,14 @@ Chunk documents 256–512 tokens with overlap; hybrid search combines BM25 with 
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-vectors
 from dataclasses import dataclass
 
@@ -295,7 +359,9 @@ Stale embeddings after model updates, wrong distance metric (cosine vs L2), and 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -332,9 +398,14 @@ Track: ai | Level: advanced`
 
 RAG stacks use Pinecone, Weaviate, FAISS, or Chroma behind enterprise search and support copilots.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Embeddings & Vector Databases
 skills = ["ai", "advanced", "ai-vectors"]
 print("Built project applying:", ", ".join(skills))`,
@@ -430,7 +501,11 @@ Track: ai | Level: advanced`
         {
           id: `clip`,
           title: `CLIP Architecture`,
-          content: `**CLIP Architecture** is essential to **Multimodal Models (CLIP & VLM)**. Vision-language models connecting images and text in shared embedding space. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**CLIP Architecture** — what you need to know:
+
+- **Core idea:** Vision-language models connecting images and text in shared embedding space.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Contrastive pretraining on (image, text) pairs from web. Image encoder (ViT/ResNet) and text encoder (Transformer) map to shared space; maximize cosine of matching pairs vs negatives in batch.
 
@@ -438,11 +513,23 @@ Zero-shot classification: embed class text prompts and image; pick highest simil
 
 **Applying Multimodal Models (CLIP & VLM):** Vision-language models connecting images and text in shared embedding space. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "CLIP Architecture", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "CLIP Architecture" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **CLIP Architecture** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Contrastive learning on large noisy web data`,
             `Prompt engineering affects zero-shot accuracy`,
@@ -486,11 +573,23 @@ Project image patches through adapter into LLM token stream.
 
 **Applying Multimodal Models (CLIP & VLM):** Vision-language models connecting images and text in shared embedding space. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Vision-Language Models", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Vision-Language Models" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Vision-Language Models** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Visual tokens increase context length cost`,
             `OCR and chart reasoning common enterprise uses`,
@@ -534,11 +633,23 @@ Multimodal RAG embeds images and text jointly in knowledge bases.
 
 **Applying Multimodal Models (CLIP & VLM):** Vision-language models connecting images and text in shared embedding space. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Downstream Tasks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Downstream Tasks" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Downstream Tasks** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Grounding links words to bounding boxes`,
             `Doc AI needs layout-aware encoders (LayoutLM)`,
@@ -576,7 +687,11 @@ Track: ai | Level: advanced`
         {
           id: `limits`,
           title: `Limitations & Bias`,
-          content: `**Limitations & Bias** is essential to **Multimodal Models (CLIP & VLM)**. Vision-language models connecting images and text in shared embedding space. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Limitations & Bias** — what you need to know:
+
+- **Core idea:** Vision-language models connecting images and text in shared embedding space.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Training data biases affect demographic descriptions. Adversarial patches fool classifiers. Synthetic image detection arms race.
 
@@ -584,11 +699,23 @@ Accessibility: alt-text generation must be verified before publishing.
 
 **Applying Multimodal Models (CLIP & VLM):** Vision-language models connecting images and text in shared embedding space. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Limitations & Bias", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Limitations & Bias" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Limitations & Bias** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Audit gender/race bias in captions`,
             `Adversarial robustness weak vs imperceptible noise`,
@@ -628,13 +755,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Multimodal Models (CLIP & VLM)** sits in the **ai** track of the Data Science Master curriculum. Vision-language models connecting images and text in shared embedding space.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-multimodal**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Multimodal Models (CLIP & VLM)
 meta = {"topic_id": "ai-multimodal", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -669,12 +802,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-multimodal
 from dataclasses import dataclass
 
@@ -722,7 +857,9 @@ When stuck on **ai-multimodal**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -759,9 +896,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-multimodal** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Multimodal Models (CLIP & VLM)
 skills = ["ai", "advanced", "ai-multimodal"]
 print("Built project applying:", ", ".join(skills))`,
@@ -863,11 +1005,23 @@ Use \`whisper\` or \`faster-whisper\` for local inference; segment long audio.
 
 **Applying Speech AI (Whisper & TTS):** Automatic speech recognition and text-to-speech pipelines. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Whisper ASR", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Whisper ASR" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Whisper ASR** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Multilingual 99 languages in large models`,
             `Word-level timestamps in some implementations`,
@@ -911,11 +1065,23 @@ Track: ai | Level: advanced`
 
 **Applying Speech AI (Whisper & TTS):** Automatic speech recognition and text-to-speech pipelines. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Text-to-Speech Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Text-to-Speech Overview" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Text-to-Speech Overview** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Prosody control via SSML or reference audio`,
             `Real-time TTS needs streaming architectures`,
@@ -959,11 +1125,23 @@ Latency budget: ASR + LLM + TTS sequential pipeline optimization.
 
 **Applying Speech AI (Whisper & TTS):** Automatic speech recognition and text-to-speech pipelines. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Audio + LLM Integration", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Audio + LLM Integration" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Audio + LLM Integration** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `End-to-end speech LLMs reduce cascade errors`,
             `Partial ASR streaming lowers time-to-first-token`,
@@ -1001,7 +1179,11 @@ Track: ai | Level: advanced`
         {
           id: `deploy-speech`,
           title: `Deployment Considerations`,
-          content: `**Deployment Considerations** is essential to **Speech AI (Whisper & TTS)**. Automatic speech recognition and text-to-speech pipelines. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Deployment Considerations** — what you need to know:
+
+- **Core idea:** Automatic speech recognition and text-to-speech pipelines.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 16kHz mono common input; noise suppression preprocessing. GPU for batch; CPU quantized models for edge.
 
@@ -1009,11 +1191,23 @@ Compliance: call recording consent, biometric voice data regulations.
 
 **Applying Speech AI (Whisper & TTS):** Automatic speech recognition and text-to-speech pipelines. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Deployment Considerations", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Deployment Considerations" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Deployment Considerations** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `VAD reduces wasted ASR compute`,
             `Quantization INT8 for mobile TTS`,
@@ -1053,13 +1247,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Speech AI (Whisper & TTS)** sits in the **ai** track of the Data Science Master curriculum. Automatic speech recognition and text-to-speech pipelines.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-speech**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Speech AI (Whisper & TTS)
 meta = {"topic_id": "ai-speech", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1094,12 +1294,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-speech
 from dataclasses import dataclass
 
@@ -1147,7 +1349,9 @@ When stuck on **ai-speech**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1184,9 +1388,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-speech** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Speech AI (Whisper & TTS)
 skills = ["ai", "advanced", "ai-speech"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1288,11 +1497,23 @@ Leaderboard chasing risks overfitting benchmarks—hold out private eval sets.
 
 **Applying AI Benchmarks & Red Teaming:** MMLU, HumanEval, and systematic adversarial testing. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "MMLU & Knowledge Benchmarks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "MMLU & Knowledge Benchmarks" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **MMLU & Knowledge Benchmarks** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Multiple-choice format simplifies scoring`,
             `Contamination when benchmark in training data`,
@@ -1336,13 +1557,29 @@ Pass@k metric: any of k samples passes tests.
 
 **Applying AI Benchmarks & Red Teaming:** MMLU, HumanEval, and systematic adversarial testing. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "HumanEval & Code Benchmarks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "HumanEval & Code Benchmarks" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **HumanEval & Code Benchmarks** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def pass_at_k(n, c, k):
     # n problems, c correct, k samples — simplified
     return 1.0 if c > 0 else 0.0
@@ -1378,11 +1615,23 @@ Automated red teaming with attacker LLMs scales coverage; human red team for sub
 
 **Applying AI Benchmarks & Red Teaming:** MMLU, HumanEval, and systematic adversarial testing. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Red Teaming LLMs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Red Teaming LLMs" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Red Teaming LLMs** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Prompt injection in RAG poisons context`,
             `Unicode homoglyph attacks bypass filters`,
@@ -1420,7 +1669,11 @@ Track: ai | Level: advanced`
         {
           id: `eval-practice`,
           title: `Evaluation Best Practices`,
-          content: `**Evaluation Best Practices** is essential to **AI Benchmarks & Red Teaming**. MMLU, HumanEval, and systematic adversarial testing. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Evaluation Best Practices** — what you need to know:
+
+- **Core idea:** MMLU, HumanEval, and systematic adversarial testing.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Combine automatic metrics with human eval. Track regression suites in CI for model updates. Slice by language, domain, difficulty.
 
@@ -1428,11 +1681,23 @@ Combine automatic metrics with human eval. Track regression suites in CI for mod
 
 **Applying AI Benchmarks & Red Teaming:** MMLU, HumanEval, and systematic adversarial testing. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Evaluation Best Practices", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Evaluation Best Practices" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Evaluation Best Practices** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Golden set regression on every model release`,
             `Statistical significance on metric deltas`,
@@ -1472,13 +1737,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**AI Benchmarks & Red Teaming** sits in the **ai** track of the Data Science Master curriculum. MMLU, HumanEval, and systematic adversarial testing.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-eval**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for AI Benchmarks & Red Teaming
 meta = {"topic_id": "ai-eval", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1513,12 +1784,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-eval
 from dataclasses import dataclass
 
@@ -1566,7 +1839,9 @@ When stuck on **ai-eval**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1603,9 +1878,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-eval** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for AI Benchmarks & Red Teaming
 skills = ["ai", "advanced", "ai-eval"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1707,11 +1987,23 @@ Alignment reduces but does not eliminate all failure modes.
 
 **Applying Alignment, Jailbreaks & Guardrails:** Mitigate harmful outputs and build responsible AI systems. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Alignment Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Alignment Overview" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Alignment Overview** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Reward hacking when proxy rewards misaligned`,
             `DPO simpler pipeline than full RLHF`,
@@ -1749,7 +2041,11 @@ Track: ai | Level: advanced`
         {
           id: `jailbreaks`,
           title: `Jailbreaks & Prompt Injection`,
-          content: `**Jailbreaks & Prompt Injection** is essential to **Alignment, Jailbreaks & Guardrails**. Mitigate harmful outputs and build responsible AI systems. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Jailbreaks & Prompt Injection** — what you need to know:
+
+- **Core idea:** Mitigate harmful outputs and build responsible AI systems.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Attacks: DAN prompts, base64 encoding, multi-turn gradual escalation, indirect injection via retrieved documents.
 
@@ -1757,11 +2053,23 @@ Defenses: input/output filters, Llama Guard classifiers, structured prompts isol
 
 **Applying Alignment, Jailbreaks & Guardrails:** Mitigate harmful outputs and build responsible AI systems. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Jailbreaks & Prompt Injection", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Jailbreaks & Prompt Injection" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Jailbreaks & Prompt Injection** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Defense in depth—no single filter sufficient`,
             `Sanitize retrieved RAG documents`,
@@ -1805,11 +2113,23 @@ Log moderation decisions for audit; appeal process for false positives.
 
 **Applying Alignment, Jailbreaks & Guardrails:** Mitigate harmful outputs and build responsible AI systems. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Guardrails & Moderation APIs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Guardrails & Moderation APIs" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Guardrails & Moderation APIs** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Tune thresholds per product risk appetite`,
             `PII detection before logging conversations`,
@@ -1853,11 +2173,23 @@ Transparency: system cards document limitations and intended use boundaries.
 
 **Applying Alignment, Jailbreaks & Guardrails:** Mitigate harmful outputs and build responsible AI systems. Advanced AI engineering merges models with retrieval, tools, evaluation, and safety guardrails. When studying "Safety Governance", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Safety Governance" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Safety Governance** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Kill switch for production LLM features`,
             `Version control prompts and model weights`,
@@ -1897,13 +2229,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Alignment, Jailbreaks & Guardrails** sits in the **ai** track of the Data Science Master curriculum. Mitigate harmful outputs and build responsible AI systems.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-safety**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Alignment, Jailbreaks & Guardrails
 meta = {"topic_id": "ai-safety", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1938,12 +2276,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-safety
 from dataclasses import dataclass
 
@@ -1991,7 +2331,9 @@ When stuck on **ai-safety**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2028,9 +2370,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-safety** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Alignment, Jailbreaks & Guardrails
 skills = ["ai", "advanced", "ai-safety"]
 print("Built project applying:", ", ".join(skills))`,

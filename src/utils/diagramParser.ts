@@ -1,11 +1,14 @@
 import type { CurveShape, DiagramSpec, StructuredLiteral } from '../types/diagram';
 import { parseAsciiFigure } from './parseAsciiFigure';
+import { filterDiagramNotes, isDecorativeDiagramLine, sanitizeDiagramText } from './diagramSanitize';
 
 const ASCII_CHARS = /[│┌┐└┘├┤┬┴┼─═╱\\|_]/;
 const FORMULA_CHARS = /[=∪∩×÷±∑∫]|\\|\^|\blog\b|\bln\b|\bexp\b|→.*=|\(\d+,\s*\d+\)/i;
 
 function footnotes(lines: string[], exclude: RegExp[] = []): string[] {
-  return lines.filter((l) => l.trim() && !exclude.some((re) => re.test(l)));
+  return filterDiagramNotes(
+    lines.filter((l) => l.trim() && !exclude.some((re) => re.test(l))),
+  );
 }
 
 function isTitleLine(line: string): boolean {
@@ -82,18 +85,24 @@ function parseStructuredLiteral(rawLines: string[]): StructuredLiteral {
       continue;
     }
 
-    content.notes.push(trimmed);
+    if (!isDecorativeDiagramLine(trimmed)) {
+      content.notes.push(trimmed);
+    }
   }
 
   if (asciiLines.length) {
     content.figure = parseAsciiFigure(asciiLines) ?? undefined;
     if (!content.figure) {
-      const labels = asciiLines
-        .map((l) => l.replace(/[│┌┐└┘├┤┬┴┼─═╱\\_|]/g, ' ').replace(/\s+/g, ' ').trim())
-        .filter((l) => l.length > 2);
+      const labels = filterDiagramNotes(
+        asciiLines.map((l) =>
+          l.replace(/[│┌┐└┘├┤┬┴┼─═╱\\_|]/g, ' ').replace(/\s+/g, ' ').trim(),
+        ),
+      ).filter((l) => l.length > 2);
       if (labels.length) content.notes.unshift(...labels);
     }
   }
+
+  content.notes = filterDiagramNotes(content.notes);
 
   return content;
 }
@@ -227,7 +236,8 @@ function parseVenn(rawLines: string[], joined: string): DiagramSpec | null {
 }
 
 export function parseDiagram(text: string): DiagramSpec {
-  const rawLines = text.split('\n').map((l) => l.trimEnd());
+  const cleaned = sanitizeDiagramText(text);
+  const rawLines = cleaned.split('\n').map((l) => l.trimEnd());
   const lines = rawLines.map((l) => l.trim()).filter(Boolean);
   const joined = text.toLowerCase();
 
@@ -255,6 +265,6 @@ export function parseDiagram(text: string): DiagramSpec {
   return {
     type: 'literal',
     content: parseStructuredLiteral(rawLines),
-    source: text,
+    source: cleaned,
   };
 }

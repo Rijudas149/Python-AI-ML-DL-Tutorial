@@ -11,17 +11,37 @@ export const module15Topics: Topic[] = [
         {
           id: `tensor-basics`,
           title: `Creating Tensors`,
-          content: `**Creating Tensors** is essential to **PyTorch Tensors**. PyTorch fundamental data structure with GPU support. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Creating Tensors** — what you need to know:
+
+- **Core idea:** PyTorch fundamental data structure with GPU support.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.tensor(), torch.zeros(), torch.randn(). Similar to NumPy but with GPU support and autograd.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Creating Tensors" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Creating Tensors** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 
 a = torch.tensor([1.0, 2.0, 3.0])
@@ -53,17 +73,37 @@ Track: dl | Level: intermediate`
         {
           id: `ops`,
           title: `Tensor Operations`,
-          content: `**Tensor Operations** is essential to **PyTorch Tensors**. PyTorch fundamental data structure with GPU support. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Tensor Operations** — what you need to know:
+
+- **Core idea:** PyTorch fundamental data structure with GPU support.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose. In-place ops suffixed with _.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Tensor Operations" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Tensor Operations** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 
 a = torch.randn(3, 4)
@@ -97,17 +137,37 @@ Track: dl | Level: intermediate`
         {
           id: `numpy-bridge`,
           title: `NumPy Interoperability`,
-          content: `**NumPy Interoperability** is essential to **PyTorch Tensors**. PyTorch fundamental data structure with GPU support. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**NumPy Interoperability** — what you need to know:
+
+- **Core idea:** PyTorch fundamental data structure with GPU support.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "NumPy Interoperability" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **NumPy Interoperability** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import numpy as np
 
@@ -140,17 +200,37 @@ Track: dl | Level: intermediate`
         {
           id: `device`,
           title: `Device Management`,
-          content: `**Device Management** is essential to **PyTorch Tensors**. PyTorch fundamental data structure with GPU support. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Device Management** — what you need to know:
+
+- **Core idea:** PyTorch fundamental data structure with GPU support.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Device Management" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Device Management** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -182,13 +262,19 @@ Track: dl | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**PyTorch Tensors** sits in the **dl** track of the Data Science Master curriculum. PyTorch fundamental data structure with GPU support.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **pt-tensors**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for PyTorch Tensors
 meta = {"topic_id": "pt-tensors", "track": "dl", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -223,12 +309,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pt-tensors
 from dataclasses import dataclass
 
@@ -276,7 +364,9 @@ When stuck on **pt-tensors**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -313,9 +403,14 @@ Track: dl | Level: intermediate`
 
 Teams shipping features around **pt-tensors** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for PyTorch Tensors
 skills = ["dl", "intermediate", "pt-tensors"]
 print("Built project applying:", ", ".join(skills))`,
@@ -405,17 +500,37 @@ print((torch.randn(2,3) @ torch.randn(3,4)).shape)`,
         {
           id: `grad`,
           title: `requires_grad & backward`,
-          content: `**requires_grad & backward** is essential to **Autograd & Computational Graphs**. Automatic differentiation engine in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**requires_grad & backward** — what you need to know:
+
+- **Core idea:** Automatic differentiation engine in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "requires_grad & backward" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **requires_grad & backward** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 
 x = torch.tensor(3.0, requires_grad=True)
@@ -447,15 +562,31 @@ Track: dl | Level: intermediate`
         {
           id: `graph`,
           title: `Computational Graph`,
-          content: `**Computational Graph** is essential to **Autograd & Computational Graphs**. Automatic differentiation engine in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Computational Graph** — what you need to know:
+
+- **Core idea:** Automatic differentiation engine in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 PyTorch builds dynamic graph during forward pass. Nodes are tensors, edges are operations. Graph freed after backward by default.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Computational Graph" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Computational Graph** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Dynamic graph: rebuilt each forward pass`,
             `Enables Python control flow in models`,
@@ -493,17 +624,37 @@ Track: dl | Level: intermediate`
         {
           id: `leaf`,
           title: `Leaf Tensors & Parameters`,
-          content: `**Leaf Tensors & Parameters** is essential to **Autograd & Computational Graphs**. Automatic differentiation engine in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Leaf Tensors & Parameters** — what you need to know:
+
+- **Core idea:** Automatic differentiation engine in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Leaf tensors are graph roots (parameters, inputs). Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Leaf Tensors & Parameters" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Leaf Tensors & Parameters** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -534,15 +685,31 @@ Track: dl | Level: intermediate`
         {
           id: `higher`,
           title: `Higher-Order Gradients`,
-          content: `**Higher-Order Gradients** is essential to **Autograd & Computational Graphs**. Automatic differentiation engine in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Higher-Order Gradients** — what you need to know:
+
+- **Core idea:** Automatic differentiation engine in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 create_graph=True enables second derivatives. Used in meta-learning and some GAN training.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Higher-Order Gradients" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Higher-Order Gradients** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Second-order for Hessian-vector products`,
             `Meta-learning (MAML) uses higher-order grads`,
@@ -582,13 +749,19 @@ Track: dl | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Autograd & Computational Graphs** sits in the **dl** track of the Data Science Master curriculum. Automatic differentiation engine in PyTorch.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **pt-autograd**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Autograd & Computational Graphs
 meta = {"topic_id": "pt-autograd", "track": "dl", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -623,12 +796,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pt-autograd
 from dataclasses import dataclass
 
@@ -676,7 +851,9 @@ When stuck on **pt-autograd**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -713,9 +890,14 @@ Track: dl | Level: intermediate`
 
 Teams shipping features around **pt-autograd** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Autograd & Computational Graphs
 skills = ["dl", "intermediate", "pt-autograd"]
 print("Built project applying:", ", ".join(skills))`,
@@ -807,17 +989,37 @@ print(nn.Linear(5, 3).weight.requires_grad)`,
         {
           id: `module`,
           title: `nn.Module Basics`,
-          content: `**nn.Module Basics** is essential to **Building NN with nn.Module**. Object-oriented model definition in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**nn.Module Basics** — what you need to know:
+
+- **Core idea:** Object-oriented model definition in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "nn.Module Basics" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **nn.Module Basics** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -859,15 +1061,31 @@ Track: dl | Level: intermediate`
         {
           id: `layers`,
           title: `Common Layers`,
-          content: `**Common Layers** is essential to **Building NN with nn.Module**. Object-oriented model definition in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Common Layers** — what you need to know:
+
+- **Core idea:** Object-oriented model definition in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d. Activation: nn.ReLU, nn.GELU, nn.Softmax.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Common Layers" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Common Layers** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Linear: fully connected layer`,
             `Conv2d: spatial feature extraction`,
@@ -905,17 +1123,37 @@ Track: dl | Level: intermediate`
         {
           id: `loss-opt`,
           title: `Loss Functions & Optimizers`,
-          content: `**Loss Functions & Optimizers** is essential to **Building NN with nn.Module**. Object-oriented model definition in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Loss Functions & Optimizers** — what you need to know:
+
+- **Core idea:** Object-oriented model definition in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 nn.CrossEntropyLoss (includes softmax). nn.MSELoss. Optimizers: torch.optim.SGD, Adam, AdamW.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Loss Functions & Optimizers" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Loss Functions & Optimizers** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -954,15 +1192,31 @@ Track: dl | Level: intermediate`
         {
           id: `save`,
           title: `Saving & Loading Models`,
-          content: `**Saving & Loading Models** is essential to **Building NN with nn.Module**. Object-oriented model definition in PyTorch. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Saving & Loading Models** — what you need to know:
+
+- **Core idea:** Object-oriented model definition in PyTorch.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)). Save optimizer state for resume.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Saving & Loading Models" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Saving & Loading Models** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `state_dict saves learned parameters only`,
             `Save full checkpoint: model + optimizer + epoch`,
@@ -1002,13 +1256,19 @@ Track: dl | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Building NN with nn.Module** sits in the **dl** track of the Data Science Master curriculum. Object-oriented model definition in PyTorch.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **pt-module**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Building NN with nn.Module
 meta = {"topic_id": "pt-module", "track": "dl", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1043,12 +1303,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pt-module
 from dataclasses import dataclass
 
@@ -1096,7 +1358,9 @@ When stuck on **pt-module**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1133,9 +1397,14 @@ Track: dl | Level: intermediate`
 
 Teams shipping features around **pt-module** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Building NN with nn.Module
 skills = ["dl", "intermediate", "pt-module"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1226,17 +1495,37 @@ print(sum(p.numel() for p in nn.Linear(10, 5).parameters()))`,
         {
           id: `dataset`,
           title: `Dataset & DataLoader`,
-          content: `**Dataset & DataLoader** is essential to **DataLoaders & Training Loops**. Efficient data loading and standard training loop pattern. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Dataset & DataLoader** — what you need to know:
+
+- **Core idea:** Efficient data loading and standard training loop pattern.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.utils.data.Dataset defines __len__ and __getitem__. DataLoader batches, shuffles, and parallelizes loading.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Dataset & DataLoader" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Dataset & DataLoader** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 from torch.utils.data import Dataset, DataLoader
 
@@ -1276,17 +1565,37 @@ Track: dl | Level: intermediate`
         {
           id: `loop`,
           title: `Training Loop Pattern`,
-          content: `**Training Loop Pattern** is essential to **DataLoaders & Training Loops**. Efficient data loading and standard training loop pattern. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Training Loop Pattern** — what you need to know:
+
+- **Core idea:** Efficient data loading and standard training loop pattern.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Standard loop: for epoch → for batch → forward → loss → backward → step → log. Validate after each epoch.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Training Loop Pattern" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Training Loop Pattern** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 import torch.nn as nn
 
@@ -1326,15 +1635,31 @@ Track: dl | Level: intermediate`
         {
           id: `transforms`,
           title: `Transforms & Augmentation`,
-          content: `**Transforms & Augmentation** is essential to **DataLoaders & Training Loops**. Efficient data loading and standard training loop pattern. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Transforms & Augmentation** — what you need to know:
+
+- **Core idea:** Efficient data loading and standard training loop pattern.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torchvision.transforms for image preprocessing. Compose chains transforms. RandomHorizontalFlip, Normalize, ToTensor.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Transforms & Augmentation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Transforms & Augmentation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `ToTensor converts PIL to [C,H,W] float [0,1]`,
             `Normalize with dataset mean/std`,
@@ -1372,15 +1697,31 @@ Track: dl | Level: intermediate`
         {
           id: `scheduler`,
           title: `Learning Rate Schedulers`,
-          content: `**Learning Rate Schedulers** is essential to **DataLoaders & Training Loops**. Efficient data loading and standard training loop pattern. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Learning Rate Schedulers** — what you need to know:
+
+- **Core idea:** Efficient data loading and standard training loop pattern.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Learning Rate Schedulers" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Learning Rate Schedulers** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Cosine annealing popular for vision training`,
             `Warmup stabilizes transformer training`,
@@ -1420,13 +1761,19 @@ Track: dl | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**DataLoaders & Training Loops** sits in the **dl** track of the Data Science Master curriculum. Efficient data loading and standard training loop pattern.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **pt-training**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for DataLoaders & Training Loops
 meta = {"topic_id": "pt-training", "track": "dl", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1461,12 +1808,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pt-training
 from dataclasses import dataclass
 
@@ -1514,7 +1863,9 @@ When stuck on **pt-training**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1551,9 +1902,14 @@ Track: dl | Level: intermediate`
 
 Teams shipping features around **pt-training** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for DataLoaders & Training Loops
 skills = ["dl", "intermediate", "pt-training"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1645,17 +2001,37 @@ print(steps)`,
         {
           id: `cuda`,
           title: `CUDA Training`,
-          content: `**CUDA Training** is essential to **GPU Training & Mixed Precision**. Accelerate training with CUDA and automatic mixed precision. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**CUDA Training** — what you need to know:
+
+- **Core idea:** Accelerate training with CUDA and automatic mixed precision.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Move model and batches to GPU. Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "CUDA Training" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **CUDA Training** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -1686,17 +2062,37 @@ Track: dl | Level: intermediate`
         {
           id: `amp`,
           title: `Automatic Mixed Precision`,
-          content: `**Automatic Mixed Precision** is essential to **GPU Training & Mixed Precision**. Accelerate training with CUDA and automatic mixed precision. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Automatic Mixed Precision** — what you need to know:
+
+- **Core idea:** Accelerate training with CUDA and automatic mixed precision.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 torch.cuda.amp.autocast + GradScaler. FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Automatic Mixed Precision" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Automatic Mixed Precision** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 
 scaler = torch.cuda.amp.GradScaler(enabled=torch.cuda.is_available())
@@ -1725,15 +2121,31 @@ Track: dl | Level: intermediate`
         {
           id: `compile`,
           title: `torch.compile (PyTorch 2.0)`,
-          content: `**torch.compile (PyTorch 2.0)** is essential to **GPU Training & Mixed Precision**. Accelerate training with CUDA and automatic mixed precision. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**torch.compile (PyTorch 2.0)** — what you need to know:
+
+- **Core idea:** Accelerate training with CUDA and automatic mixed precision.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "torch.compile (PyTorch 2.0)" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **torch.compile (PyTorch 2.0)** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `PyTorch 2.0+ feature`,
             `Up to 30%+ speedup on compatible models`,
@@ -1771,15 +2183,31 @@ Track: dl | Level: intermediate`
         {
           id: `distributed`,
           title: `Distributed Training Preview`,
-          content: `**Distributed Training Preview** is essential to **GPU Training & Mixed Precision**. Accelerate training with CUDA and automatic mixed precision. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Distributed Training Preview** — what you need to know:
+
+- **Core idea:** Accelerate training with CUDA and automatic mixed precision.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 DistributedDataParallel (DDP) for multi-GPU. Horovod, DeepSpeed for multi-node. Essential for large model training.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Distributed Training Preview" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Distributed Training Preview** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `DDP preferred over DataParallel`,
             `Each GPU gets batch slice, syncs gradients`,
@@ -1819,13 +2247,19 @@ Track: dl | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**GPU Training & Mixed Precision** sits in the **dl** track of the Data Science Master curriculum. Accelerate training with CUDA and automatic mixed precision.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **pt-gpu**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for GPU Training & Mixed Precision
 meta = {"topic_id": "pt-gpu", "track": "dl", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1860,12 +2294,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for pt-gpu
 from dataclasses import dataclass
 
@@ -1913,7 +2349,9 @@ When stuck on **pt-gpu**, reproduce with the smallest input, enable verbose logg
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1950,9 +2388,14 @@ Track: dl | Level: intermediate`
 
 Teams shipping features around **pt-gpu** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for GPU Training & Mixed Precision
 skills = ["dl", "intermediate", "pt-gpu"]
 print("Built project applying:", ", ".join(skills))`,

@@ -17,13 +17,29 @@ Test functions should be **isolated**: no shared mutable global state, no depend
 
 pytest collects tests from files matching \`test_*.py\` or \`*_test.py\`. Use \`-k\` to filter by substring and \`-x\` to stop on first failure during debugging.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "pytest Fundamentals" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **pytest Fundamentals** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def add(a, b):
     return a + b
 
@@ -63,13 +79,29 @@ Track: python | Level: intermediate`
 
 Use \`yield\` in fixtures for teardown after tests complete. \`conftest.py\` shares fixtures across a directory tree.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Fixtures & Parametrize" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Fixtures & Parametrize** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import pytest
 
 @pytest.fixture
@@ -109,13 +141,29 @@ Track: python | Level: intermediate`
 
 Verify interactions with \`mock.assert_called_once_with(...)\`. Avoid over-mocking—it hides integration defects.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "unittest & Mocking" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **unittest & Mocking** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from unittest.mock import patch
 
 def fetch_url(url):
@@ -157,13 +205,29 @@ CI (GitHub Actions, GitLab) runs \`pytest\` on every push. Fail builds on test f
 
 Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_bar.py\`. Keep tests fast—mark slow integration tests with \`@pytest.mark.slow\`.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Coverage & CI Integration" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Coverage & CI Integration** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# .github/workflows/test.yml snippet
 # - run: pip install pytest pytest-cov
 # - run: pytest --cov=app --cov-fail-under=80`,
@@ -193,13 +257,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Testing with pytest & unittest** sits in the **python** track of the Data Science Master curriculum. Write reliable unit tests, use fixtures and mocking, and integrate tests into CI pipelines.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 pytest fixtures provide dependency injection for tests; unittest.mock.patch isolates units from I/O. Test pyramid: many fast unit tests, fewer integration tests, minimal brittle E2E.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Testing with pytest & unittest
 meta = {"topic_id": "py-testing", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -234,12 +304,14 @@ Parametrize tests with @pytest.mark.parametrize; use tmp_path for filesystem tes
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-testing
 from dataclasses import dataclass
 
@@ -287,7 +359,9 @@ Flaky tests from shared global state, testing implementation details instead of 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -324,9 +398,14 @@ Track: python | Level: intermediate`
 
 CI pipelines run pytest with coverage gates; teams enforce 80%+ coverage on core libraries and mutation testing on critical paths.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Testing with pytest & unittest
 skills = ["python", "intermediate", "py-testing"]
 print("Built project applying:", ", ".join(skills))`,
@@ -430,7 +509,11 @@ def test_double(inp, exp):
         {
           id: `pdb`,
           title: `Interactive Debugging with pdb`,
-          content: `**Interactive Debugging with pdb** is essential to **Debugging, Logging & Tracebacks**. Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Interactive Debugging with pdb** — what you need to know:
+
+- **Core idea:** Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Insert \`breakpoint()\` (Python 3.7+) or \`import pdb; pdb.set_trace()\` to pause execution. Commands: \`n\` (next line), \`s\` (step into), \`c\` (continue), \`p expr\` (print), \`l\` (list source), \`q\` (quit).
 
@@ -438,13 +521,29 @@ Run scripts as \`python -m pdb script.py\` to start from the top. In pytest, use
 
 Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if suspicious_condition\`.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Interactive Debugging with pdb" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Interactive Debugging with pdb** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `def divide(a, b):
     breakpoint()  # inspect a, b before division
     return a / b
@@ -525,13 +624,29 @@ Track: python | Level: intermediate`
 
 For \`KeyError\`, print available keys. For \`TypeError\`, print \`type()\` of operands.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Reading Tracebacks" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Reading Tracebacks** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `try:
     d = {"a": 1}
     print(d["b"])
@@ -609,13 +724,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Debugging, Logging & Tracebacks** sits in the **python** track of the Data Science Master curriculum. Use pdb, logging, and traceback analysis to diagnose failures systematically in Python programs.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-debugging**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Debugging, Logging & Tracebacks
 meta = {"topic_id": "py-debugging", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -650,12 +771,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-debugging
 from dataclasses import dataclass
 
@@ -703,7 +826,9 @@ When stuck on **py-debugging**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -740,9 +865,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-debugging** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Debugging, Logging & Tracebacks
 skills = ["python", "intermediate", "py-debugging"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1005,13 +1135,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Asyncio & Async/Await** sits in the **python** track of the Data Science Master curriculum. Write concurrent I/O-bound programs with asyncio, coroutines, and introductory aiohttp patterns.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 asyncio event loop schedules coroutines cooperatively; await yields control at I/O boundaries. CPU-bound work belongs in ProcessPoolExecutor, not the event loop.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Asyncio & Async/Await
 meta = {"topic_id": "py-async", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1046,12 +1182,14 @@ Use asyncio.gather for concurrent I/O; aiohttp ClientSession as context manager;
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-async
 from dataclasses import dataclass
 
@@ -1099,7 +1237,9 @@ Blocking calls inside async def freeze the loop; forgetting await creates corout
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1136,9 +1276,14 @@ Track: python | Level: intermediate`
 
 High-throughput API gateways and websocket servers use async Python; ML inference often stays sync or uses separate worker pools.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Asyncio & Async/Await
 skills = ["python", "intermediate", "py-async"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1392,13 +1537,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Regular Expressions with re** sits in the **python** track of the Data Science Master curriculum. Match, search, and transform text using Python's re module and common regex patterns.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-regex**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Regular Expressions with re
 meta = {"topic_id": "py-regex", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1433,12 +1584,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-regex
 from dataclasses import dataclass
 
@@ -1486,7 +1639,9 @@ When stuck on **py-regex**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1523,9 +1678,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-regex** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Regular Expressions with re
 skills = ["python", "intermediate", "py-regex"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1785,13 +1945,19 @@ Track: python | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Threading, Multiprocessing & the GIL** sits in the **python** track of the Data Science Master curriculum. Choose threading, multiprocessing, or asyncio for parallelism; understand the Global Interpreter Lock.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-concurrency**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Threading, Multiprocessing & the GIL
 meta = {"topic_id": "py-concurrency", "track": "python", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1826,12 +1992,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-concurrency
 from dataclasses import dataclass
 
@@ -1879,7 +2047,9 @@ When stuck on **py-concurrency**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1916,9 +2086,14 @@ Track: python | Level: advanced`
 
 Teams shipping features around **py-concurrency** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Threading, Multiprocessing & the GIL
 skills = ["python", "advanced", "py-concurrency"]
 print("Built project applying:", ", ".join(skills))`,

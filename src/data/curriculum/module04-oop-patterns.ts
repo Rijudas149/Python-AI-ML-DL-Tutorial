@@ -13,13 +13,29 @@ export const module04Topics: Topic[] = [
           title: `Defining Classes`,
           content: `A **class** is a blueprint; an **object** is an instance. \`__init__\` initializes instance state. \`self\` refers to the instance.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Defining Classes" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Defining Classes** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Dog:
     def __init__(self, name, breed):
         self.name = name
@@ -54,17 +70,37 @@ Track: python | Level: intermediate`
         {
           id: `class-vs-instance`,
           title: `Class vs Instance Attributes`,
-          content: `**Class vs Instance Attributes** is essential to **Classes & Objects**. Define classes with attributes and methods using the class keyword. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Class vs Instance Attributes** — what you need to know:
+
+- **Core idea:** Define classes with attributes and methods using the class keyword.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Class attributes are shared across instances. Instance attributes are per-object. Modify class attrs carefully — mutable shared state causes bugs.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Class vs Instance Attributes" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Class vs Instance Attributes** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Counter:
     total = 0
     def __init__(self):
@@ -97,17 +133,37 @@ Track: python | Level: intermediate`
         {
           id: `methods`,
           title: `Instance, Class & Static Methods`,
-          content: `**Instance, Class & Static Methods** is essential to **Classes & Objects**. Define classes with attributes and methods using the class keyword. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Instance, Class & Static Methods** — what you need to know:
+
+- **Core idea:** Define classes with attributes and methods using the class keyword.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 @classmethod receives cls; @staticmethod needs neither self nor cls. Use classmethod for alternative constructors.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Instance, Class & Static Methods" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Instance, Class & Static Methods** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Date:
     def __init__(self, year, month, day):
         self.year, self.month, self.day = year, month, day
@@ -142,17 +198,37 @@ Track: python | Level: intermediate`
         {
           id: `dunder`,
           title: `Special Methods (Dunder)`,
-          content: `**Special Methods (Dunder)** is essential to **Classes & Objects**. Define classes with attributes and methods using the class keyword. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Special Methods (Dunder)** — what you need to know:
+
+- **Core idea:** Define classes with attributes and methods using the class keyword.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Double-underscore methods customize behavior: \`__str__\`, \`__repr__\`, \`__len__\`, \`__eq__\`, \`__add__\`. Enable Pythonic interfaces.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Special Methods (Dunder)" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Special Methods (Dunder)** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Vector:
     def __init__(self, x, y):
         self.x, self.y = x, y
@@ -189,13 +265,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Classes & Objects** sits in the **python** track of the Data Science Master curriculum. Define classes with attributes and methods using the class keyword.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-classes**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Classes & Objects
 meta = {"topic_id": "py-classes", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -230,12 +312,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-classes
 from dataclasses import dataclass
 
@@ -283,7 +367,9 @@ When stuck on **py-classes**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -320,9 +406,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-classes** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Classes & Objects
 skills = ["python", "intermediate", "py-classes"]
 print("Built project applying:", ", ".join(skills))`,
@@ -424,17 +515,37 @@ print(Rectangle(4, 5))`,
         {
           id: `inheritance`,
           title: `Basic Inheritance`,
-          content: `**Basic Inheritance** is essential to **Inheritance & Polymorphism**. Extend classes, override methods, and use polymorphic behavior. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Basic Inheritance** — what you need to know:
+
+- **Core idea:** Extend classes, override methods, and use polymorphic behavior.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Subclass inherits parent attributes and methods. \`super()\` calls parent implementation. Override methods in child class.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Basic Inheritance" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Basic Inheritance** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Animal:
     def speak(self):
         return "..."
@@ -475,17 +586,37 @@ Track: python | Level: intermediate`
         {
           id: `mro`,
           title: `Method Resolution Order (MRO)`,
-          content: `**Method Resolution Order (MRO)** is essential to **Inheritance & Polymorphism**. Extend classes, override methods, and use polymorphic behavior. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Method Resolution Order (MRO)** — what you need to know:
+
+- **Core idea:** Extend classes, override methods, and use polymorphic behavior.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Python uses C3 linearization for MRO. Check with \`ClassName.mro()\`. Multiple inheritance requires careful design.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Method Resolution Order (MRO)" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Method Resolution Order (MRO)** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class A:
     def method(self): return "A"
 class B(A):
@@ -522,17 +653,37 @@ Track: python | Level: intermediate`
         {
           id: `abstract`,
           title: `Abstract Base Classes`,
-          content: `**Abstract Base Classes** is essential to **Inheritance & Polymorphism**. Extend classes, override methods, and use polymorphic behavior. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Abstract Base Classes** — what you need to know:
+
+- **Core idea:** Extend classes, override methods, and use polymorphic behavior.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 abc module defines interfaces. @abstractmethod forces subclass implementation. Enables contract-based design.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Abstract Base Classes" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Abstract Base Classes** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from abc import ABC, abstractmethod
 
 class Shape(ABC):
@@ -574,11 +725,23 @@ Track: python | Level: intermediate`
           title: `Composition Over Inheritance`,
           content: `Favor **has-a** over **is-a**. Compose objects rather than deep inheritance hierarchies. More flexible and testable.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Composition Over Inheritance" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Composition Over Inheritance** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Composition reduces coupling`,
             `Easier to swap implementations`,
@@ -618,13 +781,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Inheritance & Polymorphism** sits in the **python** track of the Data Science Master curriculum. Extend classes, override methods, and use polymorphic behavior.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-inheritance**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Inheritance & Polymorphism
 meta = {"topic_id": "py-inheritance", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -659,12 +828,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-inheritance
 from dataclasses import dataclass
 
@@ -712,7 +883,9 @@ When stuck on **py-inheritance**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -749,9 +922,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-inheritance** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Inheritance & Polymorphism
 skills = ["python", "intermediate", "py-inheritance"]
 print("Built project applying:", ", ".join(skills))`,
@@ -855,17 +1033,37 @@ print(Car().start())`,
         {
           id: `naming`,
           title: `Naming Conventions`,
-          content: `**Naming Conventions** is essential to **Encapsulation & Properties**. Hide internal state and control access with properties and naming conventions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Naming Conventions** — what you need to know:
+
+- **Core idea:** Hide internal state and control access with properties and naming conventions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Single underscore \`_internal\` — convention for internal use. Double underscore \`__private\` triggers name mangling. No true private access in Python.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Naming Conventions" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Naming Conventions** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Account:
     def __init__(self, balance):
         self.__balance = balance
@@ -899,17 +1097,37 @@ Track: python | Level: intermediate`
         {
           id: `property`,
           title: `The @property Decorator`,
-          content: `**The @property Decorator** is essential to **Encapsulation & Properties**. Hide internal state and control access with properties and naming conventions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**The @property Decorator** — what you need to know:
+
+- **Core idea:** Hide internal state and control access with properties and naming conventions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 @property creates getter; @name.setter and @name.deleter for setter/deleter. Clean attribute-like access with validation.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "The @property Decorator" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **The @property Decorator** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Temperature:
     def __init__(self, celsius):
         self._celsius = celsius
@@ -947,15 +1165,31 @@ Track: python | Level: intermediate`
         {
           id: `slots`,
           title: `__slots__ for Memory`,
-          content: `**__slots__ for Memory** is essential to **Encapsulation & Properties**. Hide internal state and control access with properties and naming conventions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**__slots__ for Memory** — what you need to know:
+
+- **Core idea:** Hide internal state and control access with properties and naming conventions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 __slots__ restricts attributes and saves memory. No __dict__ created. Useful for many small objects.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "__slots__ for Memory" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **__slots__ for Memory** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `__slots__ reduces memory per instance`,
             `Fixes allowed attributes at class definition`,
@@ -993,17 +1227,37 @@ Track: python | Level: intermediate`
         {
           id: `dataclass-preview`,
           title: `dataclass Preview`,
-          content: `**dataclass Preview** is essential to **Encapsulation & Properties**. Hide internal state and control access with properties and naming conventions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**dataclass Preview** — what you need to know:
+
+- **Core idea:** Hide internal state and control access with properties and naming conventions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 @dataclass auto-generates __init__, __repr__, __eq__. Modern alternative to boilerplate classes.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "dataclass Preview" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **dataclass Preview** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from dataclasses import dataclass
 
 @dataclass
@@ -1039,13 +1293,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Encapsulation & Properties** sits in the **python** track of the Data Science Master curriculum. Hide internal state and control access with properties and naming conventions.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-encapsulation**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Encapsulation & Properties
 meta = {"topic_id": "py-encapsulation", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1080,12 +1340,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-encapsulation
 from dataclasses import dataclass
 
@@ -1133,7 +1395,9 @@ When stuck on **py-encapsulation**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1170,9 +1434,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-encapsulation** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Encapsulation & Properties
 skills = ["python", "intermediate", "py-encapsulation"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1280,17 +1549,37 @@ print(Book("1984", "Orwell"))`,
         {
           id: `factory`,
           title: `Factory Pattern`,
-          content: `**Factory Pattern** is essential to **Design Patterns in Python**. Singleton, Factory, Observer, Strategy, and other common patterns. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Factory Pattern** — what you need to know:
+
+- **Core idea:** Singleton, Factory, Observer, Strategy, and other common patterns.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Factory method creates objects without specifying exact class. Decouples instantiation from usage.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Factory Pattern" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Factory Pattern** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class Dog:
     def speak(self): return "Woof"
 class Cat:
@@ -1325,17 +1614,37 @@ Track: python | Level: intermediate`
         {
           id: `strategy`,
           title: `Strategy Pattern`,
-          content: `**Strategy Pattern** is essential to **Design Patterns in Python**. Singleton, Factory, Observer, Strategy, and other common patterns. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Strategy Pattern** — what you need to know:
+
+- **Core idea:** Singleton, Factory, Observer, Strategy, and other common patterns.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Encapsulate algorithms as interchangeable strategies. Pass strategy as parameter or inject at runtime.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Strategy Pattern" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Strategy Pattern** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `class QuickSort:
     def sort(self, data): return sorted(data)
 
@@ -1374,15 +1683,31 @@ Track: python | Level: intermediate`
         {
           id: `observer`,
           title: `Observer Pattern`,
-          content: `**Observer Pattern** is essential to **Design Patterns in Python**. Singleton, Factory, Observer, Strategy, and other common patterns. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Observer Pattern** — what you need to know:
+
+- **Core idea:** Singleton, Factory, Observer, Strategy, and other common patterns.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Subject notifies observers on state change. Basis for event systems and reactive programming.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Observer Pattern" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Observer Pattern** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Decouples subject from observers`,
             `Used in GUI event handling`,
@@ -1420,15 +1745,31 @@ Track: python | Level: intermediate`
         {
           id: `singleton`,
           title: `Singleton & Module Pattern`,
-          content: `**Singleton & Module Pattern** is essential to **Design Patterns in Python**. Singleton, Factory, Observer, Strategy, and other common patterns. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Singleton & Module Pattern** — what you need to know:
+
+- **Core idea:** Singleton, Factory, Observer, Strategy, and other common patterns.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Python modules are natural singletons. For classes, use __new__ or decorator. Often modules suffice.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Singleton & Module Pattern" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Singleton & Module Pattern** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Module-level objects are singletons by default`,
             `Avoid overusing Singleton pattern`,
@@ -1468,13 +1809,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Design Patterns in Python** sits in the **python** track of the Data Science Master curriculum. Singleton, Factory, Observer, Strategy, and other common patterns.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-patterns**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Design Patterns in Python
 meta = {"topic_id": "py-patterns", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1509,12 +1856,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-patterns
 from dataclasses import dataclass
 
@@ -1562,7 +1911,9 @@ When stuck on **py-patterns**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1599,9 +1950,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-patterns** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Design Patterns in Python
 skills = ["python", "intermediate", "py-patterns"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1700,17 +2056,37 @@ print(analyze([3,1,4], MinStrategy()))`,
         {
           id: `protocol`,
           title: `typing.Protocol`,
-          content: `**typing.Protocol** is essential to **Abstract Base Classes & Protocols**. typing.Protocol for structural subtyping and modern Python interfaces. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**typing.Protocol** — what you need to know:
+
+- **Core idea:** typing.Protocol for structural subtyping and modern Python interfaces.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Protocol defines structural interface — if it walks like a duck... No inheritance required. \`@runtime_checkable\` enables isinstance().
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "typing.Protocol" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **typing.Protocol** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from typing import Protocol
 
 class Drawable(Protocol):
@@ -1748,15 +2124,31 @@ Track: python | Level: intermediate`
         {
           id: `abc-vs-protocol`,
           title: `ABC vs Protocol`,
-          content: `**ABC vs Protocol** is essential to **Abstract Base Classes & Protocols**. typing.Protocol for structural subtyping and modern Python interfaces. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ABC vs Protocol** — what you need to know:
+
+- **Core idea:** typing.Protocol for structural subtyping and modern Python interfaces.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 ABC: nominal subtyping — must inherit. Protocol: structural — must implement methods. Choose based on design needs.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "ABC vs Protocol" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **ABC vs Protocol** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `ABC for strict hierarchies and shared implementation`,
             `Protocol for flexible third-party integration`,
@@ -1794,17 +2186,37 @@ Track: python | Level: intermediate`
         {
           id: `generic`,
           title: `Generic Classes`,
-          content: `**Generic Classes** is essential to **Abstract Base Classes & Protocols**. typing.Protocol for structural subtyping and modern Python interfaces. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Generic Classes** — what you need to know:
+
+- **Core idea:** typing.Protocol for structural subtyping and modern Python interfaces.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 typing.Generic enables type-parameterized classes: \`class Stack[T]:\`. Python 3.12+ simplified syntax.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "Generic Classes" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **Generic Classes** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from typing import TypeVar, Generic
 
 T = TypeVar("T")
@@ -1840,15 +2252,31 @@ Track: python | Level: intermediate`
         {
           id: `solid`,
           title: `SOLID Principles`,
-          content: `**SOLID Principles** is essential to **Abstract Base Classes & Protocols**. typing.Protocol for structural subtyping and modern Python interfaces. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**SOLID Principles** — what you need to know:
+
+- **Core idea:** typing.Protocol for structural subtyping and modern Python interfaces.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion. Guide maintainable OOP design.
 
-**Why this matters:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. Mastering "SOLID Principles" here directly affects how confidently you can build, debug, and ship python projects.
+**Why this matters:**
 
-**Professional habits:** Write small scripts first, then refactor into reusable functions with type hints and docstrings. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Python fluency underpins every data pipeline, notebook, and production service in modern ML.
+- Mastering **SOLID Principles** directly affects how confidently you can build, debug, and ship python projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Write small scripts first, then refactor into reusable functions with type hints and docstrings.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Mutable defaults, silent exceptions, and mixing tabs with spaces cause most beginner bugs.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Single Responsibility: one reason to change`,
             `Open/Closed: extend without modifying`,
@@ -1888,13 +2316,19 @@ Track: python | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Abstract Base Classes & Protocols** sits in the **python** track of the Data Science Master curriculum. typing.Protocol for structural subtyping and modern Python interfaces.
 
-**Theoretical foundation:** Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+**Theoretical foundation:**
+
+- Python's execution model combines bytecode interpretation with C extensions for hot paths.
+- Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
 
 For **py-protocols**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Abstract Base Classes & Protocols
 meta = {"topic_id": "py-protocols", "track": "python", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1929,12 +2363,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for py-protocols
 from dataclasses import dataclass
 
@@ -1982,7 +2418,9 @@ When stuck on **py-protocols**, reproduce with the smallest input, enable verbos
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2019,9 +2457,14 @@ Track: python | Level: intermediate`
 
 Teams shipping features around **py-protocols** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Abstract Base Classes & Protocols
 skills = ["python", "intermediate", "py-protocols"]
 print("Built project applying:", ", ".join(skills))`,

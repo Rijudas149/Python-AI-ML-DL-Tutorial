@@ -17,11 +17,23 @@ Loss drives G to match data distribution implicitly without explicit likelihood.
 
 **Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "GAN Architecture", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "GAN Architecture" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **GAN Architecture** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Latent z usually Gaussian or uniform`,
             `D too strong prevents G learning—balance capacity`,
@@ -65,13 +77,29 @@ Progressive growing and StyleGAN scale to photorealistic faces.
 
 **Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "DCGAN & Convolutional GANs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "DCGAN & Convolutional GANs" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **DCGAN & Convolutional GANs** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 z = torch.randn(4, 100)
 print(z.shape)`,
@@ -106,11 +134,23 @@ Track FID during training; early stopping when FID degrades.
 
 **Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Training Tricks", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Training Tricks" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Training Tricks** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `WGAN-GP replaces weight clipping`,
             `EMA generator smoother outputs`,
@@ -154,11 +194,23 @@ Track: dl | Level: advanced`
 
 **Applying Generative Adversarial Networks:** Train generator and discriminator in adversarial equilibrium. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Conditional GANs", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Conditional GANs" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Conditional GANs** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Projection discriminator injects class info`,
             `Pix2Pix needs aligned pairs`,
@@ -198,13 +250,19 @@ Track: dl | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Generative Adversarial Networks** sits in the **dl** track of the Data Science Master curriculum. Train generator and discriminator in adversarial equilibrium.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **gen-gan**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Generative Adversarial Networks
 meta = {"topic_id": "gen-gan", "track": "dl", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -239,12 +297,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for gen-gan
 from dataclasses import dataclass
 
@@ -292,7 +352,9 @@ When stuck on **gen-gan**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -329,9 +391,14 @@ Track: dl | Level: advanced`
 
 Teams shipping features around **gen-gan** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Generative Adversarial Networks
 skills = ["dl", "advanced", "gen-gan"]
 print("Built project applying:", ", ".join(skills))`,
@@ -427,7 +494,11 @@ Track: dl | Level: advanced`
         {
           id: `vae`,
           title: `VAE Framework`,
-          content: `**VAE Framework** is essential to **Variational Autoencoders**. Learn latent probabilistic representations with reconstruction and KL losses. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**VAE Framework** — what you need to know:
+
+- **Core idea:** Learn latent probabilistic representations with reconstruction and KL losses.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Encoder outputs μ, σ of approximate posterior q(z|x). Reparameterization: z = μ + σ·ε, ε~N(0,1). Decoder p(x|z) reconstructs x.
 
@@ -435,11 +506,23 @@ Loss = reconstruction + KL(q(z|x) || p(z)) with prior p(z)=N(0,I).
 
 **Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "VAE Framework", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "VAE Framework" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **VAE Framework** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Reparameterization enables backprop through sampling`,
             `KL regularizes latent space smoothness`,
@@ -483,13 +566,29 @@ Visualization with t-SNE/UMAP on encoded z for cluster structure.
 
 **Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Latent Space Geometry", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Latent Space Geometry" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Latent Space Geometry** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 mu = torch.zeros(1, 2)
 logvar = torch.zeros(1, 2)
@@ -527,11 +626,23 @@ VAEs provide approximate likelihood—useful for anomaly detection via reconstru
 
 **Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "VAE Variants", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "VAE Variants" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **VAE Variants** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `VQ-VAE enables autoregressive priors over codes`,
             `Hierarchical latents capture multi-scale structure`,
@@ -569,7 +680,11 @@ Track: dl | Level: advanced`
         {
           id: `sampling-vae`,
           title: `Sampling & Evaluation`,
-          content: `**Sampling & Evaluation** is essential to **Variational Autoencoders**. Learn latent probabilistic representations with reconstruction and KL losses. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Sampling & Evaluation** — what you need to know:
+
+- **Core idea:** Learn latent probabilistic representations with reconstruction and KL losses.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sample z~N(0,I), decode to generate. Quality lower than GANs on images but stable training.
 
@@ -577,11 +692,23 @@ Evaluate log-likelihood estimates (ELBO) and reconstruction FID for comparisons.
 
 **Applying Variational Autoencoders:** Learn latent probabilistic representations with reconstruction and KL losses. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Sampling & Evaluation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Sampling & Evaluation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Sampling & Evaluation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `ELBO lower bound on log p(x)`,
             `Importance sampling tightens likelihood bound`,
@@ -621,13 +748,19 @@ Track: dl | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Variational Autoencoders** sits in the **dl** track of the Data Science Master curriculum. Learn latent probabilistic representations with reconstruction and KL losses.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **gen-vae**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Variational Autoencoders
 meta = {"topic_id": "gen-vae", "track": "dl", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -662,12 +795,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for gen-vae
 from dataclasses import dataclass
 
@@ -715,7 +850,9 @@ When stuck on **gen-vae**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -752,9 +889,14 @@ Track: dl | Level: advanced`
 
 Teams shipping features around **gen-vae** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Variational Autoencoders
 skills = ["dl", "advanced", "gen-vae"]
 print("Built project applying:", ", ".join(skills))`,
@@ -850,7 +992,11 @@ Track: dl | Level: advanced`
         {
           id: `forward`,
           title: `Forward Diffusion Process`,
-          content: `**Forward Diffusion Process** is essential to **Diffusion Models (DDPM)**. Denoising diffusion probabilistic models for high-quality generation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Forward Diffusion Process** — what you need to know:
+
+- **Core idea:** Denoising diffusion probabilistic models for high-quality generation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Gradually add Gaussian noise over T steps: q(x_t|x_{t-1}) = N(√(1-β_t)x_{t-1}, β_t I). At t=T, x_T ≈ pure noise.
 
@@ -858,11 +1004,23 @@ Schedule β_t linear or cosine controls noise injection rate.
 
 **Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Forward Diffusion Process", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Forward Diffusion Process" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Forward Diffusion Process** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Closed-form q(x_t|x_0) enables training targets`,
             `Cosine schedule often better than linear β`,
@@ -900,7 +1058,11 @@ Track: dl | Level: advanced`
         {
           id: `reverse`,
           title: `Reverse Denoising`,
-          content: `**Reverse Denoising** is essential to **Diffusion Models (DDPM)**. Denoising diffusion probabilistic models for high-quality generation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Reverse Denoising** — what you need to know:
+
+- **Core idea:** Denoising diffusion probabilistic models for high-quality generation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Learn p_θ(x_{t-1}|x_t) parameterized by neural net predicting noise ε or x_0. Training minimizes simplified objective ||ε - ε_θ(x_t,t)||².
 
@@ -908,13 +1070,29 @@ Sampling iterates from x_T down to x_0.
 
 **Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Reverse Denoising", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Reverse Denoising" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Reverse Denoising** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import torch
 T = 1000
 t = torch.tensor([500])
@@ -944,7 +1122,11 @@ Track: dl | Level: advanced`
         {
           id: `guidance`,
           title: `Classifier-Free Guidance`,
-          content: `**Classifier-Free Guidance** is essential to **Diffusion Models (DDPM)**. Denoising diffusion probabilistic models for high-quality generation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Classifier-Free Guidance** — what you need to know:
+
+- **Core idea:** Denoising diffusion probabilistic models for high-quality generation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Train conditional model with random label dropout. At sample time interpolate conditional and unconditional predictions: ε = ε_u + s(ε_c - ε_u).
 
@@ -952,11 +1134,23 @@ Scale s>1 increases prompt adherence, may reduce diversity.
 
 **Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Classifier-Free Guidance", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Classifier-Free Guidance" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Classifier-Free Guidance** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Guidance scale s trades fidelity vs diversity`,
             `Dropout rate ~10% during training`,
@@ -994,7 +1188,11 @@ Track: dl | Level: advanced`
         {
           id: `diffusion-apps`,
           title: `Applications & Tools`,
-          content: `**Applications & Tools** is essential to **Diffusion Models (DDPM)**. Denoising diffusion probabilistic models for high-quality generation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Applications & Tools** — what you need to know:
+
+- **Core idea:** Denoising diffusion probabilistic models for high-quality generation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Stable Diffusion, DALL·E 2 lineage, Imagen. Inpainting, super-resolution, video diffusion extensions.
 
@@ -1002,11 +1200,23 @@ Open weights enable local generation; safety filters and watermarking increasing
 
 **Applying Diffusion Models (DDPM):** Denoising diffusion probabilistic models for high-quality generation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Applications & Tools", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Applications & Tools" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Applications & Tools** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Latent diffusion runs in VAE compressed space`,
             `ControlNet adds spatial conditioning`,
@@ -1046,13 +1256,19 @@ Track: dl | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Diffusion Models (DDPM)** sits in the **dl** track of the Data Science Master curriculum. Denoising diffusion probabilistic models for high-quality generation.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 Diffusion models learn to reverse a noise process: forward corruption adds Gaussian noise over T steps; the network predicts noise ε or score ∇log p(x). DDPM sampling iteratively denoises from pure noise.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Diffusion Models (DDPM)
 meta = {"topic_id": "gen-diffusion", "track": "dl", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1087,12 +1303,14 @@ Classifier-free guidance scales conditional vs unconditional predictions; latent
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for gen-diffusion
 from dataclasses import dataclass
 
@@ -1140,7 +1358,9 @@ Mode collapse less common than GANs but sampling is slow; CFG too high causes ov
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1177,9 +1397,14 @@ Track: dl | Level: advanced`
 
 Image generation products, inpainting tools, and video diffusion pipelines power creative workflows with safety filters and watermarking.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Diffusion Models (DDPM)
 skills = ["dl", "advanced", "gen-diffusion"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1275,7 +1500,11 @@ Track: dl | Level: advanced`
         {
           id: `nst`,
           title: `Neural Style Transfer`,
-          content: `**Neural Style Transfer** is essential to **Style Transfer & CycleGAN**. Transfer artistic style and unpaired image domain translation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Neural Style Transfer** — what you need to know:
+
+- **Core idea:** Transfer artistic style and unpaired image domain translation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Gatys et al.: content loss from early CNN layers, style loss from Gram matrices of feature correlations across channels. Optimize pixel image or train fast feed-forward networks.
 
@@ -1283,11 +1512,23 @@ Gatys et al.: content loss from early CNN layers, style loss from Gram matrices 
 
 **Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Neural Style Transfer", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Neural Style Transfer" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Neural Style Transfer** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Gram matrix captures texture statistics`,
             `Content/style weight tradeoff visual quality`,
@@ -1325,7 +1566,11 @@ Track: dl | Level: advanced`
         {
           id: `cyclegan`,
           title: `CycleGAN`,
-          content: `**CycleGAN** is essential to **Style Transfer & CycleGAN**. Transfer artistic style and unpaired image domain translation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**CycleGAN** — what you need to know:
+
+- **Core idea:** Transfer artistic style and unpaired image domain translation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Unpaired domains X and Y: G: X→Y, F: Y→X. Losses: adversarial + cycle ||F(G(x))-x|| + ||G(F(y))-y|| + identity optional.
 
@@ -1333,11 +1578,23 @@ Applications: horses↔zebras, summer↔winter, photo↔sketch.
 
 **Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "CycleGAN", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "CycleGAN" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **CycleGAN** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Cycle loss enforces structural consistency`,
             `Patch discriminator for local realism`,
@@ -1381,11 +1638,23 @@ Style mixing interpolates different w layers for disentangled control.
 
 **Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "StyleGAN Overview", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "StyleGAN Overview" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **StyleGAN Overview** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `W space more disentangled than Z`,
             `Progressive training grows resolution`,
@@ -1423,7 +1692,11 @@ Track: dl | Level: advanced`
         {
           id: `applications`,
           title: `Creative Applications`,
-          content: `**Creative Applications** is essential to **Style Transfer & CycleGAN**. Transfer artistic style and unpaired image domain translation. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Creative Applications** — what you need to know:
+
+- **Core idea:** Transfer artistic style and unpaired image domain translation.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Film post-production, fashion design, data augmentation with domain shift. Ethical concerns: deepfakes, consent, copyright of style sources.
 
@@ -1431,11 +1704,23 @@ Watermarking and provenance metadata (C2PA) emerging standards.
 
 **Applying Style Transfer & CycleGAN:** Transfer artistic style and unpaired image domain translation. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Creative Applications", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Creative Applications" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Creative Applications** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Disclose synthetic media in production pipelines`,
             `Style from living artists needs licensing`,
@@ -1475,13 +1760,19 @@ Track: dl | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Style Transfer & CycleGAN** sits in the **dl** track of the Data Science Master curriculum. Transfer artistic style and unpaired image domain translation.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **gen-style**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Style Transfer & CycleGAN
 meta = {"topic_id": "gen-style", "track": "dl", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1516,12 +1807,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for gen-style
 from dataclasses import dataclass
 
@@ -1569,7 +1862,9 @@ When stuck on **gen-style**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1606,9 +1901,14 @@ Track: dl | Level: advanced`
 
 Teams shipping features around **gen-style** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Style Transfer & CycleGAN
 skills = ["dl", "advanced", "gen-style"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1704,7 +2004,11 @@ Track: dl | Level: advanced`
         {
           id: `fid`,
           title: `Fréchet Inception Distance (FID)`,
-          content: `**Fréchet Inception Distance (FID)** is essential to **Evaluating Generative Models**. FID, Inception Score, and human evaluation for generative quality. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Fréchet Inception Distance (FID)** — what you need to know:
+
+- **Core idea:** FID, Inception Score, and human evaluation for generative quality.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Embed real and generated images in Inception-v3 pool layer; fit Gaussians to features; compute Fréchet distance between Gaussians.
 
@@ -1712,11 +2016,23 @@ Embed real and generated images in Inception-v3 pool layer; fit Gaussians to fea
 
 **Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Fréchet Inception Distance (FID)", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Fréchet Inception Distance (FID)" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Fréchet Inception Distance (FID)** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `FID detects mode collapse better than IS`,
             `Inception features biased to ImageNet statistics`,
@@ -1754,7 +2070,11 @@ Track: dl | Level: advanced`
         {
           id: `is`,
           title: `Inception Score (IS)`,
-          content: `**Inception Score (IS)** is essential to **Evaluating Generative Models**. FID, Inception Score, and human evaluation for generative quality. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Inception Score (IS)** — what you need to know:
+
+- **Core idea:** FID, Inception Score, and human evaluation for generative quality.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 IS = exp(E[KL(p(y|x) || p(y))]). Rewards confident class predictions with diverse marginal classes.
 
@@ -1762,11 +2082,23 @@ Less used alone—does not compare to real data directly.
 
 **Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Inception Score (IS)", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Inception Score (IS)" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Inception Score (IS)** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `High IS can fool with sharp but unrealistic images`,
             `Splits IS into quality and diversity components`,
@@ -1810,11 +2142,23 @@ LLM-as-judge emerging for text generation with bias caveats.
 
 **Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Human Evaluation", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Human Evaluation" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Human Evaluation** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Human eval gold standard but expensive`,
             `Rater agreement metrics (Cohen's kappa)`,
@@ -1858,11 +2202,23 @@ Track memorization metrics detecting training set copying.
 
 **Applying Evaluating Generative Models:** FID, Inception Score, and human evaluation for generative quality. Deep learning concepts underpin modern vision, language, and generative AI breakthroughs. When studying "Precision, Recall & CLIP Score", connect theory to practice by predicting outputs before running examples, then explaining discrepancies. Note failure modes—missing data, wrong hyperparameters, API timeouts, shape mismatches—and how you would detect them in logs or tests. Strong practitioners capture these lessons in runbooks and reusable templates rather than re-learning them on every project.
 
-**Why this matters:** Deep learning trades interpretability for representational power — training dynamics matter as much as architecture. Mastering "Precision, Recall & CLIP Score" here directly affects how confidently you can build, debug, and ship dl projects.
+**Why this matters:**
 
-**Professional habits:** Monitor loss curves, gradient norms, and validation metrics every epoch. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Deep learning trades interpretability for representational power — training dynamics matter as much as architecture.
+- Mastering **Precision, Recall & CLIP Score** directly affects how confidently you can build, debug, and ship dl projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Monitor loss curves, gradient norms, and validation metrics every epoch.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- BatchNorm train/eval mismatch, exploding gradients, and evaluating on IID splits that hide drift.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `High precision low recall indicates mode dropping`,
             `CLIP score correlates with caption match not aesthetics`,
@@ -1902,13 +2258,19 @@ Track: dl | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Evaluating Generative Models** sits in the **dl** track of the Data Science Master curriculum. FID, Inception Score, and human evaluation for generative quality.
 
-**Theoretical foundation:** Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
+**Theoretical foundation:**
+
+- Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule.
+- Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.
 
 For **gen-eval**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Evaluating Generative Models
 meta = {"topic_id": "gen-eval", "track": "dl", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1943,12 +2305,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for gen-eval
 from dataclasses import dataclass
 
@@ -1996,7 +2360,9 @@ When stuck on **gen-eval**, reproduce with the smallest input, enable verbose lo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2033,9 +2399,14 @@ Track: dl | Level: advanced`
 
 Teams shipping features around **gen-eval** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Evaluating Generative Models
 skills = ["dl", "advanced", "gen-eval"]
 print("Built project applying:", ", ".join(skills))`,

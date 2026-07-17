@@ -13,17 +13,41 @@ export const moduleMath06Topics: Topic[] = [
           title: `Probability Axioms`,
           content: `**Sample space** Ω all outcomes. **Event** A⊆Ω. Kolmogorov axioms: P(A)≥0; P(Ω)=1; countable additivity P(∪A_i)=∑P(A_i) for disjoint A_i. Uniform finite: P(A)=|A|/|Ω|. Complement P(A^c)=1−P(A). Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Probability Axioms" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Probability Axioms** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `P(A) ≥ 0`,
             `P(Ω) = 1`,
@@ -31,16 +55,9 @@ export const moduleMath06Topics: Topic[] = [
             `P(A^c) = 1 − P(A)`,
             `P(A∪B) = P(A)+P(B)−P(A∩B)`
           ],
-          diagram: `   Ω sample space
-   ┌─────────────────┐
-   │  A    B         │
+          diagram: `Ω sample space
    │ ┌──┐ overlap    │
-   └──┴──┴───────────┘
-   P(A∪B) = P(A)+P(B)−P(A∩B)
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   P(A∪B) = P(A)+P(B)−P(A∩B)`,
           keyPoints: [
             `Axioms foundation all probability`,
             `Complement rule common`,
@@ -63,15 +80,8 @@ Key relationships:
 
 Visual summary:
   Ω sample space
-  ┌─────────────────┐
-  │  A    B         │
   │ ┌──┐ overlap    │
-  └──┴──┴───────────┘
   P(A∪B) = P(A)+P(B)−P(A∩B)
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Axioms foundation all probability
@@ -86,21 +96,49 @@ Track: math | Level: intermediate`
         {
           id: `pb-count`,
           title: `Combinatorial Probability`,
-          content: `**Combinatorial Probability** is essential to **Probability Foundations**. Sample spaces, axioms, and basic counting for probability. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Combinatorial Probability** — what you need to know:
+
+- **Core idea:** Sample spaces, axioms, and basic counting for probability.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Equally likely outcomes: P(A)=|A|/|Ω|. Use permutations/combinations from Module 1. Birthday paradox: P(shared birthday) high with small group. Hypergeometric: sampling without replacement. Binomial counts successes in n independent Bernoulli trials. Multinomial generalizes to multiple categories. Careful with independence assumptions when counting joint outcomes. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Combinatorial Probability" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Combinatorial Probability** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `P(A) = |A|/|Ω| (equally likely)`,
             `Binomial: C(n,k) p^k (1−p)^(n−k)`,
@@ -108,16 +146,11 @@ Equally likely outcomes: P(A)=|A|/|Ω|. Use permutations/combinations from Modul
             `Birthday: 23 people → ~50% match`,
             `Multinomial for k categories`
           ],
-          diagram: `   coin n flips:
-
+          diagram: `coin n flips:
    Ω = {H,T}^n
    |Ω| = 2^n
-
    k heads: C(n,k) outcomes
-   P(k heads) = C(n,k)/2^n
-   │
-   │  · · ·
-   └──────────`,
+   P(k heads) = C(n,k)/2^n`,
           keyPoints: [
             `Count favorable over total`,
             `Binomial for independent trials`,
@@ -145,9 +178,6 @@ Visual summary:
   |Ω| = 2^n
   k heads: C(n,k) outcomes
   P(k heads) = C(n,k)/2^n
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Count favorable over total
@@ -164,17 +194,41 @@ Track: math | Level: intermediate`
           title: `Independence`,
           content: `Events A,B **independent** if P(A∩B)=P(A)P(B). Pairwise vs mutual independence differ for >2 events. Independent trials: outcome doesn't affect next. **Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Independence" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Independence** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `A,B indep: P(A∩B)=P(A)P(B)`,
             `i.i.d.: independent identical distribution`,
@@ -182,16 +236,11 @@ Track: math | Level: intermediate`
             `Pairwise ≠ mutual independence`,
             `Violations break many ML assumptions`
           ],
-          diagram: `   independent:
+          diagram: `independent:
    A happens ─╳─ B happens
    no influence
-
    dependent:
-   A ────→ affects ──── B
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   A ────→ affects ──── B`,
           keyPoints: [
             `Independence simplifies products`,
             `i.i.d. assumption in SGD batches`,
@@ -218,10 +267,6 @@ Visual summary:
   no influence
   dependent:
   A ────→ affects ──── B
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Independence simplifies products
@@ -238,17 +283,41 @@ Track: math | Level: intermediate`
           title: `Probability in ML Metrics`,
           content: `Classification accuracy P(correct). **Precision** P(positive|predicted+). **Recall** P(predicted+|true+). **F1** harmonic mean. Probabilistic classifiers output P(y|x). Calibration: predicted probs match frequencies. **Expected risk** E[L(y,ŷ)]. Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Probability in ML Metrics" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Probability in ML Metrics** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Accuracy = P(correct)`,
             `Precision = TP/(TP+FP)`,
@@ -256,16 +325,11 @@ Track: math | Level: intermediate`
             `F1 = 2PR/(P+R)`,
             `Calibration: P(y=1|ŷ=p) ≈ p`
           ],
-          diagram: `   confusion matrix:
-
+          diagram: `confusion matrix:
               pred +  pred −
    true + │ TP    FN
    true − │ FP    TN
-
-   metrics from cell probs
-   │
-   │  · · ·
-   └──────────`,
+   metrics from cell probs`,
           keyPoints: [
             `Metrics are conditional probabilities`,
             `Calibration matters for decisions`,
@@ -292,9 +356,6 @@ Visual summary:
   true + │ TP    FN
   true − │ FP    TN
   metrics from cell probs
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Metrics are conditional probabilities
@@ -311,13 +372,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Probability Foundations** sits in the **math** track of the Data Science Master curriculum. Sample spaces, axioms, and basic counting for probability.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-prob-basics**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Probability Foundations
 meta = {"topic_id": "math-prob-basics", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -352,12 +419,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-prob-basics
 from dataclasses import dataclass
 
@@ -405,7 +474,9 @@ When stuck on **math-prob-basics**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -442,9 +513,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-prob-basics** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Probability Foundations
 skills = ["math", "intermediate", "math-prob-basics"]
 print("Built project applying:", ", ".join(skills))`,
@@ -542,17 +618,41 @@ Track: math | Level: intermediate`
           title: `Conditional Probability`,
           content: `P(A|B)=P(A∩B)/P(B) when P(B)>0. Restrict sample space to B. **Multiplication rule** P(A∩B)=P(A|B)P(B). Law of total probability: P(A)=∑P(A|B_i)P(B_i) over partition B_i. Conditional changes probabilities with new evidence. Medical testing, spam filtering, and diagnostic models rely on conditioning. P(A|B)≠P(B|A)—prosecutor fallacy confusion. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Conditional Probability" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Conditional Probability** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `P(A|B) = P(A∩B)/P(B)`,
             `P(A∩B) = P(A|B)P(B)`,
@@ -560,16 +660,9 @@ Track: math | Level: intermediate`
             `P(A|B) ≠ P(B|A) in general`,
             `Evidence B updates belief about A`
           ],
-          diagram: `   P(A|B): shrink world to B
-
+          diagram: `P(A|B): shrink world to B
    Ω → only B region
-   renormalize probs in B
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   renormalize probs in B`,
           keyPoints: [
             `Conditioning restricts sample space`,
             `Total probability law decomposes`,
@@ -594,12 +687,6 @@ Visual summary:
   P(A|B): shrink world to B
   Ω → only B region
   renormalize probs in B
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Conditioning restricts sample space
@@ -616,17 +703,41 @@ Track: math | Level: intermediate`
           title: `Bayes Theorem`,
           content: `**Bayes**: P(A|B)=P(B|A)P(A)/P(B). P(A) prior, P(A|B) posterior, P(B|A) likelihood, P(B) evidence. Posterior ∝ likelihood × prior. **Naive Bayes** assumes features conditionally independent given class: P(x|y)=∏P(x_i|y). Bayesian ML places priors on weights. Evidence integral often intractable. MAP picks mode of posterior; full posterior gives uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Bayes Theorem" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Bayes Theorem** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `P(A|B) = P(B|A)P(A)/P(B)`,
             `Posterior ∝ Likelihood × Prior`,
@@ -634,16 +745,9 @@ Track: math | Level: intermediate`
             `MAP = argmax_θ P(θ|D)`,
             `Evidence P(D) normalizes`
           ],
-          diagram: `   prior ──× likelihood ──→ posterior
+          diagram: `prior ──× likelihood ──→ posterior
          P(θ)    P(D|θ)         P(θ|D)
-
-   normalize by P(D)
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   normalize by P(D)`,
           keyPoints: [
             `Bayes reverses conditioning`,
             `Prior encodes belief before data`,
@@ -668,12 +772,6 @@ Visual summary:
   prior ──× likelihood ──→ posterior
   P(θ)    P(D|θ)         P(θ|D)
   normalize by P(D)
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Bayes reverses conditioning
@@ -690,17 +788,41 @@ Track: math | Level: intermediate`
           title: `Odds & Log-Odds`,
           content: `Odds O(A)=P(A)/P(A^c). **Log-odds** ln O additive for Bayes updates with likelihood ratio. Logistic regression models log-odds as linear: ln(p/(1−p))=w·x+b. Likelihood ratio P(B|A)/P(B|A^c) measures evidence strength. Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Odds & Log-Odds" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Odds & Log-Odds** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Odds = p/(1−p)`,
             `logit(p) = ln(p/(1−p))`,
@@ -708,16 +830,9 @@ Track: math | Level: intermediate`
             `Likelihood ratio = P(B|A)/P(B|A^c)`,
             `sigmoid = inverse logit`
           ],
-          diagram: `   p=0.5 → odds 1:1
+          diagram: `p=0.5 → odds 1:1
    p=0.9 → odds 9:1
-   log-odds: −∞ to +∞ linear model
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·
-   └──────────`,
+   log-odds: −∞ to +∞ linear model`,
           keyPoints: [
             `Log-odds unbounded for linear models`,
             `Logit link in logistic regression`,
@@ -743,13 +858,6 @@ Visual summary:
   p=0.5 → odds 1:1
   p=0.9 → odds 9:1
   log-odds: −∞ to +∞ linear model
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Log-odds unbounded for linear models
@@ -766,17 +874,41 @@ Track: math | Level: intermediate`
           title: `Bayesian ML Preview`,
           content: `Posterior predictive P(y*|x*,D)=∫ P(y*|x*,θ)P(θ|D)dθ averages over uncertainty. **Variational inference** approximates posterior. **MCMC** samples from posterior. Uncertainty quantification in safety-critical apps. Thompson sampling uses posterior for exploration. Bayesian deep learning active research. Prior prevents overfitting (weight decay ≈ Gaussian prior). Conjugate priors give closed-form posterior updates.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Bayesian ML Preview" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Bayesian ML Preview** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Posterior predictive integrates θ uncertainty`,
             `VI: optimize q(θ) ≈ p(θ|D)`,
@@ -784,16 +916,10 @@ Track: math | Level: intermediate`
             `Prior = regularization`,
             `Conjugate: closed-form update`
           ],
-          diagram: `   weight uncertainty:
-
+          diagram: `weight uncertainty:
    MAP: single θ*
    Bayesian: distribution over θ
-   wider → more uncertainty
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   wider → more uncertainty`,
           keyPoints: [
             `Posterior captures uncertainty`,
             `VI scales to big models`,
@@ -821,11 +947,6 @@ Visual summary:
   MAP: single θ*
   Bayesian: distribution over θ
   wider → more uncertainty
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Posterior captures uncertainty
@@ -842,13 +963,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Conditional Probability & Bayes** sits in the **math** track of the Data Science Master curriculum. Conditioning, Bayes theorem, and Bayesian updating.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-conditional-bayes**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Conditional Probability & Bayes
 meta = {"topic_id": "math-conditional-bayes", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -883,12 +1010,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-conditional-bayes
 from dataclasses import dataclass
 
@@ -936,7 +1065,9 @@ When stuck on **math-conditional-bayes**, reproduce with the smallest input, ena
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -973,9 +1104,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-conditional-bayes** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Conditional Probability & Bayes
 skills = ["math", "intermediate", "math-conditional-bayes"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1076,17 +1212,41 @@ lo=np.log(0.8/0.2); print(lo, 1/(1+np.exp(-lo)))`,
           title: `Random Variable Definition`,
           content: `**Random variable** X: Ω→ℝ maps outcomes to numbers. **Discrete**: countable values with PMF p(x)=P(X=x). **Continuous**: PDF f(x) with P(a≤X≤b)=∫_a^b f(x)dx. CDF F(x)=P(X≤x) non-decreasing. Support set where p>0 or f>0. Mixed distributions combine atoms and density. Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Random Variable Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Random Variable Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `PMF: p(x) = P(X=x) discrete`,
             `PDF: P(a≤X≤b) = ∫_a^b f(x)dx`,
@@ -1094,16 +1254,11 @@ lo=np.log(0.8/0.2); print(lo, 1/(1+np.exp(-lo)))`,
             `∑ p(x)=1 or ∫ f(x)dx=1`,
             `E[X] = ∑ x p(x) or ∫ x f(x)dx`
           ],
-          diagram: `   discrete PMF bar chart:
-
+          diagram: `discrete PMF bar chart:
    P(X)
-   │ ██
    │ ██ ██
-   └──┴──┴── X
    0  1  2
-
-   continuous PDF curve area=1
-   │`,
+   continuous PDF curve area=1`,
           keyPoints: [
             `PMF vs PDF notation`,
             `CDF universal for any type`,
@@ -1129,12 +1284,9 @@ Key relationships:
 Visual summary:
   discrete PMF bar chart:
   P(X)
-  │ ██
   │ ██ ██
-  └──┴──┴── X
   0  1  2
   continuous PDF curve area=1
-  │
 
 Study checklist:
   1. PMF vs PDF notation
@@ -1151,17 +1303,41 @@ Track: math | Level: intermediate`
           title: `Expectation & Variance`,
           content: `E[X]=∑x p(x) or ∫x f(x)dx **expected value** center of mass. **Linearity** E[aX+b]=aE[X]+b; E[X+Y]=E[X]+E[Y] always. **Variance** Var(X)=E[(X−μ)²]=E[X²]−(E[X])². Std σ=√Var. **Covariance** Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Independent ⇒ Cov=0 (converse false). Sample mean x̄ estimates E[X]. Law of large numbers: x̄→E[X] as n→∞. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Expectation & Variance" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Expectation & Variance** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `E[X] = ∑ x p(x) or ∫ x f(x) dx`,
             `Var(X) = E[X²] − (E[X])²`,
@@ -1169,16 +1345,10 @@ Track: math | Level: intermediate`
             `Cov(X,Y) = E[XY] − E[X]E[Y]`,
             `σ = √Var(X)`
           ],
-          diagram: `   distribution spread:
-
+          diagram: `distribution spread:
    low Var: tight cluster
    high Var: wide spread
-
-   E[X] = balance point
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   E[X] = balance point`,
           keyPoints: [
             `Expectation is average limit`,
             `Variance measures spread`,
@@ -1204,10 +1374,6 @@ Visual summary:
   low Var: tight cluster
   high Var: wide spread
   E[X] = balance point
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Expectation is average limit
@@ -1224,17 +1390,41 @@ Track: math | Level: intermediate`
           title: `Functions of RVs`,
           content: `E[g(X)]=∑g(x)p(x) or ∫g(x)f(x)dx—not g(E[X]) in general (**Jensen**). Var(aX+b)=a²Var(X). Sum variances if independent: Var(X+Y)=Var(X)+Var(Y). For Y=g(X), find PDF of Y via CDF/transform methods. Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Functions of RVs" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Functions of RVs** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `E[g(X)] ≠ g(E[X]) in general`,
             `Var(aX+b) = a²Var(X)`,
@@ -1242,16 +1432,9 @@ Track: math | Level: intermediate`
             `Jensen: convex f → E[f(X)]≥f(E[X])`,
             `Reparam: x = μ + σ·ε`
           ],
-          diagram: `   Jensen convex f:
-
+          diagram: `Jensen convex f:
    E[f(X)] ≥ f(E[X])
-
-   concave: reverse inequality
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   concave: reverse inequality`,
           keyPoints: [
             `Nonlinear g breaks naive plug-in`,
             `Jensen explains bias of convex losses`,
@@ -1276,11 +1459,6 @@ Visual summary:
   Jensen convex f:
   E[f(X)] ≥ f(E[X])
   concave: reverse inequality
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Nonlinear g breaks naive plug-in
@@ -1297,17 +1475,41 @@ Track: math | Level: intermediate`
           title: `RVs in ML Pipeline`,
           content: `Minibatch samples approximate expectation of loss E[L]. **Monte Carlo dropout** estimates predictive uncertainty. **Data augmentation** as implicit sampling from transformed distribution. Labels as RVs; cross-entropy minimizes expected log loss. **Bias-variance** decomposition of expected prediction error. Stochastic gradients random due to batch sampling. Treating pipeline probabilistically improves debugging and evaluation design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "RVs in ML Pipeline" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **RVs in ML Pipeline** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Empirical risk ≈ E[L] with samples`,
             `Batch mean estimates expectation`,
@@ -1315,16 +1517,9 @@ Track: math | Level: intermediate`
             `Bias-variance tradeoff in E[error]`,
             `Augmentation expands implicit support`
           ],
-          diagram: `   batch loss:
-
+          diagram: `batch loss:
    (1/m)∑ L_i ≈ E[L]
-
-   bigger batch → lower MC noise
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   bigger batch → lower MC noise`,
           keyPoints: [
             `SGD noisy due to batch sampling`,
             `Dropout for uncertainty approx`,
@@ -1349,11 +1544,6 @@ Visual summary:
   batch loss:
   (1/m)∑ L_i ≈ E[L]
   bigger batch → lower MC noise
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. SGD noisy due to batch sampling
@@ -1370,13 +1560,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Random Variables** sits in the **math** track of the Data Science Master curriculum. Discrete and continuous random variables, expectation, and variance.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-random-vars**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Random Variables
 meta = {"topic_id": "math-random-vars", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1411,12 +1607,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-random-vars
 from dataclasses import dataclass
 
@@ -1464,7 +1662,9 @@ When stuck on **math-random-vars**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1501,9 +1701,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-random-vars** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Random Variables
 skills = ["math", "intermediate", "math-random-vars"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1605,17 +1810,41 @@ print(X.mean(), X.var())`,
           title: `Discrete Distributions`,
           content: `**Bernoulli** p(x)=p^x(1−p)^{1−x}, x∈{0,1}. **Binomial** counts successes in n trials. **Poisson** P(X=k)=e^{−λ}λ^k/k! models counts/rare events. **Categorical** multi-class generalization of Bernoulli. Geometric: trials until first success. PMF sums to 1. MLE for Bernoulli p is sample mean. Poisson regression for count targets. Classification labels often categorical RVs. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Discrete Distributions" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Discrete Distributions** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Bernoulli: P(X=1)=p`,
             `Binomial: C(n,k)p^k(1−p)^(n−k)`,
@@ -1623,16 +1852,12 @@ print(X.mean(), X.var())`,
             `Categorical: ∑p_i=1`,
             `E[Poisson]=Var=λ`
           ],
-          diagram: `   Binomial n=10 p=0.5
-
+          diagram: `Binomial n=10 p=0.5
    PMF shape bell-ish:
         *
        ***
       *****
-     *******
-   │
-   │  · · ·
-   └──────────`,
+     *******`,
           keyPoints: [
             `Bernoulli single trial`,
             `Binomial n independent Bernoullis`,
@@ -1661,9 +1886,6 @@ Visual summary:
   ***
   *****
   *******
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Bernoulli single trial
@@ -1680,17 +1902,41 @@ Track: math | Level: intermediate`
           title: `Continuous Distributions`,
           content: `**Uniform** on [a,b]: f=1/(b−a). **Exponential** f(x)=λe^{−λx}, x≥0 memoryless. **Gaussian** N(μ,σ²): f(x)=exp(−(x−μ)²/(2σ²))/√(2πσ²). **Beta** on [0,1] for probabilities. **Gamma** generalizes exponential. Central role of Gaussian via CLT. Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Continuous Distributions" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Continuous Distributions** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `N(μ,σ²): f(x) ∝ exp(−(x−μ)²/(2σ²))`,
             `Exp(λ): f(x)=λe^(−λx), x≥0`,
@@ -1698,16 +1944,8 @@ Track: math | Level: intermediate`
             `Z=(X−μ)/σ standardizes`,
             `Multivariate: (x−μ)ᵀΣ⁻¹(x−μ)`
           ],
-          diagram: `   Normal bell curve:
-
-        │
-       ╱╲
-      ╱  ╲
-     ╱    ╲___
-   ──────────── x
-        μ
-   │
-   │  · · ·`,
+          diagram: `Normal bell curve:
+        μ`,
           keyPoints: [
             `Gaussian central in statistics`,
             `Exponential models waiting times`,
@@ -1731,14 +1969,7 @@ Key relationships:
 
 Visual summary:
   Normal bell curve:
-  │
-  ╱╲
-  ╱  ╲
-  ╱    ╲___
-  ──────────── x
   μ
-  │
-  │  · · ·
 
 Study checklist:
   1. Gaussian central in statistics
@@ -1753,21 +1984,49 @@ Track: math | Level: intermediate`
         {
           id: `dist-clt`,
           title: `Central Limit Theorem Preview`,
-          content: `**Central Limit Theorem Preview** is essential to **Common Distributions**. Bernoulli, binomial, Gaussian, Poisson, and exponential distributions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Central Limit Theorem Preview** — what you need to know:
+
+- **Core idea:** Bernoulli, binomial, Gaussian, Poisson, and exponential distributions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sum/mean of i.i.d. with finite variance → approximately normal as n grows. X̄ approx N(μ, σ²/n). Justifies normal noise assumptions and confidence intervals. Sample mean standard error σ/√n shrinks with n. Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Central Limit Theorem Preview" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Central Limit Theorem Preview** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `X̄ approx N(μ, σ²/n) for large n`,
             `SE = σ/√n`,
@@ -1775,16 +2034,10 @@ Sum/mean of i.i.d. with finite variance → approximately normal as n grows. X̄
             `Works i.i.d. finite variance`,
             `Justifies normal approximations`
           ],
-          diagram: `   any shape → sum of many
+          diagram: `any shape → sum of many
    becomes bell curve
-
    n=1  skewed
-   n=30 ≈ normal
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   n=30 ≈ normal`,
           keyPoints: [
             `CLT explains normal ubiquity`,
             `SE shrinks with √n`,
@@ -1810,11 +2063,6 @@ Visual summary:
   becomes bell curve
   n=1  skewed
   n=30 ≈ normal
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. CLT explains normal ubiquity
@@ -1831,17 +2079,41 @@ Track: math | Level: intermediate`
           title: `Distributions in ML Models`,
           content: `Logistic regression: y~Bernoulli(σ(w·x)). Linear regression often y~N(w·x, σ²). **Gaussian Naive Bayes** continuous features. **VAE** latent z~N(0,I). **Mixture models** sum of Gaussians. Output layer activations match distribution: sigmoid/Bernoulli, softmax/categorical, ReLU+exp/Poisson rates. Negative log-likelihood = cross-entropy for classification. Choosing distribution = choosing loss. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Distributions in ML Models" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Distributions in ML Models** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Bernoulli → sigmoid + BCE`,
             `Gaussian y → MSE / NLL`,
@@ -1849,16 +2121,10 @@ Track: math | Level: intermediate`
             `Poisson → log link`,
             `VAE latent z ~ N(0,I)`
           ],
-          diagram: `   output layer ↔ distribution:
-
+          diagram: `output layer ↔ distribution:
    sigmoid    → Bernoulli
    softmax    → Categorical
-   linear     → Gaussian (MSE)
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   linear     → Gaussian (MSE)`,
           keyPoints: [
             `Likelihood choice drives loss`,
             `Softmax matches categorical NLL`,
@@ -1885,11 +2151,6 @@ Visual summary:
   sigmoid    → Bernoulli
   softmax    → Categorical
   linear     → Gaussian (MSE)
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Likelihood choice drives loss
@@ -1906,13 +2167,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Common Distributions** sits in the **math** track of the Data Science Master curriculum. Bernoulli, binomial, Gaussian, Poisson, and exponential distributions.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-distributions**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Common Distributions
 meta = {"topic_id": "math-distributions", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1947,12 +2214,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-distributions
 from dataclasses import dataclass
 
@@ -2000,7 +2269,9 @@ When stuck on **math-distributions**, reproduce with the smallest input, enable 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2037,9 +2308,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-distributions** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Common Distributions
 skills = ["math", "intermediate", "math-distributions"]
 print("Built project applying:", ", ".join(skills))`,
@@ -2139,17 +2415,41 @@ k=np.arange(7); print(stats.poisson.pmf(k,3))`,
           title: `Joint Distributions`,
           content: `**Joint PMF** p(x,y)=P(X=x,Y=y). **Joint PDF** f(x,y) with ∫∫f=1. **Marginal** p(x)=∑_y p(x,y) or ∫ f(x,y)dy. Joint captures full dependence structure. **Covariance matrix** Σ_ij=Cov(X_i,X_j). Multivariate data rows as samples from joint. Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Joint Distributions" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Joint Distributions** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `p(x,y) joint PMF/PDF`,
             `p(x) = ∑_y p(x,y) marginal`,
@@ -2157,16 +2457,11 @@ k=np.arange(7); print(stats.poisson.pmf(k,3))`,
             `Σ_ij = Cov(X_i, X_j)`,
             `∫∫ f(x,y) dx dy = 1`
           ],
-          diagram: `   joint table X,Y:
-
+          diagram: `joint table X,Y:
         y1   y2   y3
    x1  .2   .1   .05
    x2  .15  .3   .2
-
-   marginals = row/col sums
-   │
-   │  · · ·
-   └──────────`,
+   marginals = row/col sums`,
           keyPoints: [
             `Joint has full info`,
             `Marginals sum/integrate out`,
@@ -2193,9 +2488,6 @@ Visual summary:
   x1  .2   .1   .05
   x2  .15  .3   .2
   marginals = row/col sums
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Joint has full info
@@ -2212,17 +2504,41 @@ Track: math | Level: intermediate`
           title: `Independence & Conditional`,
           content: `X,Y independent iff p(x,y)=p(x)p(y) or f(x,y)=f(x)f(y). Equivalently P(X|Y)=P(X). **Conditional** p(x|y)=p(x,y)/p(y). **Chain rule** p(x,y,z)=p(x)p(y|x)p(z|x,y). Bayes nets factorize joint via conditionals. Correlation zero doesn't imply independence except Gaussian special case. **Conditional independence** X⊥Y|Z simplifies structure in PGM. Feature independence assumption in naive Bayes rarely true but useful.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Independence & Conditional" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Independence & Conditional** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Indep: p(x,y)=p(x)p(y)`,
             `p(x|y)=p(x,y)/p(y)`,
@@ -2230,16 +2546,9 @@ Track: math | Level: intermediate`
             `X⊥Y|Z: p(x,y|z)=p(x|z)p(y|z)`,
             `Corr=0 ≠ indep (non-Gaussian)`
           ],
-          diagram: `   independent joint factorizes:
-
+          diagram: `independent joint factorizes:
    p(x,y) = p(x)·p(y)
-
-   grid = outer product of marginals
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   grid = outer product of marginals`,
           keyPoints: [
             `Independence factorizes joint`,
             `Conditional from joint/marginal`,
@@ -2264,11 +2573,6 @@ Visual summary:
   independent joint factorizes:
   p(x,y) = p(x)·p(y)
   grid = outer product of marginals
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Independence factorizes joint
@@ -2285,17 +2589,41 @@ Track: math | Level: intermediate`
           title: `Covariance & Correlation`,
           content: `Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Corr ρ=Cov/(σ_X σ_Y)∈[−1,1]. Cov matrix Σ symmetric PSD. Diagonal = variances. **Correlation matrix** unit diagonal. Σ eigenvalues principal variances. Det Σ generalizes bivariate correlation volume. Sample cov (1/n)X̃ᵀX̃. Shrinkage estimators regularize Σ for small n. Feature correlation heatmaps guide EDA and multicollinearity detection. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Covariance & Correlation" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Covariance & Correlation** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Cov(X,Y) = E[XY] − E[X]E[Y]`,
             `ρ = Cov/(σ_X σ_Y)`,
@@ -2303,16 +2631,11 @@ Track: math | Level: intermediate`
             `Corr matrix: diag 1`,
             `Sample Σ = X̃ᵀX̃/n`
           ],
-          diagram: `   correlation heatmap:
-
+          diagram: `correlation heatmap:
    1.0  0.8  0.1
    0.8  1.0 −0.3
    0.1 −0.3  1.0
-
-   diagonal always 1
-   │
-   │  · · ·
-   └──────────`,
+   diagonal always 1`,
           keyPoints: [
             `Correlation normalized covariance`,
             `PSD required valid cov matrix`,
@@ -2340,9 +2663,6 @@ Visual summary:
   0.8  1.0 −0.3
   0.1 −0.3  1.0
   diagonal always 1
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Correlation normalized covariance
@@ -2359,17 +2679,41 @@ Track: math | Level: intermediate`
           title: `Joint Modeling in ML`,
           content: `**Generative** models learn p(x) or p(x,y). **Discriminative** learn p(y|x) directly. Joint p(x,y)=p(y|x)p(x). **Multivariate Gaussian** for anomaly detection via Σ^{-1} Mahalanobis distance. **Copula + marginals** in finance. **Diffusion models** learn score ∇_x log p(x). VAE learns latent joint. Factorized autoregressive p(x)=∏p(x_i|x_{<i}). Choosing what joint to model defines generative task complexity.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Joint Modeling in ML" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Joint Modeling in ML** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Generative: model p(x) or p(x,y)`,
             `Discriminative: p(y|x)`,
@@ -2377,16 +2721,9 @@ Track: math | Level: intermediate`
             `Mahalanobis: (x−μ)ᵀΣ⁻¹(x−μ)`,
             `Autoregressive factorization`
           ],
-          diagram: `   generative vs discriminative:
-
+          diagram: `generative vs discriminative:
    p(x,y) ──→ p(y|x)  discriminative
-   p(x,y) ──→ p(x)    generative
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   p(x,y) ──→ p(x)    generative`,
           keyPoints: [
             `Discriminative often better classification`,
             `Generative enables sampling`,
@@ -2411,12 +2748,6 @@ Visual summary:
   generative vs discriminative:
   p(x,y) ──→ p(y|x)  discriminative
   p(x,y) ──→ p(x)    generative
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Discriminative often better classification
@@ -2433,13 +2764,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Joint, Marginal & Independence** sits in the **math** track of the Data Science Master curriculum. Multivariate relationships, covariance matrices, and factorization.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-joint-marginal**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Joint, Marginal & Independence
 meta = {"topic_id": "math-joint-marginal", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -2474,12 +2811,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-joint-marginal
 from dataclasses import dataclass
 
@@ -2527,7 +2866,9 @@ When stuck on **math-joint-marginal**, reproduce with the smallest input, enable
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2564,9 +2905,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-joint-marginal** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Joint, Marginal & Independence
 skills = ["math", "intermediate", "math-joint-marginal"]
 print("Built project applying:", ", ".join(skills))`,

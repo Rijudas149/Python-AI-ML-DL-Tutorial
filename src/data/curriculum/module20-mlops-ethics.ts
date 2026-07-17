@@ -11,17 +11,37 @@ export const module20Topics: Topic[] = [
         {
           id: `serialize`,
           title: `Model Serialization`,
-          content: `**Model Serialization** is essential to **Model Serialization & Serving**. Save, load, and serve ML models in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Model Serialization** — what you need to know:
+
+- **Core idea:** Save, load, and serve ML models in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 joblib/pickle for sklearn. torch.save for PyTorch. ONNX for cross-framework. SavedModel for TensorFlow.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Model Serialization" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Model Serialization** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -54,17 +74,37 @@ Track: ai | Level: advanced`
         {
           id: `fastapi`,
           title: `FastAPI Model Serving`,
-          content: `**FastAPI Model Serving** is essential to **Model Serialization & Serving**. Save, load, and serve ML models in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**FastAPI Model Serving** — what you need to know:
+
+- **Core idea:** Save, load, and serve ML models in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 REST API for model inference. Pydantic for input validation. Async support for high throughput.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "FastAPI Model Serving" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **FastAPI Model Serving** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -100,15 +140,31 @@ Track: ai | Level: advanced`
         {
           id: `onnx`,
           title: `ONNX Runtime`,
-          content: `**ONNX Runtime** is essential to **Model Serialization & Serving**. Save, load, and serve ML models in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**ONNX Runtime** — what you need to know:
+
+- **Core idea:** Save, load, and serve ML models in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Export to ONNX for framework-agnostic deployment. Optimized inference on CPU/GPU. torch.onnx.export, onnxruntime.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "ONNX Runtime" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **ONNX Runtime** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `ONNX enables model portability`,
             `Graph optimizations in ONNX Runtime`,
@@ -146,15 +202,31 @@ Track: ai | Level: advanced`
         {
           id: `batch-realtime`,
           title: `Batch vs Real-Time Inference`,
-          content: `**Batch vs Real-Time Inference** is essential to **Model Serialization & Serving**. Save, load, and serve ML models in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Batch vs Real-Time Inference** — what you need to know:
+
+- **Core idea:** Save, load, and serve ML models in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Batch: process large datasets offline (Spark, scheduled jobs). Real-time: low-latency API (<100ms). Streaming: continuous processing.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Batch vs Real-Time Inference" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Batch vs Real-Time Inference** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Batch for bulk predictions overnight`,
             `Real-time for user-facing applications`,
@@ -194,13 +266,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Model Serialization & Serving** sits in the **ai** track of the Data Science Master curriculum. Save, load, and serve ML models in production.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-serving**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Model Serialization & Serving
 meta = {"topic_id": "ai-serving", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -235,12 +313,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-serving
 from dataclasses import dataclass
 
@@ -288,7 +368,9 @@ When stuck on **ai-serving**, reproduce with the smallest input, enable verbose 
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -325,9 +407,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-serving** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Model Serialization & Serving
 skills = ["ai", "advanced", "ai-serving"]
 print("Built project applying:", ", ".join(skills))`,
@@ -420,17 +507,37 @@ print(predict([1,2,3]))`,
         {
           id: `docker`,
           title: `Docker Basics for ML`,
-          content: `**Docker Basics for ML** is essential to **Docker & Cloud Deployment**. Containerize and deploy ML applications to cloud. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Docker Basics for ML** — what you need to know:
+
+- **Core idea:** Containerize and deploy ML applications to cloud.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Dockerfile: base image, COPY requirements, install deps, COPY code, CMD. Reproducible environments across machines.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Docker Basics for ML" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Docker Basics for ML** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# Dockerfile example:
 dockerfile = """
 FROM python:3.11-slim
@@ -466,15 +573,31 @@ Track: ai | Level: advanced`
         {
           id: `compose`,
           title: `Docker Compose`,
-          content: `**Docker Compose** is essential to **Docker & Cloud Deployment**. Containerize and deploy ML applications to cloud. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Docker Compose** — what you need to know:
+
+- **Core idea:** Containerize and deploy ML applications to cloud.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Multi-container apps: API + Redis + PostgreSQL. docker-compose.yml defines services, networks, volumes.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Docker Compose" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Docker Compose** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Compose for local development stacks`,
             `Define environment variables in compose file`,
@@ -512,15 +635,31 @@ Track: ai | Level: advanced`
         {
           id: `cloud`,
           title: `Cloud ML Platforms`,
-          content: `**Cloud ML Platforms** is essential to **Docker & Cloud Deployment**. Containerize and deploy ML applications to cloud. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Cloud ML Platforms** — what you need to know:
+
+- **Core idea:** Containerize and deploy ML applications to cloud.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 AWS SageMaker, GCP Vertex AI, Azure ML. Managed training, deployment, monitoring. Serverless: Lambda + container images.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Cloud ML Platforms" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Cloud ML Platforms** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Managed platforms reduce ops burden`,
             `SageMaker endpoints for real-time inference`,
@@ -558,15 +697,31 @@ Track: ai | Level: advanced`
         {
           id: `cicd`,
           title: `CI/CD for ML`,
-          content: `**CI/CD for ML** is essential to **Docker & Cloud Deployment**. Containerize and deploy ML applications to cloud. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**CI/CD for ML** — what you need to know:
+
+- **Core idea:** Containerize and deploy ML applications to cloud.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 GitHub Actions, Jenkins pipelines. Test → train → evaluate → deploy if metrics pass. MLflow tracks experiments.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "CI/CD for ML" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **CI/CD for ML** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Automated testing of data schemas and model metrics`,
             `Gate deployment on validation metric thresholds`,
@@ -606,13 +761,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Docker & Cloud Deployment** sits in the **ai** track of the Data Science Master curriculum. Containerize and deploy ML applications to cloud.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-docker**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Docker & Cloud Deployment
 meta = {"topic_id": "ai-docker", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -647,12 +808,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-docker
 from dataclasses import dataclass
 
@@ -700,7 +863,9 @@ When stuck on **ai-docker**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -737,9 +902,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-docker** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Docker & Cloud Deployment
 skills = ["ai", "advanced", "ai-docker"]
 print("Built project applying:", ", ".join(skills))`,
@@ -827,15 +997,31 @@ Track: ai | Level: advanced`
         {
           id: `monitoring`,
           title: `Model Monitoring`,
-          content: `**Model Monitoring** is essential to **Monitoring & Drift Detection**. Track model performance and data quality in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Model Monitoring** — what you need to know:
+
+- **Core idea:** Track model performance and data quality in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Track prediction latency, throughput, error rates. Log inputs and outputs. Alert on anomalies.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Model Monitoring" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Model Monitoring** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Monitor latency p50, p95, p99 percentiles`,
             `Log predictions for debugging and retraining`,
@@ -873,17 +1059,37 @@ Track: ai | Level: advanced`
         {
           id: `drift`,
           title: `Data Drift & Concept Drift`,
-          content: `**Data Drift & Concept Drift** is essential to **Monitoring & Drift Detection**. Track model performance and data quality in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Data Drift & Concept Drift** — what you need to know:
+
+- **Core idea:** Track model performance and data quality in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Data drift: input distribution changes. Concept drift: relationship X→Y changes. Both degrade model performance over time.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Data Drift & Concept Drift" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Data Drift & Concept Drift** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `import numpy as np
 from scipy import stats
 
@@ -916,15 +1122,31 @@ Track: ai | Level: advanced`
         {
           id: `evidently`,
           title: `Evidently AI & Tools`,
-          content: `**Evidently AI & Tools** is essential to **Monitoring & Drift Detection**. Track model performance and data quality in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Evidently AI & Tools** — what you need to know:
+
+- **Core idea:** Track model performance and data quality in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Evidently generates drift reports. Great Expectations validates data. WhyLabs for AI observability.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Evidently AI & Tools" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Evidently AI & Tools** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Evidently: data drift and model performance reports`,
             `Great Expectations: data validation suites`,
@@ -962,15 +1184,31 @@ Track: ai | Level: advanced`
         {
           id: `retraining`,
           title: `Retraining Strategies`,
-          content: `**Retraining Strategies** is essential to **Monitoring & Drift Detection**. Track model performance and data quality in production. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Retraining Strategies** — what you need to know:
+
+- **Core idea:** Track model performance and data quality in production.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Scheduled retraining (weekly/monthly). Trigger-based on drift detection. Continuous learning with new labeled data.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Retraining Strategies" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Retraining Strategies** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Define retraining triggers and schedule`,
             `Champion/challenger model comparison`,
@@ -1010,13 +1248,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Monitoring & Drift Detection** sits in the **ai** track of the Data Science Master curriculum. Track model performance and data quality in production.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-monitoring**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Monitoring & Drift Detection
 meta = {"topic_id": "ai-monitoring", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1051,12 +1295,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-monitoring
 from dataclasses import dataclass
 
@@ -1104,7 +1350,9 @@ When stuck on **ai-monitoring**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1141,9 +1389,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-monitoring** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Monitoring & Drift Detection
 skills = ["ai", "advanced", "ai-monitoring"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1231,15 +1484,31 @@ Track: ai | Level: advanced`
         {
           id: `bias`,
           title: `Types of Bias`,
-          content: `**Types of Bias** is essential to **AI Ethics, Bias & Fairness**. Identify and mitigate bias in ML systems. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Types of Bias** — what you need to know:
+
+- **Core idea:** Identify and mitigate bias in ML systems.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Historical bias in data. Representation bias from sampling. Measurement bias from proxies. Evaluation bias from benchmarks.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Types of Bias" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Types of Bias** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Bias often originates in data not algorithm`,
             `Protected attributes: race, gender, age, disability`,
@@ -1277,17 +1546,37 @@ Track: ai | Level: advanced`
         {
           id: `fairness`,
           title: `Fairness Metrics`,
-          content: `**Fairness Metrics** is essential to **AI Ethics, Bias & Fairness**. Identify and mitigate bias in ML systems. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Fairness Metrics** — what you need to know:
+
+- **Core idea:** Identify and mitigate bias in ML systems.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Demographic parity: equal positive rates across groups. Equalized odds: equal TPR and FPR. Calibration: equal probability meaning across groups.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Fairness Metrics" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Fairness Metrics** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# Demographic parity: P(ŷ=1|A=0) should equal P(ŷ=1|A=1)
 # where A is protected attribute
 group_a_rate = 0.3
@@ -1319,15 +1608,31 @@ Track: ai | Level: advanced`
         {
           id: `mitigation`,
           title: `Bias Mitigation`,
-          content: `**Bias Mitigation** is essential to **AI Ethics, Bias & Fairness**. Identify and mitigate bias in ML systems. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Bias Mitigation** — what you need to know:
+
+- **Core idea:** Identify and mitigate bias in ML systems.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Pre-processing: reweight, resample. In-processing: fairness constraints. Post-processing: adjust thresholds per group.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Bias Mitigation" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Bias Mitigation** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Pre-processing modifies training data`,
             `In-processing adds fairness constraints to loss`,
@@ -1365,15 +1670,31 @@ Track: ai | Level: advanced`
         {
           id: `explain-ethics`,
           title: `Explainability & Accountability`,
-          content: `**Explainability & Accountability** is essential to **AI Ethics, Bias & Fairness**. Identify and mitigate bias in ML systems. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Explainability & Accountability** — what you need to know:
+
+- **Core idea:** Identify and mitigate bias in ML systems.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Right to explanation (GDPR). Model cards document intended use and limitations. Impact assessments before deployment.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Explainability & Accountability" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Explainability & Accountability** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Model cards: intended use, training data, limitations`,
             `Algorithmic impact assessment for high-risk AI`,
@@ -1413,13 +1734,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**AI Ethics, Bias & Fairness** sits in the **ai** track of the Data Science Master curriculum. Identify and mitigate bias in ML systems.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-bias**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for AI Ethics, Bias & Fairness
 meta = {"topic_id": "ai-bias", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1454,12 +1781,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-bias
 from dataclasses import dataclass
 
@@ -1507,7 +1836,9 @@ When stuck on **ai-bias**, reproduce with the smallest input, enable verbose log
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1544,9 +1875,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-bias** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for AI Ethics, Bias & Fairness
 skills = ["ai", "advanced", "ai-bias"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1634,15 +1970,31 @@ Track: ai | Level: advanced`
         {
           id: `framework`,
           title: `Responsible AI Principles`,
-          content: `**Responsible AI Principles** is essential to **Responsible AI & Governance**. Organizational frameworks for ethical AI development and deployment. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Responsible AI Principles** — what you need to know:
+
+- **Core idea:** Organizational frameworks for ethical AI development and deployment.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Fairness, transparency, accountability, privacy, safety, reliability. Google, Microsoft, EU AI Act frameworks.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Responsible AI Principles" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Responsible AI Principles** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Fairness: equitable outcomes across groups`,
             `Transparency: explainable decisions`,
@@ -1680,15 +2032,31 @@ Track: ai | Level: advanced`
         {
           id: `eu-ai-act`,
           title: `EU AI Act`,
-          content: `**EU AI Act** is essential to **Responsible AI & Governance**. Organizational frameworks for ethical AI development and deployment. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**EU AI Act** — what you need to know:
+
+- **Core idea:** Organizational frameworks for ethical AI development and deployment.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Risk-based regulation: unacceptable, high-risk, limited, minimal risk. High-risk AI requires conformity assessment, documentation, human oversight.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "EU AI Act" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **EU AI Act** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Prohibited: social scoring, manipulative AI`,
             `High-risk: hiring, credit, medical, law enforcement`,
@@ -1726,15 +2094,31 @@ Track: ai | Level: advanced`
         {
           id: `privacy`,
           title: `Privacy-Preserving ML`,
-          content: `**Privacy-Preserving ML** is essential to **Responsible AI & Governance**. Organizational frameworks for ethical AI development and deployment. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Privacy-Preserving ML** — what you need to know:
+
+- **Core idea:** Organizational frameworks for ethical AI development and deployment.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Differential privacy adds noise to protect individuals. Federated learning trains without centralizing data. Data anonymization techniques.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Privacy-Preserving ML" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Privacy-Preserving ML** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Differential privacy mathematical privacy guarantee`,
             `Federated learning: model travels to data`,
@@ -1772,15 +2156,31 @@ Track: ai | Level: advanced`
         {
           id: `red-team`,
           title: `Red Teaming & Safety`,
-          content: `**Red Teaming & Safety** is essential to **Responsible AI & Governance**. Organizational frameworks for ethical AI development and deployment. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Red Teaming & Safety** — what you need to know:
+
+- **Core idea:** Organizational frameworks for ethical AI development and deployment.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Adversarial testing of AI systems. Jailbreak attempts, prompt injection, harmful output testing before release.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Red Teaming & Safety" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Red Teaming & Safety** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Red team before deploying LLM applications`,
             `Prompt injection: user overrides system instructions`,
@@ -1820,13 +2220,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Responsible AI & Governance** sits in the **ai** track of the Data Science Master curriculum. Organizational frameworks for ethical AI development and deployment.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-governance**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Responsible AI & Governance
 meta = {"topic_id": "ai-governance", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1861,12 +2267,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-governance
 from dataclasses import dataclass
 
@@ -1914,7 +2322,9 @@ When stuck on **ai-governance**, reproduce with the smallest input, enable verbo
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1951,9 +2361,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-governance** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Responsible AI & Governance
 skills = ["ai", "advanced", "ai-governance"]
 print("Built project applying:", ", ".join(skills))`,

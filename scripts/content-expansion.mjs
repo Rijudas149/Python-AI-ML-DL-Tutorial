@@ -3,6 +3,8 @@
  * while preserving numbered lists, bullets, and structured markdown.
  */
 
+import { sanitizeDiagramText } from './diagram-sanitize.mjs';
+
 const TRACK_CONTEXT = {
   python: {
     lens: 'Python fluency underpins every data pipeline, notebook, and production service in modern ML.',
@@ -132,39 +134,39 @@ function addDepthBlocks(content, section, topic) {
 
   if (!/\*\*/.test(content.slice(0, 120))) {
     blocks.push(
-      `**${term}** is essential to **${topic.title}**. ${topic.description} At the **${topic.level}** level, you should be able to explain this concept to a colleague and implement it without copying blindly.`,
+      `**${term}** — what you need to know:\n\n- **Core idea:** ${topic.description}\n- **Level (${topic.level}):** Explain this to a colleague and implement it without copying blindly.\n- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.`,
     );
   }
 
   blocks.push(content);
 
   blocks.push(
-    `**Why this matters:** ${c.lens} Mastering "${term}" here directly affects how confidently you can build, debug, and ship ${trackOf(topic)} projects.`,
+    `**Why this matters:**\n\n- ${c.lens}\n- Mastering **${term}** directly affects how confidently you can build, debug, and ship ${trackOf(topic)} projects.\n- This concept appears repeatedly in later modules — time invested here pays off across the entire track.`,
   );
 
   if (section.example) {
     blocks.push(
-      `**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.`,
+      `**Hands-on practice:**\n\n- Run the code example below in Python or Jupyter.\n- Predict the output before executing, then compare line-by-line.\n- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.`,
     );
   }
 
   blocks.push(
-    `**Professional habits:** ${c.practice} Document your assumptions because they become invariants for tests, APIs, and team handoffs.`,
+    `**Professional habits:**\n\n- ${c.practice}\n- Document your assumptions because they become invariants for tests, APIs, and team handoffs.\n- Revisit this section after the exercises to confirm each habit feels automatic.`,
   );
 
   blocks.push(
-    `**Common mistakes:** ${c.pitfalls} When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+    `**Common mistakes:**\n\n- ${c.pitfalls}\n- When debugging, reduce to the smallest input that reproduces the issue.\n- Log intermediate values with their types before guessing at the fix.`,
   );
 
   if (section.formulas?.length) {
     blocks.push(
-      `**Mathematical foundation:** This section includes ${section.formulas.length} key formula${section.formulas.length > 1 ? 's' : ''}. Identify each symbol's meaning, units, and valid input range before trusting numerical output.`,
+      `**Mathematical foundation:**\n\n- This section includes ${section.formulas.length} key formula${section.formulas.length > 1 ? 's' : ''}.\n- Identify each symbol's meaning, units, and valid input range before trusting numerical output.\n- Work through a tiny numeric example by hand, then verify in code.`,
     );
   }
 
   if (section.diagram?.trim()) {
     blocks.push(
-      `**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+      `**Visual guide:**\n\n- Study the diagram alongside the explanation — do not skip it.\n- Trace each arrow, box, or region back to a term in the text.\n- If you cannot map a visual element to words, re-read until the connection is clear.`,
     );
   }
 
@@ -229,6 +231,7 @@ export function expandSectionContent(section, topic) {
     ...section,
     content,
     keyPoints: ensureKeyPoints(section, topic),
+    diagram: section.diagram ? sanitizeDiagramText(section.diagram) : section.diagram,
   };
 
   if (!expanded.example?.trim() && trackOf(topic) !== 'math') {

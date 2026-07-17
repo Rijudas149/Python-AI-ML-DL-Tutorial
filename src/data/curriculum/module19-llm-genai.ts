@@ -11,7 +11,11 @@ export const module19Topics: Topic[] = [
         {
           id: `landscape`,
           title: `LLM Landscape`,
-          content: `**LLM Landscape** is essential to **Large Language Models Overview**. Architecture, capabilities, and landscape of modern LLMs. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LLM Landscape** — what you need to know:
+
+- **Core idea:** Architecture, capabilities, and landscape of modern LLMs.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Large Language Models (LLMs) are neural networks trained on vast text corpora to predict the next token. They exhibit emergent capabilities — reasoning, coding, translation — at sufficient scale.
 
@@ -23,11 +27,23 @@ Large Language Models (LLMs) are neural networks trained on vast text corpora to
 
 Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabling entire codebases or books as input.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "LLM Landscape" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **LLM Landscape** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Frontier models from OpenAI, Anthropic, Google`,
             `Open weights: LLaMA, Mistral, Qwen enable local deployment`,
@@ -71,11 +87,23 @@ Track: ai | Level: advanced`
 
 **Mitigations:** RAG grounds responses in documents; tool use (calculator, search) extends capabilities; chain-of-thought prompting improves reasoning; human-in-the-loop for high-stakes decisions.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Capabilities & Limitations" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Capabilities & Limitations** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `LLMs predict likely text not verified facts`,
             `Hallucination: confident but incorrect outputs`,
@@ -113,17 +141,37 @@ Track: ai | Level: advanced`
         {
           id: `tokens`,
           title: `Token Economics`,
-          content: `**Token Economics** is essential to **Large Language Models Overview**. Architecture, capabilities, and landscape of modern LLMs. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Token Economics** — what you need to know:
+
+- **Core idea:** Architecture, capabilities, and landscape of modern LLMs.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Pricing by input/output tokens. Context window limits. Tokenization affects cost and effective context usage.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Token Economics" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Token Economics** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# Rough token estimate: 1 token ≈ 4 characters in English
 # "Hello world" ≈ 2 tokens
 # GPT-4 pricing varies by model tier
@@ -154,15 +202,31 @@ Track: ai | Level: advanced`
         {
           id: `eval`,
           title: `LLM Evaluation`,
-          content: `**LLM Evaluation** is essential to **Large Language Models Overview**. Architecture, capabilities, and landscape of modern LLMs. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LLM Evaluation** — what you need to know:
+
+- **Core idea:** Architecture, capabilities, and landscape of modern LLMs.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 MMLU, HumanEval, MT-Bench benchmarks. Custom eval sets for domain tasks. LLM-as-judge for subjective quality.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "LLM Evaluation" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **LLM Evaluation** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `No single benchmark captures all capabilities`,
             `HumanEval for code generation quality`,
@@ -202,13 +266,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Large Language Models Overview** sits in the **ai** track of the Data Science Master curriculum. Architecture, capabilities, and landscape of modern LLMs.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-llm**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Large Language Models Overview
 meta = {"topic_id": "ai-llm", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -243,12 +313,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-llm
 from dataclasses import dataclass
 
@@ -296,7 +368,9 @@ When stuck on **ai-llm**, reproduce with the smallest input, enable verbose logg
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -333,9 +407,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-llm** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Large Language Models Overview
 skills = ["ai", "advanced", "ai-llm"]
 print("Built project applying:", ", ".join(skills))`,
@@ -423,17 +502,37 @@ Track: ai | Level: advanced`
         {
           id: `basics`,
           title: `Prompt Structure`,
-          content: `**Prompt Structure** is essential to **Prompt Engineering**. Design effective prompts to maximize LLM output quality. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Prompt Structure** — what you need to know:
+
+- **Core idea:** Design effective prompts to maximize LLM output quality.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 System message (role/behavior) + user message (task) + optional examples. Clear, specific instructions outperform vague requests.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Prompt Structure" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Prompt Structure** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `prompt = """System: You are a Python tutor. Explain concepts simply.
 
 User: Explain list comprehensions with an example.
@@ -464,17 +563,37 @@ Track: ai | Level: advanced`
         {
           id: `cot`,
           title: `Chain-of-Thought (CoT)`,
-          content: `**Chain-of-Thought (CoT)** is essential to **Prompt Engineering**. Design effective prompts to maximize LLM output quality. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Chain-of-Thought (CoT)** — what you need to know:
+
+- **Core idea:** Design effective prompts to maximize LLM output quality.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Add "Let's think step by step" or demonstrate reasoning steps. Dramatically improves math and logic performance.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Chain-of-Thought (CoT)" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Chain-of-Thought (CoT)** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `prompt = "Q: A store has 23 apples. They buy 6 boxes of 12 apples. How many now?\\nA: Let's think step by step.\\n23 + (6 * 12) = 23 + 72 = 95\\n\\nQ: ..."
 print("CoT improves reasoning")`,
           output: `CoT improves reasoning`,
@@ -502,15 +621,31 @@ Track: ai | Level: advanced`
         {
           id: `few-shot`,
           title: `Few-Shot Learning`,
-          content: `**Few-Shot Learning** is essential to **Prompt Engineering**. Design effective prompts to maximize LLM output quality. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Few-Shot Learning** — what you need to know:
+
+- **Core idea:** Design effective prompts to maximize LLM output quality.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Provide 2-5 input-output examples in prompt. Model learns pattern without weight updates. Example selection matters.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Few-Shot Learning" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Few-Shot Learning** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Examples should be diverse and representative`,
             `Order of examples affects performance`,
@@ -548,15 +683,31 @@ Track: ai | Level: advanced`
         {
           id: `advanced-prompt`,
           title: `Advanced Techniques`,
-          content: `**Advanced Techniques** is essential to **Prompt Engineering**. Design effective prompts to maximize LLM output quality. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Advanced Techniques** — what you need to know:
+
+- **Core idea:** Design effective prompts to maximize LLM output quality.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Advanced Techniques" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Advanced Techniques** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `JSON mode ensures parseable output`,
             `Prompt chaining breaks complex tasks into steps`,
@@ -596,13 +747,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Prompt Engineering** sits in the **ai** track of the Data Science Master curriculum. Design effective prompts to maximize LLM output quality.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-prompt**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Prompt Engineering
 meta = {"topic_id": "ai-prompt", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -637,12 +794,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-prompt
 from dataclasses import dataclass
 
@@ -690,7 +849,9 @@ When stuck on **ai-prompt**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -727,9 +888,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-prompt** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Prompt Engineering
 skills = ["ai", "advanced", "ai-prompt"]
 print("Built project applying:", ", ".join(skills))`,
@@ -819,15 +985,31 @@ print("step by step" in q)`,
         {
           id: `rag-arch`,
           title: `RAG Architecture`,
-          content: `**RAG Architecture** is essential to **RAG (Retrieval Augmented Generation)**. Ground LLM responses in external knowledge via retrieval. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**RAG Architecture** — what you need to know:
+
+- **Core idea:** Ground LLM responses in external knowledge via retrieval.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "RAG Architecture" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **RAG Architecture** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `query = user_question
 chunks = vector_db.search(embed(query), top_k=5)
 context = join(chunks)
@@ -858,17 +1040,37 @@ level: advanced`
         {
           id: `embeddings-rag`,
           title: `Embeddings for Retrieval`,
-          content: `**Embeddings for Retrieval** is essential to **RAG (Retrieval Augmented Generation)**. Ground LLM responses in external knowledge via retrieval. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Embeddings for Retrieval** — what you need to know:
+
+- **Core idea:** Ground LLM responses in external knowledge via retrieval.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Embed documents and queries with embedding model (OpenAI, sentence-transformers). Store in vector DB (Pinecone, Chroma, FAISS).
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Embeddings for Retrieval" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Embeddings for Retrieval** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -899,15 +1101,31 @@ Track: ai | Level: advanced`
         {
           id: `chunking`,
           title: `Document Chunking`,
-          content: `**Document Chunking** is essential to **RAG (Retrieval Augmented Generation)**. Ground LLM responses in external knowledge via retrieval. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Document Chunking** — what you need to know:
+
+- **Core idea:** Ground LLM responses in external knowledge via retrieval.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Split documents into retrievable chunks. Recursive character splitting, semantic chunking. Overlap preserves context at boundaries.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Document Chunking" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Document Chunking** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Too small chunks lose context`,
             `Too large chunks dilute relevance`,
@@ -945,15 +1163,31 @@ Track: ai | Level: advanced`
         {
           id: `eval-rag`,
           title: `Evaluating RAG Systems`,
-          content: `**Evaluating RAG Systems** is essential to **RAG (Retrieval Augmented Generation)**. Ground LLM responses in external knowledge via retrieval. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Evaluating RAG Systems** — what you need to know:
+
+- **Core idea:** Ground LLM responses in external knowledge via retrieval.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Retrieval metrics: recall@k, MRR. Generation metrics: faithfulness, relevance, answer correctness. RAGAS framework.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Evaluating RAG Systems" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Evaluating RAG Systems** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Evaluate retrieval and generation separately`,
             `Faithfulness: answer grounded in retrieved context`,
@@ -993,13 +1227,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**RAG (Retrieval Augmented Generation)** sits in the **ai** track of the Data Science Master curriculum. Ground LLM responses in external knowledge via retrieval.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-rag**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for RAG (Retrieval Augmented Generation)
 meta = {"topic_id": "ai-rag", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1034,12 +1274,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-rag
 from dataclasses import dataclass
 
@@ -1087,7 +1329,9 @@ When stuck on **ai-rag**, reproduce with the smallest input, enable verbose logg
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1124,9 +1368,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-rag** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for RAG (Retrieval Augmented Generation)
 skills = ["ai", "advanced", "ai-rag"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1215,15 +1464,31 @@ print(steps)`,
         {
           id: `finetune`,
           title: `Full Fine-Tuning`,
-          content: `**Full Fine-Tuning** is essential to **Fine-tuning & LoRA**. Adapt pretrained LLMs to specific tasks and domains. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Full Fine-Tuning** — what you need to know:
+
+- **Core idea:** Adapt pretrained LLMs to specific tasks and domains.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Update all model weights on domain dataset. Expensive — requires significant GPU memory. Best for large domain shift.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Full Fine-Tuning" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Full Fine-Tuning** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Requires labeled instruction-response pairs`,
             `Risk of catastrophic forgetting`,
@@ -1261,17 +1526,37 @@ Track: ai | Level: advanced`
         {
           id: `lora`,
           title: `LoRA (Low-Rank Adaptation)`,
-          content: `**LoRA (Low-Rank Adaptation)** is essential to **Fine-tuning & LoRA**. Adapt pretrained LLMs to specific tasks and domains. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LoRA (Low-Rank Adaptation)** — what you need to know:
+
+- **Core idea:** Adapt pretrained LLMs to specific tasks and domains.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Freeze base model, add low-rank decomposition matrices to attention layers. Trains ~0.1% of parameters. PEFT standard.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "LoRA (Low-Rank Adaptation)" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **LoRA (Low-Rank Adaptation)** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `# LoRA concept: W' = W + BA where B is d×r, A is r×d, r << d
 # r=8 or r=16 typical rank
 # Only train A and B matrices
@@ -1301,15 +1586,31 @@ Track: ai | Level: advanced`
         {
           id: `instruction`,
           title: `Instruction Tuning`,
-          content: `**Instruction Tuning** is essential to **Fine-tuning & LoRA**. Adapt pretrained LLMs to specific tasks and domains. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Instruction Tuning** — what you need to know:
+
+- **Core idea:** Adapt pretrained LLMs to specific tasks and domains.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Fine-tune on (instruction, response) pairs. Alpaca, Dolly datasets. Aligns model to follow user instructions.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Instruction Tuning" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Instruction Tuning** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Instruction format: ### Instruction / ### Response`,
             `Quality over quantity for instruction data`,
@@ -1347,15 +1648,31 @@ Track: ai | Level: advanced`
         {
           id: `rlhf`,
           title: `RLHF & DPO`,
-          content: `**RLHF & DPO** is essential to **Fine-tuning & LoRA**. Adapt pretrained LLMs to specific tasks and domains. At the **advanced** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**RLHF & DPO** — what you need to know:
+
+- **Core idea:** Adapt pretrained LLMs to specific tasks and domains.
+- **Level (advanced):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO. DPO simpler alternative without reward model.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "RLHF & DPO" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **RLHF & DPO** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `RLHF makes models helpful and harmless`,
             `Reward model trained on human preference comparisons`,
@@ -1395,13 +1712,19 @@ Track: ai | Level: advanced`
           title: `Deep Theory & Concepts`,
           content: `**Fine-tuning & LoRA** sits in the **ai** track of the Data Science Master curriculum. Adapt pretrained LLMs to specific tasks and domains.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-finetune**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the advanced level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Fine-tuning & LoRA
 meta = {"topic_id": "ai-finetune", "track": "ai", "level": "advanced"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1436,12 +1759,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-finetune
 from dataclasses import dataclass
 
@@ -1489,7 +1814,9 @@ When stuck on **ai-finetune**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1526,9 +1853,14 @@ Track: ai | Level: advanced`
 
 Teams shipping features around **ai-finetune** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Fine-tuning & LoRA
 skills = ["ai", "advanced", "ai-finetune"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1616,15 +1948,31 @@ Track: ai | Level: advanced`
         {
           id: `agents`,
           title: `LLM Agent Architecture`,
-          content: `**LLM Agent Architecture** is essential to **Agents & Tool Use**. LLM agents that reason, plan, and interact with external tools. At the **expert** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**LLM Agent Architecture** — what you need to know:
+
+- **Core idea:** LLM agents that reason, plan, and interact with external tools.
+- **Level (expert):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Agent loop: observe → think → act (tool call) → observe result → repeat. LangChain, LlamaIndex frameworks.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "LLM Agent Architecture" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **LLM Agent Architecture** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           pseudoCode: `WHILE not done:
     thought = llm.reason(observation, goal)
     IF thought.requires_action:
@@ -1657,17 +2005,37 @@ level: expert`
         {
           id: `tools`,
           title: `Function Calling / Tool Use`,
-          content: `**Function Calling / Tool Use** is essential to **Agents & Tool Use**. LLM agents that reason, plan, and interact with external tools. At the **expert** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Function Calling / Tool Use** — what you need to know:
+
+- **Core idea:** LLM agents that reason, plan, and interact with external tools.
+- **Level (expert):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Define tools with name, description, parameters (JSON schema). Model selects tool and arguments. OpenAI function calling, Anthropic tool use.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Function Calling / Tool Use" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Function Calling / Tool Use** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           example: `tools = [{
     "name": "search",
     "description": "Search the web for information",
@@ -1699,15 +2067,31 @@ Track: ai | Level: expert`
         {
           id: `frameworks`,
           title: `Agent Frameworks`,
-          content: `**Agent Frameworks** is essential to **Agents & Tool Use**. LLM agents that reason, plan, and interact with external tools. At the **expert** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Agent Frameworks** — what you need to know:
+
+- **Core idea:** LLM agents that reason, plan, and interact with external tools.
+- **Level (expert):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG. AutoGen: multi-agent conversations. CrewAI: role-based agents.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Agent Frameworks" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Agent Frameworks** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `LangChain most popular orchestration framework`,
             `LlamaIndex optimized for data-connected apps`,
@@ -1745,15 +2129,31 @@ Track: ai | Level: expert`
         {
           id: `safety`,
           title: `Agent Safety`,
-          content: `**Agent Safety** is essential to **Agents & Tool Use**. LLM agents that reason, plan, and interact with external tools. At the **expert** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Agent Safety** — what you need to know:
+
+- **Core idea:** LLM agents that reason, plan, and interact with external tools.
+- **Level (expert):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Sandbox tool execution. Validate tool inputs. Limit permissions. Human-in-the-loop for high-stakes actions.
 
-**Why this matters:** Modern AI systems combine models, retrieval, tools, and human oversight. Mastering "Agent Safety" here directly affects how confidently you can build, debug, and ship ai projects.
+**Why this matters:**
 
-**Professional habits:** Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Modern AI systems combine models, retrieval, tools, and human oversight.
+- Mastering **Agent Safety** directly affects how confidently you can build, debug, and ship ai projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Common mistakes:** Prompt injection, hallucinated citations, and unbounded agent loops. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.`,
+**Professional habits:**
+
+- Ground responses with retrieval, enforce schemas for tool calls, and log traces for audit.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Prompt injection, hallucinated citations, and unbounded agent loops.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.`,
           keyPoints: [
             `Never give agents unrestricted system access`,
             `Validate and sanitize tool inputs/outputs`,
@@ -1793,13 +2193,19 @@ Track: ai | Level: expert`
           title: `Deep Theory & Concepts`,
           content: `**Agents & Tool Use** sits in the **ai** track of the Data Science Master curriculum. LLM agents that reason, plan, and interact with external tools.
 
-**Theoretical foundation:** LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.
+**Theoretical foundation:**
+
+- LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences.
+- Capabilities emerge from scale, data curation, and alignment techniques—not magic.
 
 For **ai-agents**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the expert level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Agents & Tool Use
 meta = {"topic_id": "ai-agents", "track": "ai", "level": "expert"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1834,12 +2240,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for ai-agents
 from dataclasses import dataclass
 
@@ -1887,7 +2295,9 @@ When stuck on **ai-agents**, reproduce with the smallest input, enable verbose l
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1924,9 +2334,14 @@ Track: ai | Level: expert`
 
 Teams shipping features around **ai-agents** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Agents & Tool Use
 skills = ["ai", "expert", "ai-agents"]
 print("Built project applying:", ", ".join(skills))`,

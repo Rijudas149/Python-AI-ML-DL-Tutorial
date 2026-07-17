@@ -13,17 +13,41 @@ export const moduleMath04Topics: Topic[] = [
           title: `Limit Definition`,
           content: `lim_{x→a} f(x) = L means f(x) approaches L as x approaches a (not necessarily f(a)=L). **One-sided limits**: from left x→a⁻, from right x→a⁺. Limit exists iff both one-sided limits agree. **Limits at infinity** describe asymptotic behavior. Sequential characterization connects to series convergence. ε-δ definition formalizes: ∀ε>0, ∃δ>0 such that 0<|x−a|<δ ⇒ |f(x)−L|<ε. Limits enable defining derivative as limit of difference quotient. L'Hôpital handles 0/0 indeterminate forms.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Limit Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Limit Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `lim_{x→a} f(x) = L`,
             `lim exists ⇔ lim⁻ = lim⁺`,
@@ -31,15 +55,10 @@ export const moduleMath04Topics: Topic[] = [
             `ε-δ formal definition`,
             `0/0 → try L'Hôpital`
           ],
-          diagram: `   f(x) near a:
-
+          diagram: `f(x) near a:
         L ─ ─ ─ ─ ─ target
-          ·  ·
         ·    ·  f(x)
-          ·
-        ────┼──── x
             a
-
    x→a, f(x)→L`,
           keyPoints: [
             `Limit ≠ function value at point`,
@@ -65,10 +84,7 @@ Key relationships:
 Visual summary:
   f(x) near a:
   L ─ ─ ─ ─ ─ target
-  ·  ·
   ·    ·  f(x)
-  ·
-  ────┼──── x
   a
   x→a, f(x)→L
 
@@ -85,21 +101,49 @@ Track: math | Level: intermediate`
         {
           id: `lim-rules`,
           title: `Limit Laws`,
-          content: `**Limit Laws** is essential to **Limits & Continuity**. Understand limits, continuity, and foundational definitions for derivatives. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Limit Laws** — what you need to know:
+
+- **Core idea:** Understand limits, continuity, and foundational definitions for derivatives.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M if M≠0. Polynomials continuous everywhere. Rational continuous except zeros of denominator. lim_{x→0} sin(x)/x = 1 fundamental. lim_{x→0} (e^x−1)/x = 1. Squeeze theorem bounds limits. Composition: lim f(g(x)) if inner limit in domain. These laws justify term-by-term differentiation and integration in power series. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Limit Laws" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Limit Laws** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `lim(f+g) = lim f + lim g`,
             `lim(f/g) = lim f / lim g`,
@@ -107,16 +151,11 @@ If lim f=L and lim g=M: lim(f+g)=L+M, lim(fg)=LM, lim(f/g)=L/M if M≠0. Polynom
             `lim_{x→0} (e^x − 1)/x = 1`,
             `Squeeze: g≤f≤h → same limit`
           ],
-          diagram: `   squeeze:
-
+          diagram: `squeeze:
    h(x) ────────
         f(x) ~~~ squeezed
    g(x) ────────
-        → same limit L
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+        → same limit L`,
           keyPoints: [
             `Limit laws combine simple limits`,
             `sin(x)/x key trig limit`,
@@ -143,10 +182,6 @@ Visual summary:
   f(x) ~~~ squeezed
   g(x) ────────
   → same limit L
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Limit laws combine simple limits
@@ -163,17 +198,41 @@ Track: math | Level: intermediate`
           title: `Continuity`,
           content: `f continuous at a if lim_{x→a} f(x)=f(a). **Types of discontinuity**: removable (hole), jump, infinite. Continuous on [a,b] achieves max/min (Extreme Value Theorem). Intermediate Value Theorem: continuous f with f(a)<0<f(b) has root in (a,b). ML activations: ReLU continuous; sigmoid continuous; step discontinuous. Loss landscapes continuous in parameters for smooth models. Discontinuities cause optimization issues.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Continuity" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Continuity** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Continuous at a: lim_{x→a} f(x) = f(a)`,
             `IVT: sign change → root`,
@@ -181,16 +240,9 @@ Track: math | Level: intermediate`
             `Removable: redefine at hole`,
             `Jump: piecewise mismatch`
           ],
-          diagram: `   continuous: no break
-   ───────╱──────
-
+          diagram: `continuous: no break
    removable hole: ○
-   ───────○──────
-
-   jump:
-   ───────┐
-          └────
-   │`,
+   jump:`,
           keyPoints: [
             `Continuous functions no jumps`,
             `IVT finds roots bracketing`,
@@ -214,13 +266,8 @@ Key relationships:
 
 Visual summary:
   continuous: no break
-  ───────╱──────
   removable hole: ○
-  ───────○──────
   jump:
-  ───────┐
-  └────
-  │
 
 Study checklist:
   1. Continuous functions no jumps
@@ -235,21 +282,49 @@ Track: math | Level: intermediate`
         {
           id: `lim-ml`,
           title: `Limits in Optimization`,
-          content: `**Limits in Optimization** is essential to **Limits & Continuity**. Understand limits, continuity, and foundational definitions for derivatives. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Limits in Optimization** — what you need to know:
+
+- **Core idea:** Understand limits, continuity, and foundational definitions for derivatives.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Training seeks θ where loss L(θ) approaches minimum—often lim_{t→∞} L(θ_t) desired. Gradient descent step size η affects convergence limit. As η→0, discrete updates approximate continuous gradient flow ODE. Softmax limit as temperature T→0 approaches argmax. Sigmoid limit x→±∞ gives 0/1 hard threshold. Understanding limits clarifies asymptotic behavior of learning curves and regularization paths as λ→0 or λ→∞.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Limits in Optimization" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Limits in Optimization** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `lim_{t→∞} L(θ_t) = L*`,
             `η→0: GD → gradient flow`,
@@ -257,16 +332,9 @@ Training seeks θ where loss L(θ) approaches minimum—often lim_{t→∞} L(θ
             `sigmoid(x), x→∞ → 1`,
             `λ→∞: ridge → zero solution`
           ],
-          diagram: `   loss vs iteration:
-
-   L │╲
-     │ ╲___
+          diagram: `loss vs iteration:
      │     ────→ lim L*
-     └──────────── t
-   convergence = limit behavior
-   │
-   │  · · ·
-   └──────────`,
+   convergence = limit behavior`,
           keyPoints: [
             `Optimization seeks limiting minimum`,
             `LR too large prevents convergence`,
@@ -290,14 +358,8 @@ Key relationships:
 
 Visual summary:
   loss vs iteration:
-  L │╲
-  │ ╲___
   │     ────→ lim L*
-  └──────────── t
   convergence = limit behavior
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Optimization seeks limiting minimum
@@ -314,13 +376,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Limits & Continuity** sits in the **math** track of the Data Science Master curriculum. Understand limits, continuity, and foundational definitions for derivatives.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-limits**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Limits & Continuity
 meta = {"topic_id": "math-limits", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -355,12 +423,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-limits
 from dataclasses import dataclass
 
@@ -408,7 +478,9 @@ When stuck on **math-limits**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -445,9 +517,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-limits** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Limits & Continuity
 skills = ["math", "intermediate", "math-limits"]
 print("Built project applying:", ", ".join(skills))`,
@@ -547,17 +624,41 @@ x=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))`,
           title: `Derivative Definition`,
           content: `f'(x) = lim_{h→0} [f(x+h)−f(x)]/h **difference quotient**. Geometric: slope of tangent line. Physical: instantaneous rate of change. Notation: df/dx, Df, ẋ. Differentiable ⇒ continuous (converse false: |x| at 0). Partial derivative ∂f/∂x_i holds others fixed—multivariate preview. In ML, ∂L/∂w is gradient component telling how loss changes with weight w. Autodiff computes derivatives algorithmically.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Derivative Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Derivative Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `f'(x) = lim_{h→0} (f(x+h)−f(x))/h`,
             `Tangent slope at x`,
@@ -565,16 +666,11 @@ x=np.array([1.9,1.99,2.01]); print((x**2-4)/(x-2))`,
             `∂f/∂x_i partial derivative`,
             `∇f = vector of partials`
           ],
-          diagram: `   secant → tangent as h→0
-
+          diagram: `secant → tangent as h→0
         f(x)
-       ╱|
       ╱ | rise
      ╱  |/run = slope
-    ────┼── x
-        h→0
-   │
-   │  · · ·`,
+        h→0`,
           keyPoints: [
             `Derivative = instantaneous rate`,
             `Limit of secant slopes`,
@@ -599,13 +695,9 @@ Key relationships:
 Visual summary:
   secant → tangent as h→0
   f(x)
-  ╱|
   ╱ | rise
   ╱  |/run = slope
-  ────┼── x
   h→0
-  │
-  │  · · ·
 
 Study checklist:
   1. Derivative = instantaneous rate
@@ -622,17 +714,41 @@ Track: math | Level: intermediate`
           title: `Interpretations`,
           content: `**Marginal effect**: ∂y/∂x_i how y changes per unit x_i. **Sensitivity analysis** in models. **Velocity** as dx/dt. **Jacobian** matrix of all partial derivatives for vector functions. **Hessian** second derivatives for curvature. Sign of derivative: increasing vs decreasing. Critical points where f'=0: potential max/min/inflection. Convex functions have non-negative second derivative. Loss gradient points uphill; descent uses −∇L.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Interpretations" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Interpretations** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `f'(x)>0 → increasing`,
             `f'(x)=0 → critical point`,
@@ -640,16 +756,11 @@ Track: math | Level: intermediate`
             `Jacobian J_ij = ∂f_i/∂x_j`,
             `Gradient descent: θ -= η∇L`
           ],
-          diagram: `   f'(x) sign:
-
+          diagram: `f'(x) sign:
    f'>0: climbing ↗
    f'<0: falling ↘
    f'=0: flat ─── (critical)
-
-   GD goes opposite gradient ↓
-   │
-   │  · · ·
-   └──────────`,
+   GD goes opposite gradient ↓`,
           keyPoints: [
             `Gradient points uphill`,
             `Descent uses negative gradient`,
@@ -678,9 +789,6 @@ Visual summary:
   f'<0: falling ↘
   f'=0: flat ─── (critical)
   GD goes opposite gradient ↓
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Gradient points uphill
@@ -695,21 +803,49 @@ Track: math | Level: intermediate`
         {
           id: `der-numeric`,
           title: `Numerical Differentiation`,
-          content: `**Numerical Differentiation** is essential to **Derivatives**. Definition, interpretation as rate of change and tangent slope. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Numerical Differentiation** — what you need to know:
+
+- **Core idea:** Definition, interpretation as rate of change and tangent slope.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x−h))/(2h), error O(h²) better. Choose h~√ε_machine for float64. **Finite differences** verify autodiff implementations. np.gradient for discrete arrays. Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Numerical Differentiation" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Numerical Differentiation** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Forward: (f(x+h)−f(x))/h`,
             `Central: (f(x+h)−f(x−h))/(2h)`,
@@ -717,16 +853,10 @@ Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x
             `h ≈ 1e-5 typical for float64`,
             `gradient check in DL debugging`
           ],
-          diagram: `   trade-off in h:
-
+          diagram: `trade-off in h:
    large h → truncation error
    small h → cancellation noise
-        ╲    ╱
-         ╲  ╱  sweet spot ~1e-5
-          ╲╱
-   │
-   │  · · ·
-   └──────────`,
+         ╲  ╱  sweet spot ~1e-5`,
           keyPoints: [
             `Central more accurate`,
             `Balance truncation vs roundoff`,
@@ -754,12 +884,7 @@ Visual summary:
   trade-off in h:
   large h → truncation error
   small h → cancellation noise
-  ╲    ╱
   ╲  ╱  sweet spot ~1e-5
-  ╲╱
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Central more accurate
@@ -774,21 +899,49 @@ Track: math | Level: intermediate`
         {
           id: `der-ml`,
           title: `Derivatives in Loss Landscapes`,
-          content: `**Derivatives in Loss Landscapes** is essential to **Derivatives**. Definition, interpretation as rate of change and tangent slope. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Derivatives in Loss Landscapes** — what you need to know:
+
+- **Core idea:** Definition, interpretation as rate of change and tangent slope.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Loss L(θ) differentiable in θ for smooth models. Surface plot shows valleys and saddles. Gradient ∇L perpendicular to level curves. Zero gradient at stationary points—local min, max, or saddle. Plateau: gradient near zero slows learning. Sharp minima vs flat minima generalization debate. ReLU non-differentiable at 0 but subgradient methods work. Understanding derivatives essential for all gradient-based training.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Derivatives in Loss Landscapes" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Derivatives in Loss Landscapes** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `∇L(θ) = 0 at stationary points`,
             `Saddle: grad=0 but not extremum`,
@@ -796,16 +949,10 @@ Loss L(θ) differentiable in θ for smooth models. Surface plot shows valleys an
             `ReLU subgradient at 0`,
             `Flat minima may generalize better`
           ],
-          diagram: `   loss surface (2 params):
-
+          diagram: `loss surface (2 params):
         ╱╲  saddle
-       ╱  ╲╱╲
       ╱ valley╲
-     local min
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+     local min`,
           keyPoints: [
             `Stationary ≠ always minimum`,
             `Saddles common in high-D`,
@@ -832,13 +979,8 @@ Key relationships:
 Visual summary:
   loss surface (2 params):
   ╱╲  saddle
-  ╱  ╲╱╲
   ╱ valley╲
   local min
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Stationary ≠ always minimum
@@ -855,13 +997,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Derivatives** sits in the **math** track of the Data Science Master curriculum. Definition, interpretation as rate of change and tangent slope.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-derivatives**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Derivatives
 meta = {"topic_id": "math-derivatives", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -896,12 +1044,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-derivatives
 from dataclasses import dataclass
 
@@ -949,7 +1099,9 @@ When stuck on **math-derivatives**, reproduce with the smallest input, enable ve
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -986,9 +1138,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-derivatives** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Derivatives
 skills = ["math", "intermediate", "math-derivatives"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1087,21 +1244,49 @@ w=3.; print(2*w)`,
         {
           id: `dr-power`,
           title: `Basic Rules`,
-          content: `**Basic Rules** is essential to **Differentiation Rules**. Power, product, quotient, and chain rules for efficient differentiation. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Basic Rules** — what you need to know:
+
+- **Core idea:** Power, product, quotient, and chain rules for efficient differentiation.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Power: d/dx x^n = n x^{n−1}. Constant multiple: (cf)'=cf'. Sum: (f+g)'=f'+g'. Exponential: d/dx e^x = e^x. Log: d/dx ln(x)=1/x. Trig: (sin x)'=cos x, (cos x)'=−sin x. Sigmoid σ(x): σ'(x)=σ(x)(1−σ(x)). Softplus smooth ReLU: d/dx ln(1+e^x). These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Basic Rules" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Basic Rules** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `d/dx x^n = n x^(n−1)`,
             `d/dx e^x = e^x`,
@@ -1109,16 +1294,10 @@ Power: d/dx x^n = n x^{n−1}. Constant multiple: (cf)'=cf'. Sum: (f+g)'=f'+g'. 
             `σ'(x) = σ(x)(1−σ(x))`,
             `(f+g)' = f' + g'`
           ],
-          diagram: `   rule toolbox:
-
+          diagram: `rule toolbox:
    power  product  quotient  chain
      ↓       ↓        ↓        ↓
-   combine for complex f(x)
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   combine for complex f(x)`,
           keyPoints: [
             `Power rule most common`,
             `Sigmoid derivative product form`,
@@ -1145,11 +1324,6 @@ Visual summary:
   power  product  quotient  chain
   ↓       ↓        ↓        ↓
   combine for complex f(x)
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Power rule most common
@@ -1166,17 +1340,41 @@ Track: math | Level: intermediate`
           title: `Product & Quotient Rules`,
           content: `**Product**: (fg)' = f'g + fg'. **Quotient**: (f/g)' = (f'g − fg')/g². **Reciprocal**: (1/g)' = −g'/g². Dot product derivative: d/dt(u·v)=u'·v+u·v'. Matrix product: d/dt(AB)=A'B+AB' when both vary. Used when loss combines products of predictions and weights. Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Product & Quotient Rules" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Product & Quotient Rules** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `(fg)' = f'g + fg'`,
             `(f/g)' = (f'g − fg')/g²`,
@@ -1184,16 +1382,8 @@ Track: math | Level: intermediate`
             `d(AB) = A'B + AB'`,
             `(1/g)' = −g'/g²`
           ],
-          diagram: `   (fg)': two terms
-
-   f ──┐
-       ├── product → f'g + fg'
-   g ──┘
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+          diagram: `(fg)': two terms
+       ├── product → f'g + fg'`,
           keyPoints: [
             `Product rule two-term split`,
             `Quotient for ratios`,
@@ -1219,14 +1409,7 @@ Key relationships:
 
 Visual summary:
   (fg)': two terms
-  f ──┐
   ├── product → f'g + fg'
-  g ──┘
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Product rule two-term split
@@ -1243,17 +1426,41 @@ Track: math | Level: intermediate`
           title: `Chain Rule`,
           content: `**Chain rule**: (f∘g)'(x) = f'(g(x))·g'(x). Multivariate: dz/dx = dz/dy · dy/dx. Deep networks: ∂L/∂x₁ = (∂L/∂x_n)(∂x_n/∂x_{n−1})...(∂x₂/∂x₁) product of Jacobians—backprop. **Computational graph** tracks dependencies. Reverse-mode autodiff efficient when many inputs, one output (typical loss). Forward-mode for few inputs. Chain rule is foundation of automatic differentiation in PyTorch/JAX. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Chain Rule" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Chain Rule** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `(f∘g)'(x) = f'(g(x))·g'(x)`,
             `∂L/∂w = ∂L/∂y · ∂y/∂w`,
@@ -1261,16 +1468,9 @@ Track: math | Level: intermediate`
             `Reverse-mode: one backward pass`,
             `Jacobian product along path`
           ],
-          diagram: `   x → g → u → f → L
-
+          diagram: `x → g → u → f → L
    dL/dx = dL/df · df/du · du/dx
-
-   chain multiplies local derivatives
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   chain multiplies local derivatives`,
           keyPoints: [
             `Chain rule powers backprop`,
             `Local grads multiply along path`,
@@ -1295,11 +1495,6 @@ Visual summary:
   x → g → u → f → L
   dL/dx = dL/df · df/du · du/dx
   chain multiplies local derivatives
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Chain rule powers backprop
@@ -1314,21 +1509,49 @@ Track: math | Level: intermediate`
         {
           id: `dr-common`,
           title: `Common ML Derivatives`,
-          content: `**Common ML Derivatives** is essential to **Differentiation Rules**. Power, product, quotient, and chain rules for efficient differentiation. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Common ML Derivatives** — what you need to know:
+
+- **Core idea:** Power, product, quotient, and chain rules for efficient differentiation.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 MSE: L=(1/2)(y−ŷ)², ∂L/∂ŷ=ŷ−y. BCE with logits handled in fused ops. L2 reg: λ||w||², ∂/∂w=2λw. Cross-entropy w softmax combined derivative simplifies to ŷ−y one-hot. tanh': 1−tanh². GELU, SiLU modern activations have known derivatives. BatchNorm backward involves batch statistics derivatives. Keeping cheat sheet accelerates debugging custom layers without autograd. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Common ML Derivatives" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Common ML Derivatives** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `MSE: ∂L/∂ŷ = ŷ − y`,
             `L2: ∂(λ||w||²)/∂w = 2λw`,
@@ -1336,16 +1559,10 @@ MSE: L=(1/2)(y−ŷ)², ∂L/∂ŷ=ŷ−y. BCE with logits handled in fused ops.
             `tanh': 1 − tanh²(x)`,
             `ReLU': 1 if x>0 else 0`
           ],
-          diagram: `   CE + softmax magic:
-
+          diagram: `CE + softmax magic:
    gradient w.r.t logits
    = predicted − true
-
-   elegant single form
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+   elegant single form`,
           keyPoints: [
             `MSE gradient simple residual`,
             `Softmax+CE simplifies beautifully`,
@@ -1371,10 +1588,6 @@ Visual summary:
   gradient w.r.t logits
   = predicted − true
   elegant single form
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. MSE gradient simple residual
@@ -1391,13 +1604,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Differentiation Rules** sits in the **math** track of the Data Science Master curriculum. Power, product, quotient, and chain rules for efficient differentiation.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-derivative-rules**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Differentiation Rules
 meta = {"topic_id": "math-derivative-rules", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1432,12 +1651,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-derivative-rules
 from dataclasses import dataclass
 
@@ -1485,7 +1706,9 @@ When stuck on **math-derivative-rules**, reproduce with the smallest input, enab
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -1522,9 +1745,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-derivative-rules** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Differentiation Rules
 skills = ["math", "intermediate", "math-derivative-rules"]
 print("Built project applying:", ", ".join(skills))`,
@@ -1625,17 +1853,41 @@ x=0.; inner=3*x+1; print(5*inner**4*3)`,
           title: `Taylor Series Definition`,
           content: `Taylor expansion of f about a: f(x)=∑_{n=0}^∞ f^(n)(a)/n! · (x−a)^n. **Maclaurin** is a=0. f(x)≈f(a)+f'(a)(x−a)+f''(a)(x−a)²/2! truncated. Remainder Lagrange form bounds error. sin(x), cos(x), e^x have infinite radius convergence. Approximate functions locally for analysis. Newton method uses first-order Taylor. Second-order Taylor gives Newton step with Hessian. In ML, linearization of nonlinear models near operating point.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Taylor Series Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Taylor Series Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `f(x) = ∑ f^(n)(a)/n! · (x−a)^n`,
             `T₁: f(a) + f'(a)(x−a)`,
@@ -1643,16 +1895,11 @@ x=0.; inner=3*x+1; print(5*inner**4*3)`,
             `e^x = ∑ x^n/n!`,
             `sin(x) = ∑ (−1)^n x^(2n+1)/(2n+1)!`
           ],
-          diagram: `   local approx near a:
-
+          diagram: `local approx near a:
    f(x) ≈ tangent parabola
         ╱ curve f
        ╱___ approx
-      a
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)`,
+      a`,
           keyPoints: [
             `Taylor = local polynomial fit`,
             `More terms → better approx`,
@@ -1679,10 +1926,6 @@ Visual summary:
   ╱ curve f
   ╱___ approx
   a
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
 
 Study checklist:
   1. Taylor = local polynomial fit
@@ -1699,17 +1942,41 @@ Track: math | Level: intermediate`
           title: `Approximation Error`,
           content: `Truncation error from omitted terms. Higher-order terms matter far from expansion point. **Big-O** notation: f(x)=f(a)+f'(a)(x−a)+O((x−a)²). Choose expansion point near region of interest. Gradient descent is first-order—linear model of loss locally. Newton uses second-order curvature. Laplace approximation approximates integrals via Gaussian from second-order Taylor of log integrand—used in variational inference.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Approximation Error" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Approximation Error** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `Error ~ f''(ξ)(x−a)²/2 (2nd order)`,
             `Far from a: need more terms`,
@@ -1717,16 +1984,9 @@ Track: math | Level: intermediate`
             `Newton: second-order step`,
             `Laplace approx: Taylor on log p`
           ],
-          diagram: `   error grows with |x-a|
-
+          diagram: `error grows with |x-a|
    good:  ·── approx ≈ f
-   bad:   ·── diverge far out
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │
-   │  · · ·`,
+   bad:   ·── diverge far out`,
           keyPoints: [
             `Stay near expansion point`,
             `Newton faster near minimum`,
@@ -1752,12 +2012,6 @@ Visual summary:
   error grows with |x-a|
   good:  ·── approx ≈ f
   bad:   ·── diverge far out
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
-  │  · · ·
 
 Study checklist:
   1. Stay near expansion point
@@ -1772,21 +2026,49 @@ Track: math | Level: intermediate`
         {
           id: `tay-multivar`,
           title: `Multivariate Taylor`,
-          content: `**Multivariate Taylor** is essential to **Taylor Series & Approximation**. Polynomial approximations and numerical uses of Taylor expansions. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Multivariate Taylor** — what you need to know:
+
+- **Core idea:** Polynomial approximations and numerical uses of Taylor expansions.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vector of first partials. Hessian H_ij=∂²f/∂x_i∂x_j symmetric if f twice differentiable. Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle. Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Multivariate Taylor" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Multivariate Taylor** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ`,
             `H_ij = ∂²f/∂x_i∂x_j`,
@@ -1794,16 +2076,10 @@ f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vect
             `Mixed eigenvalues → saddle`,
             `Gauss-Newton approx Hessian`
           ],
-          diagram: `   Hessian eigenvalues at critical:
-
+          diagram: `Hessian eigenvalues at critical:
    all + : bowl min
    all − : cap max
-   mixed : saddle ╱╲
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   mixed : saddle ╱╲`,
           keyPoints: [
             `Gradient is first-order term`,
             `Hessian captures curvature`,
@@ -1830,11 +2106,6 @@ Visual summary:
   all + : bowl min
   all − : cap max
   mixed : saddle ╱╲
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Gradient is first-order term
@@ -1851,17 +2122,41 @@ Track: math | Level: intermediate`
           title: `Taylor in ML Optimization`,
           content: `Loss linearization L(θ+Δ)≈L(θ)+∇L·Δ guides GD step. **Newton**: Δ=−H⁻¹∇L from quadratic model. **Adam** adapts steps per parameter—not pure Taylor but related momentum. **Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP. Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Taylor in ML Optimization" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Taylor in ML Optimization** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `GD step from 1st order Taylor`,
             `Newton from 2nd order model`,
@@ -1869,16 +2164,10 @@ Track: math | Level: intermediate`
             `Small η: Taylor accurate`,
             `Large η: higher terms matter`
           ],
-          diagram: `   η too large:
-
+          diagram: `η too large:
    linear approx breaks
    overshoot minimum
-   oscillate diverge
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   oscillate diverge`,
           keyPoints: [
             `LR tied to Taylor validity`,
             `Newton quadratic convergence local`,
@@ -1905,11 +2194,6 @@ Visual summary:
   linear approx breaks
   overshoot minimum
   oscillate diverge
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. LR tied to Taylor validity
@@ -1926,13 +2210,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Taylor Series & Approximation** sits in the **math** track of the Data Science Master curriculum. Polynomial approximations and numerical uses of Taylor expansions.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-taylor**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Taylor Series & Approximation
 meta = {"topic_id": "math-taylor", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -1967,12 +2257,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-taylor
 from dataclasses import dataclass
 
@@ -2020,7 +2312,9 @@ When stuck on **math-taylor**, reproduce with the smallest input, enable verbose
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2057,9 +2351,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-taylor** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Taylor Series & Approximation
 skills = ["math", "intermediate", "math-taylor"]
 print("Built project applying:", ", ".join(skills))`,
@@ -2161,17 +2460,41 @@ print(9+6*(x-a)+(x-a)**2, x**2)`,
           title: `Integral Definition`,
           content: `**Riemann sum**: ∫_a^b f(x)dx ≈ ∑ f(x_i)Δx limit as partition refines. **Indefinite integral** ∫f(x)dx = F(x)+C where F'=f. **Definite integral** gives signed area under curve. Fundamental Theorem: ∫_a^b f(x)dx = F(b)−F(a) if F'=f. Probability: ∫ p(x)dx=1 for PDF. Expected value E[X]=∫ x p(x) dx. Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Integral Definition" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Integral Definition** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `∫_a^b f(x)dx = signed area`,
             `F(b) − F(a) if F' = f`,
@@ -2179,16 +2502,10 @@ print(9+6*(x-a)+(x-a)**2, x**2)`,
             `E[X] = ∫ x p(x) dx`,
             `Riemann: ∑ f(x_i) Δx`
           ],
-          diagram: `   ∫_a^b f(x) dx = shaded area
-
+          diagram: `∫_a^b f(x) dx = shaded area
         f(x)
-       ╱╲
-      ╱  ╲___
      ╱ area ╲
-   ─a────────b── x
-   │
-   │  · · ·
-   └──────────`,
+   ─a────────b── x`,
           keyPoints: [
             `Integral accumulates infinitesimals`,
             `FTC links derivative and integral`,
@@ -2214,13 +2531,8 @@ Key relationships:
 Visual summary:
   ∫_a^b f(x) dx = shaded area
   f(x)
-  ╱╲
-  ╱  ╲___
   ╱ area ╲
   ─a────────b── x
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. Integral accumulates infinitesimals
@@ -2237,17 +2549,41 @@ Track: math | Level: intermediate`
           title: `Integration Techniques`,
           content: `Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Substitution** u=g(x). **Integration by parts** ∫u dv = uv − ∫v du. **Partial fractions** for rational functions. Gaussian integral ∫ e^{−x²} dx = √π over ℝ. Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Integration Techniques" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Integration Techniques** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `∫ x^n dx = x^(n+1)/(n+1) + C`,
             `∫ e^x dx = e^x + C`,
@@ -2255,16 +2591,9 @@ Track: math | Level: intermediate`
             `∫ e^(−x²) dx = √π (over ℝ)`,
             `By parts: ∫u dv = uv − ∫v du`
           ],
-          diagram: `   by parts picks u,dv:
-
+          diagram: `by parts picks u,dv:
    ∫ u dv = u·v − ∫ v du
-
-   choose u that simplifies when diff
-   │
-   │  · · ·
-   └──────────
-   (see formulas above)
-   │`,
+   choose u that simplifies when diff`,
           keyPoints: [
             `Substitution reverses chain rule`,
             `By parts for products`,
@@ -2290,11 +2619,6 @@ Visual summary:
   by parts picks u,dv:
   ∫ u dv = u·v − ∫ v du
   choose u that simplifies when diff
-  │
-  │  · · ·
-  └──────────
-  (see formulas above)
-  │
 
 Study checklist:
   1. Substitution reverses chain rule
@@ -2309,21 +2633,49 @@ Track: math | Level: intermediate`
         {
           id: `int-prob`,
           title: `Integrals in Probability`,
-          content: `**Integrals in Probability** is essential to **Integrals & Area**. Definite and indefinite integrals, Fundamental Theorem of Calculus. At the **intermediate** level, you should be able to explain this concept to a colleague and implement it without copying blindly.
+          content: `**Integrals in Probability** — what you need to know:
+
+- **Core idea:** Definite and indefinite integrals, Fundamental Theorem of Calculus.
+- **Level (intermediate):** Explain this to a colleague and implement it without copying blindly.
+- **Goal:** Connect every definition to a concrete input, output, or evaluation metric.
 
 Continuous PDF p(x)≥0, ∫p=1. CDF F(x)=∫_{−∞}^x p(t)dt. E[g(X)]=∫ g(x)p(x)dx. Variance via ∫ (x−μ)²p(x)dx. Joint PDF integrates to 1 over ℝ². Marginal: p(x)=∫ p(x,y)dy. Change of variables: if y=g(x), ∫ f(y)dy = ∫ f(g(x))|g'(x)|dx. Jacobian determinant generalizes to multivariate. Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Integrals in Probability" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Integrals in Probability** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `∫ p(x) dx = 1`,
             `F(x) = ∫_{−∞}^x p(t) dt`,
@@ -2331,16 +2683,10 @@ Continuous PDF p(x)≥0, ∫p=1. CDF F(x)=∫_{−∞}^x p(t)dt. E[g(X)]=∫ g(x
             `Marginal: ∫ p(x,y) dy`,
             `Change vars: multiply by |dx/dy|`
           ],
-          diagram: `   PDF normalization:
-
+          diagram: `PDF normalization:
    area under p(x) = 1
-
    p(x)
-   │  ╱╲
-   │ ╱  ╲
-   └──┴───┴── x
-   total area = 1
-   │`,
+   total area = 1`,
           keyPoints: [
             `PDF must integrate to 1`,
             `CDF is cumulative integral`,
@@ -2366,11 +2712,7 @@ Visual summary:
   PDF normalization:
   area under p(x) = 1
   p(x)
-  │  ╱╲
-  │ ╱  ╲
-  └──┴───┴── x
   total area = 1
-  │
 
 Study checklist:
   1. PDF must integrate to 1
@@ -2387,17 +2729,41 @@ Track: math | Level: intermediate`
           title: `Monte Carlo Integration`,
           content: `Estimate ∫ f(x)p(x)dx ≈ (1/N)∑ f(x_i) with x_i~p—unbiased if samples from p. **Importance sampling** sample from q instead, weight f/q. **MCMC** generates correlated samples from posterior. High-dimensional integrals: MC often beats grid. Variance decreases O(1/√N). Used in Bayesian model evidence, policy gradient expectations, and dropout as approximate integral over weights. np.random provides sampling primitives.
 
-**Why this matters:** Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here. Mastering "Monte Carlo Integration" here directly affects how confidently you can build, debug, and ship math projects.
+**Why this matters:**
 
-**Hands-on practice:** Run the code example below in Python or Jupyter. Predict the output before executing, then compare line-by-line. Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
+- Mathematics is the language of machine learning — every loss function and gradient has a precise meaning here.
+- Mastering **Monte Carlo Integration** directly affects how confidently you can build, debug, and ship math projects.
+- This concept appears repeatedly in later modules — time invested here pays off across the entire track.
 
-**Professional habits:** Verify formulas on paper with tiny examples, then confirm with numpy before scaling up. Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+**Hands-on practice:**
 
-**Common mistakes:** Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation. When debugging, reduce to the smallest input that reproduces the issue and log intermediate values with their types.
+- Run the code example below in Python or Jupyter.
+- Predict the output before executing, then compare line-by-line.
+- Modify one parameter at a time to see how results change — this builds intuition faster than re-reading.
 
-**Mathematical foundation:** This section includes 5 key formulas. Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+**Professional habits:**
 
-**Visual guide:** Study the diagram alongside the explanation. Trace each arrow or region back to a term in the text — if you cannot, re-read until the mapping is clear.`,
+- Verify formulas on paper with tiny examples, then confirm with numpy before scaling up.
+- Document your assumptions because they become invariants for tests, APIs, and team handoffs.
+- Revisit this section after the exercises to confirm each habit feels automatic.
+
+**Common mistakes:**
+
+- Matrix dimension mismatches, dividing by near-zero, and confusing correlation with causation.
+- When debugging, reduce to the smallest input that reproduces the issue.
+- Log intermediate values with their types before guessing at the fix.
+
+**Mathematical foundation:**
+
+- This section includes 5 key formulas.
+- Identify each symbol's meaning, units, and valid input range before trusting numerical output.
+- Work through a tiny numeric example by hand, then verify in code.
+
+**Visual guide:**
+
+- Study the diagram alongside the explanation — do not skip it.
+- Trace each arrow, box, or region back to a term in the text.
+- If you cannot map a visual element to words, re-read until the connection is clear.`,
           formulas: [
             `E[f(X)] ≈ (1/N) ∑ f(x_i)`,
             `Var ∝ 1/N`,
@@ -2405,16 +2771,11 @@ Track: math | Level: intermediate`
             `MCMC for posterior expectations`,
             `High-D: MC scales better than grid`
           ],
-          diagram: `   MC integration:
-
+          diagram: `MC integration:
    sample · · · under p(x)
    average f(x_i)
-
    more samples → less error
-   error ~ 1/√N
-   │
-   │  · · ·
-   └──────────`,
+   error ~ 1/√N`,
           keyPoints: [
             `MC for high-dimensional integrals`,
             `Importance sampling reduces variance`,
@@ -2443,9 +2804,6 @@ Visual summary:
   average f(x_i)
   more samples → less error
   error ~ 1/√N
-  │
-  │  · · ·
-  └──────────
 
 Study checklist:
   1. MC for high-dimensional integrals
@@ -2462,13 +2820,19 @@ Track: math | Level: intermediate`
           title: `Deep Theory & Concepts`,
           content: `**Integrals & Area** sits in the **math** track of the Data Science Master curriculum. Definite and indefinite integrals, Fundamental Theorem of Calculus.
 
-**Theoretical foundation:** Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters. Each branch connects directly to numpy operations and loss functions.
+**Theoretical foundation:**
+
+- Linear algebra describes transformations of data; calculus explains how models learn via gradients; probability quantifies uncertainty; optimization finds best parameters.
+- Each branch connects directly to numpy operations and loss functions.
 
 For **math-integrals**, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or documentation, identify which assumptions in this lesson appear as lemmas or implementation defaults.
 
 **At the intermediate level**, connect prerequisites to new material — sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.
 
-**Study approach:** Read this section once for overview, once for detail, then teach it aloud in two minutes without notes. That gap reveals what to revisit.`,
+**Study approach:**
+
+- Read this section once for overview, once for detail, then teach it aloud in two minutes without notes.
+- That gap reveals what to revisit.`,
           example: `# Concept check for Integrals & Area
 meta = {"topic_id": "math-integrals", "track": "math", "level": "intermediate"}
 print(meta["topic_id"], meta["track"], meta["level"])`,
@@ -2503,12 +2867,14 @@ Apply a consistent project layout: separate configuration, core logic, and CLI/A
 
 **Recommended workflow:**
 
-1. Reproduce the canonical example from earlier sections exactly.
+- 1. Reproduce the canonical example from earlier sections exactly.
 2. Vary one parameter at a time and log what changes.
 3. Capture results in a notebook cell or short markdown log.
 4. Promote stable patterns into shared utilities only after the second reuse.
 
-**Pattern mindset:** Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
+**Pattern mindset:**
+
+- Good patterns are boring — they reduce cognitive load so you can focus on the hard problem, not boilerplate.`,
           example: `# Idiomatic pattern snapshot for math-integrals
 from dataclasses import dataclass
 
@@ -2556,7 +2922,9 @@ When stuck on **math-integrals**, reproduce with the smallest input, enable verb
 - Confirm library versions match the tutorial environment.
 - Build a minimal reproducible example before asking for help.
 
-**Expert habit:** The best debuggers narrow the search space in minutes by changing one variable at a time.`,
+**Expert habit:**
+
+- The best debuggers narrow the search space in minutes by changing one variable at a time.`,
           example: `# Minimal repro template
 def debug_step(label, value):
     print(f"[{label}] {value!r} ({type(value).__name__})")
@@ -2593,9 +2961,14 @@ Track: math | Level: intermediate`
 
 Teams shipping features around **math-integrals** align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance — not only accuracy.
 
-**Career narrative:** Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+**Career narrative:**
 
-**Portfolio tip:** Link this lesson to README entries and capstone modules later in the curriculum. One concrete project beats ten theoretical certificates.`,
+- Interviewers expect you to describe a project where this topic mattered: the problem, your approach, metric movement, tradeoffs, and what you would do differently.
+
+**Portfolio tip:**
+
+- Link this lesson to README entries and capstone modules later in the curriculum.
+- One concrete project beats ten theoretical certificates.`,
           example: `# Portfolio bullet generator for Integrals & Area
 skills = ["math", "intermediate", "math-integrals"]
 print("Built project applying:", ", ".join(skills))`,
