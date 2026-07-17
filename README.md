@@ -84,4 +84,27 @@ Build static assets:
 npm run build
 ```
 
-Output is in `dist/`. Deploy to Netlify, Vercel, GitHub Pages, or any static host. A `_redirects` file is included for SPA routing on Netlify.
+Output is in `dist/`. Deploy to Netlify, Vercel, GitHub Pages, or any static host.
+
+### Netlify
+
+This repo includes `netlify.toml` with the correct settings:
+
+| Setting | Value |
+|---------|-------|
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+| Node version | 22 (required for Vite 8) |
+
+**Important:** Do **not** commit `node_modules` or `dist` to git. Netlify installs Linux dependencies during the build; Windows `node_modules` in the repo will break the deploy.
+
+If you already committed them, untrack and push:
+
+```bash
+git rm -r --cached node_modules dist
+git add .gitignore netlify.toml
+git commit -m "Fix Netlify deploy: ignore node_modules/dist, set Node 22"
+git push
+```
+
+Then trigger a new deploy in the Netlify dashboard.
