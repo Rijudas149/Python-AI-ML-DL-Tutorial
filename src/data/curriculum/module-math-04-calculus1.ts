@@ -148,9 +148,9 @@ Softmax limit as temperature T→0 approaches argmax. Sigmoid limit x→±∞ gi
           formulas: [
             `lim_{t→∞} L(θ_t) = L*`,
             `η→0: GD → gradient flow`,
-            `softmax(z/T), T→0 → one-hot`,
-            `sigmoid(x), x→∞ → 1`,
-            `λ→∞: ridge → zero solution`
+            `lim_{T→0} softmax(z/T) → one-hot vector`,
+            `sigmoid(x), x→±∞ → 0 or 1`,
+            `lim_{λ→∞} ridge penalty → w → 0`
           ],
           diagram: `loss vs iteration:
    L │╲

@@ -1,4 +1,5 @@
 /** Convert curriculum formula strings (Unicode + partial LaTeX) to KaTeX-ready LaTeX. */
+import katex from 'katex';
 
 const SUBSCRIPT: Record<string, string> = {
   '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4',
@@ -259,6 +260,11 @@ function parseFormulaParts(formula: string): {
     note = trailingWords[2].trim();
   }
 
+  const forIneq = math.match(/^(.+?)\s+for\s+i\s*≠\s*j\s*$/i);
+  if (forIneq) {
+    math = `${forIneq[1].trim()} \\text{ for } i \\neq j`;
+  }
+
   return { math, note, label, arrowNote };
 }
 
@@ -280,6 +286,7 @@ function convertMathCore(math: string): string {
   s = convertTrig(s);
   s = escapeSetBraces(s);
   s = insertOperatorSpaces(s);
+  s = wrapForInequalityProse(s);
   s = s.replace(/\biff\b/gi, '\\iff');
   s = s.replace(/\brank\b/g, '\\operatorname{rank}');
   s = s.replace(/\bdim\b/g, '\\operatorname{dim}');
@@ -291,8 +298,57 @@ function convertMathCore(math: string): string {
   return normalizeSpaces(s);
 }
 
+function wrapForInequalityProse(text: string): string {
+  return text.replace(/\s+for\s+([A-Za-z])\s*\\neq\s*([A-Za-z])\b/g, ' \\text{ for } $1 \\neq $2');
+}
+
+/** Final pass: space glued LaTeX commands (e.g. \\neqj, \\lambdaI). */
+export function fixGluedLatexCommands(latex: string): string {
+  let s = latex;
+  const cmds = [
+    'neq', 'leq', 'geq', 'approx', 'equiv', 'cdot', 'times', 'circ', 'nabla', 'lambda', 'mu',
+    'sigma', 'theta', 'alpha', 'beta', 'gamma', 'delta', 'pi', 'sum', 'int', 'prod', 'partial',
+    'forall', 'exists', 'in', 'notin', 'cup', 'cap', 'setminus', 'to', 'Rightarrow', 'Leftrightarrow',
+    'operatorname', 'text', 'frac', 'sqrt', 'hat', 'bar', 'det', 'log', 'sin', 'cos', 'tan', 'exp',
+  ];
+  for (const cmd of cmds) {
+    s = s.replace(new RegExp(`\\\\${cmd}(?=[A-Za-z])`, 'g'), `\\${cmd} `);
+  }
+  return normalizeSpaces(s);
+}
+
+/** KaTeX can render soft errors in red without the katex-error class. */
+export function isKatexHtmlValid(html: string): boolean {
+  return !html.includes('katex-error') && !html.includes('#cc0000') && !html.includes('color:#cc0000');
+}
+
+export function renderFormulaHtml(latex: string, display = true): { html: string; latex: string; ok: boolean } {
+  const fixed = fixGluedLatexCommands(latex);
+  try {
+    const html = katex.renderToString(fixed, {
+      displayMode: display,
+      throwOnError: true,
+      strict: 'ignore',
+      trust: false,
+    });
+    if (isKatexHtmlValid(html)) return { html, latex: fixed, ok: true };
+  } catch {
+    /* fall through */
+  }
+
+  const soft = katex.renderToString(fixed, {
+    displayMode: display,
+    throwOnError: false,
+    strict: 'ignore',
+    trust: false,
+  });
+  const ok = isKatexHtmlValid(soft);
+  return { html: ok ? soft : '', latex: fixed, ok };
+}
+
 function formatNote(note: string): string {
-  return `\\text{${note}}`;
+  const safe = note.replace(/≠/g, '!=').replace(/→/g, '->');
+  return `\\text{${safe}}`;
 }
 
 function formatLabel(label: string): string {
@@ -324,7 +380,7 @@ export function toLatex(formula: string): string {
     parts.push(arrowNote ? ` \\to ${formatNote(note)}` : ` ${formatNote(note)}`);
   }
 
-  return normalizeSpaces(parts.join(' '));
+  return fixGluedLatexCommands(normalizeSpaces(parts.join(' ')));
 }
 
 export type FormulaDisplay = {

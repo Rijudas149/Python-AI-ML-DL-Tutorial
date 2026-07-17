@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
-import katex from 'katex';
-import { toLatex } from '../utils/latexFormula';
+import { renderFormulaHtml, toLatex } from '../utils/latexFormula';
 
 interface MathFormulaProps {
   formula: string;
@@ -12,18 +11,8 @@ interface MathFormulaProps {
 export function MathFormula({ formula, display = true, className = '' }: MathFormulaProps) {
   const rendered = useMemo(() => {
     const latex = toLatex(formula);
-    try {
-      const html = katex.renderToString(latex, {
-        displayMode: display,
-        throwOnError: false,
-        strict: 'ignore',
-        trust: false,
-      });
-      const ok = !html.includes('katex-error');
-      return { html, latex, ok };
-    } catch {
-      return { html: '', latex, ok: false };
-    }
+    const result = renderFormulaHtml(latex, display);
+    return { ...result, source: formula };
   }, [formula, display]);
 
   if (!rendered.ok) {
