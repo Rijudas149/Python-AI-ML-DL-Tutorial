@@ -46,7 +46,7 @@ export function Learn() {
         <h1>Learn Python · ML · DL · AI</h1>
         <p>
           Every topic explained with theory, Python code examples, expected output, and exercises.
-          Work through modules in order or jump to any track.
+          Follow the <Link to="/roadmap">learning roadmap</Link> for the recommended study order.
         </p>
       </header>
 

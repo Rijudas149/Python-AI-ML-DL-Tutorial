@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { modules, allTopics } from '../data/curriculum';
 import { useProgress } from '../context/ProgressContext';
+import { getRoadmapSummary } from '../utils/roadmap';
 
 function getTopicOfDay(): (typeof allTopics)[0] {
   const dayIndex = Math.floor(Date.now() / 86400000) % allTopics.length;
@@ -30,6 +31,7 @@ export function Home() {
   });
 
   const totalMinutes = allTopics.reduce((s, t) => s + t.estimatedMinutes, 0);
+  const roadmap = getRoadmapSummary(progress);
 
   return (
     <div className="page home-page">
@@ -62,6 +64,22 @@ export function Home() {
           </Link>
         </div>
       )}
+
+      <Link to="/roadmap" className="roadmap-teaser">
+        <div>
+          <span className="continue-label">Your Learning Roadmap</span>
+          <h2>{roadmap.overallPct}% complete · Phase {roadmap.currentPhase.order} of 5</h2>
+          <p>
+            {roadmap.nextTopic
+              ? `Next up: ${roadmap.nextTopic.title}`
+              : 'All topics completed — review or revisit any lesson!'}
+          </p>
+          <div className="progress-bar sm">
+            <div className="progress-fill study" style={{ width: `${roadmap.overallPct}%` }} />
+          </div>
+        </div>
+        <span className="btn btn-primary">View Roadmap →</span>
+      </Link>
 
       <div className="topic-of-day">
         <span className="cod-label">Topic of the Day</span>

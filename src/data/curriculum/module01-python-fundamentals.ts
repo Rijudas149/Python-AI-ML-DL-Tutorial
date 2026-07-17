@@ -23,7 +23,11 @@ Python has several core types:
 - \`float\` — decimal numbers
 - \`str\` — text
 - \`bool\` — True/False
-- \`NoneType\` — absence of value`,
+- \`NoneType\` — absence of value
+
+**Extended exploration — Variables, Types & Literals:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "What Are Variables?" connects to learn how python stores data, dynamic typing, and core built-in types. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `x = 42
 pi = 3.14159
 name = "Alice"
@@ -47,7 +51,11 @@ print(type(x), type(pi), type(name))`,
 Use built-in functions to convert between types:
 - \`int()\`, \`float()\`, \`str()\`, \`bool()\`
 
-Be careful: \`bool("False")\` is \`True\` because non-empty strings are truthy.`,
+Be careful: \`bool("False")\` is \`True\` because non-empty strings are truthy.
+
+**Extended exploration — Variables, Types & Literals:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Literals & Type Conversion" connects to learn how python stores data, dynamic typing, and core built-in types. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `a = int("42")
 b = float("3.14")
 c = str(100)
@@ -71,7 +79,11 @@ print(a, b, c, d, e)`,
 
 **Mutable** (can change in place): \`list\`, \`dict\`, \`set\`. Operations modify the same object.
 
-Use \`id()\` to inspect object identity.`,
+Use \`id()\` to inspect object identity.
+
+**Extended exploration — Variables, Types & Literals:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Mutable vs Immutable Types" connects to learn how python stores data, dynamic typing, and core built-in types. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `s = "hello"
 s2 = s
 s = s + " world"
@@ -115,6 +127,111 @@ print(greet("World"))`,
             `Validate inputs at function boundaries`,
             `Dynamic typing does not mean no types`
           ]
+        },
+        {
+          id: `py-vars-types-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `## Deep Theory & Concepts
+
+Variables, Types & Literals sits in the **python** track of the DL_Master curriculum. Learn how Python stores data, dynamic typing, and core built-in types.
+
+Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+
+For py-vars-types, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
+          example: `# Concept check for Variables, Types & Literals
+meta = {"topic_id": "py-vars-types", "track": "python", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `py-vars-types python beginner`,
+          keyPoints: [
+            `Core theory of Variables, Types & Literals ties to the python track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ]
+        },
+        {
+          id: `py-vars-types-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `## Practical Patterns & Idioms
+
+Professionals reuse patterns that encode lessons from Variables, Types & Literals. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-vars-types, extract a minimal working example you can paste into interviews or design docs.
+
+**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
+          example: `# Idiomatic pattern snapshot for py-vars-types
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("py-vars-types", "Variables, Types & Literals")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `py-vars-types Variables,`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with python ecosystem conventions`
+          ]
+        },
+        {
+          id: `py-vars-types-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `## Common Pitfalls & Debugging
+
+Learners working on Variables, Types & Literals often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
+
+When stuck on py-vars-types, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
+
+**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("py-vars-types", "Variables, Types & Literals")
+debug_step("section_count", 4)`,
+          output: `[py-vars-types] 'Variables, Types & Literals' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ]
+        },
+        {
+          id: `py-vars-types-real-world`,
+          title: `Real-World Applications`,
+          content: `## Real-World Applications
+
+Variables, Types & Literals shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
+
+Teams shipping features around py-vars-types align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
+
+**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
+          example: `# Portfolio bullet generator for Variables, Types & Literals
+skills = ["python", "beginner", "py-vars-types"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: python, beginner, py-vars-types`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Variables, Types & Literals to adjacent topics in the same track`
+          ]
         }
       ],
       exercises: [
@@ -137,7 +254,7 @@ print(result)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 20,
+      estimatedMinutes: 35,
       module: `module-01`,
       references: [
         {
@@ -212,7 +329,11 @@ print(a / b, a // b, a % b, a ** 2)`,
 
 Logical: \`and\`, \`or\`, \`not\`. Short-circuit evaluation stops when result is determined.
 
-**Why this matters for Operators & Expressions:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Operators & Expressions:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Operators & Expressions:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Comparison & Logical Operators" connects to arithmetic, comparison, logical, and assignment operators in python. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `x = 7
 print(3 < x < 10)
 print(x > 5 and x < 8)
@@ -234,7 +355,11 @@ False`,
 
 The **walrus operator** \`:=\` assigns and returns value in expressions (Python 3.8+).
 
-**Why this matters for Operators & Expressions:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Operators & Expressions:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Operators & Expressions:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Assignment & Walrus Operator" connects to arithmetic, comparison, logical, and assignment operators in python. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `data = [1, 2, 3, 4, 5]
 if (n := len(data)) > 3:
     print(f"List has {n} elements")`,
@@ -255,7 +380,11 @@ Membership: \`in\`, \`not in\` test containment in sequences.
 
 Identity: \`is\`, \`is not\` compare object identity (same memory address).
 
-**Why this matters for Operators & Expressions:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Operators & Expressions:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Operators & Expressions:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Bitwise & Membership Operators" connects to arithmetic, comparison, logical, and assignment operators in python. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `flags = 0b1010
 print(bin(flags | 0b0100))
 print(3 in [1, 2, 3])
@@ -270,6 +399,111 @@ True True`,
             `in works on any iterable`,
             `Bitwise ops useful for flags and permissions`,
             `Never use is for value comparison`
+          ]
+        },
+        {
+          id: `py-operators-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `## Deep Theory & Concepts
+
+Operators & Expressions sits in the **python** track of the DL_Master curriculum. Arithmetic, comparison, logical, and assignment operators in Python.
+
+Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+
+For py-operators, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
+          example: `# Concept check for Operators & Expressions
+meta = {"topic_id": "py-operators", "track": "python", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `py-operators python beginner`,
+          keyPoints: [
+            `Core theory of Operators & Expressions ties to the python track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ]
+        },
+        {
+          id: `py-operators-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `## Practical Patterns & Idioms
+
+Professionals reuse patterns that encode lessons from Operators & Expressions. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-operators, extract a minimal working example you can paste into interviews or design docs.
+
+**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
+          example: `# Idiomatic pattern snapshot for py-operators
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("py-operators", "Operators & Expressions")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `py-operators Operators`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with python ecosystem conventions`
+          ]
+        },
+        {
+          id: `py-operators-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `## Common Pitfalls & Debugging
+
+Learners working on Operators & Expressions often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
+
+When stuck on py-operators, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
+
+**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("py-operators", "Operators & Expressions")
+debug_step("section_count", 4)`,
+          output: `[py-operators] 'Operators & Expressions' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ]
+        },
+        {
+          id: `py-operators-real-world`,
+          title: `Real-World Applications`,
+          content: `## Real-World Applications
+
+Operators & Expressions shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
+
+Teams shipping features around py-operators align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
+
+**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
+          example: `# Portfolio bullet generator for Operators & Expressions
+skills = ["python", "beginner", "py-operators"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: python, beginner, py-operators`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Operators & Expressions to adjacent topics in the same track`
           ]
         }
       ],
@@ -289,7 +523,7 @@ print(n % 3 == 0 and n % 5 == 0)`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 40,
       prerequisites: [
         `py-vars-types`
       ],
@@ -343,7 +577,11 @@ print(n % 3 == 0 and n % 5 == 0)`,
 
 Indexing: \`s[0]\` first char, \`s[-1]\` last char. Slicing: \`s[start:stop:step]\`.
 
-**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Strings & Text Processing:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "String Creation & Indexing" connects to string creation, slicing, methods, and formatting fundamentals. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `s = "Python"
 print(s[0], s[-1])
 print(s[1:4])
@@ -369,7 +607,11 @@ nohtyP`,
 
 Methods return new strings; originals unchanged.
 
-**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Strings & Text Processing:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Essential String Methods" connects to string creation, slicing, methods, and formatting fundamentals. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `text = "  Hello, World!  "
 print(text.strip().lower())
 words = "a,b,c".split(",")
@@ -388,7 +630,11 @@ a-b-c`,
           title: `f-strings & Formatting`,
           content: `**f-strings** (Python 3.6+) embed expressions: \`f"{name} is {age}"\`. Format specifiers: \`f"{pi:.2f}"\` for 2 decimal places.
 
-**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Strings & Text Processing:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "f-strings & Formatting" connects to string creation, slicing, methods, and formatting fundamentals. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `name, score = "Alice", 95.567
 print(f"{name} scored {score:.1f}%")
 print(f"{name} = {score:.0f}")`,
@@ -406,7 +652,11 @@ Alice = 96`,
           title: `Unicode & Encoding`,
           content: `Python 3 strings are Unicode by default. Encode to bytes with \`.encode("utf-8")\`, decode with \`.decode()\`. Critical for file I/O and network operations.
 
-**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Strings & Text Processing:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Strings & Text Processing:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Unicode & Encoding" connects to string creation, slicing, methods, and formatting fundamentals. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `s = "café ☕"
 b = s.encode("utf-8")
 print(len(s), len(b))
@@ -418,6 +668,111 @@ café ☕`,
             `Always specify encoding for file I/O`,
             `UTF-8 handles all Unicode characters`,
             `len() counts characters, not bytes`
+          ]
+        },
+        {
+          id: `py-strings-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `## Deep Theory & Concepts
+
+Strings & Text Processing sits in the **python** track of the DL_Master curriculum. String creation, slicing, methods, and formatting fundamentals.
+
+Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+
+For py-strings, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
+          example: `# Concept check for Strings & Text Processing
+meta = {"topic_id": "py-strings", "track": "python", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `py-strings python beginner`,
+          keyPoints: [
+            `Core theory of Strings & Text Processing ties to the python track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ]
+        },
+        {
+          id: `py-strings-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `## Practical Patterns & Idioms
+
+Professionals reuse patterns that encode lessons from Strings & Text Processing. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-strings, extract a minimal working example you can paste into interviews or design docs.
+
+**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
+          example: `# Idiomatic pattern snapshot for py-strings
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("py-strings", "Strings & Text Processing")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `py-strings Strings`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with python ecosystem conventions`
+          ]
+        },
+        {
+          id: `py-strings-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `## Common Pitfalls & Debugging
+
+Learners working on Strings & Text Processing often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
+
+When stuck on py-strings, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
+
+**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("py-strings", "Strings & Text Processing")
+debug_step("section_count", 4)`,
+          output: `[py-strings] 'Strings & Text Processing' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ]
+        },
+        {
+          id: `py-strings-real-world`,
+          title: `Real-World Applications`,
+          content: `## Real-World Applications
+
+Strings & Text Processing shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
+
+Teams shipping features around py-strings align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
+
+**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
+          example: `# Portfolio bullet generator for Strings & Text Processing
+skills = ["python", "beginner", "py-strings"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: python, beginner, py-strings`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Strings & Text Processing to adjacent topics in the same track`
           ]
         }
       ],
@@ -438,7 +793,7 @@ print(fruits[1])`,
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 40,
       prerequisites: [
         `py-vars-types`
       ],
@@ -494,7 +849,11 @@ print(fruits[1])`,
 - \`file\` — output stream
 - \`flush\` — force buffer flush
 
-**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Input/Output & REPL:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Print Function Deep Dive" connects to reading input, printing output, and using the python repl effectively. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `print("A", "B", "C", sep="-", end="!\\n")
 print("Done", flush=True)`,
           output: `A-B-C!
@@ -511,7 +870,11 @@ Done`,
           title: `Reading User Input`,
           content: `\`input(prompt)\` reads a line from stdin as a string. Always validate and convert types explicitly.
 
-**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Input/Output & REPL:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Reading User Input" connects to reading input, printing output, and using the python repl effectively. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `# Simulated input handling
 user_input = "25"  # would come from input()
 age = int(user_input)
@@ -529,7 +892,11 @@ print(f"You are {age} years old")`,
           title: `The Python REPL`,
           content: `The **REPL** (Read-Eval-Print Loop) is an interactive shell. Launch with \`python\` or \`ipython\`. Use \`_\` for last result. \`%timeit\` in IPython benchmarks code.
 
-**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Input/Output & REPL:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "The Python REPL" connects to reading input, printing output, and using the python repl effectively. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `# In REPL:
 # >>> 2 + 2
 # 4
@@ -549,7 +916,11 @@ print("Use python or ipython for interactive exploration")`,
           title: `Basic File I/O Preview`,
           content: `Open files with \`open(path, mode)\`. Always use \`with\` statement for automatic cleanup. Modes: \`"r"\`, \`"w"\`, \`"a"\`, \`"rb"\`, \`"wb"\`.
 
-**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Input/Output & REPL:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Input/Output & REPL:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Basic File I/O Preview" connects to reading input, printing output, and using the python repl effectively. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `# Writing and reading (conceptual)
 lines = ["line1\\n", "line2\\n"]
 content = "".join(lines)
@@ -561,6 +932,111 @@ line2`,
             `Text mode vs binary mode matters`,
             `Specify encoding=utf-8 for text files`,
             `File I/O covered in depth later`
+          ]
+        },
+        {
+          id: `py-io-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `## Deep Theory & Concepts
+
+Input/Output & REPL sits in the **python** track of the DL_Master curriculum. Reading input, printing output, and using the Python REPL effectively.
+
+Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+
+For py-io, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
+          example: `# Concept check for Input/Output & REPL
+meta = {"topic_id": "py-io", "track": "python", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `py-io python beginner`,
+          keyPoints: [
+            `Core theory of Input/Output & REPL ties to the python track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ]
+        },
+        {
+          id: `py-io-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `## Practical Patterns & Idioms
+
+Professionals reuse patterns that encode lessons from Input/Output & REPL. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-io, extract a minimal working example you can paste into interviews or design docs.
+
+**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
+          example: `# Idiomatic pattern snapshot for py-io
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("py-io", "Input/Output & REPL")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `py-io Input/Output`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with python ecosystem conventions`
+          ]
+        },
+        {
+          id: `py-io-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `## Common Pitfalls & Debugging
+
+Learners working on Input/Output & REPL often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
+
+When stuck on py-io, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
+
+**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("py-io", "Input/Output & REPL")
+debug_step("section_count", 4)`,
+          output: `[py-io] 'Input/Output & REPL' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ]
+        },
+        {
+          id: `py-io-real-world`,
+          title: `Real-World Applications`,
+          content: `## Real-World Applications
+
+Input/Output & REPL shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
+
+Teams shipping features around py-io align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
+
+**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
+          example: `# Portfolio bullet generator for Input/Output & REPL
+skills = ["python", "beginner", "py-io"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: python, beginner, py-io`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Input/Output & REPL to adjacent topics in the same track`
           ]
         }
       ],
@@ -579,7 +1055,7 @@ print(total)`,
           difficulty: `medium`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 40,
       module: `module-01`,
       references: [
         {
@@ -628,7 +1104,11 @@ print(total)`,
           title: `Virtual Environments`,
           content: `A **virtual environment** isolates project dependencies. Create with \`python -m venv .venv\`, activate with \`.venv\\Scripts\\activate\` (Windows) or \`source .venv/bin/activate\` (Unix).
 
-**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Python Environment & Tooling:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Virtual Environments" connects to virtual environments, pip, and project setup best practices. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `# Shell commands (not Python):
 # python -m venv .venv
 # pip install numpy pandas
@@ -646,7 +1126,11 @@ print("Always use venv per project")`,
           title: `Package Management with pip`,
           content: `\`pip install package\` installs from PyPI. Pin versions: \`pip install numpy==1.26.0\`. Export: \`pip freeze > requirements.txt\`. Install from file: \`pip install -r requirements.txt\`.
 
-**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Python Environment & Tooling:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Package Management with pip" connects to virtual environments, pip, and project setup best practices. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `# requirements.txt example:
 reqs = """numpy>=1.24
 pandas>=2.0
@@ -667,7 +1151,11 @@ scikit-learn>=1.3`,
           title: `IDEs & Running Scripts`,
           content: `Run scripts: \`python script.py\`. Use VS Code, PyCharm, or Cursor with Python extension. Configure linter (ruff/flake8) and formatter (black).
 
-**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Python Environment & Tooling:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "IDEs & Running Scripts" connects to virtual environments, pip, and project setup best practices. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           example: `if __name__ == "__main__":
     print("Script entry point")
     # Your code here`,
@@ -692,12 +1180,121 @@ project/
 \`\`\`
 Keep code modular and testable from the start.
 
-**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.`,
+**Why this matters for Python Environment & Tooling:** Python fluency is the foundation for every data science and ML workflow. Understanding this section deeply will help you read research papers, follow university lectures, and debug real projects. Revisit the official documentation and course notes linked at the bottom of this lesson after completing the exercises.
+
+**Extended exploration — Python Environment & Tooling:** Python fluency underpins every data pipeline, notebook, and production service in modern ML. The section "Project Structure Basics" connects to virtual environments, pip, and project setup best practices. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.
+
+**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code t…`,
           keyPoints: [
             `Separate source, tests, and data`,
             `Use meaningful module names`,
             `Document setup in README`,
             `Version control with git from day one`
+          ]
+        },
+        {
+          id: `py-env-deep-theory`,
+          title: `Deep Theory & Concepts`,
+          content: `## Deep Theory & Concepts
+
+Python Environment & Tooling sits in the **python** track of the DL_Master curriculum. Virtual environments, pip, and project setup best practices.
+
+Python's execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.
+
+For py-env, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.
+
+**Level (beginner):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`,
+          example: `# Concept check for Python Environment & Tooling
+meta = {"topic_id": "py-env", "track": "python", "level": "beginner"}
+print(meta["topic_id"], meta["track"], meta["level"])`,
+          output: `py-env python beginner`,
+          keyPoints: [
+            `Core theory of Python Environment & Tooling ties to the python track`,
+            `Connect definitions to inputs, outputs, and evaluation criteria`,
+            `Identify assumptions that break in production or at scale`,
+            `Relate this topic to prerequisites and follow-on modules`,
+            `Use paper/documentation cross-checks to validate intuition`,
+            `Sketch diagrams before implementing from memory`
+          ]
+        },
+        {
+          id: `py-env-patterns`,
+          title: `Practical Patterns & Idioms`,
+          content: `## Practical Patterns & Idioms
+
+Professionals reuse patterns that encode lessons from Python Environment & Tooling. Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.
+
+Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For py-env, extract a minimal working example you can paste into interviews or design docs.
+
+**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`,
+          example: `# Idiomatic pattern snapshot for py-env
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class LessonRef:
+    topic_id: str
+    title: str
+
+ref = LessonRef("py-env", "Python Environment & Tooling")
+print(ref.topic_id, ref.title.split()[0])`,
+          output: `py-env Python`,
+          keyPoints: [
+            `Start from canonical examples before abstracting helpers`,
+            `One change at a time when experimenting`,
+            `Prefer readable names over clever one-liners`,
+            `Promote patterns to shared code only after reuse`,
+            `Document invariants your pattern relies on`,
+            `Align style with python ecosystem conventions`
+          ]
+        },
+        {
+          id: `py-env-pitfalls`,
+          title: `Common Pitfalls & Debugging`,
+          content: `## Common Pitfalls & Debugging
+
+Learners working on Python Environment & Tooling often hit predictable walls. Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.
+
+When stuck on py-env, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.
+
+**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`,
+          example: `# Minimal repro template
+def debug_step(label, value):
+    print(f"[{label}] {value!r} ({type(value).__name__})")
+
+debug_step("py-env", "Python Environment & Tooling")
+debug_step("section_count", 4)`,
+          output: `[py-env] 'Python Environment & Tooling' (str)
+[section_count] 4`,
+          keyPoints: [
+            `Reduce to the smallest failing example`,
+            `Log intermediate values with types`,
+            `Bisect changes with git or notebook history`,
+            `Separate data bugs from logic bugs`,
+            `Record seeds, versions, and hardware context`,
+            `Fix root cause—not symptoms with silent catches`
+          ]
+        },
+        {
+          id: `py-env-real-world`,
+          title: `Real-World Applications`,
+          content: `## Real-World Applications
+
+Python Environment & Tooling shows up wherever python skills meet business constraints. Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.
+
+Teams shipping features around py-env align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.
+
+**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`,
+          example: `# Portfolio bullet generator for Python Environment & Tooling
+skills = ["python", "beginner", "py-env"]
+print("Built project applying:", ", ".join(skills))`,
+          output: `Built project applying: python, beginner, py-env`,
+          keyPoints: [
+            ` Tie lessons to portfolio projects with measurable outcomes`,
+            `Explain tradeoffs to technical and non-technical audiences`,
+            `Plan deployment, monitoring, and maintenance early`,
+            `Document ethical and privacy implications where relevant`,
+            `Iterate with user feedback—not only offline metrics`,
+            `Connect Python Environment & Tooling to adjacent topics in the same track`
           ]
         }
       ],
@@ -720,7 +1317,7 @@ if __name__ == "__main__":
           difficulty: `easy`
         }
       ],
-      estimatedMinutes: 25,
+      estimatedMinutes: 40,
       module: `module-01`,
       references: [
         {

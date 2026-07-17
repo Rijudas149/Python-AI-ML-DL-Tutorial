@@ -5,6 +5,7 @@ import { modules, allTopics } from '../data/curriculum';
 
 const navItems = [
   { path: '/', label: 'Home', icon: '🏠' },
+  { path: '/roadmap', label: 'Roadmap', icon: '🗺️' },
   { path: '/learn', label: 'Learn', icon: '📚' },
   { path: '/references', label: 'References', icon: '🔗' },
   { path: '/glossary', label: 'Glossary', icon: '📖' },

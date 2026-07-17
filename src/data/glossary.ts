@@ -38,6 +38,14 @@ export const GLOSSARY = [
   { term: 'Transfer Learning', definition: 'Using knowledge from a pretrained model on a new task, typically with less data and compute.', track: 'dl' },
   { term: 'Underfitting', definition: 'Model too simple to capture patterns in data. High bias, poor training and test performance.', track: 'ml' },
   { term: 'Word2Vec', definition: 'Method learning word embeddings by predicting context words (Mikolov et al., 2013).', track: 'dl' },
+  { term: 'pytest', definition: 'Python testing framework using simple assert statements and fixtures for setup/teardown.', track: 'python' },
+  { term: 'asyncio', definition: 'Python library for writing concurrent code using async/await coroutines on a single thread.', track: 'python' },
+  { term: 'Diffusion Model', definition: 'Generative model that learns to reverse a gradual noising process (DDPM, Stable Diffusion).', track: 'dl' },
+  { term: 'Q-Learning', definition: 'Reinforcement learning algorithm learning action-value function Q(s,a) via Bellman updates.', track: 'ml' },
+  { term: 'Vector Database', definition: 'Database optimized for storing and searching high-dimensional embeddings (FAISS, Pinecone, Chroma).', track: 'ai' },
+  { term: 'ARIMA', definition: 'AutoRegressive Integrated Moving Average — classical time series forecasting model.', track: 'ml' },
+  { term: 'SMOTE', definition: 'Synthetic Minority Over-sampling Technique for handling imbalanced classification datasets.', track: 'ml' },
+  { term: 'FAISS', definition: 'Facebook AI Similarity Search — library for efficient nearest-neighbor search on embeddings.', track: 'ai' },
 ] as const;
 
 export type GlossaryEntry = (typeof GLOSSARY)[number];

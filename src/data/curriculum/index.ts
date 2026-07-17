@@ -18,6 +18,14 @@ import { module17Topics } from './module17-nlp-sequences';
 import { module18Topics } from './module18-transformers';
 import { module19Topics } from './module19-llm-genai';
 import { module20Topics } from './module20-mlops-ethics';
+import { module21Topics } from './module21-python-testing-async';
+import { module22Topics } from './module22-python-io-apis';
+import { module23Topics } from './module23-scipy-stats';
+import { module24Topics } from './module24-timeseries-recsys';
+import { module25Topics } from './module25-reinforcement-learning';
+import { module26Topics } from './module26-generative-dl';
+import { module27Topics } from './module27-advanced-ai-systems';
+import { module28Topics } from './module28-capstone-career';
 
 import type { Topic, ModuleInfo } from '../../types';
 
@@ -161,6 +169,62 @@ export const modules: ModuleInfo[] = [
     track: 'ai',
     description: `Model serving, Docker, monitoring, drift detection, bias, fairness, and responsible AI.`,
     topics: module20Topics,
+  },
+  {
+    id: 'module-21',
+    name: 'Python Testing, Debugging & Async',
+    track: 'python',
+    description: `pytest and unittest, pdb and logging, asyncio fundamentals, regex mastery, and concurrency with threading and multiprocessing.`,
+    topics: module21Topics,
+  },
+  {
+    id: 'module-22',
+    name: 'File I/O, APIs & Data Formats',
+    track: 'python',
+    description: `pathlib and serialization formats, HTTP APIs with requests, web scraping ethics, SQLite, and structured data exchange.`,
+    topics: module22Topics,
+  },
+  {
+    id: 'module-23',
+    name: 'SciPy & Statistical Computing',
+    track: 'data',
+    description: `Numerical optimization and integration, hypothesis testing, distributions, regression, and Bayesian inference fundamentals.`,
+    topics: module23Topics,
+  },
+  {
+    id: 'module-24',
+    name: 'Time Series & Recommender Systems',
+    track: 'ml',
+    description: `ARIMA and forecasting, collaborative and content-based recommenders, and imbalanced classification techniques.`,
+    topics: module24Topics,
+  },
+  {
+    id: 'module-25',
+    name: 'Reinforcement Learning',
+    track: 'ml',
+    description: `MDPs, Q-learning, deep Q-networks, policy gradients, and real-world RL applications.`,
+    topics: module25Topics,
+  },
+  {
+    id: 'module-26',
+    name: 'Generative Deep Learning',
+    track: 'dl',
+    description: `GANs, VAEs, diffusion models, style transfer, and evaluation metrics for generative models.`,
+    topics: module26Topics,
+  },
+  {
+    id: 'module-27',
+    name: 'Advanced AI Systems',
+    track: 'ai',
+    description: `Vector databases, multimodal models, speech AI, benchmarks, and AI safety guardrails.`,
+    topics: module27Topics,
+  },
+  {
+    id: 'module-28',
+    name: 'Capstone & Career',
+    track: 'ai',
+    description: `Portfolio projects, Kaggle strategy, ML interviews, reading papers, and career paths in ML/AI.`,
+    topics: module28Topics,
   }
 ];
 
@@ -184,7 +248,15 @@ export const allTopics: Topic[] = [
   ...module17Topics,
   ...module18Topics,
   ...module19Topics,
-  ...module20Topics
+  ...module20Topics,
+  ...module21Topics,
+  ...module22Topics,
+  ...module23Topics,
+  ...module24Topics,
+  ...module25Topics,
+  ...module26Topics,
+  ...module27Topics,
+  ...module28Topics
 ];
 
 export function getTopicById(id: string): Topic | undefined {

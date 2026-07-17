@@ -10,6 +10,7 @@ const TopicLesson = lazy(() => import('./pages/TopicLesson').then((m) => ({ defa
 const Bookmarks = lazy(() => import('./pages/Bookmarks').then((m) => ({ default: m.Bookmarks })));
 const References = lazy(() => import('./pages/References').then((m) => ({ default: m.References })));
 const Glossary = lazy(() => import('./pages/Glossary').then((m) => ({ default: m.Glossary })));
+const Roadmap = lazy(() => import('./pages/Roadmap').then((m) => ({ default: m.Roadmap })));
 
 function PageLoader() {
   return (
@@ -34,6 +35,7 @@ function App() {
                 <Route path="bookmarks" element={<Bookmarks />} />
                 <Route path="references" element={<References />} />
                 <Route path="glossary" element={<Glossary />} />
+                <Route path="roadmap" element={<Roadmap />} />
               </Route>
             </Routes>
           </Suspense>

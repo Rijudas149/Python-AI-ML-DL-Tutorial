@@ -7,6 +7,8 @@ import { writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES } from './references-data.mjs';
+import { deepenTopicContent } from './content-deepening.mjs';
+import { ADDITIONAL_MODULES } from './additional-curriculum.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, '..', 'src', 'data', 'curriculum');
@@ -56,9 +58,13 @@ function enrichSection(section, topicTitle, track) {
 
 function enrichTopic(topic) {
   const track = topic.track ?? 'python';
-  return {
+  const withSections = {
     ...topic,
     sections: topic.sections.map((s) => enrichSection(s, topic.title, track)),
+  };
+  const deepened = deepenTopicContent(withSections);
+  return {
+    ...deepened,
     references: TOPIC_REFERENCES[topic.id] ?? TRACK_REFERENCES[track] ?? [],
   };
 }
@@ -163,9 +169,7 @@ function topic(id, title, description, level, sections, exercises, opts = {}) {
   };
 }
 
-// ─── Curriculum data ─────────────────────────────────────────────────────────
-
-const MODULES = [
+const BASE_MODULES = [
   {
     num: 1,
     id: 'module-01',
@@ -2128,6 +2132,8 @@ const MODULES = [
     ].map((t) => ({ ...t, track: 'ai' })),
   },
 ];
+
+const MODULES = [...BASE_MODULES, ...ADDITIONAL_MODULES];
 
 // ─── Generator main ──────────────────────────────────────────────────────────
 

@@ -1,0 +1,213 @@
+/**
+ * Deepens topic content by expanding thin sections and appending four
+ * track-aware enrichment sections to every topic.
+ */
+
+const TRACK_CONTEXT = {
+  python: {
+    lens: 'Python fluency underpins every data pipeline, notebook, and production service in modern ML.',
+    theory: 'Python\'s execution model combines bytecode interpretation with C extensions for hot paths. Understanding reference semantics, the import system, and standard-library conventions helps you write code that scales from scripts to services.',
+    patterns: 'Idiomatic Python favors explicit over implicit: context managers for resources, comprehensions for transforms, dataclasses for structured data, and pathlib over string paths. Follow PEP 8 naming and keep functions small with clear type hints at boundaries.',
+    pitfalls: 'Common mistakes include mutable default arguments, shadowing built-ins, ignoring exceptions silently, and mixing tabs/spaces. Use pdb or breakpoint(), structured logging, and repr()-rich error messages when debugging.',
+    realWorld: 'Production Python appears in FastAPI microservices, Airflow DAGs, Jupyter research workflows, and pytest CI gates. Teams standardize on virtual environments, ruff/black formatters, and pinned dependency lockfiles.',
+  },
+  data: {
+    lens: 'Data quality and reproducible transforms determine whether models learn signal or noise.',
+    theory: 'Statistical thinking—distributions, sampling bias, missingness mechanisms, and leakage—must precede modeling. Every aggregation encodes assumptions about granularity and time.',
+    patterns: 'Use explicit schemas, partition keys for large tables, vectorized operations over Python loops, and idempotent ETL jobs with checkpointing. Document column lineage and unit tests on critical transforms.',
+    pitfalls: 'Watch for train/test leakage via future information, silent dtype coercion, Cartesian joins exploding row counts, and unhandled null semantics. Profile memory before scaling pandas workloads.',
+    realWorld: 'Analytics engineers ship dbt models, Spark jobs, and DuckDB pipelines; scientists rely on reproducible notebooks with pinned seeds and versioned datasets on object storage.',
+  },
+  ml: {
+    lens: 'Classical ML teaches generalization, evaluation discipline, and the bias-variance tradeoff that still governs deep systems.',
+    theory: 'Learning algorithms minimize expected risk on unseen data. Regularization, cross-validation, and calibrated metrics translate theory into decisions about deployment readiness.',
+    patterns: 'Establish baselines first, stratify splits, track experiments with metadata, separate feature engineering from model selection, and report confidence intervals—not single leaderboard scores.',
+    pitfalls: 'Overfitting small datasets, tuning on test sets, ignoring class imbalance, and trusting default hyperparameters without domain validation remain frequent failure modes.',
+    realWorld: 'ML engineers productionize sklearn/XGBoost models behind feature stores, A/B tests, and monitoring for drift; Kaggle and internal benchmarks inform feature design before deep learning spend.',
+  },
+  dl: {
+    lens: 'Deep learning trades interpretability for representational power—success requires careful training dynamics and data scaling.',
+    theory: 'Neural networks compose linear maps with nonlinearities; backpropagation computes gradients via the chain rule. Initialization, normalization, and learning-rate schedules stabilize optimization in high dimensions.',
+    patterns: 'Use transfer learning when data is limited, mixed precision on GPUs, gradient clipping for RNNs/transformers, early stopping on validation loss, and checkpoint averaging for robustness.',
+    pitfalls: 'BatchNorm train/eval mismatch, exploding/vanishing gradients, label noise amplified by memorization, and evaluation on IID splits that hide temporal drift are classic traps.',
+    realWorld: 'Vision, speech, and language products fine-tune pretrained backbones, export ONNX/TorchScript, and serve with batching and GPU autoscaling behind latency SLOs.',
+  },
+  ai: {
+    lens: 'Modern AI systems combine models, retrieval, tools, and human oversight—engineering and safety are inseparable.',
+    theory: 'LLMs and agents optimize next-token likelihood or reward signals that proxy human preferences. Capabilities emerge from scale, data curation, and alignment techniques—not magic.',
+    patterns: 'Ground responses with RAG, enforce JSON schemas for tool calls, red-team prompts before launch, log traces for audit, and gate high-risk actions with human approval.',
+    pitfalls: 'Prompt injection, hallucinated citations, unbounded agent loops, secret leakage via training data, and fairness gaps across demographics require proactive testing.',
+    realWorld: 'Enterprises deploy copilots, search augmentation, and workflow automation with vector databases, observability stacks, and governance aligned to regulations like the EU AI Act.',
+  },
+};
+
+/** Topic-specific overrides for the four deepening sections (optional). */
+const TOPIC_OVERRIDES = {
+  'py-testing': {
+    theoryExtra: 'pytest fixtures provide dependency injection for tests; unittest.mock.patch isolates units from I/O. Test pyramid: many fast unit tests, fewer integration tests, minimal brittle E2E.',
+    patternsExtra: 'Parametrize tests with @pytest.mark.parametrize; use tmp_path for filesystem tests; freeze time with freezegun for temporal logic.',
+    pitfallsExtra: 'Flaky tests from shared global state, testing implementation details instead of behavior, and over-mocking that hides integration bugs.',
+    realWorldExtra: 'CI pipelines run pytest with coverage gates; teams enforce 80%+ coverage on core libraries and mutation testing on critical paths.',
+  },
+  'py-async': {
+    theoryExtra: 'asyncio event loop schedules coroutines cooperatively; await yields control at I/O boundaries. CPU-bound work belongs in ProcessPoolExecutor, not the event loop.',
+    patternsExtra: 'Use asyncio.gather for concurrent I/O; aiohttp ClientSession as context manager; asyncio.Semaphore to limit concurrency.',
+    pitfallsExtra: 'Blocking calls inside async def freeze the loop; forgetting await creates coroutine objects that never run; mixing threads without asyncio.to_thread().',
+    realWorldExtra: 'High-throughput API gateways and websocket servers use async Python; ML inference often stays sync or uses separate worker pools.',
+  },
+  'gen-diffusion': {
+    theoryExtra: 'Diffusion models learn to reverse a noise process: forward corruption adds Gaussian noise over T steps; the network predicts noise ε or score ∇log p(x). DDPM sampling iteratively denoises from pure noise.',
+    patternsExtra: 'Classifier-free guidance scales conditional vs unconditional predictions; latent diffusion (Stable Diffusion) operates in VAE space for efficiency.',
+    pitfallsExtra: 'Mode collapse less common than GANs but sampling is slow; CFG too high causes oversaturation; training requires large curated datasets.',
+    realWorldExtra: 'Image generation products, inpainting tools, and video diffusion pipelines power creative workflows with safety filters and watermarking.',
+  },
+  'ai-vectors': {
+    theoryExtra: 'Embeddings map discrete tokens or documents into dense vectors where semantic similarity approximates cosine distance. Approximate nearest neighbor (ANN) indexes trade recall for speed at billion scale.',
+    patternsExtra: 'Chunk documents 256–512 tokens with overlap; hybrid search combines BM25 with dense retrieval; re-rank top-k with cross-encoders.',
+    pitfallsExtra: 'Stale embeddings after model updates, wrong distance metric (cosine vs L2), and chunk boundaries splitting critical context.',
+    realWorldExtra: 'RAG stacks use Pinecone, Weaviate, FAISS, or Chroma behind enterprise search and support copilots.',
+  },
+};
+
+function trackOf(topic) {
+  return topic.track ?? 'python';
+}
+
+function ctx(topic) {
+  return TRACK_CONTEXT[trackOf(topic)] ?? TRACK_CONTEXT.ml;
+}
+
+function overrides(topic) {
+  return TOPIC_OVERRIDES[topic.id] ?? {};
+}
+
+function expandSectionContent(section, topic) {
+  const minLen = 600;
+  if (!section.content || section.content.length >= minLen) return section.content;
+
+  const c = ctx(topic);
+  const expansion = `\n\n**Extended exploration — ${topic.title}:** ${c.lens} The section "${section.title}" connects to ${topic.description.toLowerCase().replace(/\.$/, '')}. Work through the example below, predict the output before running it, then compare with the key points. Revisit edge cases: empty inputs, boundary values, and invalid types. In professional settings, document assumptions you make here because they become invariants for tests and APIs.`;
+
+  const depth = `\n\n**Conceptual depth:** Understanding *why* this behavior occurs—not only *what* the syntax does—lets you debug faster when stack traces point here. Map each key point to a concrete decision in a small project: naming, error handling, or performance. ${c.theory.slice(0, 200)}…`;
+
+  return section.content + expansion + depth;
+}
+
+function buildDeepTheorySection(topic) {
+  const c = ctx(topic);
+  const o = overrides(topic);
+  const content = `## Deep Theory & Concepts\n\n${topic.title} sits in the **${trackOf(topic)}** track of the DL_Master curriculum. ${topic.description}\n\n${c.theory}\n\n${o.theoryExtra ?? `For ${topic.id}, relate abstract definitions to measurable quantities: inputs, outputs, loss or cost, and constraints. When reading papers or docs, identify which assumptions in this lesson appear as lemmas or implementation defaults.`}\n\n**Level (${topic.level}):** At this stage you should connect prerequisites to new material—sketch mental models on paper before coding. Formal notation and code should mutually reinforce each other; if they diverge, your understanding has a gap to close.`;
+
+  return {
+    id: `${topic.id}-deep-theory`,
+    title: 'Deep Theory & Concepts',
+    content,
+    example: `# Concept check for ${topic.title.replace(/"/g, '\\"')}\nmeta = {"topic_id": "${topic.id}", "track": "${trackOf(topic)}", "level": "${topic.level}"}\nprint(meta["topic_id"], meta["track"], meta["level"])`,
+    output: `${topic.id} ${trackOf(topic)} ${topic.level}`,
+    keyPoints: [
+      `Core theory of ${topic.title} ties to the ${trackOf(topic)} track`,
+      'Connect definitions to inputs, outputs, and evaluation criteria',
+      'Identify assumptions that break in production or at scale',
+      'Relate this topic to prerequisites and follow-on modules',
+      'Use paper/documentation cross-checks to validate intuition',
+      'Sketch diagrams before implementing from memory',
+    ],
+  };
+}
+
+function buildPatternsSection(topic) {
+  const c = ctx(topic);
+  const o = overrides(topic);
+  const content = `## Practical Patterns & Idioms\n\nProfessionals reuse patterns that encode lessons from ${topic.title}. ${c.patterns}\n\n${o.patternsExtra ?? `Apply a consistent project layout: separate configuration, core logic, and CLI/API entry points. Name functions after verbs, types after nouns, and tests after behavior ("test_returns_empty_when_input_missing"). For ${topic.id}, extract a minimal working example you can paste into interviews or design docs.`}\n\n**Workflow:** (1) reproduce the canonical example, (2) vary one parameter at a time, (3) capture results in a short log or notebook cell, (4) promote stable patterns into shared utilities only after the second reuse.`;
+
+  return {
+    id: `${topic.id}-patterns`,
+    title: 'Practical Patterns & Idioms',
+    content,
+    example: `# Idiomatic pattern snapshot for ${topic.id}\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass LessonRef:\n    topic_id: str\n    title: str\n\nref = LessonRef("${topic.id}", "${topic.title.replace(/"/g, '\\"')}")\nprint(ref.topic_id, ref.title.split()[0])`,
+    output: `${topic.id} ${topic.title.split(' ')[0]}`,
+    keyPoints: [
+      'Start from canonical examples before abstracting helpers',
+      'One change at a time when experimenting',
+      'Prefer readable names over clever one-liners',
+      'Promote patterns to shared code only after reuse',
+      'Document invariants your pattern relies on',
+      `Align style with ${trackOf(topic)} ecosystem conventions`,
+    ],
+  };
+}
+
+function buildPitfallsSection(topic) {
+  const c = ctx(topic);
+  const o = overrides(topic);
+  const content = `## Common Pitfalls & Debugging\n\nLearners working on ${topic.title} often hit predictable walls. ${c.pitfalls}\n\n${o.pitfallsExtra ?? `When stuck on ${topic.id}, reproduce with the smallest input, enable verbose logging, and bisect recent changes. Capture stack traces, shapes, dtypes, and random seeds in bug reports. Ask whether the failure is data, code, or environment—and test each hypothesis independently.`}\n\n**Debugging checklist:** verify assumptions listed in earlier sections; compare actual vs expected intermediate values; check for off-by-one and unit mismatches; confirm library versions match the tutorial; sleep on it only after you have a minimal repro artifact.`;
+
+  return {
+    id: `${topic.id}-pitfalls`,
+    title: 'Common Pitfalls & Debugging',
+    content,
+    example: `# Minimal repro template\ndef debug_step(label, value):\n    print(f"[{label}] {value!r} ({type(value).__name__})")\n\ndebug_step("${topic.id}", "${topic.title.replace(/"/g, '\\"')}")\ndebug_step("section_count", ${topic.sections?.length ?? 0})`,
+    output: `[${topic.id}] '${topic.title}' (str)\n[section_count] ${topic.sections?.length ?? 0}`,
+    keyPoints: [
+      'Reduce to the smallest failing example',
+      'Log intermediate values with types',
+      'Bisect changes with git or notebook history',
+      'Separate data bugs from logic bugs',
+      'Record seeds, versions, and hardware context',
+      'Fix root cause—not symptoms with silent catches',
+    ],
+  };
+}
+
+function buildRealWorldSection(topic) {
+  const c = ctx(topic);
+  const o = overrides(topic);
+  const content = `## Real-World Applications\n\n${topic.title} shows up wherever ${trackOf(topic)} skills meet business constraints. ${c.realWorld}\n\n${o.realWorldExtra ?? `Teams shipping features around ${topic.id} align research notebooks with staged rollouts: offline metrics, shadow mode, canary releases, and rollback plans. Stakeholders care about latency, cost, maintainability, and compliance—not only accuracy.`}\n\n**Career note:** Interviewers expect you to narrate a project where this topic mattered: problem, approach, metric movement, tradeoffs, and what you would do differently. Link this lesson to portfolio READMEs and capstone modules later in the curriculum.`;
+
+  return {
+    id: `${topic.id}-real-world`,
+    title: 'Real-World Applications',
+    content,
+    example: `# Portfolio bullet generator for ${topic.title}\nskills = ["${trackOf(topic)}", "${topic.level}", "${topic.id}"]\nprint("Built project applying:", ", ".join(skills))`,
+    output: `Built project applying: ${trackOf(topic)}, ${topic.level}, ${topic.id}`,
+    keyPoints: [
+      ' Tie lessons to portfolio projects with measurable outcomes',
+      'Explain tradeoffs to technical and non-technical audiences',
+      'Plan deployment, monitoring, and maintenance early',
+      'Document ethical and privacy implications where relevant',
+      'Iterate with user feedback—not only offline metrics',
+      `Connect ${topic.title} to adjacent topics in the same track`,
+    ],
+  };
+}
+
+const DEEPENING_BUILDERS = [
+  buildDeepTheorySection,
+  buildPatternsSection,
+  buildPitfallsSection,
+  buildRealWorldSection,
+];
+
+/**
+ * Deepen a topic by expanding short sections and appending four enrichment sections.
+ * @param {object} topic - Curriculum topic object
+ * @returns {object} Deepened topic
+ */
+export function deepenTopicContent(topic) {
+  const existingIds = new Set((topic.sections ?? []).map((s) => s.id));
+
+  const expandedSections = (topic.sections ?? []).map((section) => ({
+    ...section,
+    content: expandSectionContent(section, topic),
+  }));
+
+  const newSections = DEEPENING_BUILDERS.map((build) => build(topic)).filter(
+    (section) => !existingIds.has(section.id),
+  );
+
+  return {
+    ...topic,
+    sections: [...expandedSections, ...newSections],
+    estimatedMinutes: (topic.estimatedMinutes ?? 25) + 15,
+  };
+}
