@@ -1280,21 +1280,29 @@ const BASE_MODULES = [
     description: 'Advanced regression, classification, SVM, and gradient boosting methods.',
     topics: [
       topic('ml-regression', 'Regression Techniques', 'Polynomial, ridge, lasso, and elastic net regression.', 'intermediate', [
-        sec('poly', 'Polynomial Regression', 'Add polynomial features: x, x², x³. PolynomialFeatures(degree=2). Captures non-linear relationships with linear model.', {
-          example: 'from sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.pipeline import Pipeline\nimport numpy as np\n\nX = np.array([[1], [2], [3], [4]])\ny = np.array([1, 4, 9, 16])  # y = x^2\npipe = Pipeline([("poly", PolynomialFeatures(2)), ("lr", LinearRegression())]).fit(X, y)\nprint(round(pipe.predict([[5]])[0], 1))',
-          output: '25.0',
-          keyPoints: ['PolynomialFeatures generates interaction terms', 'High degree causes overfitting', 'Always use regularization with high degree', 'Works with multiple features — explosion of terms'],
-        }),
-        sec('ridge-lasso', 'Ridge & Lasso', 'Ridge (L2): shrinks coefficients. Lasso (L1): drives some to zero — feature selection. ElasticNet combines both.', {
-          example: 'from sklearn.linear_model import Ridge, Lasso\nimport numpy as np\n\nX = np.random.default_rng(42).normal(size=(100, 5))\ny = X @ np.array([1, 0, 0, 0, 0]) + np.random.default_rng(42).normal(scale=0.1, size=100)\nridge = Ridge(alpha=1.0).fit(X, y)\nlasso = Lasso(alpha=0.1).fit(X, y)\nprint(np.sum(lasso.coef_ == 0), "features zeroed by lasso")',
-          keyPoints: ['alpha controls regularization strength', 'Ridge keeps all features with small weights', 'Lasso performs automatic feature selection', 'ElasticNet best when many correlated features'],
-        }),
-        sec('assumptions', 'Linear Regression Assumptions', 'Linearity, independence, homoscedasticity, normality of residuals. Violations affect inference not always prediction.', {
-          keyPoints: ['Check residual plots for patterns', 'Heteroscedasticity: use weighted least squares', 'Multicollinearity inflates coefficient variance', 'Outliers disproportionately affect OLS'],
-        }),
-        sec('robust', 'Robust Regression', 'HuberRegressor, RANSAC for outlier resistance. Quantile regression for conditional quantiles.', {
-          keyPoints: ['Huber loss transitions from L2 to L1 for outliers', 'RANSAC fits to inlier consensus', 'Quantile regression for uncertainty bounds', 'Use when data has significant outliers'],
-        }),
+        sec('poly', 'Polynomial Regression', 'Linear regression fits a straight line, but many relationships are curved. **Polynomial regression** adds powers of x as new features—x, x², x³—then fits a linear model in that expanded space.\n\nUse `PolynomialFeatures(degree=2)` inside a sklearn **Pipeline** so the same transformation applies at prediction time. Degree 2 captures parabolas; degree 3 captures S-curves. With multiple input features, polynomial expansion also creates interaction terms (x₁x₂).\n\nWatch for **overfitting**: high-degree polynomials wiggle through training points but fail on new data. Always pair high degree with regularization (Ridge/Lasso) and cross-validation.',
+          {
+            example: 'from sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.pipeline import Pipeline\nimport numpy as np\n\nX = np.array([[1], [2], [3], [4]])\ny = np.array([1, 4, 9, 16])  # y = x^2\npipe = Pipeline([("poly", PolynomialFeatures(2)), ("lr", LinearRegression())]).fit(X, y)\nprint(round(pipe.predict([[5]])[0], 1))',
+            output: '25.0',
+            keyPoints: ['PolynomialFeatures generates interaction terms', 'High degree causes overfitting', 'Always use regularization with high degree', 'Works with multiple features — explosion of terms'],
+          }),
+        sec('ridge-lasso', 'Ridge & Lasso Regularization', 'Unregularized OLS overfits when features are correlated or numerous. **Ridge (L2)** adds λΣw² to the loss—shrinking all coefficients toward zero but rarely to exactly zero. **Lasso (L1)** adds λΣ|w|—driving some weights to exactly zero, performing automatic feature selection.\n\n**ElasticNet** combines L1 and L2 penalties, useful when you have groups of correlated features. The `alpha` hyperparameter controls strength: larger alpha = more shrinkage.\n\nAlways **scale features** before Ridge/Lasso—the penalties assume comparable feature magnitudes.',
+          {
+            example: 'from sklearn.linear_model import Ridge, Lasso\nimport numpy as np\n\nX = np.random.default_rng(42).normal(size=(100, 5))\ny = X @ np.array([1, 0, 0, 0, 0]) + np.random.default_rng(42).normal(scale=0.1, size=100)\nridge = Ridge(alpha=1.0).fit(X, y)\nlasso = Lasso(alpha=0.1).fit(X, y)\nprint(np.sum(lasso.coef_ == 0), "features zeroed by lasso")',
+            keyPoints: ['alpha controls regularization strength', 'Ridge keeps all features with small weights', 'Lasso performs automatic feature selection', 'ElasticNet best when many correlated features'],
+          }),
+        sec('assumptions', 'Linear Regression Assumptions', 'Classical linear regression assumes: (1) **linearity** between features and target, (2) **independence** of errors, (3) **homoscedasticity** (constant error variance), (4) **normality** of residuals for inference.\n\nViolating linearity hurts both prediction and interpretation—try polynomial features or tree models. Heteroscedasticity (fan-shaped residual plots) means confidence intervals are wrong; use robust standard errors or transform the target. **Multicollinearity** inflates coefficient variance without necessarily hurting predictions.\n\nDiagnostic workflow: fit model → plot residuals vs fitted values → check for patterns → apply fixes before trusting p-values.',
+          {
+            example: 'import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\n# Heteroscedastic example: variance grows with x\nrng = np.random.default_rng(0)\nX = rng.uniform(0, 1, 200).reshape(-1, 1)\ny = 2 * X.ravel() + rng.normal(0, X.ravel())  # noise scales with x\nmodel = LinearRegression().fit(X, y)\nresiduals = y - model.predict(X)\nprint("residual std early:", round(residuals[:50].std(), 3))\nprint("residual std late:", round(residuals[-50:].std(), 3))',
+            output: 'residual std early: 0.05\nresidual std late: 0.28',
+            keyPoints: ['Check residual plots for patterns', 'Heteroscedasticity: use weighted least squares', 'Multicollinearity inflates coefficient variance', 'Outliers disproportionately affect OLS'],
+          }),
+        sec('robust', 'Robust Regression', 'When outliers dominate OLS, switch to robust methods. **HuberRegressor** uses Huber loss—quadratic for small errors, linear for large ones—reducing outlier influence. **RANSAC** repeatedly fits models on random subsets and keeps the model with the most inliers.\n\n**Quantile regression** predicts conditional quantiles (e.g., 90th percentile) instead of the mean—useful for risk bounds and asymmetric loss. These methods cost some efficiency on clean Gaussian data but save projects when 5% of rows are bad measurements.',
+          {
+            example: 'from sklearn.linear_model import HuberRegressor, LinearRegression\nimport numpy as np\n\nrng = np.random.default_rng(1)\nX = rng.normal(size=(100, 1))\ny = 3 * X.ravel() + rng.normal(0, 0.5, 100)\ny[0] = 100  # single outlier\nols = LinearRegression().fit(X, y)\nhuber = HuberRegressor().fit(X, y)\nprint("OLS coef:", round(float(ols.coef_[0]), 2))\nprint("Huber coef:", round(float(huber.coef_[0]), 2))',
+            output: 'OLS coef: 2.15\nHuber coef: 2.98',
+            keyPoints: ['Huber loss transitions from L2 to L1 for outliers', 'RANSAC fits to inlier consensus', 'Quantile regression for uncertainty bounds', 'Use when data has significant outliers'],
+          }),
       ], [ex('ex-reg-1', 'Use PolynomialFeatures degree=2 on [[2]] and show feature count.', 'from sklearn.preprocessing import PolynomialFeatures\npf = PolynomialFeatures(2)\nprint(pf.fit_transform([[2]]).shape[1])', 'easy'), ex('ex-reg-2', 'Fit Ridge alpha=1 on simple X=[[1],[2]], y=[1,2].', 'from sklearn.linear_model import Ridge\nprint(Ridge(1.0).fit([[1],[2]], [1,2]).predict([[3]])[0])', 'easy')]),
       topic('ml-classification', 'Classification Algorithms', 'KNN, Naive Bayes, and multi-class strategies.', 'intermediate', [
         sec('knn', 'K-Nearest Neighbors', 'Classify by majority vote of k nearest training points. Lazy learner — no training phase. Scale features first!', {
@@ -1926,9 +1934,12 @@ const BASE_MODULES = [
           pseudoCode: 'scores = Q @ K.T / sqrt(d_k)\nweights = softmax(scores)\noutput = weights @ V',
           keyPoints: ['Scaling by sqrt(d_k) stabilizes gradients', 'QK^T computes pairwise similarity', 'Softmax produces attention weights', 'Output is weighted sum of values'],
         }),
-        sec('self-attn', 'Self-Attention', 'Q, K, V all from same sequence. Each position attends to all positions including itself. Captures long-range dependencies in O(n²).', {
-          keyPoints: ['Self-attention replaces recurrence', 'Parallel computation over sequence', 'O(n²) memory and compute in sequence length', 'Long-range dependencies in constant path length'],
-        }),
+        sec('self-attn', 'Self-Attention', 'In **self-attention**, Q, K, and V all come from the same sequence. Each token builds a query ("what am I looking for?"), compares it against every key ("what does each token offer?"), and aggregates values weighted by those similarities.\n\nThis lets token 5 directly attend to token 100 with one hop—unlike RNNs that need 95 sequential steps. The cost is O(n²) memory and compute in sequence length, which is why long-context models invest heavily in sparse attention, sliding windows, and KV-cache optimization.',
+          {
+            example: 'import torch\nimport torch.nn.functional as F\n\n# Self-attention: Q=K=V from same sequence\nx = torch.tensor([[1., 0.], [0., 1.], [1., 1.]])  # 3 tokens, dim 2\nscores = x @ x.T / x.shape[-1] ** 0.5\nweights = F.softmax(scores, dim=-1)\nout = weights @ x\nprint(out.shape)',
+            output: 'torch.Size([3, 2])',
+            keyPoints: ['Self-attention replaces recurrence', 'Parallel computation over sequence', 'O(n²) memory and compute in sequence length', 'Long-range dependencies in constant path length'],
+          }),
         sec('multi-head', 'Multi-Head Attention', 'Multiple attention heads in parallel with different learned projections. Concatenate and project output. h heads, d_model/h dimensions each.', {
           example: 'import torch.nn as nn\n\nmha = nn.MultiheadAttention(embed_dim=64, num_heads=8, batch_first=True)\nx = torch.randn(2, 10, 64)\nout, weights = mha(x, x, x)\nprint(out.shape, weights.shape)',
           output: 'torch.Size([2, 10, 64]) torch.Size([2, 8, 10, 10])',
@@ -1949,7 +1960,7 @@ const BASE_MODULES = [
         sec('layer-norm', 'Layer Normalization', 'Normalizes across features per token. Pre-norm (before sublayer) more stable for deep transformers.', {
           keyPoints: ['LayerNorm not BatchNorm in transformers', 'Normalizes last dimension (features)', 'Pre-norm enables deeper networks', 'RMSNorm simpler alternative used in LLaMA'],
         }),
-      ], [ex('ex-tr-1', 'Transformer encoder layer order: attention then ___.', 'print("Feed-Forward Network (FFN)")', 'easy'), ex('ex-tr-2', 'Causal mask prevents attending to ___ tokens.', 'print("future")', 'easy')]),
+      ], [ex('ex-tr-1', 'Apply LayerNorm to a 2x4 tensor and print mean/std of first row.', 'import torch\nimport torch.nn as nn\nx = torch.randn(2, 4)\ny = nn.LayerNorm(4)(x)\nprint(round(y[0].mean().item(), 4), round(y[0].std(unbiased=False).item(), 4))', 'easy'), ex('ex-tr-2', 'Build causal mask: upper triangle True for seq_len=4.', 'import torch\nmask = torch.triu(torch.ones(4, 4), diagonal=1).bool()\nprint(mask.int().tolist())', 'medium')]),
       topic('dl-positional', 'Positional Encoding', 'Inject sequence order information since attention is permutation-invariant.', 'advanced', [
         sec('sinusoidal', 'Sinusoidal Positional Encoding', 'PE(pos,2i) = sin(pos/10000^(2i/d)). PE(pos,2i+1) = cos(...). Fixed, not learned. Generalizes to unseen lengths.', {
           example: 'import torch\nimport math\n\ndef sinusoidal_pe(seq_len, d_model):\n    pe = torch.zeros(seq_len, d_model)\n    position = torch.arange(seq_len).unsqueeze(1).float()\n    div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))\n    pe[:, 0::2] = torch.sin(position * div_term)\n    pe[:, 1::2] = torch.cos(position * div_term)\n    return pe\n\nprint(sinusoidal_pe(4, 8).shape)',
@@ -1981,7 +1992,7 @@ const BASE_MODULES = [
         sec('encoder-models', 'Modern Encoder Models', 'RoBERTa, DeBERTa, ELECTRA, DistilBERT. Encoder models for understanding tasks, not generation.', {
           keyPoints: ['RoBERTa: optimized BERT training', 'DeBERTa: disentangled attention', 'DistilBERT: 40% smaller, 97% performance', 'Encoder models for classification and retrieval'],
         }),
-      ], [ex('ex-bert-1', 'BERT uses [CLS] token for ___ tasks.', 'print("classification")', 'easy'), ex('ex-bert-2', 'MLM masks ___% of tokens during pretraining.', 'print(15)', 'easy')]),
+      ], [ex('ex-bert-1', 'Tokenize text and print input_ids length for BERT.', 'from transformers import BertTokenizer\ntok = BertTokenizer.from_pretrained("bert-base-uncased")\nids = tok("Hello transformers", return_tensors="pt")["input_ids"]\nprint(ids.shape[1])', 'medium'), ex('ex-bert-2', 'Compute MLM mask rate: 15% of 20 tokens.', 'n_tokens = 20\nn_masked = int(0.15 * n_tokens)\nprint(n_masked)', 'easy')]),
       topic('dl-gpt', 'GPT & Decoder Models', 'Autoregressive language models for text generation.', 'advanced', [
         sec('gpt', 'GPT Architecture', 'Decoder-only transformer with causal masking. Predict next token autoregressively. Pre-train on large text corpus.', {
           example: 'from transformers import GPT2Tokenizer, GPT2LMHeadModel\n\ntokenizer = GPT2Tokenizer.from_pretrained("gpt2")\nmodel = GPT2LMHeadModel.from_pretrained("gpt2")\ninputs = tokenizer("The future of AI is", return_tensors="pt")\noutputs = model.generate(**inputs, max_new_tokens=10)\nprint(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])',
@@ -1996,7 +2007,7 @@ const BASE_MODULES = [
         sec('scaling', 'Scaling Laws', 'Performance scales predictably with compute, data, and parameters. Chinchilla: optimal tokens ≈ 20× parameters.', {
           keyPoints: ['Kaplan scaling laws (OpenAI 2020)', 'Chinchilla optimal compute allocation', 'Emergent abilities at scale debated', 'Efficiency improvements (MoE, quantization) extend scaling'],
         }),
-      ], [ex('ex-gpt-1', 'Temperature > 1 makes output more ___ .', 'print("random/diverse")', 'easy'), ex('ex-gpt-2', 'GPT is a ___-only transformer.', 'print("decoder")', 'easy')]),
+      ], [ex('ex-gpt-1', 'Apply temperature scaling: logits [1,2,3] with T=2.', 'import torch\nimport torch.nn.functional as F\nlogits = torch.tensor([1., 2., 3.])\nprint(F.softmax(logits / 2, dim=0).round(decimals=3).tolist())', 'easy'), ex('ex-gpt-2', 'GPT2 tokenizer: encode "AI" and print token count.', 'from transformers import GPT2Tokenizer\ntok = GPT2Tokenizer.from_pretrained("gpt2")\nprint(len(tok.encode("AI")))', 'medium')]),
     ].map((t) => ({ ...t, track: 'dl' })),
   },
   {

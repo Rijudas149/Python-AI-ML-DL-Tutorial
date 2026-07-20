@@ -11,14 +11,9 @@ export const module23Topics: Topic[] = [
         {
           id: `optimize`,
           title: `scipy.optimize`,
-          content: `\`minimize(fun, x0, method="BFGS")\` finds local minima of scalar/multivariate functions. Provide **\`jac\`** gradient for speed. **\`bounds\`** and **\`constraints\`** for constrained problems.
+          content: `\`minimize(fun, x0, method="BFGS")\` finds local minima of scalar/multivariate functions. Provide **\`jac\`** gradient for speed.
 
-\`curve_fit\` fits nonlinear models to data by least squares. Always inspect residuals and initial guesses—optimization finds local optima.
-
-- Good x0 critical for nonlinear optimization
-- Provide analytic Jacobian when available
-- Check convergence flag res.success
-- Plot objective surface for 2D intuition`,
+**\`bounds\`** and **\`constraints\`** for constrained problems. \`curve_fit\` fits nonlinear models to data by least squares. Always inspect residuals and initial guesses—optimization finds local optima.`,
           example: `from scipy.optimize import minimize
 import numpy as np
 f = lambda x: (x[0]-2)**2 + (x[1]+1)**2
@@ -35,14 +30,9 @@ print(np.round(res.x, 2))`,
         {
           id: `integrate`,
           title: `Integration & ODEs`,
-          content: `\`quad\` integrates 1D functions: \`integrate.quad(lambda x: x**2, 0, 1)\`. **\`dblquad/tplquad\`** extend dimension. **\`odeint\`** solves ordinary differential equations from initial conditions.
+          content: `\`quad\` integrates 1D functions: \`integrate.quad(lambda x: x**2, 0, 1)\`. **\`dblquad/tplquad\`** extend dimension.
 
-Watch singularities and infinite limits—split integration domains or transform variables.
-
-- quad returns estimate and error bound
-- odeint for dynamical systems models
-- Transform improper integrals when possible
-- Compare with Monte Carlo for validation`,
+**\`odeint\`** solves ordinary differential equations from initial conditions. Watch singularities and infinite limits—split integration domains or transform variables.`,
           example: `from scipy import integrate
 val, err = integrate.quad(lambda x: x**2, 0, 1)
 print(round(val, 3), err < 1e-8)`,
@@ -59,12 +49,7 @@ print(round(val, 3), err < 1e-8)`,
           title: `Interpolation`,
           content: `\`interp1d\` (legacy) and **\`Akima1DInterpolator\`**, \`CubicSpline\` build continuous functions from discrete samples. **\`griddata\`** interpolates scattered 2D points.
 
-Extrapolation outside sample range is unreliable—clamp or model uncertainty explicitly.
-
-- Choose spline order based on smoothness needs
-- Never extrapolate blindly beyond data support
-- griddata for unstructured spatial data
-- Visualize interpolant against raw points`,
+Extrapolation outside sample range is unreliable—clamp or model uncertainty explicitly.`,
           example: `from scipy.interpolate import interp1d
 import numpy as np
 x = np.array([0, 1, 2])
@@ -82,14 +67,9 @@ print(float(f(1.5)))`,
         {
           id: `scipy-ecosystem`,
           title: `SciPy in the Stack`,
-          content: `SciPy builds on NumPy arrays. Combine with **matplotlib** for visualization and **pandas** for labeled tables. For heavy linear algebra prefer **\`scipy.linalg\`** over numpy.linalg for some decompositions.
+          content: `SciPy builds on NumPy arrays. Combine with **matplotlib** for visualization and **pandas** for labeled tables.
 
-Reproducibility: fix random seeds in stochastic routines and document numerical tolerances.
-
-- SciPy functions expect ndarray inputs
-- Vectorize where possible before Python loops
-- Document units and coordinate systems
-- Benchmark against analytical solutions when known`,
+For heavy linear algebra prefer **\`scipy.linalg\`** over numpy.linalg for some decompositions. Reproducibility: fix random seeds in stochastic routines and document numerical tolerances.`,
           keyPoints: [
             `SciPy functions expect ndarray inputs`,
             `Vectorize where possible before Python loops`,
@@ -161,14 +141,11 @@ print(minimize(lambda x: (x[0]-3)**2, [0]).x[0])`,
         {
           id: `hypothesis`,
           title: `Null & Alternative Hypotheses`,
-          content: `**Null hypothesis H₀** typically states no effect. **Alternative H₁** states an effect exists. Choose **significance level α** (often 0.05) before seeing data.
+          content: `**Null hypothesis H₀** typically states no effect. **Alternative H₁** states an effect exists.
 
-**p-value**: probability of observing data at least as extreme as yours if H₀ were true. Reject H₀ if p < α—not "probability H₀ is true".
+Choose **significance level α** (often 0.05) before seeing data. **p-value**: probability of observing data at least as extreme as yours if H₀ were true.
 
-- Pre-register α to avoid p-hacking
-- p-value is not effect size
-- Failure to reject ≠ prove null
-- Report confidence intervals alongside tests`,
+Reject H₀ if p < α—not "probability H₀ is true".`,
           keyPoints: [
             `Pre-register α to avoid p-hacking`,
             `p-value is not effect size`,
@@ -179,14 +156,9 @@ print(minimize(lambda x: (x[0]-3)**2, [0]).x[0])`,
         {
           id: `ttest`,
           title: `t-Tests`,
-          content: `\`scipy.stats.ttest_ind(a, b)\` compares means of two independent samples (Welch variant by default). **\`ttest_rel\`** for paired samples. Assumptions: approximate normality or large n; similar variance for classic equal-variance test.
+          content: `\`scipy.stats.ttest_ind(a, b)\` compares means of two independent samples (Welch variant by default). **\`ttest_rel\`** for paired samples.
 
-Check with Q-Q plots and report effect size (Cohen's d).
-
-- Welch t-test robust to unequal variances
-- Large samples invoke CLT for normality relaxation
-- Multiple testing inflates false positives—use Bonferroni/FDR
-- Always visualize group distributions`,
+Assumptions: approximate normality or large n; similar variance for classic equal-variance test. Check with Q-Q plots and report effect size (Cohen's d).`,
           example: `from scipy import stats
 import numpy as np
 a = np.random.normal(0, 1, 100)
@@ -206,12 +178,7 @@ print(stat > 0, 0 <= p <= 1)`,
           title: `Chi-Square Tests`,
           content: `\`stats.chisquare\` for goodness-of-fit against expected counts. **\`chi2_contingency\`** on contingency tables tests independence of categorical variables.
 
-Expected frequencies should be ≥5 in most cells; combine categories otherwise.
-
-- chi2_contingency returns expected cell counts
-- Low expected counts invalidate approximation
-- Cramér's V measures association strength
-- Residual analysis finds which cells deviate`,
+Expected frequencies should be ≥5 in most cells; combine categories otherwise.`,
           example: `from scipy.stats import chi2_contingency
 import numpy as np
 table = np.array([[10, 20], [30, 40]])
@@ -228,14 +195,9 @@ print(dof, expected.shape)`,
         {
           id: `pvalue-interpret`,
           title: `Interpreting Results Responsibly`,
-          content: `Combine statistical significance with **practical significance**. Report sample size, test used, assumptions checked. Avoid "borderline" p=0.049 storytelling.
+          content: `Combine statistical significance with **practical significance**. Report sample size, test used, assumptions checked.
 
-**Bayesian** approaches quantify posterior belief; frequentist p-values answer a different question—do not conflate.
-
-- Effect size and CI matter more than p alone
-- Power analysis plans sample size ex ante
-- Preregister analysis plans in research
-- Replication validates surprising findings`,
+Avoid "borderline" p=0.049 storytelling. **Bayesian** approaches quantify posterior belief; frequentist p-values answer a different question—do not conflate.`,
           keyPoints: [
             `Effect size and CI matter more than p alone`,
             `Power analysis plans sample size ex ante`,
@@ -310,12 +272,7 @@ print(chi2_contingency([[5,5],[10,10]])[2] == 1)`,
           title: `Random Variables in scipy.stats`,
           content: `Each distribution is an **\`rv_continuous\`** or **\`rv_discrete\`** object: \`norm\`, \`binom\`, \`poisson\`, \`t\`, \`chi2\`, etc. Methods: \`.pdf/.pmf\`, \`.cdf\`, \`.ppf\` (quantile), \`.rvs(size=)\` sample.
 
-\`loc\` and \`scale\` shift/scale distributions: \`norm(loc=mu, scale=sigma)\`.
-
-- rvs requires random_state for reproducibility
-- ppf inverts cdf for confidence intervals
-- Match distribution to data generating process
-- Heavy tails need t or stable distributions`,
+\`loc\` and \`scale\` shift/scale distributions: \`norm(loc=mu, scale=sigma)\`.`,
           example: `from scipy import stats
 import numpy as np
 samples = stats.norm.rvs(loc=0, scale=1, size=1000, random_state=42)
@@ -331,14 +288,9 @@ print(abs(np.mean(samples)) < 0.1)`,
         {
           id: `fit`,
           title: `Fitting Distributions`,
-          content: `\`stats.norm.fit(data)\` returns MLE parameters. **\`kstest\`** compares empirical CDF to reference. Visualize with histogram + fitted PDF overlay.
+          content: `\`stats.norm.fit(data)\` returns MLE parameters. **\`kstest\`** compares empirical CDF to reference.
 
-Overfitting parametric forms misleads—compare models with AIC/BIC or nonparametric KDE.
-
-- Visual fit assessment mandatory
-- KS test sensitive to large n
-- Consider log-normal for positive skewed data
-- Mixture models for multimodal data`,
+Visualize with histogram + fitted PDF overlay. Overfitting parametric forms misleads—compare models with AIC/BIC or nonparametric KDE.`,
           example: `from scipy import stats
 import numpy as np
 data = stats.norm.rvs(5, 2, size=500, random_state=0)
@@ -357,12 +309,7 @@ print(abs(mu - 5) < 0.5)`,
           title: `Sampling Strategies`,
           content: `Simple random sampling, stratified sampling (preserve class proportions), bootstrap resampling for CI estimation (\`np.random.choice\` with replace).
 
-Monte Carlo integrates expectations by drawing samples—error shrinks as O(1/√n).
-
-- Stratify on key categorical variables
-- Bootstrap CIs avoid normality assumptions
-- Sample size drives uncertainty not population size alone
-- Use default_rng not legacy np.random.seed only`,
+Monte Carlo integrates expectations by drawing samples—error shrinks as O(1/√n).`,
           example: `import numpy as np
 rng = np.random.default_rng(0)
 boot_means = [rng.choice([1,2,3,4,5], size=5, replace=True).mean() for _ in range(1000)]
@@ -380,12 +327,7 @@ print(len(boot_means))`,
           title: `Central Limit Theorem`,
           content: `Sum/mean of iid samples with finite variance approaches normal as n grows—explains widespread normal approximations. Does not fix heavy-tailed single-draw risk.
 
-For proportions, use binomial or normal approx with care when np(1-p) small.
-
-- CLT applies to sample means not individual draws
-- Finite variance assumption matters
-- Rate of convergence depends on underlying distribution
-- Use exact tests when approximations fail`,
+For proportions, use binomial or normal approx with care when np(1-p) small.`,
           keyPoints: [
             `CLT applies to sample means not individual draws`,
             `Finite variance assumption matters`,
@@ -459,12 +401,7 @@ print(norm.cdf(0))`,
           title: `OLS Linear Regression`,
           content: `**statsmodels.formula.api.ols** accepts R-like formulas: \`ols("y ~ x1 + x2", data=df).fit()\`. Summary includes coefficients, standard errors, t-stats, R², F-test.
 
-Check **linearity**, **homoscedasticity** (Breusch-Pagan), **residual normality** for inference validity.
-
-- Inspect model.summary() for inference tables
-- Add constant or use formula intercept implicitly
-- Plot residuals vs fitted values
-- Multicollinearity inflates coefficient variance`,
+Check **linearity**, **homoscedasticity** (Breusch-Pagan), **residual normality** for inference validity.`,
           example: `import statsmodels.formula.api as smf
 import pandas as pd
 df = pd.DataFrame({"y": [1,2,3,4], "x": [0,1,2,3]})
@@ -481,14 +418,9 @@ print(round(model.params["x"], 2))`,
         {
           id: `logistic`,
           title: `Logistic Regression`,
-          content: `Binary outcomes: **\`logit("y ~ x", data=df)\`** models log-odds linear in features. Coefficients exponentiate to odds ratios. Metrics: AUC, log-loss, calibration curves.
+          content: `Binary outcomes: **\`logit("y ~ x", data=df)\`** models log-odds linear in features. Coefficients exponentiate to odds ratios.
 
-Class imbalance requires class weights or resampling—accuracy alone misleads.
-
-- Logit coefficients are on log-odds scale
-- Perfect separation causes infinite coefficients
-- Regularized logistic via sklearn for prediction focus
-- Report confidence intervals on odds ratios`,
+Metrics: AUC, log-loss, calibration curves. Class imbalance requires class weights or resampling—accuracy alone misleads.`,
           example: `import statsmodels.formula.api as smf
 import pandas as pd
 df = pd.DataFrame({"y": [0,0,1,1], "x": [0,1,2,3]})
@@ -504,14 +436,11 @@ print(len(res.params))`,
         {
           id: `diagnostics`,
           title: `Regression Diagnostics`,
-          content: `Influential points: Cook's distance. Heteroscedasticity robust SE: \`cov_type="HC3"\`. VIF quantifies multicollinearity. Out-of-sample validation on holdout prevents overfitting narrative.
+          content: `Influential points: Cook's distance. Heteroscedasticity robust SE: \`cov_type="HC3"\`.
 
-Transform targets (log) or use GLMs when residuals show systematic patterns.
+VIF quantifies multicollinearity. Out-of-sample validation on holdout prevents overfitting narrative.
 
-- Robust SE when variance not constant
-- Cross-validation for predictive performance
-- Partial regression plots explain individual features
-- Document preprocessing inside CV pipeline`,
+Transform targets (log) or use GLMs when residuals show systematic patterns.`,
           keyPoints: [
             `Robust SE when variance not constant`,
             `Cross-validation for predictive performance`,
@@ -524,12 +453,7 @@ Transform targets (log) or use GLMs when residuals show systematic patterns.
           title: `Inference vs Prediction`,
           content: `statsmodels excels at **interpretable coefficients** and statistical tests. sklearn excels at **prediction** with regularization and pipelines. Choose tool based on stakeholder questions.
 
-Publishing requires reporting limitations, data collection, and missing data handling.
-
-- Coefficients answer "what if x increases by 1?"
-- Regularization biases coefficients but improves prediction
-- Causal claims need causal designs not regression alone
-- Reproducible notebooks pin library versions`,
+Publishing requires reporting limitations, data collection, and missing data handling.`,
           keyPoints: [
             `Coefficients answer "what if x increases by 1?"`,
             `Regularization biases coefficients but improves prediction`,
@@ -608,12 +532,7 @@ print(len(r.params)==2)`,
           title: `Bayes' Theorem`,
           content: `**Posterior ∝ Likelihood × Prior**. Prior encodes belief before data; likelihood models data given parameters; posterior combines both.
 
-For conjugate pairs (Beta-Binomial, Normal-Normal) posteriors have closed form. Otherwise use MCMC (**PyMC**, **Stan**) or variational inference.
-
-- Prior should be justified not arbitrary
-- More data dominates prior (likelihood swamps prior)
-- Posterior is a distribution not a point
-- Conjugate updates are analytically tractable`,
+For conjugate pairs (Beta-Binomial, Normal-Normal) posteriors have closed form. Otherwise use MCMC (**PyMC**, **Stan**) or variational inference.`,
           example: `# Beta-Binomial: prior Beta(1,1) uniform, 8 heads 2 tails
 alpha, beta = 1+8, 1+2
 mean = alpha / (alpha + beta)
@@ -629,14 +548,9 @@ print(round(mean, 2))`,
         {
           id: `priors`,
           title: `Choosing Priors`,
-          content: `**Informative priors** from literature; **weakly informative** regularize without dominating; **sensitivity analysis** varies priors to test robustness.
+          content: `**Informative priors** from literature; **weakly informative** regularize without dominating; **sensitivity analysis** varies priors to test robustness. Avoid improper priors unless you understand measure theory implications.
 
-Avoid improper priors unless you understand measure theory implications. Document prior choices in reports.
-
-- Sensitivity analysis builds stakeholder trust
-- Hierarchical priors pool information across groups
-- Prior predictive checks simulate plausible data
-- Regularization in ML relates to Gaussian priors`,
+Document prior choices in reports.`,
           keyPoints: [
             `Sensitivity analysis builds stakeholder trust`,
             `Hierarchical priors pool information across groups`,
@@ -647,14 +561,9 @@ Avoid improper priors unless you understand measure theory implications. Documen
         {
           id: `mcmc`,
           title: `Sampling the Posterior`,
-          content: `Markov Chain Monte Carlo draws approximate posterior samples. Diagnostics: **trace plots**, **R-hat** ≈ 1, effective sample size. Stan/PyMC automate gradients with HMC.
+          content: `Markov Chain Monte Carlo draws approximate posterior samples. Diagnostics: **trace plots**, **R-hat** ≈ 1, effective sample size.
 
-Computation cost limits model complexity—start simple, add hierarchy incrementally.
-
-- R-hat > 1.01 suggests poor mixing
-- Longer chains or reparameterization help
-- MCMC uncertainty includes Monte Carlo error
-- Variational Bayes faster but biased`,
+Stan/PyMC automate gradients with HMC. Computation cost limits model complexity—start simple, add hierarchy incrementally.`,
           keyPoints: [
             `R-hat > 1.01 suggests poor mixing`,
             `Longer chains or reparameterization help`,
@@ -665,14 +574,9 @@ Computation cost limits model complexity—start simple, add hierarchy increment
         {
           id: `bayes-ml`,
           title: `Bayesian ML Connections`,
-          content: `Bayesian neural networks quantify weight uncertainty (expensive). **Thompson sampling** in bandits. Gaussian processes for small-data regression with uncertainty bands.
+          content: `Bayesian neural networks quantify weight uncertainty (expensive). **Thompson sampling** in bandits.
 
-Calibration plots compare predicted probabilities to observed frequencies—critical in decision systems.
-
-- Uncertainty quantification aids risk-sensitive decisions
-- Ensembles approximate Bayesian model averaging loosely
-- Conformal prediction offers distribution-free intervals
-- Bayes complements not replaces frequentist tools`,
+Gaussian processes for small-data regression with uncertainty bands. Calibration plots compare predicted probabilities to observed frequencies—critical in decision systems.`,
           keyPoints: [
             `Uncertainty quantification aids risk-sensitive decisions`,
             `Ensembles approximate Bayesian model averaging loosely`,
@@ -691,9 +595,11 @@ print(a/(a+b))`,
         },
         {
           id: `ex-bayes-2`,
-          question: `Posterior proportional to likelihood times prior means multiply then ___ize.`,
-          solution: `print("normal")`,
-          difficulty: `easy`
+          question: `Normalize posterior: multiply likelihood and prior, then divide by evidence.`,
+          solution: `likelihood, prior, evidence = 0.8, 0.01, 0.05
+posterior = likelihood * prior / evidence
+print(round(posterior, 4))`,
+          difficulty: `medium`
         }
       ],
       estimatedMinutes: 40,

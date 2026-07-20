@@ -32,12 +32,7 @@ export const module10Topics: Topic[] = [
         {
           id: `split`,
           title: `train_test_split`,
-          content: `Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).
-
-- Never train on test data — data leakage
-- stratify preserves class proportions
-- random_state for reproducibility
-- Typical split: 70-80% train, 20-30% test`,
+          content: `Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).`,
           example: `from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -58,12 +53,7 @@ print(len(X_train), len(X_test))`,
         {
           id: `preprocessing`,
           title: `Preprocessing Pipeline`,
-          content: `StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model. Prevents leakage by fitting on train only.
-
-- Fit preprocessor on training data only
-- Pipeline ensures consistent train/test processing
-- ColumnTransformer for mixed feature types
-- Preprocessing choices affect model performance`,
+          content: `StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model. Prevents leakage by fitting on train only.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -84,12 +74,7 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
         {
           id: `baseline`,
           title: `Baseline Models`,
-          content: `Always establish baseline before complex models. Mean predictor for regression, majority class for classification. Beat baseline first.
-
-- DummyClassifier/DummyRegressor for baselines
-- Baseline sets minimum acceptable performance
-- Simple models often competitive with complex ones
-- Occams razor — prefer simpler when equal performance`,
+          content: `Always establish baseline before complex models. Mean predictor for regression, majority class for classification. Beat baseline first.`,
           keyPoints: [
             `DummyClassifier/DummyRegressor for baselines`,
             `Baseline sets minimum acceptable performance`,
@@ -166,12 +151,7 @@ print(len(pipe.steps))`,
         {
           id: `linear-reg`,
           title: `Linear Regression`,
-          content: `ŷ = wᵀx + b. Minimizes MSE. sklearn: LinearRegression(). Closed-form or iterative solution.
-
-- Assumes linear relationship
-- Interpretable coefficients
-- Sensitive to outliers — use HuberRegressor
-- Ridge/Lasso add regularization`,
+          content: `ŷ = wᵀx + b. Minimizes MSE. sklearn: LinearRegression(). Closed-form or iterative solution.`,
           example: `from sklearn.linear_model import LinearRegression
 import numpy as np
 
@@ -190,12 +170,7 @@ print(model.coef_[0], model.intercept_)`,
         {
           id: `logistic`,
           title: `Logistic Regression`,
-          content: `Predicts P(y=1|x) via sigmoid: σ(wᵀx). Despite name, is classification algorithm. sklearn: LogisticRegression().
-
-- Outputs probabilities not just labels
-- Uses cross-entropy loss internally
-- Works well with linearly separable data
-- C parameter controls regularization strength`,
+          content: `Predicts P(y=1|x) via sigmoid: σ(wᵀx). Despite name, is classification algorithm. sklearn: LogisticRegression().`,
           example: `from sklearn.linear_model import LogisticRegression
 import numpy as np
 
@@ -214,12 +189,7 @@ print(clf.predict([[2.5], [3.5]]))`,
         {
           id: `sigmoid`,
           title: `Sigmoid & Softmax`,
-          content: `Sigmoid: σ(z) = 1/(1+e⁻ᶻ). Maps to (0,1). Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.
-
-- Sigmoid squashes to probability range
-- Softmax outputs sum to 1
-- Decision boundary at 0.5 for binary
-- Logistic regression learns linear decision boundary`,
+          content: `Sigmoid: σ(z) = 1/(1+e⁻ᶻ). Maps to (0,1). Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.`,
           example: `import numpy as np
 
 def sigmoid(z):
@@ -237,12 +207,9 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
         {
           id: `interpret`,
           title: `Interpretability`,
-          content: `Coefficients show feature importance and direction. Odds ratio = e^coefficient. SHAP values for individual predictions.
+          content: `Coefficients show feature importance and direction. Odds ratio = e^coefficient.
 
-- Positive coefficient increases log-odds of class 1
-- Feature scaling needed for coefficient comparison
-- Regularization shrinks coefficients toward zero
-- Linear models preferred when interpretability required`,
+SHAP values for individual predictions.`,
           keyPoints: [
             `Positive coefficient increases log-odds of class 1`,
             `Feature scaling needed for coefficient comparison`,
@@ -316,12 +283,7 @@ print(sigmoid(0))`,
         {
           id: `dt`,
           title: `Decision Trees`,
-          content: `Split data by feature thresholds maximizing information gain. Non-parametric, handles non-linear relationships. Prone to overfitting.
-
-- max_depth controls complexity
-- Handles mixed feature types naturally
-- Prone to overfitting without constraints
-- Fully interpretable — can visualize tree`,
+          content: `Split data by feature thresholds maximizing information gain. Non-parametric, handles non-linear relationships. Prone to overfitting.`,
           example: `from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
@@ -340,12 +302,7 @@ print(clf.score(X, y))`,
         {
           id: `rf`,
           title: `Random Forests`,
-          content: `Ensemble of trees on bootstrap samples with random feature subsets. Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).
-
-- Bagging reduces overfitting vs single tree
-- n_estimators more trees = lower variance
-- feature_importances_ for feature ranking
-- OOB score estimates generalization without validation set`,
+          content: `Ensemble of trees on bootstrap samples with random feature subsets. Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).`,
           example: `from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 
@@ -363,12 +320,7 @@ print(rf.score(X, y))`,
         {
           id: `hyperparams`,
           title: `Tree Hyperparameters`,
-          content: `max_depth, min_samples_split, min_samples_leaf, max_features. Tune with GridSearchCV or RandomizedSearchCV.
-
-- max_depth most impactful hyperparameter
-- min_samples_leaf prevents tiny leaves
-- max_features introduces randomness in RF
-- Pruning via cost-complexity parameter ccp_alpha`,
+          content: `max_depth, min_samples_split, min_samples_leaf, max_features. Tune with GridSearchCV or RandomizedSearchCV.`,
           keyPoints: [
             `max_depth most impactful hyperparameter`,
             `min_samples_leaf prevents tiny leaves`,
@@ -379,12 +331,7 @@ print(rf.score(X, y))`,
         {
           id: `when`,
           title: `When to Use Trees`,
-          content: `Tabular data, mixed types, non-linear relationships, feature interactions. Often top performer with gradient boosting.
-
-- Trees excel on structured/tabular data
-- Less effective on raw images/text without features
-- XGBoost/LightGBM often win Kaggle tabular
-- Random Forest good default before tuning`,
+          content: `Tabular data, mixed types, non-linear relationships, feature interactions. Often top performer with gradient boosting.`,
           keyPoints: [
             `Trees excel on structured/tabular data`,
             `Less effective on raw images/text without features`,
@@ -462,12 +409,7 @@ print(len(rf.feature_importances_))`,
         {
           id: `classification`,
           title: `Classification Metrics`,
-          content: `Accuracy: correct/total. Precision: TP/(TP+FP). Recall: TP/(TP+FN). F1: harmonic mean of precision and recall.
-
-- Accuracy misleading for imbalanced classes
-- Precision: of predicted positives, how many correct
-- Recall: of actual positives, how many found
-- F1 balances precision and recall`,
+          content: `Accuracy: correct/total. Precision: TP/(TP+FP). Recall: TP/(TP+FN). F1: harmonic mean of precision and recall.`,
           example: `from sklearn.metrics import classification_report
 
 y_true = [0, 1, 1, 0, 1, 1, 0, 0]
@@ -491,12 +433,9 @@ weighted avg      0.714     0.714     0.714         7`,
         {
           id: `roc`,
           title: `ROC-AUC`,
-          content: `ROC plots TPR vs FPR at various thresholds. AUC = area under curve. 0.5 = random, 1.0 = perfect. Threshold-independent metric.
+          content: `ROC plots TPR vs FPR at various thresholds. AUC = area under curve. 0.5 = random, 1.0 = perfect.
 
-- AUC measures ranking quality of predictions
-- Good for imbalanced binary classification
-- Choose threshold based on business cost
-- PR curve better for highly imbalanced data`,
+Threshold-independent metric.`,
           keyPoints: [
             `AUC measures ranking quality of predictions`,
             `Good for imbalanced binary classification`,
@@ -507,12 +446,7 @@ weighted avg      0.714     0.714     0.714         7`,
         {
           id: `regression`,
           title: `Regression Metrics`,
-          content: `MSE, RMSE, MAE, R². MAE robust to outliers. R² = 1 - SS_res/SS_tot. Negative R² means worse than mean predictor.
-
-- MSE penalizes large errors more than MAE
-- RMSE in same units as target
-- R² proportion of variance explained
-- Use domain-appropriate metrics`,
+          content: `MSE, RMSE, MAE, R². MAE robust to outliers. R² = 1 - SS_res/SS_tot. Negative R² means worse than mean predictor.`,
           example: `from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
@@ -532,12 +466,7 @@ print(round(r2_score(y_true, y_pred), 3))`,
         {
           id: `confusion`,
           title: `Confusion Matrix`,
-          content: `2×2 (or n×n) table of predicted vs actual. Derive all classification metrics from it.
-
-- TN, FP, FN, TP for binary case
-- Normalize for class imbalance visualization
-- Multi-class extends to n×n matrix
-- Cost-sensitive learning weights error types differently`,
+          content: `2×2 (or n×n) table of predicted vs actual. Derive all classification metrics from it.`,
           keyPoints: [
             `TN, FP, FN, TP for binary case`,
             `Normalize for class imbalance visualization`,
@@ -609,12 +538,7 @@ print(round(mean_squared_error([1,2,3], [1.1, 2.2, 2.8]), 3))`,
         {
           id: `kfold`,
           title: `K-Fold Cross-Validation`,
-          content: `Split data into k folds. Train on k-1, validate on 1. Repeat k times. cross_val_score reports mean ± std.
-
-- cv=5 or cv=10 common choices
-- StratifiedKFold for classification
-- Mean score estimates generalization
-- Std indicates stability across folds`,
+          content: `Split data into k folds. Train on k-1, validate on 1. Repeat k times. cross_val_score reports mean ± std.`,
           example: `from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -633,12 +557,7 @@ print(round(scores.mean(), 3), round(scores.std(), 3))`,
         {
           id: `gridsearch`,
           title: `GridSearchCV`,
-          content: `Exhaustive search over hyperparameter grid with cross-validation. Returns best params and score.
-
-- Search space size affects compute cost
-- RandomizedSearchCV for large spaces
-- Nested CV for unbiased performance estimate
-- Never tune on test set`,
+          content: `Exhaustive search over hyperparameter grid with cross-validation. Returns best params and score.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.datasets import load_iris
@@ -658,12 +577,7 @@ print(grid.best_params_)`,
         {
           id: `pipeline-cv`,
           title: `Pipeline + CV Together`,
-          content: `Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.
-
-- Pipeline + CV prevents preprocessing leakage
-- Each fold fits scaler on train fold only
-- Same pipeline used for final model training
-- joblib.dump saves fitted pipeline`,
+          content: `Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
@@ -684,12 +598,7 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
         {
           id: `nested`,
           title: `Nested Cross-Validation`,
-          content: `Outer loop for evaluation, inner loop for hyperparameter tuning. Unbiased estimate of generalization.
-
-- Outer CV estimates model performance
-- Inner CV selects hyperparameters
-- Prevents optimistic bias from tuning on same data
-- Computationally expensive but rigorous`,
+          content: `Outer loop for evaluation, inner loop for hyperparameter tuning. Unbiased estimate of generalization.`,
           keyPoints: [
             `Outer CV estimates model performance`,
             `Inner CV selects hyperparameters`,

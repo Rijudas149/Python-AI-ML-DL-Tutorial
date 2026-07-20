@@ -11,12 +11,7 @@ export const module16Topics: Topic[] = [
         {
           id: `conv2d`,
           title: `Convolution Operation`,
-          content: `Filter slides over input computing dot products. Learns local patterns: edges, textures, shapes. nn.Conv2d(in_channels, out_channels, kernel_size).
-
-- padding preserves spatial dimensions
-- stride reduces spatial size
-- Channels = feature maps (depth)
-- Parameter sharing: same filter across spatial locations`,
+          content: `Filter slides over input computing dot products. Learns local patterns: edges, textures, shapes. nn.Conv2d(in_channels, out_channels, kernel_size).`,
           example: `import torch
 import torch.nn as nn
 
@@ -35,12 +30,7 @@ print(out.shape)`,
         {
           id: `pooling`,
           title: `Pooling Layers`,
-          content: `MaxPool2d: takes maximum in window. AvgPool2d: average. Reduces spatial dimensions, provides translation invariance.
-
-- Pooling reduces computation and overfitting
-- Max pooling most common
-- Global Average Pooling replaces flatten + FC
-- AdaptiveAvgPool2d for variable input sizes`,
+          content: `MaxPool2d: takes maximum in window. AvgPool2d: average. Reduces spatial dimensions, provides translation invariance.`,
           example: `import torch
 import torch.nn as nn
 
@@ -58,12 +48,9 @@ print(pool(x).shape)`,
         {
           id: `receptive`,
           title: `Receptive Field`,
-          content: `Each neuron sees a region of input. Receptive field grows with depth and pooling. Deep layers capture global context.
+          content: `Each neuron sees a region of input. Receptive field grows with depth and pooling.
 
-- Stacking conv layers expands receptive field
-- Dilated convolutions expand field without pooling
-- Large receptive field needed for global context
-- Feature hierarchy: edges → parts → objects`,
+Deep layers capture global context.`,
           keyPoints: [
             `Stacking conv layers expands receptive field`,
             `Dilated convolutions expand field without pooling`,
@@ -74,12 +61,7 @@ print(pool(x).shape)`,
         {
           id: `cnn-arch`,
           title: `Basic CNN Architecture`,
-          content: `Conv → ReLU → Pool repeated, then Flatten → FC → output. Modern: all conv without large FC layers.
-
-- Feature extractor + classifier pattern
-- Spatial dimensions shrink with pooling
-- BatchNorm after conv stabilizes training
-- Data augmentation critical for small datasets`,
+          content: `Conv → ReLU → Pool repeated, then Flatten → FC → output. Modern: all conv without large FC layers.`,
           example: `import torch.nn as nn
 
 class SimpleCNN(nn.Module):
@@ -166,12 +148,9 @@ print(nn.MaxPool2d(2)(torch.randn(1,16,32,32)).shape)`,
         {
           id: `vgg`,
           title: `VGG`,
-          content: `Small 3×3 filters stacked deeply. Simple uniform architecture. VGG16/19 widely used for transfer learning baseline.
+          content: `Small 3×3 filters stacked deeply. Simple uniform architecture.
 
-- 3x3 conv stacks replace large filters
-- Simplicity aids understanding and transfer
-- Very parameter-heavy in FC layers
-- Superseded by ResNet but good baseline`,
+VGG16/19 widely used for transfer learning baseline.`,
           keyPoints: [
             `3x3 conv stacks replace large filters`,
             `Simplicity aids understanding and transfer`,
@@ -182,12 +161,7 @@ print(nn.MaxPool2d(2)(torch.randn(1,16,32,32)).shape)`,
         {
           id: `resnet`,
           title: `ResNet & Skip Connections`,
-          content: `Residual blocks: output = F(x) + x. Skip connections solve vanishing gradient, enable 100+ layer networks.
-
-- Identity skip when dimensions match
-- 1x1 conv projection when dimensions differ
-- ResNet-50/101 standard for transfer learning
-- BatchNorm before activation in modern variants`,
+          content: `Residual blocks: output = F(x) + x. Skip connections solve vanishing gradient, enable 100+ layer networks.`,
           example: `import torch
 import torch.nn as nn
 
@@ -212,12 +186,7 @@ print(ResBlock(64)(torch.randn(1, 64, 32, 32)).shape)`,
         {
           id: `modern`,
           title: `EfficientNet, ConvNeXt`,
-          content: `EfficientNet scales depth/width/resolution jointly. ConvNeXt modernizes ResNet with transformer-inspired design.
-
-- Compound scaling balances model dimensions
-- EfficientNet-B0 to B7 for different compute budgets
-- ConvNeXt competitive with vision transformers
-- Architecture search automates design`,
+          content: `EfficientNet scales depth/width/resolution jointly. ConvNeXt modernizes ResNet with transformer-inspired design.`,
           keyPoints: [
             `Compound scaling balances model dimensions`,
             `EfficientNet-B0 to B7 for different compute budgets`,
@@ -228,12 +197,7 @@ print(ResBlock(64)(torch.randn(1, 64, 32, 32)).shape)`,
         {
           id: `torchvision`,
           title: `torchvision.models`,
-          content: `Pretrained models: resnet50, efficientnet_b0, vit_b_16. weights=ResNet50_Weights.IMAGENET1K_V2.
-
-- Pretrained weights from ImageNet
-- Replace final FC for your num_classes
-- Feature extraction: remove classifier head
-- Fine-tune all or freeze early layers`,
+          content: `Pretrained models: resnet50, efficientnet_b0, vit_b_16. weights=ResNet50_Weights.IMAGENET1K_V2.`,
           example: `from torchvision import models
 
 model = models.resnet18(weights=None)
@@ -312,12 +276,9 @@ print((F_x + x).tolist())`,
         {
           id: `strategy`,
           title: `Transfer Learning Strategies`,
-          content: `Feature extraction: freeze backbone, train head. Fine-tuning: unfreeze some/all layers with low LR. More data → more fine-tuning.
+          content: `Feature extraction: freeze backbone, train head. Fine-tuning: unfreeze some/all layers with low LR.
 
-- Freeze backbone when data is very small
-- Fine-tune later layers with small LR
-- Pretrain on similar domain when possible
-- Replace classifier head always`,
+More data → more fine-tuning.`,
           example: `import torch.nn as nn
 from torchvision import models
 
@@ -337,12 +298,7 @@ print(model.fc.weight.requires_grad)`,
         {
           id: `finetune`,
           title: `Fine-Tuning Best Practices`,
-          content: `Discriminative learning rates: lower LR for early layers. Gradual unfreezing. Monitor val loss carefully.
-
-- LR for backbone << LR for head (10-100x)
-- Unfreeze gradually from top to bottom
-- Strong augmentation when fine-tuning
-- Early stopping essential — overfits quickly`,
+          content: `Discriminative learning rates: lower LR for early layers. Gradual unfreezing. Monitor val loss carefully.`,
           keyPoints: [
             `LR for backbone << LR for head (10-100x)`,
             `Unfreeze gradually from top to bottom`,
@@ -353,12 +309,7 @@ print(model.fc.weight.requires_grad)`,
         {
           id: `domain`,
           title: `Domain Adaptation`,
-          content: `Pretrained on ImageNet, fine-tune on medical/satellite/etc. Domain gap affects transfer quality.
-
-- Large domain gap reduces transfer benefit
-- Self-supervised pretraining on target domain helps
-- SimCLR, MoCo for unsupervised pretraining
-- Foundation models reduce need for task-specific pretraining`,
+          content: `Pretrained on ImageNet, fine-tune on medical/satellite/etc. Domain gap affects transfer quality.`,
           keyPoints: [
             `Large domain gap reduces transfer benefit`,
             `Self-supervised pretraining on target domain helps`,
@@ -369,12 +320,7 @@ print(model.fc.weight.requires_grad)`,
         {
           id: `hub`,
           title: `PyTorch Hub & timm`,
-          content: `torch.hub.load for pretrained models. timm (PyTorch Image Models) library with 500+ architectures.
-
-- timm unified API for many architectures
-- timm.create_model with pretrained=True
-- Easy model ensembling with timm
-- Check license for commercial pretrained weights`,
+          content: `torch.hub.load for pretrained models. timm (PyTorch Image Models) library with 500+ architectures.`,
           keyPoints: [
             `timm unified API for many architectures`,
             `timm.create_model with pretrained=True`,
@@ -451,12 +397,7 @@ print(all(not p.requires_grad for p in m.parameters()))`,
         {
           id: `metrics-det`,
           title: `Detection Metrics`,
-          content: `IoU (Intersection over Union) measures box overlap. mAP (mean Average Precision) standard benchmark metric.
-
-- IoU > 0.5 typically considered match
-- mAP averaged over classes and IoU thresholds
-- Precision-recall tradeoff at confidence threshold
-- COCO dataset standard benchmark`,
+          content: `IoU (Intersection over Union) measures box overlap. mAP (mean Average Precision) standard benchmark metric.`,
           example: `def iou(box1, box2):
     x1 = max(box1[0], box2[0]); y1 = max(box1[1], box2[1])
     x2 = min(box1[2], box2[2]); y2 = min(box1[3], box2[3])
@@ -477,12 +418,9 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
         {
           id: `rcnn`,
           title: `R-CNN Family`,
-          content: `Two-stage: RPN proposes regions, classifier refines. Faster R-CNN real-time capable. Mask R-CNN adds segmentation.
+          content: `Two-stage: RPN proposes regions, classifier refines. Faster R-CNN real-time capable.
 
-- Two-stage: propose then classify
-- Faster R-CNN shares backbone with RPN
-- Anchor boxes at multiple scales/aspect ratios
-- Accurate but slower than one-stage`,
+Mask R-CNN adds segmentation.`,
           keyPoints: [
             `Two-stage: propose then classify`,
             `Faster R-CNN shares backbone with RPN`,
@@ -493,12 +431,9 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
         {
           id: `yolo`,
           title: `YOLO & One-Stage Detectors`,
-          content: `YOLO: single pass prediction grid. SSD, RetinaNet with focal loss. Faster, good for real-time applications.
+          content: `YOLO: single pass prediction grid. SSD, RetinaNet with focal loss.
 
-- One-stage: direct bounding box prediction
-- YOLO v8/v9/v10 state-of-the-art speed/accuracy
-- Real-time on edge devices possible
-- Trade accuracy for speed vs two-stage`,
+Faster, good for real-time applications.`,
           keyPoints: [
             `One-stage: direct bounding box prediction`,
             `YOLO v8/v9/v10 state-of-the-art speed/accuracy`,
@@ -509,12 +444,7 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
         {
           id: `tools`,
           title: `Detection Tools`,
-          content: `torchvision.models.detection, ultralytics YOLO, Detectron2 (Meta). Pretrained on COCO.
-
-- Detectron2 research platform from Meta
-- Ultralytics YOLO easy API for training/inference
-- Export to ONNX/TensorRT for deployment
-- Custom dataset in COCO JSON format`,
+          content: `torchvision.models.detection, ultralytics YOLO, Detectron2 (Meta). Pretrained on COCO.`,
           keyPoints: [
             `Detectron2 research platform from Meta`,
             `Ultralytics YOLO easy API for training/inference`,
@@ -588,12 +518,7 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
         {
           id: `semantic`,
           title: `Semantic Segmentation`,
-          content: `Classify every pixel. FCN, U-Net, DeepLab architectures. Encoder-decoder with skip connections.
-
-- U-Net skip connections preserve spatial detail
-- Encoder downsamples, decoder upsamples
-- Dice loss common for imbalanced segmentation
-- Medical imaging primary application`,
+          content: `Classify every pixel. FCN, U-Net, DeepLab architectures. Encoder-decoder with skip connections.`,
           keyPoints: [
             `U-Net skip connections preserve spatial detail`,
             `Encoder downsamples, decoder upsamples`,
@@ -604,12 +529,7 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
         {
           id: `instance`,
           title: `Instance Segmentation`,
-          content: `Detect and segment each object instance separately. Mask R-CNN: detection + mask head per ROI.
-
-- Combines detection and segmentation
-- Mask R-CNN adds mask branch to Faster R-CNN
-- Each instance gets unique mask
-- Panoptic segmentation: semantic + instance`,
+          content: `Detect and segment each object instance separately. Mask R-CNN: detection + mask head per ROI.`,
           keyPoints: [
             `Combines detection and segmentation`,
             `Mask R-CNN adds mask branch to Faster R-CNN`,
@@ -620,12 +540,9 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
         {
           id: `unet`,
           title: `U-Net Architecture`,
-          content: `Symmetric encoder-decoder with skip connections. Concatenates encoder features to decoder. Excellent for biomedical segmentation.
+          content: `Symmetric encoder-decoder with skip connections. Concatenates encoder features to decoder.
 
-- Skip connections recover fine spatial details
-- Works well with limited training data
-- segmentation_models_pytorch library
-- Augment with elastic deformations for medical`,
+Excellent for biomedical segmentation.`,
           example: `# U-Net concept: encoder path downsamples, decoder upsamples
 # Skip connections concatenate features at each level
 print("Encoder -> Bottleneck -> Decoder + Skips")`,
@@ -640,12 +557,7 @@ print("Encoder -> Bottleneck -> Decoder + Skips")`,
         {
           id: `metrics-seg`,
           title: `Segmentation Metrics`,
-          content: `IoU per class (Jaccard index). Dice coefficient. Pixel accuracy misleading with class imbalance.
-
-- Mean IoU averaged over classes
-- Dice = 2|A∩B|/(|A|+|B|)
-- Boundary F1 for precise edge evaluation
-- Report per-class metrics not just mean`,
+          content: `IoU per class (Jaccard index). Dice coefficient. Pixel accuracy misleading with class imbalance.`,
           keyPoints: [
             `Mean IoU averaged over classes`,
             `Dice = 2|A∩B|/(|A|+|B|)`,

@@ -11,12 +11,7 @@ export const module20Topics: Topic[] = [
         {
           id: `serialize`,
           title: `Model Serialization`,
-          content: `joblib/pickle for sklearn. torch.save for PyTorch. ONNX for cross-framework. SavedModel for TensorFlow.
-
-- joblib preferred over pickle for sklearn
-- Save state_dict not entire PyTorch model
-- Version models with metadata (data, metrics, params)
-- Never unpickle untrusted files — security risk`,
+          content: `joblib/pickle for sklearn. torch.save for PyTorch. ONNX for cross-framework. SavedModel for TensorFlow.`,
           example: `import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -35,12 +30,9 @@ print(loaded.score(*load_iris(return_X_y=True)))`,
         {
           id: `fastapi`,
           title: `FastAPI Model Serving`,
-          content: `REST API for model inference. Pydantic for input validation. Async support for high throughput.
+          content: `REST API for model inference. Pydantic for input validation.
 
-- FastAPI auto-generates OpenAPI docs
-- Pydantic validates request schemas
-- Load model once at startup not per request
-- Return probabilities not just class labels`,
+Async support for high throughput.`,
           example: `from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -62,12 +54,7 @@ def predict(req: PredictRequest):
         {
           id: `onnx`,
           title: `ONNX Runtime`,
-          content: `Export to ONNX for framework-agnostic deployment. Optimized inference on CPU/GPU. torch.onnx.export, onnxruntime.
-
-- ONNX enables model portability
-- Graph optimizations in ONNX Runtime
-- Quantized ONNX models for edge deployment
-- Check operator compatibility before export`,
+          content: `Export to ONNX for framework-agnostic deployment. Optimized inference on CPU/GPU. torch.onnx.export, onnxruntime.`,
           keyPoints: [
             `ONNX enables model portability`,
             `Graph optimizations in ONNX Runtime`,
@@ -78,12 +65,9 @@ def predict(req: PredictRequest):
         {
           id: `batch-realtime`,
           title: `Batch vs Real-Time Inference`,
-          content: `Batch: process large datasets offline (Spark, scheduled jobs). Real-time: low-latency API (<100ms). Streaming: continuous processing.
+          content: `Batch: process large datasets offline (Spark, scheduled jobs). Real-time: low-latency API (<100ms).
 
-- Batch for bulk predictions overnight
-- Real-time for user-facing applications
-- Feature store ensures train-serve consistency
-- Caching frequent predictions reduces load`,
+Streaming: continuous processing.`,
           keyPoints: [
             `Batch for bulk predictions overnight`,
             `Real-time for user-facing applications`,
@@ -158,12 +142,7 @@ print(predict([1,2,3]))`,
         {
           id: `docker`,
           title: `Docker Basics for ML`,
-          content: `Dockerfile: base image, COPY requirements, install deps, COPY code, CMD. Reproducible environments across machines.
-
-- Pin base image version for reproducibility
-- Multi-stage builds reduce image size
-- .dockerignore excludes unnecessary files
-- Non-root user for security`,
+          content: `Dockerfile: base image, COPY requirements, install deps, COPY code, CMD. Reproducible environments across machines.`,
           example: `# Dockerfile example:
 dockerfile = """
 FROM python:3.11-slim
@@ -185,12 +164,7 @@ print(dockerfile.strip().split("\\n")[0])`,
         {
           id: `compose`,
           title: `Docker Compose`,
-          content: `Multi-container apps: API + Redis + PostgreSQL. docker-compose.yml defines services, networks, volumes.
-
-- Compose for local development stacks
-- Define environment variables in compose file
-- Health checks ensure service readiness
-- Production: Kubernetes not Compose`,
+          content: `Multi-container apps: API + Redis + PostgreSQL. docker-compose.yml defines services, networks, volumes.`,
           keyPoints: [
             `Compose for local development stacks`,
             `Define environment variables in compose file`,
@@ -201,12 +175,9 @@ print(dockerfile.strip().split("\\n")[0])`,
         {
           id: `cloud`,
           title: `Cloud ML Platforms`,
-          content: `AWS SageMaker, GCP Vertex AI, Azure ML. Managed training, deployment, monitoring. Serverless: Lambda + container images.
+          content: `AWS SageMaker, GCP Vertex AI, Azure ML. Managed training, deployment, monitoring.
 
-- Managed platforms reduce ops burden
-- SageMaker endpoints for real-time inference
-- Vertex AI unified Google Cloud ML platform
-- Cost optimization: spot instances for training`,
+Serverless: Lambda + container images.`,
           keyPoints: [
             `Managed platforms reduce ops burden`,
             `SageMaker endpoints for real-time inference`,
@@ -217,12 +188,9 @@ print(dockerfile.strip().split("\\n")[0])`,
         {
           id: `cicd`,
           title: `CI/CD for ML`,
-          content: `GitHub Actions, Jenkins pipelines. Test → train → evaluate → deploy if metrics pass. MLflow tracks experiments.
+          content: `GitHub Actions, Jenkins pipelines. Test → train → evaluate → deploy if metrics pass.
 
-- Automated testing of data schemas and model metrics
-- Gate deployment on validation metric thresholds
-- MLflow or W&B for experiment tracking
-- Model registry manages production model versions`,
+MLflow tracks experiments.`,
           keyPoints: [
             `Automated testing of data schemas and model metrics`,
             `Gate deployment on validation metric thresholds`,
@@ -292,12 +260,7 @@ print(dockerfile.strip().split("\\n")[0])`,
         {
           id: `monitoring`,
           title: `Model Monitoring`,
-          content: `Track prediction latency, throughput, error rates. Log inputs and outputs. Alert on anomalies.
-
-- Monitor latency p50, p95, p99 percentiles
-- Log predictions for debugging and retraining
-- Alert on error rate spikes
-- Prometheus + Grafana common stack`,
+          content: `Track prediction latency, throughput, error rates. Log inputs and outputs. Alert on anomalies.`,
           keyPoints: [
             `Monitor latency p50, p95, p99 percentiles`,
             `Log predictions for debugging and retraining`,
@@ -308,12 +271,9 @@ print(dockerfile.strip().split("\\n")[0])`,
         {
           id: `drift`,
           title: `Data Drift & Concept Drift`,
-          content: `Data drift: input distribution changes. Concept drift: relationship X→Y changes. Both degrade model performance over time.
+          content: `Data drift: input distribution changes. Concept drift: relationship X→Y changes.
 
-- KS test for numerical feature drift detection
-- PSI (Population Stability Index) common in finance
-- Concept drift harder to detect without labels
-- Scheduled retraining addresses drift`,
+Both degrade model performance over time.`,
           example: `import numpy as np
 from scipy import stats
 
@@ -332,12 +292,9 @@ print(round(pvalue, 6))`,
         {
           id: `evidently`,
           title: `Evidently AI & Tools`,
-          content: `Evidently generates drift reports. Great Expectations validates data. WhyLabs for AI observability.
+          content: `Evidently generates drift reports. Great Expectations validates data.
 
-- Evidently: data drift and model performance reports
-- Great Expectations: data validation suites
-- Compare production vs reference distributions
-- Automated reports in CI/CD pipeline`,
+WhyLabs for AI observability.`,
           keyPoints: [
             `Evidently: data drift and model performance reports`,
             `Great Expectations: data validation suites`,
@@ -348,12 +305,9 @@ print(round(pvalue, 6))`,
         {
           id: `retraining`,
           title: `Retraining Strategies`,
-          content: `Scheduled retraining (weekly/monthly). Trigger-based on drift detection. Continuous learning with new labeled data.
+          content: `Scheduled retraining (weekly/monthly). Trigger-based on drift detection.
 
-- Define retraining triggers and schedule
-- Champion/challenger model comparison
-- Rollback capability essential
-- Label delay complicates monitoring`,
+Continuous learning with new labeled data.`,
           keyPoints: [
             `Define retraining triggers and schedule`,
             `Champion/challenger model comparison`,
@@ -423,12 +377,9 @@ print(round(pvalue, 6))`,
         {
           id: `bias`,
           title: `Types of Bias`,
-          content: `Historical bias in data. Representation bias from sampling. Measurement bias from proxies. Evaluation bias from benchmarks.
+          content: `Representation bias from sampling. Measurement bias from proxies.
 
-- Bias often originates in data not algorithm
-- Protected attributes: race, gender, age, disability
-- Proxy variables encode protected attributes indirectly
-- Intersectionality: bias compounds across groups`,
+Evaluation bias from benchmarks.`,
           keyPoints: [
             `Bias often originates in data not algorithm`,
             `Protected attributes: race, gender, age, disability`,
@@ -439,12 +390,9 @@ print(round(pvalue, 6))`,
         {
           id: `fairness`,
           title: `Fairness Metrics`,
-          content: `Demographic parity: equal positive rates across groups. Equalized odds: equal TPR and FPR. Calibration: equal probability meaning across groups.
+          content: `Demographic parity: equal positive rates across groups. Equalized odds: equal TPR and FPR.
 
-- Fairness metrics often mutually incompatible
-- Choose metric based on domain and legal requirements
-- fairlearn library implements fairness metrics
-- Disparate impact ratio: 80% rule in US employment law`,
+Calibration: equal probability meaning across groups.`,
           example: `# Demographic parity: P(ŷ=1|A=0) should equal P(ŷ=1|A=1)
 # where A is protected attribute
 group_a_rate = 0.3
@@ -462,12 +410,9 @@ print(f"Demographic parity difference: {parity_diff}")`,
         {
           id: `mitigation`,
           title: `Bias Mitigation`,
-          content: `Pre-processing: reweight, resample. In-processing: fairness constraints. Post-processing: adjust thresholds per group.
+          content: `Pre-processing: reweight, resample. In-processing: fairness constraints.
 
-- Pre-processing modifies training data
-- In-processing adds fairness constraints to loss
-- Post-processing adjusts decision thresholds
-- Transparency about tradeoffs required`,
+Post-processing: adjust thresholds per group.`,
           keyPoints: [
             `Pre-processing modifies training data`,
             `In-processing adds fairness constraints to loss`,
@@ -478,12 +423,9 @@ print(f"Demographic parity difference: {parity_diff}")`,
         {
           id: `explain-ethics`,
           title: `Explainability & Accountability`,
-          content: `Right to explanation (GDPR). Model cards document intended use and limitations. Impact assessments before deployment.
+          content: `Right to explanation (GDPR). Model cards document intended use and limitations.
 
-- Model cards: intended use, training data, limitations
-- Algorithmic impact assessment for high-risk AI
-- Human oversight for consequential decisions
-- Document known failure modes and biases`,
+Impact assessments before deployment.`,
           keyPoints: [
             `Model cards: intended use, training data, limitations`,
             `Algorithmic impact assessment for high-risk AI`,
@@ -553,12 +495,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
         {
           id: `framework`,
           title: `Responsible AI Principles`,
-          content: `Fairness, transparency, accountability, privacy, safety, reliability. Google, Microsoft, EU AI Act frameworks.
-
-- Fairness: equitable outcomes across groups
-- Transparency: explainable decisions
-- Accountability: clear ownership and audit trails
-- Privacy: data minimization and consent`,
+          content: `Fairness, transparency, accountability, privacy, safety, reliability. Google, Microsoft, EU AI Act frameworks.`,
           keyPoints: [
             `Fairness: equitable outcomes across groups`,
             `Transparency: explainable decisions`,
@@ -569,12 +506,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
         {
           id: `eu-ai-act`,
           title: `EU AI Act`,
-          content: `Risk-based regulation: unacceptable, high-risk, limited, minimal risk. High-risk AI requires conformity assessment, documentation, human oversight.
-
-- Prohibited: social scoring, manipulative AI
-- High-risk: hiring, credit, medical, law enforcement
-- Requires risk management and data governance
-- Global impact — affects any AI serving EU users`,
+          content: `Risk-based regulation: unacceptable, high-risk, limited, minimal risk. High-risk AI requires conformity assessment, documentation, human oversight.`,
           keyPoints: [
             `Prohibited: social scoring, manipulative AI`,
             `High-risk: hiring, credit, medical, law enforcement`,
@@ -585,12 +517,9 @@ print(f"Demographic parity difference: {parity_diff}")`,
         {
           id: `privacy`,
           title: `Privacy-Preserving ML`,
-          content: `Differential privacy adds noise to protect individuals. Federated learning trains without centralizing data. Data anonymization techniques.
+          content: `Differential privacy adds noise to protect individuals. Federated learning trains without centralizing data.
 
-- Differential privacy mathematical privacy guarantee
-- Federated learning: model travels to data
-- k-anonymity, l-diversity for anonymization
-- PII detection and redaction in training data`,
+Data anonymization techniques.`,
           keyPoints: [
             `Differential privacy mathematical privacy guarantee`,
             `Federated learning: model travels to data`,
@@ -601,12 +530,7 @@ print(f"Demographic parity difference: {parity_diff}")`,
         {
           id: `red-team`,
           title: `Red Teaming & Safety`,
-          content: `Adversarial testing of AI systems. Jailbreak attempts, prompt injection, harmful output testing before release.
-
-- Red team before deploying LLM applications
-- Prompt injection: user overrides system instructions
-- Content filtering for harmful outputs
-- Safety training (RLHF) reduces but does not eliminate risks`,
+          content: `Adversarial testing of AI systems. Jailbreak attempts, prompt injection, harmful output testing before release.`,
           keyPoints: [
             `Red team before deploying LLM applications`,
             `Prompt injection: user overrides system instructions`,

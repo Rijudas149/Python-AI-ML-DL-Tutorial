@@ -114,7 +114,7 @@ print("eig:", np.linalg.eigvalsh(H))`,
 
 Element-wise activation: Jacobian diagonal with σ'(z). Batch sums gradients over samples. PyTorch autograd builds graph and .backward() applies chain rule automatically.
 
-Manual partials verify implementation for custom ops. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Manual partials verify implementation for custom ops.`,
           formulas: [
             `∂L/∂x = (∂L/∂h)(∂h/∂x)`,
             `Linear: ∂(Wx)/∂W = x`,
@@ -242,7 +242,7 @@ print("∇L:", grad)`,
 
 Convex: GD finds global min with right η. Non-convex: converges to stationary point often saddle escape heuristics help. **Momentum** accumulates velocity smoothing oscillations.
 
-**Adam** adaptive per-parameter steps. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Adam** adaptive per-parameter steps.`,
           formulas: [
             `θ_{t+1} = θ_t − η ∇L(θ_t)`,
             `η too large → diverge`,
@@ -276,7 +276,7 @@ print("theta:", np.round(theta,4))`,
 
 Box constraints clip θ after step. Lagrange multipliers (later) handle equality constraints. Constrained optimization common in fairness constraints and resource limits.
 
-Projected methods maintain feasibility each step. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Projected methods maintain feasibility each step.`,
           formulas: [
             `Proj_C(x) = argmin_{y∈C} ||y−x||`,
             `Projected GD after each step`,
@@ -402,11 +402,11 @@ v=np.array([0.2,-0.1,0.5]); v=np.maximum(v,0); v/=v.sum(); print(v)`,
         {
           id: `cr-jacobian`,
           title: `Jacobian Matrix`,
-          content: `For f: ℝⁿ→ℝᵐ, **Jacobian** J_f ∈ ℝ^{m×n} with J_ij=∂f_i/∂x_j. Linear approximation: f(x+δ)≈f(x)+J_f(x)δ. **Chain rule**: J_{f∘g}(x)=J_f(g(x))·J_g(x).
+          content: `For f: ℝⁿ→ℝᵐ, **Jacobian** J_f ∈ ℝ^{m×n} with J_ij=∂f_i/∂x_j. Linear approximation: f(x+δ)≈f(x)+J_f(x)δ.
 
-Scalar f: ∇f is Jacobian 1×n (gradient row) or n×1 (column convention). Vector-to-scalar: gradient ∇f is Jacobian transpose of scalar function. np.autograd and JAX build Jacobian-vector products efficiently without full dense J for large n.
+**Chain rule**: J_{f∘g}(x)=J_f(g(x))·J_g(x). Scalar f: ∇f is Jacobian 1×n (gradient row) or n×1 (column convention).
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Vector-to-scalar: gradient ∇f is Jacobian transpose of scalar function. np.autograd and JAX build Jacobian-vector products efficiently without full dense J for large n.`,
           formulas: [
             `J_ij = ∂f_i / ∂x_j`,
             `J_{f∘g} = J_f · J_g`,
@@ -465,11 +465,11 @@ print("dL/dz:", y-t)`,
         {
           id: `cr-vector`,
           title: `Vector Chain Rules`,
-          content: `If L=f(u) and u=g(x), then ∂L/∂x=(∂u/∂x)ᵀ∂L/∂u when using column convention. Matrix params: ∂L/∂W for y=Wx+b is (∂L/∂y)xᵀ outer product. **Einstein summation** einsum clarifies tensor contractions in deep nets.
+          content: `If L=f(u) and u=g(x), then ∂L/∂x=(∂u/∂x)ᵀ∂L/∂u when using column convention. Matrix params: ∂L/∂W for y=Wx+b is (∂L/∂y)xᵀ outer product.
 
-Batched matmul backward uses matmuls not loops. Shape discipline prevents silent bugs in manual backprop.
+**Einstein summation** einsum clarifies tensor contractions in deep nets. Batched matmul backward uses matmuls not loops.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Shape discipline prevents silent bugs in manual backprop.`,
           formulas: [
             `∂L/∂W = (∂L/∂y) xᵀ`,
             `∂L/∂x = Wᵀ (∂L/∂y)`,
@@ -625,9 +625,7 @@ print("eig:", np.linalg.eigvalsh(H))`,
           title: `Newton & Quasi-Newton`,
           content: `Newton converges quadratically near min if H PD. **BFGS** and **L-BFGS** approximate H inverse from gradient history—used in sklearn LogisticRegression(lbfgs). **Conjugate gradient** for large sparse systems.
 
-Deep learning rarely uses full Newton—too costly. Small networks or meta-learning sometimes use Hessian info. Natural gradient preconditions by Fisher information F⁻¹∇L.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Deep learning rarely uses full Newton—too costly. Small networks or meta-learning sometimes use Hessian info. Natural gradient preconditions by Fisher information F⁻¹∇L.`,
           formulas: [
             `Newton: θ ← θ − H⁻¹∇L`,
             `Quadratic conv near min`,
@@ -658,9 +656,7 @@ print("min:", r.x)`,
           title: `Jacobian Applications`,
           content: `**Normalizing flows**: log p(x)=log p(z)+log|det ∂f/∂x|. **Robotics** kinematics Jacobian maps joint to end-effector velocities. **Sensitivity** of model output to input: J input gradients for adversarial examples.
 
-**Change of variables** in probability multivariate: p_y(y)=p_x(x)/|det J|. VAE decoder Jacobian affects likelihood approximations. Stable computation via log-det tricks.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Change of variables** in probability multivariate: p_y(y)=p_x(x)/|det J|. VAE decoder Jacobian affects likelihood approximations. Stable computation via log-det tricks.`,
           formulas: [
             `log p(x) = log p(z) + log|det J|`,
             `Adv examples: max ||δ|| s.t. misclassify`,
@@ -689,9 +685,7 @@ print("log|det|:", np.linalg.slogdet(A)[1])`,
           title: `Gauss-Newton & Levenberg-Marquardt`,
           content: `For least squares r(θ), Hessian approx H≈J_rᵀJ_r Jacobian of residuals. **Gauss-Newton** ignores second-order term. **Levenberg-Marquardt** adds λI damping between GN and GD.
 
-Used in nonlinear curve fitting and some pose estimation. More stable than pure Newton for sum-of-squares objectives. Connects to linearization of nonlinear models each iteration.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Used in nonlinear curve fitting and some pose estimation. More stable than pure Newton for sum-of-squares objectives. Connects to linearization of nonlinear models each iteration.`,
           formulas: [
             `H ≈ JᵀJ (Gauss-Newton)`,
             `LM: (JᵀJ + λI)Δ = −Jᵀr`,
@@ -783,9 +777,7 @@ x=3.; x -= 6/2; print(x)`,
           title: `Critical Points`,
           content: `**Second derivative test** 1D: f''>0 min, f''<0 max. Multi-D: H positive definite → strict local min; negative definite → max; indefinite → saddle. **Global min** on convex domain if f convex.
 
-Non-convex DL: many saddles, few bad local minima empirically. **Strict saddle** has directions up and down. Perturbation escapes saddles with noise in SGD.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Non-convex DL: many saddles, few bad local minima empirically. **Strict saddle** has directions up and down. Perturbation escapes saddles with noise in SGD.`,
           formulas: [
             `∇f(x*) = 0 critical`,
             `H PD → strict local min`,
@@ -818,9 +810,7 @@ print("eig:", np.linalg.eigvalsh(H))`,
 
 Convex optimization globally tractable. Linear models with convex loss (MSE, logistic) → convex in w. Deep nets non-convex in θ.
 
-**Jensen inequality** E[f(X)]≥f(E[X]) for convex f—used in proofs. L1 not strictly convex at 0 but still convex.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Jensen inequality** E[f(X)]≥f(E[X]) for convex f—used in proofs. L1 not strictly convex at 0 but still convex.`,
           formulas: [
             `f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)`,
             `H ⪰ 0 ⇔ convex (C²)`,

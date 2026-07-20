@@ -730,7 +730,7 @@ export const MATH_MODULES = [
           {
             id: "dot-def",
             title: "Dot Product Definition",
-            content: "**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Orthogonal when u·v=0. Bilinear and symmetric. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v. In ML, dot product scores attention queries against keys. Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Orthogonal when u·v=0. Bilinear and symmetric. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v. In ML, dot product scores attention queries against keys. Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space.",
             formulas: [
               "u · v = ∑ uᵢ vᵢ = uᵀv",
               "u · v = ||u|| ||v|| cos θ",
@@ -864,7 +864,7 @@ export const MATH_MODULES = [
           {
             id: "mat-mv",
             title: "Matrix-Vector Multiplication",
-            content: "Ax for A∈ℝ^{m×n}, x∈ℝ^n produces y∈ℝ^m where y_i = ∑_j A_ij x_j = row_i(A)·x. Each output component is dot product of row with x. Geometrically, A transforms x to new space. **Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns. Row picture: dot products of rows with x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Ax for A∈ℝ^{m×n}, x∈ℝ^n produces y∈ℝ^m where y_i = ∑_j A_ij x_j = row_i(A)·x. Each output component is dot product of row with x. Geometrically, A transforms x to new space. **Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns. Row picture: dot products of rows with x.",
             formulas: [
               "y = Ax, y_i = ∑_j A_ij x_j",
               "Ax = x₁a₁ + x₂a₂ + ... (column view)",
@@ -954,7 +954,7 @@ export const MATH_MODULES = [
           {
             id: "mm-def",
             title: "Matrix Multiplication",
-            content: "For A∈ℝ^{m×k}, B∈ℝ^{k×n}, product C=AB ∈ ℝ^{m×n} with C_ij = ∑_l A_il B_lj. **Inner dimensions must match** (k). NOT commutative: AB≠BA generally. Associative: (AB)C=A(BC). Distributive over addition. Each C_ij is dot product of row i of A with column j of B. Chain of layers composes weight matrices. Strassen and blocked multiplication optimize large products on hardware. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "For A∈ℝ^{m×k}, B∈ℝ^{k×n}, product C=AB ∈ ℝ^{m×n} with C_ij = ∑_l A_il B_lj. **Inner dimensions must match** (k). NOT commutative: AB≠BA generally. Associative: (AB)C=A(BC). Distributive over addition. Each C_ij is dot product of row i of A with column j of B. Chain of layers composes weight matrices. Strassen and blocked multiplication optimize large products on hardware.",
             formulas: [
               "C = AB, C_ij = ∑_l A_il B_lj",
               "A: m×k, B: k×n → C: m×n",
@@ -976,7 +976,7 @@ export const MATH_MODULES = [
           {
             id: "mm-prop",
             title: "Transpose & Trace",
-            content: "**Transpose** (AB)ᵀ = BᵀAᵀ. Symmetric A iff A=Aᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)). Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Transpose** (AB)ᵀ = BᵀAᵀ. Symmetric A iff A=Aᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)). Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers.",
             formulas: [
               "(AB)ᵀ = BᵀAᵀ",
               "tr(A) = ∑ A_ii",
@@ -1020,7 +1020,7 @@ export const MATH_MODULES = [
           {
             id: "mm-nn",
             title: "Matrix Ops in Neural Nets",
-            content: "Fully connected layer: h = σ(Wx+b). Batch: H = σ(XWᵀ+B). Backprop: ∂L/∂W = (∂L/∂H)ᵀ X. Weight matrices learned by gradient descent. Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow. Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Fully connected layer: h = σ(Wx+b). Batch: H = σ(XWᵀ+B). Backprop: ∂L/∂W = (∂L/∂H)ᵀ X. Weight matrices learned by gradient descent. Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow. Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill.",
             formulas: [
               "h = σ(Wx + b)",
               "Batch: H = σ(XWᵀ + B)",
@@ -1066,7 +1066,7 @@ export const MATH_MODULES = [
           {
             id: "ls-form",
             title: "System Formulation",
-            content: "Linear system Ax=b: A∈ℝ^{m×n}, x∈ℝ^n unknown, b∈ℝ^m. **Consistent** if ∃x solution. Unique solution when A square and invertible. Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system. Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Linear system Ax=b: A∈ℝ^{m×n}, x∈ℝ^n unknown, b∈ℝ^m. **Consistent** if ∃x solution. Unique solution when A square and invertible. Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system. Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem.",
             formulas: [
               "Ax = b",
               "Consistent ⇔ b ∈ Col(A)",
@@ -1110,7 +1110,7 @@ export const MATH_MODULES = [
           {
             id: "ls-lsq",
             title: "Least Squares Solution",
-            content: "When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb. Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible. **Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases. Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb. Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible. **Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases. Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems.",
             formulas: [
               "min ||Ax − b||₂²",
               "Normal eq: AᵀAx = Aᵀb",
@@ -1132,7 +1132,7 @@ export const MATH_MODULES = [
           {
             id: "ls-rank",
             title: "Rank & Null Space",
-            content: "**Column space** Col(A) = {Ax | x∈ℝ^n}. **Null space** Null(A) = {x | Ax=0}. Rank-nullity: rank(A)+dim(Null(A))=n. Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values. Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Column space** Col(A) = {Ax | x∈ℝ^n}. **Null space** Null(A) = {x | Ax=0}. Rank-nullity: rank(A)+dim(Null(A))=n. Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values. Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors.",
             formulas: [
               "rank(A) = dim Col(A)",
               "rank(A) + nullity(A) = n",
@@ -1211,7 +1211,7 @@ export const MATH_MODULES = [
           {
             id: "det-geom",
             title: "Geometric Meaning",
-            content: "Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves orientation. In 3D, |det| = volume of parallelepiped. Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx. Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves orientation. In 3D, |det| = volume of parallelepiped. Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx. Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.",
             formulas: [
               "|det([v1 v2])| = parallelogram area",
               "3D: |det| = volume",
@@ -1255,7 +1255,7 @@ export const MATH_MODULES = [
           {
             id: "det-ml",
             title: "Determinants in ML",
-            content: "Multivariate Gaussian: p(x)=exp(−½(x−μ)ᵀΣ⁻¹(x−μ))/√((2π)ⁿdet Σ). Zero det Σ → degenerate distribution. Normalizing flows track log|det ∂f/∂x| for density transformation. Volume preservation in invertible nets requires |det J|=1. PCA uses det(Σ) related to product of eigenvalues. Regularization adds λI ensuring det(Σ+λI)>0. Matrix determinant lemma useful in Gaussian process updates. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Multivariate Gaussian: p(x)=exp(−½(x−μ)ᵀΣ⁻¹(x−μ))/√((2π)ⁿdet Σ). Zero det Σ → degenerate distribution. Normalizing flows track log|det ∂f/∂x| for density transformation. Volume preservation in invertible nets requires |det J|=1. PCA uses det(Σ) related to product of eigenvalues. Regularization adds λI ensuring det(Σ+λI)>0. Matrix determinant lemma useful in Gaussian process updates.",
             formulas: [
               "MVN norm: (2π)^(−n/2) |Σ|^(−1/2)",
               "det(Σ) = ∏ λ_i",
@@ -1301,7 +1301,7 @@ export const MATH_MODULES = [
           {
             id: "inv-def",
             title: "Inverse Definition",
-            content: "A⁻¹ satisfies AA⁻¹=A⁻¹A=I for square invertible A. Unique when exists. (AB)⁻¹=B⁻¹A⁻¹ reverse order like transpose. (Aᵀ)⁻¹=(A⁻¹)ᵀ. Inverse undoes linear transform: if y=Ax then x=A⁻¹y. Not all matrices invert—singular when det=0. Never invert large dense matrices explicitly in production; prefer solve(A,b). Inverse of orthogonal Q is Qᵀ. Diagonal inverse inverts diagonal entries. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "A⁻¹ satisfies AA⁻¹=A⁻¹A=I for square invertible A. Unique when exists. (AB)⁻¹=B⁻¹A⁻¹ reverse order like transpose. (Aᵀ)⁻¹=(A⁻¹)ᵀ. Inverse undoes linear transform: if y=Ax then x=A⁻¹y. Not all matrices invert—singular when det=0. Never invert large dense matrices explicitly in production; prefer solve(A,b). Inverse of orthogonal Q is Qᵀ. Diagonal inverse inverts diagonal entries.",
             formulas: [
               "AA⁻¹ = A⁻¹A = I",
               "(AB)⁻¹ = B⁻¹A⁻¹",
@@ -1323,7 +1323,7 @@ export const MATH_MODULES = [
           {
             id: "inv-2x2",
             title: "2×2 Inverse Formula",
-            content: "For A=[[a,b],[c,d]], A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]] when det≠0. Adjugate divided by determinant. Quick hand calculation useful for intuition. Cofactor matrix transpose divided by det generalizes to n×n. Singular when rows proportional: [1,2] and [2,4]. Near-singular when det≈0 causes huge entries in A⁻¹—ill-conditioning. Always check cond(A) before trusting explicit inverse. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "For A=[[a,b],[c,d]], A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]] when det≠0. Adjugate divided by determinant. Quick hand calculation useful for intuition. Cofactor matrix transpose divided by det generalizes to n×n. Singular when rows proportional: [1,2] and [2,4]. Near-singular when det≈0 causes huge entries in A⁻¹—ill-conditioning. Always check cond(A) before trusting explicit inverse.",
             formulas: [
               "A⁻¹ = (1/det) [[d,−b], [−c,a]]",
               "det = ad − bc",
@@ -1345,7 +1345,7 @@ export const MATH_MODULES = [
           {
             id: "inv-pinv",
             title: "Pseudo-Inverse",
-            content: "**Moore-Penrose pseudo-inverse** A⁺ generalizes inverse for non-square or singular A. SVD: A=UΣVᵀ, A⁺=VΣ⁺Uᵀ where Σ⁺ inverts non-zero singular values. Least squares minimum-norm: x=A⁺b. np.linalg.pinv uses SVD. Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Moore-Penrose pseudo-inverse** A⁺ generalizes inverse for non-square or singular A. SVD: A=UΣVᵀ, A⁺=VΣ⁺Uᵀ where Σ⁺ inverts non-zero singular values. Least squares minimum-norm: x=A⁺b. np.linalg.pinv uses SVD. Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular.",
             formulas: [
               "A⁺ via SVD: V Σ⁺ Uᵀ",
               "Least squares: x = A⁺b",
@@ -1367,7 +1367,7 @@ export const MATH_MODULES = [
           {
             id: "inv-ml",
             title: "Inverse in Regression",
-            content: "Closed-form OLS: β=(XᵀX)⁻¹Xᵀy when XᵀX invertible. Ridge: β=(XᵀX+λI)⁻¹Xᵀy always invertible for λ>0. Newton step: Δθ=H⁻¹∇L uses Hessian inverse. Fisher information inverse gives Cramér-Rao bound. Avoid explicit inverse—use np.linalg.solve(XTX, XTy). Woodbury matrix identity efficient for low-rank updates. Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Closed-form OLS: β=(XᵀX)⁻¹Xᵀy when XᵀX invertible. Ridge: β=(XᵀX+λI)⁻¹Xᵀy always invertible for λ>0. Newton step: Δθ=H⁻¹∇L uses Hessian inverse. Fisher information inverse gives Cramér-Rao bound. Avoid explicit inverse—use np.linalg.solve(XTX, XTy). Woodbury matrix identity efficient for low-rank updates. Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD.",
             formulas: [
               "OLS: β = (XᵀX)⁻¹ Xᵀy",
               "Ridge: (XᵀX + λI)⁻¹ Xᵀy",
@@ -1435,7 +1435,7 @@ export const MATH_MODULES = [
           {
             id: "eig-diag",
             title: "Diagonalization",
-            content: "If A has n independent eigenvectors, A=VΛV⁻¹ with Λ diagonal eigenvalues, V columns eigenvectors. A^k = VΛ^k V⁻¹ simplifies matrix powers. Symmetric: A=QΛQᵀ with Q orthogonal. Not all matrices diagonalizable—defective Jordan form needed. Similar matrices share eigenvalues. PCA covariance diagonalized by eigenvectors. Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "If A has n independent eigenvectors, A=VΛV⁻¹ with Λ diagonal eigenvalues, V columns eigenvectors. A^k = VΛ^k V⁻¹ simplifies matrix powers. Symmetric: A=QΛQᵀ with Q orthogonal. Not all matrices diagonalizable—defective Jordan form needed. Similar matrices share eigenvalues. PCA covariance diagonalized by eigenvectors. Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A.",
             formulas: [
               "A = V Λ V⁻¹",
               "Λ = diag(λ₁,...,λₙ)",
@@ -1457,7 +1457,7 @@ export const MATH_MODULES = [
           {
             id: "eig-pca",
             title: "Eigenvalues in PCA",
-            content: "Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions. Sort λ descending; keep top k for dimensionality reduction. Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig. Whitening scales by 1/√λ. Zero eigenvalues indicate redundant features or rank deficiency. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions. Sort λ descending; keep top k for dimensionality reduction. Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig. Whitening scales by 1/√λ. Zero eigenvalues indicate redundant features or rank deficiency.",
             formulas: [
               "Σ v_i = λ_i v_i",
               "λ_i = variance along PC i",
@@ -1547,7 +1547,7 @@ export const MATH_MODULES = [
           {
             id: "svd-lowrank",
             title: "Low-Rank Approximation",
-            content: "Eckart-Young: best rank-k approximation A_k = ∑_{i=1}^k σ_i u_i v_iᵀ minimizes ||A−A_k||_F. Truncate small σ for compression/denoising. **Effective rank** from σ decay. Image compression keeps top k singular values. Noise often in small σ components. Recommender matrix factorization approximates R≈UVᵀ low rank. Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ². Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Eckart-Young: best rank-k approximation A_k = ∑_{i=1}^k σ_i u_i v_iᵀ minimizes ||A−A_k||_F. Truncate small σ for compression/denoising. **Effective rank** from σ decay. Image compression keeps top k singular values. Noise often in small σ components. Recommender matrix factorization approximates R≈UVᵀ low rank. Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ².",
             formulas: [
               "A_k = ∑_{i=1}^k σ_i u_i v_iᵀ",
               "min ||A − A_k||_F over rank k",
@@ -1569,7 +1569,7 @@ export const MATH_MODULES = [
           {
             id: "svd-pinv",
             title: "SVD & Pseudo-Inverse",
-            content: "A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition number κ(A)=σ_max/σ_min. Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition number κ(A)=σ_max/σ_min. Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences.",
             formulas: [
               "A⁺ = V Σ⁺ Uᵀ",
               "κ(A) = σ_max / σ_min",
@@ -1659,7 +1659,7 @@ export const MATH_MODULES = [
           {
             id: "pca-proj",
             title: "Projection & Reconstruction",
-            content: "Project x to k dims: z = W_kᵀ x where W_k columns top k eigenvectors. Reconstruct x̂ = W_k z = W_k W_kᵀ x. Reconstruction error ||x−x̂||² sum of trailing eigenvalues ∑_{i>k}λ_i. Mean centering essential before PCA. Explained variance ratio guides k. Whitened coords: z_i = w_iᵀx/√λ_i have unit variance. Biplot visualizes samples and feature loadings together. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Project x to k dims: z = W_kᵀ x where W_k columns top k eigenvectors. Reconstruct x̂ = W_k z = W_k W_kᵀ x. Reconstruction error ||x−x̂||² sum of trailing eigenvalues ∑_{i>k}λ_i. Mean centering essential before PCA. Explained variance ratio guides k. Whitened coords: z_i = w_iᵀx/√λ_i have unit variance. Biplot visualizes samples and feature loadings together.",
             formulas: [
               "z = W_kᵀ x (projection)",
               "x̂ = W_k W_kᵀ x (reconstruction)",
@@ -1681,7 +1681,7 @@ export const MATH_MODULES = [
           {
             id: "pca-kernel",
             title: "Kernel PCA Preview",
-            content: "Kernel PCA applies PCA in feature space via kernel matrix K_ij=K(x_i,x_j) without explicit φ(x). Center K: K̃ = H K H with H=I−11ᵀ/n. Eigenvectors of K̃ give nonlinear PCs. Captures nonlinear structure linear PCA misses. Computationally O(n³)— costly for large n. Connection to spectral methods and graph embeddings. Choose kernel (RBF, polynomial) controls implicit feature space geometry. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Kernel PCA applies PCA in feature space via kernel matrix K_ij=K(x_i,x_j) without explicit φ(x). Center K: K̃ = H K H with H=I−11ᵀ/n. Eigenvectors of K̃ give nonlinear PCs. Captures nonlinear structure linear PCA misses. Computationally O(n³)— costly for large n. Connection to spectral methods and graph embeddings. Choose kernel (RBF, polynomial) controls implicit feature space geometry.",
             formulas: [
               "K_ij = K(x_i, x_j)",
               "K̃ = H K H (centered kernel)",
@@ -1943,7 +1943,7 @@ export const MATH_MODULES = [
           {
             id: "der-numeric",
             title: "Numerical Differentiation",
-            content: "Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x−h))/(2h), error O(h²) better. Choose h~√ε_machine for float64. **Finite differences** verify autodiff implementations. np.gradient for discrete arrays. Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x−h))/(2h), error O(h²) better. Choose h~√ε_machine for float64. **Finite differences** verify autodiff implementations. np.gradient for discrete arrays. Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers.",
             formulas: [
               "Forward: (f(x+h)−f(x))/h",
               "Central: (f(x+h)−f(x−h))/(2h)",
@@ -2011,7 +2011,7 @@ export const MATH_MODULES = [
           {
             id: "dr-power",
             title: "Basic Rules",
-            content: "Power: d/dx x^n = n x^{n−1}. Constant multiple: (cf)'=cf'. Sum: (f+g)'=f'+g'. Exponential: d/dx e^x = e^x. Log: d/dx ln(x)=1/x. Trig: (sin x)'=cos x, (cos x)'=−sin x. Sigmoid σ(x): σ'(x)=σ(x)(1−σ(x)). Softplus smooth ReLU: d/dx ln(1+e^x). These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Power: d/dx x^n = n x^{n−1}. Constant multiple: (cf)'=cf'. Sum: (f+g)'=f'+g'. Exponential: d/dx e^x = e^x. Log: d/dx ln(x)=1/x. Trig: (sin x)'=cos x, (cos x)'=−sin x. Sigmoid σ(x): σ'(x)=σ(x)(1−σ(x)). Softplus smooth ReLU: d/dx ln(1+e^x). These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks.",
             formulas: [
               "d/dx x^n = n x^(n−1)",
               "d/dx e^x = e^x",
@@ -2033,7 +2033,7 @@ export const MATH_MODULES = [
           {
             id: "dr-product",
             title: "Product & Quotient Rules",
-            content: "**Product**: (fg)' = f'g + fg'. **Quotient**: (f/g)' = (f'g − fg')/g². **Reciprocal**: (1/g)' = −g'/g². Dot product derivative: d/dt(u·v)=u'·v+u·v'. Matrix product: d/dt(AB)=A'B+AB' when both vary. Used when loss combines products of predictions and weights. Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Product**: (fg)' = f'g + fg'. **Quotient**: (f/g)' = (f'g − fg')/g². **Reciprocal**: (1/g)' = −g'/g². Dot product derivative: d/dt(u·v)=u'·v+u·v'. Matrix product: d/dt(AB)=A'B+AB' when both vary. Used when loss combines products of predictions and weights. Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative.",
             formulas: [
               "(fg)' = f'g + fg'",
               "(f/g)' = (f'g − fg')/g²",
@@ -2055,7 +2055,7 @@ export const MATH_MODULES = [
           {
             id: "dr-chain",
             title: "Chain Rule",
-            content: "**Chain rule**: (f∘g)'(x) = f'(g(x))·g'(x). Multivariate: dz/dx = dz/dy · dy/dx. Deep networks: ∂L/∂x₁ = (∂L/∂x_n)(∂x_n/∂x_{n−1})...(∂x₂/∂x₁) product of Jacobians—backprop. **Computational graph** tracks dependencies. Reverse-mode autodiff efficient when many inputs, one output (typical loss). Forward-mode for few inputs. Chain rule is foundation of automatic differentiation in PyTorch/JAX. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Chain rule**: (f∘g)'(x) = f'(g(x))·g'(x). Multivariate: dz/dx = dz/dy · dy/dx. Deep networks: ∂L/∂x₁ = (∂L/∂x_n)(∂x_n/∂x_{n−1})...(∂x₂/∂x₁) product of Jacobians—backprop. **Computational graph** tracks dependencies. Reverse-mode autodiff efficient when many inputs, one output (typical loss). Forward-mode for few inputs. Chain rule is foundation of automatic differentiation in PyTorch/JAX.",
             formulas: [
               "(f∘g)'(x) = f'(g(x))·g'(x)",
               "∂L/∂w = ∂L/∂y · ∂y/∂w",
@@ -2077,7 +2077,7 @@ export const MATH_MODULES = [
           {
             id: "dr-common",
             title: "Common ML Derivatives",
-            content: "MSE: L=(1/2)(y−ŷ)², ∂L/∂ŷ=ŷ−y. BCE with logits handled in fused ops. L2 reg: λ||w||², ∂/∂w=2λw. Cross-entropy w softmax combined derivative simplifies to ŷ−y one-hot. tanh': 1−tanh². GELU, SiLU modern activations have known derivatives. BatchNorm backward involves batch statistics derivatives. Keeping cheat sheet accelerates debugging custom layers without autograd. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "MSE: L=(1/2)(y−ŷ)², ∂L/∂ŷ=ŷ−y. BCE with logits handled in fused ops. L2 reg: λ||w||², ∂/∂w=2λw. Cross-entropy w softmax combined derivative simplifies to ŷ−y one-hot. tanh': 1−tanh². GELU, SiLU modern activations have known derivatives. BatchNorm backward involves batch statistics derivatives. Keeping cheat sheet accelerates debugging custom layers without autograd.",
             formulas: [
               "MSE: ∂L/∂ŷ = ŷ − y",
               "L2: ∂(λ||w||²)/∂w = 2λw",
@@ -2167,7 +2167,7 @@ export const MATH_MODULES = [
           {
             id: "tay-multivar",
             title: "Multivariate Taylor",
-            content: "f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vector of first partials. Hessian H_ij=∂²f/∂x_i∂x_j symmetric if f twice differentiable. Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle. Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vector of first partials. Hessian H_ij=∂²f/∂x_i∂x_j symmetric if f twice differentiable. Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle. Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian.",
             formulas: [
               "f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ",
               "H_ij = ∂²f/∂x_i∂x_j",
@@ -2189,7 +2189,7 @@ export const MATH_MODULES = [
           {
             id: "tay-ml",
             title: "Taylor in ML Optimization",
-            content: "Loss linearization L(θ+Δ)≈L(θ)+∇L·Δ guides GD step. **Newton**: Δ=−H⁻¹∇L from quadratic model. **Adam** adapts steps per parameter—not pure Taylor but related momentum. **Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP. Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Loss linearization L(θ+Δ)≈L(θ)+∇L·Δ guides GD step. **Newton**: Δ=−H⁻¹∇L from quadratic model. **Adam** adapts steps per parameter—not pure Taylor but related momentum. **Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP. Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation.",
             formulas: [
               "GD step from 1st order Taylor",
               "Newton from 2nd order model",
@@ -2235,7 +2235,7 @@ export const MATH_MODULES = [
           {
             id: "int-def",
             title: "Integral Definition",
-            content: "**Riemann sum**: ∫_a^b f(x)dx ≈ ∑ f(x_i)Δx limit as partition refines. **Indefinite integral** ∫f(x)dx = F(x)+C where F'=f. **Definite integral** gives signed area under curve. Fundamental Theorem: ∫_a^b f(x)dx = F(b)−F(a) if F'=f. Probability: ∫ p(x)dx=1 for PDF. Expected value E[X]=∫ x p(x) dx. Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Riemann sum**: ∫_a^b f(x)dx ≈ ∑ f(x_i)Δx limit as partition refines. **Indefinite integral** ∫f(x)dx = F(x)+C where F'=f. **Definite integral** gives signed area under curve. Fundamental Theorem: ∫_a^b f(x)dx = F(b)−F(a) if F'=f. Probability: ∫ p(x)dx=1 for PDF. Expected value E[X]=∫ x p(x) dx. Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average.",
             formulas: [
               "∫_a^b f(x)dx = signed area",
               "F(b) − F(a) if F' = f",
@@ -2257,7 +2257,7 @@ export const MATH_MODULES = [
           {
             id: "int-rules",
             title: "Integration Techniques",
-            content: "Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Substitution** u=g(x). **Integration by parts** ∫u dv = uv − ∫v du. **Partial fractions** for rational functions. Gaussian integral ∫ e^{−x²} dx = √π over ℝ. Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Substitution** u=g(x). **Integration by parts** ∫u dv = uv − ∫v du. **Partial fractions** for rational functions. Gaussian integral ∫ e^{−x²} dx = √π over ℝ. Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration.",
             formulas: [
               "∫ x^n dx = x^(n+1)/(n+1) + C",
               "∫ e^x dx = e^x + C",
@@ -2279,7 +2279,7 @@ export const MATH_MODULES = [
           {
             id: "int-prob",
             title: "Integrals in Probability",
-            content: "Continuous PDF p(x)≥0, ∫p=1. CDF F(x)=∫_{−∞}^x p(t)dt. E[g(X)]=∫ g(x)p(x)dx. Variance via ∫ (x−μ)²p(x)dx. Joint PDF integrates to 1 over ℝ². Marginal: p(x)=∫ p(x,y)dy. Change of variables: if y=g(x), ∫ f(y)dy = ∫ f(g(x))|g'(x)|dx. Jacobian determinant generalizes to multivariate. Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Continuous PDF p(x)≥0, ∫p=1. CDF F(x)=∫_{−∞}^x p(t)dt. E[g(X)]=∫ g(x)p(x)dx. Variance via ∫ (x−μ)²p(x)dx. Joint PDF integrates to 1 over ℝ². Marginal: p(x)=∫ p(x,y)dy. Change of variables: if y=g(x), ∫ f(y)dy = ∫ f(g(x))|g'(x)|dx. Jacobian determinant generalizes to multivariate. Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate.",
             formulas: [
               "∫ p(x) dx = 1",
               "F(x) = ∫_{−∞}^x p(t) dt",
@@ -2424,7 +2424,7 @@ export const MATH_MODULES = [
           {
             id: "pd-ml",
             title: "Partials in Backprop",
-            content: "Each layer computes local Jacobian ∂h/∂x. Chain rule multiplies Jacobians backward. ∂L/∂x = (∂L/∂h)(∂h/∂x). For linear h=Wx, ∂h/∂W=x, ∂h/∂x=Wᵀ. Element-wise activation: Jacobian diagonal with σ'(z). Batch sums gradients over samples. PyTorch autograd builds graph and .backward() applies chain rule automatically. Manual partials verify implementation for custom ops. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Each layer computes local Jacobian ∂h/∂x. Chain rule multiplies Jacobians backward. ∂L/∂x = (∂L/∂h)(∂h/∂x). For linear h=Wx, ∂h/∂W=x, ∂h/∂x=Wᵀ. Element-wise activation: Jacobian diagonal with σ'(z). Batch sums gradients over samples. PyTorch autograd builds graph and .backward() applies chain rule automatically. Manual partials verify implementation for custom ops.",
             formulas: [
               "∂L/∂x = (∂L/∂h)(∂h/∂x)",
               "Linear: ∂(Wx)/∂W = x",
@@ -2492,7 +2492,7 @@ export const MATH_MODULES = [
           {
             id: "grad-descent",
             title: "Gradient Descent Geometry",
-            content: "Update θ_{t+1}=θ_t−η∇L(θ_t). η **learning rate** controls step. Too large: overshoot; too small: slow. **Lipschitz** gradient: ||∇f(x)−∇f(y)||≤L||x−y|| gives convergence rates. Convex: GD finds global min with right η. Non-convex: converges to stationary point often saddle escape heuristics help. **Momentum** accumulates velocity smoothing oscillations. **Adam** adaptive per-parameter steps. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Update θ_{t+1}=θ_t−η∇L(θ_t). η **learning rate** controls step. Too large: overshoot; too small: slow. **Lipschitz** gradient: ||∇f(x)−∇f(y)||≤L||x−y|| gives convergence rates. Convex: GD finds global min with right η. Non-convex: converges to stationary point often saddle escape heuristics help. **Momentum** accumulates velocity smoothing oscillations. **Adam** adaptive per-parameter steps.",
             formulas: [
               "θ_{t+1} = θ_t − η ∇L(θ_t)",
               "η too large → diverge",
@@ -2514,7 +2514,7 @@ export const MATH_MODULES = [
           {
             id: "grad-proj",
             title: "Projection & Constraints",
-            content: "Projected GD: θ_{t+1}=Proj_C(θ_t−η∇L) enforces constraints C (e.g., weights ≥0). **Proximal** methods handle non-smooth regularizers. Simplex projection for probability vectors. Box constraints clip θ after step. Lagrange multipliers (later) handle equality constraints. Constrained optimization common in fairness constraints and resource limits. Projected methods maintain feasibility each step. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Projected GD: θ_{t+1}=Proj_C(θ_t−η∇L) enforces constraints C (e.g., weights ≥0). **Proximal** methods handle non-smooth regularizers. Simplex projection for probability vectors. Box constraints clip θ after step. Lagrange multipliers (later) handle equality constraints. Constrained optimization common in fairness constraints and resource limits. Projected methods maintain feasibility each step.",
             formulas: [
               "Proj_C(x) = argmin_{y∈C} ||y−x||",
               "Projected GD after each step",
@@ -2582,7 +2582,7 @@ export const MATH_MODULES = [
           {
             id: "cr-jacobian",
             title: "Jacobian Matrix",
-            content: "For f: ℝⁿ→ℝᵐ, **Jacobian** J_f ∈ ℝ^{m×n} with J_ij=∂f_i/∂x_j. Linear approximation: f(x+δ)≈f(x)+J_f(x)δ. **Chain rule**: J_{f∘g}(x)=J_f(g(x))·J_g(x). Scalar f: ∇f is Jacobian 1×n (gradient row) or n×1 (column convention). Vector-to-scalar: gradient ∇f is Jacobian transpose of scalar function. np.autograd and JAX build Jacobian-vector products efficiently without full dense J for large n. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "For f: ℝⁿ→ℝᵐ, **Jacobian** J_f ∈ ℝ^{m×n} with J_ij=∂f_i/∂x_j. Linear approximation: f(x+δ)≈f(x)+J_f(x)δ. **Chain rule**: J_{f∘g}(x)=J_f(g(x))·J_g(x). Scalar f: ∇f is Jacobian 1×n (gradient row) or n×1 (column convention). Vector-to-scalar: gradient ∇f is Jacobian transpose of scalar function. np.autograd and JAX build Jacobian-vector products efficiently without full dense J for large n.",
             formulas: [
               "J_ij = ∂f_i / ∂x_j",
               "J_{f∘g} = J_f · J_g",
@@ -2626,7 +2626,7 @@ export const MATH_MODULES = [
           {
             id: "cr-vector",
             title: "Vector Chain Rules",
-            content: "If L=f(u) and u=g(x), then ∂L/∂x=(∂u/∂x)ᵀ∂L/∂u when using column convention. Matrix params: ∂L/∂W for y=Wx+b is (∂L/∂y)xᵀ outer product. Batch: sum over samples. **Einstein summation** einsum clarifies tensor contractions in deep nets. Batched matmul backward uses matmuls not loops. Shape discipline prevents silent bugs in manual backprop. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "If L=f(u) and u=g(x), then ∂L/∂x=(∂u/∂x)ᵀ∂L/∂u when using column convention. Matrix params: ∂L/∂W for y=Wx+b is (∂L/∂y)xᵀ outer product. Batch: sum over samples. **Einstein summation** einsum clarifies tensor contractions in deep nets. Batched matmul backward uses matmuls not loops. Shape discipline prevents silent bugs in manual backprop.",
             formulas: [
               "∂L/∂W = (∂L/∂y) xᵀ",
               "∂L/∂x = Wᵀ (∂L/∂y)",
@@ -2716,7 +2716,7 @@ export const MATH_MODULES = [
           {
             id: "jh-newton",
             title: "Newton & Quasi-Newton",
-            content: "Newton converges quadratically near min if H PD. **BFGS** and **L-BFGS** approximate H inverse from gradient history—used in sklearn LogisticRegression(lbfgs). **Conjugate gradient** for large sparse systems. Deep learning rarely uses full Newton—too costly. Small networks or meta-learning sometimes use Hessian info. Natural gradient preconditions by Fisher information F⁻¹∇L. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Newton converges quadratically near min if H PD. **BFGS** and **L-BFGS** approximate H inverse from gradient history—used in sklearn LogisticRegression(lbfgs). **Conjugate gradient** for large sparse systems. Deep learning rarely uses full Newton—too costly. Small networks or meta-learning sometimes use Hessian info. Natural gradient preconditions by Fisher information F⁻¹∇L.",
             formulas: [
               "Newton: θ ← θ − H⁻¹∇L",
               "Quadratic conv near min",
@@ -2738,7 +2738,7 @@ export const MATH_MODULES = [
           {
             id: "jh-jacobian-apps",
             title: "Jacobian Applications",
-            content: "**Normalizing flows**: log p(x)=log p(z)+log|det ∂f/∂x|. **Robotics** kinematics Jacobian maps joint to end-effector velocities. **Sensitivity** of model output to input: J input gradients for adversarial examples. **Change of variables** in probability multivariate: p_y(y)=p_x(x)/|det J|. VAE decoder Jacobian affects likelihood approximations. Stable computation via log-det tricks. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Normalizing flows**: log p(x)=log p(z)+log|det ∂f/∂x|. **Robotics** kinematics Jacobian maps joint to end-effector velocities. **Sensitivity** of model output to input: J input gradients for adversarial examples. **Change of variables** in probability multivariate: p_y(y)=p_x(x)/|det J|. VAE decoder Jacobian affects likelihood approximations. Stable computation via log-det tricks.",
             formulas: [
               "log p(x) = log p(z) + log|det J|",
               "Adv examples: max ||δ|| s.t. misclassify",
@@ -2760,7 +2760,7 @@ export const MATH_MODULES = [
           {
             id: "jh-gauss-newton",
             title: "Gauss-Newton & Levenberg-Marquardt",
-            content: "For least squares r(θ), Hessian approx H≈J_rᵀJ_r Jacobian of residuals. **Gauss-Newton** ignores second-order term. **Levenberg-Marquardt** adds λI damping between GN and GD. Used in nonlinear curve fitting and some pose estimation. More stable than pure Newton for sum-of-squares objectives. Connects to linearization of nonlinear models each iteration. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "For least squares r(θ), Hessian approx H≈J_rᵀJ_r Jacobian of residuals. **Gauss-Newton** ignores second-order term. **Levenberg-Marquardt** adds λI damping between GN and GD. Used in nonlinear curve fitting and some pose estimation. More stable than pure Newton for sum-of-squares objectives. Connects to linearization of nonlinear models each iteration.",
             formulas: [
               "H ≈ JᵀJ (Gauss-Newton)",
               "LM: (JᵀJ + λI)Δ = −Jᵀr",
@@ -2806,7 +2806,7 @@ export const MATH_MODULES = [
           {
             id: "mvo-critical",
             title: "Critical Points",
-            content: "Interior extremum: ∇f=0. **Second derivative test** 1D: f''>0 min, f''<0 max. Multi-D: H positive definite → strict local min; negative definite → max; indefinite → saddle. **Global min** on convex domain if f convex. Non-convex DL: many saddles, few bad local minima empirically. **Strict saddle** has directions up and down. Perturbation escapes saddles with noise in SGD. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Interior extremum: ∇f=0. **Second derivative test** 1D: f''>0 min, f''<0 max. Multi-D: H positive definite → strict local min; negative definite → max; indefinite → saddle. **Global min** on convex domain if f convex. Non-convex DL: many saddles, few bad local minima empirically. **Strict saddle** has directions up and down. Perturbation escapes saddles with noise in SGD.",
             formulas: [
               "∇f(x*) = 0 critical",
               "H PD → strict local min",
@@ -2828,7 +2828,7 @@ export const MATH_MODULES = [
           {
             id: "mvo-convex",
             title: "Convex Functions",
-            content: "f convex if f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). Equivalently H⪰0 everywhere for C² f. **Strict convex** unique global min. Convex optimization globally tractable. Linear models with convex loss (MSE, logistic) → convex in w. Deep nets non-convex in θ. **Jensen inequality** E[f(X)]≥f(E[X]) for convex f—used in proofs. L1 not strictly convex at 0 but still convex. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "f convex if f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). Equivalently H⪰0 everywhere for C² f. **Strict convex** unique global min. Convex optimization globally tractable. Linear models with convex loss (MSE, logistic) → convex in w. Deep nets non-convex in θ. **Jensen inequality** E[f(X)]≥f(E[X]) for convex f—used in proofs. L1 not strictly convex at 0 but still convex.",
             formulas: [
               "f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)",
               "H ⪰ 0 ⇔ convex (C²)",
@@ -2929,7 +2929,7 @@ export const MATH_MODULES = [
           {
             id: "pb-axioms",
             title: "Probability Axioms",
-            content: "**Sample space** Ω all outcomes. **Event** A⊆Ω. Kolmogorov axioms: P(A)≥0; P(Ω)=1; countable additivity P(∪A_i)=∑P(A_i) for disjoint A_i. Uniform finite: P(A)=|A|/|Ω|. Complement P(A^c)=1−P(A). Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Sample space** Ω all outcomes. **Event** A⊆Ω. Kolmogorov axioms: P(A)≥0; P(Ω)=1; countable additivity P(∪A_i)=∑P(A_i) for disjoint A_i. Uniform finite: P(A)=|A|/|Ω|. Complement P(A^c)=1−P(A). Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities.",
             formulas: [
               "P(A) ≥ 0",
               "P(Ω) = 1",
@@ -2951,7 +2951,7 @@ export const MATH_MODULES = [
           {
             id: "pb-count",
             title: "Combinatorial Probability",
-            content: "Equally likely outcomes: P(A)=|A|/|Ω|. Use permutations/combinations from Module 1. Birthday paradox: P(shared birthday) high with small group. Hypergeometric: sampling without replacement. Binomial counts successes in n independent Bernoulli trials. Multinomial generalizes to multiple categories. Careful with independence assumptions when counting joint outcomes. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Equally likely outcomes: P(A)=|A|/|Ω|. Use permutations/combinations from Module 1. Birthday paradox: P(shared birthday) high with small group. Hypergeometric: sampling without replacement. Binomial counts successes in n independent Bernoulli trials. Multinomial generalizes to multiple categories. Careful with independence assumptions when counting joint outcomes.",
             formulas: [
               "P(A) = |A|/|Ω| (equally likely)",
               "Binomial: C(n,k) p^k (1−p)^(n−k)",
@@ -2973,7 +2973,7 @@ export const MATH_MODULES = [
           {
             id: "pb-indep",
             title: "Independence",
-            content: "Events A,B **independent** if P(A∩B)=P(A)P(B). Pairwise vs mutual independence differ for >2 events. Independent trials: outcome doesn't affect next. **Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Events A,B **independent** if P(A∩B)=P(A)P(B). Pairwise vs mutual independence differ for >2 events. Independent trials: outcome doesn't affect next. **Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data.",
             formulas: [
               "A,B indep: P(A∩B)=P(A)P(B)",
               "i.i.d.: independent identical distribution",
@@ -2995,7 +2995,7 @@ export const MATH_MODULES = [
           {
             id: "pb-ml",
             title: "Probability in ML Metrics",
-            content: "Classification accuracy P(correct). **Precision** P(positive|predicted+). **Recall** P(predicted+|true+). **F1** harmonic mean. Probabilistic classifiers output P(y|x). Calibration: predicted probs match frequencies. **Expected risk** E[L(y,ŷ)]. Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Classification accuracy P(correct). **Precision** P(positive|predicted+). **Recall** P(predicted+|true+). **F1** harmonic mean. Probabilistic classifiers output P(y|x). Calibration: predicted probs match frequencies. **Expected risk** E[L(y,ŷ)]. Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels.",
             formulas: [
               "Accuracy = P(correct)",
               "Precision = TP/(TP+FP)",
@@ -3041,7 +3041,7 @@ export const MATH_MODULES = [
           {
             id: "cb-cond",
             title: "Conditional Probability",
-            content: "P(A|B)=P(A∩B)/P(B) when P(B)>0. Restrict sample space to B. **Multiplication rule** P(A∩B)=P(A|B)P(B). Law of total probability: P(A)=∑P(A|B_i)P(B_i) over partition B_i. Conditional changes probabilities with new evidence. Medical testing, spam filtering, and diagnostic models rely on conditioning. P(A|B)≠P(B|A)—prosecutor fallacy confusion. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "P(A|B)=P(A∩B)/P(B) when P(B)>0. Restrict sample space to B. **Multiplication rule** P(A∩B)=P(A|B)P(B). Law of total probability: P(A)=∑P(A|B_i)P(B_i) over partition B_i. Conditional changes probabilities with new evidence. Medical testing, spam filtering, and diagnostic models rely on conditioning. P(A|B)≠P(B|A)—prosecutor fallacy confusion.",
             formulas: [
               "P(A|B) = P(A∩B)/P(B)",
               "P(A∩B) = P(A|B)P(B)",
@@ -3063,7 +3063,7 @@ export const MATH_MODULES = [
           {
             id: "cb-bayes",
             title: "Bayes Theorem",
-            content: "**Bayes**: P(A|B)=P(B|A)P(A)/P(B). P(A) prior, P(A|B) posterior, P(B|A) likelihood, P(B) evidence. Posterior ∝ likelihood × prior. **Naive Bayes** assumes features conditionally independent given class: P(x|y)=∏P(x_i|y). Bayesian ML places priors on weights. Evidence integral often intractable. MAP picks mode of posterior; full posterior gives uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Bayes**: P(A|B)=P(B|A)P(A)/P(B). P(A) prior, P(A|B) posterior, P(B|A) likelihood, P(B) evidence. Posterior ∝ likelihood × prior. **Naive Bayes** assumes features conditionally independent given class: P(x|y)=∏P(x_i|y). Bayesian ML places priors on weights. Evidence integral often intractable. MAP picks mode of posterior; full posterior gives uncertainty.",
             formulas: [
               "P(A|B) = P(B|A)P(A)/P(B)",
               "Posterior ∝ Likelihood × Prior",
@@ -3085,7 +3085,7 @@ export const MATH_MODULES = [
           {
             id: "cb-odds",
             title: "Odds & Log-Odds",
-            content: "Odds O(A)=P(A)/P(A^c). **Log-odds** ln O additive for Bayes updates with likelihood ratio. Logistic regression models log-odds as linear: ln(p/(1−p))=w·x+b. Likelihood ratio P(B|A)/P(B|A^c) measures evidence strength. Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Odds O(A)=P(A)/P(A^c). **Log-odds** ln O additive for Bayes updates with likelihood ratio. Logistic regression models log-odds as linear: ln(p/(1−p))=w·x+b. Likelihood ratio P(B|A)/P(B|A^c) measures evidence strength. Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models.",
             formulas: [
               "Odds = p/(1−p)",
               "logit(p) = ln(p/(1−p))",
@@ -3153,7 +3153,7 @@ export const MATH_MODULES = [
           {
             id: "rv-def",
             title: "Random Variable Definition",
-            content: "**Random variable** X: Ω→ℝ maps outcomes to numbers. **Discrete**: countable values with PMF p(x)=P(X=x). **Continuous**: PDF f(x) with P(a≤X≤b)=∫_a^b f(x)dx. CDF F(x)=P(X≤x) non-decreasing. Support set where p>0 or f>0. Mixed distributions combine atoms and density. Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Random variable** X: Ω→ℝ maps outcomes to numbers. **Discrete**: countable values with PMF p(x)=P(X=x). **Continuous**: PDF f(x) with P(a≤X≤b)=∫_a^b f(x)dx. CDF F(x)=P(X≤x) non-decreasing. Support set where p>0 or f>0. Mixed distributions combine atoms and density. Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x.",
             formulas: [
               "PMF: p(x) = P(X=x) discrete",
               "PDF: P(a≤X≤b) = ∫_a^b f(x)dx",
@@ -3175,7 +3175,7 @@ export const MATH_MODULES = [
           {
             id: "rv-expect",
             title: "Expectation & Variance",
-            content: "E[X]=∑x p(x) or ∫x f(x)dx **expected value** center of mass. **Linearity** E[aX+b]=aE[X]+b; E[X+Y]=E[X]+E[Y] always. **Variance** Var(X)=E[(X−μ)²]=E[X²]−(E[X])². Std σ=√Var. **Covariance** Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Independent ⇒ Cov=0 (converse false). Sample mean x̄ estimates E[X]. Law of large numbers: x̄→E[X] as n→∞. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "E[X]=∑x p(x) or ∫x f(x)dx **expected value** center of mass. **Linearity** E[aX+b]=aE[X]+b; E[X+Y]=E[X]+E[Y] always. **Variance** Var(X)=E[(X−μ)²]=E[X²]−(E[X])². Std σ=√Var. **Covariance** Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Independent ⇒ Cov=0 (converse false). Sample mean x̄ estimates E[X]. Law of large numbers: x̄→E[X] as n→∞.",
             formulas: [
               "E[X] = ∑ x p(x) or ∫ x f(x) dx",
               "Var(X) = E[X²] − (E[X])²",
@@ -3197,7 +3197,7 @@ export const MATH_MODULES = [
           {
             id: "rv-transform",
             title: "Functions of RVs",
-            content: "E[g(X)]=∑g(x)p(x) or ∫g(x)f(x)dx—not g(E[X]) in general (**Jensen**). Var(aX+b)=a²Var(X). Sum variances if independent: Var(X+Y)=Var(X)+Var(Y). For Y=g(X), find PDF of Y via CDF/transform methods. Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "E[g(X)]=∑g(x)p(x) or ∫g(x)f(x)dx—not g(E[X]) in general (**Jensen**). Var(aX+b)=a²Var(X). Sum variances if independent: Var(X+Y)=Var(X)+Var(Y). For Y=g(X), find PDF of Y via CDF/transform methods. Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes.",
             formulas: [
               "E[g(X)] ≠ g(E[X]) in general",
               "Var(aX+b) = a²Var(X)",
@@ -3265,7 +3265,7 @@ export const MATH_MODULES = [
           {
             id: "dist-disc",
             title: "Discrete Distributions",
-            content: "**Bernoulli** p(x)=p^x(1−p)^{1−x}, x∈{0,1}. **Binomial** counts successes in n trials. **Poisson** P(X=k)=e^{−λ}λ^k/k! models counts/rare events. **Categorical** multi-class generalization of Bernoulli. Geometric: trials until first success. PMF sums to 1. MLE for Bernoulli p is sample mean. Poisson regression for count targets. Classification labels often categorical RVs. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Bernoulli** p(x)=p^x(1−p)^{1−x}, x∈{0,1}. **Binomial** counts successes in n trials. **Poisson** P(X=k)=e^{−λ}λ^k/k! models counts/rare events. **Categorical** multi-class generalization of Bernoulli. Geometric: trials until first success. PMF sums to 1. MLE for Bernoulli p is sample mean. Poisson regression for count targets. Classification labels often categorical RVs.",
             formulas: [
               "Bernoulli: P(X=1)=p",
               "Binomial: C(n,k)p^k(1−p)^(n−k)",
@@ -3287,7 +3287,7 @@ export const MATH_MODULES = [
           {
             id: "dist-cont",
             title: "Continuous Distributions",
-            content: "**Uniform** on [a,b]: f=1/(b−a). **Exponential** f(x)=λe^{−λx}, x≥0 memoryless. **Gaussian** N(μ,σ²): f(x)=exp(−(x−μ)²/(2σ²))/√(2πσ²). **Beta** on [0,1] for probabilities. **Gamma** generalizes exponential. Central role of Gaussian via CLT. Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Uniform** on [a,b]: f=1/(b−a). **Exponential** f(x)=λe^{−λx}, x≥0 memoryless. **Gaussian** N(μ,σ²): f(x)=exp(−(x−μ)²/(2σ²))/√(2πσ²). **Beta** on [0,1] for probabilities. **Gamma** generalizes exponential. Central role of Gaussian via CLT. Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data.",
             formulas: [
               "N(μ,σ²): f(x) ∝ exp(−(x−μ)²/(2σ²))",
               "Exp(λ): f(x)=λe^(−λx), x≥0",
@@ -3309,7 +3309,7 @@ export const MATH_MODULES = [
           {
             id: "dist-clt",
             title: "Central Limit Theorem Preview",
-            content: "Sum/mean of i.i.d. with finite variance → approximately normal as n grows. X̄ approx N(μ, σ²/n). Justifies normal noise assumptions and confidence intervals. Sample mean standard error σ/√n shrinks with n. Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Sum/mean of i.i.d. with finite variance → approximately normal as n grows. X̄ approx N(μ, σ²/n). Justifies normal noise assumptions and confidence intervals. Sample mean standard error σ/√n shrinks with n. Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions.",
             formulas: [
               "X̄ approx N(μ, σ²/n) for large n",
               "SE = σ/√n",
@@ -3331,7 +3331,7 @@ export const MATH_MODULES = [
           {
             id: "dist-ml",
             title: "Distributions in ML Models",
-            content: "Logistic regression: y~Bernoulli(σ(w·x)). Linear regression often y~N(w·x, σ²). **Gaussian Naive Bayes** continuous features. **VAE** latent z~N(0,I). **Mixture models** sum of Gaussians. Output layer activations match distribution: sigmoid/Bernoulli, softmax/categorical, ReLU+exp/Poisson rates. Negative log-likelihood = cross-entropy for classification. Choosing distribution = choosing loss. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Logistic regression: y~Bernoulli(σ(w·x)). Linear regression often y~N(w·x, σ²). **Gaussian Naive Bayes** continuous features. **VAE** latent z~N(0,I). **Mixture models** sum of Gaussians. Output layer activations match distribution: sigmoid/Bernoulli, softmax/categorical, ReLU+exp/Poisson rates. Negative log-likelihood = cross-entropy for classification. Choosing distribution = choosing loss.",
             formulas: [
               "Bernoulli → sigmoid + BCE",
               "Gaussian y → MSE / NLL",
@@ -3377,7 +3377,7 @@ export const MATH_MODULES = [
           {
             id: "jm-joint",
             title: "Joint Distributions",
-            content: "**Joint PMF** p(x,y)=P(X=x,Y=y). **Joint PDF** f(x,y) with ∫∫f=1. **Marginal** p(x)=∑_y p(x,y) or ∫ f(x,y)dy. Joint captures full dependence structure. **Covariance matrix** Σ_ij=Cov(X_i,X_j). Multivariate data rows as samples from joint. Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Joint PMF** p(x,y)=P(X=x,Y=y). **Joint PDF** f(x,y) with ∫∫f=1. **Marginal** p(x)=∑_y p(x,y) or ∫ f(x,y)dy. Joint captures full dependence structure. **Covariance matrix** Σ_ij=Cov(X_i,X_j). Multivariate data rows as samples from joint. Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized).",
             formulas: [
               "p(x,y) joint PMF/PDF",
               "p(x) = ∑_y p(x,y) marginal",
@@ -3421,7 +3421,7 @@ export const MATH_MODULES = [
           {
             id: "jm-cov",
             title: "Covariance & Correlation",
-            content: "Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Corr ρ=Cov/(σ_X σ_Y)∈[−1,1]. Cov matrix Σ symmetric PSD. Diagonal = variances. **Correlation matrix** unit diagonal. Σ eigenvalues principal variances. Det Σ generalizes bivariate correlation volume. Sample cov (1/n)X̃ᵀX̃. Shrinkage estimators regularize Σ for small n. Feature correlation heatmaps guide EDA and multicollinearity detection. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Corr ρ=Cov/(σ_X σ_Y)∈[−1,1]. Cov matrix Σ symmetric PSD. Diagonal = variances. **Correlation matrix** unit diagonal. Σ eigenvalues principal variances. Det Σ generalizes bivariate correlation volume. Sample cov (1/n)X̃ᵀX̃. Shrinkage estimators regularize Σ for small n. Feature correlation heatmaps guide EDA and multicollinearity detection.",
             formulas: [
               "Cov(X,Y) = E[XY] − E[X]E[Y]",
               "ρ = Cov/(σ_X σ_Y)",
@@ -3522,7 +3522,7 @@ export const MATH_MODULES = [
           {
             id: "ds-spread",
             title: "Variance & Spread",
-            content: "Sample variance s²=(1/(n−1))∑(x_i−x̄)² unbiased for σ². Population variance divides by n. **IQR** Q3−Q1 robust spread. **MAD** median absolute deviation. Std σ same units as data. CV=σ/|μ| relative spread. Range max−min sensitive. Boxplot shows quartiles and outliers. Feature scaling uses std. High variance features may dominate distance metrics without normalization. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Sample variance s²=(1/(n−1))∑(x_i−x̄)² unbiased for σ². Population variance divides by n. **IQR** Q3−Q1 robust spread. **MAD** median absolute deviation. Std σ same units as data. CV=σ/|μ| relative spread. Range max−min sensitive. Boxplot shows quartiles and outliers. Feature scaling uses std. High variance features may dominate distance metrics without normalization.",
             formulas: [
               "s² = (1/(n−1))∑(x_i−x̄)²",
               "σ = √Var(X)",
@@ -3544,7 +3544,7 @@ export const MATH_MODULES = [
           {
             id: "ds-percentile",
             title: "Percentiles & Quantiles",
-            content: "p-th percentile: p% data below. **Quartiles** Q1=25%, Q2=median, Q3=75%. Quantile function Q(p) inverse CDF. Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers. Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "p-th percentile: p% data below. **Quartiles** Q1=25%, Q2=median, Q3=75%. Quantile function Q(p) inverse CDF. Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers. Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring.",
             formulas: [
               "Q(p) = inf{x : F(x)≥p}",
               "Q1=25th, Q2=50th, Q3=75th",
@@ -3634,7 +3634,7 @@ export const MATH_MODULES = [
           {
             id: "sc-se",
             title: "Standard Error",
-            content: "**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. Unknown σ: estimate s/√n. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT). Compare models using SE of metric difference. Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. Unknown σ: estimate s/√n. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT). Compare models using SE of metric difference. Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std.",
             formulas: [
               "SE(x̄) = σ/√n",
               "Estimate: SE ≈ s/√n",
@@ -3656,7 +3656,7 @@ export const MATH_MODULES = [
           {
             id: "sc-clt",
             title: "Central Limit Theorem Detail",
-            content: "Standardized x̄: (x̄−μ)/(σ/√n) → N(0,1) in distribution. Works for many non-normal populations. Rule of thumb n≥30. Also applies to proportions p̂ approx N(p, p(1−p)/n). Enables z-tests and CIs. Sum of n RVs also normal for large n. CLT fails heavy tails infinite variance. Bootstrap nonparametric alternative when CLT questionable. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Standardized x̄: (x̄−μ)/(σ/√n) → N(0,1) in distribution. Works for many non-normal populations. Rule of thumb n≥30. Also applies to proportions p̂ approx N(p, p(1−p)/n). Enables z-tests and CIs. Sum of n RVs also normal for large n. CLT fails heavy tails infinite variance. Bootstrap nonparametric alternative when CLT questionable.",
             formulas: [
               "(x̄−μ)/(σ/√n) → N(0,1)",
               "p̂ approx N(p, p(1−p)/n)",
@@ -3724,7 +3724,7 @@ export const MATH_MODULES = [
           {
             id: "ht-framework",
             title: "Testing Framework",
-            content: "**H₀** null hypothesis default skepticism. **H₁** alternative. **Test statistic** summarizes data vs H₀. **p-value** P(data this extreme|H₀). Reject H₀ if p<α (significance level, often 0.05). **Type I error** false positive rate α. **Type II** β false negative. Power=1−β. Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**H₀** null hypothesis default skepticism. **H₁** alternative. **Test statistic** summarizes data vs H₀. **p-value** P(data this extreme|H₀). Reject H₀ if p<α (significance level, often 0.05). **Type I error** false positive rate α. **Type II** β false negative. Power=1−β. Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m.",
             formulas: [
               "p-value = P(T ≥ t_obs | H₀)",
               "Reject H₀ if p < α",
@@ -3746,7 +3746,7 @@ export const MATH_MODULES = [
           {
             id: "ht-tests",
             title: "Common Tests",
-            content: "**z-test** mean known σ large n. **t-test** mean unknown σ small n. Paired t for before/after. Two-sample t independent groups. **χ²** goodness-of-fit and independence in contingency tables. **F-test** variance ratio. ANOVA F for multiple means. Choose test matching data type and assumptions (normality, independence). Nonparametric: Mann-Whitney, Wilcoxon when normality fails. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**z-test** mean known σ large n. **t-test** mean unknown σ small n. Paired t for before/after. Two-sample t independent groups. **χ²** goodness-of-fit and independence in contingency tables. **F-test** variance ratio. ANOVA F for multiple means. Choose test matching data type and assumptions (normality, independence). Nonparametric: Mann-Whitney, Wilcoxon when normality fails.",
             formulas: [
               "t = (x̄−μ₀)/(s/√n)",
               "χ² = ∑ (O−E)²/E",
@@ -3836,7 +3836,7 @@ export const MATH_MODULES = [
           {
             id: "ci-mean",
             title: "CI for Mean",
-            content: "95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval). Width ∝ 1/√n. Wider CI more uncertain. Bootstrapping: resample B times, percentile CI from bootstrap distribution. BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval). Width ∝ 1/√n. Wider CI more uncertain. Bootstrapping: resample B times, percentile CI from bootstrap distribution. BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards.",
             formulas: [
               "95% CI: x̄ ± t*·s/√n",
               "Width ∝ 1/√n",
@@ -3858,7 +3858,7 @@ export const MATH_MODULES = [
           {
             id: "ci-prop",
             title: "CI for Proportions",
-            content: "Wald CI p̂±z√(p̂(1−p̂)/n) simple but poor small n/extreme p. **Wilson score** interval better coverage. Binomial exact (Clopper-Pearson) conservative. For ML accuracy on n test samples: report p̂±CI. Rare class metrics need large n for tight CI. Wilson preferred in modern practice over Wald for proportions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Wald CI p̂±z√(p̂(1−p̂)/n) simple but poor small n/extreme p. **Wilson score** interval better coverage. Binomial exact (Clopper-Pearson) conservative. For ML accuracy on n test samples: report p̂±CI. Rare class metrics need large n for tight CI. Wilson preferred in modern practice over Wald for proportions.",
             formulas: [
               "Wald: p̂ ± z√(p̂(1−p̂)/n)",
               "Wilson score interval (better)",
@@ -3880,7 +3880,7 @@ export const MATH_MODULES = [
           {
             id: "ci-diff",
             title: "CI for Differences",
-            content: "CI for μ_A−μ_B: (x̄_A−x̄_B)±t*·SE_diff. Independent: SE_diff=√(s_A²/n_A+s_B²/n_B). Overlap of individual CIs ≠ non-significance of difference (common mistake). Paired: CI on mean difference. Lift CI in A/B: bootstrap on ratio or log ratio. If difference CI excludes 0, significant at corresponding α. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "CI for μ_A−μ_B: (x̄_A−x̄_B)±t*·SE_diff. Independent: SE_diff=√(s_A²/n_A+s_B²/n_B). Overlap of individual CIs ≠ non-significance of difference (common mistake). Paired: CI on mean difference. Lift CI in A/B: bootstrap on ratio or log ratio. If difference CI excludes 0, significant at corresponding α.",
             formulas: [
               "μ_A−μ_B CI: (x̄_A−x̄_B) ± t* SE",
               "SE_diff independent groups",
@@ -3902,7 +3902,7 @@ export const MATH_MODULES = [
           {
             id: "ci-ml",
             title: "Uncertainty in ML Metrics",
-            content: "Bootstrap test set for metric CI. CV: mean±std across folds is approximate. **Conformal prediction** gives prediction intervals with coverage guarantee. Bayesian models posterior predictive intervals. Report F1 CI on imbalanced data especially. Leaderboard scores without CI overfit to test noise. Nested CV for unbiased performance estimate with uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Bootstrap test set for metric CI. CV: mean±std across folds is approximate. **Conformal prediction** gives prediction intervals with coverage guarantee. Bayesian models posterior predictive intervals. Report F1 CI on imbalanced data especially. Leaderboard scores without CI overfit to test noise. Nested CV for unbiased performance estimate with uncertainty.",
             formulas: [
               "Bootstrap metrics on test set",
               "CV mean ± std approximate",
@@ -3948,7 +3948,7 @@ export const MATH_MODULES = [
           {
             id: "reg-ols",
             title: "Ordinary Least Squares",
-            content: "Model y=Xβ+ε. OLS minimizes ||y−Xβ||². **Normal equations** XᵀXβ=Xᵀy. Solution β=(XᵀX)⁻¹Xᵀy if full rank. Geometric: orthogonal projection of y onto Col(X). Hat matrix H=X(XᵀX)⁻¹Xᵀ, ŷ=Hy. Residuals e=y−ŷ orthogonal to Col(X). Multiple regression adds columns to X. Polynomial regression linear in β with nonlinear features. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Model y=Xβ+ε. OLS minimizes ||y−Xβ||². **Normal equations** XᵀXβ=Xᵀy. Solution β=(XᵀX)⁻¹Xᵀy if full rank. Geometric: orthogonal projection of y onto Col(X). Hat matrix H=X(XᵀX)⁻¹Xᵀ, ŷ=Hy. Residuals e=y−ŷ orthogonal to Col(X). Multiple regression adds columns to X. Polynomial regression linear in β with nonlinear features.",
             formulas: [
               "min ||y − Xβ||²",
               "Normal eq: XᵀXβ = Xᵀy",
@@ -3992,7 +3992,7 @@ export const MATH_MODULES = [
           {
             id: "reg-infer",
             title: "Statistical Inference",
-            content: "β̂ variance σ²(XᵀX)⁻¹. Estimate σ² by s²=||e||²/(n−p−1). t-test for β_j=0: t=β̂_j/SE(β̂_j). F-test overall model. R²=1−SSE/SST proportion variance explained— increases with more features. Adjusted R² penalizes complexity. Confidence bands for mean response vs prediction intervals wider include ε noise. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "β̂ variance σ²(XᵀX)⁻¹. Estimate σ² by s²=||e||²/(n−p−1). t-test for β_j=0: t=β̂_j/SE(β̂_j). F-test overall model. R²=1−SSE/SST proportion variance explained— increases with more features. Adjusted R² penalizes complexity. Confidence bands for mean response vs prediction intervals wider include ε noise.",
             formulas: [
               "Var(β̂) = σ² (XᵀX)⁻¹",
               "s² = ||e||²/(n−p−1)",
@@ -4071,7 +4071,7 @@ export const MATH_MODULES = [
           {
             id: "cvx-sets",
             title: "Convex Sets",
-            content: "Set C **convex** if λx+(1−λ)y∈C for all x,y∈C, λ∈[0,1]. Line segment between any two points stays in set. Examples: halfspaces, balls, polyhedra {x:Ax≤b}. **Intersection** of convex sets convex. Non-convex: donut, two blobs. Convex feasible region in optimization guarantees global min if objective convex. Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Set C **convex** if λx+(1−λ)y∈C for all x,y∈C, λ∈[0,1]. Line segment between any two points stays in set. Examples: halfspaces, balls, polyhedra {x:Ax≤b}. **Intersection** of convex sets convex. Non-convex: donut, two blobs. Convex feasible region in optimization guarantees global min if objective convex. Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights.",
             formulas: [
               "λx + (1−λ)y ∈ C for x,y∈C, λ∈[0,1]",
               "Halfspace: {x : aᵀx ≤ b} convex",
@@ -4093,7 +4093,7 @@ export const MATH_MODULES = [
           {
             id: "cvx-func",
             title: "Convex Functions",
-            content: "f convex if epigraph above graph convex: f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). **First-order**: f(y)≥f(x)+∇f(x)ᵀ(y−x)—tangent below graph. **Second-order**: H⪰0 PSD. Examples: x², e^x, −log x (x>0), ||x||₂. Sums and non-negative combos preserve convexity. **Strongly convex** μ>0: H⪰μI unique min faster convergence. Cross-entropy convex in logits; MSE convex in linear params. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "f convex if epigraph above graph convex: f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y). **First-order**: f(y)≥f(x)+∇f(x)ᵀ(y−x)—tangent below graph. **Second-order**: H⪰0 PSD. Examples: x², e^x, −log x (x>0), ||x||₂. Sums and non-negative combos preserve convexity. **Strongly convex** μ>0: H⪰μI unique min faster convergence. Cross-entropy convex in logits; MSE convex in linear params.",
             formulas: [
               "f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)",
               "1st order: tangent global underestimator",
@@ -4115,7 +4115,7 @@ export const MATH_MODULES = [
           {
             id: "cvx-problems",
             title: "Convex Problem Forms",
-            content: "**LP** linear objective+constraints. **QP** quadratic objective linear constraints—SVM dual. **SOCP** second-order cone. **SDP** matrix constraints. cvxpy models convex problems. Local min = global for convex f on convex C. **KKT conditions** necessary sufficient for convex. Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**LP** linear objective+constraints. **QP** quadratic objective linear constraints—SVM dual. **SOCP** second-order cone. **SDP** matrix constraints. cvxpy models convex problems. Local min = global for convex f on convex C. **KKT conditions** necessary sufficient for convex. Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically.",
             formulas: [
               "min f(x) s.t. x ∈ C convex",
               "LP: linear f and constraints",
@@ -4137,7 +4137,7 @@ export const MATH_MODULES = [
           {
             id: "cvx-ml",
             title: "Convexity in ML Losses",
-            content: "Logistic loss convex in w. SVM hinge convex. Lasso problem convex but not strictly. Neural net hidden layers break convexity. **Convex relaxations** for hard problems. **Surrogate losses** convex upper bounds. Understanding which part convex helps debug optimization. Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Logistic loss convex in w. SVM hinge convex. Lasso problem convex but not strictly. Neural net hidden layers break convexity. **Convex relaxations** for hard problems. **Surrogate losses** convex upper bounds. Understanding which part convex helps debug optimization. Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss.",
             formulas: [
               "Logistic NLL convex in w",
               "Hinge loss convex",
@@ -4183,7 +4183,7 @@ export const MATH_MODULES = [
           {
             id: "gd-conv",
             title: "Convergence Conditions",
-            content: "For L-smooth convex f: GD with η≤1/L converges to global min rate O(1/t). **Strongly convex** μ: linear rate O((1−ημ)^t). Too large η diverges. **PL condition** weaker than strong convexity still linear. Non-convex: convergence to stationary point ||∇f||→0. Stochastic GD adds noise but averages out. Lower bounds: first-order methods limited for high-D black-box. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "For L-smooth convex f: GD with η≤1/L converges to global min rate O(1/t). **Strongly convex** μ: linear rate O((1−ημ)^t). Too large η diverges. **PL condition** weaker than strong convexity still linear. Non-convex: convergence to stationary point ||∇f||→0. Stochastic GD adds noise but averages out. Lower bounds: first-order methods limited for high-D black-box.",
             formulas: [
               "L-smooth: ||∇f(x)−∇f(y)|| ≤ L||x−y||",
               "η ≤ 1/L for convex convergence",
@@ -4205,7 +4205,7 @@ export const MATH_MODULES = [
           {
             id: "gd-momentum",
             title: "Momentum & Nesterov",
-            content: "**Momentum** v_t=βv_{t−1}+∇L; θ_t=θ_{t−1}−ηv_t accumulates velocity dampens oscillation in ravines. β≈0.9 typical. **Nesterov** lookahead gradient evaluates ahead. Heavy ball method physics analogy. Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Momentum** v_t=βv_{t−1}+∇L; θ_t=θ_{t−1}−ηv_t accumulates velocity dampens oscillation in ravines. β≈0.9 typical. **Nesterov** lookahead gradient evaluates ahead. Heavy ball method physics analogy. Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions.",
             formulas: [
               "v_t = β v_{t−1} + ∇L",
               "θ_t = θ_{t−1} − η v_t",
@@ -4227,7 +4227,7 @@ export const MATH_MODULES = [
           {
             id: "gd-adaptive",
             title: "Adaptive Methods",
-            content: "**AdaGrad** accumulates squared grads—small steps for frequent features. **RMSprop** exponential moving average fixes AdaGrad decay. **Adam** m_t,v_t moments; bias correction; default lr 1e-3. **AdamW** decoupled weight decay. Per-parameter η adapts to geometry. Not always better than SGD+momentum on some vision tasks. Warmup stabilizes early Adam training in transformers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**AdaGrad** accumulates squared grads—small steps for frequent features. **RMSprop** exponential moving average fixes AdaGrad decay. **Adam** m_t,v_t moments; bias correction; default lr 1e-3. **AdamW** decoupled weight decay. Per-parameter η adapts to geometry. Not always better than SGD+momentum on some vision tasks. Warmup stabilizes early Adam training in transformers.",
             formulas: [
               "AdaGrad: η/√(∑g²)",
               "Adam: m,v EMA of g,g²",
@@ -4295,7 +4295,7 @@ export const MATH_MODULES = [
           {
             id: "lag-eq",
             title: "Equality Constraints",
-            content: "Minimize f(x) s.t. g(x)=0. **Lagrange function** L(x,λ)=f(x)+λg(x). Optimality: ∇_x L=0 and g(x)=0. λ is shadow price—sensitivity of optimal value to constraint. Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Minimize f(x) s.t. g(x)=0. **Lagrange function** L(x,λ)=f(x)+λg(x). Optimality: ∇_x L=0 and g(x)=0. λ is shadow price—sensitivity of optimal value to constraint. Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method.",
             formulas: [
               "L(x,λ) = f(x) + λ g(x)",
               "∇f(x*) + λ∇g(x*) = 0",
@@ -4317,7 +4317,7 @@ export const MATH_MODULES = [
           {
             id: "lag-ineq",
             title: "KKT Conditions",
-            content: "Inequality g(x)≤0: KKT adds **complementary slackness** λ≥0, λg(x)=0. If constraint inactive g<0 then λ=0. **Karush-Kuhn-Tucker** necessary; sufficient for convex. General form: min f s.t g_i≤0, h_j=0. Stationarity ∇f+∑λ_i∇g_i+∑ν_j∇h_j=0. Dual problem provides lower bounds. SVM derivation uses KKT on margin constraints. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Inequality g(x)≤0: KKT adds **complementary slackness** λ≥0, λg(x)=0. If constraint inactive g<0 then λ=0. **Karush-Kuhn-Tucker** necessary; sufficient for convex. General form: min f s.t g_i≤0, h_j=0. Stationarity ∇f+∑λ_i∇g_i+∑ν_j∇h_j=0. Dual problem provides lower bounds. SVM derivation uses KKT on margin constraints.",
             formulas: [
               "L = f + ∑λ_i g_i + ∑ν_j h_j",
               "λ_i ≥ 0",
@@ -4339,7 +4339,7 @@ export const MATH_MODULES = [
           {
             id: "lag-dual",
             title: "Duality",
-            content: "**Dual function** q(λ)=inf_x L(x,λ). Dual problem max q(λ) s.t λ≥0. Weak duality: dual≤primal. Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure. Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Dual function** q(λ)=inf_x L(x,λ). Dual problem max q(λ) s.t λ≥0. Weak duality: dual≤primal. Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure. Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables.",
             formulas: [
               "Dual: max_λ inf_x L(x,λ)",
               "Weak: d* ≤ p*",
@@ -4361,7 +4361,7 @@ export const MATH_MODULES = [
           {
             id: "lag-ml",
             title: "Constraints in ML",
-            content: "**Fairness constraints** demographic parity bounds. **Adversarial** training min-max. **Trust region** TRPO KL constraint. **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint. Augmented Lagrangian combines both. Constrained DL growing area for safe deployment. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Fairness constraints** demographic parity bounds. **Adversarial** training min-max. **Trust region** TRPO KL constraint. **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint. Augmented Lagrangian combines both. Constrained DL growing area for safe deployment.",
             formulas: [
               "Penalty: f + ρ||g(x)||²",
               "Projection: simplex, ball",
@@ -4407,7 +4407,7 @@ export const MATH_MODULES = [
           {
             id: "ent-def",
             title: "Shannon Entropy",
-            content: "H(X)=−∑ p(x) log p(x) (discrete) uncertainty in bits if log₂, nats if ln. Maximum log K for uniform K outcomes. H≥0 with equality iff certain. **Joint entropy** H(X,Y). **Conditional** H(X|Y)=H(X,Y)−H(Y). Independent: H(X,Y)=H(X)+H(Y). Entropy rate of stochastic process. High entropy = unpredictable. Low entropy = compressible. Decision trees split to reduce entropy (ID3). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "H(X)=−∑ p(x) log p(x) (discrete) uncertainty in bits if log₂, nats if ln. Maximum log K for uniform K outcomes. H≥0 with equality iff certain. **Joint entropy** H(X,Y). **Conditional** H(X|Y)=H(X,Y)−H(Y). Independent: H(X,Y)=H(X)+H(Y). Entropy rate of stochastic process. High entropy = unpredictable. Low entropy = compressible. Decision trees split to reduce entropy (ID3).",
             formulas: [
               "H(X) = −∑ p(x) log p(x)",
               "0 ≤ H(X) ≤ log |X|",
@@ -4429,7 +4429,7 @@ export const MATH_MODULES = [
           {
             id: "ent-ce",
             title: "Cross-Entropy & KL",
-            content: "**Cross-entropy** H(p,q)=−∑p log q≥H(p) with equality if p=q. **KL divergence** D_KL(p||q)=∑p log(p/q)=H(p,q)−H(p)≥0. Not symmetric. Used as loss when p true, q model. **Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Cross-entropy** H(p,q)=−∑p log q≥H(p) with equality if p=q. **KL divergence** D_KL(p||q)=∑p log(p/q)=H(p,q)−H(p)≥0. Not symmetric. Used as loss when p true, q model. **Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference.",
             formulas: [
               "H(p,q) = −∑ p log q",
               "D_KL(p||q) = ∑ p log(p/q)",
@@ -4451,7 +4451,7 @@ export const MATH_MODULES = [
           {
             id: "ent-mi",
             title: "Mutual Information",
-            content: "I(X;Y)≥0 zero iff independent. Symmetric unlike KL. Captures nonlinear dependence unlike correlation. Difficult to estimate high-D—MINE neural estimator. **Information bottleneck** tradeoff compress X while predict Y. Feature selection via MI with target. Data processing inequality: processing cannot increase MI. Used in contrastive self-supervised learning InfoNCE bound. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "I(X;Y)≥0 zero iff independent. Symmetric unlike KL. Captures nonlinear dependence unlike correlation. Difficult to estimate high-D—MINE neural estimator. **Information bottleneck** tradeoff compress X while predict Y. Feature selection via MI with target. Data processing inequality: processing cannot increase MI. Used in contrastive self-supervised learning InfoNCE bound.",
             formulas: [
               "I(X;Y) = H(X) − H(X|Y)",
               "I(X;Y) = 0 ⇔ indep",
@@ -4519,7 +4519,7 @@ export const MATH_MODULES = [
           {
             id: "mle-def",
             title: "Maximum Likelihood",
-            content: "Given i.i.d. samples, **MLE** θ̂=argmax_θ ∏ p(x_i|θ)=argmax ∑ log p(x_i|θ). Maximizes probability of observed data. Invariance: g(θ) MLE is g(θ̂). Asymptotically unbiased efficient under regularity. **Log-likelihood** ℓ(θ) concave for many exponential family models. Negative log-likelihood as loss to minimize. Bernoulli MLE p̂=k/n. Gaussian μ̂=x̄, σ̂ sample std (biased MLE divides n not n−1). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Given i.i.d. samples, **MLE** θ̂=argmax_θ ∏ p(x_i|θ)=argmax ∑ log p(x_i|θ). Maximizes probability of observed data. Invariance: g(θ) MLE is g(θ̂). Asymptotically unbiased efficient under regularity. **Log-likelihood** ℓ(θ) concave for many exponential family models. Negative log-likelihood as loss to minimize. Bernoulli MLE p̂=k/n. Gaussian μ̂=x̄, σ̂ sample std (biased MLE divides n not n−1).",
             formulas: [
               "θ̂_MLE = argmax ∑ log p(x_i|θ)",
               "Equiv: min −∑ log p(x_i|θ)",
@@ -4541,7 +4541,7 @@ export const MATH_MODULES = [
           {
             id: "kl-mle",
             title: "MLE Minimizes KL",
-            content: "Minimizing E_x[−log q_θ(x)] over θ equivalent minimizing D_KL(p_data||q_θ) since H(p) constant w.r.t. θ. **Empirical risk** replaces expectation with sample mean—MLE on empirical distribution. Model q close to p in KL sense. Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra. **Reverse KL** used in some VI variants mode covering vs seeking tradeoff. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "Minimizing E_x[−log q_θ(x)] over θ equivalent minimizing D_KL(p_data||q_θ) since H(p) constant w.r.t. θ. **Empirical risk** replaces expectation with sample mean—MLE on empirical distribution. Model q close to p in KL sense. Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra. **Reverse KL** used in some VI variants mode covering vs seeking tradeoff.",
             formulas: [
               "min_θ E_p[−log q_θ] ⇔ min D_KL(p||q_θ)",
               "Empirical p = uniform on samples",
@@ -4563,7 +4563,7 @@ export const MATH_MODULES = [
           {
             id: "mle-prop",
             title: "Properties of MLE",
-            content: "**Consistency** θ̂→θ true as n→∞. **Asymptotic normality** √n(θ̂−θ)→N(0,I(θ)⁻¹). **Fisher information** I(θ)=E[(∂log p/∂θ)²]. Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible. Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.",
+            content: "**Consistency** θ̂→θ true as n→∞. **Asymptotic normality** √n(θ̂−θ)→N(0,I(θ)⁻¹). **Fisher information** I(θ)=E[(∂log p/∂θ)²]. Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible. Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE.",
             formulas: [
               "√n(θ̂−θ) → N(0, I(θ)⁻¹)",
               "I(θ) = E[(∂log p/∂θ)²]",

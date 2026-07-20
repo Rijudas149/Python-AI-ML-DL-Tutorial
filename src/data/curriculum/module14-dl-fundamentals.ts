@@ -11,12 +11,9 @@ export const module14Topics: Topic[] = [
         {
           id: `perceptron`,
           title: `The Perceptron`,
-          content: `Single neuron: output = activation(w·x + b). Stacked layers create MLP (Multi-Layer Perceptron). Universal function approximator with enough hidden units.
+          content: `Single neuron: output = activation(w·x + b). Stacked layers create MLP (Multi-Layer Perceptron).
 
-- Neural network = composed non-linear transformations
-- Hidden layers learn hierarchical features
-- Width and depth trade off for capacity
-- Start simple then increase complexity`,
+Universal function approximator with enough hidden units.`,
           example: `import numpy as np
 
 def forward(X, W, b, activation=np.tanh):
@@ -35,12 +32,9 @@ print(forward(X, W, np.array([0.1])))`,
         {
           id: `mlp`,
           title: `Multi-Layer Perceptron`,
-          content: `Input layer → hidden layer(s) → output layer. Each layer: linear transform + non-linear activation. Depth enables hierarchical feature learning.
+          content: `Input layer → hidden layer(s) → output layer. Each layer: linear transform + non-linear activation.
 
-- Depth: number of hidden layers
-- Width: neurons per layer
-- Too deep without skip connections hard to train
-- 1-2 hidden layers sufficient for many tabular tasks`,
+Depth enables hierarchical feature learning.`,
           pseudoCode: `FOR each layer L:
     z = W_L @ a_{L-1} + b_L
     a_L = activation(z)`,
@@ -54,12 +48,7 @@ print(forward(X, W, np.array([0.1])))`,
         {
           id: `forward`,
           title: `Forward Propagation`,
-          content: `Pass input through network layer by layer to produce prediction. Matrix operations enable batch processing.
-
-- Batch dimension enables parallel GPU computation
-- Output layer produces logits for classification
-- Softmax applied to logits for probabilities
-- Forward pass is inference/prediction`,
+          content: `Pass input through network layer by layer to produce prediction. Matrix operations enable batch processing.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -82,12 +71,7 @@ print(out.shape)`,
         {
           id: `capacity`,
           title: `Network Capacity`,
-          content: `More parameters = more capacity to fit complex functions. Risk overfitting with too much capacity on small data.
-
-- Parameters = weights + biases count
-- Capacity must match data complexity
-- Regularization controls effective capacity
-- Modern networks vastly overparameterized yet generalize`,
+          content: `More parameters = more capacity to fit complex functions. Risk overfitting with too much capacity on small data.`,
           keyPoints: [
             `Parameters = weights + biases count`,
             `Capacity must match data complexity`,
@@ -159,12 +143,7 @@ print(relu(np.array([-1, 0, 2])))`,
         {
           id: `relu`,
           title: `ReLU & Variants`,
-          content: `ReLU: max(0, x). Default for hidden layers. Leaky ReLU, PReLU, ELU address dying ReLU problem.
-
-- ReLU sparse activation — efficient computation
-- Dying ReLU: neuron always outputs 0
-- Leaky ReLU keeps small gradient for negatives
-- GELU preferred in transformers`,
+          content: `ReLU: max(0, x). Default for hidden layers. Leaky ReLU, PReLU, ELU address dying ReLU problem.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -185,12 +164,9 @@ print(leaky_relu(z))`,
         {
           id: `sigmoid-tanh`,
           title: `Sigmoid & Tanh`,
-          content: `Sigmoid: (0,1) for binary output. Tanh: (-1,1) zero-centered. Vanishing gradient in deep networks limits hidden layer use.
+          content: `Sigmoid: (0,1) for binary output. Tanh: (-1,1) zero-centered.
 
-- Sigmoid for binary classification output layer
-- Tanh zero-centered — faster convergence than sigmoid
-- Both saturate causing vanishing gradients
-- Avoid in hidden layers of deep networks`,
+Vanishing gradient in deep networks limits hidden layer use.`,
           example: `import numpy as np
 
 def sigmoid(z): return 1 / (1 + np.exp(-z))
@@ -210,12 +186,7 @@ print(tanh(np.array([0, 2, -2])).round(3))`,
         {
           id: `softmax`,
           title: `Softmax`,
-          content: `Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ. Outputs sum to 1. Combined with cross-entropy loss.
-
-- Subtract max for numerical stability
-- Output layer only — not hidden layers
-- Cross-entropy + softmax gradient simplifies to p - y
-- Temperature scaling adjusts confidence`,
+          content: `Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ. Outputs sum to 1. Combined with cross-entropy loss.`,
           example: `import numpy as np
 
 def softmax(z):
@@ -234,12 +205,7 @@ print(softmax(np.array([2.0, 1.0, 0.1])).round(3))`,
         {
           id: `modern`,
           title: `Modern Activations`,
-          content: `GELU (Gaussian Error Linear Unit) in BERT/GPT. Swish/SiLU: x·sigmoid(x). Smooth activations help deep transformers.
-
-- GELU: x * Φ(x) where Φ is CDF of standard normal
-- Swish smooth near zero unlike ReLU
-- Activation choice less critical with good initialization
-- Match activation to architecture (GELU for transformers)`,
+          content: `GELU (Gaussian Error Linear Unit) in BERT/GPT. Swish/SiLU: x·sigmoid(x). Smooth activations help deep transformers.`,
           keyPoints: [
             `GELU: x * Φ(x) where Φ is CDF of standard normal`,
             `Swish smooth near zero unlike ReLU`,
@@ -316,12 +282,7 @@ print(round(x / (1 + np.exp(-1.702 * x)), 4))`,
         {
           id: `mse`,
           title: `MSE & MAE Loss`,
-          content: `MSE: mean((y-ŷ)²). Differentiable, penalizes large errors. MAE: mean(|y-ŷ|). Robust to outliers.
-
-- MSE standard for regression
-- MAE when outliers are problematic
-- Huber loss combines MSE and MAE benefits
-- Loss choice must match task and output activation`,
+          content: `MSE: mean((y-ŷ)²). Differentiable, penalizes large errors. MAE: mean(|y-ŷ|). Robust to outliers.`,
           example: `import numpy as np
 
 def mse_loss(y_true, y_pred):
@@ -339,12 +300,9 @@ print(mse_loss(np.array([1, 2, 3]), np.array([1.1, 2.2, 2.8])))`,
         {
           id: `ce`,
           title: `Cross-Entropy Loss`,
-          content: `Binary: -[y log(ŷ) + (1-y)log(1-ŷ)]. Categorical: -Σ yᵢ log(ŷᵢ). Standard for classification.
+          content: `Binary: -[y log(ŷ) + (1-y)log(1-ŷ)]. Categorical: -Σ yᵢ log(ŷᵢ).
 
-- Use log-loss with sigmoid/softmax outputs
-- Label smoothing prevents overconfidence
-- Focal loss addresses class imbalance
-- Cross-entropy = negative log-likelihood`,
+Standard for classification.`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -363,12 +321,7 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
         {
           id: `multi-task`,
           title: `Multi-Task & Custom Losses`,
-          content: `Combine losses with weights: L = α·L₁ + β·L₂. Custom losses for ranking, contrastive learning, GANs.
-
-- Weight task losses by importance or uncertainty
-- Contrastive loss for embeddings (SimCLR, triplet)
-- Perceptual loss for image generation
-- Design loss to match evaluation metric when possible`,
+          content: `Combine losses with weights: L = α·L₁ + β·L₂. Custom losses for ranking, contrastive learning, GANs.`,
           keyPoints: [
             `Weight task losses by importance or uncertainty`,
             `Contrastive loss for embeddings (SimCLR, triplet)`,
@@ -379,12 +332,9 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
         {
           id: `monitor`,
           title: `Monitoring Loss`,
-          content: `Track train and validation loss. Divergence indicates overfitting. Plateau suggests learning rate adjustment needed.
+          content: `Track train and validation loss. Divergence indicates overfitting.
 
-- Loss should decrease during training
-- Val loss increasing while train decreases = overfit
-- ReduceLROnPlateau on val loss
-- Early stopping saves best val loss checkpoint`,
+Plateau suggests learning rate adjustment needed.`,
           keyPoints: [
             `Loss should decrease during training`,
             `Val loss increasing while train decreases = overfit`,
@@ -456,12 +406,9 @@ print(-np.log(1 - 0.1))`,
         {
           id: `concept`,
           title: `Backpropagation Concept`,
-          content: `Forward pass computes output and loss. Backward pass applies chain rule from loss to each parameter. Efficient via dynamic programming on computational graph.
+          content: `Forward pass computes output and loss. Backward pass applies chain rule from loss to each parameter.
 
-- Chain rule applied layer by layer
-- Computational graph tracks dependencies
-- Reverse mode AD efficient for many parameters
-- Same algorithm as autograd in PyTorch`,
+Efficient via dynamic programming on computational graph.`,
           pseudoCode: `FOR layer L from output to input:
     dL/dz_L = upstream_gradient * activation_derivative
     dL/dW_L = dL/dz_L @ a_{L-1}^T
@@ -477,12 +424,7 @@ print(-np.log(1 - 0.1))`,
         {
           id: `manual`,
           title: `Manual Backprop Example`,
-          content: `2-layer network backprop by hand builds intuition. Matrix calculus for weight gradients.
-
-- Gradient points direction of steepest increase
-- Update in negative gradient direction
-- Manual backprop verifies autograd results
-- Vanishing gradient in deep sigmoid networks`,
+          content: `2-layer network backprop by hand builds intuition. Matrix calculus for weight gradients.`,
           example: `import numpy as np
 
 # Simple gradient descent on f(w) = w^2
@@ -503,12 +445,7 @@ print(round(w, 6))`,
         {
           id: `autograd`,
           title: `Automatic Differentiation`,
-          content: `PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.
-
-- Autograd builds computational graph dynamically
-- tensor.backward() triggers reverse pass
-- requires_grad=True tracks gradients
-- No need for manual gradient derivation in practice`,
+          content: `PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.`,
           keyPoints: [
             `Autograd builds computational graph dynamically`,
             `tensor.backward() triggers reverse pass`,
@@ -519,12 +456,7 @@ print(round(w, 6))`,
         {
           id: `vanishing`,
           title: `Vanishing & Exploding Gradients`,
-          content: `Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially. Solutions: ReLU, residual connections, gradient clipping, proper initialization.
-
-- Vanishing: gradients near zero in early layers
-- Exploding: gradients overflow — clip to max norm
-- Batch normalization stabilizes gradients
-- ResNet skip connections enable very deep networks`,
+          content: `Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially. Solutions: ReLU, residual connections, gradient clipping, proper initialization.`,
           keyPoints: [
             `Vanishing: gradients near zero in early layers`,
             `Exploding: gradients overflow — clip to max norm`,
@@ -598,12 +530,9 @@ print(round(x, 2))`,
         {
           id: `init`,
           title: `Weight Initialization`,
-          content: `Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid. He/Kaiming: scale by √(2/n_in) for ReLU. Bad init slows or prevents convergence.
+          content: `Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid. He/Kaiming: scale by √(2/n_in) for ReLU.
 
-- Zero init breaks symmetry badly
-- Xavier for sigmoid/tanh activations
-- He/Kaiming for ReLU family
-- PyTorch nn.Linear uses Kaiming by default`,
+Bad init slows or prevents convergence.`,
           example: `import numpy as np
 
 n_in, n_out = 256, 128
@@ -620,12 +549,7 @@ print(W.std().round(4))`,
         {
           id: `dropout`,
           title: `Dropout`,
-          content: `Randomly zero neurons during training with probability p. Prevents co-adaptation. Scale by 1/(1-p) at inference or use inverted dropout.
-
-- Typical p=0.5 for hidden layers, 0.2 for input
-- Only active during training
-- MC dropout for uncertainty estimation
-- Less needed with batch norm in CNNs`,
+          content: `Randomly zero neurons during training with probability p. Prevents co-adaptation. Scale by 1/(1-p) at inference or use inverted dropout.`,
           example: `import numpy as np
 
 def dropout(x, p=0.5, training=True):
@@ -647,12 +571,9 @@ print(dropout(x, p=0.5).sum())`,
         {
           id: `batchnorm`,
           title: `Batch Normalization`,
-          content: `Normalize layer inputs across batch: (x-μ)/σ. Learnable scale γ and shift β. Stabilizes training, allows higher learning rates.
+          content: `Normalize layer inputs across batch: (x-μ)/σ. Learnable scale γ and shift β.
 
-- Normalizes intermediate activations
-- Acts as regularizer
-- Different behavior train vs eval — model.eval()
-- LayerNorm alternative for transformers/RNNs`,
+Stabilizes training, allows higher learning rates.`,
           keyPoints: [
             `Normalizes intermediate activations`,
             `Acts as regularizer`,
@@ -663,12 +584,7 @@ print(dropout(x, p=0.5).sum())`,
         {
           id: `early-stop`,
           title: `Early Stopping & Data Augmentation`,
-          content: `Stop training when validation loss stops improving. Data augmentation artificially expands training set.
-
-- Early stopping simplest regularization
-- Save checkpoint at best val loss
-- Augmentation: rotation, flip, crop for images
-- Mixup/CutMix advanced augmentation for classification`,
+          content: `Stop training when validation loss stops improving. Data augmentation artificially expands training set.`,
           keyPoints: [
             `Early stopping simplest regularization`,
             `Save checkpoint at best val loss`,

@@ -11,12 +11,7 @@ export const module17Topics: Topic[] = [
         {
           id: `clean`,
           title: `Text Cleaning`,
-          content: `Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace. Domain-specific rules matter.
-
-- Cleaning rules depend on task and domain
-- Preserve meaningful punctuation for sentiment
-- Handle unicode and encoding issues
-- Modern tokenizers often skip manual cleaning`,
+          content: `Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace. Domain-specific rules matter.`,
           example: `import re
 
 def clean_text(text):
@@ -36,12 +31,7 @@ print(clean_text("Hello, World! Visit https://example.com"))`,
         {
           id: `tokenize`,
           title: `Tokenization Strategies`,
-          content: `Word-level, subword (BPE, WordPiece, SentencePiece), character-level. Subword balances vocabulary size and OOV handling.
-
-- Word tokenization simple but huge vocabularies
-- BPE used in GPT — merges frequent pairs
-- WordPiece used in BERT — likelihood-based merges
-- SentencePiece language-agnostic tokenization`,
+          content: `Word-level, subword (BPE, WordPiece, SentencePiece), character-level. Subword balances vocabulary size and OOV handling.`,
           keyPoints: [
             `Word tokenization simple but huge vocabularies`,
             `BPE used in GPT — merges frequent pairs`,
@@ -52,12 +42,9 @@ print(clean_text("Hello, World! Visit https://example.com"))`,
         {
           id: `hf-tokenizer`,
           title: `HuggingFace Tokenizers`,
-          content: `AutoTokenizer.from_pretrained("bert-base-uncased"). Returns input_ids, attention_mask. Handles padding and truncation.
+          content: `AutoTokenizer.from_pretrained("bert-base-uncased"). Returns input_ids, attention_mask.
 
-- Pretrained tokenizers match model vocabularies
-- attention_mask ignores padding tokens
-- truncation and max_length for fixed input
-- Batch encoding with padding=True`,
+Handles padding and truncation.`,
           example: `from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
@@ -73,12 +60,7 @@ print(encoded["input_ids"].shape)`,
         {
           id: `vocab`,
           title: `Vocabulary & Special Tokens`,
-          content: `[CLS], [SEP], [PAD], [UNK], [MASK]. Vocabulary maps tokens to integer IDs.
-
-- [PAD] token enables batch processing
-- Special tokens have semantic roles in models
-- Vocab size affects embedding matrix size
-- Extend vocab for domain-specific tokens`,
+          content: `[CLS], [SEP], [PAD], [UNK], [MASK]. Vocabulary maps tokens to integer IDs.`,
           keyPoints: [
             `[PAD] token enables batch processing`,
             `Special tokens have semantic roles in models`,
@@ -150,12 +132,9 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
         {
           id: `word2vec`,
           title: `Word2Vec`,
-          content: `Skip-gram: predict context from word. CBOW: predict word from context. Similar words have similar vectors.
+          content: `Skip-gram: predict context from word. CBOW: predict word from context.
 
-- Distributional hypothesis: context defines meaning
-- Skip-gram better for rare words
-- Negative sampling speeds training
-- king - man + woman ≈ queen classic example`,
+Similar words have similar vectors.`,
           keyPoints: [
             `Distributional hypothesis: context defines meaning`,
             `Skip-gram better for rare words`,
@@ -166,12 +145,7 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
         {
           id: `glove`,
           title: `GloVe`,
-          content: `Global Vectors: factorizes co-occurrence matrix. Combines global statistics with local context methods.
-
-- GloVe uses global co-occurrence counts
-- Often comparable to Word2Vec quality
-- Pretrained GloVe vectors widely available
-- Static embeddings — one vector per word regardless of context`,
+          content: `Global Vectors: factorizes co-occurrence matrix. Combines global statistics with local context methods.`,
           keyPoints: [
             `GloVe uses global co-occurrence counts`,
             `Often comparable to Word2Vec quality`,
@@ -182,12 +156,7 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
         {
           id: `nn-embed`,
           title: `nn.Embedding Layer`,
-          content: `torch.nn.Embedding(vocab_size, embed_dim). Lookup table learned during training. Padding index for [PAD].
-
-- Embedding layer is lookup table of vectors
-- Random init then learned via backprop
-- Pretrained embeddings can initialize layer
-- embed_dim typically 100-768`,
+          content: `torch.nn.Embedding(vocab_size, embed_dim). Lookup table learned during training. Padding index for [PAD].`,
           example: `import torch
 import torch.nn as nn
 
@@ -205,12 +174,7 @@ print(embed(input_ids).shape)`,
         {
           id: `contextual`,
           title: `Contextual Embeddings`,
-          content: `ELMo, BERT produce different vectors per context. "bank" (river) vs "bank" (financial) get different embeddings.
-
-- Static embeddings one vector per word type
-- Contextual embeddings depend on sentence
-- BERT embeddings revolutionized NLP
-- Modern NLP uses contextual embeddings exclusively`,
+          content: `ELMo, BERT produce different vectors per context. "bank" (river) vs "bank" (financial) get different embeddings.`,
           keyPoints: [
             `Static embeddings one vector per word type`,
             `Contextual embeddings depend on sentence`,
@@ -283,12 +247,9 @@ print(e(torch.tensor([1, 5, 3])).shape)`,
         {
           id: `rnn`,
           title: `Vanilla RNN`,
-          content: `Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t). Processes sequences step by step. Vanishing gradient limits long sequences.
+          content: `Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t). Processes sequences step by step.
 
-- batch_first=True for intuitive dimensions
-- out contains all hidden states
-- h_n is final hidden state
-- Vanilla RNN rarely used — LSTM/GRU preferred`,
+Vanishing gradient limits long sequences.`,
           example: `import torch
 import torch.nn as nn
 
@@ -307,12 +268,7 @@ print(out.shape, h_n.shape)`,
         {
           id: `lstm`,
           title: `LSTM`,
-          content: `Long Short-Term Memory: cell state + gates (forget, input, output). Solves vanishing gradient for longer sequences.
-
-- Cell state carries long-term memory
-- Gates control information flow
-- num_layers stacks LSTM layers
-- dropout between LSTM layers when num_layers > 1`,
+          content: `Long Short-Term Memory: cell state + gates (forget, input, output). Solves vanishing gradient for longer sequences.`,
           example: `import torch
 import torch.nn as nn
 
@@ -331,12 +287,7 @@ print(out.shape)`,
         {
           id: `gru`,
           title: `GRU`,
-          content: `Gated Recurrent Unit: simplified LSTM with 2 gates. Fewer parameters, often comparable performance.
-
-- GRU merges cell and hidden state
-- Fewer parameters than LSTM
-- Often preferred when compute limited
-- Try both — dataset dependent performance`,
+          content: `Gated Recurrent Unit: simplified LSTM with 2 gates. Fewer parameters, often comparable performance.`,
           keyPoints: [
             `GRU merges cell and hidden state`,
             `Fewer parameters than LSTM`,
@@ -347,12 +298,7 @@ print(out.shape)`,
         {
           id: `bidirectional`,
           title: `Bidirectional RNNs`,
-          content: `Process sequence forward and backward. Concatenate outputs. Captures past and future context.
-
-- Output dimension doubles with bidirectional
-- Not suitable for autoregressive generation
-- Standard for sequence classification
-- pack_padded_sequence for variable length`,
+          content: `Process sequence forward and backward. Concatenate outputs. Captures past and future context.`,
           example: `import torch.nn as nn
 
 bilstm = nn.LSTM(10, 16, batch_first=True, bidirectional=True)
@@ -431,12 +377,9 @@ print(out.shape)`,
         {
           id: `seq2seq`,
           title: `Encoder-Decoder`,
-          content: `Encoder RNN compresses input to context vector. Decoder RNN generates output sequence. Bottleneck problem with long sequences.
+          content: `Encoder RNN compresses input to context vector. Decoder RNN generates output sequence.
 
-- Context vector bottlenecks information
-- Teacher forcing: feed gold previous token during training
-- BLEU score for translation quality
-- Attention solves bottleneck — see next module`,
+Bottleneck problem with long sequences.`,
           pseudoCode: `encoder_hidden = encode(input_sequence)
 FOR each output step t:
     decoder_hidden, output_t = decode(decoder_hidden, encoder_hidden)`,
@@ -450,12 +393,7 @@ FOR each output step t:
         {
           id: `teacher`,
           title: `Teacher Forcing`,
-          content: `During training, feed ground truth previous token as decoder input. At inference, feed model own prediction.
-
-- Teacher forcing speeds convergence
-- Exposure bias: train/inference mismatch
-- Scheduled sampling gradually uses model predictions
-- Beam search for better inference decoding`,
+          content: `During training, feed ground truth previous token as decoder input. At inference, feed model own prediction.`,
           keyPoints: [
             `Teacher forcing speeds convergence`,
             `Exposure bias: train/inference mismatch`,
@@ -466,12 +404,7 @@ FOR each output step t:
         {
           id: `beam`,
           title: `Beam Search Decoding`,
-          content: `Keep top-k partial sequences at each step. Balance exploration vs greedy decoding. beam_width typically 4-8.
-
-- Greedy decoding may miss global optimum
-- Beam search explores multiple hypotheses
-- Larger beam improves quality but slower
-- Length normalization prevents short outputs`,
+          content: `Keep top-k partial sequences at each step. Balance exploration vs greedy decoding. beam_width typically 4-8.`,
           keyPoints: [
             `Greedy decoding may miss global optimum`,
             `Beam search explores multiple hypotheses`,
@@ -482,12 +415,7 @@ FOR each output step t:
         {
           id: `apps`,
           title: `Seq2Seq Applications`,
-          content: `Machine translation, text summarization, chatbots, code generation. Mostly replaced by transformers but conceptually important.
-
-- Transformers dominate seq2seq tasks now
-- Understanding seq2seq helps understand attention
-- Encoder-decoder pattern persists in T5, BART
-- Autoregressive generation core of LLMs`,
+          content: `Machine translation, text summarization, chatbots, code generation. Mostly replaced by transformers but conceptually important.`,
           keyPoints: [
             `Transformers dominate seq2seq tasks now`,
             `Understanding seq2seq helps understand attention`,
@@ -557,12 +485,7 @@ FOR each output step t:
         {
           id: `ner-task`,
           title: `NER Task Definition`,
-          content: `Identify and classify entities: PERSON, ORG, LOC, DATE. BIO tagging: B-PER (begin), I-PER (inside), O (outside).
-
-- BIO/BIOES tagging schemes standard
-- Token-level classification with sequence context
-- CRF layer enforces valid tag transitions
-- spaCy provides production NER pipelines`,
+          content: `Identify and classify entities: PERSON, ORG, LOC, DATE. BIO tagging: B-PER (begin), I-PER (inside), O (outside).`,
           example: `# BIO tags for "John works at Google"
 # John: B-PER, works: O, at: O, Google: B-ORG
 sentence = ["John", "works", "at", "Google"]
@@ -578,12 +501,7 @@ print(list(zip(sentence, tags)))`,
         {
           id: `bi-lstm`,
           title: `BiLSTM-CRF`,
-          content: `Classic NER architecture: embeddings → BiLSTM → CRF. CRF learns transition constraints between tags.
-
-- CRF prevents invalid tag sequences
-- BiLSTM captures context from both directions
-- Superseded by BERT fine-tuning for NER
-- Still useful for low-resource languages`,
+          content: `Classic NER architecture: embeddings → BiLSTM → CRF. CRF learns transition constraints between tags.`,
           keyPoints: [
             `CRF prevents invalid tag sequences`,
             `BiLSTM captures context from both directions`,
@@ -594,12 +512,9 @@ print(list(zip(sentence, tags)))`,
         {
           id: `bert-ner`,
           title: `BERT for NER`,
-          content: `Fine-tune BERT with token classification head. Align subword tokens to labels. State-of-the-art on CoNLL benchmarks.
+          content: `Fine-tune BERT with token classification head. Align subword tokens to labels.
 
-- Fine-tune pretrained BERT on labeled NER data
-- Handle subword tokenization alignment
-- HuggingFace token-classification pipeline
-- Few-shot NER with LLM prompting emerging`,
+State-of-the-art on CoNLL benchmarks.`,
           keyPoints: [
             `Fine-tune pretrained BERT on labeled NER data`,
             `Handle subword tokenization alignment`,
@@ -610,12 +525,7 @@ print(list(zip(sentence, tags)))`,
         {
           id: `applications`,
           title: `NER Applications`,
-          content: `Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).
-
-- Build knowledge graphs from extracted entities
-- PII detection is privacy-focused NER
-- Clinical NER requires domain-specific models
-- Combine NER with relation extraction`,
+          content: `Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).`,
           keyPoints: [
             `Build knowledge graphs from extracted entities`,
             `PII detection is privacy-focused NER`,

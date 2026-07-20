@@ -13,12 +13,7 @@ export const module22Topics: Topic[] = [
           title: `pathlib for Paths`,
           content: `\`pathlib.Path\` replaces os.path string juggling. \`/\` operator joins: \`Path("data") / "file.csv"\`. Methods: \`.read_text()\`, \`.write_text()\`, \`.exists()\`, \`.mkdir(parents=True)\`, \`.glob("*.json")\`.
 
-Use context managers or explicit encoding (\`encoding="utf-8"\`) for text. \`Path.home()\`, \`.resolve()\` for absolute normalized paths.
-
-- Path objects are immutable and expressive
-- Always specify encoding for text files
-- glob/rglob for pattern file discovery
-- resolve() removes .. and symlinks`,
+Use context managers or explicit encoding (\`encoding="utf-8"\`) for text. \`Path.home()\`, \`.resolve()\` for absolute normalized paths.`,
           example: `from pathlib import Path
 p = Path("sample.txt")
 p.write_text("hello", encoding="utf-8")
@@ -36,12 +31,7 @@ print(p.read_text(encoding="utf-8"))`,
           title: `JSON & CSV`,
           content: `\`json.load/dump\` for structured data—mind that JSON has no date type. **\`csv.DictReader/DictWriter\`** maps rows to dicts with column headers.
 
-For large CSVs, iterate rows instead of loading all into memory. Handle malformed rows with error policies or validation layers.
-
-- json serializes dict/list primitives only
-- DictReader uses first row as field names
-- Stream large files line by line
-- Validate types after reading CSV strings`,
+For large CSVs, iterate rows instead of loading all into memory. Handle malformed rows with error policies or validation layers.`,
           example: `import json, csv, io
 buf = io.StringIO("name,score\\nAda,99\\n")
 rows = list(csv.DictReader(buf))
@@ -59,12 +49,7 @@ print(json.dumps(rows))`,
           title: `Pickle & Security`,
           content: `\`pickle\` serializes arbitrary Python objects quickly but **only load trusted files**—unpickling executes code paths. Prefer JSON or Parquet for interoperability.
 
-Use pickle for ephemeral caches or sklearn joblib models in controlled environments. Version your objects or use schema migrations when formats change.
-
-- Never unpickle untrusted data
-- pickle is Python-specific not portable
-- joblib better for large numpy arrays
-- Prefer open formats for long-term storage`,
+Use pickle for ephemeral caches or sklearn joblib models in controlled environments. Version your objects or use schema migrations when formats change.`,
           keyPoints: [
             `Never unpickle untrusted data`,
             `pickle is Python-specific not portable`,
@@ -77,12 +62,7 @@ Use pickle for ephemeral caches or sklearn joblib models in controlled environme
           title: `I/O Patterns & Error Handling`,
           content: `Use \`with open(...) as f:\` for automatic close. Catch \`FileNotFoundError\`, \`PermissionError\`. Atomic writes: write to temp file then \`replace()\`.
 
-Log paths on failure. On Windows mind path separators—pathlib abstracts this.
-
-- Context managers guarantee file closure
-- Atomic replace prevents partial writes
-- Handle missing files explicitly
-- pathlib works cross-platform`,
+Log paths on failure. On Windows mind path separators—pathlib abstracts this.`,
           example: `from pathlib import Path
 def safe_read(path):
     p = Path(path)
@@ -163,14 +143,11 @@ print(json.dumps({"x": 1}))`,
         {
           id: `requests-basics`,
           title: `requests Fundamentals`,
-          content: `\`requests.get(url, params={...}, timeout=10)\` returns **Response**. Check \`resp.status_code\` or \`resp.raise_for_status()\`. Body: \`.text\`, \`.json()\`, \`.content\` bytes.
+          content: `\`requests.get(url, params={...}, timeout=10)\` returns **Response**. Check \`resp.status_code\` or \`resp.raise_for_status()\`.
 
-Set headers: \`headers={"Authorization": "Bearer TOKEN"}\`. POST JSON: \`requests.post(url, json={"key": "val"})\`.
+Body: \`.text\`, \`.json()\`, \`.content\` bytes. Set headers: \`headers={"Authorization": "Bearer TOKEN"}\`.
 
-- Always set timeouts on external calls
-- raise_for_status converts HTTP errors to exceptions
-- json= parameter sets Content-Type automatically
-- Session objects reuse TCP connections`,
+POST JSON: \`requests.post(url, json={"key": "val"})\`.`,
           example: `import requests
 resp = requests.get("https://httpbin.org/get", params={"q": "ml"}, timeout=10)
 resp.raise_for_status()
@@ -185,14 +162,9 @@ print(resp.json()["args"])  # requires network`,
         {
           id: `rest`,
           title: `REST Conventions`,
-          content: `REST maps resources to URLs. **GET** read, **POST** create, **PUT/PATCH** update, **DELETE** remove. Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 429 Rate Limited, 500 Server Error.
+          content: `REST maps resources to URLs. **GET** read, **POST** create, **PUT/PATCH** update, **DELETE** remove.
 
-Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).
-
-- Respect HTTP semantics in client design
-- Handle 429 with exponential backoff
-- Version APIs in path or header
-- Document required headers and rate limits`,
+Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 429 Rate Limited, 500 Server Error. Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).`,
           keyPoints: [
             `Respect HTTP semantics in client design`,
             `Handle 429 with exponential backoff`,
@@ -203,14 +175,11 @@ Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).
         {
           id: `auth-errors`,
           title: `Authentication & Retries`,
-          content: `API keys in headers (never commit to git). OAuth flows for user-delegated access. Retry transient 5xx/429 with **\`urllib3.util.retry\`** or \`tenacity\`.
+          content: `API keys in headers (never commit to git). OAuth flows for user-delegated access.
 
-Validate response schema before use. Log correlation IDs from \`X-Request-ID\` headers for support tickets.
+Retry transient 5xx/429 with **\`urllib3.util.retry\`** or \`tenacity\`. Validate response schema before use.
 
-- Store secrets in environment variables
-- Retry only idempotent requests safely
-- Backoff reduces thundering herd
-- Validate JSON shape before accessing keys`,
+Log correlation IDs from \`X-Request-ID\` headers for support tickets.`,
           example: `from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import requests
@@ -231,12 +200,7 @@ print(retry.total)`,
           title: `Testing API Clients`,
           content: `Mock HTTP with **\`responses\`** library or \`unittest.mock.patch("requests.get")\`. Record fixtures with **VCR.py** for integration tests.
 
-Separate HTTP layer from business logic—pure functions parse JSON dicts; thin wrapper performs requests.
-
-- Mock at HTTP boundary for unit tests
-- Integration tests hit sandboxes sparingly
-- Separate transport from parsing logic
-- Contract tests catch API drift early`,
+Separate HTTP layer from business logic—pure functions parse JSON dicts; thin wrapper performs requests.`,
           keyPoints: [
             `Mock at HTTP boundary for unit tests`,
             `Integration tests hit sandboxes sparingly`,
@@ -310,12 +274,7 @@ print(params["q"])`,
           title: `BeautifulSoup Parsing`,
           content: `Parse HTML with \`BeautifulSoup(html, "html.parser")\` (or **lxml** for speed). Navigate: \`soup.find("tag", class_="x")\`, \`.select("css.selector")\`, \`.get_text(strip=True)\`.
 
-BeautifulSoup tolerates malformed markup—still not a browser; dynamic JS sites need Playwright/Selenium.
-
-- CSS selectors scale better than manual loops
-- strip=True cleans whitespace in text extraction
-- Static HTML only—JS rendering needs browser automation
-- Handle missing elements with if/defaults`,
+BeautifulSoup tolerates malformed markup—still not a browser; dynamic JS sites need Playwright/Selenium.`,
           example: `from bs4 import BeautifulSoup
 html = "<html><body><p class=\\"item\\">A</p><p class=\\"item\\">B</p></body></html>"
 soup = BeautifulSoup(html, "html.parser")
@@ -331,14 +290,11 @@ print([p.get_text() for p in soup.select("p.item")])`,
         {
           id: `fetch`,
           title: `Fetching Pages Responsibly`,
-          content: `Set **\`User-Agent\`** identifying your bot and contact. Honor **robots.txt** (\`urllib.robotparser\`). Rate limit: \`time.sleep\` or token bucket between requests.
+          content: `Set **\`User-Agent\`** identifying your bot and contact. Honor **robots.txt** (\`urllib.robotparser\`).
 
-Cache responses during development. Do not scrape personal data without legal basis (GDPR).
+Rate limit: \`time.sleep\` or token bucket between requests. Cache responses during development.
 
-- Read Terms of Service before scraping
-- Throttle requests to avoid overloading servers
-- Identify your scraper in User-Agent string
-- Prefer official APIs when available`,
+Do not scrape personal data without legal basis (GDPR).`,
           keyPoints: [
             `Read Terms of Service before scraping`,
             `Throttle requests to avoid overloading servers`,
@@ -349,14 +305,11 @@ Cache responses during development. Do not scrape personal data without legal ba
         {
           id: `extract`,
           title: `Structured Extraction`,
-          content: `Normalize URLs with \`urllib.parse.urljoin\`. Extract tables with \`pandas.read_html\` when suitable. Store raw HTML snapshots for reproducibility before parsing logic changes.
+          content: `Normalize URLs with \`urllib.parse.urljoin\`. Extract tables with \`pandas.read_html\` when suitable.
 
-Pipeline: fetch → parse → validate → persist. Log HTTP status and parse failures separately.
+Store raw HTML snapshots for reproducibility before parsing logic changes. Pipeline: fetch → parse → validate → persist.
 
-- urljoin resolves relative links correctly
-- Validate extracted fields against schema
-- Keep raw snapshots for debugging parser changes
-- pandas.read_html quick for simple tables`,
+Log HTTP status and parse failures separately.`,
           example: `from urllib.parse import urljoin
 base = "https://example.com/courses/"
 print(urljoin(base, "../blog/post"))`,
@@ -370,14 +323,9 @@ print(urljoin(base, "../blog/post"))`,
         {
           id: `ethics`,
           title: `Ethical & Legal Considerations`,
-          content: `Scraping public facts differs from bypassing paywalls or CAPTCHAs. Copyright may protect compiled databases. **Computer Fraud and Abuse Act** (US) and similar laws penalize unauthorized access.
+          content: `Scraping public facts differs from bypassing paywalls or CAPTCHAs. Copyright may protect compiled databases.
 
-When in doubt, request permission or purchase data from licensed providers.
-
-- Legal risk varies by jurisdiction and site ToS
-- Do not circumvent authentication or DRM
-- Anonymize and minimize collected personal data
-- Document purpose and retention policy`,
+**Computer Fraud and Abuse Act** (US) and similar laws penalize unauthorized access. When in doubt, request permission or purchase data from licensed providers.`,
           keyPoints: [
             `Legal risk varies by jurisdiction and site ToS`,
             `Do not circumvent authentication or DRM`,
@@ -450,14 +398,9 @@ print(len(s.select("li")))`,
         {
           id: `connect`,
           title: `Connecting & Cursors`,
-          content: `\`sqlite3.connect("app.db")\` creates file if missing. **Context manager** commits on success, rolls back on exception. Cursor executes SQL: \`cur.execute(...)\`, \`cur.fetchall()\`.
+          content: `\`sqlite3.connect("app.db")\` creates file if missing. **Context manager** commits on success, rolls back on exception.
 
-Row factory \`sqlite3.Row\` enables dict-like access: \`conn.row_factory = sqlite3.Row\`.
-
-- :memory: database for tests
-- Context managers handle commit/rollback
-- Parameterized ? placeholders prevent SQL injection
-- Row factory improves readability`,
+Cursor executes SQL: \`cur.execute(...)\`, \`cur.fetchall()\`. Row factory \`sqlite3.Row\` enables dict-like access: \`conn.row_factory = sqlite3.Row\`.`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.execute("CREATE TABLE t (id INTEGER PRIMARY KEY, name TEXT)")
@@ -474,14 +417,11 @@ print(conn.execute("SELECT name FROM t").fetchone()[0])`,
         {
           id: `sql`,
           title: `SQL Essentials in Python`,
-          content: `DDL: CREATE TABLE, INDEX. DML: SELECT, INSERT, UPDATE, DELETE. **JOIN** combines tables on keys. **GROUP BY** aggregates; **HAVING** filters groups.
+          content: `DML: SELECT, INSERT, UPDATE, DELETE. **JOIN** combines tables on keys.
 
-Use transactions for multi-step consistency: \`BEGIN\` … \`COMMIT\`. SQLite supports limited ALTER—plan schemas upfront.
+**GROUP BY** aggregates; **HAVING** filters groups. Use transactions for multi-step consistency: \`BEGIN\` … \`COMMIT\`.
 
-- Foreign keys require PRAGMA foreign_keys=ON
-- Indexes speed lookups on large tables
-- Avoid SELECT * in production queries
-- executescript for migrations/bootstrap`,
+SQLite supports limited ALTER—plan schemas upfront.`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.executescript("""
@@ -505,12 +445,7 @@ print(row)`,
           title: `When to Upgrade from SQLite`,
           content: `SQLite suits local apps, prototypes, and tests. Concurrent writers serialize—use PostgreSQL/MySQL for multi-user web backends.
 
-**SQLAlchemy** abstracts dialects; **Dataset** simplifies ad hoc exploration. Export with \`.dump\` or pandas \`read_sql\`.
-
-- SQLite single-writer limitation at scale
-- PostgreSQL for production web apps
-- SQLAlchemy eases migration between engines
-- Backup via sqlite3 .backup API or file copy`,
+**SQLAlchemy** abstracts dialects; **Dataset** simplifies ad hoc exploration. Export with \`.dump\` or pandas \`read_sql\`.`,
           keyPoints: [
             `SQLite single-writer limitation at scale`,
             `PostgreSQL for production web apps`,
@@ -521,14 +456,9 @@ print(row)`,
         {
           id: `security`,
           title: `SQL Safety`,
-          content: `Never interpolate user input into SQL strings. Always bind parameters. Validate types before insert. Principle of least privilege—read-only connections for analytics.
+          content: `Never interpolate user input into SQL strings. Validate types before insert.
 
-Encrypt sensitive columns at application level if needed—SQLite file encryption extensions exist but are not default.
-
-- Parameter binding stops SQL injection
-- Validate integers and enums before queries
-- Separate read replicas conceptually even locally
-- Do not store plaintext passwords—hash them`,
+Principle of least privilege—read-only connections for analytics. Encrypt sensitive columns at application level if needed—SQLite file encryption extensions exist but are not default.`,
           keyPoints: [
             `Parameter binding stops SQL injection`,
             `Validate integers and enums before queries`,
@@ -606,12 +536,7 @@ print(c.execute("SELECT COUNT(*) FROM t").fetchone()[0])`,
           title: `JSON Schema Validation`,
           content: `**JSON Schema** describes allowed JSON structure: types, required fields, enums, nested objects. Validate with **\`jsonschema\`** library before processing external payloads.
 
-Schemas serve as contracts between services—version them alongside APIs.
-
-- Validate at system boundaries
-- Schemas document API contracts
-- Combine with pydantic for Python models
-- Fail fast on malformed input`,
+Schemas serve as contracts between services—version them alongside APIs.`,
           example: `from jsonschema import validate
 schema = {"type": "object", "required": ["id"], "properties": {"id": {"type": "integer"}}}
 validate({"id": 1}, schema)
@@ -629,12 +554,7 @@ print("valid")`,
           title: `YAML Configuration`,
           content: `**PyYAML** loads human-readable config: \`yaml.safe_load\` only—never \`load\` with default Loader on untrusted input. YAML supports nesting, lists, anchors (use sparingly).
 
-Separate config from code; override with environment variables in twelve-factor apps.
-
-- safe_load prevents arbitrary object construction
-- Keep secrets out of YAML in repos
-- Env var overrides for deployment-specific values
-- Lint config files in CI`,
+Separate config from code; override with environment variables in twelve-factor apps.`,
           example: `import yaml
 cfg = yaml.safe_load("model:\\n  name: rf\\n  trees: 100\\n")
 print(cfg["model"]["trees"])`,
@@ -651,12 +571,7 @@ print(cfg["model"]["trees"])`,
           title: `Parquet Introduction`,
           content: `**Parquet** columnar format efficient for analytics—compression and predicate pushdown in Spark/DuckDB/pandas (\`read_parquet\`). Schema embedded; types preserved better than CSV.
 
-Partition directories by date/key for large datasets. Not ideal for row-by-row OLTP.
-
-- Columnar storage reduces I/O for analytics
-- Schema evolution requires careful migration
-- Combine with Snappy/Zstd compression
-- pandas/pyarrow common Python stack`,
+Partition directories by date/key for large datasets. Not ideal for row-by-row OLTP.`,
           example: `import pandas as pd
 df = pd.DataFrame({"a": [1, 2], "b": ["x", "y"]})
 # df.to_parquet("out.parquet"); df2 = pd.read_parquet("out.parquet")
@@ -672,14 +587,9 @@ print(list(df.columns))`,
         {
           id: `formats-choose`,
           title: `Choosing a Format`,
-          content: `JSON for APIs and configs. CSV for human spreadsheet interchange. Parquet for ML datasets and warehouses. Avro/Protobuf for streaming schemas. Pick based on readers, schema needs, and size.
+          content: `JSON for APIs and configs. CSV for human spreadsheet interchange. Parquet for ML datasets and warehouses.
 
-Document encoding, timezone, and null conventions in data catalogs.
-
-- Match format to consumer tooling
-- Columnar for read-heavy analytics
-- Row formats for transactional updates
-- Version datasets with DVC or similar`,
+Avro/Protobuf for streaming schemas. Pick based on readers, schema needs, and size. Document encoding, timezone, and null conventions in data catalogs.`,
           keyPoints: [
             `Match format to consumer tooling`,
             `Columnar for read-heavy analytics`,

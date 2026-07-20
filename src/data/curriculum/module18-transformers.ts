@@ -11,12 +11,7 @@ export const module18Topics: Topic[] = [
         {
           id: `attention`,
           title: `Attention Intuition`,
-          content: `Attention weighs relevance of each input element when producing output. Query, Key, Value framework from information retrieval.
-
-- Query: what am I looking for
-- Key: what do I contain
-- Value: what information do I provide
-- Softmax weights sum to 1 over keys`,
+          content: `Attention weighs relevance of each input element when producing output. Query, Key, Value framework from information retrieval.`,
           example: `import torch
 import torch.nn.functional as F
 
@@ -39,12 +34,7 @@ print(output.shape)`,
         {
           id: `scaled`,
           title: `Scaled Dot-Product Attention`,
-          content: `Attention(Q,K,V) = softmax(QK^T/√d_k)V. Scaling prevents softmax saturation with large d_k.
-
-- Scaling by sqrt(d_k) stabilizes gradients
-- QK^T computes pairwise similarity
-- Softmax produces attention weights
-- Output is weighted sum of values`,
+          content: `Attention(Q,K,V) = softmax(QK^T/√d_k)V. Scaling prevents softmax saturation with large d_k.`,
           pseudoCode: `scores = Q @ K.T / sqrt(d_k)
 weights = softmax(scores)
 output = weights @ V`,
@@ -58,12 +48,19 @@ output = weights @ V`,
         {
           id: `self-attn`,
           title: `Self-Attention`,
-          content: `Q, K, V all from same sequence. Each position attends to all positions including itself. Captures long-range dependencies in O(n²).
+          content: `In **self-attention**, Q, K, and V all come from the same sequence. Each token builds a query ("what am I looking for?"), compares it against every key ("what does each token offer?"), and aggregates values weighted by those similarities.
 
-- Self-attention replaces recurrence
-- Parallel computation over sequence
-- O(n²) memory and compute in sequence length
-- Long-range dependencies in constant path length`,
+This lets token 5 directly attend to token 100 with one hop—unlike RNNs that need 95 sequential steps. The cost is O(n²) memory and compute in sequence length, which is why long-context models invest heavily in sparse attention, sliding windows, and KV-cache optimization.`,
+          example: `import torch
+import torch.nn.functional as F
+
+# Self-attention: Q=K=V from same sequence
+x = torch.tensor([[1., 0.], [0., 1.], [1., 1.]])  # 3 tokens, dim 2
+scores = x @ x.T / x.shape[-1] ** 0.5
+weights = F.softmax(scores, dim=-1)
+out = weights @ x
+print(out.shape)`,
+          output: `torch.Size([3, 2])`,
           keyPoints: [
             `Self-attention replaces recurrence`,
             `Parallel computation over sequence`,
@@ -74,12 +71,7 @@ output = weights @ V`,
         {
           id: `multi-head`,
           title: `Multi-Head Attention`,
-          content: `Multiple attention heads in parallel with different learned projections. Concatenate and project output. h heads, d_model/h dimensions each.
-
-- Multiple heads capture different relationship types
-- Concat heads then linear projection
-- num_heads divides embed_dim evenly
-- Attention weights interpretable per head`,
+          content: `Multiple attention heads in parallel with different learned projections. Concatenate and project output. h heads, d_model/h dimensions each.`,
           example: `import torch.nn as nn
 
 mha = nn.MultiheadAttention(embed_dim=64, num_heads=8, batch_first=True)
@@ -159,12 +151,7 @@ print(2*2 / math.sqrt(4))`,
         {
           id: `encoder`,
           title: `Transformer Encoder`,
-          content: `Stack of identical layers: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. FFN: Linear → ReLU → Linear.
-
-- Pre-norm vs post-norm variants exist
-- FFN expands then contracts dimensions
-- Residual connections around each sublayer
-- Stack N layers (6 in original paper)`,
+          content: `Stack of identical layers: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. FFN: Linear → ReLU → Linear.`,
           pseudoCode: `FOR each encoder layer:
     x = LayerNorm(x + MultiHeadSelfAttention(x))
     x = LayerNorm(x + FeedForward(x))`,
@@ -178,12 +165,7 @@ print(2*2 / math.sqrt(4))`,
         {
           id: `decoder`,
           title: `Transformer Decoder`,
-          content: `Masked self-attention (causal) → cross-attention to encoder → FFN. Mask prevents attending to future tokens.
-
-- Causal mask for autoregressive generation
-- Cross-attention connects encoder to decoder
-- Decoder self-attention is masked
-- Encoder-only models (BERT) skip decoder`,
+          content: `Masked self-attention (causal) → cross-attention to encoder → FFN. Mask prevents attending to future tokens.`,
           keyPoints: [
             `Causal mask for autoregressive generation`,
             `Cross-attention connects encoder to decoder`,
@@ -194,12 +176,7 @@ print(2*2 / math.sqrt(4))`,
         {
           id: `ffn`,
           title: `Feed-Forward Network`,
-          content: `FFN(x) = max(0, xW₁+b₁)W₂+b₂. Applied position-wise. Typically 4× expansion: d_model → 4·d_model → d_model.
-
-- Same FFN applied to each position independently
-- Majority of transformer parameters in FFN
-- GELU activation in modern transformers
-- MoE replaces FFN with mixture of experts at scale`,
+          content: `FFN(x) = max(0, xW₁+b₁)W₂+b₂. Applied position-wise. Typically 4× expansion: d_model → 4·d_model → d_model.`,
           keyPoints: [
             `Same FFN applied to each position independently`,
             `Majority of transformer parameters in FFN`,
@@ -210,12 +187,7 @@ print(2*2 / math.sqrt(4))`,
         {
           id: `layer-norm`,
           title: `Layer Normalization`,
-          content: `Normalizes across features per token. Pre-norm (before sublayer) more stable for deep transformers.
-
-- LayerNorm not BatchNorm in transformers
-- Normalizes last dimension (features)
-- Pre-norm enables deeper networks
-- RMSNorm simpler alternative used in LLaMA`,
+          content: `Normalizes across features per token. Pre-norm (before sublayer) more stable for deep transformers.`,
           keyPoints: [
             `LayerNorm not BatchNorm in transformers`,
             `Normalizes last dimension (features)`,
@@ -227,15 +199,21 @@ print(2*2 / math.sqrt(4))`,
       exercises: [
         {
           id: `ex-tr-1`,
-          question: `Transformer encoder layer order: attention then ___.`,
-          solution: `print("Feed-Forward Network (FFN)")`,
+          question: `Apply LayerNorm to a 2x4 tensor and print mean/std of first row.`,
+          solution: `import torch
+import torch.nn as nn
+x = torch.randn(2, 4)
+y = nn.LayerNorm(4)(x)
+print(round(y[0].mean().item(), 4), round(y[0].std(unbiased=False).item(), 4))`,
           difficulty: `easy`
         },
         {
           id: `ex-tr-2`,
-          question: `Causal mask prevents attending to ___ tokens.`,
-          solution: `print("future")`,
-          difficulty: `easy`
+          question: `Build causal mask: upper triangle True for seq_len=4.`,
+          solution: `import torch
+mask = torch.triu(torch.ones(4, 4), diagonal=1).bool()
+print(mask.int().tolist())`,
+          difficulty: `medium`
         }
       ],
       estimatedMinutes: 25,
@@ -285,12 +263,7 @@ print(2*2 / math.sqrt(4))`,
         {
           id: `sinusoidal`,
           title: `Sinusoidal Positional Encoding`,
-          content: `PE(pos,2i) = sin(pos/10000^(2i/d)). PE(pos,2i+1) = cos(...). Fixed, not learned. Generalizes to unseen lengths.
-
-- Sinusoidal encoding from original transformer paper
-- Each dimension different wavelength
-- Added to input embeddings
-- Can extrapolate beyond training length somewhat`,
+          content: `PE(pos,2i) = sin(pos/10000^(2i/d)). PE(pos,2i+1) = cos(...). Fixed, not learned. Generalizes to unseen lengths.`,
           example: `import torch
 import math
 
@@ -314,12 +287,9 @@ print(sinusoidal_pe(4, 8).shape)`,
         {
           id: `learned`,
           title: `Learned Positional Embeddings`,
-          content: `nn.Embedding(max_seq_len, d_model). GPT uses learned positions. Limited to max_seq_len seen during training.
+          content: `nn.Embedding(max_seq_len, d_model). GPT uses learned positions.
 
-- Learned positions standard in GPT models
-- Cannot exceed max position embeddings
-- Rotary (RoPE) and ALiBi extend context
-- Position embeddings added to token embeddings`,
+Limited to max_seq_len seen during training.`,
           keyPoints: [
             `Learned positions standard in GPT models`,
             `Cannot exceed max position embeddings`,
@@ -330,12 +300,9 @@ print(sinusoidal_pe(4, 8).shape)`,
         {
           id: `rope`,
           title: `Rotary Position Embedding (RoPE)`,
-          content: `Rotates query and key vectors by position-dependent angle. Relative position encoding. Used in LLaMA, Mistral, GPT-NeoX.
+          content: `Rotates query and key vectors by position-dependent angle. Relative position encoding.
 
-- RoPE encodes relative not absolute position
-- Better length extrapolation than learned
-- Standard in modern open-source LLMs
-- Applied to Q and K before attention`,
+Used in LLaMA, Mistral, GPT-NeoX.`,
           keyPoints: [
             `RoPE encodes relative not absolute position`,
             `Better length extrapolation than learned`,
@@ -346,12 +313,7 @@ print(sinusoidal_pe(4, 8).shape)`,
         {
           id: `alibi`,
           title: `ALiBi & Relative Positions`,
-          content: `Attention with Linear Biases: add linear penalty based on distance. No explicit position embeddings needed.
-
-- ALiBi simple and effective
-- Strong length extrapolation
-- Relative position bias in attention scores
-- Multiple approaches coexist in modern models`,
+          content: `Attention with Linear Biases: add linear penalty based on distance. No explicit position embeddings needed.`,
           keyPoints: [
             `ALiBi simple and effective`,
             `Strong length extrapolation`,
@@ -422,12 +384,7 @@ print(nn.Embedding(8, 16)(torch.arange(8)).shape)`,
         {
           id: `bert`,
           title: `BERT Architecture`,
-          content: `Encoder-only transformer. Pre-trained with MLM (Masked Language Model) and NSP. Fine-tune for classification, NER, QA.
-
-- [CLS] token representation for classification
-- [MASK] token for MLM pretraining
-- Bidirectional context — sees left and right
-- Fine-tune with task-specific head on top`,
+          content: `Encoder-only transformer. Pre-trained with MLM (Masked Language Model) and NSP. Fine-tune for classification, NER, QA.`,
           example: `from transformers import BertTokenizer, BertModel
 
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
@@ -445,12 +402,7 @@ print(outputs.last_hidden_state.shape)`,
         {
           id: `mlm`,
           title: `Masked Language Modeling`,
-          content: `Randomly mask 15% of tokens, predict masked tokens. Learns deep bidirectional representations.
-
-- 80% replace with [MASK], 10% random, 10% unchanged
-- Forces model to understand context
-- MLM objective is denoising autoencoder
-- RoBERTa improves BERT training recipe`,
+          content: `Randomly mask 15% of tokens, predict masked tokens. Learns deep bidirectional representations.`,
           keyPoints: [
             `80% replace with [MASK], 10% random, 10% unchanged`,
             `Forces model to understand context`,
@@ -461,12 +413,9 @@ print(outputs.last_hidden_state.shape)`,
         {
           id: `fine-tune`,
           title: `Fine-Tuning BERT`,
-          content: `Add classification head on [CLS]. Train with small LR (2e-5 to 5e-5). Few epochs often sufficient.
+          content: `Add classification head on [CLS]. Train with small LR (2e-5 to 5e-5).
 
-- Use AdamW optimizer with weight decay
-- Small learning rate critical for fine-tuning
-- Freeze early layers for very small datasets
-- HuggingFace Trainer simplifies fine-tuning`,
+Few epochs often sufficient.`,
           example: `from transformers import BertForSequenceClassification
 
 model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
@@ -481,12 +430,7 @@ print(model.classifier)`,
         {
           id: `encoder-models`,
           title: `Modern Encoder Models`,
-          content: `RoBERTa, DeBERTa, ELECTRA, DistilBERT. Encoder models for understanding tasks, not generation.
-
-- RoBERTa: optimized BERT training
-- DeBERTa: disentangled attention
-- DistilBERT: 40% smaller, 97% performance
-- Encoder models for classification and retrieval`,
+          content: `RoBERTa, DeBERTa, ELECTRA, DistilBERT. Encoder models for understanding tasks, not generation.`,
           keyPoints: [
             `RoBERTa: optimized BERT training`,
             `DeBERTa: disentangled attention`,
@@ -498,14 +442,19 @@ print(model.classifier)`,
       exercises: [
         {
           id: `ex-bert-1`,
-          question: `BERT uses [CLS] token for ___ tasks.`,
-          solution: `print("classification")`,
-          difficulty: `easy`
+          question: `Tokenize text and print input_ids length for BERT.`,
+          solution: `from transformers import BertTokenizer
+tok = BertTokenizer.from_pretrained("bert-base-uncased")
+ids = tok("Hello transformers", return_tensors="pt")["input_ids"]
+print(ids.shape[1])`,
+          difficulty: `medium`
         },
         {
           id: `ex-bert-2`,
-          question: `MLM masks ___% of tokens during pretraining.`,
-          solution: `print(15)`,
+          question: `Compute MLM mask rate: 15% of 20 tokens.`,
+          solution: `n_tokens = 20
+n_masked = int(0.15 * n_tokens)
+print(n_masked)`,
           difficulty: `easy`
         }
       ],
@@ -556,12 +505,9 @@ print(model.classifier)`,
         {
           id: `gpt`,
           title: `GPT Architecture`,
-          content: `Decoder-only transformer with causal masking. Predict next token autoregressively. Pre-train on large text corpus.
+          content: `Decoder-only transformer with causal masking. Predict next token autoregressively.
 
-- Causal/autoregressive: predict P(x_t | x_<t)
-- Decoder-only for generation tasks
-- Scaling laws: bigger = better performance
-- GPT-2, GPT-3, GPT-4 evolution`,
+Pre-train on large text corpus.`,
           example: `from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
@@ -579,12 +525,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
         {
           id: `generation`,
           title: `Text Generation Strategies`,
-          content: `Greedy, beam search, top-k sampling, nucleus (top-p) sampling, temperature scaling. Control randomness vs quality.
-
-- Temperature < 1 sharpens, > 1 flattens distribution
-- top-p (nucleus): sample from smallest set with cumulative prob p
-- top-k: sample from k most likely tokens
-- Repetition penalty reduces loops`,
+          content: `Greedy, beam search, top-k sampling, nucleus (top-p) sampling, temperature scaling. Control randomness vs quality.`,
           keyPoints: [
             `Temperature < 1 sharpens, > 1 flattens distribution`,
             `top-p (nucleus): sample from smallest set with cumulative prob p`,
@@ -595,12 +536,9 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
         {
           id: `causal`,
           title: `Causal Language Modeling`,
-          content: `Train to predict next token. Loss on all positions simultaneously with causal mask. Foundation of all LLM pretraining.
+          content: `Train to predict next token. Loss on all positions simultaneously with causal mask.
 
-- CLM loss computed on all token positions
-- Causal mask prevents cheating (seeing future)
-- Cross-entropy loss on vocabulary
-- Trillions of tokens for frontier models`,
+Foundation of all LLM pretraining.`,
           keyPoints: [
             `CLM loss computed on all token positions`,
             `Causal mask prevents cheating (seeing future)`,
@@ -611,12 +549,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
         {
           id: `scaling`,
           title: `Scaling Laws`,
-          content: `Performance scales predictably with compute, data, and parameters. Chinchilla: optimal tokens ≈ 20× parameters.
-
-- Kaplan scaling laws (OpenAI 2020)
-- Chinchilla optimal compute allocation
-- Emergent abilities at scale debated
-- Efficiency improvements (MoE, quantization) extend scaling`,
+          content: `Performance scales predictably with compute, data, and parameters. Chinchilla: optimal tokens ≈ 20× parameters.`,
           keyPoints: [
             `Kaplan scaling laws (OpenAI 2020)`,
             `Chinchilla optimal compute allocation`,
@@ -628,15 +561,20 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
       exercises: [
         {
           id: `ex-gpt-1`,
-          question: `Temperature > 1 makes output more ___ .`,
-          solution: `print("random/diverse")`,
+          question: `Apply temperature scaling: logits [1,2,3] with T=2.`,
+          solution: `import torch
+import torch.nn.functional as F
+logits = torch.tensor([1., 2., 3.])
+print(F.softmax(logits / 2, dim=0).round(decimals=3).tolist())`,
           difficulty: `easy`
         },
         {
           id: `ex-gpt-2`,
-          question: `GPT is a ___-only transformer.`,
-          solution: `print("decoder")`,
-          difficulty: `easy`
+          question: `GPT2 tokenizer: encode "AI" and print token count.`,
+          solution: `from transformers import GPT2Tokenizer
+tok = GPT2Tokenizer.from_pretrained("gpt2")
+print(len(tok.encode("AI")))`,
+          difficulty: `medium`
         }
       ],
       estimatedMinutes: 25,

@@ -11,12 +11,7 @@ export const module07Topics: Topic[] = [
         {
           id: `series`,
           title: `Series`,
-          content: `Series is labeled 1D array. Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.
-
-- Series has data and index
-- Index enables label-based access
-- Automatic alignment on operations
-- Series is column of DataFrame`,
+          content: `Series is labeled 1D array. Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.`,
           example: `import pandas as pd
 
 s = pd.Series([10, 20, 30], index=["a", "b", "c"])
@@ -36,12 +31,7 @@ dtype: int64`,
         {
           id: `dataframe`,
           title: `DataFrame Creation`,
-          content: `From dict of lists, CSV, JSON, SQL. Columns are Series. .head(), .info(), .describe() for exploration.
-
-- DataFrame is primary pandas structure
-- describe() gives numeric summary
-- info() shows dtypes and non-null counts
-- read_csv most common ingestion method`,
+          content: `From dict of lists, CSV, JSON, SQL. Columns are Series. .head(), .info(), .describe() for exploration.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -69,12 +59,7 @@ max    35.000000  95.000000`,
         {
           id: `selection`,
           title: `Column & Row Selection`,
-          content: `df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j]. Avoid chained indexing.
-
-- Single brackets for column, double for multiple
-- loc is label-based inclusive
-- iloc is integer-based exclusive on stop
-- Avoid df[df.A > 0]["B"] chained indexing`,
+          content: `df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j]. Avoid chained indexing.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"A": [1,2,3], "B": [4,5,6], "C": [7,8,9]})
@@ -92,12 +77,7 @@ print(df.loc[0:1, ["A", "C"]])`,
         {
           id: `dtypes`,
           title: `Data Types`,
-          content: `object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.
-
-- category dtype saves memory for repeated strings
-- Parse dates early with to_datetime
-- Downcast numeric types to save memory
-- String dtype (StringDtype) in modern pandas`,
+          content: `object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.`,
           keyPoints: [
             `category dtype saves memory for repeated strings`,
             `Parse dates early with to_datetime`,
@@ -171,12 +151,7 @@ print(df[df["score"] > 86])`,
         {
           id: `boolean`,
           title: `Boolean Filtering`,
-          content: `df[df["col"] > value], combine with & | ~. Parentheses required: \`(df.A > 0) & (df.B < 10)\`.
-
-- Use & not and for element-wise logic
-- Wrap each condition in parentheses
-- isin() for membership tests
-- query() method for readable filters`,
+          content: `df[df["col"] > value], combine with & | ~. Parentheses required: \`(df.A > 0) & (df.B < 10)\`.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"age": [22, 35, 45, 28], "salary": [50000, 80000, 95000, 60000]})
@@ -194,12 +169,7 @@ print(df[(df["age"] > 25) & (df["salary"] > 55000)])`,
         {
           id: `query`,
           title: `query() Method`,
-          content: `df.query("age > 25 and salary > 55000") — cleaner for complex filters. Use @ for external variables.
-
-- query uses expression strings
-- @var references Python variable
-- Often faster for large DataFrames
-- Column names with spaces need backticks`,
+          content: `df.query("age > 25 and salary > 55000") — cleaner for complex filters. Use @ for external variables.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"x": [1, 5, 3, 8], "y": [2, 4, 6, 10]})
@@ -217,12 +187,7 @@ print(df.query("x > 2 and y < 10"))`,
         {
           id: `assign`,
           title: `assign() & apply()`,
-          content: `assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.
-
-- assign returns new DataFrame — chainable
-- Lambda x refers to DataFrame
-- Vectorized ops beat apply() for speed
-- map() for element-wise dict/Series lookup`,
+          content: `assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"a": [1, 2, 3], "b": [4, 5, 6]})
@@ -242,12 +207,7 @@ print(df)`,
         {
           id: `sort`,
           title: `Sorting & Ranking`,
-          content: `sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.
-
-- sort_values for column sorting
-- rank handles ties with method parameter
-- nlargest efficient for top-k
-- Stable sort preserves equal element order`,
+          content: `sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"name": ["Bob", "Alice", "Charlie"], "score": [87, 95, 92]})
@@ -325,12 +285,7 @@ print(df.assign(double=lambda x: x["value"] * 2))`,
         {
           id: `groupby`,
           title: `groupby Basics`,
-          content: `df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate. Multiple columns: groupby(["a","b"]).
-
-- groupby is split-apply-combine
-- as_index=False keeps group columns
-- agg accepts dict or list of functions
-- size() counts rows per group`,
+          content: `df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate. Multiple columns: groupby(["a","b"]).`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -352,12 +307,7 @@ Name: salary, dtype: float64`,
         {
           id: `agg`,
           title: `Multiple Aggregations`,
-          content: `.agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).
-
-- Named aggregations produce clean column names
-- Multiple functions per column
-- transform() returns same shape as input
-- filter() filters groups by condition`,
+          content: `.agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"group": ["A","A","B","B"], "val": [10, 20, 30, 40]})
@@ -376,12 +326,7 @@ B           30       40  35.0`,
         {
           id: `pivot`,
           title: `pivot_table & crosstab`,
-          content: `pivot_table for multidimensional summaries. pd.crosstab for frequency tables.
-
-- pivot_table handles duplicates via aggfunc
-- crosstab for categorical frequency analysis
-- margins=True adds row/column totals
-- melt() is inverse of pivot`,
+          content: `pivot_table for multidimensional summaries. pd.crosstab for frequency tables.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -400,12 +345,7 @@ print(pd.pivot_table(df, values="sales", index="date", columns="product", aggfun
         {
           id: `window`,
           title: `Rolling & Expanding Windows`,
-          content: `rolling(window).mean() for moving averages. expanding() for cumulative stats. Essential for time series.
-
-- rolling for sliding window statistics
-- expanding for cumulative metrics
-- ewm for exponential weighted
-- shift() for lag features in ML`,
+          content: `rolling(window).mean() for moving averages. expanding() for cumulative stats. Essential for time series.`,
           keyPoints: [
             `rolling for sliding window statistics`,
             `expanding for cumulative metrics`,
@@ -479,12 +419,7 @@ print(df.groupby("dept").agg(avg_score=("score", "mean")))`,
         {
           id: `merge`,
           title: `merge Operations`,
-          content: `pd.merge(left, right, on="key", how="inner|outer|left|right"). SQL-like joins on column values.
-
-- inner join keeps matching rows only
-- left join keeps all left rows
-- validate="one_to_many" catches bad joins
-- indicator=True shows join source`,
+          content: `pd.merge(left, right, on="key", how="inner|outer|left|right"). SQL-like joins on column values.`,
           example: `import pandas as pd
 
 orders = pd.DataFrame({"id": [1, 2], "product_id": [101, 102]})
@@ -503,12 +438,7 @@ print(pd.merge(orders, products, on="product_id"))`,
         {
           id: `concat`,
           title: `concat & append`,
-          content: `pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.
-
-- concat for same-structure DataFrames
-- join="outer" handles different columns
-- keys parameter creates hierarchical index
-- Prefer concat over deprecated append`,
+          content: `pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.`,
           example: `import pandas as pd
 
 df1 = pd.DataFrame({"A": [1, 2]})
@@ -529,12 +459,7 @@ print(pd.concat([df1, df2], ignore_index=True))`,
         {
           id: `reshape`,
           title: `melt & pivot`,
-          content: `melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.
-
-- melt essential for tidy data format
-- Tidy data: one row per observation
-- stack/unstack for MultiIndex manipulation
-- get_dummies for one-hot encoding`,
+          content: `melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.`,
           keyPoints: [
             `melt essential for tidy data format`,
             `Tidy data: one row per observation`,
@@ -545,12 +470,7 @@ print(pd.concat([df1, df2], ignore_index=True))`,
         {
           id: `join-index`,
           title: `Index-based Joins`,
-          content: `df1.join(df2, on="key") or join on index. set_index before join for index alignment.
-
-- Set index for repeated join operations
-- join method on DataFrame uses indexes
-- align indices before arithmetic operations
-- reindex for explicit index alignment`,
+          content: `df1.join(df2, on="key") or join on index. set_index before join for index alignment.`,
           keyPoints: [
             `Set index for repeated join operations`,
             `join method on DataFrame uses indexes`,
@@ -626,12 +546,7 @@ print(pd.concat([df1, df2]))`,
         {
           id: `missing`,
           title: `Handling Missing Data`,
-          content: `isna(), notna(), dropna(), fillna(). interpolate() for gap filling. Missingness patterns matter for ML.
-
-- Never drop all missing blindly in ML
-- Understand MCAR, MAR, MNAR missingness
-- fillna with mean/median/mode or model-based
-- isna().sum() counts missing per column`,
+          content: `isna(), notna(), dropna(), fillna(). interpolate() for gap filling. Missingness patterns matter for ML.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -651,12 +566,7 @@ print(df.fillna({"A": df["A"].mean(), "B": 0}))`,
         {
           id: `datetime`,
           title: `Datetime Operations`,
-          content: `pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.
-
-- to_datetime parses various formats
-- dt accessor extracts date components
-- resample for time-based aggregation
-- shift/lag for time series features`,
+          content: `pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -675,12 +585,7 @@ print(df.resample("MS").mean())`,
         {
           id: `tz`,
           title: `Timezones`,
-          content: `tz_localize and tz_convert for timezone-aware datetimes. Critical for global data pipelines.
-
-- Store UTC, convert for display
-- tz_localize assigns timezone
-- tz_convert changes timezone
-- Ambiguous times during DST transitions`,
+          content: `tz_localize and tz_convert for timezone-aware datetimes. Critical for global data pipelines.`,
           keyPoints: [
             `Store UTC, convert for display`,
             `tz_localize assigns timezone`,
@@ -691,12 +596,7 @@ print(df.resample("MS").mean())`,
         {
           id: `ts-features`,
           title: `Time Series Features for ML`,
-          content: `Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.
-
-- Lag features capture temporal dependencies
-- Rolling windows for local trends
-- Seasonal patterns need explicit encoding
-- Train/test split must respect time order`,
+          content: `Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.`,
           keyPoints: [
             `Lag features capture temporal dependencies`,
             `Rolling windows for local trends`,

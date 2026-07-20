@@ -44,9 +44,7 @@ print("mean:", x.mean(), "median:", np.median(x))`,
           title: `Variance & Spread`,
           content: `Sample variance s²=(1/(n−1))∑(x_i−x̄)² unbiased for σ². Population variance divides by n. **IQR** Q3−Q1 robust spread.
 
-**MAD** median absolute deviation. Boxplot shows quartiles and outliers. High variance features may dominate distance metrics without normalization.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**MAD** median absolute deviation. Boxplot shows quartiles and outliers. High variance features may dominate distance metrics without normalization.`,
           formulas: [
             `s² = (1/(n−1))∑(x_i−x̄)²`,
             `σ = √Var(X)`,
@@ -79,9 +77,7 @@ print("var:", x.var(ddof=1), "IQR:", np.percentile(x,75)-np.percentile(x,25))`,
 
 Used in thresholds, SLA metrics, and **quantile loss** for forecasting median (pinball loss). np.percentile, np.quantile. Robust min/max estimation via percentiles for clipping outliers.
 
-Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Deciles, percentiles standard in reporting latency p95, p99 in systems monitoring.`,
           formulas: [
             `Q(p) = inf{x : F(x)≥p}`,
             `Q1=25th, Q2=50th, Q3=75th`,
@@ -236,11 +232,11 @@ print("sample:", sample[:5])`,
         {
           id: `sc-se`,
           title: `Standard Error`,
-          content: `**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT). Compare models using SE of metric difference.
+          content: `**Standard error** SE(x̄)=σ/√n measures variability of sample mean across samples. SE shrinks as √n—more data tighter estimate. 95% CI x̄±1.96 SE approximate (CLT).
 
-Reporting accuracy without SE hides uncertainty. Cross-validation folds give multiple metric samples—report mean±std.
+Compare models using SE of metric difference. Reporting accuracy without SE hides uncertainty.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Cross-validation folds give multiple metric samples—report mean±std.`,
           formulas: [
             `SE(x̄) = σ/√n`,
             `Estimate: SE ≈ s/√n`,
@@ -269,9 +265,7 @@ print("SE:", s/np.sqrt(n))`,
           title: `Central Limit Theorem Detail`,
           content: `Standardized x̄: (x̄−μ)/(σ/√n) → N(0,1) in distribution. Works for many non-normal populations. Also applies to proportions p̂ approx N(p, p(1−p)/n).
 
-Sum of n RVs also normal for large n. CLT fails heavy tails infinite variance. Bootstrap nonparametric alternative when CLT questionable.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Sum of n RVs also normal for large n. CLT fails heavy tails infinite variance. Bootstrap nonparametric alternative when CLT questionable.`,
           formulas: [
             `(x̄−μ)/(σ/√n) → N(0,1)`,
             `p̂ approx N(p, p(1−p)/n)`,
@@ -396,9 +390,7 @@ print(np.std(m), 1/np.sqrt(12*40))`,
 
 Reject H₀ if p<α (significance level, often 0.05). **Type I error** false positive rate α. **Type II** β false negative.
 
-Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Not 'accept H₀'—fail to reject. p-value NOT P(H₀ true). Multiple testing inflates false positives—Bonferroni correction α/m.`,
           formulas: [
             `p-value = P(T ≥ t_obs | H₀)`,
             `Reject H₀ if p < α`,
@@ -430,9 +422,7 @@ print("p-value:", p)`,
 
 Two-sample t independent groups. **χ²** goodness-of-fit and independence in contingency tables. **F-test** variance ratio.
 
-ANOVA F for multiple means. Choose test matching data type and assumptions (normality, independence). Nonparametric: Mann-Whitney, Wilcoxon when normality fails.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+ANOVA F for multiple means. Choose test matching data type and assumptions (normality, independence). Nonparametric: Mann-Whitney, Wilcoxon when normality fails.`,
           formulas: [
             `t = (x̄−μ₀)/(s/√n)`,
             `χ² = ∑ (O−E)²/E`,
@@ -594,11 +584,11 @@ se=np.sqrt(p1*(1-p1)/n1+p2*(1-p2)/n2); print(se)`,
         {
           id: `ci-mean`,
           title: `CI for Mean`,
-          content: `95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval). Bootstrapping: resample B times, percentile CI from bootstrap distribution.
+          content: `95% CI x̄±t_{α/2,n−1}·s/√n uses t distribution small n; z_{0.975}=1.96 large n. Interpretation: procedure captures true μ in 95% of repeated samples—not P(μ in interval).
 
-BCa bootstrap improves bias. Report CI with point estimate in papers and dashboards.
+Bootstrapping: resample B times, percentile CI from bootstrap distribution. BCa bootstrap improves bias.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Report CI with point estimate in papers and dashboards.`,
           formulas: [
             `95% CI: x̄ ± t*·s/√n`,
             `Width ∝ 1/√n`,
@@ -629,9 +619,7 @@ print(stats.t.interval(0.95, len(x)-1, loc=x.mean(), scale=se))`,
           title: `CI for Proportions`,
           content: `Wald CI p̂±z√(p̂(1−p̂)/n) simple but poor small n/extreme p. **Wilson score** interval better coverage. Binomial exact (Clopper-Pearson) conservative.
 
-For ML accuracy on n test samples: report p̂±CI. Rare class metrics need large n for tight CI. Wilson preferred in modern practice over Wald for proportions.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+For ML accuracy on n test samples: report p̂±CI. Rare class metrics need large n for tight CI. Wilson preferred in modern practice over Wald for proportions.`,
           formulas: [
             `Wald: p̂ ± z√(p̂(1−p̂)/n)`,
             `Wilson score interval (better)`,
@@ -660,9 +648,7 @@ print("Wilson:", ci)`,
           title: `CI for Differences`,
           content: `CI for μ_A−μ_B: (x̄_A−x̄_B)±t*·SE_diff. Independent: SE_diff=√(s_A²/n_A+s_B²/n_B). Overlap of individual CIs ≠ non-significance of difference (common mistake).
 
-Paired: CI on mean difference. Lift CI in A/B: bootstrap on ratio or log ratio. If difference CI excludes 0, significant at corresponding α.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Paired: CI on mean difference. Lift CI in A/B: bootstrap on ratio or log ratio. If difference CI excludes 0, significant at corresponding α.`,
           formulas: [
             `μ_A−μ_B CI: (x̄_A−x̄_B) ± t* SE`,
             `SE_diff independent groups`,
@@ -695,7 +681,7 @@ print("diff CI:", d-1.96*se, d+1.96*se)`,
 
 Bayesian models posterior predictive intervals. Report F1 CI on imbalanced data especially. Leaderboard scores without CI overfit to test noise.
 
-Nested CV for unbiased performance estimate with uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Nested CV for unbiased performance estimate with uncertainty.`,
           formulas: [
             `Bootstrap metrics on test set`,
             `CV mean ± std approximate`,
@@ -788,7 +774,7 @@ print(proportion_confint(45,50,method="wilson"))`,
 
 Hat matrix H=X(XᵀX)⁻¹Xᵀ, ŷ=Hy. Residuals e=y−ŷ orthogonal to Col(X). Multiple regression adds columns to X.
 
-Polynomial regression linear in β with nonlinear features. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Polynomial regression linear in β with nonlinear features.`,
           formulas: [
             `min ||y − Xβ||²`,
             `Normal eq: XᵀXβ = Xᵀy`,
@@ -851,9 +837,7 @@ print("rank:", np.linalg.matrix_rank(X))`,
           title: `Statistical Inference`,
           content: `Estimate σ² by s²=||e||²/(n−p−1). t-test for β_j=0: t=β̂_j/SE(β̂_j). R²=1−SSE/SST proportion variance explained— increases with more features.
 
-Adjusted R² penalizes complexity. Confidence bands for mean response vs prediction intervals wider include ε noise.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Adjusted R² penalizes complexity. Confidence bands for mean response vs prediction intervals wider include ε noise.`,
           formulas: [
             `Var(β̂) = σ² (XᵀX)⁻¹`,
             `s² = ||e||²/(n−p−1)`,

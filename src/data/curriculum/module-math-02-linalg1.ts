@@ -215,9 +215,7 @@ v=np.array([3.,4.]); print(v/np.linalg.norm(v))`,
           title: `Dot Product Definition`,
           content: `**Dot product** u·v = ∑uᵢvᵢ = uᵀv for column vectors. Geometric: u·v = ||u|| ||v|| cos θ. Projects one vector onto another: proj_v(u) = (u·v/||v||²)v.
 
-In ML, dot product scores attention queries against keys. Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+In ML, dot product scores attention queries against keys. Linear layer y=Wx+b computes dot products of rows of W with x plus bias. Positive dot product suggests aligned directions in embedding space.`,
           formulas: [
             `u · v = ∑ uᵢ vᵢ = uᵀv`,
             `u · v = ||u|| ||v|| cos θ`,
@@ -451,7 +449,7 @@ A[1,2]: 6`
 
 **Linear layer** in neural nets: y=Wx+b. Composition of transforms: (BA)x = B(Ax). Column picture: Ax = x₁(col₁) + x₂(col₂) + ... linear combination of columns.
 
-Row picture: dot products of rows with x. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Row picture: dot products of rows with x.`,
           formulas: [
             `y = Ax, y_i = ∑_j A_ij x_j`,
             `Ax = x₁a₁ + x₂a₂ + ... (column view)`,
@@ -610,7 +608,7 @@ I=np.eye(3); x=np.array([1,2,3.]); print(I@x)`,
 
 Distributive over addition. Each C_ij is dot product of row i of A with column j of B. Chain of layers composes weight matrices.
 
-Strassen and blocked multiplication optimize large products on hardware. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Strassen and blocked multiplication optimize large products on hardware.`,
           formulas: [
             `C = AB, C_ij = ∑_l A_il B_lj`,
             `A: m×k, B: k×n → C: m×n`,
@@ -641,11 +639,11 @@ print("BA:\\n", B@A)`,
         {
           id: `mm-prop`,
           title: `Transpose & Trace`,
-          content: `**Transpose** (AB)ᵀ = BᵀAᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA). Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)).
+          content: `**Transpose** (AB)ᵀ = BᵀAᵀ. **Trace** tr(A)=∑A_ii, sum of diagonal. tr(AB)=tr(BA).
 
-Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC. In backprop, transpose appears when passing gradients backward through layers.
+Frobenius norm ||A||_F = √(∑A_ij²) = √(tr(AᵀA)). Transpose swaps row-column roles in gradients: ∂L/∂A = (∂L/∂B) Cᵀ when B=AC.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+In backprop, transpose appears when passing gradients backward through layers.`,
           formulas: [
             `(AB)ᵀ = BᵀAᵀ`,
             `tr(A) = ∑ A_ii`,
@@ -711,9 +709,7 @@ inv: ...`
 
 Conv layers use structured sparse matrices (Toeplitz). Attention: softmax(QKᵀ/√d)V. Residual: y=x+F(x) helps gradient flow.
 
-Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Xavier/He init scales W variance by fan-in/out. Matrix dimensions must align through network—shape debugging is essential skill.`,
           formulas: [
             `h = σ(Wx + b)`,
             `Batch: H = σ(XWᵀ + B)`,
@@ -810,9 +806,7 @@ print(np.allclose((A@B).T, B.T@A.T))`,
 
 Overdetermined m>n: least squares min||Ax−b||₂. Underdetermined m<n: infinitely many solutions. Regression y=Xβ is linear system.
 
-Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Each equation is hyperplane; solution is intersection. Rank(A) determines solution structure via Rouché-Capelli theorem.`,
           formulas: [
             `Ax = b`,
             `Consistent ⇔ b ∈ Col(A)`,
@@ -877,9 +871,7 @@ print(np.linalg.solve(A,b))`,
           title: `Least Squares Solution`,
           content: `When Ax=b has no exact solution, **least squares** finds x minimizing ||Ax−b||₂². Normal equations: AᵀAx=Aᵀb. Solution x=(AᵀA)⁻¹Aᵀb when AᵀA invertible.
 
-**Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases. Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Pseudo-inverse** A⁺ gives minimum-norm least squares. np.linalg.lstsq handles rank-deficient cases. Linear regression closed form uses this. QR or SVD more stable than forming AᵀA explicitly for ill-conditioned problems.`,
           formulas: [
             `min ||Ax − b||₂²`,
             `Normal eq: AᵀAx = Aᵀb`,
@@ -912,9 +904,7 @@ print("beta:", beta)`,
 
 Full column rank: independent columns. Rank deficiency indicates redundant features. SVD reveals rank via non-zero singular values.
 
-Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Solution to Ax=b unique iff rank(A)=rank([A|b])=n. Homogeneous Ax=0 always has x=0 trivial solution plus null space vectors.`,
           formulas: [
             `rank(A) = dim Col(A)`,
             `rank(A) + nullity(A) = n`,

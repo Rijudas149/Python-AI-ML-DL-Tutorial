@@ -11,12 +11,9 @@ export const module09Topics: Topic[] = [
         {
           id: `vectors`,
           title: `Vectors & Dot Products`,
-          content: `Vectors represent features and weights. Dot product measures similarity: a·b = Σaᵢbᵢ. Cosine similarity normalizes by magnitude.
+          content: `Vectors represent features and weights. Dot product measures similarity: a·b = Σaᵢbᵢ.
 
-- Vectors are ordered lists of numbers
-- Dot product fundamental to neural networks
-- Cosine similarity for text/document similarity
-- Unit vectors have norm 1`,
+Cosine similarity normalizes by magnitude.`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3])
@@ -35,12 +32,7 @@ print(dot, round(cos_sim, 4))`,
         {
           id: `matrices`,
           title: `Matrix Operations`,
-          content: `Matrices transform vectors. Matrix multiplication composes transformations. Transpose, inverse, rank.
-
-- ML layers are matrix multiplications
-- Weight matrix W maps input to output
-- Rank indicates independent dimensions
-- Singular matrices cannot be inverted`,
+          content: `Matrices transform vectors. Matrix multiplication composes transformations. Transpose, inverse, rank.`,
           example: `import numpy as np
 
 W = np.array([[1, 2], [3, 4], [5, 6]])  # 3x2
@@ -57,12 +49,7 @@ print(W @ x)  # 3x1 output`,
         {
           id: `eigen`,
           title: `Eigenvalues & Eigenvectors`,
-          content: `Av = λv. PCA finds principal eigenvectors of covariance matrix. Eigen decomposition reveals data structure.
-
-- Eigenvectors define principal directions
-- Eigenvalues measure variance along directions
-- PCA uses eigendecomposition of covariance
-- SVD generalizes to non-square matrices`,
+          content: `Av = λv. PCA finds principal eigenvectors of covariance matrix. Eigen decomposition reveals data structure.`,
           keyPoints: [
             `Eigenvectors define principal directions`,
             `Eigenvalues measure variance along directions`,
@@ -73,12 +60,7 @@ print(W @ x)  # 3x1 output`,
         {
           id: `svd`,
           title: `SVD in ML`,
-          content: `A = UΣVᵀ. Used in PCA, recommender systems, NLP (LSA), and dimensionality reduction.
-
-- SVD always exists for any matrix
-- Truncated SVD for dimensionality reduction
-- Singular values indicate importance
-- Low-rank approximation compresses data`,
+          content: `A = UΣVᵀ. Used in PCA, recommender systems, NLP (LSA), and dimensionality reduction.`,
           keyPoints: [
             `SVD always exists for any matrix`,
             `Truncated SVD for dimensionality reduction`,
@@ -150,12 +132,7 @@ print(np.array([[1,2],[3,4]]) @ np.array([1, 0]))`,
         {
           id: `derivatives`,
           title: `Derivatives & Gradients`,
-          content: `Derivative measures rate of change. Gradient ∇f is vector of partial derivatives — points direction of steepest ascent.
-
-- Gradient points uphill on loss surface
-- Negative gradient direction minimizes loss
-- Partial derivatives hold other variables fixed
-- Gradient is foundation of gradient descent`,
+          content: `Derivative measures rate of change. Gradient ∇f is vector of partial derivatives — points direction of steepest ascent.`,
           example: `# f(x, y) = x^2 + y^2
 # df/dx = 2x, df/dy = 2y
 # At (3, 4): gradient = [6, 8]
@@ -174,12 +151,7 @@ print(grad, np.linalg.norm(grad))`,
         {
           id: `chain-rule`,
           title: `Chain Rule & Backpropagation`,
-          content: `Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule through computational graph.
-
-- Chain rule enables gradient flow through networks
-- Backprop is efficient application of chain rule
-- Computational graph tracks dependencies
-- Automatic differentiation automates chain rule`,
+          content: `Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule through computational graph.`,
           pseudoCode: `FOR each layer L from output to input:
     compute local gradient
     propagate gradient to previous layer via chain rule`,
@@ -193,12 +165,7 @@ print(grad, np.linalg.norm(grad))`,
         {
           id: `loss-gradients`,
           title: `Gradients of Common Loss Functions`,
-          content: `MSE: ∂/∂ŷ = 2(ŷ-y). Cross-entropy with softmax has elegant gradient: ŷ - y. Know these for debugging.
-
-- MSE gradient proportional to error
-- Cross-entropy gradient simplifies with softmax
-- Gradient magnitude indicates update size
-- Vanishing gradients plague deep networks`,
+          content: `MSE: ∂/∂ŷ = 2(ŷ-y). Cross-entropy with softmax has elegant gradient: ŷ - y. Know these for debugging.`,
           example: `import numpy as np
 
 y_true = np.array([1.0, 3.0, 5.0])
@@ -216,12 +183,9 @@ print(mse_grad)`,
         {
           id: `jacobian`,
           title: `Jacobian & Hessian`,
-          content: `Jacobian matrix of vector-valued functions. Hessian (second derivatives) for curvature. Newton method uses Hessian.
+          content: `Jacobian matrix of vector-valued functions. Hessian (second derivatives) for curvature.
 
-- Jacobian generalizes gradient to vector outputs
-- Hessian reveals convexity/concavity
-- Second-order methods converge faster but cost more
-- Most DL uses first-order (gradient) methods only`,
+Newton method uses Hessian.`,
           keyPoints: [
             `Jacobian generalizes gradient to vector outputs`,
             `Hessian reveals convexity/concavity`,
@@ -295,12 +259,7 @@ print(2 * (pred - y) / len(y))`,
         {
           id: `basics`,
           title: `Probability Fundamentals`,
-          content: `P(A|B) = P(A∩B)/P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B). Foundation for Naive Bayes and Bayesian ML.
-
-- Bayes theorem updates beliefs with evidence
-- Prior × likelihood ∝ posterior
-- Base rate neglect is common error
-- Naive Bayes assumes feature independence`,
+          content: `P(A|B) = P(A∩B)/P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B). Foundation for Naive Bayes and Bayesian ML.`,
           example: `# Bayes: P(disease|+) = P(+|disease)*P(disease)/P(+)
 p_disease = 0.01
 p_pos_given_disease = 0.99
@@ -318,12 +277,9 @@ print(round(p_disease_given_pos, 4))`,
         {
           id: `distributions`,
           title: `Key Distributions`,
-          content: `Normal/Gaussian: central to ML. Bernoulli/Binomial: binary outcomes. Poisson: counts. Uniform: equal probability.
+          content: `Normal/Gaussian: central to ML. Bernoulli/Binomial: binary outcomes.
 
-- Normal distribution ubiquitous in ML
-- Central Limit Theorem justifies normality
-- Bernoulli for binary classification targets
-- Choose distribution matching data generating process`,
+Uniform: equal probability.`,
           example: `import numpy as np
 
 # 68-95-99.7 rule for normal distribution
@@ -342,12 +298,7 @@ print(round(within_1std, 3))`,
         {
           id: `expectation`,
           title: `Expectation & Variance`,
-          content: `E[X] = Σx·P(x). Var(X) = E[(X-μ)²]. Covariance measures joint variability. Correlation is normalized covariance.
-
-- Expectation is average outcome weighted by probability
-- Variance measures spread around mean
-- Covariance matrix for multivariate data
-- Correlation ∈ [-1, 1] is scale-invariant`,
+          content: `E[X] = Σx·P(x). Var(X) = E[(X-μ)²]. Covariance measures joint variability. Correlation is normalized covariance.`,
           keyPoints: [
             `Expectation is average outcome weighted by probability`,
             `Variance measures spread around mean`,
@@ -358,12 +309,9 @@ print(round(within_1std, 3))`,
         {
           id: `mle`,
           title: `Maximum Likelihood Estimation`,
-          content: `Choose parameters maximizing P(data|θ). MLE for Gaussian mean is sample mean. Foundation for many ML algorithms.
+          content: `Choose parameters maximizing P(data|θ). MLE for Gaussian mean is sample mean.
 
-- MLE finds most probable parameters given data
-- Log-likelihood easier to optimize (products → sums)
-- MLE can overfit with complex models
-- MAP adds prior for regularization`,
+Foundation for many ML algorithms.`,
           keyPoints: [
             `MLE finds most probable parameters given data`,
             `Log-likelihood easier to optimize (products → sums)`,
@@ -435,12 +383,7 @@ print(np.random.default_rng(0).normal(0, 1, 5))`,
         {
           id: `entropy`,
           title: `Entropy`,
-          content: `H(X) = -Σ P(x) log P(x). Measures uncertainty. Maximum when uniform distribution.
-
-- Entropy in bits when using log2
-- Higher entropy = more uncertainty
-- Uniform distribution maximizes entropy
-- Decision trees use entropy for splitting`,
+          content: `H(X) = -Σ P(x) log P(x). Measures uncertainty. Maximum when uniform distribution.`,
           example: `import numpy as np
 
 def entropy(p):
@@ -462,12 +405,9 @@ print(entropy([0.9, 0.1]))  # low uncertainty`,
         {
           id: `cross-entropy`,
           title: `Cross-Entropy Loss`,
-          content: `H(p,q) = -Σ p(x) log q(x). Classification loss compares predicted q to true p. Log loss for binary classification.
+          content: `H(p,q) = -Σ p(x) log q(x). Classification loss compares predicted q to true p.
 
-- Cross-entropy is standard classification loss
-- Heavily penalizes confident wrong predictions
-- Numerical stability requires clipping
-- Equivalent to negative log-likelihood`,
+Log loss for binary classification.`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -486,12 +426,9 @@ print(round(cross_entropy(1, 0.9), 4))`,
         {
           id: `kl`,
           title: `KL Divergence`,
-          content: `D_KL(p||q) = Σ p(x) log(p(x)/q(x)). Measures difference between distributions. Non-negative, zero iff p=q.
+          content: `D_KL(p||q) = Σ p(x) log(p(x)/q(x)). Measures difference between distributions.
 
-- KL divergence is asymmetric
-- Used in VAE loss and knowledge distillation
-- Not a true metric (no triangle inequality)
-- Minimizing cross-entropy ≈ minimizing KL to true distribution`,
+Non-negative, zero iff p=q.`,
           keyPoints: [
             `KL divergence is asymmetric`,
             `Used in VAE loss and knowledge distillation`,
@@ -502,12 +439,7 @@ print(round(cross_entropy(1, 0.9), 4))`,
         {
           id: `mutual-info`,
           title: `Mutual Information`,
-          content: `I(X;Y) = H(X) - H(X|Y). Measures shared information. Used in feature selection.
-
-- Mutual information captures nonlinear dependencies
-- Zero iff variables are independent
-- Used in decision tree feature selection
-- Harder to estimate than correlation`,
+          content: `I(X;Y) = H(X) - H(X|Y). Measures shared information. Used in feature selection.`,
           keyPoints: [
             `Mutual information captures nonlinear dependencies`,
             `Zero iff variables are independent`,
@@ -579,12 +511,7 @@ print(-np.sum([0.25]*4 * np.log2([0.25]*4)))`,
         {
           id: `gd`,
           title: `Gradient Descent`,
-          content: `θ := θ - α∇L(θ). Learning rate α controls step size. Iterate until convergence.
-
-- Learning rate most important hyperparameter
-- Too large α diverges, too small slow
-- Convergence when gradient near zero
-- Batch/mini-batch/stochastic variants`,
+          content: `θ := θ - α∇L(θ). Learning rate α controls step size. Iterate until convergence.`,
           example: `import numpy as np
 
 # Minimize f(x) = x^2
@@ -606,12 +533,9 @@ print(round(x, 6))`,
         {
           id: `variants`,
           title: `SGD, Momentum, Adam`,
-          content: `SGD: one sample at a time. Momentum: accumulate velocity. Adam: adaptive per-parameter learning rates — default for DL.
+          content: `SGD: one sample at a time. Momentum: accumulate velocity.
 
-- Mini-batch balances speed and stability
-- Momentum helps escape local minima and ravines
-- Adam adapts learning rate per parameter
-- Learning rate scheduling improves convergence`,
+Adam: adaptive per-parameter learning rates — default for DL.`,
           pseudoCode: `FOR each epoch:
     FOR each mini-batch:
         compute gradient
@@ -627,12 +551,7 @@ print(round(x, 6))`,
         {
           id: `convex`,
           title: `Convex vs Non-Convex`,
-          content: `Convex functions have one global minimum. Neural network loss is non-convex — many local minima but SGD often finds good solutions.
-
-- Linear regression loss is convex
-- Deep network loss surfaces are highly non-convex
-- Saddle points more common than local minima in high-D
-- Overparameterization helps optimization in DL`,
+          content: `Convex functions have one global minimum. Neural network loss is non-convex — many local minima but SGD often finds good solutions.`,
           keyPoints: [
             `Linear regression loss is convex`,
             `Deep network loss surfaces are highly non-convex`,
@@ -643,12 +562,7 @@ print(round(x, 6))`,
         {
           id: `regularization`,
           title: `Regularization in Optimization`,
-          content: `L1/L2 penalties constrain weights. Early stopping halts when validation loss increases. Dropout during training.
-
-- L2 (ridge) shrinks weights toward zero
-- L1 (lasso) drives weights to exactly zero
-- Regularization prevents overfitting
-- Weight decay in AdamW decouples L2 from adaptive rates`,
+          content: `L1/L2 penalties constrain weights. Early stopping halts when validation loss increases. Dropout during training.`,
           example: `import numpy as np
 
 # L2 regularization adds lambda * ||w||^2 to loss

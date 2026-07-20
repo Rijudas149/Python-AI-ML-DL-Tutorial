@@ -11,12 +11,7 @@ export const module04Topics: Topic[] = [
         {
           id: `class-basics`,
           title: `Defining Classes`,
-          content: `A **class** is a blueprint; an **object** is an instance. \`__init__\` initializes instance state. \`self\` refers to the instance.
-
-- __init__ is the constructor
-- self must be first parameter of instance methods
-- Instance attributes set in __init__ or elsewhere
-- Classes group data and behavior`,
+          content: `A **class** is a blueprint; an **object** is an instance. \`__init__\` initializes instance state. \`self\` refers to the instance.`,
           example: `class Dog:
     def __init__(self, name, breed):
         self.name = name
@@ -37,12 +32,9 @@ print(d.bark())`,
         {
           id: `class-vs-instance`,
           title: `Class vs Instance Attributes`,
-          content: `Class attributes are shared across instances. Instance attributes are per-object. Modify class attrs carefully — mutable shared state causes bugs.
+          content: `Class attributes are shared across instances. Instance attributes are per-object.
 
-- Class attributes shared by all instances
-- Instance attributes unique per object
-- Avoid mutable class-level defaults
-- Use class methods for factory patterns`,
+Modify class attrs carefully — mutable shared state causes bugs.`,
           example: `class Counter:
     total = 0
     def __init__(self):
@@ -61,12 +53,7 @@ print(Counter.total)`,
         {
           id: `methods`,
           title: `Instance, Class & Static Methods`,
-          content: `@classmethod receives cls; @staticmethod needs neither self nor cls. Use classmethod for alternative constructors.
-
-- classmethod for alternative constructors
-- staticmethod for utility functions in class namespace
-- Instance methods most common
-- Choose based on what data method needs`,
+          content: `@classmethod receives cls; @staticmethod needs neither self nor cls. Use classmethod for alternative constructors.`,
           example: `class Date:
     def __init__(self, year, month, day):
         self.year, self.month, self.day = year, month, day
@@ -87,12 +74,7 @@ print(Date.from_string("2024-03-15").year)`,
         {
           id: `dunder`,
           title: `Special Methods (Dunder)`,
-          content: `Double-underscore methods customize behavior: \`__str__\`, \`__repr__\`, \`__len__\`, \`__eq__\`, \`__add__\`. Enable Pythonic interfaces.
-
-- __repr__ for developers, __str__ for users
-- Operator overloading via dunder methods
-- __eq__ for equality comparison
-- Follow Python data model conventions`,
+          content: `Double-underscore methods customize behavior: \`__str__\`, \`__repr__\`, \`__len__\`, \`__eq__\`, \`__add__\`. Enable Pythonic interfaces.`,
           example: `class Vector:
     def __init__(self, x, y):
         self.x, self.y = x, y
@@ -186,12 +168,7 @@ print(Rectangle(4, 5))`,
         {
           id: `inheritance`,
           title: `Basic Inheritance`,
-          content: `Subclass inherits parent attributes and methods. \`super()\` calls parent implementation. Override methods in child class.
-
-- Inheritance enables code reuse
-- Override methods for specialized behavior
-- super() accesses parent methods
-- Polymorphism: same interface, different behavior`,
+          content: `Subclass inherits parent attributes and methods. \`super()\` calls parent implementation. Override methods in child class.`,
           example: `class Animal:
     def speak(self):
         return "..."
@@ -218,12 +195,9 @@ Woof`,
         {
           id: `mro`,
           title: `Method Resolution Order (MRO)`,
-          content: `Python uses C3 linearization for MRO. Check with \`ClassName.mro()\`. Multiple inheritance requires careful design.
+          content: `Python uses C3 linearization for MRO. Check with \`ClassName.mro()\`.
 
-- MRO determines method lookup order
-- Diamond inheritance resolved by C3
-- Prefer composition over deep inheritance
-- Use mixins for shared behavior`,
+Multiple inheritance requires careful design.`,
           example: `class A:
     def method(self): return "A"
 class B(A):
@@ -246,12 +220,7 @@ print([c.__name__ for c in D.mro()])`,
         {
           id: `abstract`,
           title: `Abstract Base Classes`,
-          content: `abc module defines interfaces. @abstractmethod forces subclass implementation. Enables contract-based design.
-
-- ABC enforces interface contracts
-- Cannot instantiate ABC with abstract methods
-- Useful for plugin architectures
-- Protocol (typing) is duck-typing alternative`,
+          content: `abc module defines interfaces. @abstractmethod forces subclass implementation. Enables contract-based design.`,
           example: `from abc import ABC, abstractmethod
 
 class Shape(ABC):
@@ -277,12 +246,9 @@ print(Circle(5).area())`,
         {
           id: `composition`,
           title: `Composition Over Inheritance`,
-          content: `Favor **has-a** over **is-a**. Compose objects rather than deep inheritance hierarchies. More flexible and testable.
+          content: `Favor **has-a** over **is-a**. Compose objects rather than deep inheritance hierarchies.
 
-- Composition reduces coupling
-- Easier to swap implementations
-- Inheritance for true is-a relationships only
-- Dependency injection supports composition`,
+More flexible and testable.`,
           keyPoints: [
             `Composition reduces coupling`,
             `Easier to swap implementations`,
@@ -368,12 +334,9 @@ print(Car().start())`,
         {
           id: `naming`,
           title: `Naming Conventions`,
-          content: `Single underscore \`_internal\` — convention for internal use. Double underscore \`__private\` triggers name mangling. No true private access in Python.
+          content: `Single underscore \`_internal\` — convention for internal use. Double underscore \`__private\` triggers name mangling.
 
-- Python uses convention, not enforcement
-- Name mangling prevents accidental override in subclasses
-- Public API should be minimal and stable
-- Document internal vs public attributes`,
+No true private access in Python.`,
           example: `class Account:
     def __init__(self, balance):
         self.__balance = balance
@@ -393,12 +356,7 @@ print(acc.get_balance())`,
         {
           id: `property`,
           title: `The @property Decorator`,
-          content: `@property creates getter; @name.setter and @name.deleter for setter/deleter. Clean attribute-like access with validation.
-
-- Properties enable computed attributes
-- Validation in setters protects invariants
-- Prefer properties over get/set methods
-- Use _prefix for backing storage`,
+          content: `@property creates getter; @name.setter and @name.deleter for setter/deleter. Clean attribute-like access with validation.`,
           example: `class Temperature:
     def __init__(self, celsius):
         self._celsius = celsius
@@ -422,12 +380,7 @@ print(t.fahrenheit)`,
         {
           id: `slots`,
           title: `__slots__ for Memory`,
-          content: `__slots__ restricts attributes and saves memory. No __dict__ created. Useful for many small objects.
-
-- __slots__ reduces memory per instance
-- Fixes allowed attributes at class definition
-- Breaks if multiple inheritance conflicts
-- Rarely needed unless profiling shows benefit`,
+          content: `__slots__ restricts attributes and saves memory. No __dict__ created. Useful for many small objects.`,
           keyPoints: [
             `__slots__ reduces memory per instance`,
             `Fixes allowed attributes at class definition`,
@@ -438,12 +391,7 @@ print(t.fahrenheit)`,
         {
           id: `dataclass-preview`,
           title: `dataclass Preview`,
-          content: `@dataclass auto-generates __init__, __repr__, __eq__. Modern alternative to boilerplate classes.
-
-- dataclass reduces boilerplate
-- Type hints define fields
-- frozen=True for immutability
-- field(default_factory=list) for mutable defaults`,
+          content: `@dataclass auto-generates __init__, __repr__, __eq__. Modern alternative to boilerplate classes.`,
           example: `from dataclasses import dataclass
 
 @dataclass
@@ -542,12 +490,7 @@ print(Book("1984", "Orwell"))`,
         {
           id: `factory`,
           title: `Factory Pattern`,
-          content: `Factory method creates objects without specifying exact class. Decouples instantiation from usage.
-
-- Factory centralizes object creation
-- Easy to add new types
-- Registry pattern extends factory
-- Used heavily in ML model loading`,
+          content: `Factory method creates objects without specifying exact class. Decouples instantiation from usage.`,
           example: `class Dog:
     def speak(self): return "Woof"
 class Cat:
@@ -568,12 +511,7 @@ print(animal_factory("dog").speak())`,
         {
           id: `strategy`,
           title: `Strategy Pattern`,
-          content: `Encapsulate algorithms as interchangeable strategies. Pass strategy as parameter or inject at runtime.
-
-- Strategy enables runtime algorithm selection
-- Open/closed principle — extend without modifying
-- Functions can serve as strategies in Python
-- Common in ML preprocessing pipelines`,
+          content: `Encapsulate algorithms as interchangeable strategies. Pass strategy as parameter or inject at runtime.`,
           example: `class QuickSort:
     def sort(self, data): return sorted(data)
 
@@ -598,12 +536,7 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
         {
           id: `observer`,
           title: `Observer Pattern`,
-          content: `Subject notifies observers on state change. Basis for event systems and reactive programming.
-
-- Decouples subject from observers
-- Used in GUI event handling
-- Callbacks are lightweight Python observers
-- Consider asyncio for async event patterns`,
+          content: `Subject notifies observers on state change. Basis for event systems and reactive programming.`,
           keyPoints: [
             `Decouples subject from observers`,
             `Used in GUI event handling`,
@@ -614,12 +547,7 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
         {
           id: `singleton`,
           title: `Singleton & Module Pattern`,
-          content: `Python modules are natural singletons. For classes, use __new__ or decorator. Often modules suffice.
-
-- Module-level objects are singletons by default
-- Avoid overusing Singleton pattern
-- Dependency injection preferred for testability
-- lru_cache can implement function singletons`,
+          content: `Python modules are natural singletons. For classes, use __new__ or decorator. Often modules suffice.`,
           keyPoints: [
             `Module-level objects are singletons by default`,
             `Avoid overusing Singleton pattern`,
@@ -700,12 +628,7 @@ print(analyze([3,1,4], MinStrategy()))`,
         {
           id: `protocol`,
           title: `typing.Protocol`,
-          content: `Protocol defines structural interface — if it walks like a duck... No inheritance required. \`@runtime_checkable\` enables isinstance().
-
-- Protocol enables duck typing with type checking
-- No need to inherit from Protocol
-- runtime_checkable for isinstance checks
-- Preferred over ABC for flexible interfaces`,
+          content: `Protocol defines structural interface — if it walks like a duck... No inheritance required. \`@runtime_checkable\` enables isinstance().`,
           example: `from typing import Protocol
 
 class Drawable(Protocol):
@@ -729,12 +652,9 @@ print(render(Circle()))`,
         {
           id: `abc-vs-protocol`,
           title: `ABC vs Protocol`,
-          content: `ABC: nominal subtyping — must inherit. Protocol: structural — must implement methods. Choose based on design needs.
+          content: `ABC: nominal subtyping — must inherit. Protocol: structural — must implement methods.
 
-- ABC for strict hierarchies and shared implementation
-- Protocol for flexible third-party integration
-- Both supported by mypy and pyright
-- ML frameworks use Protocol for tensor-like objects`,
+Choose based on design needs.`,
           keyPoints: [
             `ABC for strict hierarchies and shared implementation`,
             `Protocol for flexible third-party integration`,
@@ -745,12 +665,7 @@ print(render(Circle()))`,
         {
           id: `generic`,
           title: `Generic Classes`,
-          content: `typing.Generic enables type-parameterized classes: \`class Stack[T]:\`. Python 3.12+ simplified syntax.
-
-- Generics preserve type information
-- TypeVar defines type parameters
-- Python 3.12: class Box[T] syntax
-- Useful for containers and data structures`,
+          content: `typing.Generic enables type-parameterized classes: \`class Stack[T]:\`. Python 3.12+ simplified syntax.`,
           example: `from typing import TypeVar, Generic
 
 T = TypeVar("T")
@@ -772,12 +687,7 @@ print(b.item)`,
         {
           id: `solid`,
           title: `SOLID Principles`,
-          content: `Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion. Guide maintainable OOP design.
-
-- Single Responsibility: one reason to change
-- Open/Closed: extend without modifying
-- Liskov: subtypes must be substitutable
-- Apply pragmatically — not every class needs all five`,
+          content: `Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion. Guide maintainable OOP design.`,
           keyPoints: [
             `Single Responsibility: one reason to change`,
             `Open/Closed: extend without modifying`,

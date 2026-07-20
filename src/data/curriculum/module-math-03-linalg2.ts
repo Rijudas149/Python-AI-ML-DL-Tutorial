@@ -49,9 +49,7 @@ manual: 10.0`
 
 Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx.
 
-Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.`,
           formulas: [
             `|det([v1 v2])| = parallelogram area`,
             `3D: |det| = volume`,
@@ -115,7 +113,7 @@ print("sign:", sign, "log|det|:", logdet)`,
 
 Volume preservation in invertible nets requires |det J|=1. PCA uses det(Σ) related to product of eigenvalues. Regularization adds λI ensuring det(Σ+λI)>0.
 
-Matrix determinant lemma useful in Gaussian process updates. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Matrix determinant lemma useful in Gaussian process updates.`,
           formulas: [
             `MVN norm: (2π)^(−n/2) |Σ|^(−1/2)`,
             `det(Σ) = ∏ λ_i`,
@@ -210,7 +208,7 @@ print(np.allclose(np.linalg.det(A@B), np.linalg.det(A)*np.linalg.det(B)))`,
 
 Not all matrices invert—singular when det=0. Never invert large dense matrices explicitly in production; prefer solve(A,b). Inverse of orthogonal Q is Qᵀ.
 
-Diagonal inverse inverts diagonal entries. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Diagonal inverse inverts diagonal entries.`,
           formulas: [
             `AA⁻¹ = A⁻¹A = I`,
             `(AB)⁻¹ = B⁻¹A⁻¹`,
@@ -242,7 +240,7 @@ print("A@Ainv:\\n", A@Ainv)`,
 
 Cofactor matrix transpose divided by det generalizes to n×n. Singular when rows proportional: [1,2] and [2,4]. Near-singular when det≈0 causes huge entries in A⁻¹—ill-conditioning.
 
-Always check cond(A) before trusting explicit inverse. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Always check cond(A) before trusting explicit inverse.`,
           formulas: [
             `A⁻¹ = (1/det) [[d,−b], [−c,a]]`,
             `det = ad − bc`,
@@ -273,9 +271,7 @@ print(Ainv)`,
           title: `Pseudo-Inverse`,
           content: `**Moore-Penrose pseudo-inverse** A⁺ generalizes inverse for non-square or singular A. SVD: A=UΣVᵀ, A⁺=VΣ⁺Uᵀ where Σ⁺ inverts non-zero singular values. Least squares minimum-norm: x=A⁺b. np.linalg.pinv uses SVD.
 
-Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular.`,
           formulas: [
             `A⁺ via SVD: V Σ⁺ Uᵀ`,
             `Least squares: x = A⁺b`,
@@ -306,7 +302,7 @@ print("pinv@b:", np.linalg.pinv(A) @ np.array([3.,6.,1.]))`,
 
 Fisher information inverse gives Cramér-Rao bound. Avoid explicit inverse—use np.linalg.solve(XTX, XTy). Woodbury matrix identity efficient for low-rank updates.
 
-Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD.`,
           formulas: [
             `OLS: β = (XᵀX)⁻¹ Xᵀy`,
             `Ridge: (XᵀX + λI)⁻¹ Xᵀy`,
@@ -434,7 +430,7 @@ print("Av:", A@v[:,0], "λv:", w[0]*v[:,0])`,
 
 Not all matrices diagonalizable—defective Jordan form needed. Similar matrices share eigenvalues. PCA covariance diagonalized by eigenvectors.
 
-Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A.`,
           formulas: [
             `A = V Λ V⁻¹`,
             `Λ = diag(λ₁,...,λₙ)`,
@@ -462,11 +458,11 @@ print("reconstruct:", v @ np.diag(w) @ np.linalg.inv(v))`,
         {
           id: `eig-pca`,
           title: `Eigenvalues in PCA`,
-          content: `Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions. Sort λ descending; keep top k for dimensionality reduction.
+          content: `Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions.
 
-Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig. Zero eigenvalues indicate redundant features or rank deficiency.
+Sort λ descending; keep top k for dimensionality reduction. Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Zero eigenvalues indicate redundant features or rank deficiency.`,
           formulas: [
             `Σ v_i = λ_i v_i`,
             `λ_i = variance along PC i`,
@@ -629,7 +625,7 @@ print("rank:", (s>1e-10).sum())`,
 
 Image compression keeps top k singular values. Noise often in small σ components. Recommender matrix factorization approximates R≈UVᵀ low rank.
 
-Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ². Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ².`,
           formulas: [
             `A_k = ∑_{i=1}^k σ_i u_i v_iᵀ`,
             `min ||A − A_k||_F over rank k`,
@@ -663,9 +659,7 @@ print("Fro err:", np.linalg.norm(A-Ak,"fro"))`,
           title: `SVD & Pseudo-Inverse`,
           content: `A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition number κ(A)=σ_max/σ_min.
 
-Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences.`,
           formulas: [
             `A⁺ = V Σ⁺ Uᵀ`,
             `κ(A) = σ_max / σ_min`,
@@ -825,7 +819,7 @@ print("top PC:", v[:,np.argmax(w)])`,
 
 Mean centering essential before PCA. Explained variance ratio guides k. Whitened coords: z_i = w_iᵀx/√λ_i have unit variance.
 
-Biplot visualizes samples and feature loadings together. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Biplot visualizes samples and feature loadings together.`,
           formulas: [
             `z = W_kᵀ x (projection)`,
             `x̂ = W_k W_kᵀ x (reconstruction)`,
@@ -859,7 +853,7 @@ print("MSE:", np.mean((X-Xhat)**2))`,
 
 Captures nonlinear structure linear PCA misses. Computationally O(n³)— costly for large n. Connection to spectral methods and graph embeddings.
 
-Choose kernel (RBF, polynomial) controls implicit feature space geometry. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Choose kernel (RBF, polynomial) controls implicit feature space geometry.`,
           formulas: [
             `K_ij = K(x_i, x_j)`,
             `K̃ = H K H (centered kernel)`,

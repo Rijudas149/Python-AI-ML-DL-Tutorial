@@ -11,12 +11,13 @@ export const module11Topics: Topic[] = [
         {
           id: `poly`,
           title: `Polynomial Regression`,
-          content: `Add polynomial features: x, x², x³. PolynomialFeatures(degree=2). Captures non-linear relationships with linear model.
+          content: `Linear regression fits a straight line, but many relationships are curved. **Polynomial regression** adds powers of x as new features—x, x², x³—then fits a linear model in that expanded space.
 
-- PolynomialFeatures generates interaction terms
-- High degree causes overfitting
-- Always use regularization with high degree
-- Works with multiple features — explosion of terms`,
+Use \`PolynomialFeatures(degree=2)\` inside a sklearn **Pipeline** so the same transformation applies at prediction time. Degree 2 captures parabolas; degree 3 captures S-curves.
+
+With multiple input features, polynomial expansion also creates interaction terms (x₁x₂).
+
+Watch for **overfitting**: high-degree polynomials wiggle through training points but fail on new data. Always pair high degree with regularization (Ridge/Lasso) and cross-validation.`,
           example: `from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import Pipeline
@@ -36,13 +37,14 @@ print(round(pipe.predict([[5]])[0], 1))`,
         },
         {
           id: `ridge-lasso`,
-          title: `Ridge & Lasso`,
-          content: `Ridge (L2): shrinks coefficients. Lasso (L1): drives some to zero — feature selection. ElasticNet combines both.
+          title: `Ridge & Lasso Regularization`,
+          content: `Unregularized OLS overfits when features are correlated or numerous. **Ridge (L2)** adds λΣw² to the loss—shrinking all coefficients toward zero but rarely to exactly zero.
 
-- alpha controls regularization strength
-- Ridge keeps all features with small weights
-- Lasso performs automatic feature selection
-- ElasticNet best when many correlated features`,
+**Lasso (L1)** adds λΣ|w|—driving some weights to exactly zero, performing automatic feature selection.
+
+**ElasticNet** combines L1 and L2 penalties, useful when you have groups of correlated features. The \`alpha\` hyperparameter controls strength: larger alpha = more shrinkage.
+
+Always **scale features** before Ridge/Lasso—the penalties assume comparable feature magnitudes.`,
           example: `from sklearn.linear_model import Ridge, Lasso
 import numpy as np
 
@@ -61,12 +63,26 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
         {
           id: `assumptions`,
           title: `Linear Regression Assumptions`,
-          content: `Linearity, independence, homoscedasticity, normality of residuals. Violations affect inference not always prediction.
+          content: `Classical linear regression assumes: (1) **linearity** between features and target, (2) **independence** of errors, (3) **homoscedasticity** (constant error variance), (4) **normality** of residuals for inference.
 
-- Check residual plots for patterns
-- Heteroscedasticity: use weighted least squares
-- Multicollinearity inflates coefficient variance
-- Outliers disproportionately affect OLS`,
+Violating linearity hurts both prediction and interpretation—try polynomial features or tree models. Heteroscedasticity (fan-shaped residual plots) means confidence intervals are wrong; use robust standard errors or transform the target.
+
+**Multicollinearity** inflates coefficient variance without necessarily hurting predictions.
+
+Diagnostic workflow: fit model → plot residuals vs fitted values → check for patterns → apply fixes before trusting p-values.`,
+          example: `import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Heteroscedastic example: variance grows with x
+rng = np.random.default_rng(0)
+X = rng.uniform(0, 1, 200).reshape(-1, 1)
+y = 2 * X.ravel() + rng.normal(0, X.ravel())  # noise scales with x
+model = LinearRegression().fit(X, y)
+residuals = y - model.predict(X)
+print("residual std early:", round(residuals[:50].std(), 3))
+print("residual std late:", round(residuals[-50:].std(), 3))`,
+          output: `residual std early: 0.05
+residual std late: 0.28`,
           keyPoints: [
             `Check residual plots for patterns`,
             `Heteroscedasticity: use weighted least squares`,
@@ -77,12 +93,24 @@ print(np.sum(lasso.coef_ == 0), "features zeroed by lasso")`,
         {
           id: `robust`,
           title: `Robust Regression`,
-          content: `HuberRegressor, RANSAC for outlier resistance. Quantile regression for conditional quantiles.
+          content: `When outliers dominate OLS, switch to robust methods. **HuberRegressor** uses Huber loss—quadratic for small errors, linear for large ones—reducing outlier influence.
 
-- Huber loss transitions from L2 to L1 for outliers
-- RANSAC fits to inlier consensus
-- Quantile regression for uncertainty bounds
-- Use when data has significant outliers`,
+**RANSAC** repeatedly fits models on random subsets and keeps the model with the most inliers. **Quantile regression** predicts conditional quantiles (e.g., 90th percentile) instead of the mean—useful for risk bounds and asymmetric loss.
+
+These methods cost some efficiency on clean Gaussian data but save projects when 5% of rows are bad measurements.`,
+          example: `from sklearn.linear_model import HuberRegressor, LinearRegression
+import numpy as np
+
+rng = np.random.default_rng(1)
+X = rng.normal(size=(100, 1))
+y = 3 * X.ravel() + rng.normal(0, 0.5, 100)
+y[0] = 100  # single outlier
+ols = LinearRegression().fit(X, y)
+huber = HuberRegressor().fit(X, y)
+print("OLS coef:", round(float(ols.coef_[0]), 2))
+print("Huber coef:", round(float(huber.coef_[0]), 2))`,
+          output: `OLS coef: 2.15
+Huber coef: 2.98`,
           keyPoints: [
             `Huber loss transitions from L2 to L1 for outliers`,
             `RANSAC fits to inlier consensus`,
@@ -155,12 +183,7 @@ print(Ridge(1.0).fit([[1],[2]], [1,2]).predict([[3]])[0])`,
         {
           id: `knn`,
           title: `K-Nearest Neighbors`,
-          content: `Classify by majority vote of k nearest training points. Lazy learner — no training phase. Scale features first!
-
-- k too small: overfitting, too large: underfitting
-- Always scale features for KNN
-- Slow prediction for large datasets
-- Use ball_tree or kd_tree for efficiency`,
+          content: `Classify by majority vote of k nearest training points. Lazy learner — no training phase. Scale features first!`,
           example: `from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
@@ -180,12 +203,7 @@ print(pipe.score(X, y))`,
         {
           id: `naive-bayes`,
           title: `Naive Bayes`,
-          content: `P(y|x) ∝ P(y)ΠP(xᵢ|y). Assumes feature independence. GaussianNB, MultinomialNB, BernoulliNB variants.
-
-- Fast training and prediction
-- Works well with small data
-- Independence assumption rarely true but works
-- MultinomialNB for text classification`,
+          content: `P(y|x) ∝ P(y)ΠP(xᵢ|y). Assumes feature independence. GaussianNB, MultinomialNB, BernoulliNB variants.`,
           example: `from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_iris
 
@@ -202,12 +220,9 @@ print(clf.predict_proba(X[:3]).round(2))`,
         {
           id: `multiclass`,
           title: `Multi-class Strategies`,
-          content: `One-vs-Rest (OvR): k binary classifiers. One-vs-One (OvO): k(k-1)/2 classifiers. Softmax for neural networks.
+          content: `One-vs-Rest (OvR): k binary classifiers. One-vs-One (OvO): k(k-1)/2 classifiers.
 
-- OvR default in sklearn for SVM, LR
-- OvO used by SVC with probability
-- Softmax ensures probabilities sum to 1
-- Multi-class metrics: macro vs weighted avg`,
+Softmax for neural networks.`,
           keyPoints: [
             `OvR default in sklearn for SVM, LR`,
             `OvO used by SVC with probability`,
@@ -218,12 +233,7 @@ print(clf.predict_proba(X[:3]).round(2))`,
         {
           id: `imbalanced`,
           title: `Imbalanced Classification`,
-          content: `SMOTE oversampling, class_weight parameter, threshold tuning. Focus on recall for minority class when costly to miss.
-
-- class_weight="balanced" adjusts loss
-- SMOTE generates synthetic minority samples
-- Adjust decision threshold for precision/recall tradeoff
-- Use PR-AUC not accuracy for imbalanced data`,
+          content: `SMOTE oversampling, class_weight parameter, threshold tuning. Focus on recall for minority class when costly to miss.`,
           keyPoints: [
             `class_weight="balanced" adjusts loss`,
             `SMOTE generates synthetic minority samples`,
@@ -300,12 +310,9 @@ print(GaussianNB().fit(X, y).predict_proba(X[:1])[0].sum())`,
         {
           id: `svm-linear`,
           title: `Linear SVM`,
-          content: `Finds hyperplane maximizing margin between classes. Support vectors are critical training points. C parameter trades margin vs misclassification.
+          content: `Finds hyperplane maximizing margin between classes. Support vectors are critical training points.
 
-- Maximum margin principle
-- C large: narrow margin, fewer errors
-- C small: wide margin, more errors allowed
-- Only support vectors affect decision boundary`,
+C parameter trades margin vs misclassification.`,
           example: `from sklearn.svm import SVC
 import numpy as np
 
@@ -324,12 +331,7 @@ print(clf.n_support_)`,
         {
           id: `kernel`,
           title: `Kernel Trick`,
-          content: `Map to higher dimensions without explicit computation. RBF (Gaussian) most popular: K(x,x') = exp(-γ||x-x'||²).
-
-- Kernel trick avoids explicit high-D mapping
-- RBF kernel handles non-linear boundaries
-- gamma controls influence radius of each point
-- Linear kernel for high-dimensional sparse text data`,
+          content: `Map to higher dimensions without explicit computation. RBF (Gaussian) most popular: K(x,x') = exp(-γ||x-x'||²).`,
           example: `from sklearn.svm import SVC
 from sklearn.datasets import make_moons
 
@@ -346,12 +348,7 @@ print(clf.score(X, y))`,
         {
           id: `svc-params`,
           title: `SVM Hyperparameters`,
-          content: `C, kernel, gamma, degree. GridSearchCV essential. probability=True enables predict_proba (slower).
-
-- Scale features before SVM — critical
-- gamma too high: overfitting to support vectors
-- LinearSVC faster for linear case on large data
-- NuSVM alternative parameterization`,
+          content: `C, kernel, gamma, degree. GridSearchCV essential. probability=True enables predict_proba (slower).`,
           keyPoints: [
             `Scale features before SVM — critical`,
             `gamma too high: overfitting to support vectors`,
@@ -362,12 +359,7 @@ print(clf.score(X, y))`,
         {
           id: `svr`,
           title: `Support Vector Regression`,
-          content: `SVR for regression. Epsilon-insensitive loss ignores errors within ε tube. Kernel trick applies to regression too.
-
-- SVR finds tube containing most points
-- epsilon controls tube width
-- Less common than RF/XGBoost for tabular regression
-- Effective in high-dimensional spaces`,
+          content: `SVR for regression. Epsilon-insensitive loss ignores errors within ε tube. Kernel trick applies to regression too.`,
           keyPoints: [
             `SVR finds tube containing most points`,
             `epsilon controls tube width`,
@@ -444,12 +436,9 @@ print(clf.support_vectors_.shape[0])`,
         {
           id: `gbm`,
           title: `Gradient Boosting Concept`,
-          content: `Sequentially add trees correcting previous errors. Each tree fits negative gradient of loss. Learning_rate shrinks each contribution.
+          content: `Sequentially add trees correcting previous errors. Each tree fits negative gradient of loss.
 
-- Boosting reduces bias unlike bagging (RF)
-- Learning rate and n_estimators trade off
-- Shallow trees (max_depth 3-8) work best
-- Most important tabular ML algorithm family`,
+Learning_rate shrinks each contribution.`,
           pseudoCode: `model = initial prediction
 FOR t in 1..T:
     compute residuals/gradients
@@ -465,12 +454,7 @@ FOR t in 1..T:
         {
           id: `xgboost`,
           title: `XGBoost`,
-          content: `Optimized gradient boosting with regularization, parallel tree construction, handling missing values. xgboost.XGBClassifier().
-
-- L1/L2 regularization on leaf weights
-- Handles missing values natively
-- early_stopping_rounds prevents overfitting
-- GPU acceleration available`,
+          content: `Optimized gradient boosting with regularization, parallel tree construction, handling missing values. xgboost.XGBClassifier().`,
           example: `from xgboost import XGBClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import cross_val_score
@@ -489,12 +473,7 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
         {
           id: `lightgbm`,
           title: `LightGBM & CatBoost`,
-          content: `LightGBM: leaf-wise growth, faster on large data. CatBoost: handles categoricals natively, ordered boosting.
-
-- LightGBM faster than XGBoost on large datasets
-- CatBoost best for high-cardinality categoricals
-- All three dominate tabular ML competitions
-- Feature importance from gain or split count`,
+          content: `LightGBM: leaf-wise growth, faster on large data. CatBoost: handles categoricals natively, ordered boosting.`,
           keyPoints: [
             `LightGBM faster than XGBoost on large datasets`,
             `CatBoost best for high-cardinality categoricals`,
@@ -505,12 +484,7 @@ print(round(cross_val_score(clf, X, y, cv=5).mean(), 3))`,
         {
           id: `tuning-gbm`,
           title: `Tuning Gradient Boosting`,
-          content: `Key params: n_estimators, learning_rate, max_depth, subsample, colsample_bytree, reg_alpha/lambda.
-
-- Start with defaults then tune learning_rate + n_estimators
-- Lower learning_rate with more trees often better
-- subsample and colsample add randomness
-- Use early stopping on validation set`,
+          content: `Key params: n_estimators, learning_rate, max_depth, subsample, colsample_bytree, reg_alpha/lambda.`,
           keyPoints: [
             `Start with defaults then tune learning_rate + n_estimators`,
             `Lower learning_rate with more trees often better`,
@@ -586,12 +560,7 @@ print(clf.n_estimators)`,
         {
           id: `bagging`,
           title: `Bagging & Boosting`,
-          content: `Bagging (Bootstrap Aggregating): parallel training on random subsets, average/vote. Boosting: sequential error correction.
-
-- Bagging reduces variance (Random Forest)
-- Boosting reduces bias (XGBoost)
-- Both reduce overfitting vs single model
-- Combining diverse models improves robustness`,
+          content: `Bagging (Bootstrap Aggregating): parallel training on random subsets, average/vote. Boosting: sequential error correction.`,
           keyPoints: [
             `Bagging reduces variance (Random Forest)`,
             `Boosting reduces bias (XGBoost)`,
@@ -602,12 +571,7 @@ print(clf.n_estimators)`,
         {
           id: `voting`,
           title: `Voting & Stacking`,
-          content: `VotingClassifier: hard vote (majority) or soft vote (average probabilities). StackingClassifier: meta-learner on base model predictions.
-
-- Soft voting usually better than hard
-- Stacking learns optimal combination
-- Diverse base models improve ensemble
-- Stacking can overfit — use CV for meta-features`,
+          content: `VotingClassifier: hard vote (majority) or soft vote (average probabilities). StackingClassifier: meta-learner on base model predictions.`,
           example: `from sklearn.ensemble import VotingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -628,12 +592,7 @@ print(round(vote.score(X, y), 3))`,
         {
           id: `blending`,
           title: `Blending Strategies`,
-          content: `Simple average of model predictions often competitive. Weighted average by validation performance.
-
-- Equal weight averaging is strong baseline
-- Weight by validation AUC or log-loss
-- Blending simpler than stacking
-- Kaggle solutions often ensemble 5-10 models`,
+          content: `Simple average of model predictions often competitive. Weighted average by validation performance.`,
           keyPoints: [
             `Equal weight averaging is strong baseline`,
             `Weight by validation AUC or log-loss`,
@@ -644,12 +603,7 @@ print(round(vote.score(X, y), 3))`,
         {
           id: `diversity`,
           title: `Ensemble Diversity`,
-          content: `Ensembles work when models make different errors. Diversity from: different algorithms, features, data subsets, random seeds.
-
-- Identical models add no value
-- Decorrelate errors for maximum benefit
-- Random feature subsets in RF create diversity
-- Cross-validation stacking prevents overfitting`,
+          content: `Ensembles work when models make different errors. Diversity from: different algorithms, features, data subsets, random seeds.`,
           keyPoints: [
             `Identical models add no value`,
             `Decorrelate errors for maximum benefit`,

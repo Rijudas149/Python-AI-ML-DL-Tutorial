@@ -11,12 +11,7 @@ export const module03Topics: Topic[] = [
         {
           id: `list-ops`,
           title: `List Operations`,
-          content: `Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.
-
-- Lists are mutable ordered sequences
-- sort() modifies in place; sorted() returns new list
-- Slicing [start:stop:step] never includes stop index
-- Use copy() or list() for shallow copies`,
+          content: `Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.`,
           example: `nums = [3, 1, 4, 1, 5]
 nums.append(9)
 nums.sort()
@@ -34,12 +29,9 @@ print(nums[1:4])`,
         {
           id: `tuples`,
           title: `Tuples`,
-          content: `Tuples are immutable sequences. Use for fixed collections: coordinates, DB records. Tuple unpacking: \`a, b = (1, 2)\`.
+          content: `Tuples are immutable sequences. Use for fixed collections: coordinates, DB records.
 
-- Tuples are immutable — hashable if elements are
-- Use for heterogeneous fixed data
-- Unpacking works with any iterable
-- Single-element tuple needs trailing comma: (1,)`,
+Tuple unpacking: \`a, b = (1, 2)\`.`,
           example: `point = (10, 20)
 x, y = point
 print(f"({x}, {y})")
@@ -54,12 +46,7 @@ print(f"({x}, {y})")
         {
           id: `list-perf`,
           title: `Performance Considerations`,
-          content: `Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.
-
-- Choose data structure based on access patterns
-- deque for queue operations
-- Lists for general-purpose ordered storage
-- Profile before optimizing`,
+          content: `Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.`,
           keyPoints: [
             `Choose data structure based on access patterns`,
             `deque for queue operations`,
@@ -70,12 +57,7 @@ print(f"({x}, {y})")
         {
           id: `nested`,
           title: `Nested Structures`,
-          content: `Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.
-
-- Nested structures model grids and tables
-- List comprehensions flatten or transform nested data
-- Copy carefully — nested lists share references
-- Consider numpy arrays for numeric matrices`,
+          content: `Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.`,
           example: `matrix = [[1,2,3],[4,5,6],[7,8,9]]
 print(matrix[1][2])
 print([row[0] for row in matrix])`,
@@ -153,12 +135,9 @@ print(nums.index(max(nums)))`,
         {
           id: `dict-basics`,
           title: `Dictionary Fundamentals`,
-          content: `Dicts map keys to values. Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`. Access: \`d[key]\` or \`d.get(key, default)\`.
+          content: `Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`.
 
-- Dicts preserve insertion order (Python 3.7+)
-- Use get() to avoid KeyError
-- keys(), values(), items() for iteration
-- Dict comprehensions build dicts concisely`,
+Access: \`d[key]\` or \`d.get(key, default)\`.`,
           example: `user = {"name": "Alice", "age": 30, "role": "admin"}
 print(user["name"])
 print(user.get("email", "N/A"))`,
@@ -174,12 +153,7 @@ N/A`,
         {
           id: `sets`,
           title: `Sets`,
-          content: `Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.
-
-- Sets eliminate duplicates
-- Fast membership testing with in
-- frozenset is immutable/hashable
-- Use sets for deduplication and set math`,
+          content: `Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.`,
           example: `a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
 print(a & b)
@@ -196,12 +170,7 @@ print(a | b)`,
         {
           id: `defaultdict`,
           title: `defaultdict & Counter`,
-          content: `\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.
-
-- Counter is a dict subclass for counting
-- most_common(n) returns top n items
-- defaultdict avoids manual key existence checks
-- Use Counter for text and categorical analysis`,
+          content: `\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.`,
           example: `from collections import Counter
 words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
 counts = Counter(words)
@@ -217,12 +186,7 @@ print(counts.most_common(2))`,
         {
           id: `dict-merge`,
           title: `Merging & Updating Dicts`,
-          content: `Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`. Update in place: \`d.update(other)\`.
-
-- Later keys override earlier in merge
-- Use for config and kwargs merging
-- Deep merge requires custom logic
-- Dict union operator | available in 3.9+`,
+          content: `Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`. Update in place: \`d.update(other)\`.`,
           example: `defaults = {"lr": 0.01, "epochs": 10}
 overrides = {"epochs": 50}
 config = {**defaults, **overrides}
@@ -301,12 +265,7 @@ print(inverted)`,
         {
           id: `stack`,
           title: `Stack (LIFO)`,
-          content: `Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.
-
-- append/pop from end implements stack
-- O(1) operations at list end
-- Used in recursion and graph DFS
-- deque also supports append/pop`,
+          content: `Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.`,
           example: `stack = []
 stack.append(1)
 stack.append(2)
@@ -325,12 +284,7 @@ print(stack)`,
         {
           id: `queue`,
           title: `Queue (FIFO)`,
-          content: `Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).
-
-- deque provides O(1) appendleft/popleft
-- FIFO for BFS and task scheduling
-- list.pop(0) is O(n) — avoid for queues
-- queue.Queue is thread-safe alternative`,
+          content: `Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).`,
           example: `from collections import deque
 q = deque(["task1", "task2"])
 q.append("task3")
@@ -348,12 +302,7 @@ deque(['task2', 'task3'])`,
         {
           id: `deque-features`,
           title: `deque Advanced Features`,
-          content: `deque supports maxlen for bounded buffers, rotation, and double-ended operations.
-
-- maxlen creates sliding window buffer
-- Automatic eviction of oldest items
-- rotate(n) shifts elements circularly
-- Ideal for rolling statistics`,
+          content: `deque supports maxlen for bounded buffers, rotation, and double-ended operations.`,
           example: `from collections import deque
 recent = deque(maxlen=3)
 for x in [1, 2, 3, 4, 5]:
@@ -370,12 +319,7 @@ print(list(recent))`,
         {
           id: `applications`,
           title: `Real-World Applications`,
-          content: `Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.
-
-- Match data structure to algorithm needs
-- BFS uses queue, DFS uses stack
-- Priority queues use heapq module
-- Consider thread safety for concurrent queues`,
+          content: `Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.`,
           keyPoints: [
             `Match data structure to algorithm needs`,
             `BFS uses queue, DFS uses stack`,
@@ -461,12 +405,7 @@ print(processed)`,
         {
           id: `sorting`,
           title: `Sorting in Python`,
-          content: `\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).
-
-- sorted() preserves original list
-- key=function customizes sort criteria
-- Stable sort preserves equal element order
-- Timsort exploits partially sorted input`,
+          content: `\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).`,
           example: `data = [3, 1, 4, 1, 5, 9]
 print(sorted(data))
 print(sorted(data, reverse=True))`,
@@ -482,12 +421,7 @@ print(sorted(data, reverse=True))`,
         {
           id: `custom-sort`,
           title: `Custom Sort Keys`,
-          content: `Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.
-
-- Tuple keys enable multi-criteria sort
-- Negate numeric key for descending
-- itemgetter is faster than lambda for simple access
-- Sort once, reuse for repeated queries`,
+          content: `Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.`,
           example: `students = [("Alice", 95), ("Bob", 87), ("Charlie", 95)]
 by_grade = sorted(students, key=lambda s: (-s[1], s[0]))
 print(by_grade)`,
@@ -502,12 +436,7 @@ print(by_grade)`,
         {
           id: `search`,
           title: `Linear & Binary Search`,
-          content: `Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.
-
-- Binary search requires sorted data
-- bisect finds insertion position
-- bisect_left vs bisect_right for duplicates
-- Use set/dict for O(1) lookup when possible`,
+          content: `Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.`,
           example: `import bisect
 sorted_list = [1, 3, 5, 7, 9]
 idx = bisect.bisect_left(sorted_list, 5)
@@ -523,12 +452,7 @@ print(idx)`,
         {
           id: `complexity`,
           title: `Big-O Basics`,
-          content: `Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.
-
-- Big-O describes growth rate, not exact time
-- Nested loops often imply O(n²)
-- Hash lookups are average O(1)
-- Sorting dominates many pipeline costs`,
+          content: `Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.`,
           keyPoints: [
             `Big-O describes growth rate, not exact time`,
             `Nested loops often imply O(n²)`,
@@ -602,12 +526,7 @@ print(lst)`,
         {
           id: `namedtuple`,
           title: `namedtuple`,
-          content: `Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.
-
-- Immutable like regular tuples
-- Named access improves readability
-- Use _replace for modified copies
-- dataclass is modern alternative`,
+          content: `Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.`,
           example: `from collections import namedtuple
 Point = namedtuple("Point", ["x", "y"])
 p = Point(3, 4)
@@ -623,12 +542,7 @@ print(p.x, p.y)`,
         {
           id: `chainmap`,
           title: `ChainMap`,
-          content: `ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.
-
-- First dict in chain takes precedence
-- Useful for layered configuration
-- Does not merge — searches sequentially
-- Modifications affect first dict in chain`,
+          content: `ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.`,
           example: `from collections import ChainMap
 defaults = {"color": "blue", "size": "M"}
 user = {"color": "red"}
@@ -645,12 +559,7 @@ print(config["color"], config["size"])`,
         {
           id: `ordered`,
           title: `OrderedDict & Modern Dicts`,
-          content: `OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).
-
-- Regular dict preserves insertion order since 3.7
-- OrderedDict for LRU cache patterns
-- move_to_end for reordering
-- Consider functools.lru_cache for caching`,
+          content: `OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).`,
           keyPoints: [
             `Regular dict preserves insertion order since 3.7`,
             `OrderedDict for LRU cache patterns`,
@@ -661,12 +570,7 @@ print(config["color"], config["size"])`,
         {
           id: `heapq`,
           title: `heapq — Priority Queues`,
-          content: `heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.
-
-- Min-heap — smallest element first
-- heappush/heappop are O(log n)
-- heapify converts list to heap in O(n)
-- Use for top-k and scheduling problems`,
+          content: `heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.`,
           example: `import heapq
 heap = []
 for val in [5, 3, 8, 1]:

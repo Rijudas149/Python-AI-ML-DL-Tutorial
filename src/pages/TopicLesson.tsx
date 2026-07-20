@@ -242,6 +242,23 @@ export function TopicLesson() {
     return estimateReadingMinutes(text);
   }, [section]);
 
+  const learningObjectives = useMemo(() => {
+    if (!topic) return [];
+    const seen = new Set<string>();
+    const objectives: string[] = [];
+    for (const sec of topic.sections) {
+      for (const point of sec.keyPoints ?? []) {
+        const trimmed = point.trim();
+        if (trimmed.length > 20 && !seen.has(trimmed)) {
+          seen.add(trimmed);
+          objectives.push(trimmed);
+        }
+        if (objectives.length >= 5) return objectives;
+      }
+    }
+    return objectives;
+  }, [topic]);
+
   const handleCopyStudySheet = async () => {
     if (!topic) return;
     const sheet = buildStudySheet(topic);
@@ -365,6 +382,19 @@ export function TopicLesson() {
         </div>
         <h1>{topic.title}</h1>
         <p>{topic.description}</p>
+        {learningObjectives.length > 0 && (
+          <div className="lesson-objectives">
+            <h3 className="lesson-objectives-title">What you&apos;ll learn</h3>
+            <ul className="lesson-objectives-list">
+              {learningObjectives.map((obj) => (
+                <li key={obj}>
+                  <span className="lesson-objectives-marker">→</span>
+                  <InlineMathText text={obj} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {topic.prerequisites && topic.prerequisites.length > 0 && (
           <p className="prerequisites">
             <strong>Prerequisites:</strong> {topic.prerequisites.join(', ')}
@@ -470,7 +500,7 @@ export function TopicLesson() {
           ) : (
             <div className="exercises-panel">
               <h2>Exercises — {topic.title}</h2>
-              <p>Practice what you learned. Write Python in the editor and click <strong>Check Answer</strong> to verify.</p>
+              <p>Write and run real Python code in the editor below. Each exercise reinforces concepts from the lesson—avoid one-word answers; implement the logic yourself, then click <strong>Check Answer</strong>.</p>
 
               {topic.exercises.map((ex, i) => (
                 <div key={ex.id} className="exercise-card">

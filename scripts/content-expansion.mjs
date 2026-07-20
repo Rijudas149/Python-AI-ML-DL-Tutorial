@@ -67,14 +67,9 @@ function expandNumberedInlineList(text, sectionTitle) {
   return lines.join('\n');
 }
 
-/** Expand thin content using the section's own keyPoints — not generic templates. */
-function expandFromKeyPoints(content, section) {
-  const points = (section.keyPoints ?? []).filter((p) => p.length > 15);
-  if (points.length < 2 || content.length >= 350) return content;
-
-  const intro = content.trim();
-  const bullets = points.slice(0, 5).map((p) => `- ${p}`).join('\n');
-  return `${intro}\n\n${bullets}`;
+/** Disabled: keyPoints render in their own panel — duplicating them in body text hurt readability. */
+function expandFromKeyPoints(content, _section) {
+  return content;
 }
 
 /**

@@ -15,9 +15,7 @@ export const moduleMath08Topics: Topic[] = [
 
 **Intersection** of convex sets convex. Non-convex: donut, two blobs. Convex feasible region in optimization guarantees global min if objective convex.
 
-Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Constraint xᵀx≤r² ball convex. ReLU network loss non-convex in weights.`,
           formulas: [
             `λx + (1−λ)y ∈ C for x,y∈C, λ∈[0,1]`,
             `Halfspace: {x : aᵀx ≤ b} convex`,
@@ -50,7 +48,7 @@ print(0<=m<=1)`,
 
 Examples: x², e^x, −log x (x>0), ||x||₂. Sums and non-negative combos preserve convexity. **Strongly convex** μ>0: H⪰μI unique min faster convergence.
 
-Cross-entropy convex in logits; MSE convex in linear params. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Cross-entropy convex in logits; MSE convex in linear params.`,
           formulas: [
             `f(λx+(1−λ)y) ≤ λf(x)+(1−λ)f(y)`,
             `1st order: tangent global underestimator`,
@@ -82,9 +80,7 @@ print(f(lam*x+(1-lam)*y) <= lam*f(x)+(1-lam)*f(y))`,
 
 **SDP** matrix constraints. cvxpy models convex problems. Local min = global for convex f on convex C. **KKT conditions** necessary sufficient for convex.
 
-Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Non-convex: multiple stationary points. Deep learning non-convex but SGD finds good minima empirically.`,
           formulas: [
             `min f(x) s.t. x ∈ C convex`,
             `LP: linear f and constraints`,
@@ -114,9 +110,7 @@ x=max(0,2.); print(x)`,
 
 **Convex relaxations** for hard problems. **Surrogate losses** convex upper bounds. Understanding which part convex helps debug optimization.
 
-Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Linear regression loss bowl-shaped in β. Regularization preserves convexity for convex base loss.`,
           formulas: [
             `Logistic NLL convex in w`,
             `Hinge loss convex`,
@@ -209,9 +203,7 @@ x=max(1,3.); print(x, (x-3)**2)`,
           title: `Convergence Conditions`,
           content: `For L-smooth convex f: GD with η≤1/L converges to global min rate O(1/t). **Strongly convex** μ: linear rate O((1−ημ)^t). **PL condition** weaker than strong convexity still linear.
 
-Non-convex: convergence to stationary point ||∇f||→0. Stochastic GD adds noise but averages out. Lower bounds: first-order methods limited for high-D black-box.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Non-convex: convergence to stationary point ||∇f||→0. Stochastic GD adds noise but averages out. Lower bounds: first-order methods limited for high-D black-box.`,
           formulas: [
             `L-smooth: ||∇f(x)−∇f(y)|| ≤ L||x−y||`,
             `η ≤ 1/L for convex convergence`,
@@ -241,9 +233,7 @@ print(theta)`,
           title: `Momentum & Nesterov`,
           content: `**Momentum** v_t=βv_{t−1}+∇L; θ_t=θ_{t−1}−ηv_t accumulates velocity dampens oscillation in ravines. β≈0.9 typical. **Nesterov** lookahead gradient evaluates ahead. Heavy ball method physics analogy.
 
-Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Accelerated methods O(1/t²) for convex vs O(1/t) vanilla GD. Adam combines momentum with adaptive scaling. Momentum helps consistent gradient directions.`,
           formulas: [
             `v_t = β v_{t−1} + ∇L`,
             `θ_t = θ_{t−1} − η v_t`,
@@ -277,7 +267,7 @@ print(np.round(theta,3))`,
 
 **AdamW** decoupled weight decay. Per-parameter η adapts to geometry. Not always better than SGD+momentum on some vision tasks.
 
-Warmup stabilizes early Adam training in transformers. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Warmup stabilizes early Adam training in transformers.`,
           formulas: [
             `AdaGrad: η/√(∑g²)`,
             `Adam: m,v EMA of g,g²`,
@@ -407,9 +397,7 @@ for b in [1,100]:
           title: `Equality Constraints`,
           content: `Minimize f(x) s.t. g(x)=0. **Lagrange function** L(x,λ)=f(x)+λg(x). Optimality: ∇_x L=0 and g(x)=0. λ is shadow price—sensitivity of optimal value to constraint.
 
-Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Geometric: ∇f parallel ∇g at optimum on constraint curve. Two variables one constraint: solve 3 equations. **Projected gradient** alternative iterative method.`,
           formulas: [
             `L(x,λ) = f(x) + λ g(x)`,
             `∇f(x*) + λ∇g(x*) = 0`,
@@ -440,7 +428,7 @@ print(0.5, 0.5)`,
 
 General form: min f s.t g_i≤0, h_j=0. Stationarity ∇f+∑λ_i∇g_i+∑ν_j∇h_j=0. Dual problem provides lower bounds.
 
-SVM derivation uses KKT on margin constraints. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+SVM derivation uses KKT on margin constraints.`,
           formulas: [
             `L = f + ∑λ_i g_i + ∑ν_j h_j`,
             `λ_i ≥ 0`,
@@ -469,9 +457,7 @@ print("SVM support vectors have α>0 from KKT")`,
 
 Strong duality convex: equal optimal values. **Lagrange dual** of SVM leads to kernel form. Dual often easier or reveals structure.
 
-Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Slater condition sufficient strong duality convex with strict feasibility. Duality connects to game between primal and dual variables.`,
           formulas: [
             `Dual: max_λ inf_x L(x,λ)`,
             `Weak: d* ≤ p*`,
@@ -501,9 +487,7 @@ print("dual SVM: max sum α - ½αᵀQα")`,
 
 **Projection** onto simplex for probability outputs. **Weight clipping** constraint. Penalty method: add ρg(x)² instead of hard constraint.
 
-Augmented Lagrangian combines both. Constrained DL growing area for safe deployment.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Augmented Lagrangian combines both. Constrained DL growing area for safe deployment.`,
           formulas: [
             `Penalty: f + ρ||g(x)||²`,
             `Projection: simplex, ball`,
@@ -593,9 +577,7 @@ v=np.ones(3)/3; print(v, v.sum())`,
 
 **Conditional** H(X|Y)=H(X,Y)−H(Y). Independent: H(X,Y)=H(X)+H(Y). Entropy rate of stochastic process.
 
-High entropy = unpredictable. Low entropy = compressible. Decision trees split to reduce entropy (ID3).
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+High entropy = unpredictable. Low entropy = compressible. Decision trees split to reduce entropy (ID3).`,
           formulas: [
             `H(X) = −∑ p(x) log p(x)`,
             `0 ≤ H(X) ≤ log |X|`,
@@ -624,9 +606,7 @@ print("H bits:", -np.sum(p*np.log2(p)))`,
           title: `Cross-Entropy & KL`,
           content: `**Cross-entropy** H(p,q)=−∑p log q≥H(p) with equality if p=q. **KL divergence** D_KL(p||q)=∑p log(p/q)=H(p,q)−H(p)≥0. Used as loss when p true, q model.
 
-**Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Mutual information** I(X;Y)=H(X)−H(X|Y)=D_KL(P_XY||P_X P_Y). InfoNCE contrastive learning maximizes MI lower bound. KL not metric but fundamental in variational inference.`,
           formulas: [
             `H(p,q) = −∑ p log q`,
             `D_KL(p||q) = ∑ p log(p/q)`,
@@ -657,7 +637,7 @@ print("CE:", ce)`,
 
 **Information bottleneck** tradeoff compress X while predict Y. Feature selection via MI with target. Data processing inequality: processing cannot increase MI.
 
-Used in contrastive self-supervised learning InfoNCE bound. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Used in contrastive self-supervised learning InfoNCE bound.`,
           formulas: [
             `I(X;Y) = H(X) − H(X|Y)`,
             `I(X;Y) = 0 ⇔ indep`,
@@ -786,7 +766,7 @@ print(np.sum(p*np.log(p/q)))`,
 
 Asymptotically unbiased efficient under regularity. **Log-likelihood** ℓ(θ) concave for many exponential family models. Negative log-likelihood as loss to minimize.
 
-Gaussian μ̂=x̄, σ̂ sample std (biased MLE divides n not n−1). Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Gaussian μ̂=x̄, σ̂ sample std (biased MLE divides n not n−1).`,
           formulas: [
             `θ̂_MLE = argmax ∑ log p(x_i|θ)`,
             `Equiv: min −∑ log p(x_i|θ)`,
@@ -812,11 +792,11 @@ print("Bernoulli MLE p:", x.mean())`,
         {
           id: `kl-mle`,
           title: `MLE Minimizes KL`,
-          content: `Minimizing E_x[−log q_θ(x)] over θ equivalent minimizing D_KL(p_data||q_θ) since H(p) constant w.r.t. θ. **Empirical risk** replaces expectation with sample mean—MLE on empirical distribution. Model q close to p in KL sense.
+          content: `Minimizing E_x[−log q_θ(x)] over θ equivalent minimizing D_KL(p_data||q_θ) since H(p) constant w.r.t. θ. **Empirical risk** replaces expectation with sample mean—MLE on empirical distribution.
 
-Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra. **Reverse KL** used in some VI variants mode covering vs seeking tradeoff.
+Model q close to p in KL sense. Mode-seeking KL asymmetric: q misses low p regions penalized less than covering extra.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Reverse KL** used in some VI variants mode covering vs seeking tradeoff.`,
           formulas: [
             `min_θ E_p[−log q_θ] ⇔ min D_KL(p||q_θ)`,
             `Empirical p = uniform on samples`,
@@ -847,9 +827,7 @@ print("KL:", np.sum(p*np.log(p/q)))`,
 
 Cramér-Rao lower bound on variance. MLE achieves bound asymptotically efficient. Finite sample bias possible.
 
-Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Regularization = MAP with prior, not pure MLE. Score function ∂log p/∂θ zero at MLE.`,
           formulas: [
             `√n(θ̂−θ) → N(0, I(θ)⁻¹)`,
             `I(θ) = E[(∂log p/∂θ)²]`,

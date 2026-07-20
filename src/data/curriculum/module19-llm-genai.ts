@@ -45,12 +45,7 @@ Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabl
         {
           id: `tokens`,
           title: `Token Economics`,
-          content: `Pricing by input/output tokens. Context window limits. Tokenization affects cost and effective context usage.
-
-- Tokens not words — subword units
-- Input + output tokens both billed
-- Longer context = higher cost and latency
-- Count tokens before API calls`,
+          content: `Pricing by input/output tokens. Context window limits. Tokenization affects cost and effective context usage.`,
           example: `# Rough token estimate: 1 token ≈ 4 characters in English
 # "Hello world" ≈ 2 tokens
 # GPT-4 pricing varies by model tier
@@ -67,12 +62,9 @@ print(f"Approx tokens: {len(text) // 4}")`,
         {
           id: `eval`,
           title: `LLM Evaluation`,
-          content: `MMLU, HumanEval, MT-Bench benchmarks. Custom eval sets for domain tasks. LLM-as-judge for subjective quality.
+          content: `MMLU, HumanEval, MT-Bench benchmarks. Custom eval sets for domain tasks.
 
-- No single benchmark captures all capabilities
-- HumanEval for code generation quality
-- Build domain-specific eval sets
-- Automated eval with stronger model as judge`,
+LLM-as-judge for subjective quality.`,
           keyPoints: [
             `No single benchmark captures all capabilities`,
             `HumanEval for code generation quality`,
@@ -142,12 +134,7 @@ print(f"Approx tokens: {len(text) // 4}")`,
         {
           id: `basics`,
           title: `Prompt Structure`,
-          content: `System message (role/behavior) + user message (task) + optional examples. Clear, specific instructions outperform vague requests.
-
-- System prompt sets behavior and constraints
-- Be specific about format, length, tone
-- Include examples for complex formats (few-shot)
-- Iterate and refine prompts empirically`,
+          content: `System message (role/behavior) + user message (task) + optional examples. Clear, specific instructions outperform vague requests.`,
           example: `prompt = """System: You are a Python tutor. Explain concepts simply.
 
 User: Explain list comprehensions with an example.
@@ -164,12 +151,7 @@ print(len(prompt))`,
         {
           id: `cot`,
           title: `Chain-of-Thought (CoT)`,
-          content: `Add "Let's think step by step" or demonstrate reasoning steps. Dramatically improves math and logic performance.
-
-- Zero-shot CoT: add "think step by step"
-- Few-shot CoT: provide reasoning examples
-- Self-consistency: sample multiple chains, majority vote
-- Tree-of-thought for complex planning`,
+          content: `Add "Let's think step by step" or demonstrate reasoning steps. Dramatically improves math and logic performance.`,
           example: `prompt = "Q: A store has 23 apples. They buy 6 boxes of 12 apples. How many now?\\nA: Let's think step by step.\\n23 + (6 * 12) = 23 + 72 = 95\\n\\nQ: ..."
 print("CoT improves reasoning")`,
           output: `CoT improves reasoning`,
@@ -183,12 +165,9 @@ print("CoT improves reasoning")`,
         {
           id: `few-shot`,
           title: `Few-Shot Learning`,
-          content: `Provide 2-5 input-output examples in prompt. Model learns pattern without weight updates. Example selection matters.
+          content: `Provide 2-5 input-output examples in prompt. Model learns pattern without weight updates.
 
-- Examples should be diverse and representative
-- Order of examples affects performance
-- More examples help up to a point
-- Dynamic example retrieval from database`,
+Example selection matters.`,
           keyPoints: [
             `Examples should be diverse and representative`,
             `Order of examples affects performance`,
@@ -199,12 +178,7 @@ print("CoT improves reasoning")`,
         {
           id: `advanced-prompt`,
           title: `Advanced Techniques`,
-          content: `ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.
-
-- JSON mode ensures parseable output
-- Prompt chaining breaks complex tasks into steps
-- ReAct interleaves reasoning and tool calls
-- Test prompts systematically with eval sets`,
+          content: `ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.`,
           keyPoints: [
             `JSON mode ensures parseable output`,
             `Prompt chaining breaks complex tasks into steps`,
@@ -276,12 +250,7 @@ print("step by step" in q)`,
         {
           id: `rag-arch`,
           title: `RAG Architecture`,
-          content: `Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.
-
-- RAG reduces hallucination on domain knowledge
-- Retrieval quality determines answer quality
-- Chunk size and overlap affect retrieval
-- Hybrid search: dense + keyword (BM25)`,
+          content: `Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.`,
           pseudoCode: `query = user_question
 chunks = vector_db.search(embed(query), top_k=5)
 context = join(chunks)
@@ -297,12 +266,7 @@ answer = llm.generate(prompt)`,
         {
           id: `embeddings-rag`,
           title: `Embeddings for Retrieval`,
-          content: `Embed documents and queries with embedding model (OpenAI, sentence-transformers). Store in vector DB (Pinecone, Chroma, FAISS).
-
-- Choose embedding model matching domain
-- Chunk documents 256-512 tokens typically
-- Metadata filtering narrows search space
-- Re-rank retrieved results with cross-encoder`,
+          content: `Embed documents and queries with embedding model (OpenAI, sentence-transformers). Store in vector DB (Pinecone, Chroma, FAISS).`,
           example: `from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -319,12 +283,9 @@ print(embeddings.shape)`,
         {
           id: `chunking`,
           title: `Document Chunking`,
-          content: `Split documents into retrievable chunks. Recursive character splitting, semantic chunking. Overlap preserves context at boundaries.
+          content: `Split documents into retrievable chunks. Recursive character splitting, semantic chunking.
 
-- Too small chunks lose context
-- Too large chunks dilute relevance
-- 10-20% overlap between chunks common
-- Parent-child chunking for hierarchical retrieval`,
+Overlap preserves context at boundaries.`,
           keyPoints: [
             `Too small chunks lose context`,
             `Too large chunks dilute relevance`,
@@ -335,12 +296,7 @@ print(embeddings.shape)`,
         {
           id: `eval-rag`,
           title: `Evaluating RAG Systems`,
-          content: `Retrieval metrics: recall@k, MRR. Generation metrics: faithfulness, relevance, answer correctness. RAGAS framework.
-
-- Evaluate retrieval and generation separately
-- Faithfulness: answer grounded in retrieved context
-- RAGAS automated RAG evaluation
-- Human eval for production quality assurance`,
+          content: `Retrieval metrics: recall@k, MRR. Generation metrics: faithfulness, relevance, answer correctness. RAGAS framework.`,
           keyPoints: [
             `Evaluate retrieval and generation separately`,
             `Faithfulness: answer grounded in retrieved context`,
@@ -411,12 +367,9 @@ print(steps)`,
         {
           id: `finetune`,
           title: `Full Fine-Tuning`,
-          content: `Update all model weights on domain dataset. Expensive — requires significant GPU memory. Best for large domain shift.
+          content: `Update all model weights on domain dataset. Expensive — requires significant GPU memory.
 
-- Requires labeled instruction-response pairs
-- Risk of catastrophic forgetting
-- Multi-GPU needed for 7B+ models
-- Learning rate much smaller than pretraining`,
+Best for large domain shift.`,
           keyPoints: [
             `Requires labeled instruction-response pairs`,
             `Risk of catastrophic forgetting`,
@@ -427,12 +380,7 @@ print(steps)`,
         {
           id: `lora`,
           title: `LoRA (Low-Rank Adaptation)`,
-          content: `Freeze base model, add low-rank decomposition matrices to attention layers. Trains ~0.1% of parameters. PEFT standard.
-
-- LoRA rank r controls capacity vs efficiency
-- Target q_proj, v_proj in attention layers
-- QLoRA: 4-bit quantized base + LoRA adapters
-- Merge adapters into base for deployment`,
+          content: `Freeze base model, add low-rank decomposition matrices to attention layers. Trains ~0.1% of parameters. PEFT standard.`,
           example: `# LoRA concept: W' = W + BA where B is d×r, A is r×d, r << d
 # r=8 or r=16 typical rank
 # Only train A and B matrices
@@ -448,12 +396,7 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `instruction`,
           title: `Instruction Tuning`,
-          content: `Fine-tune on (instruction, response) pairs. Alpaca, Dolly datasets. Aligns model to follow user instructions.
-
-- Instruction format: ### Instruction / ### Response
-- Quality over quantity for instruction data
-- Covers diverse task types
-- Foundation for chat model behavior`,
+          content: `Fine-tune on (instruction, response) pairs. Alpaca, Dolly datasets. Aligns model to follow user instructions.`,
           keyPoints: [
             `Instruction format: ### Instruction / ### Response`,
             `Quality over quantity for instruction data`,
@@ -464,12 +407,7 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `rlhf`,
           title: `RLHF & DPO`,
-          content: `Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO. DPO simpler alternative without reward model.
-
-- RLHF makes models helpful and harmless
-- Reward model trained on human preference comparisons
-- PPO fine-tunes against reward model
-- DPO direct preference optimization — simpler pipeline`,
+          content: `Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO. DPO simpler alternative without reward model.`,
           keyPoints: [
             `RLHF makes models helpful and harmless`,
             `Reward model trained on human preference comparisons`,
@@ -539,12 +477,7 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `agents`,
           title: `LLM Agent Architecture`,
-          content: `Agent loop: observe → think → act (tool call) → observe result → repeat. LangChain, LlamaIndex frameworks.
-
-- ReAct pattern: Reason + Act interleaved
-- Tool definitions in prompt or function calling API
-- Memory: short-term (conversation) + long-term (vector store)
-- Max iterations prevent infinite loops`,
+          content: `Agent loop: observe → think → act (tool call) → observe result → repeat. LangChain, LlamaIndex frameworks.`,
           pseudoCode: `WHILE not done:
     thought = llm.reason(observation, goal)
     IF thought.requires_action:
@@ -562,12 +495,9 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `tools`,
           title: `Function Calling / Tool Use`,
-          content: `Define tools with name, description, parameters (JSON schema). Model selects tool and arguments. OpenAI function calling, Anthropic tool use.
+          content: `Define tools with name, description, parameters (JSON schema). Model selects tool and arguments.
 
-- Clear tool descriptions critical for selection
-- JSON schema defines valid parameters
-- Execute tool and return result to model
-- Multiple tools enable complex workflows`,
+OpenAI function calling, Anthropic tool use.`,
           example: `tools = [{
     "name": "search",
     "description": "Search the web for information",
@@ -585,12 +515,9 @@ print(tools[0]["name"])`,
         {
           id: `frameworks`,
           title: `Agent Frameworks`,
-          content: `LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG. AutoGen: multi-agent conversations. CrewAI: role-based agents.
+          content: `LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG.
 
-- LangChain most popular orchestration framework
-- LlamaIndex optimized for data-connected apps
-- Multi-agent: specialized agents collaborate
-- Evaluate agent reliability before production`,
+AutoGen: multi-agent conversations. CrewAI: role-based agents.`,
           keyPoints: [
             `LangChain most popular orchestration framework`,
             `LlamaIndex optimized for data-connected apps`,
@@ -601,12 +528,7 @@ print(tools[0]["name"])`,
         {
           id: `safety`,
           title: `Agent Safety`,
-          content: `Sandbox tool execution. Validate tool inputs. Limit permissions. Human-in-the-loop for high-stakes actions.
-
-- Never give agents unrestricted system access
-- Validate and sanitize tool inputs/outputs
-- Human approval for irreversible actions
-- Monitor agent trajectories for unexpected behavior`,
+          content: `Sandbox tool execution. Validate tool inputs. Limit permissions. Human-in-the-loop for high-stakes actions.`,
           keyPoints: [
             `Never give agents unrestricted system access`,
             `Validate and sanitize tool inputs/outputs`,

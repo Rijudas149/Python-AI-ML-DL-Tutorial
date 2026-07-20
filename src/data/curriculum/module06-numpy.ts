@@ -11,12 +11,7 @@ export const module06Topics: Topic[] = [
         {
           id: `create`,
           title: `Creating Arrays`,
-          content: `NumPy ndarrays are homogeneous, fixed-size multidimensional arrays. Create from lists: \`np.array([1,2,3])\`, zeros, ones, arange, linspace.
-
-- ndarray is homogeneous — single dtype
-- shape tuple describes dimensions
-- arange for step-based ranges
-- linspace for evenly spaced floats`,
+          content: `NumPy ndarrays are homogeneous, fixed-size multidimensional arrays. Create from lists: \`np.array([1,2,3])\`, zeros, ones, arange, linspace.`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3, 4, 5])
@@ -35,12 +30,7 @@ print(a.shape, b.shape, c, d)`,
         {
           id: `dtype`,
           title: `Data Types`,
-          content: `dtype determines memory and precision: int32, float64, bool_, complex128. Specify: \`np.array([1,2], dtype=np.float32)\`.
-
-- float64 default for floats
-- float32 saves memory in deep learning
-- astype creates copy with new dtype
-- dtype mismatch can cause subtle bugs`,
+          content: `dtype determines memory and precision: int32, float64, bool_, complex128. Specify: \`np.array([1,2], dtype=np.float32)\`.`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3], dtype=np.float32)
@@ -59,12 +49,7 @@ int64`,
         {
           id: `attrs`,
           title: `Array Attributes`,
-          content: `.shape, .ndim, .size, .dtype, .itemsize. reshape() changes shape without copying data (usually).
-
-- size = product of shape dimensions
-- reshape total elements must match
-- -1 in reshape auto-calculates dimension
-- ravel() returns flattened view`,
+          content: `.shape, .ndim, .size, .dtype, .itemsize. reshape() changes shape without copying data (usually).`,
           example: `import numpy as np
 
 a = np.arange(12).reshape(3, 4)
@@ -83,12 +68,9 @@ print(a.reshape(2, 6))`,
         {
           id: `vs-list`,
           title: `Arrays vs Python Lists`,
-          content: `NumPy: fixed type, vectorized ops, contiguous memory, C-speed. Lists: heterogeneous, slower for numeric work. Always prefer NumPy for numerics.
+          content: `NumPy: fixed type, vectorized ops, contiguous memory, C-speed. Lists: heterogeneous, slower for numeric work.
 
-- Vectorization eliminates Python loops
-- 10-100x speedup typical for numeric ops
-- Memory efficient contiguous storage
-- Foundation for pandas, sklearn, pytorch`,
+Always prefer NumPy for numerics.`,
           keyPoints: [
             `Vectorization eliminates Python loops`,
             `10-100x speedup typical for numeric ops`,
@@ -162,12 +144,7 @@ print(np.linspace(0, 1, 5))`,
         {
           id: `slicing`,
           title: `Array Indexing & Slicing`,
-          content: `Same as lists but multidimensional: \`arr[row, col]\`. Slicing creates views (not copies) — modifying view affects original!
-
-- Multidimensional indexing with commas
-- Slicing creates views — beware aliasing
-- copy() for independent arrays
-- Boolean indexing for filtering`,
+          content: `Same as lists but multidimensional: \`arr[row, col]\`. Slicing creates views (not copies) — modifying view affects original!`,
           example: `import numpy as np
 
 a = np.arange(10)
@@ -188,12 +165,7 @@ print(b[:, -1])`,
         {
           id: `boolean`,
           title: `Boolean & Fancy Indexing`,
-          content: `Boolean mask: \`arr[arr > 0]\`. Fancy indexing with integer arrays selects specific elements.
-
-- Boolean indexing for conditional selection
-- Fancy indexing with integer arrays
-- Boolean indexing returns copy
-- np.where for conditional replacement`,
+          content: `Boolean mask: \`arr[arr > 0]\`. Fancy indexing with integer arrays selects specific elements.`,
           example: `import numpy as np
 
 a = np.array([10, -3, 5, -1, 8])
@@ -212,12 +184,7 @@ print(a[idx])`,
         {
           id: `broadcast`,
           title: `Broadcasting Rules`,
-          content: `NumPy stretches smaller arrays to match shapes. Rules: align trailing dimensions; size 1 broadcasts; mismatched non-1 sizes error.
-
-- Broadcasting avoids explicit loops
-- Trailing dimensions compared
-- Size-1 dimensions stretch
-- Essential for ML batch operations`,
+          content: `NumPy stretches smaller arrays to match shapes. Rules: align trailing dimensions; size 1 broadcasts; mismatched non-1 sizes error.`,
           example: `import numpy as np
 
 a = np.array([[1, 2, 3], [4, 5, 6]])
@@ -235,12 +202,9 @@ print(a + b)`,
         {
           id: `vectorize`,
           title: `Vectorized Operations`,
-          content: `Element-wise: +, -, *, /, **. Universal functions (ufuncs): np.sin, np.exp, np.log. Aggregations: .sum(), .mean(), .std(), axis parameter.
+          content: `Element-wise: +, -, *, /, **. Universal functions (ufuncs): np.sin, np.exp, np.log.
 
-- axis=0 collapses rows (column-wise)
-- axis=1 collapses columns (row-wise)
-- keepdims preserves dimensions
-- np.einsum for advanced tensor ops`,
+Aggregations: .sum(), .mean(), .std(), axis parameter.`,
           example: `import numpy as np
 
 a = np.array([[1, 2], [3, 4]])
@@ -320,12 +284,7 @@ print(m + v)`,
         {
           id: `matmul`,
           title: `Matrix Multiplication`,
-          content: `np.dot(a, b) or a @ b (Python 3.5+). Inner product for 1D, matrix multiply for 2D. np.matmul preferred.
-
-- @ operator for matrix multiplication
-- Element-wise * is NOT matrix multiply
-- np.dot handles various dimensions
-- Order matters: AB ≠ BA generally`,
+          content: `np.dot(a, b) or a @ b (Python 3.5+). Inner product for 1D, matrix multiply for 2D. np.matmul preferred.`,
           example: `import numpy as np
 
 A = np.array([[1, 2], [3, 4]])
@@ -343,12 +302,7 @@ print(A @ B)`,
         {
           id: `linalg`,
           title: `np.linalg Module`,
-          content: `det, inv, eig, svd, solve. **Never invert matrices directly for solving Ax=b** — use np.linalg.solve(A, b).
-
-- solve() numerically stable vs inv() @ b
-- SVD fundamental for PCA and ML
-- eig for eigenvalue problems
-- cond() checks matrix conditioning`,
+          content: `det, inv, eig, svd, solve. **Never invert matrices directly for solving Ax=b** — use np.linalg.solve(A, b).`,
           example: `import numpy as np
 
 A = np.array([[3, 1], [1, 2]])
@@ -366,12 +320,7 @@ print(x)`,
         {
           id: `norm`,
           title: `Norms & Distances`,
-          content: `np.linalg.norm for vector/matrix norms. Combined with broadcasting for pairwise distances.
-
-- L2 norm is default Euclidean distance
-- Norms measure vector magnitude
-- Distance matrices via broadcasting
-- Cosine similarity common in NLP/ML`,
+          content: `np.linalg.norm for vector/matrix norms. Combined with broadcasting for pairwise distances.`,
           example: `import numpy as np
 
 v = np.array([3, 4])
@@ -389,12 +338,7 @@ print(np.sqrt(v @ v))`,
         {
           id: `applications`,
           title: `ML Applications`,
-          content: `Linear regression: w = (X^T X)^(-1) X^T y. PCA via SVD. Neural network layers are matrix multiplications.
-
-- All DL is matrix multiplication at core
-- SVD powers dimensionality reduction
-- Normal equations for linear regression
-- Use float32 for GPU efficiency`,
+          content: `Linear regression: w = (X^T X)^(-1) X^T y. PCA via SVD. Neural network layers are matrix multiplications.`,
           keyPoints: [
             `All DL is matrix multiplication at core`,
             `SVD powers dimensionality reduction`,
@@ -470,12 +414,7 @@ print(np.linalg.solve(A, b))`,
         {
           id: `rng`,
           title: `Random Number Generation`,
-          content: `np.random.default_rng(seed) for reproducible randomness. .random(), .integers(), .normal(), .choice().
-
-- Always set seed for reproducibility
-- default_rng is modern API
-- normal(loc, scale, size) for Gaussian
-- choice for random sampling`,
+          content: `np.random.default_rng(seed) for reproducible randomness. .random(), .integers(), .normal(), .choice().`,
           example: `import numpy as np
 
 rng = np.random.default_rng(42)
@@ -495,12 +434,7 @@ print(rng.normal(0, 1, 5))`,
         {
           id: `stats`,
           title: `Statistical Functions`,
-          content: `np.mean, np.median, np.std, np.var, np.percentile, np.corrcoef. axis parameter for multidimensional stats.
-
-- std default is population (ddof=0)
-- ddof=1 for sample standard deviation
-- percentile for quartiles and outliers
-- corrcoef for feature correlation analysis`,
+          content: `np.mean, np.median, np.std, np.var, np.percentile, np.corrcoef. axis parameter for multidimensional stats.`,
           example: `import numpy as np
 
 data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
@@ -518,12 +452,7 @@ print(np.percentile(data, [25, 50, 75]))`,
         {
           id: `shuffle`,
           title: `Shuffling & Sampling`,
-          content: `rng.shuffle() in-place. rng.permutation() returns shuffled copy. train/test splits use permutation.
-
-- Shuffle before train/test split
-- permutation preserves original
-- choice(replace=False) for sampling without replacement
-- Bootstrap uses sampling with replacement`,
+          content: `rng.shuffle() in-place. rng.permutation() returns shuffled copy. train/test splits use permutation.`,
           example: `import numpy as np
 
 rng = np.random.default_rng(42)
@@ -540,12 +469,7 @@ print(perm)`,
         {
           id: `distributions`,
           title: `Probability Distributions`,
-          content: `rng.uniform, binomial, poisson, exponential. Understanding distributions essential for ML probabilistic models.
-
-- Normal distribution central to ML
-- Binomial for classification simulation
-- Distribution choice affects synthetic data
-- Scipy.stats for advanced distributions`,
+          content: `rng.uniform, binomial, poisson, exponential. Understanding distributions essential for ML probabilistic models.`,
           keyPoints: [
             `Normal distribution central to ML`,
             `Binomial for classification simulation`,
@@ -619,12 +543,7 @@ print(np.mean(d), round(np.std(d), 2))`,
         {
           id: `vectorize`,
           title: `Avoid Python Loops`,
-          content: `Replace loops with vectorized operations. np.vectorize is convenience, not performance — true vectorization uses ufuncs.
-
-- Python loops on arrays are slow
-- Ufuncs run at C speed
-- Broadcasting eliminates nested loops
-- Profile with %timeit before optimizing`,
+          content: `Replace loops with vectorized operations. np.vectorize is convenience, not performance — true vectorization uses ufuncs.`,
           example: `import numpy as np
 
 a = np.arange(1000000)
@@ -642,12 +561,7 @@ print(b[:5])`,
         {
           id: `memory`,
           title: `Memory Layout`,
-          content: `C-contiguous (row-major) vs Fortran-contiguous (column-major). .flags, np.ascontiguousarray. Affects cache performance.
-
-- Row-major default in NumPy/C
-- Column-major in Fortran/MATLAB
-- Contiguous arrays faster for operations
-- ravel vs flatten — view vs copy`,
+          content: `C-contiguous (row-major) vs Fortran-contiguous (column-major). .flags, np.ascontiguousarray. Affects cache performance.`,
           keyPoints: [
             `Row-major default in NumPy/C`,
             `Column-major in Fortran/MATLAB`,
@@ -658,12 +572,7 @@ print(b[:5])`,
         {
           id: `einsum`,
           title: `np.einsum`,
-          content: `Einstein summation for concise tensor operations. Powers attention mechanisms and batch operations.
-
-- einsum expresses complex tensor ops
-- Used in transformer attention
-- More readable than nested transpose/matmul
-- Optimize einsum path for performance`,
+          content: `Einstein summation for concise tensor operations. Powers attention mechanisms and batch operations.`,
           example: `import numpy as np
 
 A = np.arange(6).reshape(2, 3)
@@ -679,12 +588,7 @@ print(np.einsum("ij,jk->ik", A, B))`,
         {
           id: `numba`,
           title: `Numba & Cython Preview`,
-          content: `When NumPy insufficient, @numba.jit compiles Python to machine code. Cython for C-speed extensions.
-
-- Numba JIT for custom numeric loops
-- nopython mode for max speed
-- Cython for production extensions
-- Prefer vectorization first, JIT second`,
+          content: `When NumPy insufficient, @numba.jit compiles Python to machine code. Cython for C-speed extensions.`,
           keyPoints: [
             `Numba JIT for custom numeric loops`,
             `nopython mode for max speed`,

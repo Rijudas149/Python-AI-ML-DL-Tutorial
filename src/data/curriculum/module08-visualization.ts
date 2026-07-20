@@ -11,12 +11,7 @@ export const module08Topics: Topic[] = [
         {
           id: `pyplot`,
           title: `pyplot Interface`,
-          content: `import matplotlib.pyplot as plt. plt.plot(), scatter(), bar(), hist(). plt.xlabel, title, legend, show/savefig.
-
-- plt.figure(figsize=(w,h)) sets size
-- Always label axes and add title
-- savefig before show in scripts
-- Use dpi=300 for publication quality`,
+          content: `import matplotlib.pyplot as plt. plt.plot(), scatter(), bar(), hist(). plt.xlabel, title, legend, show/savefig.`,
           example: `import matplotlib.pyplot as plt
 
 x = [1, 2, 3, 4, 5]
@@ -39,12 +34,7 @@ print("Plot saved")`,
         {
           id: `oo-api`,
           title: `Object-Oriented API`,
-          content: `fig, ax = plt.subplots() — preferred for multiple plots. ax.plot(), ax.set_xlabel(). More control than pyplot.
-
-- OO API preferred for complex figures
-- subplots creates grid of axes
-- tight_layout prevents overlap
-- ax object methods vs plt functions`,
+          content: `fig, ax = plt.subplots() — preferred for multiple plots. ax.plot(), ax.set_xlabel(). More control than pyplot.`,
           example: `import matplotlib.pyplot as plt
 
 fig, axes = plt.subplots(1, 2, figsize=(10, 4))
@@ -63,12 +53,9 @@ print("Subplots created")`,
         {
           id: `styles`,
           title: `Styles & Customization`,
-          content: `plt.style.use("seaborn-v0_8"). Colors, markers, linewidth, alpha transparency. Colorblind-friendly palettes.
+          content: `plt.style.use("seaborn-v0_8"). Colors, markers, linewidth, alpha transparency.
 
-- Use colorblind-safe palettes
-- Consistent style across project
-- alpha for overlapping points
-- Avoid chartjunk — maximize data-ink ratio`,
+Colorblind-friendly palettes.`,
           keyPoints: [
             `Use colorblind-safe palettes`,
             `Consistent style across project`,
@@ -79,12 +66,7 @@ print("Subplots created")`,
         {
           id: `anatomy`,
           title: `Figure Anatomy`,
-          content: `Figure contains Axes contains Lines/Patches/Text. fig.add_subplot, GridSpec for complex layouts.
-
-- Figure is top-level container
-- Axes is single plot area
-- Multiple Axes per Figure
-- GridSpec for irregular layouts`,
+          content: `Figure contains Axes contains Lines/Patches/Text. fig.add_subplot, GridSpec for complex layouts.`,
           keyPoints: [
             `Figure is top-level container`,
             `Axes is single plot area`,
@@ -161,12 +143,7 @@ print("2 subplots created")`,
         {
           id: `distplot`,
           title: `Distribution Plots`,
-          content: `sns.histplot, kdeplot, displot for distributions. rugplot for individual observations.
-
-- kde overlays smooth density estimate
-- binwidth controls histogram granularity
-- displot is figure-level interface
-- Check distribution shape before modeling`,
+          content: `sns.histplot, kdeplot, displot for distributions. rugplot for individual observations.`,
           example: `import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
@@ -185,12 +162,7 @@ print("Distribution plotted")`,
         {
           id: `relplot`,
           title: `Relational Plots`,
-          content: `scatterplot, lineplot, relplot. hue for color grouping, size for third dimension.
-
-- hue encodes categorical variable
-- size/style add more dimensions
-- relplot for faceted relational plots
-- Avoid overplotting with alpha/jitter`,
+          content: `scatterplot, lineplot, relplot. hue for color grouping, size for third dimension.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -208,12 +180,7 @@ print("Scatter with hue")`,
         {
           id: `catplot`,
           title: `Categorical Plots`,
-          content: `boxplot, violinplot, barplot, countplot. Compare distributions across categories.
-
-- boxplot shows quartiles and outliers
-- violinplot shows full distribution shape
-- barplot shows mean with confidence interval
-- order parameter controls x-axis order`,
+          content: `boxplot, violinplot, barplot, countplot. Compare distributions across categories.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -230,12 +197,7 @@ print("Boxplot created")`,
         {
           id: `heatmap`,
           title: `Heatmaps & Correlation`,
-          content: `sns.heatmap for correlation matrices. annot=True shows values. Essential for EDA in ML.
-
-- corr() computes pairwise correlation
-- heatmap reveals multicollinearity
-- coolwarm diverging palette for correlations
-- Cluster related features visually`,
+          content: `sns.heatmap for correlation matrices. annot=True shows values. Essential for EDA in ML.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -319,12 +281,7 @@ print("done")`,
         {
           id: `plotly-express`,
           title: `Plotly Express`,
-          content: `px.scatter, px.line, px.bar — high-level API. Automatic interactivity: hover, zoom, pan.
-
-- Plotly Express for quick interactive plots
-- Hover tooltips automatic
-- Export to HTML for sharing
-- color/discrete_map for custom colors`,
+          content: `px.scatter, px.line, px.bar — high-level API. Automatic interactivity: hover, zoom, pan.`,
           example: `import plotly.express as px
 import pandas as pd
 
@@ -342,12 +299,7 @@ print(fig.data[0].type)`,
         {
           id: `plotly-graph`,
           title: `Graph Objects`,
-          content: `go.Figure, go.Scatter for fine control. Subplots with make_subplots. Animations with frames.
-
-- Graph Objects for custom charts
-- make_subplots for complex dashboards
-- Animation frames for time series
-- 3D scatter and surface plots available`,
+          content: `go.Figure, go.Scatter for fine control. Subplots with make_subplots. Animations with frames.`,
           keyPoints: [
             `Graph Objects for custom charts`,
             `make_subplots for complex dashboards`,
@@ -358,12 +310,7 @@ print(fig.data[0].type)`,
         {
           id: `dash`,
           title: `Dash Preview`,
-          content: `Plotly Dash builds web dashboards in pure Python. Callbacks for interactivity.
-
-- Dash for production dashboards
-- dcc components for inputs
-- Callback decorators link inputs to outputs
-- Alternative: Streamlit for simpler apps`,
+          content: `Plotly Dash builds web dashboards in pure Python. Callbacks for interactivity.`,
           keyPoints: [
             `Dash for production dashboards`,
             `dcc components for inputs`,
@@ -374,12 +321,7 @@ print(fig.data[0].type)`,
         {
           id: `when`,
           title: `When to Use Plotly`,
-          content: `Exploration and dashboards: Plotly. Publications: Matplotlib/Seaborn. Large data: datashader.
-
-- Plotly for interactive exploration
-- Matplotlib for static publication figures
-- Consider audience and medium
-- Performance degrades with millions of points`,
+          content: `Exploration and dashboards: Plotly. Publications: Matplotlib/Seaborn. Large data: datashader.`,
           keyPoints: [
             `Plotly for interactive exploration`,
             `Matplotlib for static publication figures`,
@@ -454,12 +396,7 @@ print(fig.layout.title.text)`,
         {
           id: `chart-selection`,
           title: `Choosing the Right Chart`,
-          content: `Comparison: bar. Distribution: histogram/violin. Relationship: scatter. Composition: stacked bar/pie (sparingly). Time: line.
-
-- Match chart type to analytical question
-- Bar charts start at zero
-- Avoid pie charts for many categories
-- Small multiples for comparison across groups`,
+          content: `Comparison: bar. Distribution: histogram/violin. Relationship: scatter. Composition: stacked bar/pie (sparingly). Time: line.`,
           keyPoints: [
             `Match chart type to analytical question`,
             `Bar charts start at zero`,
@@ -470,12 +407,9 @@ print(fig.layout.title.text)`,
         {
           id: `color`,
           title: `Color Theory`,
-          content: `Sequential for magnitude. Diverging for deviation from midpoint. Categorical for distinct groups. Max 6-8 categorical colors.
+          content: `Diverging for deviation from midpoint. Categorical for distinct groups.
 
-- Colorblind-safe: viridis, ColorBrewer
-- Never use color as only differentiator
-- Consistent color mapping across charts
-- Highlight key data with accent color`,
+Max 6-8 categorical colors.`,
           keyPoints: [
             `Colorblind-safe: viridis, ColorBrewer`,
             `Never use color as only differentiator`,
@@ -486,12 +420,7 @@ print(fig.layout.title.text)`,
         {
           id: `storytelling`,
           title: `Data Storytelling`,
-          content: `Lead with insight, not chart. Annotate key points. Remove clutter. One message per visualization.
-
-- Title states the insight not the data
-- Remove gridlines and borders if not needed
-- Direct labeling beats legends
-- Guide viewer eye with annotations`,
+          content: `Lead with insight, not chart. Annotate key points. Remove clutter. One message per visualization.`,
           keyPoints: [
             `Title states the insight not the data`,
             `Remove gridlines and borders if not needed`,
@@ -502,12 +431,7 @@ print(fig.layout.title.text)`,
         {
           id: `eda-workflow`,
           title: `EDA Visualization Workflow`,
-          content: `Univariate → bivariate → multivariate. Check distributions, correlations, outliers, missing patterns before modeling.
-
-- pairplot for multivariate overview
-- Check class balance in classification
-- Visualize residuals after modeling
-- Document findings for reproducibility`,
+          content: `Univariate → bivariate → multivariate. Check distributions, correlations, outliers, missing patterns before modeling.`,
           keyPoints: [
             `pairplot for multivariate overview`,
             `Check class balance in classification`,
@@ -579,12 +503,7 @@ print(len(eda_checklist))`,
         {
           id: `geopandas`,
           title: `Geospatial Visualization`,
-          content: `GeoPandas extends pandas with geometry. choropleth maps, point maps. folium for interactive maps.
-
-- GeoPandas for shapefile/GeoJSON data
-- folium for interactive Leaflet maps
-- Projections matter for accurate area comparison
-- Geopy for geocoding addresses`,
+          content: `GeoPandas extends pandas with geometry. choropleth maps, point maps. folium for interactive maps.`,
           keyPoints: [
             `GeoPandas for shapefile/GeoJSON data`,
             `folium for interactive Leaflet maps`,
@@ -595,12 +514,7 @@ print(len(eda_checklist))`,
         {
           id: `network`,
           title: `Network Graphs`,
-          content: `networkx + matplotlib/plotly for graph visualization. Nodes and edges for relationship data.
-
-- networkx for graph algorithms
-- Layout algorithms affect readability
-- Node size/color encode attributes
-- Useful for social and knowledge graphs`,
+          content: `networkx + matplotlib/plotly for graph visualization. Nodes and edges for relationship data.`,
           keyPoints: [
             `networkx for graph algorithms`,
             `Layout algorithms affect readability`,
@@ -611,12 +525,7 @@ print(len(eda_checklist))`,
         {
           id: `ml-viz`,
           title: `ML-Specific Visualizations`,
-          content: `Confusion matrix heatmap, ROC curves, learning curves, feature importance bar charts, decision boundaries.
-
-- Confusion matrix for classification errors
-- ROC-AUC visualizes threshold tradeoffs
-- Learning curves diagnose bias/variance
-- SHAP summary plots for feature importance`,
+          content: `Confusion matrix heatmap, ROC curves, learning curves, feature importance bar charts, decision boundaries.`,
           example: `from sklearn.metrics import confusion_matrix
 import numpy as np
 
@@ -635,12 +544,7 @@ print(confusion_matrix(y_true, y_pred))`,
         {
           id: `tools`,
           title: `Specialized Tools`,
-          content: `datashader for big data viz. plotnine (ggplot2 port). altair for declarative viz. Choose tool for scale and audience.
-
-- datashader aggregates millions of points
-- Altair declarative grammar of graphics
-- plotnine familiar to R users
-- Tool choice depends on data scale and output medium`,
+          content: `datashader for big data viz. plotnine (ggplot2 port). altair for declarative viz. Choose tool for scale and audience.`,
           keyPoints: [
             `datashader aggregates millions of points`,
             `Altair declarative grammar of graphics`,

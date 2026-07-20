@@ -312,9 +312,7 @@ print("x:", x, "grad:", grad)`,
           title: `Numerical Differentiation`,
           content: `Forward diff: f'(x)≈(f(x+h)−f(x))/h, error O(h). Central diff: (f(x+h)−f(x−h))/(2h), error O(h²) better. Choose h~√ε_machine for float64.
 
-**Finite differences** verify autodiff implementations. np.gradient for discrete arrays. Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Finite differences** verify autodiff implementations. np.gradient for discrete arrays. Too small h causes cancellation error; too large truncation error. Jacobian check: compare autograd to finite diff in unit tests for custom layers.`,
           formulas: [
             `Forward: (f(x+h)−f(x))/h`,
             `Central: (f(x+h)−f(x−h))/(2h)`,
@@ -445,9 +443,7 @@ w=3.; print(2*w)`,
 
 Trig: (sin x)'=cos x, (cos x)'=−sin x. Sigmoid σ(x): σ'(x)=σ(x)(1−σ(x)). Softplus smooth ReLU: d/dx ln(1+e^x).
 
-These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+These rules combine via chain/product to differentiate composite losses. Memorizing common derivatives speeds manual gradient checks.`,
           formulas: [
             `d/dx x^n = n x^(n−1)`,
             `d/dx e^x = e^x`,
@@ -479,9 +475,7 @@ print("sigmoid:", s, "deriv:", s*(1-s))`,
 
 Dot product derivative: d/dt(u·v)=u'·v+u·v'. Matrix product: d/dt(AB)=A'B+AB' when both vary. Used when loss combines products of predictions and weights.
 
-Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Quotient in softmax derivatives. Careful with order in matrix calculus—not commutative.`,
           formulas: [
             `(fg)' = f'g + fg'`,
             `(f/g)' = (f'g − fg')/g²`,
@@ -515,7 +509,7 @@ print("product rule:", h1)`,
 
 **Computational graph** tracks dependencies. Reverse-mode autodiff efficient when many inputs, one output (typical loss). Forward-mode for few inputs.
 
-Chain rule is foundation of automatic differentiation in PyTorch/JAX. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Chain rule is foundation of automatic differentiation in PyTorch/JAX.`,
           formulas: [
             `(f∘g)'(x) = f'(g(x))·g'(x)`,
             `∂L/∂w = ∂L/∂y · ∂y/∂w`,
@@ -545,7 +539,7 @@ x=1.; inner=x**2+1; print(3*inner**2*2*x)`,
 
 Cross-entropy w softmax combined derivative simplifies to ŷ−y one-hot. tanh': 1−tanh². GELU, SiLU modern activations have known derivatives. BatchNorm backward involves batch statistics derivatives.
 
-Keeping cheat sheet accelerates debugging custom layers without autograd. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Keeping cheat sheet accelerates debugging custom layers without autograd.`,
           formulas: [
             `MSE: ∂L/∂ŷ = ŷ − y`,
             `L2: ∂(λ||w||²)/∂w = 2λw`,
@@ -699,9 +693,7 @@ print("err:", np.abs(np.exp(x)-approx))`,
           title: `Multivariate Taylor`,
           content: `f(x+δ)≈f(x)+∇f(x)ᵀδ+½δᵀH(x)δ where H is Hessian. Gradient ∇f vector of first partials. Hessian H_ij=∂²f/∂x_i∂x_j symmetric if f twice differentiable.
 
-Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle. Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Critical point classification via H eigenvalues: all positive definite → min; all negative → max; mixed → saddle. Gauss-Newton approximates Hessian in nonlinear least squares. Natural gradient uses Fisher instead of Hessian.`,
           formulas: [
             `f(x+δ) ≈ f(x) + ∇fᵀδ + ½δᵀHδ`,
             `H_ij = ∂²f/∂x_i∂x_j`,
@@ -731,9 +723,7 @@ print("eig:", np.linalg.eigvalsh(H))`,
           title: `Taylor in ML Optimization`,
           content: `Loss linearization L(θ+Δ)≈L(θ)+∇L·Δ guides GD step. **Newton**: Δ=−H⁻¹∇L from quadratic model. **Adam** adapts steps per parameter—not pure Taylor but related momentum.
 
-**Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP. Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Laplace approximation** for posterior p(θ|D)≈N(θ*, H⁻¹) at MAP. Linear models are first-order Taylor of complex models locally. Understanding Taylor links learning rate choice to validity of linear approximation.`,
           formulas: [
             `GD step from 1st order Taylor`,
             `Newton from 2nd order model`,
@@ -828,9 +818,7 @@ print(9+6*(x-a)+(x-a)**2, x**2)`,
 
 Fundamental Theorem: ∫_a^b f(x)dx = F(b)−F(a) if F'=f. Probability: ∫ p(x)dx=1 for PDF. Expected value E[X]=∫ x p(x) dx.
 
-Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Loss as integral over data distribution population risk. Monte Carlo integrates via sampling average.`,
           formulas: [
             `∫_a^b f(x)dx = signed area`,
             `F(b) − F(a) if F' = f`,
@@ -859,11 +847,11 @@ print("trapz:", np.trapz(f(x),x), "exact:", 8/3)`,
         {
           id: `int-rules`,
           title: `Integration Techniques`,
-          content: `Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Integration by parts** ∫u dv = uv − ∫v du. **Partial fractions** for rational functions.
+          content: `Power: ∫x^n dx = x^{n+1}/(n+1)+C, n≠−1. ∫1/x dx = ln|x|+C. **Integration by parts** ∫u dv = uv − ∫v du.
 
-Gaussian integral ∫ e^{−x²} dx = √π over ℝ. Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration.
+**Partial fractions** for rational functions. Gaussian integral ∫ e^{−x²} dx = √π over ℝ.
 
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Many ML expectations reduce to known integrals or numerical quadrature. scipy.integrate.quad for 1D numeric integration.`,
           formulas: [
             `∫ x^n dx = x^(n+1)/(n+1) + C`,
             `∫ e^x dx = e^x + C`,
@@ -894,7 +882,7 @@ print("gaussian:", val, "sqrt pi:", np.sqrt(np.pi))`,
 
 Marginal: p(x)=∫ p(x,y)dy. Change of variables: if y=g(x), ∫ f(y)dy = ∫ f(g(x))|g'(x)|dx. Jacobian determinant generalizes to multivariate.
 
-Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Evidence ∫ p(D|θ)p(θ)dθ intractable—MCMC/VI approximate.`,
           formulas: [
             `∫ p(x) dx = 1`,
             `F(x) = ∫_{−∞}^x p(t) dt`,

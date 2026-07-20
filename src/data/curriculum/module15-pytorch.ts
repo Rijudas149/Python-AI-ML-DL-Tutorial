@@ -11,12 +11,7 @@ export const module15Topics: Topic[] = [
         {
           id: `tensor-basics`,
           title: `Creating Tensors`,
-          content: `torch.tensor(), torch.zeros(), torch.randn(). Similar to NumPy but with GPU support and autograd.
-
-- Tensors analogous to NumPy ndarrays
-- dtype and device are tensor properties
-- torch.float32 default for DL
-- GPU tensors on cuda device`,
+          content: `torch.tensor(), torch.zeros(), torch.randn(). Similar to NumPy but with GPU support and autograd.`,
           example: `import torch
 
 a = torch.tensor([1.0, 2.0, 3.0])
@@ -34,12 +29,7 @@ print(a.dtype, b.shape, c.device)`,
         {
           id: `ops`,
           title: `Tensor Operations`,
-          content: `Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose. In-place ops suffixed with _.
-
-- @ operator for matrix multiply
-- Broadcasting rules same as NumPy
-- Avoid in-place ops on tensors with grad
-- torch.einsum for complex tensor operations`,
+          content: `Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose. In-place ops suffixed with _.`,
           example: `import torch
 
 a = torch.randn(3, 4)
@@ -59,12 +49,7 @@ torch.Size([3, 4])`,
         {
           id: `numpy-bridge`,
           title: `NumPy Interoperability`,
-          content: `tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.
-
-- Zero-copy between NumPy and CPU tensors
-- GPU tensors must .cpu() before .numpy()
-- Convert dtype explicitly when needed
-- Use tensor for all DL computations`,
+          content: `tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.`,
           example: `import torch
 import numpy as np
 
@@ -83,12 +68,7 @@ print(np_back)`,
         {
           id: `device`,
           title: `Device Management`,
-          content: `torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).
-
-- Always move model AND data to same device
-- Check cuda availability before GPU use
-- MPS device for Apple Silicon
-- torch.cuda.empty_cache() frees GPU memory`,
+          content: `torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -165,12 +145,7 @@ print((torch.randn(2,3) @ torch.randn(3,4)).shape)`,
         {
           id: `grad`,
           title: `requires_grad & backward`,
-          content: `Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.
-
-- Gradients accumulate — zero with optimizer.zero_grad()
-- backward() only on scalar loss
-- retain_graph=True for multiple backward passes
-- detach() stops gradient flow`,
+          content: `Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.`,
           example: `import torch
 
 x = torch.tensor(3.0, requires_grad=True)
@@ -188,12 +163,9 @@ print(x.grad)  # dy/dx = 2x + 2 = 8`,
         {
           id: `graph`,
           title: `Computational Graph`,
-          content: `PyTorch builds dynamic graph during forward pass. Nodes are tensors, edges are operations. Graph freed after backward by default.
+          content: `PyTorch builds dynamic graph during forward pass. Nodes are tensors, edges are operations.
 
-- Dynamic graph: rebuilt each forward pass
-- Enables Python control flow in models
-- Contrast with TensorFlow static graphs (1.x)
-- torch.no_grad() disables graph for inference`,
+Graph freed after backward by default.`,
           keyPoints: [
             `Dynamic graph: rebuilt each forward pass`,
             `Enables Python control flow in models`,
@@ -204,12 +176,7 @@ print(x.grad)  # dy/dx = 2x + 2 = 8`,
         {
           id: `leaf`,
           title: `Leaf Tensors & Parameters`,
-          content: `Leaf tensors are graph roots (parameters, inputs). Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.
-
-- nn.Parameter automatically requires_grad
-- Non-leaf tensor gradients not retained by default
-- Register buffers for non-trainable state (BN stats)
-- model.parameters() yields all trainable params`,
+          content: `Leaf tensors are graph roots (parameters, inputs). Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.`,
           example: `import torch
 import torch.nn as nn
 
@@ -226,12 +193,7 @@ print(layer.weight.is_leaf)`,
         {
           id: `higher`,
           title: `Higher-Order Gradients`,
-          content: `create_graph=True enables second derivatives. Used in meta-learning and some GAN training.
-
-- Second-order for Hessian-vector products
-- Meta-learning (MAML) uses higher-order grads
-- Expensive — rarely needed in standard training
-- torch.autograd.grad for explicit gradient computation`,
+          content: `create_graph=True enables second derivatives. Used in meta-learning and some GAN training.`,
           keyPoints: [
             `Second-order for Hessian-vector products`,
             `Meta-learning (MAML) uses higher-order grads`,
@@ -305,12 +267,7 @@ print(nn.Linear(5, 3).weight.requires_grad)`,
         {
           id: `module`,
           title: `nn.Module Basics`,
-          content: `Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.
-
-- super().__init__() required in __init__
-- Define layers in __init__ not forward
-- forward() defines computation graph
-- Sequential chains layers cleanly`,
+          content: `Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.`,
           example: `import torch
 import torch.nn as nn
 
@@ -338,12 +295,7 @@ print(model(torch.randn(5, 10)).shape)`,
         {
           id: `layers`,
           title: `Common Layers`,
-          content: `nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d. Activation: nn.ReLU, nn.GELU, nn.Softmax.
-
-- Linear: fully connected layer
-- Conv2d: spatial feature extraction
-- Embedding: lookup table for tokens
-- BatchNorm1d/2d for normalization`,
+          content: `nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d. Activation: nn.ReLU, nn.GELU, nn.Softmax.`,
           keyPoints: [
             `Linear: fully connected layer`,
             `Conv2d: spatial feature extraction`,
@@ -354,12 +306,7 @@ print(model(torch.randn(5, 10)).shape)`,
         {
           id: `loss-opt`,
           title: `Loss Functions & Optimizers`,
-          content: `nn.CrossEntropyLoss (includes softmax). nn.MSELoss. Optimizers: torch.optim.SGD, Adam, AdamW.
-
-- CrossEntropyLoss expects raw logits not softmax
-- zero_grad before backward prevents accumulation
-- Adam default optimizer for most tasks
-- AdamW decouples weight decay from Adam`,
+          content: `nn.CrossEntropyLoss (includes softmax). nn.MSELoss. Optimizers: torch.optim.SGD, Adam, AdamW.`,
           example: `import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -384,12 +331,7 @@ print(round(loss.item(), 4))`,
         {
           id: `save`,
           title: `Saving & Loading Models`,
-          content: `torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)). Save optimizer state for resume.
-
-- state_dict saves learned parameters only
-- Save full checkpoint: model + optimizer + epoch
-- model.eval() before inference
-- torch.load with map_location for CPU loading`,
+          content: `torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)). Save optimizer state for resume.`,
           keyPoints: [
             `state_dict saves learned parameters only`,
             `Save full checkpoint: model + optimizer + epoch`,
@@ -462,12 +404,7 @@ print(sum(p.numel() for p in nn.Linear(10, 5).parameters()))`,
         {
           id: `dataset`,
           title: `Dataset & DataLoader`,
-          content: `torch.utils.data.Dataset defines __len__ and __getitem__. DataLoader batches, shuffles, and parallelizes loading.
-
-- DataLoader handles batching and shuffling
-- num_workers for parallel data loading
-- pin_memory=True speeds GPU transfer
-- Custom Dataset for any data source`,
+          content: `torch.utils.data.Dataset defines __len__ and __getitem__. DataLoader batches, shuffles, and parallelizes loading.`,
           example: `import torch
 from torch.utils.data import Dataset, DataLoader
 
@@ -493,12 +430,7 @@ print(batch_x.shape, batch_y.shape)`,
         {
           id: `loop`,
           title: `Training Loop Pattern`,
-          content: `Standard loop: for epoch → for batch → forward → loss → backward → step → log. Validate after each epoch.
-
-- model.train() enables dropout/BN training mode
-- model.eval() + torch.no_grad() for validation
-- Track metrics per epoch not per batch average
-- Set seed for reproducibility`,
+          content: `Standard loop: for epoch → for batch → forward → loss → backward → step → log. Validate after each epoch.`,
           example: `import torch
 import torch.nn as nn
 
@@ -524,12 +456,9 @@ print("Pattern defined")`,
         {
           id: `transforms`,
           title: `Transforms & Augmentation`,
-          content: `torchvision.transforms for image preprocessing. Compose chains transforms. RandomHorizontalFlip, Normalize, ToTensor.
+          content: `torchvision.transforms for image preprocessing. Compose chains transforms.
 
-- ToTensor converts PIL to [C,H,W] float [0,1]
-- Normalize with dataset mean/std
-- Apply augmentation only to training set
-- torchvision.datasets includes MNIST, CIFAR, ImageNet`,
+RandomHorizontalFlip, Normalize, ToTensor.`,
           keyPoints: [
             `ToTensor converts PIL to [C,H,W] float [0,1]`,
             `Normalize with dataset mean/std`,
@@ -540,12 +469,7 @@ print("Pattern defined")`,
         {
           id: `scheduler`,
           title: `Learning Rate Schedulers`,
-          content: `StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.
-
-- Cosine annealing popular for vision training
-- Warmup stabilizes transformer training
-- ReduceLROnPlateau reacts to val metric
-- Log learning rate alongside loss`,
+          content: `StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.`,
           keyPoints: [
             `Cosine annealing popular for vision training`,
             `Warmup stabilizes transformer training`,
@@ -619,12 +543,7 @@ print(steps)`,
         {
           id: `cuda`,
           title: `CUDA Training`,
-          content: `Move model and batches to GPU. Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.
-
-- Batch size limited by GPU memory
-- Gradient accumulation simulates larger batches
-- DataParallel for multi-GPU (prefer DistributedDataParallel)
-- Clear cache between experiments`,
+          content: `Move model and batches to GPU. Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -641,12 +560,7 @@ print(model(x).device)`,
         {
           id: `amp`,
           title: `Automatic Mixed Precision`,
-          content: `torch.cuda.amp.autocast + GradScaler. FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.
-
-- autocast runs ops in FP16 where safe
-- GradScaler prevents gradient underflow
-- Minimal code change for significant speedup
-- BF16 on A100+ avoids some FP16 issues`,
+          content: `torch.cuda.amp.autocast + GradScaler. FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.`,
           example: `import torch
 
 scaler = torch.cuda.amp.GradScaler(enabled=torch.cuda.is_available())
@@ -661,12 +575,7 @@ print("GradScaler ready")`,
         {
           id: `compile`,
           title: `torch.compile (PyTorch 2.0)`,
-          content: `model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.
-
-- PyTorch 2.0+ feature
-- Up to 30%+ speedup on compatible models
-- First run slower due to compilation
-- May not work with all dynamic models`,
+          content: `model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.`,
           keyPoints: [
             `PyTorch 2.0+ feature`,
             `Up to 30%+ speedup on compatible models`,
@@ -677,12 +586,9 @@ print("GradScaler ready")`,
         {
           id: `distributed`,
           title: `Distributed Training Preview`,
-          content: `DistributedDataParallel (DDP) for multi-GPU. Horovod, DeepSpeed for multi-node. Essential for large model training.
+          content: `DistributedDataParallel (DDP) for multi-GPU. Horovod, DeepSpeed for multi-node.
 
-- DDP preferred over DataParallel
-- Each GPU gets batch slice, syncs gradients
-- DeepSpeed ZeRO reduces memory for large models
-- FSDP for fully sharded data parallel`,
+Essential for large model training.`,
           keyPoints: [
             `DDP preferred over DataParallel`,
             `Each GPU gets batch slice, syncs gradients`,

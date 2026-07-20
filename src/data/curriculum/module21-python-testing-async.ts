@@ -348,14 +348,9 @@ asyncio.run(main())`,
         {
           id: `gather-tasks`,
           title: `Tasks, gather & Timeouts`,
-          content: `\`asyncio.create_task(coro)\` schedules concurrent work. \`asyncio.gather(a, b)\` awaits multiple coroutines—results match input order. Exceptions propagate unless \`return_exceptions=True\`.
+          content: `\`asyncio.create_task(coro)\` schedules concurrent work. \`asyncio.gather(a, b)\` awaits multiple coroutines—results match input order. Exceptions propagate unless \`return_exceptions=True\`. \`asyncio.wait_for(coro, timeout=5)\` raises \`TimeoutError\` on overrun.
 
-\`asyncio.wait_for(coro, timeout=5)\` raises \`TimeoutError\` on overrun. Use \`asyncio.Semaphore(n)\` to cap concurrent connections.
-
-- gather runs coroutines concurrently on one thread
-- Tasks enable background work while awaiting others
-- Always set timeouts on external I/O
-- Semaphore prevents resource exhaustion`,
+Use \`asyncio.Semaphore(n)\` to cap concurrent connections.`,
           example: `import asyncio
 
 async def work(n):
@@ -380,12 +375,7 @@ asyncio.run(main())`,
           title: `aiohttp HTTP Basics`,
           content: `**aiohttp** provides async HTTP client/server. Reuse \`ClientSession\`—creating a session per request is slow. \`async with session.get(url) as resp:\` reads response; \`await resp.text()\` or \`.json()\`.
 
-Respect rate limits and robots.txt when scraping. Handle \`aiohttp.ClientError\` and status codes explicitly.
-
-- One ClientSession per application lifecycle
-- async with ensures connection cleanup
-- Check resp.status before parsing body
-- Combine with Semaphore for polite concurrency`,
+Respect rate limits and robots.txt when scraping. Handle \`aiohttp.ClientError\` and status codes explicitly.`,
           example: `import asyncio
 import aiohttp
 
@@ -408,12 +398,7 @@ async def fetch_title():
           title: `Async Anti-Patterns`,
           content: `Never call **blocking** APIs (\`time.sleep\`, sync \`requests.get\`) inside async functions without \`asyncio.to_thread()\`. Forgetting \`await\` silently creates un-awaited coroutine warnings.
 
-Mixing threads and asyncio requires \`loop.run_in_executor\`. For CPU work use **multiprocessing**, not more coroutines.
-
-- Blocking calls freeze all coroutines on the loop
-- Un-awaited coroutines do not run
-- asyncio is for I/O concurrency not CPU parallelism
-- Use to_thread or ProcessPool for blocking/CPU work`,
+Mixing threads and asyncio requires \`loop.run_in_executor\`. For CPU work use **multiprocessing**, not more coroutines.`,
           example: `import asyncio
 
 async def bad():
@@ -502,14 +487,9 @@ asyncio.run(main())`,
         {
           id: `re-basics`,
           title: `re Module Basics`,
-          content: `Import \`re\`. **\`re.search(pattern, string)\`** finds first match; **\`re.match\`** only at start; **\`re.findall\`** returns all non-overlapping matches; **\`re.sub\`** replaces.
+          content: `**\`re.search(pattern, string)\`** finds first match; **\`re.match\`** only at start; **\`re.findall\`** returns all non-overlapping matches; **\`re.sub\`** replaces. Raw strings \`r"\\d+"\` avoid escaping backslashes.
 
-Raw strings \`r"\\d+"\` avoid escaping backslashes. Match objects expose \`.group()\`, \`.start()\`, \`.end()\`. Compile repeated patterns: \`pat = re.compile(r"...")\`.
-
-- Prefer raw strings for regex patterns
-- search scans entire string; match anchors at start
-- compile() amortizes parsing cost in loops
-- group(1) returns first capturing parenthesis`,
+Match objects expose \`.group()\`, \`.start()\`, \`.end()\`. Compile repeated patterns: \`pat = re.compile(r"...")\`.`,
           example: `import re
 text = "Order ID: 12345, total $67.89"
 id_match = re.search(r"ID: (\\d+)", text)
@@ -525,14 +505,9 @@ print(id_match.group(1) if id_match else None)`,
         {
           id: `patterns`,
           title: `Common Pattern Building Blocks`,
-          content: `\`.**\` any char (use \`re.DOTALL\` for newlines); \`.+\` one or more; \`.?\` optional; \`\\d\` digit; \`\\w\` word char; \`\\s\` whitespace; \`[A-Za-z]+\` letter runs; \`{n,m}\` repetition bounds.
+          content: `\`.**\` any char (use \`re.DOTALL\` for newlines); \`.+\` one or more; \`.?\` optional; \`\\d\` digit; \`\\w\` word char; \`\\s\` whitespace; \`[A-Za-z]+\` letter runs; \`{n,m}\` repetition bounds. **Anchors:** \`^\` start, \`$\` end, \`\\b\` word boundary.
 
-**Anchors:** \`^\` start, \`$\` end, \`\\b\` word boundary. **Groups:** \`( ... )\` capture, \`(?: ... )\` non-capture, \`(?<name> ... )\` named.
-
-- Validate patterns against edge cases
-- Non-capturing groups improve performance
-- Word boundaries prevent partial matches
-- Email regex is illustrative—not RFC-complete`,
+**Groups:** \`( ... )\` capture, \`(?: ... )\` non-capture, \`(?<name> ... )\` named.`,
           example: `import re
 emails = ["a@b.co", "bad@", "c@d.org"]
 pat = re.compile(r"^[\\w.+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")
@@ -549,14 +524,9 @@ print(valid)`,
         {
           id: `flags-groups`,
           title: `Flags & Extraction`,
-          content: `Flags: \`re.IGNORECASE\`, \`re.MULTILINE\` (^/$ per line), \`re.VERBOSE\` (readable patterns). Pass to compile or as \`re.search(pat, s, flags)\`.
+          content: `Flags: \`re.IGNORECASE\`, \`re.MULTILINE\` (^/$ per line), \`re.VERBOSE\` (readable patterns). Pass to compile or as \`re.search(pat, s, flags)\`. \`re.split\` splits on pattern.
 
-\`re.split\` splits on pattern. Named groups via \`(?P<name>...)\`. **\`re.finditer\`** yields match objects memory-efficiently over large texts.
-
-- MULTILINE changes anchor behavior
-- Named groups clarify extraction code
-- finditer scales better than findall on huge files
-- VERBOSE allows comments in complex patterns`,
+Named groups via \`(?P<name>...)\`. **\`re.finditer\`** yields match objects memory-efficiently over large texts.`,
           example: `import re
 log = "2024-01-15 ERROR disk full\\n2024-01-16 INFO ok"
 for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
@@ -575,12 +545,7 @@ for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
           title: `When Not to Use Regex`,
           content: `Regex poorly parses nested HTML, JSON, or arbitrary code. Use **\`html.parser\`**, **\`json\`**, **\`ast\`**, or dedicated parsers.
 
-Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on long strings—test performance. Prefer explicit string methods when sufficient.
-
-- Do not parse HTML/XML with regex alone
-- Watch catastrophic backtracking on evil input
-- str.split/strip often beats regex for simple tasks
-- Unit test regex with representative samples`,
+Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on long strings—test performance. Prefer explicit string methods when sufficient.`,
           keyPoints: [
             `Do not parse HTML/XML with regex alone`,
             `Watch catastrophic backtracking on evil input`,
@@ -687,14 +652,11 @@ print(results)`,
         {
           id: `multiprocessing`,
           title: `multiprocessing Module`,
-          content: `\`multiprocessing.Process\` and **\`Pool\`** distribute work across processes. Arguments must be picklable. **\`ProcessPoolExecutor\`** mirrors thread API.
+          content: `\`multiprocessing.Process\` and **\`Pool\`** distribute work across processes. Arguments must be picklable.
 
-On Windows, guard entry with \`if __name__ == "__main__":\` to prevent spawn recursion. Shared state via \`multiprocessing.Value\`, \`Array\`, or **\`Manager\`**—prefer immutable message passing.
+**\`ProcessPoolExecutor\`** mirrors thread API. On Windows, guard entry with \`if __name__ == "__main__":\` to prevent spawn recursion.
 
-- Processes have higher startup cost than threads
-- Pickle requirement limits shared objects
-- Pool.map is simple for embarrassingly parallel maps
-- Prefer executors over raw Process for clarity`,
+Shared state via \`multiprocessing.Value\`, \`Array\`, or **\`Manager\`**—prefer immutable message passing.`,
           example: `from multiprocessing import Pool
 
 def square(x):

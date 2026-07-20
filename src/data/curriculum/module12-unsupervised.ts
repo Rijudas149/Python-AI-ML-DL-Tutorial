@@ -11,12 +11,7 @@ export const module12Topics: Topic[] = [
         {
           id: `kmeans`,
           title: `K-Means Clustering`,
-          content: `Partition data into k clusters minimizing within-cluster variance. Initialize centroids, assign, update, repeat.
-
-- Choose k via elbow method or silhouette score
-- n_init runs multiple initializations
-- Assumes spherical clusters of similar size
-- Scale features before clustering`,
+          content: `Partition data into k clusters minimizing within-cluster variance. Initialize centroids, assign, update, repeat.`,
           example: `from sklearn.cluster import KMeans
 import numpy as np
 
@@ -34,12 +29,7 @@ print(np.bincount(kmeans.labels_))`,
         {
           id: `dbscan`,
           title: `DBSCAN`,
-          content: `Density-based clustering. No need to specify k. Finds arbitrary shapes. Labels noise as -1.
-
-- eps: neighborhood radius
-- min_samples: core point threshold
-- Handles non-spherical clusters
-- Noise points labeled -1`,
+          content: `Density-based clustering. No need to specify k. Finds arbitrary shapes. Labels noise as -1.`,
           example: `from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_moons
 
@@ -56,12 +46,7 @@ print(len(set(labels)))`,
         {
           id: `hierarchical`,
           title: `Hierarchical Clustering`,
-          content: `Agglomerative: bottom-up merging. Dendrogram visualizes hierarchy. No preset k needed.
-
-- Ward linkage minimizes variance increase
-- Dendrogram cut determines k
-- O(n²) memory — not for huge datasets
-- Useful for taxonomy and phylogenetic trees`,
+          content: `Agglomerative: bottom-up merging. Dendrogram visualizes hierarchy. No preset k needed.`,
           keyPoints: [
             `Ward linkage minimizes variance increase`,
             `Dendrogram cut determines k`,
@@ -72,12 +57,7 @@ print(len(set(labels)))`,
         {
           id: `eval-cluster`,
           title: `Cluster Evaluation`,
-          content: `Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz. No ground truth needed.
-
-- Silhouette: cohesion vs separation
-- Higher silhouette = better defined clusters
-- Elbow method for k in K-Means
-- Domain knowledge validates cluster meaning`,
+          content: `Silhouette score (-1 to 1), Davies-Bouldin index, Calinski-Harabasz. No ground truth needed.`,
           keyPoints: [
             `Silhouette: cohesion vs separation`,
             `Higher silhouette = better defined clusters`,
@@ -155,12 +135,7 @@ print(round(silhouette_score(X, km.labels_), 3))`,
         {
           id: `pca`,
           title: `Principal Component Analysis`,
-          content: `Find orthogonal directions of maximum variance. PCA(n_components=k) for compression and visualization.
-
-- Components ordered by variance explained
-- Standardize before PCA
-- Used for visualization and noise reduction
-- explained_variance_ratio_ shows information retained`,
+          content: `Find orthogonal directions of maximum variance. PCA(n_components=k) for compression and visualization.`,
           example: `from sklearn.decomposition import PCA
 from sklearn.datasets import load_iris
 
@@ -178,12 +153,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
         {
           id: `tsne`,
           title: `t-SNE`,
-          content: `Non-linear dimensionality reduction for visualization. Preserves local structure. t-SNE(n_components=2, perplexity=30).
-
-- t-SNE for visualization only not preprocessing
-- perplexity balances local/global structure
-- Stochastic — set random_state
-- UMAP faster alternative preserving global structure`,
+          content: `Non-linear dimensionality reduction for visualization. Preserves local structure. t-SNE(n_components=2, perplexity=30).`,
           keyPoints: [
             `t-SNE for visualization only not preprocessing`,
             `perplexity balances local/global structure`,
@@ -194,12 +164,9 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
         {
           id: `lda`,
           title: `Linear Discriminant Analysis`,
-          content: `Supervised dimensionality reduction. Maximizes class separation. LDA for dimensionality reduction before classification.
+          content: `Supervised dimensionality reduction. Maximizes class separation.
 
-- Uses class labels unlike PCA
-- Max k-1 components for k classes
-- Better class separation than PCA for classification
-- Also a classification algorithm directly`,
+LDA for dimensionality reduction before classification.`,
           keyPoints: [
             `Uses class labels unlike PCA`,
             `Max k-1 components for k classes`,
@@ -210,12 +177,7 @@ print(pca.shape, round(pca.explained_variance_ratio_.sum(), 3))`,
         {
           id: `autoencoder`,
           title: `Autoencoders Preview`,
-          content: `Neural network compresses input to bottleneck then reconstructs. Non-linear dimensionality reduction. Foundation for VAE.
-
-- Encoder compresses, decoder reconstructs
-- Bottleneck layer is reduced representation
-- Reconstruction loss trains the network
-- Used for denoising and anomaly detection`,
+          content: `Neural network compresses input to bottleneck then reconstructs. Non-linear dimensionality reduction. Foundation for VAE.`,
           keyPoints: [
             `Encoder compresses, decoder reconstructs`,
             `Bottleneck layer is reduced representation`,
@@ -291,12 +253,7 @@ print(round(PCA().fit(X).explained_variance_ratio_[0], 3))`,
         {
           id: `isolation`,
           title: `Isolation Forest`,
-          content: `Randomly partition data; anomalies isolated in fewer splits. IsolationForest(contamination=0.1).
-
-- -1 for anomalies, 1 for normal
-- contamination sets expected anomaly fraction
-- Works in high dimensions
-- Fast — linear time complexity`,
+          content: `Randomly partition data; anomalies isolated in fewer splits. IsolationForest(contamination=0.1).`,
           example: `from sklearn.ensemble import IsolationForest
 import numpy as np
 
@@ -314,12 +271,7 @@ print(np.sum(preds == -1))`,
         {
           id: `lof`,
           title: `Local Outlier Factor`,
-          content: `Compare local density of point to neighbors. Points in sparse regions are outliers.
-
-- LOF score near 1 for normal points
-- High LOF = outlier relative to neighbors
-- Sensitive to n_neighbors parameter
-- Good for clustered data with local outliers`,
+          content: `Compare local density of point to neighbors. Points in sparse regions are outliers.`,
           keyPoints: [
             `LOF score near 1 for normal points`,
             `High LOF = outlier relative to neighbors`,
@@ -330,12 +282,7 @@ print(np.sum(preds == -1))`,
         {
           id: `oneclass`,
           title: `One-Class SVM`,
-          content: `Learn boundary around normal data. OneClassSVM(nu=0.1). Useful when anomalies rare in training.
-
-- Train only on normal data
-- nu controls upper bound on outliers
-- RBF kernel for non-linear boundaries
-- Used in fraud and defect detection`,
+          content: `Learn boundary around normal data. OneClassSVM(nu=0.1). Useful when anomalies rare in training.`,
           keyPoints: [
             `Train only on normal data`,
             `nu controls upper bound on outliers`,
@@ -346,12 +293,7 @@ print(np.sum(preds == -1))`,
         {
           id: `applications`,
           title: `Anomaly Detection Applications`,
-          content: `Fraud detection, network intrusion, manufacturing defects, system monitoring. Often unsupervised or semi-supervised.
-
-- Anomalies often rare — class imbalance extreme
-- Combine domain rules with ML
-- Threshold tuning critical for precision/recall
-- Concept drift requires model retraining`,
+          content: `Fraud detection, network intrusion, manufacturing defects, system monitoring. Often unsupervised or semi-supervised.`,
           keyPoints: [
             `Anomalies often rare — class imbalance extreme`,
             `Combine domain rules with ML`,
@@ -429,12 +371,7 @@ print(np.sum(p == -1))`,
         {
           id: `apriori`,
           title: `Apriori Algorithm`,
-          content: `Find frequent itemsets meeting minimum support threshold. Generate rules with confidence and lift metrics.
-
-- Support: frequency of itemset in transactions
-- Confidence: P(B|A) for rule A→B
-- Lift > 1 indicates positive association
-- Apriori prunes infrequent candidates efficiently`,
+          content: `Find frequent itemsets meeting minimum support threshold. Generate rules with confidence and lift metrics.`,
           keyPoints: [
             `Support: frequency of itemset in transactions`,
             `Confidence: P(B|A) for rule A→B`,
@@ -445,12 +382,7 @@ print(np.sum(p == -1))`,
         {
           id: `metrics`,
           title: `Support, Confidence, Lift`,
-          content: `Support(A→B) = P(A∪B). Confidence = P(B|A). Lift = confidence/P(B). Lift=1 means independent.
-
-- High lift = strong association beyond chance
-- Low support rules may still be actionable
-- Conviction and leverage are alternative metrics
-- Market basket analysis classic application`,
+          content: `Support(A→B) = P(A∪B). Confidence = P(B|A). Lift = confidence/P(B). Lift=1 means independent.`,
           example: `# Example: 100 transactions
 # {bread, milk}: 20 transactions -> support = 0.20
 # bread alone: 40, milk given bread: 15
@@ -466,12 +398,7 @@ print("lift = confidence / P(milk)")`,
         {
           id: `mlxtend`,
           title: `mlxtend Library`,
-          content: `from mlxtend.frequent_patterns import apriori, association_rules. Convert transactions to one-hot encoded DataFrame first.
-
-- One-hot encode transactions for apriori
-- min_support filters frequent itemsets
-- association_rules filters by confidence/lift
-- FP-Growth faster alternative to Apriori`,
+          content: `from mlxtend.frequent_patterns import apriori, association_rules. Convert transactions to one-hot encoded DataFrame first.`,
           keyPoints: [
             `One-hot encode transactions for apriori`,
             `min_support filters frequent itemsets`,
@@ -482,12 +409,7 @@ print("lift = confidence / P(milk)")`,
         {
           id: `applications`,
           title: `Recommendation & Retail`,
-          content: `Product recommendations, shelf layout, cross-selling. Collaborative filtering shares mathematical foundations.
-
-- Amazon "customers also bought" uses association
-- Rules complement collaborative filtering
-- Temporal patterns need sequential rule mining
-- Sparsity challenge in large catalogs`,
+          content: `Product recommendations, shelf layout, cross-selling. Collaborative filtering shares mathematical foundations.`,
           keyPoints: [
             `Amazon "customers also bought" uses association`,
             `Rules complement collaborative filtering`,
@@ -558,12 +480,7 @@ print(support)`,
         {
           id: `gmm`,
           title: `GMM Fundamentals`,
-          content: `Mixture of k Gaussian distributions. Each point has probability of belonging to each cluster. EM algorithm for fitting.
-
-- Soft clustering — probabilistic assignments
-- EM alternates E-step and M-step
-- Can model elliptical clusters unlike K-Means
-- BIC/AIC for choosing number of components`,
+          content: `Mixture of k Gaussian distributions. Each point has probability of belonging to each cluster. EM algorithm for fitting.`,
           example: `from sklearn.mixture import GaussianMixture
 import numpy as np
 
@@ -580,12 +497,7 @@ print(gmm.predict(X[:5]))`,
         {
           id: `em`,
           title: `Expectation-Maximization`,
-          content: `E-step: compute responsibilities (posterior probabilities). M-step: update parameters maximizing expected log-likelihood.
-
-- EM guarantees convergence to local optimum
-- Initialization matters — use k-means init
-- Can get stuck in local optima
-- Multiple random restarts recommended`,
+          content: `E-step: compute responsibilities (posterior probabilities). M-step: update parameters maximizing expected log-likelihood.`,
           pseudoCode: `REPEAT until convergence:
     E-step: compute P(cluster|point) for each point
     M-step: update means, covariances, weights`,
@@ -599,12 +511,7 @@ print(gmm.predict(X[:5]))`,
         {
           id: `vs-kmeans`,
           title: `GMM vs K-Means`,
-          content: `K-Means is special case of GMM with equal spherical covariances. GMM more flexible but more parameters.
-
-- K-Means: hard assignments, spherical clusters
-- GMM: soft assignments, elliptical clusters
-- GMM provides uncertainty estimates
-- K-Means faster and simpler`,
+          content: `K-Means is special case of GMM with equal spherical covariances. GMM more flexible but more parameters.`,
           keyPoints: [
             `K-Means: hard assignments, spherical clusters`,
             `GMM: soft assignments, elliptical clusters`,
@@ -615,12 +522,7 @@ print(gmm.predict(X[:5]))`,
         {
           id: `applications-gmm`,
           title: `Applications`,
-          content: `Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.
-
-- score_samples gives log-likelihood per point
-- Low likelihood points are anomalies
-- Used in acoustic modeling for speech
-- Bayesian GMM prevents overfitting`,
+          content: `Density estimation, anomaly detection (low likelihood points), speaker identification, image segmentation.`,
           keyPoints: [
             `score_samples gives log-likelihood per point`,
             `Low likelihood points are anomalies`,

@@ -13,9 +13,7 @@ export const moduleMath06Topics: Topic[] = [
           title: `Probability Axioms`,
           content: `**Sample space** Ω all outcomes. Kolmogorov axioms: P(A)≥0; P(Ω)=1; countable additivity P(∪A_i)=∑P(A_i) for disjoint A_i. Uniform finite: P(A)=|A|/|Ω|.
 
-Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities.`,
           formulas: [
             `P(A) ≥ 0`,
             `P(Ω) = 1`,
@@ -46,7 +44,7 @@ print("P(AUB):", P_A+P_B-P_AB)`,
 
 Hypergeometric: sampling without replacement. Binomial counts successes in n independent Bernoulli trials. Multinomial generalizes to multiple categories.
 
-Careful with independence assumptions when counting joint outcomes. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Careful with independence assumptions when counting joint outcomes.`,
           formulas: [
             `P(A) = |A|/|Ω| (equally likely)`,
             `Binomial: C(n,k) p^k (1−p)^(n−k)`,
@@ -77,9 +75,7 @@ print("binom PMF:", comb(n,k)*p**k*(1-p)**(n-k))`,
           title: `Independence`,
           content: `Events A,B **independent** if P(A∩B)=P(A)P(B). Pairwise vs mutual independence differ for >2 events. Independent trials: outcome doesn't affect next.
 
-**Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+**Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data.`,
           formulas: [
             `A,B indep: P(A∩B)=P(A)P(B)`,
             `i.i.d.: independent identical distribution`,
@@ -111,9 +107,7 @@ print("P(A)*P(B):", P_A*P_B, "if indep P(A∩B) same")`,
 
 Probabilistic classifiers output P(y|x). Calibration: predicted probs match frequencies. **Expected risk** E[L(y,ŷ)].
 
-Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels.`,
           formulas: [
             `Accuracy = P(correct)`,
             `Precision = TP/(TP+FP)`,
@@ -204,7 +198,7 @@ print("prec:", tp/(tp+fp), "rec:", tp/(tp+fn))`,
 
 Law of total probability: P(A)=∑P(A|B_i)P(B_i) over partition B_i. Conditional changes probabilities with new evidence. Medical testing, spam filtering, and diagnostic models rely on conditioning.
 
-P(A|B)≠P(B|A)—prosecutor fallacy confusion. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+P(A|B)≠P(B|A)—prosecutor fallacy confusion.`,
           formulas: [
             `P(A|B) = P(A∩B)/P(B)`,
             `P(A∩B) = P(A|B)P(B)`,
@@ -234,7 +228,7 @@ print("P(A|B):", P_AB/P_B)`,
 
 **Naive Bayes** assumes features conditionally independent given class: P(x|y)=∏P(x_i|y). Bayesian ML places priors on weights. Evidence integral often intractable.
 
-MAP picks mode of posterior; full posterior gives uncertainty. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+MAP picks mode of posterior; full posterior gives uncertainty.`,
           formulas: [
             `P(A|B) = P(B|A)P(A)/P(B)`,
             `Posterior ∝ Likelihood × Prior`,
@@ -262,9 +256,7 @@ print("post:", prior*sens/P_B)`,
           title: `Odds & Log-Odds`,
           content: `**Log-odds** ln O additive for Bayes updates with likelihood ratio. Logistic regression models log-odds as linear: ln(p/(1−p))=w·x+b. Likelihood ratio P(B|A)/P(B|A^c) measures evidence strength.
 
-Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models.`,
           formulas: [
             `Odds = p/(1−p)`,
             `logit(p) = ln(p/(1−p))`,
@@ -390,9 +382,7 @@ lo=np.log(0.8/0.2); print(lo, 1/(1+np.exp(-lo)))`,
 
 CDF F(x)=P(X≤x) non-decreasing. Support set where p>0 or f>0. Mixed distributions combine atoms and density.
 
-Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x.`,
           formulas: [
             `PMF: p(x) = P(X=x) discrete`,
             `PDF: P(a≤X≤b) = ∫_a^b f(x)dx`,
@@ -427,7 +417,7 @@ print("sum PMF:", p.sum())`,
 
 **Covariance** Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Independent ⇒ Cov=0 (converse false). Sample mean x̄ estimates E[X].
 
-Law of large numbers: x̄→E[X] as n→∞. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Law of large numbers: x̄→E[X] as n→∞.`,
           formulas: [
             `E[X] = ∑ x p(x) or ∫ x f(x) dx`,
             `Var(X) = E[X²] − (E[X])²`,
@@ -456,9 +446,7 @@ print("mean:", x.mean(), "var:", x.var(ddof=0))`,
           title: `Functions of RVs`,
           content: `E[g(X)]=∑g(x)p(x) or ∫g(x)f(x)dx—not g(E[X]) in general (**Jensen**). Sum variances if independent: Var(X+Y)=Var(X)+Var(Y). For Y=g(X), find PDF of Y via CDF/transform methods.
 
-Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes.`,
           formulas: [
             `E[g(X)] ≠ g(E[X]) in general`,
             `Var(aX+b) = a²Var(X)`,
@@ -581,9 +569,7 @@ print(X.mean(), X.var())`,
 
 **Categorical** multi-class generalization of Bernoulli. Geometric: trials until first success. MLE for Bernoulli p is sample mean.
 
-Poisson regression for count targets. Classification labels often categorical RVs.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Poisson regression for count targets. Classification labels often categorical RVs.`,
           formulas: [
             `Bernoulli: P(X=1)=p`,
             `Binomial: C(n,k)p^k(1−p)^(n−k)`,
@@ -617,9 +603,7 @@ print(stats.binom.pmf(k,10,0.5))`,
 
 **Beta** on [0,1] for probabilities. **Gamma** generalizes exponential. Central role of Gaussian via CLT.
 
-Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data.`,
           formulas: [
             `N(μ,σ²): f(x) ∝ exp(−(x−μ)²/(2σ²))`,
             `Exp(λ): f(x)=λe^(−λx), x≥0`,
@@ -648,9 +632,7 @@ print("area:", np.trapz(f,x))`,
           title: `Central Limit Theorem Preview`,
           content: `Sum/mean of i.i.d. with finite variance → approximately normal as n grows. Justifies normal noise assumptions and confidence intervals. Sample mean standard error σ/√n shrinks with n.
 
-Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions.
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions.`,
           formulas: [
             `X̄ approx N(μ, σ²/n) for large n`,
             `SE = σ/√n`,
@@ -681,7 +663,7 @@ print("mean of means:", X.mean(axis=1).mean(), "std:", X.mean(axis=1).std())`,
 
 **Mixture models** sum of Gaussians. Output layer activations match distribution: sigmoid/Bernoulli, softmax/categorical, ReLU+exp/Poisson rates. Negative log-likelihood = cross-entropy for classification.
 
-Choosing distribution = choosing loss. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Choosing distribution = choosing loss.`,
           formulas: [
             `Bernoulli → sigmoid + BCE`,
             `Gaussian y → MSE / NLL`,
@@ -774,9 +756,7 @@ k=np.arange(7); print(stats.poisson.pmf(k,3))`,
 
 Joint captures full dependence structure. **Covariance matrix** Σ_ij=Cov(X_i,X_j). Multivariate data rows as samples from joint.
 
-Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized).
-
-Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized).`,
           formulas: [
             `p(x,y) joint PMF/PDF`,
             `p(x) = ∑_y p(x,y) marginal`,
@@ -838,7 +818,7 @@ print(np.outer(px,py))`,
 
 **Correlation matrix** unit diagonal. Σ eigenvalues principal variances. Det Σ generalizes bivariate correlation volume. Shrinkage estimators regularize Σ for small n.
 
-Feature correlation heatmaps guide EDA and multicollinearity detection. Connecting this theory to numpy experiments and sanity checks reinforces retention and prepares you for probability, optimization, and modeling modules where these ideas appear repeatedly in loss functions, metrics, and algorithm design.`,
+Feature correlation heatmaps guide EDA and multicollinearity detection.`,
           formulas: [
             `Cov(X,Y) = E[XY] − E[X]E[Y]`,
             `ρ = Cov/(σ_X σ_Y)`,
