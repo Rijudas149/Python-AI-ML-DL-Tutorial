@@ -54,27 +54,14 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
     !isRedundantPseudoCode(section.pseudoCode, section.keyPoints, section.formulas);
 
   return (
-    <div className="lesson-flow">
-      <section className="lesson-panel lesson-panel-explain">
+    <article className="lesson-flow lesson-article">
+      <section className="lesson-panel lesson-panel-article">
         <div className="lesson-panel-label">
-          <span className="lesson-panel-icon">📖</span>
-          Explanation
+          <span className="lesson-panel-icon">📄</span>
+          Article
         </div>
-        <p className="lesson-panel-hint lesson-explain-hint">
-          Key terms are highlighted — read the opening summary first, then work through each block below.
-        </p>
         <LessonContent content={section.content} />
       </section>
-
-      {showPseudoCode && (
-        <section className="lesson-panel lesson-panel-pseudo">
-          <div className="lesson-panel-label">
-            <span className="lesson-panel-icon">🧩</span>
-            Step-by-Step Logic
-          </div>
-          <CodeBlock code={section.pseudoCode!} language="pseudo" />
-        </section>
-      )}
 
       {section.formulas && section.formulas.length > 0 && (
         <div id="section-formulas">
@@ -82,15 +69,15 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
         </div>
       )}
 
-      {section.diagram && <DiagramBlock diagram={section.diagram} />}
+      {section.diagram && <DiagramBlock diagram={section.diagram} title="Diagram & Flow" />}
 
       {section.example && (
         <section className="lesson-panel lesson-panel-example">
           <div className="lesson-panel-label">
             <span className="lesson-panel-icon">💻</span>
-            Try This Code
+            Code Example
           </div>
-          <p className="lesson-panel-hint">Copy the code below and run it in Python, Jupyter, or VS Code.</p>
+          <p className="lesson-panel-hint">Run this in Python, Jupyter, or VS Code. Try changing values to see how output shifts.</p>
           <CodeBlock code={section.example} language="python" />
         </section>
       )}
@@ -99,18 +86,28 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
         <section className="lesson-panel lesson-panel-output">
           <div className="lesson-panel-label">
             <span className="lesson-panel-icon">✅</span>
-            Expected Output
+            Output
           </div>
-          <p className="lesson-panel-hint">Your result should look similar to this.</p>
+          <p className="lesson-panel-hint">Your run should match this result (minor float formatting differences are OK).</p>
           <TabularDisplay text={section.output} />
         </section>
       )}
 
-      {section.keyPoints && (
+      {showPseudoCode && (
+        <section className="lesson-panel lesson-panel-pseudo">
+          <div className="lesson-panel-label">
+            <span className="lesson-panel-icon">🧩</span>
+            Algorithm Steps
+          </div>
+          <CodeBlock code={section.pseudoCode!} language="pseudo" />
+        </section>
+      )}
+
+      {section.keyPoints && section.keyPoints.length > 0 && (
         <section className="lesson-panel lesson-panel-takeaways">
           <div className="lesson-panel-label">
             <span className="lesson-panel-icon">💡</span>
-            Key Takeaways
+            Quick Recap
           </div>
           <ul className="takeaway-list">
             {section.keyPoints.map((kp, i) => (
@@ -122,7 +119,25 @@ const SectionContent = memo(function SectionContent({ section }: { section: Less
           </ul>
         </section>
       )}
-    </div>
+
+      {section.commonMistakes && section.commonMistakes.length > 0 && (
+        <section className="lesson-panel lesson-panel-mistakes">
+          <div className="lesson-panel-label">
+            <span className="lesson-panel-icon">⚠️</span>
+            Common Mistakes
+          </div>
+          <p className="lesson-panel-hint">Watch for these pitfalls — they trip up most learners on this topic.</p>
+          <ul className="mistake-list">
+            {section.commonMistakes.map((mistake, i) => (
+              <li key={i}>
+                <span className="mistake-icon">✕</span>
+                <InlineMathText text={mistake} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
   );
 });
 

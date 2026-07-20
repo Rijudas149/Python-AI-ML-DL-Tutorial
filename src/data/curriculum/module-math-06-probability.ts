@@ -11,9 +11,29 @@ export const moduleMath06Topics: Topic[] = [
         {
           id: `pb-axioms`,
           title: `Probability Axioms`,
-          content: `**Sample space** Ω all outcomes. Kolmogorov axioms: P(A)≥0; P(Ω)=1; countable additivity P(∪A_i)=∑P(A_i) for disjoint A_i. Uniform finite: P(A)=|A|/|Ω|.
+          content: `### Introduction
 
-Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities.`,
+**Sample space** Ω all outcomes. Kolmogorov axioms: P(A)≥0; P(Ω)=1; countable additivity P(∪A_i)=∑P(A_i) for disjoint A_i. Uniform finite: P(A)=|A|/|Ω|.
+
+### Probability Axioms
+
+Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian inference, and evaluation metrics. Always define sample space before assigning probabilities.
+
+### Key Ideas
+
+- Axioms foundation all probability
+- Complement rule common
+- Inclusion-exclusion for overlap
+- Countable additivity for limits
+- Define Ω before P
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `P(A) ≥ 0`,
             `P(Ω) = 1`,
@@ -35,16 +55,42 @@ Inclusion-exclusion for unions. Probability underpins ML uncertainty, Bayesian i
           example: `import numpy as np
 P_A, P_B, P_AB = 0.4, 0.3, 0.1
 print("P(AUB):", P_A+P_B-P_AB)`,
-          output: `P(AUB): 0.6`
+          output: `P(AUB): 0.6`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`
+          ]
         },
         {
           id: `pb-count`,
           title: `Combinatorial Probability`,
-          content: `Equally likely outcomes: P(A)=|A|/|Ω|. Use permutations/combinations from Module 1. Birthday paradox: P(shared birthday) high with small group.
+          content: `### Introduction
+
+Equally likely outcomes: P(A)=|A|/|Ω|. Use permutations/combinations from Module 1. Birthday paradox: P(shared birthday) high with small group.
+
+### Combinatorial Probability
 
 Hypergeometric: sampling without replacement. Binomial counts successes in n independent Bernoulli trials. Multinomial generalizes to multiple categories.
 
-Careful with independence assumptions when counting joint outcomes.`,
+Careful with independence assumptions when counting joint outcomes.
+
+### Key Ideas
+
+- Count favorable over total
+- Binomial for independent trials
+- Without replacement changes odds
+- Paradoxes test intuition
+- Multinomial for class counts
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `P(A) = |A|/|Ω| (equally likely)`,
             `Binomial: C(n,k) p^k (1−p)^(n−k)`,
@@ -68,14 +114,40 @@ Careful with independence assumptions when counting joint outcomes.`,
 from math import comb
 n,p,k=10,0.5,4
 print("binom PMF:", comb(n,k)*p**k*(1-p)**(n-k))`,
-          output: `binom PMF`
+          output: `binom PMF`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Without replacement changes odds.`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`
+          ]
         },
         {
           id: `pb-indep`,
           title: `Independence`,
-          content: `Events A,B **independent** if P(A∩B)=P(A)P(B). Pairwise vs mutual independence differ for >2 events. Independent trials: outcome doesn't affect next.
+          content: `### Introduction
 
-**Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data.`,
+Events A,B **independent** if P(A∩B)=P(A)P(B). Pairwise vs mutual independence differ for >2 events. Independent trials: outcome doesn't affect next.
+
+### Independence
+
+**Conditional independence** given C: P(A∩B|C)=P(A|C)P(B|C)—used in graphical models. i.i.d. samples central to ML training assumptions. Violations: data leakage, temporal correlation in time series. Always question independence when splitting data.
+
+### Key Ideas
+
+- Independence simplifies products
+- i.i.d. assumption in SGD batches
+- Conditional indep in Bayes nets
+- Time series usually dependent
+- Leakage violates independence
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A,B indep: P(A∩B)=P(A)P(B)`,
             `i.i.d.: independent identical distribution`,
@@ -98,16 +170,42 @@ print("binom PMF:", comb(n,k)*p**k*(1-p)**(n-k))`,
           example: `import numpy as np
 P_A,P_B=0.5,0.4
 print("P(A)*P(B):", P_A*P_B, "if indep P(A∩B) same")`,
-          output: `0.2`
+          output: `0.2`,
+          commonMistakes: [
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`
+          ]
         },
         {
           id: `pb-ml`,
           title: `Probability in ML Metrics`,
-          content: `Classification accuracy P(correct). **Precision** P(positive|predicted+). **Recall** P(predicted+|true+).
+          content: `### Introduction
+
+Classification accuracy P(correct). **Precision** P(positive|predicted+). **Recall** P(predicted+|true+).
+
+### Probability in ML Metrics
 
 Probabilistic classifiers output P(y|x). Calibration: predicted probs match frequencies. **Expected risk** E[L(y,ŷ)].
 
-Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels.`,
+Train/val split estimates generalization probability of error. Confusion matrix stores joint counts of true vs predicted labels.
+
+### Key Ideas
+
+- Metrics are conditional probabilities
+- Calibration matters for decisions
+- Confusion matrix = joint counts
+- Expected loss integrates over data
+- Rare classes need recall focus
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Accuracy = P(correct)`,
             `Precision = TP/(TP+FP)`,
@@ -130,7 +228,13 @@ Train/val split estimates generalization probability of error. Confusion matrix 
           example: `import numpy as np
 tp,fp,fn=50,10,5
 print("prec:", tp/(tp+fp), "rec:", tp/(tp+fn))`,
-          output: `prec/rec`
+          output: `prec/rec`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`,
+            `Applying log to zero or negative values without a shift`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
+          ]
         }
       ],
       exercises: [
@@ -194,11 +298,31 @@ print("prec:", tp/(tp+fp), "rec:", tp/(tp+fn))`,
         {
           id: `cb-cond`,
           title: `Conditional Probability`,
-          content: `P(A|B)=P(A∩B)/P(B) when P(B)>0. Restrict sample space to B. **Multiplication rule** P(A∩B)=P(A|B)P(B).
+          content: `### Introduction
+
+P(A|B)=P(A∩B)/P(B) when P(B)>0. Restrict sample space to B. **Multiplication rule** P(A∩B)=P(A|B)P(B).
+
+### Conditional Probability
 
 Law of total probability: P(A)=∑P(A|B_i)P(B_i) over partition B_i. Conditional changes probabilities with new evidence. Medical testing, spam filtering, and diagnostic models rely on conditioning.
 
-P(A|B)≠P(B|A)—prosecutor fallacy confusion.`,
+P(A|B)≠P(B|A)—prosecutor fallacy confusion.
+
+### Key Ideas
+
+- Conditioning restricts sample space
+- Total probability law decomposes
+- Order matters in conditioning
+- Base rate often ignored
+- Evidence updates beliefs
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `P(A|B) = P(A∩B)/P(B)`,
             `P(A∩B) = P(A|B)P(B)`,
@@ -219,16 +343,42 @@ P(A|B)≠P(B|A)—prosecutor fallacy confusion.`,
           example: `import numpy as np
 P_AB,P_B=0.12,0.3
 print("P(A|B):", P_AB/P_B)`,
-          output: `P(A|B): 0.4`
+          output: `P(A|B): 0.4`,
+          commonMistakes: [
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Forgetting to check matrix dimensions before multiplying`,
+            `Applying log to zero or negative values without a shift`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`
+          ]
         },
         {
           id: `cb-bayes`,
           title: `Bayes Theorem`,
-          content: `**Bayes**: P(A|B)=P(B|A)P(A)/P(B). P(A) prior, P(A|B) posterior, P(B|A) likelihood, P(B) evidence. Posterior ∝ likelihood × prior.
+          content: `### Introduction
+
+**Bayes**: P(A|B)=P(B|A)P(A)/P(B). P(A) prior, P(A|B) posterior, P(B|A) likelihood, P(B) evidence. Posterior ∝ likelihood × prior.
+
+### Bayes Theorem
 
 **Naive Bayes** assumes features conditionally independent given class: P(x|y)=∏P(x_i|y). Bayesian ML places priors on weights. Evidence integral often intractable.
 
-MAP picks mode of posterior; full posterior gives uncertainty.`,
+MAP picks mode of posterior; full posterior gives uncertainty.
+
+### Key Ideas
+
+- Bayes reverses conditioning
+- Prior encodes belief before data
+- Naive Bayes simple but strong baseline
+- MAP point estimate common
+- Full posterior harder but richer
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `P(A|B) = P(B|A)P(A)/P(B)`,
             `Posterior ∝ Likelihood × Prior`,
@@ -249,14 +399,40 @@ MAP picks mode of posterior; full posterior gives uncertainty.`,
           example: `import numpy as np
 prior=0.01; sens=0.95; spec=0.90; P_B=0.01*0.95+0.99*0.1
 print("post:", prior*sens/P_B)`,
-          output: `posterior`
+          output: `posterior`,
+          commonMistakes: [
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
+          ]
         },
         {
           id: `cb-odds`,
           title: `Odds & Log-Odds`,
-          content: `**Log-odds** ln O additive for Bayes updates with likelihood ratio. Logistic regression models log-odds as linear: ln(p/(1−p))=w·x+b. Likelihood ratio P(B|A)/P(B|A^c) measures evidence strength.
+          content: `### Introduction
 
-Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models.`,
+**Log-odds** ln O additive for Bayes updates with likelihood ratio. Logistic regression models log-odds as linear: ln(p/(1−p))=w·x+b. Likelihood ratio P(B|A)/P(B|A^c) measures evidence strength.
+
+### Odds & Log-Odds
+
+Bayes factor compares models. Logit link connects linear scores to probabilities. Additive log-odds simplify sequential evidence combination in interpretable models.
+
+### Key Ideas
+
+- Log-odds unbounded for linear models
+- Logit link in logistic regression
+- Likelihood ratio quantifies evidence
+- Bayes factor for model compare
+- sigmoid inverts logit
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Odds = p/(1−p)`,
             `logit(p) = ln(p/(1−p))`,
@@ -278,16 +454,42 @@ Bayes factor compares models. Logit link connects linear scores to probabilities
 p=0.7
 print("logit:", np.log(p/(1-p)))
 print("back:", 1/(1+np.exp(-np.log(p/(1-p)))))`,
-          output: `round trip`
+          output: `round trip`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Not stratifying splits for classification tasks`
+          ]
         },
         {
           id: `cb-ml`,
           title: `Bayesian ML Preview`,
-          content: `Posterior predictive P(y*|x*,D)=∫ P(y*|x*,θ)P(θ|D)dθ averages over uncertainty. **Variational inference** approximates posterior. **MCMC** samples from posterior.
+          content: `### Introduction
+
+Posterior predictive P(y*|x*,D)=∫ P(y*|x*,θ)P(θ|D)dθ averages over uncertainty. **Variational inference** approximates posterior. **MCMC** samples from posterior.
+
+### Bayesian ML Preview
 
 Uncertainty quantification in safety-critical apps. Thompson sampling uses posterior for exploration. Bayesian deep learning active research.
 
-Prior prevents overfitting (weight decay ≈ Gaussian prior). Conjugate priors give closed-form posterior updates.`,
+Prior prevents overfitting (weight decay ≈ Gaussian prior). Conjugate priors give closed-form posterior updates.
+
+### Key Ideas
+
+- Posterior captures uncertainty
+- VI scales to big models
+- MCMC accurate but slow
+- Priors encode preferences
+- Predictive distribution for decisions
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Posterior predictive integrates θ uncertainty`,
             `VI: optimize q(θ) ≈ p(θ|D)`,
@@ -311,7 +513,13 @@ Prior prevents overfitting (weight decay ≈ Gaussian prior). Conjugate priors g
 a,b,k,n=1,1,7,10
 post_a,post_b=a+k,b+n-k
 print("post mean:", post_a/(post_a+post_b))`,
-          output: `post mean`
+          output: `post mean`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`
+          ]
         }
       ],
       exercises: [
@@ -378,11 +586,31 @@ lo=np.log(0.8/0.2); print(lo, 1/(1+np.exp(-lo)))`,
         {
           id: `rv-def`,
           title: `Random Variable Definition`,
-          content: `**Random variable** X: Ω→ℝ maps outcomes to numbers. **Discrete**: countable values with PMF p(x)=P(X=x). **Continuous**: PDF f(x) with P(a≤X≤b)=∫_a^b f(x)dx.
+          content: `### Introduction
+
+**Random variable** X: Ω→ℝ maps outcomes to numbers. **Discrete**: countable values with PMF p(x)=P(X=x). **Continuous**: PDF f(x) with P(a≤X≤b)=∫_a^b f(x)dx.
+
+### Random Variable Definition
 
 CDF F(x)=P(X≤x) non-decreasing. Support set where p>0 or f>0. Mixed distributions combine atoms and density.
 
-Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x.`,
+Features in ML often modeled as realizations of RVs. Target variable y in supervised learning is RV given x.
+
+### Key Ideas
+
+- PMF vs PDF notation
+- CDF universal for any type
+- Normalization integrates/sums to 1
+- Support where mass lives
+- Targets are conditional RVs
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `PMF: p(x) = P(X=x) discrete`,
             `PDF: P(a≤X≤b) = ∫_a^b f(x)dx`,
@@ -408,16 +636,42 @@ from scipy import stats
 x=np.arange(0,4)
 p=stats.binom.pmf(x,3,0.5)
 print("sum PMF:", p.sum())`,
-          output: `sum PMF: 1.0`
+          output: `sum PMF: 1.0`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Forgetting to check matrix dimensions before multiplying`
+          ]
         },
         {
           id: `rv-expect`,
           title: `Expectation & Variance`,
-          content: `E[X]=∑x p(x) or ∫x f(x)dx **expected value** center of mass. **Linearity** E[aX+b]=aE[X]+b; E[X+Y]=E[X]+E[Y] always. **Variance** Var(X)=E[(X−μ)²]=E[X²]−(E[X])².
+          content: `### Introduction
+
+E[X]=∑x p(x) or ∫x f(x)dx **expected value** center of mass. **Linearity** E[aX+b]=aE[X]+b; E[X+Y]=E[X]+E[Y] always. **Variance** Var(X)=E[(X−μ)²]=E[X²]−(E[X])².
+
+### Expectation & Variance
 
 **Covariance** Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Independent ⇒ Cov=0 (converse false). Sample mean x̄ estimates E[X].
 
-Law of large numbers: x̄→E[X] as n→∞.`,
+Law of large numbers: x̄→E[X] as n→∞.
+
+### Key Ideas
+
+- Expectation is average limit
+- Variance measures spread
+- Linearity always holds
+- Covariance measures co-movement
+- Sample stats estimate population
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `E[X] = ∑ x p(x) or ∫ x f(x) dx`,
             `Var(X) = E[X²] − (E[X])²`,
@@ -439,14 +693,40 @@ Law of large numbers: x̄→E[X] as n→∞.`,
           example: `import numpy as np
 x=np.array([1,2,3,4,5])
 print("mean:", x.mean(), "var:", x.var(ddof=0))`,
-          output: `mean 3 var 2`
+          output: `mean 3 var 2`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Applying log to zero or negative values without a shift`,
+            `Using polynomial degree too high without regularization`
+          ]
         },
         {
           id: `rv-transform`,
           title: `Functions of RVs`,
-          content: `E[g(X)]=∑g(x)p(x) or ∫g(x)f(x)dx—not g(E[X]) in general (**Jensen**). Sum variances if independent: Var(X+Y)=Var(X)+Var(Y). For Y=g(X), find PDF of Y via CDF/transform methods.
+          content: `### Introduction
 
-Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes.`,
+E[g(X)]=∑g(x)p(x) or ∫g(x)f(x)dx—not g(E[X]) in general (**Jensen**). Sum variances if independent: Var(X+Y)=Var(X)+Var(Y). For Y=g(X), find PDF of Y via CDF/transform methods.
+
+### Functions of RVs
+
+Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. Reparameterization trick: X=μ+σε, ε∼N(0,1) for backprop through stochastic nodes.
+
+### Key Ideas
+
+- Nonlinear g breaks naive plug-in
+- Jensen explains bias of convex losses
+- Independence needed for Var sum
+- Reparam enables VAE gradients
+- Transform PDF with Jacobian
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `E[g(X)] ≠ g(E[X]) in general`,
             `Var(aX+b) = a²Var(X)`,
@@ -467,16 +747,42 @@ Log-normal if ln(Y) normal. Softmax of logits gives categorical probabilities. R
           example: `import numpy as np
 X=np.random.randn(100000)
 print("E[X²]:", (X**2).mean(), "E[X]²:", X.mean()**2)`,
-          output: `E[X²]=1 ≠ 0`
+          output: `E[X²]=1 ≠ 0`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `rv-ml`,
           title: `RVs in ML Pipeline`,
-          content: `Minibatch samples approximate expectation of loss E[L]. **Monte Carlo dropout** estimates predictive uncertainty. **Data augmentation** as implicit sampling from transformed distribution.
+          content: `### Introduction
+
+Minibatch samples approximate expectation of loss E[L]. **Monte Carlo dropout** estimates predictive uncertainty. **Data augmentation** as implicit sampling from transformed distribution.
+
+### RVs in ML Pipeline
 
 Labels as RVs; cross-entropy minimizes expected log loss. **Bias-variance** decomposition of expected prediction error. Stochastic gradients random due to batch sampling.
 
-Treating pipeline probabilistically improves debugging and evaluation design.`,
+Treating pipeline probabilistically improves debugging and evaluation design.
+
+### Key Ideas
+
+- SGD noisy due to batch sampling
+- Dropout for uncertainty approx
+- Augmentation as distribution shift
+- Bias-variance guides model complexity
+- Expectations central to loss design
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Empirical risk ≈ E[L] with samples`,
             `Batch mean estimates expectation`,
@@ -497,7 +803,13 @@ Treating pipeline probabilistically improves debugging and evaluation design.`,
           example: `import numpy as np
 losses=np.array([0.5,0.8,0.3,0.6])
 print("batch mean loss:", losses.mean())`,
-          output: `batch mean`
+          output: `batch mean`,
+          commonMistakes: [
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         }
       ],
       exercises: [
@@ -565,11 +877,31 @@ print(X.mean(), X.var())`,
         {
           id: `dist-disc`,
           title: `Discrete Distributions`,
-          content: `**Bernoulli** p(x)=p^x(1−p)^{1−x}, x∈{0,1}. **Binomial** counts successes in n trials. **Poisson** P(X=k)=e^{−λ}λ^k/k! models counts/rare events.
+          content: `### Introduction
+
+**Bernoulli** p(x)=p^x(1−p)^{1−x}, x∈{0,1}. **Binomial** counts successes in n trials. **Poisson** P(X=k)=e^{−λ}λ^k/k! models counts/rare events.
+
+### Discrete Distributions
 
 **Categorical** multi-class generalization of Bernoulli. Geometric: trials until first success. MLE for Bernoulli p is sample mean.
 
-Poisson regression for count targets. Classification labels often categorical RVs.`,
+Poisson regression for count targets. Classification labels often categorical RVs.
+
+### Key Ideas
+
+- Bernoulli single trial
+- Binomial n independent Bernoullis
+- Poisson for rare counts
+- Categorical for multi-class
+- Poisson mean equals variance
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Bernoulli: P(X=1)=p`,
             `Binomial: C(n,k)p^k(1−p)^(n−k)`,
@@ -594,16 +926,42 @@ Poisson regression for count targets. Classification labels often categorical RV
 from scipy import stats
 k=np.arange(0,11)
 print(stats.binom.pmf(k,10,0.5))`,
-          output: `binomial PMF`
+          output: `binomial PMF`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Using polynomial degree too high without regularization`
+          ]
         },
         {
           id: `dist-cont`,
           title: `Continuous Distributions`,
-          content: `**Uniform** on [a,b]: f=1/(b−a). **Exponential** f(x)=λe^{−λx}, x≥0 memoryless. **Gaussian** N(μ,σ²): f(x)=exp(−(x−μ)²/(2σ²))/√(2πσ²).
+          content: `### Introduction
+
+**Uniform** on [a,b]: f=1/(b−a). **Exponential** f(x)=λe^{−λx}, x≥0 memoryless. **Gaussian** N(μ,σ²): f(x)=exp(−(x−μ)²/(2σ²))/√(2πσ²).
+
+### Continuous Distributions
 
 **Beta** on [0,1] for probabilities. **Gamma** generalizes exponential. Central role of Gaussian via CLT.
 
-Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data.`,
+Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{-1}. Log-normal for positive skewed data.
+
+### Key Ideas
+
+- Gaussian central in statistics
+- Exponential models waiting times
+- Beta for probability priors
+- Standardize before many algorithms
+- Multivariate for correlated features
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `N(μ,σ²): f(x) ∝ exp(−(x−μ)²/(2σ²))`,
             `Exp(λ): f(x)=λe^(−λx), x≥0`,
@@ -625,14 +983,40 @@ Standardization Z=(X−μ)/σ. Multivariate N(μ,Σ) with density involving Σ^{
 x=np.linspace(-3,3,100)
 f=np.exp(-x**2/2)/np.sqrt(2*np.pi)
 print("area:", np.trapz(f,x))`,
-          output: `area ~ 1`
+          output: `area ~ 1`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `dist-clt`,
           title: `Central Limit Theorem Preview`,
-          content: `Sum/mean of i.i.d. with finite variance → approximately normal as n grows. Justifies normal noise assumptions and confidence intervals. Sample mean standard error σ/√n shrinks with n.
+          content: `### Introduction
 
-Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions.`,
+Sum/mean of i.i.d. with finite variance → approximately normal as n grows. Justifies normal noise assumptions and confidence intervals. Sample mean standard error σ/√n shrinks with n.
+
+### Central Limit Theorem Preview
+
+Works for many distributions not just normal inputs. CLT foundation for hypothesis tests and error bars on metrics. Bootstrap also builds sampling distributions.
+
+### Key Ideas
+
+- CLT explains normal ubiquity
+- SE shrinks with √n
+- Applies to sample mean
+- Finite variance required
+- Metrics use CLT for CIs
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `X̄ approx N(μ, σ²/n) for large n`,
             `SE = σ/√n`,
@@ -654,16 +1038,42 @@ Works for many distributions not just normal inputs. CLT foundation for hypothes
           example: `import numpy as np
 X=np.random.exponential(1,(1000,50))
 print("mean of means:", X.mean(axis=1).mean(), "std:", X.mean(axis=1).std())`,
-          output: `approx N(1, 1/50)`
+          output: `approx N(1, 1/50)`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`
+          ]
         },
         {
           id: `dist-ml`,
           title: `Distributions in ML Models`,
-          content: `Logistic regression: y~Bernoulli(σ(w·x)). Linear regression often y~N(w·x, σ²). **Gaussian Naive Bayes** continuous features.
+          content: `### Introduction
+
+Logistic regression: y~Bernoulli(σ(w·x)). Linear regression often y~N(w·x, σ²). **Gaussian Naive Bayes** continuous features.
+
+### Distributions in ML Models
 
 **Mixture models** sum of Gaussians. Output layer activations match distribution: sigmoid/Bernoulli, softmax/categorical, ReLU+exp/Poisson rates. Negative log-likelihood = cross-entropy for classification.
 
-Choosing distribution = choosing loss.`,
+Choosing distribution = choosing loss.
+
+### Key Ideas
+
+- Likelihood choice drives loss
+- Softmax matches categorical NLL
+- MSE assumes Gaussian noise
+- Generative models specify full dist
+- Mismatch hurts performance
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Bernoulli → sigmoid + BCE`,
             `Gaussian y → MSE / NLL`,
@@ -686,7 +1096,13 @@ Choosing distribution = choosing loss.`,
 # MSE assumes Gaussian
 y=np.array([1.,2.,3.]); yhat=np.array([1.1,1.9,3.2])
 print("MSE:", ((y-yhat)**2).mean())`,
-          output: `MSE loss`
+          output: `MSE loss`,
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Not stratifying splits for classification tasks`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         }
       ],
       exercises: [
@@ -752,11 +1168,31 @@ k=np.arange(7); print(stats.poisson.pmf(k,3))`,
         {
           id: `jm-joint`,
           title: `Joint Distributions`,
-          content: `**Joint PMF** p(x,y)=P(X=x,Y=y). **Joint PDF** f(x,y) with ∫∫f=1. **Marginal** p(x)=∑_y p(x,y) or ∫ f(x,y)dy.
+          content: `### Introduction
+
+**Joint PMF** p(x,y)=P(X=x,Y=y). **Joint PDF** f(x,y) with ∫∫f=1. **Marginal** p(x)=∑_y p(x,y) or ∫ f(x,y)dy.
+
+### Joint Distributions
 
 Joint captures full dependence structure. **Covariance matrix** Σ_ij=Cov(X_i,X_j). Multivariate data rows as samples from joint.
 
-Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized).`,
+Copulas model dependence separately from marginals. Joint modeling in generative AI (images as pixel joints approximately factorized).
+
+### Key Ideas
+
+- Joint has full info
+- Marginals sum/integrate out
+- Cov matrix from joint
+- Independence factorizes joint
+- High-D joints hard to model
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `p(x,y) joint PMF/PDF`,
             `p(x) = ∑_y p(x,y) marginal`,
@@ -779,16 +1215,42 @@ Copulas model dependence separately from marginals. Joint modeling in generative
           example: `import numpy as np
 J=np.array([[0.2,0.1],[0.3,0.4]])
 print("marg X:", J.sum(axis=1), "marg Y:", J.sum(axis=0))`,
-          output: `marginals`
+          output: `marginals`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Training generator and discriminator without balancing capacity — one dominates`
+          ]
         },
         {
           id: `jm-indep`,
           title: `Independence & Conditional`,
-          content: `X,Y independent iff p(x,y)=p(x)p(y) or f(x,y)=f(x)f(y). **Conditional** p(x|y)=p(x,y)/p(y). **Chain rule** p(x,y,z)=p(x)p(y|x)p(z|x,y).
+          content: `### Introduction
+
+X,Y independent iff p(x,y)=p(x)p(y) or f(x,y)=f(x)f(y). **Conditional** p(x|y)=p(x,y)/p(y). **Chain rule** p(x,y,z)=p(x)p(y|x)p(z|x,y).
+
+### Independence & Conditional
 
 Bayes nets factorize joint via conditionals. Correlation zero doesn't imply independence except Gaussian special case. **Conditional independence** X⊥Y|Z simplifies structure in PGM.
 
-Feature independence assumption in naive Bayes rarely true but useful.`,
+Feature independence assumption in naive Bayes rarely true but useful.
+
+### Key Ideas
+
+- Independence factorizes joint
+- Conditional from joint/marginal
+- Chain rule builds complex joints
+- Conditional indep in Bayes nets
+- Naive Bayes strong assumption
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Indep: p(x,y)=p(x)p(y)`,
             `p(x|y)=p(x,y)/p(y)`,
@@ -809,16 +1271,42 @@ Feature independence assumption in naive Bayes rarely true but useful.`,
           example: `import numpy as np
 px=np.array([0.4,0.6]); py=np.array([0.5,0.5])
 print(np.outer(px,py))`,
-          output: `indep joint`
+          output: `indep joint`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Forgetting to check matrix dimensions before multiplying`
+          ]
         },
         {
           id: `jm-cov`,
           title: `Covariance & Correlation`,
-          content: `Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Corr ρ=Cov/(σ_X σ_Y)∈[−1,1]. Cov matrix Σ symmetric PSD.
+          content: `### Introduction
+
+Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]. Corr ρ=Cov/(σ_X σ_Y)∈[−1,1]. Cov matrix Σ symmetric PSD.
+
+### Covariance & Correlation
 
 **Correlation matrix** unit diagonal. Σ eigenvalues principal variances. Det Σ generalizes bivariate correlation volume. Shrinkage estimators regularize Σ for small n.
 
-Feature correlation heatmaps guide EDA and multicollinearity detection.`,
+Feature correlation heatmaps guide EDA and multicollinearity detection.
+
+### Key Ideas
+
+- Correlation normalized covariance
+- PSD required valid cov matrix
+- High corr → redundancy
+- Eigenvalues of Σ for PCA
+- Shrinkage for small samples
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Cov(X,Y) = E[XY] − E[X]E[Y]`,
             `ρ = Cov/(σ_X σ_Y)`,
@@ -842,16 +1330,42 @@ Feature correlation heatmaps guide EDA and multicollinearity detection.`,
 X=np.random.randn(100,3)
 C=np.corrcoef(X.T)
 print(np.round(C,2))`,
-          output: `corr matrix`
+          output: `corr matrix`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `jm-ml`,
           title: `Joint Modeling in ML`,
-          content: `**Generative** models learn p(x) or p(x,y). **Discriminative** learn p(y|x) directly. **Multivariate Gaussian** for anomaly detection via Σ^{-1} Mahalanobis distance.
+          content: `### Introduction
+
+**Generative** models learn p(x) or p(x,y). **Discriminative** learn p(y|x) directly. **Multivariate Gaussian** for anomaly detection via Σ^{-1} Mahalanobis distance.
+
+### Joint Modeling in ML
 
 **Copula + marginals** in finance. **Diffusion models** learn score ∇_x log p(x). Factorized autoregressive p(x)=∏p(x_i|x_{<i}).
 
-Choosing what joint to model defines generative task complexity.`,
+Choosing what joint to model defines generative task complexity.
+
+### Key Ideas
+
+- Discriminative often better classification
+- Generative enables sampling
+- Mahalanobis for outliers
+- Autoregressive GPT factorization
+- Joint structure defines difficulty
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Generative: model p(x) or p(x,y)`,
             `Discriminative: p(y|x)`,
@@ -872,7 +1386,13 @@ Choosing what joint to model defines generative task complexity.`,
           example: `import numpy as np
 mu=np.zeros(2); X=np.random.randn(50,2)
 print("Mahalanobis approx:", ((X**2).sum(axis=1)).mean())`,
-          output: `chi2-like`
+          output: `chi2-like`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Applying log to zero or negative values without a shift`
+          ]
         }
       ],
       exercises: [

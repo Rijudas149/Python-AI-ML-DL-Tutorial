@@ -11,7 +11,22 @@ export const module03Topics: Topic[] = [
         {
           id: `list-ops`,
           title: `List Operations`,
-          content: `Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.`,
+          content: `### Introduction
+
+Lists are dynamic arrays. Methods: \`.append()\`, \`.extend()\`, \`.insert()\`, \`.pop()\`, \`.remove()\`, \`.sort()\`. Slicing creates copies.
+
+### List Operations
+
+### Key Ideas
+
+- Lists are mutable ordered sequences
+- sort() modifies in place; sorted() returns new list
+- Slicing [start:stop:step] never includes stop index
+- Use copy() or list() for shallow copies
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `nums = [3, 1, 4, 1, 5]
 nums.append(9)
 nums.sort()
@@ -24,14 +39,35 @@ print(nums[1:4])`,
             `sort() modifies in place; sorted() returns new list`,
             `Slicing [start:stop:step] never includes stop index`,
             `Use copy() or list() for shallow copies`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Slicing [start:stop:step] never includes stop index.`
           ]
         },
         {
           id: `tuples`,
           title: `Tuples`,
-          content: `Tuples are immutable sequences. Use for fixed collections: coordinates, DB records.
+          content: `### Introduction
 
-Tuple unpacking: \`a, b = (1, 2)\`.`,
+Tuples are immutable sequences. Use for fixed collections: coordinates, DB records.
+
+### Tuples
+
+Tuple unpacking: \`a, b = (1, 2)\`.
+
+### Key Ideas
+
+- Tuples are immutable — hashable if elements are
+- Use for heterogeneous fixed data
+- Unpacking works with any iterable
+- Single-element tuple needs trailing comma: (1,)
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `point = (10, 20)
 x, y = point
 print(f"({x}, {y})")
@@ -41,23 +77,63 @@ print(f"({x}, {y})")
             `Use for heterogeneous fixed data`,
             `Unpacking works with any iterable`,
             `Single-element tuple needs trailing comma: (1,)`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `list-perf`,
           title: `Performance Considerations`,
-          content: `Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.`,
+          content: `### Introduction
+
+Append is O(1) amortized. Insert at front is O(n). For frequent front inserts, use \`collections.deque\`.
+
+### Performance Considerations
+
+### Key Ideas
+
+- Choose data structure based on access patterns
+- deque for queue operations
+- Lists for general-purpose ordered storage
+- Profile before optimizing`,
           keyPoints: [
             `Choose data structure based on access patterns`,
             `deque for queue operations`,
             `Lists for general-purpose ordered storage`,
             `Profile before optimizing`
+          ],
+          diagram: `Performance Considerations
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `nested`,
           title: `Nested Structures`,
-          content: `Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.`,
+          content: `### Introduction
+
+Lists of lists, tuples of dicts — common in data processing. Access with chained indexing: \`matrix[1][2]\`.
+
+### Nested Structures
+
+### Key Ideas
+
+- Nested structures model grids and tables
+- List comprehensions flatten or transform nested data
+- Copy carefully — nested lists share references
+- Consider numpy arrays for numeric matrices
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `matrix = [[1,2,3],[4,5,6],[7,8,9]]
 print(matrix[1][2])
 print([row[0] for row in matrix])`,
@@ -68,6 +144,12 @@ print([row[0] for row in matrix])`,
             `List comprehensions flatten or transform nested data`,
             `Copy carefully — nested lists share references`,
             `Consider numpy arrays for numeric matrices`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -135,9 +217,24 @@ print(nums.index(max(nums)))`,
         {
           id: `dict-basics`,
           title: `Dictionary Fundamentals`,
-          content: `Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`.
+          content: `### Introduction
 
-Access: \`d[key]\` or \`d.get(key, default)\`.`,
+Keys must be hashable (immutable). Create with \`{}\` or \`dict()\`.
+
+### Dictionary Fundamentals
+
+Access: \`d[key]\` or \`d.get(key, default)\`.
+
+### Key Ideas
+
+- Dicts preserve insertion order (Python 3.7+)
+- Use get() to avoid KeyError
+- keys(), values(), items() for iteration
+- Dict comprehensions build dicts concisely
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `user = {"name": "Alice", "age": 30, "role": "admin"}
 print(user["name"])
 print(user.get("email", "N/A"))`,
@@ -148,12 +245,35 @@ N/A`,
             `Use get() to avoid KeyError`,
             `keys(), values(), items() for iteration`,
             `Dict comprehensions build dicts concisely`
+          ],
+          diagram: `Dictionary Fundamentals
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Use get() to avoid KeyError.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `sets`,
           title: `Sets`,
-          content: `Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.`,
+          content: `### Introduction
+
+Sets store unique elements with O(1) membership test. Operations: union \`|\`, intersection \`&\`, difference \`-\`.
+
+### Sets
+
+### Key Ideas
+
+- Sets eliminate duplicates
+- Fast membership testing with in
+- frozenset is immutable/hashable
+- Use sets for deduplication and set math
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
 print(a & b)
@@ -165,12 +285,33 @@ print(a | b)`,
             `Fast membership testing with in`,
             `frozenset is immutable/hashable`,
             `Use sets for deduplication and set math`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `defaultdict`,
           title: `defaultdict & Counter`,
-          content: `\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.`,
+          content: `### Introduction
+
+\`collections.defaultdict\` auto-creates missing keys. \`Counter\` counts hashable objects — essential for frequency analysis.
+
+### defaultdict & Counter
+
+### Key Ideas
+
+- Counter is a dict subclass for counting
+- most_common(n) returns top n items
+- defaultdict avoids manual key existence checks
+- Use Counter for text and categorical analysis
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from collections import Counter
 words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
 counts = Counter(words)
@@ -181,12 +322,33 @@ print(counts.most_common(2))`,
             `most_common(n) returns top n items`,
             `defaultdict avoids manual key existence checks`,
             `Use Counter for text and categorical analysis`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `dict-merge`,
           title: `Merging & Updating Dicts`,
-          content: `Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`. Update in place: \`d.update(other)\`.`,
+          content: `### Introduction
+
+Python 3.9+: \`{**d1, **d2}\` or \`d1 | d2\`. Update in place: \`d.update(other)\`.
+
+### Merging & Updating Dicts
+
+### Key Ideas
+
+- Later keys override earlier in merge
+- Use for config and kwargs merging
+- Deep merge requires custom logic
+- Dict union operator | available in 3.9+
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `defaults = {"lr": 0.01, "epochs": 10}
 overrides = {"epochs": 50}
 config = {**defaults, **overrides}
@@ -197,6 +359,12 @@ print(config)`,
             `Use for config and kwargs merging`,
             `Deep merge requires custom logic`,
             `Dict union operator | available in 3.9+`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -265,7 +433,22 @@ print(inverted)`,
         {
           id: `stack`,
           title: `Stack (LIFO)`,
-          content: `Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.`,
+          content: `### Introduction
+
+Use list \`.append()\` and \`.pop()\` for stack. Last in, first out — used in parsing, undo, DFS.
+
+### Stack (LIFO)
+
+### Key Ideas
+
+- append/pop from end implements stack
+- O(1) operations at list end
+- Used in recursion and graph DFS
+- deque also supports append/pop
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `stack = []
 stack.append(1)
 stack.append(2)
@@ -279,12 +462,33 @@ print(stack)`,
             `O(1) operations at list end`,
             `Used in recursion and graph DFS`,
             `deque also supports append/pop`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `queue`,
           title: `Queue (FIFO)`,
-          content: `Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).`,
+          content: `### Introduction
+
+Use \`collections.deque\` with \`append()\` and \`popleft()\` for O(1) queue operations. Never use list.pop(0) — O(n).
+
+### Queue (FIFO)
+
+### Key Ideas
+
+- deque provides O(1) appendleft/popleft
+- FIFO for BFS and task scheduling
+- list.pop(0) is O(n) — avoid for queues
+- queue.Queue is thread-safe alternative
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from collections import deque
 q = deque(["task1", "task2"])
 q.append("task3")
@@ -297,12 +501,33 @@ deque(['task2', 'task3'])`,
             `FIFO for BFS and task scheduling`,
             `list.pop(0) is O(n) — avoid for queues`,
             `queue.Queue is thread-safe alternative`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `deque-features`,
           title: `deque Advanced Features`,
-          content: `deque supports maxlen for bounded buffers, rotation, and double-ended operations.`,
+          content: `### Introduction
+
+deque supports maxlen for bounded buffers, rotation, and double-ended operations.
+
+### deque Advanced Features
+
+### Key Ideas
+
+- maxlen creates sliding window buffer
+- Automatic eviction of oldest items
+- rotate(n) shifts elements circularly
+- Ideal for rolling statistics
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from collections import deque
 recent = deque(maxlen=3)
 for x in [1, 2, 3, 4, 5]:
@@ -314,17 +539,42 @@ print(list(recent))`,
             `Automatic eviction of oldest items`,
             `rotate(n) shifts elements circularly`,
             `Ideal for rolling statistics`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `applications`,
           title: `Real-World Applications`,
-          content: `Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.`,
+          content: `### Introduction
+
+Stacks: expression evaluation, browser history. Queues: job schedulers, BFS traversal, streaming pipelines.
+
+### Real-World Applications
+
+### Key Ideas
+
+- Match data structure to algorithm needs
+- BFS uses queue, DFS uses stack
+- Priority queues use heapq module
+- Consider thread safety for concurrent queues`,
           keyPoints: [
             `Match data structure to algorithm needs`,
             `BFS uses queue, DFS uses stack`,
             `Priority queues use heapq module`,
             `Consider thread safety for concurrent queues`
+          ],
+          diagram: `Real-World Applications
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -405,7 +655,22 @@ print(processed)`,
         {
           id: `sorting`,
           title: `Sorting in Python`,
-          content: `\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).`,
+          content: `### Introduction
+
+\`sorted(iterable, key=, reverse=)\` returns new list. \`.sort()\` sorts in place. Timsort algorithm — O(n log n).
+
+### Sorting in Python
+
+### Key Ideas
+
+- sorted() preserves original list
+- key=function customizes sort criteria
+- Stable sort preserves equal element order
+- Timsort exploits partially sorted input
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `data = [3, 1, 4, 1, 5, 9]
 print(sorted(data))
 print(sorted(data, reverse=True))`,
@@ -416,12 +681,35 @@ print(sorted(data, reverse=True))`,
             `key=function customizes sort criteria`,
             `Stable sort preserves equal element order`,
             `Timsort exploits partially sorted input`
+          ],
+          diagram: `Sorting in Python
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `custom-sort`,
           title: `Custom Sort Keys`,
-          content: `Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.`,
+          content: `### Introduction
+
+Use \`key=lambda x: ...\` or \`operator.itemgetter\`, \`operator.attrgetter\` for complex sorting.
+
+### Custom Sort Keys
+
+### Key Ideas
+
+- Tuple keys enable multi-criteria sort
+- Negate numeric key for descending
+- itemgetter is faster than lambda for simple access
+- Sort once, reuse for repeated queries
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `students = [("Alice", 95), ("Bob", 87), ("Charlie", 95)]
 by_grade = sorted(students, key=lambda s: (-s[1], s[0]))
 print(by_grade)`,
@@ -431,12 +719,33 @@ print(by_grade)`,
             `Negate numeric key for descending`,
             `itemgetter is faster than lambda for simple access`,
             `Sort once, reuse for repeated queries`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `search`,
           title: `Linear & Binary Search`,
-          content: `Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.`,
+          content: `### Introduction
+
+Linear: O(n) scan. Binary search: O(log n) on sorted data. Use \`bisect\` module for insertion points.
+
+### Linear & Binary Search
+
+### Key Ideas
+
+- Binary search requires sorted data
+- bisect finds insertion position
+- bisect_left vs bisect_right for duplicates
+- Use set/dict for O(1) lookup when possible
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import bisect
 sorted_list = [1, 3, 5, 7, 9]
 idx = bisect.bisect_left(sorted_list, 5)
@@ -447,17 +756,44 @@ print(idx)`,
             `bisect finds insertion position`,
             `bisect_left vs bisect_right for duplicates`,
             `Use set/dict for O(1) lookup when possible`
+          ],
+          diagram: `Linear & Binary Search
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`
           ]
         },
         {
           id: `complexity`,
           title: `Big-O Basics`,
-          content: `Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.`,
+          content: `### Introduction
+
+Common complexities: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic. Choose algorithms wisely.
+
+### Big-O Basics
+
+### Key Ideas
+
+- Big-O describes growth rate, not exact time
+- Nested loops often imply O(n²)
+- Hash lookups are average O(1)
+- Sorting dominates many pipeline costs`,
           keyPoints: [
             `Big-O describes growth rate, not exact time`,
             `Nested loops often imply O(n²)`,
             `Hash lookups are average O(1)`,
             `Sorting dominates many pipeline costs`
+          ],
+          diagram: `Big-O Basics
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -526,7 +862,22 @@ print(lst)`,
         {
           id: `namedtuple`,
           title: `namedtuple`,
-          content: `Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.`,
+          content: `### Introduction
+
+Creates tuple subclasses with named fields. Lightweight alternative to classes for data records.
+
+### namedtuple
+
+### Key Ideas
+
+- Immutable like regular tuples
+- Named access improves readability
+- Use _replace for modified copies
+- dataclass is modern alternative
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from collections import namedtuple
 Point = namedtuple("Point", ["x", "y"])
 p = Point(3, 4)
@@ -537,12 +888,33 @@ print(p.x, p.y)`,
             `Named access improves readability`,
             `Use _replace for modified copies`,
             `dataclass is modern alternative`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `chainmap`,
           title: `ChainMap`,
-          content: `ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.`,
+          content: `### Introduction
+
+ChainMap searches multiple dicts in order — useful for scoped configs and symbol tables.
+
+### ChainMap
+
+### Key Ideas
+
+- First dict in chain takes precedence
+- Useful for layered configuration
+- Does not merge — searches sequentially
+- Modifications affect first dict in chain
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from collections import ChainMap
 defaults = {"color": "blue", "size": "M"}
 user = {"color": "red"}
@@ -554,23 +926,65 @@ print(config["color"], config["size"])`,
             `Useful for layered configuration`,
             `Does not merge — searches sequentially`,
             `Modifications affect first dict in chain`
+          ],
+          diagram: `ChainMap
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `ordered`,
           title: `OrderedDict & Modern Dicts`,
-          content: `OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).`,
+          content: `### Introduction
+
+OrderedDict once guaranteed order; standard dict now preserves order. OrderedDict still useful for move_to_end and popitem(last=False).
+
+### OrderedDict & Modern Dicts
+
+### Key Ideas
+
+- Regular dict preserves insertion order since 3.7
+- OrderedDict for LRU cache patterns
+- move_to_end for reordering
+- Consider functools.lru_cache for caching`,
           keyPoints: [
             `Regular dict preserves insertion order since 3.7`,
             `OrderedDict for LRU cache patterns`,
             `move_to_end for reordering`,
             `Consider functools.lru_cache for caching`
+          ],
+          diagram: `OrderedDict & Modern Dicts
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         },
         {
           id: `heapq`,
           title: `heapq — Priority Queues`,
-          content: `heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.`,
+          content: `### Introduction
+
+heapq implements min-heap. \`heappush\`, \`heappop\` for O(log n) priority queue operations.
+
+### heapq — Priority Queues
+
+### Key Ideas
+
+- Min-heap — smallest element first
+- heappush/heappop are O(log n)
+- heapify converts list to heap in O(n)
+- Use for top-k and scheduling problems
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import heapq
 heap = []
 for val in [5, 3, 8, 1]:
@@ -582,6 +996,12 @@ print(heapq.heappop(heap))`,
             `heappush/heappop are O(log n)`,
             `heapify converts list to heap in O(n)`,
             `Use for top-k and scheduling problems`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],

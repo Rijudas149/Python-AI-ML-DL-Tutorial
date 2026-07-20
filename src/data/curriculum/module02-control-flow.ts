@@ -11,9 +11,24 @@ export const module02Topics: Topic[] = [
         {
           id: `if-basic`,
           title: `if Statements`,
-          content: `The \`if\` statement executes a block when its condition is **truthy**. Python treats empty collections, zero, None, and empty strings as falsy.
+          content: `### Introduction
 
-Indentation (4 spaces) defines blocks — no braces required.`,
+The \`if\` statement executes a block when its condition is **truthy**. Python treats empty collections, zero, None, and empty strings as falsy.
+
+### if Statements
+
+Indentation (4 spaces) defines blocks — no braces required.
+
+### Key Ideas
+
+- Indentation defines code blocks
+- Truthy/falsy evaluation drives conditionals
+- else is optional
+- Use elif for multiple branches
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `score = 85
 if score >= 60:
     print("Pass")
@@ -25,14 +40,35 @@ else:
             `Truthy/falsy evaluation drives conditionals`,
             `else is optional`,
             `Use elif for multiple branches`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `elif`,
           title: `elif Chains`,
-          content: `Chain conditions with \`elif\` (else-if). Only the first true branch executes.
+          content: `### Introduction
 
-Order matters — put specific conditions first.`,
+Chain conditions with \`elif\` (else-if). Only the first true branch executes.
+
+### elif Chains
+
+Order matters — put specific conditions first.
+
+### Key Ideas
+
+- Only one branch executes
+- Order conditions from specific to general
+- else catches all remaining cases
+- Avoid deep nesting — refactor to functions
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `grade = 72
 if grade >= 90:
     letter = "A"
@@ -49,12 +85,33 @@ print(letter)`,
             `Order conditions from specific to general`,
             `else catches all remaining cases`,
             `Avoid deep nesting — refactor to functions`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Avoid deep nesting — refactor to functions.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `ternary`,
           title: `Ternary & Match-Case`,
-          content: `Ternary: \`x if condition else y\`. Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.`,
+          content: `### Introduction
+
+Ternary: \`x if condition else y\`. Python 3.10+ adds **structural pattern matching** with \`match/case\` for complex branching.
+
+### Ternary & Match-Case
+
+### Key Ideas
+
+- Ternary keeps simple assignments concise
+- match/case replaces long elif chains
+- Pattern matching supports destructuring
+- Use match for type-based dispatch
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `n = 4
 parity = "even" if n % 2 == 0 else "odd"
 
@@ -69,12 +126,33 @@ match parity:
             `match/case replaces long elif chains`,
             `Pattern matching supports destructuring`,
             `Use match for type-based dispatch`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `guard`,
           title: `Guard Clauses`,
-          content: `Return early with **guard clauses** instead of deep nesting. Improves readability in validation logic.`,
+          content: `### Introduction
+
+Return early with **guard clauses** instead of deep nesting. Improves readability in validation logic.
+
+### Guard Clauses
+
+### Key Ideas
+
+- Early returns reduce nesting
+- Validate inputs at function start
+- Flat code is easier to read
+- Guard clauses are a best practice
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           pseudoCode: `FUNCTION process(data):
     IF data is None: RETURN
     IF not valid(data): RETURN
@@ -90,6 +168,14 @@ match parity:
             `Validate inputs at function start`,
             `Flat code is easier to read`,
             `Guard clauses are a best practice`
+          ],
+          diagram: `Guard Clauses
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -165,7 +251,22 @@ print(m)`,
         {
           id: `for-loop`,
           title: `for Loops`,
-          content: `\`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges. Use \`range(n)\` for counting loops.`,
+          content: `### Introduction
+
+\`for item in iterable:\` iterates over any iterable — lists, strings, dicts, ranges. Use \`range(n)\` for counting loops.
+
+### for Loops
+
+### Key Ideas
+
+- for loops iterate iterables directly
+- range(start, stop, step) generates numbers
+- Never modify list while iterating
+- enumerate() gives index and value
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `total = 0
 for i in range(1, 6):
     total += i
@@ -176,12 +277,33 @@ print(total)`,
             `range(start, stop, step) generates numbers`,
             `Never modify list while iterating`,
             `enumerate() gives index and value`
+          ],
+          commonMistakes: [
+            `Never modify list while iterating.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `while-loop`,
           title: `while Loops`,
-          content: `\`while condition:\` repeats until condition is falsy. Ensure the loop variable changes to avoid infinite loops.`,
+          content: `### Introduction
+
+\`while condition:\` repeats until condition is falsy. Ensure the loop variable changes to avoid infinite loops.
+
+### while Loops
+
+### Key Ideas
+
+- while for unknown iteration count
+- Always ensure loop termination
+- break exits loop immediately
+- continue skips to next iteration
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `n, count = 10, 0
 while n > 1:
     n //= 2
@@ -193,12 +315,33 @@ print(f"Divided {count} times")`,
             `Always ensure loop termination`,
             `break exits loop immediately`,
             `continue skips to next iteration`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `loop-else`,
           title: `else, break, continue`,
-          content: `Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.`,
+          content: `### Introduction
+
+Loops can have \`else\` — runs if loop completes without break. \`break\` exits; \`continue\` skips to next iteration.
+
+### else, break, continue
+
+### Key Ideas
+
+- else on loops is rarely used but powerful
+- break exits innermost loop only
+- continue skips rest of iteration body
+- Use for-else for search patterns
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `for n in [2, 4, 6, 7, 8]:
     if n % 2 != 0:
         print(f"Found odd: {n}")
@@ -211,12 +354,35 @@ else:
             `break exits innermost loop only`,
             `continue skips rest of iteration body`,
             `Use for-else for search patterns`
+          ],
+          diagram: `else, break, continue
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `nested`,
           title: `Nested Loops & zip`,
-          content: `Nest loops for 2D iteration. Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.`,
+          content: `### Introduction
+
+Nest loops for 2D iteration. Prefer \`zip(a, b)\` to iterate multiple sequences in parallel.
+
+### Nested Loops & zip
+
+### Key Ideas
+
+- zip pairs elements from iterables
+- Nested loops can be O(n²) — watch performance
+- itertools.product for Cartesian products
+- List comprehensions often replace simple nested loops
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `names = ["Alice", "Bob"]
 scores = [95, 87]
 for name, score in zip(names, scores):
@@ -228,6 +394,12 @@ Bob: 87`,
             `Nested loops can be O(n²) — watch performance`,
             `itertools.product for Cartesian products`,
             `List comprehensions often replace simple nested loops`
+          ],
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -299,7 +471,22 @@ print(total)`,
         {
           id: `def-basic`,
           title: `Defining Functions`,
-          content: `Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`. **Docstrings** document behavior.`,
+          content: `### Introduction
+
+Use \`def name(params):\` to define functions. \`return\` sends a value back; omitting return gives \`None\`. **Docstrings** document behavior.
+
+### Defining Functions
+
+### Key Ideas
+
+- Functions are first-class objects
+- Docstrings appear in help()
+- return exits immediately
+- Functions should do one thing well
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def area(radius):
     """Calculate circle area."""
     return 3.14159 * radius ** 2
@@ -311,12 +498,33 @@ print(area(5))`,
             `Docstrings appear in help()`,
             `return exits immediately`,
             `Functions should do one thing well`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `params`,
           title: `Parameter Types`,
-          content: `Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict). Order: positional, defaults, *args, keyword-only, **kwargs.`,
+          content: `### Introduction
+
+Python supports: positional, keyword, default, \`*args\` (tuple), \`**kwargs\` (dict). Order: positional, defaults, *args, keyword-only, **kwargs.
+
+### Parameter Types
+
+### Key Ideas
+
+- Default args evaluated once at definition
+- Never use mutable defaults like []
+- *args collects extra positional args
+- **kwargs collects extra keyword args
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def greet(name, greeting="Hello", *tags, **meta):
     print(greeting, name, tags, meta)
 
@@ -327,12 +535,33 @@ greet("Alice", "Hi", "admin", role="dev")`,
             `Never use mutable defaults like []`,
             `*args collects extra positional args`,
             `**kwargs collects extra keyword args`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Never use mutable defaults like [].`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `unpack`,
           title: `Unpacking Arguments`,
-          content: `Unpack iterables with \`*\`: \`func(*args)\`. Unpack dicts with \`**\`: \`func(**kwargs)\`.`,
+          content: `### Introduction
+
+Unpack iterables with \`*\`: \`func(*args)\`. Unpack dicts with \`**\`: \`func(**kwargs)\`.
+
+### Unpacking Arguments
+
+### Key Ideas
+
+- * unpacks sequences into positional args
+- ** unpacks dicts into keyword args
+- Useful for forwarding arguments
+- Python 3.8+ positional-only with /
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def add(a, b, c):
     return a + b + c
 
@@ -344,19 +573,42 @@ print(add(*nums))`,
             `** unpacks dicts into keyword args`,
             `Useful for forwarding arguments`,
             `Python 3.8+ positional-only with /`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `pure`,
           title: `Pure Functions & Side Effects`,
-          content: `Pure functions: same input → same output, no side effects. Prefer pure functions for testability.
+          content: `### Introduction
 
-Side effects: I/O, mutation, global state.`,
+Pure functions: same input → same output, no side effects. Prefer pure functions for testability.
+
+### Pure Functions & Side Effects
+
+Side effects: I/O, mutation, global state.
+
+### Key Ideas
+
+- Pure functions are easier to test and reason about
+- Separate computation from I/O
+- Avoid global mutable state
+- Use return values instead of printing inside logic`,
           keyPoints: [
             `Pure functions are easier to test and reason about`,
             `Separate computation from I/O`,
             `Avoid global mutable state`,
             `Use return values instead of printing inside logic`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Avoid global mutable state.`
           ]
         }
       ],
@@ -434,7 +686,22 @@ print(factorial(5))`,
         {
           id: `legb`,
           title: `LEGB Scope Rule`,
-          content: `Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in. Use \`global\` and \`nonlocal\` to modify outer bindings.`,
+          content: `### Introduction
+
+Python resolves names: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in. Use \`global\` and \`nonlocal\` to modify outer bindings.
+
+### LEGB Scope Rule
+
+### Key Ideas
+
+- LEGB determines name lookup order
+- global modifies module-level names
+- nonlocal modifies enclosing function names
+- Avoid global state when possible
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `x = "global"
 
 def outer():
@@ -452,12 +719,33 @@ print(outer())`,
             `global modifies module-level names`,
             `nonlocal modifies enclosing function names`,
             `Avoid global state when possible`
+          ],
+          commonMistakes: [
+            `Avoid global state when possible.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `closures`,
           title: `Closures`,
-          content: `A **closure** captures variables from enclosing scope. Enables factory functions and decorators.`,
+          content: `### Introduction
+
+A **closure** captures variables from enclosing scope. Enables factory functions and decorators.
+
+### Closures
+
+### Key Ideas
+
+- Inner functions remember enclosing variables
+- Closures enable partial application
+- Foundation for decorators
+- Captured variables are late-binding
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def make_multiplier(n):
     def multiply(x):
         return x * n
@@ -471,12 +759,33 @@ print(times3(7))`,
             `Closures enable partial application`,
             `Foundation for decorators`,
             `Captured variables are late-binding`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `lambda`,
           title: `Lambda Functions`,
-          content: `\`lambda args: expression\` creates anonymous one-line functions. Use for short callbacks; prefer def for anything complex.`,
+          content: `### Introduction
+
+\`lambda args: expression\` creates anonymous one-line functions. Use for short callbacks; prefer def for anything complex.
+
+### Lambda Functions
+
+### Key Ideas
+
+- Lambda limited to single expression
+- Common as key= argument to sorted/map/filter
+- Prefer def for named reusable functions
+- No statements allowed in lambda body
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `pairs = [(3, "c"), (1, "a"), (2, "b")]
 sorted_pairs = sorted(pairs, key=lambda x: x[0])
 print(sorted_pairs)`,
@@ -486,12 +795,35 @@ print(sorted_pairs)`,
             `Common as key= argument to sorted/map/filter`,
             `Prefer def for named reusable functions`,
             `No statements allowed in lambda body`
+          ],
+          diagram: `Lambda Functions
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `higher`,
           title: `Higher-Order Functions`,
-          content: `Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`. Functional style complements loops.`,
+          content: `### Introduction
+
+Functions accepting or returning functions: \`map()\`, \`filter()\`, \`sorted(key=)\`. Functional style complements loops.
+
+### Higher-Order Functions
+
+### Key Ideas
+
+- map/filter return iterators in Python 3
+- List comprehensions often replace map/filter
+- Higher-order functions enable composition
+- functools.reduce for folding
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `nums = [1, 2, 3, 4, 5]
 evens = list(filter(lambda x: x % 2 == 0, nums))
 squares = list(map(lambda x: x**2, evens))
@@ -502,6 +834,14 @@ print(squares)`,
             `List comprehensions often replace map/filter`,
             `Higher-order functions enable composition`,
             `functools.reduce for folding`
+          ],
+          diagram: `Higher-Order Functions
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         }
       ],
@@ -571,7 +911,22 @@ print(sorted(words, key=lambda w: len(w)))`,
         {
           id: `list-comp`,
           title: `List Comprehensions`,
-          content: `Syntax: \`[expr for item in iterable if condition]\`. Concise, readable, and often faster than equivalent loops.`,
+          content: `### Introduction
+
+Syntax: \`[expr for item in iterable if condition]\`. Concise, readable, and often faster than equivalent loops.
+
+### List Comprehensions
+
+### Key Ideas
+
+- Comprehensions are Pythonic for transformations
+- Filter with trailing if clause
+- Nested comprehensions for 2D structures
+- Dont sacrifice readability for brevity
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `squares = [x**2 for x in range(10) if x % 2 == 0]
 print(squares)`,
           output: `[0, 4, 16, 36, 64]`,
@@ -580,12 +935,35 @@ print(squares)`,
             `Filter with trailing if clause`,
             `Nested comprehensions for 2D structures`,
             `Dont sacrifice readability for brevity`
+          ],
+          diagram: `List Comprehensions
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `dict-set-comp`,
           title: `Dict & Set Comprehensions`,
-          content: `Dict: \`{k: v for ...}\`. Set: \`{expr for ...}\`. Powerful for building lookup tables.`,
+          content: `### Introduction
+
+Dict: \`{k: v for ...}\`. Set: \`{expr for ...}\`. Powerful for building lookup tables.
+
+### Dict & Set Comprehensions
+
+### Key Ideas
+
+- Dict comprehensions build mappings
+- Set comprehensions deduplicate automatically
+- Use for invertible transformations
+- Generator expressions use () for lazy evaluation
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `words = ["apple", "banana", "cherry"]
 lengths = {w: len(w) for w in words}
 unique_lens = {len(w) for w in words}
@@ -596,12 +974,35 @@ print(lengths, unique_lens)`,
             `Set comprehensions deduplicate automatically`,
             `Use for invertible transformations`,
             `Generator expressions use () for lazy evaluation`
+          ],
+          diagram: `Dict & Set Comprehensions
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `generators`,
           title: `Generator Expressions`,
-          content: `\`(expr for x in iter)\` creates a lazy generator. Memory-efficient for large datasets — values computed on demand.`,
+          content: `### Introduction
+
+\`(expr for x in iter)\` creates a lazy generator. Memory-efficient for large datasets — values computed on demand.
+
+### Generator Expressions
+
+### Key Ideas
+
+- Generators yield one value at a time
+- Memory O(1) regardless of range size
+- Exhausted generators cannot restart
+- Use for pipeline processing
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `gen = (x**2 for x in range(1000000))
 print(next(gen), next(gen), next(gen))`,
           output: `0 1 4`,
@@ -610,12 +1011,35 @@ print(next(gen), next(gen), next(gen))`,
             `Memory O(1) regardless of range size`,
             `Exhausted generators cannot restart`,
             `Use for pipeline processing`
+          ],
+          diagram: `Generator Expressions
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `iterators`,
           title: `Iterator Protocol`,
-          content: `Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.`,
+          content: `### Introduction
+
+Objects with \`__iter__()\` and \`__next__()\` are iterators. \`StopIteration\` signals end. \`iter()\` and \`next()\` built-ins interact with protocol.
+
+### Iterator Protocol
+
+### Key Ideas
+
+- All iterables implement __iter__
+- for loops use iterator protocol internally
+- Custom classes can implement __iter__/__next__
+- itertools module provides rich iterators
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `it = iter([10, 20, 30])
 print(next(it), next(it))`,
           output: `10 20`,
@@ -624,6 +1048,12 @@ print(next(it), next(it))`,
             `for loops use iterator protocol internally`,
             `Custom classes can implement __iter__/__next__`,
             `itertools module provides rich iterators`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],

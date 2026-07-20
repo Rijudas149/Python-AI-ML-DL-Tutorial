@@ -28,6 +28,8 @@ export interface LessonSection {
   formulas?: string[];
   /** ASCII or structured diagram */
   diagram?: string;
+  /** Common mistakes learners make for this section */
+  commonMistakes?: string[];
 }
 
 export interface Topic {

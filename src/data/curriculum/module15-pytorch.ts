@@ -11,7 +11,22 @@ export const module15Topics: Topic[] = [
         {
           id: `tensor-basics`,
           title: `Creating Tensors`,
-          content: `torch.tensor(), torch.zeros(), torch.randn(). Similar to NumPy but with GPU support and autograd.`,
+          content: `### Introduction
+
+torch.tensor(), torch.zeros(), torch.randn(). Similar to NumPy but with GPU support and autograd.
+
+### Creating Tensors
+
+### Key Ideas
+
+- Tensors analogous to NumPy ndarrays
+- dtype and device are tensor properties
+- torch.float32 default for DL
+- GPU tensors on cuda device
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 
 a = torch.tensor([1.0, 2.0, 3.0])
@@ -24,12 +39,33 @@ print(a.dtype, b.shape, c.device)`,
             `dtype and device are tensor properties`,
             `torch.float32 default for DL`,
             `GPU tensors on cuda device`
+          ],
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Broadcasting mistakes when array shapes do not align`
           ]
         },
         {
           id: `ops`,
           title: `Tensor Operations`,
-          content: `Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose. In-place ops suffixed with _.`,
+          content: `### Introduction
+
+Element-wise ops, matrix multiply @, broadcasting. torch.matmul, .T for transpose. In-place ops suffixed with _.
+
+### Tensor Operations
+
+### Key Ideas
+
+- @ operator for matrix multiply
+- Broadcasting rules same as NumPy
+- Avoid in-place ops on tensors with grad
+- torch.einsum for complex tensor operations
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 
 a = torch.randn(3, 4)
@@ -44,12 +80,33 @@ torch.Size([3, 4])`,
             `Broadcasting rules same as NumPy`,
             `Avoid in-place ops on tensors with grad`,
             `torch.einsum for complex tensor operations`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Avoid in-place ops on tensors with grad.`
           ]
         },
         {
           id: `numpy-bridge`,
           title: `NumPy Interoperability`,
-          content: `tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.`,
+          content: `### Introduction
+
+tensor.numpy() for CPU tensors. torch.from_numpy() shares memory with NumPy array.
+
+### NumPy Interoperability
+
+### Key Ideas
+
+- Zero-copy between NumPy and CPU tensors
+- GPU tensors must .cpu() before .numpy()
+- Convert dtype explicitly when needed
+- Use tensor for all DL computations
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import numpy as np
 
@@ -63,12 +120,33 @@ print(np_back)`,
             `GPU tensors must .cpu() before .numpy()`,
             `Convert dtype explicitly when needed`,
             `Use tensor for all DL computations`
+          ],
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Broadcasting mistakes when array shapes do not align`
           ]
         },
         {
           id: `device`,
           title: `Device Management`,
-          content: `torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).`,
+          content: `### Introduction
+
+torch.device("cuda" if torch.cuda.is_available() else "cpu"). tensor.to(device). model.to(device).
+
+### Device Management
+
+### Key Ideas
+
+- Always move model AND data to same device
+- Check cuda availability before GPU use
+- MPS device for Apple Silicon
+- torch.cuda.empty_cache() frees GPU memory
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -79,6 +157,12 @@ print(x.device)`,
             `Check cuda availability before GPU use`,
             `MPS device for Apple Silicon`,
             `torch.cuda.empty_cache() frees GPU memory`
+          ],
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         }
       ],
@@ -145,7 +229,22 @@ print((torch.randn(2,3) @ torch.randn(3,4)).shape)`,
         {
           id: `grad`,
           title: `requires_grad & backward`,
-          content: `Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.`,
+          content: `### Introduction
+
+Set requires_grad=True to track gradients. loss.backward() computes gradients. tensor.grad accesses result.
+
+### requires_grad & backward
+
+### Key Ideas
+
+- Gradients accumulate — zero with optimizer.zero_grad()
+- backward() only on scalar loss
+- retain_graph=True for multiple backward passes
+- detach() stops gradient flow
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 
 x = torch.tensor(3.0, requires_grad=True)
@@ -158,25 +257,65 @@ print(x.grad)  # dy/dx = 2x + 2 = 8`,
             `backward() only on scalar loss`,
             `retain_graph=True for multiple backward passes`,
             `detach() stops gradient flow`
+          ],
+          diagram: `requires_grad & backward
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `graph`,
           title: `Computational Graph`,
-          content: `PyTorch builds dynamic graph during forward pass. Nodes are tensors, edges are operations.
+          content: `### Introduction
 
-Graph freed after backward by default.`,
+PyTorch builds dynamic graph during forward pass. Nodes are tensors, edges are operations.
+
+### Computational Graph
+
+Graph freed after backward by default.
+
+### Key Ideas
+
+- Dynamic graph: rebuilt each forward pass
+- Enables Python control flow in models
+- Contrast with TensorFlow static graphs (1.x)
+- torch.no_grad() disables graph for inference`,
           keyPoints: [
             `Dynamic graph: rebuilt each forward pass`,
             `Enables Python control flow in models`,
             `Contrast with TensorFlow static graphs (1.x)`,
             `torch.no_grad() disables graph for inference`
+          ],
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `leaf`,
           title: `Leaf Tensors & Parameters`,
-          content: `Leaf tensors are graph roots (parameters, inputs). Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.`,
+          content: `### Introduction
+
+Leaf tensors are graph roots (parameters, inputs). Only leaf tensors retain .grad after backward. nn.Parameter wraps trainable weights.
+
+### Leaf Tensors & Parameters
+
+### Key Ideas
+
+- nn.Parameter automatically requires_grad
+- Non-leaf tensor gradients not retained by default
+- Register buffers for non-trainable state (BN stats)
+- model.parameters() yields all trainable params
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -188,17 +327,44 @@ print(layer.weight.is_leaf)`,
             `Non-leaf tensor gradients not retained by default`,
             `Register buffers for non-trainable state (BN stats)`,
             `model.parameters() yields all trainable params`
+          ],
+          diagram: `Leaf Tensors & Parameters
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `higher`,
           title: `Higher-Order Gradients`,
-          content: `create_graph=True enables second derivatives. Used in meta-learning and some GAN training.`,
+          content: `### Introduction
+
+create_graph=True enables second derivatives. Used in meta-learning and some GAN training.
+
+### Higher-Order Gradients
+
+### Key Ideas
+
+- Second-order for Hessian-vector products
+- Meta-learning (MAML) uses higher-order grads
+- Expensive — rarely needed in standard training
+- torch.autograd.grad for explicit gradient computation`,
           keyPoints: [
             `Second-order for Hessian-vector products`,
             `Meta-learning (MAML) uses higher-order grads`,
             `Expensive — rarely needed in standard training`,
             `torch.autograd.grad for explicit gradient computation`
+          ],
+          diagram: `Higher-Order Gradients
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Training generator and discriminator without balancing capacity — one dominates`
           ]
         }
       ],
@@ -267,7 +433,22 @@ print(nn.Linear(5, 3).weight.requires_grad)`,
         {
           id: `module`,
           title: `nn.Module Basics`,
-          content: `Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.`,
+          content: `### Introduction
+
+Subclass nn.Module, define layers in __init__, forward pass in forward(). model.parameters() for optimizer.
+
+### nn.Module Basics
+
+### Key Ideas
+
+- super().__init__() required in __init__
+- Define layers in __init__ not forward
+- forward() defines computation graph
+- Sequential chains layers cleanly
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -290,23 +471,63 @@ print(model(torch.randn(5, 10)).shape)`,
             `Define layers in __init__ not forward`,
             `forward() defines computation graph`,
             `Sequential chains layers cleanly`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `layers`,
           title: `Common Layers`,
-          content: `nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d. Activation: nn.ReLU, nn.GELU, nn.Softmax.`,
+          content: `### Introduction
+
+nn.Linear, nn.Conv2d, nn.LSTM, nn.Embedding, nn.Dropout, nn.BatchNorm2d. Activation: nn.ReLU, nn.GELU, nn.Softmax.
+
+### Common Layers
+
+### Key Ideas
+
+- Linear: fully connected layer
+- Conv2d: spatial feature extraction
+- Embedding: lookup table for tokens
+- BatchNorm1d/2d for normalization`,
           keyPoints: [
             `Linear: fully connected layer`,
             `Conv2d: spatial feature extraction`,
             `Embedding: lookup table for tokens`,
             `BatchNorm1d/2d for normalization`
+          ],
+          diagram: `Common Layers
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `loss-opt`,
           title: `Loss Functions & Optimizers`,
-          content: `nn.CrossEntropyLoss (includes softmax). nn.MSELoss. Optimizers: torch.optim.SGD, Adam, AdamW.`,
+          content: `### Introduction
+
+nn.CrossEntropyLoss (includes softmax). nn.MSELoss. Optimizers: torch.optim.SGD, Adam, AdamW.
+
+### Loss Functions & Optimizers
+
+### Key Ideas
+
+- CrossEntropyLoss expects raw logits not softmax
+- zero_grad before backward prevents accumulation
+- Adam default optimizer for most tasks
+- AdamW decouples weight decay from Adam
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -326,17 +547,42 @@ print(round(loss.item(), 4))`,
             `zero_grad before backward prevents accumulation`,
             `Adam default optimizer for most tasks`,
             `AdamW decouples weight decay from Adam`
+          ],
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `save`,
           title: `Saving & Loading Models`,
-          content: `torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)). Save optimizer state for resume.`,
+          content: `### Introduction
+
+torch.save(model.state_dict(), path). model.load_state_dict(torch.load(path)). Save optimizer state for resume.
+
+### Saving & Loading Models
+
+### Key Ideas
+
+- state_dict saves learned parameters only
+- Save full checkpoint: model + optimizer + epoch
+- model.eval() before inference
+- torch.load with map_location for CPU loading`,
           keyPoints: [
             `state_dict saves learned parameters only`,
             `Save full checkpoint: model + optimizer + epoch`,
             `model.eval() before inference`,
             `torch.load with map_location for CPU loading`
+          ],
+          diagram: `Saving & Loading Models
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],
@@ -404,7 +650,22 @@ print(sum(p.numel() for p in nn.Linear(10, 5).parameters()))`,
         {
           id: `dataset`,
           title: `Dataset & DataLoader`,
-          content: `torch.utils.data.Dataset defines __len__ and __getitem__. DataLoader batches, shuffles, and parallelizes loading.`,
+          content: `### Introduction
+
+torch.utils.data.Dataset defines __len__ and __getitem__. DataLoader batches, shuffles, and parallelizes loading.
+
+### Dataset & DataLoader
+
+### Key Ideas
+
+- DataLoader handles batching and shuffling
+- num_workers for parallel data loading
+- pin_memory=True speeds GPU transfer
+- Custom Dataset for any data source
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 from torch.utils.data import Dataset, DataLoader
 
@@ -425,12 +686,33 @@ print(batch_x.shape, batch_y.shape)`,
             `num_workers for parallel data loading`,
             `pin_memory=True speeds GPU transfer`,
             `Custom Dataset for any data source`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `loop`,
           title: `Training Loop Pattern`,
-          content: `Standard loop: for epoch → for batch → forward → loss → backward → step → log. Validate after each epoch.`,
+          content: `### Introduction
+
+Standard loop: for epoch → for batch → forward → loss → backward → step → log. Validate after each epoch.
+
+### Training Loop Pattern
+
+### Key Ideas
+
+- model.train() enables dropout/BN training mode
+- model.eval() + torch.no_grad() for validation
+- Track metrics per epoch not per batch average
+- Set seed for reproducibility
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -451,30 +733,76 @@ print("Pattern defined")`,
             `model.eval() + torch.no_grad() for validation`,
             `Track metrics per epoch not per batch average`,
             `Set seed for reproducibility`
+          ],
+          diagram: `Training Loop Pattern
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `transforms`,
           title: `Transforms & Augmentation`,
-          content: `torchvision.transforms for image preprocessing. Compose chains transforms.
+          content: `### Introduction
 
-RandomHorizontalFlip, Normalize, ToTensor.`,
+torchvision.transforms for image preprocessing. Compose chains transforms.
+
+### Transforms & Augmentation
+
+RandomHorizontalFlip, Normalize, ToTensor.
+
+### Key Ideas
+
+- ToTensor converts PIL to [C,H,W] float [0,1]
+- Normalize with dataset mean/std
+- Apply augmentation only to training set
+- torchvision.datasets includes MNIST, CIFAR, ImageNet`,
           keyPoints: [
             `ToTensor converts PIL to [C,H,W] float [0,1]`,
             `Normalize with dataset mean/std`,
             `Apply augmentation only to training set`,
             `torchvision.datasets includes MNIST, CIFAR, ImageNet`
+          ],
+          diagram: `Transforms & Augmentation
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `scheduler`,
           title: `Learning Rate Schedulers`,
-          content: `StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.`,
+          content: `### Introduction
+
+StepLR, CosineAnnealingLR, ReduceLROnPlateau. scheduler.step() after epoch or validation.
+
+### Learning Rate Schedulers
+
+### Key Ideas
+
+- Cosine annealing popular for vision training
+- Warmup stabilizes transformer training
+- ReduceLROnPlateau reacts to val metric
+- Log learning rate alongside loss`,
           keyPoints: [
             `Cosine annealing popular for vision training`,
             `Warmup stabilizes transformer training`,
             `ReduceLROnPlateau reacts to val metric`,
             `Log learning rate alongside loss`
+          ],
+          diagram: `Learning Rate Schedulers
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         }
       ],
@@ -543,7 +871,22 @@ print(steps)`,
         {
           id: `cuda`,
           title: `CUDA Training`,
-          content: `Move model and batches to GPU. Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.`,
+          content: `### Introduction
+
+Move model and batches to GPU. Monitor memory with nvidia-smi. torch.cuda.memory_summary() for debugging.
+
+### CUDA Training
+
+### Key Ideas
+
+- Batch size limited by GPU memory
+- Gradient accumulation simulates larger batches
+- DataParallel for multi-GPU (prefer DistributedDataParallel)
+- Clear cache between experiments
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -555,12 +898,35 @@ print(model(x).device)`,
             `Gradient accumulation simulates larger batches`,
             `DataParallel for multi-GPU (prefer DistributedDataParallel)`,
             `Clear cache between experiments`
+          ],
+          diagram: `CUDA Training
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `amp`,
           title: `Automatic Mixed Precision`,
-          content: `torch.cuda.amp.autocast + GradScaler. FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.`,
+          content: `### Introduction
+
+torch.cuda.amp.autocast + GradScaler. FP16 forward/backward, FP32 weight updates. ~2x speedup on modern GPUs.
+
+### Automatic Mixed Precision
+
+### Key Ideas
+
+- autocast runs ops in FP16 where safe
+- GradScaler prevents gradient underflow
+- Minimal code change for significant speedup
+- BF16 on A100+ avoids some FP16 issues
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 
 scaler = torch.cuda.amp.GradScaler(enabled=torch.cuda.is_available())
@@ -570,30 +936,74 @@ print("GradScaler ready")`,
             `GradScaler prevents gradient underflow`,
             `Minimal code change for significant speedup`,
             `BF16 on A100+ avoids some FP16 issues`
+          ],
+          diagram: `Automatic Mixed Precision
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `compile`,
           title: `torch.compile (PyTorch 2.0)`,
-          content: `model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.`,
+          content: `### Introduction
+
+model = torch.compile(model) JIT-compiles for faster execution. modes: default, reduce-overhead, max-autotune.
+
+### torch.compile (PyTorch 2.0)
+
+### Key Ideas
+
+- PyTorch 2.0+ feature
+- Up to 30%+ speedup on compatible models
+- First run slower due to compilation
+- May not work with all dynamic models`,
           keyPoints: [
             `PyTorch 2.0+ feature`,
             `Up to 30%+ speedup on compatible models`,
             `First run slower due to compilation`,
             `May not work with all dynamic models`
+          ],
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `distributed`,
           title: `Distributed Training Preview`,
-          content: `DistributedDataParallel (DDP) for multi-GPU. Horovod, DeepSpeed for multi-node.
+          content: `### Introduction
 
-Essential for large model training.`,
+DistributedDataParallel (DDP) for multi-GPU. Horovod, DeepSpeed for multi-node.
+
+### Distributed Training Preview
+
+Essential for large model training.
+
+### Key Ideas
+
+- DDP preferred over DataParallel
+- Each GPU gets batch slice, syncs gradients
+- DeepSpeed ZeRO reduces memory for large models
+- FSDP for fully sharded data parallel`,
           keyPoints: [
             `DDP preferred over DataParallel`,
             `Each GPU gets batch slice, syncs gradients`,
             `DeepSpeed ZeRO reduces memory for large models`,
             `FSDP for fully sharded data parallel`
+          ],
+          diagram: `Distributed Training Preview
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],

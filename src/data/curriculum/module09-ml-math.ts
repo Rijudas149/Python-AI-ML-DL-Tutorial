@@ -11,9 +11,24 @@ export const module09Topics: Topic[] = [
         {
           id: `vectors`,
           title: `Vectors & Dot Products`,
-          content: `Vectors represent features and weights. Dot product measures similarity: a·b = Σaᵢbᵢ.
+          content: `### Introduction
 
-Cosine similarity normalizes by magnitude.`,
+Vectors represent features and weights. Dot product measures similarity: a·b = Σaᵢbᵢ.
+
+### Vectors & Dot Products
+
+Cosine similarity normalizes by magnitude.
+
+### Key Ideas
+
+- Vectors are ordered lists of numbers
+- Dot product fundamental to neural networks
+- Cosine similarity for text/document similarity
+- Unit vectors have norm 1
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 a = np.array([1, 2, 3])
@@ -27,12 +42,35 @@ print(dot, round(cos_sim, 4))`,
             `Dot product fundamental to neural networks`,
             `Cosine similarity for text/document similarity`,
             `Unit vectors have norm 1`
+          ],
+          diagram: `Vectors & Dot Products
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `matrices`,
           title: `Matrix Operations`,
-          content: `Matrices transform vectors. Matrix multiplication composes transformations. Transpose, inverse, rank.`,
+          content: `### Introduction
+
+Matrices transform vectors. Matrix multiplication composes transformations. Transpose, inverse, rank.
+
+### Matrix Operations
+
+### Key Ideas
+
+- ML layers are matrix multiplications
+- Weight matrix W maps input to output
+- Rank indicates independent dimensions
+- Singular matrices cannot be inverted
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 W = np.array([[1, 2], [3, 4], [5, 6]])  # 3x2
@@ -44,28 +82,72 @@ print(W @ x)  # 3x1 output`,
             `Weight matrix W maps input to output`,
             `Rank indicates independent dimensions`,
             `Singular matrices cannot be inverted`
+          ],
+          diagram: `Matrix Operations
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not normalizing vectors when using dot product as cosine similarity`
           ]
         },
         {
           id: `eigen`,
           title: `Eigenvalues & Eigenvectors`,
-          content: `Av = λv. PCA finds principal eigenvectors of covariance matrix. Eigen decomposition reveals data structure.`,
+          content: `### Introduction
+
+Av = λv. PCA finds principal eigenvectors of covariance matrix. Eigen decomposition reveals data structure.
+
+### Eigenvalues & Eigenvectors
+
+### Key Ideas
+
+- Eigenvectors define principal directions
+- Eigenvalues measure variance along directions
+- PCA uses eigendecomposition of covariance
+- SVD generalizes to non-square matrices`,
           keyPoints: [
             `Eigenvectors define principal directions`,
             `Eigenvalues measure variance along directions`,
             `PCA uses eigendecomposition of covariance`,
             `SVD generalizes to non-square matrices`
+          ],
+          diagram: `Eigenvalues & Eigenvectors
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Running K-Means without scaling — features with large ranges dominate`
           ]
         },
         {
           id: `svd`,
           title: `SVD in ML`,
-          content: `A = UΣVᵀ. Used in PCA, recommender systems, NLP (LSA), and dimensionality reduction.`,
+          content: `### Introduction
+
+A = UΣVᵀ. Used in PCA, recommender systems, NLP (LSA), and dimensionality reduction.
+
+### SVD in ML
+
+### Key Ideas
+
+- SVD always exists for any matrix
+- Truncated SVD for dimensionality reduction
+- Singular values indicate importance
+- Low-rank approximation compresses data`,
           keyPoints: [
             `SVD always exists for any matrix`,
             `Truncated SVD for dimensionality reduction`,
             `Singular values indicate importance`,
             `Low-rank approximation compresses data`
+          ],
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         }
       ],
@@ -132,7 +214,22 @@ print(np.array([[1,2],[3,4]]) @ np.array([1, 0]))`,
         {
           id: `derivatives`,
           title: `Derivatives & Gradients`,
-          content: `Derivative measures rate of change. Gradient ∇f is vector of partial derivatives — points direction of steepest ascent.`,
+          content: `### Introduction
+
+Derivative measures rate of change. Gradient ∇f is vector of partial derivatives — points direction of steepest ascent.
+
+### Derivatives & Gradients
+
+### Key Ideas
+
+- Gradient points uphill on loss surface
+- Negative gradient direction minimizes loss
+- Partial derivatives hold other variables fixed
+- Gradient is foundation of gradient descent
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# f(x, y) = x^2 + y^2
 # df/dx = 2x, df/dy = 2y
 # At (3, 4): gradient = [6, 8]
@@ -146,12 +243,31 @@ print(grad, np.linalg.norm(grad))`,
             `Negative gradient direction minimizes loss`,
             `Partial derivatives hold other variables fixed`,
             `Gradient is foundation of gradient descent`
+          ],
+          diagram: `Derivatives & Gradients
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `chain-rule`,
           title: `Chain Rule & Backpropagation`,
-          content: `Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule through computational graph.`,
+          content: `### Introduction
+
+Chain rule: d/dx f(g(x)) = f'(g(x)) · g'(x). Backpropagation applies chain rule through computational graph.
+
+### Chain Rule & Backpropagation
+
+### Key Ideas
+
+- Chain rule enables gradient flow through networks
+- Backprop is efficient application of chain rule
+- Computational graph tracks dependencies
+- Automatic differentiation automates chain rule`,
           pseudoCode: `FOR each layer L from output to input:
     compute local gradient
     propagate gradient to previous layer via chain rule`,
@@ -160,12 +276,33 @@ print(grad, np.linalg.norm(grad))`,
             `Backprop is efficient application of chain rule`,
             `Computational graph tracks dependencies`,
             `Automatic differentiation automates chain rule`
+          ],
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `loss-gradients`,
           title: `Gradients of Common Loss Functions`,
-          content: `MSE: ∂/∂ŷ = 2(ŷ-y). Cross-entropy with softmax has elegant gradient: ŷ - y. Know these for debugging.`,
+          content: `### Introduction
+
+MSE: ∂/∂ŷ = 2(ŷ-y). Cross-entropy with softmax has elegant gradient: ŷ - y. Know these for debugging.
+
+### Gradients of Common Loss Functions
+
+### Key Ideas
+
+- MSE gradient proportional to error
+- Cross-entropy gradient simplifies with softmax
+- Gradient magnitude indicates update size
+- Vanishing gradients plague deep networks
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 y_true = np.array([1.0, 3.0, 5.0])
@@ -178,19 +315,46 @@ print(mse_grad)`,
             `Cross-entropy gradient simplifies with softmax`,
             `Gradient magnitude indicates update size`,
             `Vanishing gradients plague deep networks`
+          ],
+          diagram: `Gradients of Common Loss Functions
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `jacobian`,
           title: `Jacobian & Hessian`,
-          content: `Jacobian matrix of vector-valued functions. Hessian (second derivatives) for curvature.
+          content: `### Introduction
 
-Newton method uses Hessian.`,
+Jacobian matrix of vector-valued functions. Hessian (second derivatives) for curvature.
+
+### Jacobian & Hessian
+
+Newton method uses Hessian.
+
+### Key Ideas
+
+- Jacobian generalizes gradient to vector outputs
+- Hessian reveals convexity/concavity
+- Second-order methods converge faster but cost more
+- Most DL uses first-order (gradient) methods only`,
           keyPoints: [
             `Jacobian generalizes gradient to vector outputs`,
             `Hessian reveals convexity/concavity`,
             `Second-order methods converge faster but cost more`,
             `Most DL uses first-order (gradient) methods only`
+          ],
+          diagram: `Jacobian & Hessian
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         }
       ],
@@ -259,7 +423,22 @@ print(2 * (pred - y) / len(y))`,
         {
           id: `basics`,
           title: `Probability Fundamentals`,
-          content: `P(A|B) = P(A∩B)/P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B). Foundation for Naive Bayes and Bayesian ML.`,
+          content: `### Introduction
+
+P(A|B) = P(A∩B)/P(B). Bayes: P(A|B) = P(B|A)P(A)/P(B). Foundation for Naive Bayes and Bayesian ML.
+
+### Probability Fundamentals
+
+### Key Ideas
+
+- Bayes theorem updates beliefs with evidence
+- Prior × likelihood ∝ posterior
+- Base rate neglect is common error
+- Naive Bayes assumes feature independence
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Bayes: P(disease|+) = P(+|disease)*P(disease)/P(+)
 p_disease = 0.01
 p_pos_given_disease = 0.99
@@ -272,14 +451,35 @@ print(round(p_disease_given_pos, 4))`,
             `Prior × likelihood ∝ posterior`,
             `Base rate neglect is common error`,
             `Naive Bayes assumes feature independence`
+          ],
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `distributions`,
           title: `Key Distributions`,
-          content: `Normal/Gaussian: central to ML. Bernoulli/Binomial: binary outcomes.
+          content: `### Introduction
 
-Uniform: equal probability.`,
+Normal/Gaussian: central to ML. Bernoulli/Binomial: binary outcomes.
+
+### Key Distributions
+
+Uniform: equal probability.
+
+### Key Ideas
+
+- Normal distribution ubiquitous in ML
+- Central Limit Theorem justifies normality
+- Bernoulli for binary classification targets
+- Choose distribution matching data generating process
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 # 68-95-99.7 rule for normal distribution
@@ -293,30 +493,72 @@ print(round(within_1std, 3))`,
             `Central Limit Theorem justifies normality`,
             `Bernoulli for binary classification targets`,
             `Choose distribution matching data generating process`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `expectation`,
           title: `Expectation & Variance`,
-          content: `E[X] = Σx·P(x). Var(X) = E[(X-μ)²]. Covariance measures joint variability. Correlation is normalized covariance.`,
+          content: `### Introduction
+
+E[X] = Σx·P(x). Var(X) = E[(X-μ)²]. Covariance measures joint variability. Correlation is normalized covariance.
+
+### Expectation & Variance
+
+### Key Ideas
+
+- Expectation is average outcome weighted by probability
+- Variance measures spread around mean
+- Covariance matrix for multivariate data
+- Correlation ∈ [-1, 1] is scale-invariant`,
           keyPoints: [
             `Expectation is average outcome weighted by probability`,
             `Variance measures spread around mean`,
             `Covariance matrix for multivariate data`,
             `Correlation ∈ [-1, 1] is scale-invariant`
+          ],
+          diagram: `Expectation & Variance
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `mle`,
           title: `Maximum Likelihood Estimation`,
-          content: `Choose parameters maximizing P(data|θ). MLE for Gaussian mean is sample mean.
+          content: `### Introduction
 
-Foundation for many ML algorithms.`,
+Choose parameters maximizing P(data|θ). MLE for Gaussian mean is sample mean.
+
+### Maximum Likelihood Estimation
+
+Foundation for many ML algorithms.
+
+### Key Ideas
+
+- MLE finds most probable parameters given data
+- Log-likelihood easier to optimize (products → sums)
+- MLE can overfit with complex models
+- MAP adds prior for regularization`,
           keyPoints: [
             `MLE finds most probable parameters given data`,
             `Log-likelihood easier to optimize (products → sums)`,
             `MLE can overfit with complex models`,
             `MAP adds prior for regularization`
+          ],
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         }
       ],
@@ -383,7 +625,22 @@ print(np.random.default_rng(0).normal(0, 1, 5))`,
         {
           id: `entropy`,
           title: `Entropy`,
-          content: `H(X) = -Σ P(x) log P(x). Measures uncertainty. Maximum when uniform distribution.`,
+          content: `### Introduction
+
+H(X) = -Σ P(x) log P(x). Measures uncertainty. Maximum when uniform distribution.
+
+### Entropy
+
+### Key Ideas
+
+- Entropy in bits when using log2
+- Higher entropy = more uncertainty
+- Uniform distribution maximizes entropy
+- Decision trees use entropy for splitting
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def entropy(p):
@@ -400,14 +657,37 @@ print(entropy([0.9, 0.1]))  # low uncertainty`,
             `Higher entropy = more uncertainty`,
             `Uniform distribution maximizes entropy`,
             `Decision trees use entropy for splitting`
+          ],
+          diagram: `Entropy
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `cross-entropy`,
           title: `Cross-Entropy Loss`,
-          content: `H(p,q) = -Σ p(x) log q(x). Classification loss compares predicted q to true p.
+          content: `### Introduction
 
-Log loss for binary classification.`,
+H(p,q) = -Σ p(x) log q(x). Classification loss compares predicted q to true p.
+
+### Cross-Entropy Loss
+
+Log loss for binary classification.
+
+### Key Ideas
+
+- Cross-entropy is standard classification loss
+- Heavily penalizes confident wrong predictions
+- Numerical stability requires clipping
+- Equivalent to negative log-likelihood
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -421,30 +701,70 @@ print(round(cross_entropy(1, 0.9), 4))`,
             `Heavily penalizes confident wrong predictions`,
             `Numerical stability requires clipping`,
             `Equivalent to negative log-likelihood`
+          ],
+          commonMistakes: [
+            `Not stratifying splits for classification tasks`,
+            `Heavily penalizes confident wrong predictions.`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `kl`,
           title: `KL Divergence`,
-          content: `D_KL(p||q) = Σ p(x) log(p(x)/q(x)). Measures difference between distributions.
+          content: `### Introduction
 
-Non-negative, zero iff p=q.`,
+D_KL(p||q) = Σ p(x) log(p(x)/q(x)). Measures difference between distributions.
+
+### KL Divergence
+
+Non-negative, zero iff p=q.
+
+### Key Ideas
+
+- KL divergence is asymmetric
+- Used in VAE loss and knowledge distillation
+- Not a true metric (no triangle inequality)
+- Minimizing cross-entropy ≈ minimizing KL to true distribution`,
           keyPoints: [
             `KL divergence is asymmetric`,
             `Used in VAE loss and knowledge distillation`,
             `Not a true metric (no triangle inequality)`,
             `Minimizing cross-entropy ≈ minimizing KL to true distribution`
+          ],
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `mutual-info`,
           title: `Mutual Information`,
-          content: `I(X;Y) = H(X) - H(X|Y). Measures shared information. Used in feature selection.`,
+          content: `### Introduction
+
+I(X;Y) = H(X) - H(X|Y). Measures shared information. Used in feature selection.
+
+### Mutual Information
+
+### Key Ideas
+
+- Mutual information captures nonlinear dependencies
+- Zero iff variables are independent
+- Used in decision tree feature selection
+- Harder to estimate than correlation`,
           keyPoints: [
             `Mutual information captures nonlinear dependencies`,
             `Zero iff variables are independent`,
             `Used in decision tree feature selection`,
             `Harder to estimate than correlation`
+          ],
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         }
       ],
@@ -511,7 +831,22 @@ print(-np.sum([0.25]*4 * np.log2([0.25]*4)))`,
         {
           id: `gd`,
           title: `Gradient Descent`,
-          content: `θ := θ - α∇L(θ). Learning rate α controls step size. Iterate until convergence.`,
+          content: `### Introduction
+
+θ := θ - α∇L(θ). Learning rate α controls step size. Iterate until convergence.
+
+### Gradient Descent
+
+### Key Ideas
+
+- Learning rate most important hyperparameter
+- Too large α diverges, too small slow
+- Convergence when gradient near zero
+- Batch/mini-batch/stochastic variants
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 # Minimize f(x) = x^2
@@ -528,14 +863,31 @@ print(round(x, 6))`,
             `Too large α diverges, too small slow`,
             `Convergence when gradient near zero`,
             `Batch/mini-batch/stochastic variants`
+          ],
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `variants`,
           title: `SGD, Momentum, Adam`,
-          content: `SGD: one sample at a time. Momentum: accumulate velocity.
+          content: `### Introduction
 
-Adam: adaptive per-parameter learning rates — default for DL.`,
+SGD: one sample at a time. Momentum: accumulate velocity.
+
+### SGD, Momentum, Adam
+
+Adam: adaptive per-parameter learning rates — default for DL.
+
+### Key Ideas
+
+- Mini-batch balances speed and stability
+- Momentum helps escape local minima and ravines
+- Adam adapts learning rate per parameter
+- Learning rate scheduling improves convergence`,
           pseudoCode: `FOR each epoch:
     FOR each mini-batch:
         compute gradient
@@ -546,23 +898,61 @@ Adam: adaptive per-parameter learning rates — default for DL.`,
             `Momentum helps escape local minima and ravines`,
             `Adam adapts learning rate per parameter`,
             `Learning rate scheduling improves convergence`
+          ],
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `convex`,
           title: `Convex vs Non-Convex`,
-          content: `Convex functions have one global minimum. Neural network loss is non-convex — many local minima but SGD often finds good solutions.`,
+          content: `### Introduction
+
+Convex functions have one global minimum. Neural network loss is non-convex — many local minima but SGD often finds good solutions.
+
+### Convex vs Non-Convex
+
+### Key Ideas
+
+- Linear regression loss is convex
+- Deep network loss surfaces are highly non-convex
+- Saddle points more common than local minima in high-D
+- Overparameterization helps optimization in DL`,
           keyPoints: [
             `Linear regression loss is convex`,
             `Deep network loss surfaces are highly non-convex`,
             `Saddle points more common than local minima in high-D`,
             `Overparameterization helps optimization in DL`
+          ],
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `regularization`,
           title: `Regularization in Optimization`,
-          content: `L1/L2 penalties constrain weights. Early stopping halts when validation loss increases. Dropout during training.`,
+          content: `### Introduction
+
+L1/L2 penalties constrain weights. Early stopping halts when validation loss increases. Dropout during training.
+
+### Regularization in Optimization
+
+### Key Ideas
+
+- L2 (ridge) shrinks weights toward zero
+- L1 (lasso) drives weights to exactly zero
+- Regularization prevents overfitting
+- Weight decay in AdamW decouples L2 from adaptive rates
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 # L2 regularization adds lambda * ||w||^2 to loss
@@ -575,6 +965,14 @@ print(round(l2_penalty, 4))`,
             `L1 (lasso) drives weights to exactly zero`,
             `Regularization prevents overfitting`,
             `Weight decay in AdamW decouples L2 from adaptive rates`
+          ],
+          diagram: `Regularization in Optimization
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         }
       ],

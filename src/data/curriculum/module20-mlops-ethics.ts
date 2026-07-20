@@ -11,7 +11,22 @@ export const module20Topics: Topic[] = [
         {
           id: `serialize`,
           title: `Model Serialization`,
-          content: `joblib/pickle for sklearn. torch.save for PyTorch. ONNX for cross-framework. SavedModel for TensorFlow.`,
+          content: `### Introduction
+
+joblib/pickle for sklearn. torch.save for PyTorch. ONNX for cross-framework. SavedModel for TensorFlow.
+
+### Model Serialization
+
+### Key Ideas
+
+- joblib preferred over pickle for sklearn
+- Save state_dict not entire PyTorch model
+- Version models with metadata (data, metrics, params)
+- Never unpickle untrusted files — security risk
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -25,14 +40,35 @@ print(loaded.score(*load_iris(return_X_y=True)))`,
             `Save state_dict not entire PyTorch model`,
             `Version models with metadata (data, metrics, params)`,
             `Never unpickle untrusted files — security risk`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Never unpickle untrusted files — security risk.`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `fastapi`,
           title: `FastAPI Model Serving`,
-          content: `REST API for model inference. Pydantic for input validation.
+          content: `### Introduction
 
-Async support for high throughput.`,
+REST API for model inference. Pydantic for input validation.
+
+### FastAPI Model Serving
+
+Async support for high throughput.
+
+### Key Ideas
+
+- FastAPI auto-generates OpenAPI docs
+- Pydantic validates request schemas
+- Load model once at startup not per request
+- Return probabilities not just class labels
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -49,30 +85,76 @@ def predict(req: PredictRequest):
             `Pydantic validates request schemas`,
             `Load model once at startup not per request`,
             `Return probabilities not just class labels`
+          ],
+          diagram: `FastAPI Model Serving
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `onnx`,
           title: `ONNX Runtime`,
-          content: `Export to ONNX for framework-agnostic deployment. Optimized inference on CPU/GPU. torch.onnx.export, onnxruntime.`,
+          content: `### Introduction
+
+Export to ONNX for framework-agnostic deployment. Optimized inference on CPU/GPU. torch.onnx.export, onnxruntime.
+
+### ONNX Runtime
+
+### Key Ideas
+
+- ONNX enables model portability
+- Graph optimizations in ONNX Runtime
+- Quantized ONNX models for edge deployment
+- Check operator compatibility before export`,
           keyPoints: [
             `ONNX enables model portability`,
             `Graph optimizations in ONNX Runtime`,
             `Quantized ONNX models for edge deployment`,
             `Check operator compatibility before export`
+          ],
+          diagram: `ONNX Runtime
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         },
         {
           id: `batch-realtime`,
           title: `Batch vs Real-Time Inference`,
-          content: `Batch: process large datasets offline (Spark, scheduled jobs). Real-time: low-latency API (<100ms).
+          content: `### Introduction
 
-Streaming: continuous processing.`,
+Batch: process large datasets offline (Spark, scheduled jobs). Real-time: low-latency API (<100ms).
+
+### Batch vs Real-Time Inference
+
+Streaming: continuous processing.
+
+### Key Ideas
+
+- Batch for bulk predictions overnight
+- Real-time for user-facing applications
+- Feature store ensures train-serve consistency
+- Caching frequent predictions reduces load`,
           keyPoints: [
             `Batch for bulk predictions overnight`,
             `Real-time for user-facing applications`,
             `Feature store ensures train-serve consistency`,
             `Caching frequent predictions reduces load`
+          ],
+          diagram: `Batch vs Real-Time Inference
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -142,7 +224,22 @@ print(predict([1,2,3]))`,
         {
           id: `docker`,
           title: `Docker Basics for ML`,
-          content: `Dockerfile: base image, COPY requirements, install deps, COPY code, CMD. Reproducible environments across machines.`,
+          content: `### Introduction
+
+Dockerfile: base image, COPY requirements, install deps, COPY code, CMD. Reproducible environments across machines.
+
+### Docker Basics for ML
+
+### Key Ideas
+
+- Pin base image version for reproducibility
+- Multi-stage builds reduce image size
+- .dockerignore excludes unnecessary files
+- Non-root user for security
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Dockerfile example:
 dockerfile = """
 FROM python:3.11-slim
@@ -159,43 +256,108 @@ print(dockerfile.strip().split("\\n")[0])`,
             `Multi-stage builds reduce image size`,
             `.dockerignore excludes unnecessary files`,
             `Non-root user for security`
+          ],
+          diagram: `Docker Basics for ML
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
           ]
         },
         {
           id: `compose`,
           title: `Docker Compose`,
-          content: `Multi-container apps: API + Redis + PostgreSQL. docker-compose.yml defines services, networks, volumes.`,
+          content: `### Introduction
+
+Multi-container apps: API + Redis + PostgreSQL. docker-compose.yml defines services, networks, volumes.
+
+### Docker Compose
+
+### Key Ideas
+
+- Compose for local development stacks
+- Define environment variables in compose file
+- Health checks ensure service readiness
+- Production: Kubernetes not Compose`,
           keyPoints: [
             `Compose for local development stacks`,
             `Define environment variables in compose file`,
             `Health checks ensure service readiness`,
             `Production: Kubernetes not Compose`
+          ],
+          diagram: `Docker Compose
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `cloud`,
           title: `Cloud ML Platforms`,
-          content: `AWS SageMaker, GCP Vertex AI, Azure ML. Managed training, deployment, monitoring.
+          content: `### Introduction
 
-Serverless: Lambda + container images.`,
+AWS SageMaker, GCP Vertex AI, Azure ML. Managed training, deployment, monitoring.
+
+### Cloud ML Platforms
+
+Serverless: Lambda + container images.
+
+### Key Ideas
+
+- Managed platforms reduce ops burden
+- SageMaker endpoints for real-time inference
+- Vertex AI unified Google Cloud ML platform
+- Cost optimization: spot instances for training`,
           keyPoints: [
             `Managed platforms reduce ops burden`,
             `SageMaker endpoints for real-time inference`,
             `Vertex AI unified Google Cloud ML platform`,
             `Cost optimization: spot instances for training`
+          ],
+          diagram: `Cloud ML Platforms
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         },
         {
           id: `cicd`,
           title: `CI/CD for ML`,
-          content: `GitHub Actions, Jenkins pipelines. Test → train → evaluate → deploy if metrics pass.
+          content: `### Introduction
 
-MLflow tracks experiments.`,
+GitHub Actions, Jenkins pipelines. Test → train → evaluate → deploy if metrics pass.
+
+### CI/CD for ML
+
+MLflow tracks experiments.
+
+### Key Ideas
+
+- Automated testing of data schemas and model metrics
+- Gate deployment on validation metric thresholds
+- MLflow or W&B for experiment tracking
+- Model registry manages production model versions`,
           keyPoints: [
             `Automated testing of data schemas and model metrics`,
             `Gate deployment on validation metric thresholds`,
             `MLflow or W&B for experiment tracking`,
             `Model registry manages production model versions`
+          ],
+          diagram: `CI/CD for ML
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -260,20 +422,52 @@ MLflow tracks experiments.`,
         {
           id: `monitoring`,
           title: `Model Monitoring`,
-          content: `Track prediction latency, throughput, error rates. Log inputs and outputs. Alert on anomalies.`,
+          content: `### Introduction
+
+Track prediction latency, throughput, error rates. Log inputs and outputs. Alert on anomalies.
+
+### Model Monitoring
+
+### Key Ideas
+
+- Monitor latency p50, p95, p99 percentiles
+- Log predictions for debugging and retraining
+- Alert on error rate spikes
+- Prometheus + Grafana common stack`,
           keyPoints: [
             `Monitor latency p50, p95, p99 percentiles`,
             `Log predictions for debugging and retraining`,
             `Alert on error rate spikes`,
             `Prometheus + Grafana common stack`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `drift`,
           title: `Data Drift & Concept Drift`,
-          content: `Data drift: input distribution changes. Concept drift: relationship X→Y changes.
+          content: `### Introduction
 
-Both degrade model performance over time.`,
+Data drift: input distribution changes. Concept drift: relationship X→Y changes.
+
+### Data Drift & Concept Drift
+
+Both degrade model performance over time.
+
+### Key Ideas
+
+- KS test for numerical feature drift detection
+- PSI (Population Stability Index) common in finance
+- Concept drift harder to detect without labels
+- Scheduled retraining addresses drift
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 from scipy import stats
 
@@ -287,32 +481,74 @@ print(round(pvalue, 6))`,
             `PSI (Population Stability Index) common in finance`,
             `Concept drift harder to detect without labels`,
             `Scheduled retraining addresses drift`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Concept drift harder to detect without labels.`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `evidently`,
           title: `Evidently AI & Tools`,
-          content: `Evidently generates drift reports. Great Expectations validates data.
+          content: `### Introduction
 
-WhyLabs for AI observability.`,
+Evidently generates drift reports. Great Expectations validates data.
+
+### Evidently AI & Tools
+
+WhyLabs for AI observability.
+
+### Key Ideas
+
+- Evidently: data drift and model performance reports
+- Great Expectations: data validation suites
+- Compare production vs reference distributions
+- Automated reports in CI/CD pipeline`,
           keyPoints: [
             `Evidently: data drift and model performance reports`,
             `Great Expectations: data validation suites`,
             `Compare production vs reference distributions`,
             `Automated reports in CI/CD pipeline`
+          ],
+          diagram: `Evidently AI & Tools
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `retraining`,
           title: `Retraining Strategies`,
-          content: `Scheduled retraining (weekly/monthly). Trigger-based on drift detection.
+          content: `### Introduction
 
-Continuous learning with new labeled data.`,
+Scheduled retraining (weekly/monthly). Trigger-based on drift detection.
+
+### Retraining Strategies
+
+Continuous learning with new labeled data.
+
+### Key Ideas
+
+- Define retraining triggers and schedule
+- Champion/challenger model comparison
+- Rollback capability essential
+- Label delay complicates monitoring`,
           keyPoints: [
             `Define retraining triggers and schedule`,
             `Champion/challenger model comparison`,
             `Rollback capability essential`,
             `Label delay complicates monitoring`
+          ],
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -377,22 +613,54 @@ Continuous learning with new labeled data.`,
         {
           id: `bias`,
           title: `Types of Bias`,
-          content: `Representation bias from sampling. Measurement bias from proxies.
+          content: `### Introduction
 
-Evaluation bias from benchmarks.`,
+Representation bias from sampling. Measurement bias from proxies.
+
+### Types of Bias
+
+Evaluation bias from benchmarks.
+
+### Key Ideas
+
+- Bias often originates in data not algorithm
+- Protected attributes: race, gender, age, disability
+- Proxy variables encode protected attributes indirectly
+- Intersectionality: bias compounds across groups`,
           keyPoints: [
             `Bias often originates in data not algorithm`,
             `Protected attributes: race, gender, age, disability`,
             `Proxy variables encode protected attributes indirectly`,
             `Intersectionality: bias compounds across groups`
+          ],
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `fairness`,
           title: `Fairness Metrics`,
-          content: `Demographic parity: equal positive rates across groups. Equalized odds: equal TPR and FPR.
+          content: `### Introduction
 
-Calibration: equal probability meaning across groups.`,
+Demographic parity: equal positive rates across groups. Equalized odds: equal TPR and FPR.
+
+### Fairness Metrics
+
+Calibration: equal probability meaning across groups.
+
+### Key Ideas
+
+- Fairness metrics often mutually incompatible
+- Choose metric based on domain and legal requirements
+- fairlearn library implements fairness metrics
+- Disparate impact ratio: 80% rule in US employment law
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Demographic parity: P(ŷ=1|A=0) should equal P(ŷ=1|A=1)
 # where A is protected attribute
 group_a_rate = 0.3
@@ -405,32 +673,74 @@ print(f"Demographic parity difference: {parity_diff}")`,
             `Choose metric based on domain and legal requirements`,
             `fairlearn library implements fairness metrics`,
             `Disparate impact ratio: 80% rule in US employment law`
+          ],
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `mitigation`,
           title: `Bias Mitigation`,
-          content: `Pre-processing: reweight, resample. In-processing: fairness constraints.
+          content: `### Introduction
 
-Post-processing: adjust thresholds per group.`,
+Pre-processing: reweight, resample. In-processing: fairness constraints.
+
+### Bias Mitigation
+
+Post-processing: adjust thresholds per group.
+
+### Key Ideas
+
+- Pre-processing modifies training data
+- In-processing adds fairness constraints to loss
+- Post-processing adjusts decision thresholds
+- Transparency about tradeoffs required`,
           keyPoints: [
             `Pre-processing modifies training data`,
             `In-processing adds fairness constraints to loss`,
             `Post-processing adjusts decision thresholds`,
             `Transparency about tradeoffs required`
+          ],
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `explain-ethics`,
           title: `Explainability & Accountability`,
-          content: `Right to explanation (GDPR). Model cards document intended use and limitations.
+          content: `### Introduction
 
-Impact assessments before deployment.`,
+Right to explanation (GDPR). Model cards document intended use and limitations.
+
+### Explainability & Accountability
+
+Impact assessments before deployment.
+
+### Key Ideas
+
+- Model cards: intended use, training data, limitations
+- Algorithmic impact assessment for high-risk AI
+- Human oversight for consequential decisions
+- Document known failure modes and biases`,
           keyPoints: [
             `Model cards: intended use, training data, limitations`,
             `Algorithmic impact assessment for high-risk AI`,
             `Human oversight for consequential decisions`,
             `Document known failure modes and biases`
+          ],
+          diagram: `Explainability & Accountability
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -495,47 +805,119 @@ Impact assessments before deployment.`,
         {
           id: `framework`,
           title: `Responsible AI Principles`,
-          content: `Fairness, transparency, accountability, privacy, safety, reliability. Google, Microsoft, EU AI Act frameworks.`,
+          content: `### Introduction
+
+Fairness, transparency, accountability, privacy, safety, reliability. Google, Microsoft, EU AI Act frameworks.
+
+### Responsible AI Principles
+
+### Key Ideas
+
+- Fairness: equitable outcomes across groups
+- Transparency: explainable decisions
+- Accountability: clear ownership and audit trails
+- Privacy: data minimization and consent`,
           keyPoints: [
             `Fairness: equitable outcomes across groups`,
             `Transparency: explainable decisions`,
             `Accountability: clear ownership and audit trails`,
             `Privacy: data minimization and consent`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `eu-ai-act`,
           title: `EU AI Act`,
-          content: `Risk-based regulation: unacceptable, high-risk, limited, minimal risk. High-risk AI requires conformity assessment, documentation, human oversight.`,
+          content: `### Introduction
+
+Risk-based regulation: unacceptable, high-risk, limited, minimal risk. High-risk AI requires conformity assessment, documentation, human oversight.
+
+### EU AI Act
+
+### Key Ideas
+
+- Prohibited: social scoring, manipulative AI
+- High-risk: hiring, credit, medical, law enforcement
+- Requires risk management and data governance
+- Global impact — affects any AI serving EU users`,
           keyPoints: [
             `Prohibited: social scoring, manipulative AI`,
             `High-risk: hiring, credit, medical, law enforcement`,
             `Requires risk management and data governance`,
             `Global impact — affects any AI serving EU users`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `privacy`,
           title: `Privacy-Preserving ML`,
-          content: `Differential privacy adds noise to protect individuals. Federated learning trains without centralizing data.
+          content: `### Introduction
 
-Data anonymization techniques.`,
+Differential privacy adds noise to protect individuals. Federated learning trains without centralizing data.
+
+### Privacy-Preserving ML
+
+Data anonymization techniques.
+
+### Key Ideas
+
+- Differential privacy mathematical privacy guarantee
+- Federated learning: model travels to data
+- k-anonymity, l-diversity for anonymization
+- PII detection and redaction in training data`,
           keyPoints: [
             `Differential privacy mathematical privacy guarantee`,
             `Federated learning: model travels to data`,
             `k-anonymity, l-diversity for anonymization`,
             `PII detection and redaction in training data`
+          ],
+          diagram: `Privacy-Preserving ML
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `red-team`,
           title: `Red Teaming & Safety`,
-          content: `Adversarial testing of AI systems. Jailbreak attempts, prompt injection, harmful output testing before release.`,
+          content: `### Introduction
+
+Adversarial testing of AI systems. Jailbreak attempts, prompt injection, harmful output testing before release.
+
+### Red Teaming & Safety
+
+### Key Ideas
+
+- Red team before deploying LLM applications
+- Prompt injection: user overrides system instructions
+- Content filtering for harmful outputs
+- Safety training (RLHF) reduces but does not eliminate risks`,
           keyPoints: [
             `Red team before deploying LLM applications`,
             `Prompt injection: user overrides system instructions`,
             `Content filtering for harmful outputs`,
             `Safety training (RLHF) reduces but does not eliminate risks`
+          ],
+          diagram: `Red Teaming & Safety
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         }
       ],

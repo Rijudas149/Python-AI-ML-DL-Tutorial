@@ -11,7 +11,22 @@ export const module08Topics: Topic[] = [
         {
           id: `pyplot`,
           title: `pyplot Interface`,
-          content: `import matplotlib.pyplot as plt. plt.plot(), scatter(), bar(), hist(). plt.xlabel, title, legend, show/savefig.`,
+          content: `### Introduction
+
+import matplotlib.pyplot as plt. plt.plot(), scatter(), bar(), hist(). plt.xlabel, title, legend, show/savefig.
+
+### pyplot Interface
+
+### Key Ideas
+
+- plt.figure(figsize=(w,h)) sets size
+- Always label axes and add title
+- savefig before show in scripts
+- Use dpi=300 for publication quality
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import matplotlib.pyplot as plt
 
 x = [1, 2, 3, 4, 5]
@@ -29,12 +44,35 @@ print("Plot saved")`,
             `Always label axes and add title`,
             `savefig before show in scripts`,
             `Use dpi=300 for publication quality`
+          ],
+          diagram: `pyplot Interface
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Parsing dates inconsistently across CSV columns`
           ]
         },
         {
           id: `oo-api`,
           title: `Object-Oriented API`,
-          content: `fig, ax = plt.subplots() — preferred for multiple plots. ax.plot(), ax.set_xlabel(). More control than pyplot.`,
+          content: `### Introduction
+
+fig, ax = plt.subplots() — preferred for multiple plots. ax.plot(), ax.set_xlabel(). More control than pyplot.
+
+### Object-Oriented API
+
+### Key Ideas
+
+- OO API preferred for complex figures
+- subplots creates grid of axes
+- tight_layout prevents overlap
+- ax object methods vs plt functions
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import matplotlib.pyplot as plt
 
 fig, axes = plt.subplots(1, 2, figsize=(10, 4))
@@ -48,30 +86,76 @@ print("Subplots created")`,
             `subplots creates grid of axes`,
             `tight_layout prevents overlap`,
             `ax object methods vs plt functions`
+          ],
+          diagram: `Object-Oriented API
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         },
         {
           id: `styles`,
           title: `Styles & Customization`,
-          content: `plt.style.use("seaborn-v0_8"). Colors, markers, linewidth, alpha transparency.
+          content: `### Introduction
 
-Colorblind-friendly palettes.`,
+plt.style.use("seaborn-v0_8"). Colors, markers, linewidth, alpha transparency.
+
+### Styles & Customization
+
+Colorblind-friendly palettes.
+
+### Key Ideas
+
+- Use colorblind-safe palettes
+- Consistent style across project
+- alpha for overlapping points
+- Avoid chartjunk — maximize data-ink ratio`,
           keyPoints: [
             `Use colorblind-safe palettes`,
             `Consistent style across project`,
             `alpha for overlapping points`,
             `Avoid chartjunk — maximize data-ink ratio`
+          ],
+          diagram: `Styles & Customization
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Avoid chartjunk — maximize data-ink ratio.`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Avoid chartjunk — maximize data-ink ratio.`
           ]
         },
         {
           id: `anatomy`,
           title: `Figure Anatomy`,
-          content: `Figure contains Axes contains Lines/Patches/Text. fig.add_subplot, GridSpec for complex layouts.`,
+          content: `### Introduction
+
+Figure contains Axes contains Lines/Patches/Text. fig.add_subplot, GridSpec for complex layouts.
+
+### Figure Anatomy
+
+### Key Ideas
+
+- Figure is top-level container
+- Axes is single plot area
+- Multiple Axes per Figure
+- GridSpec for irregular layouts`,
           keyPoints: [
             `Figure is top-level container`,
             `Axes is single plot area`,
             `Multiple Axes per Figure`,
             `GridSpec for irregular layouts`
+          ],
+          diagram: `Figure Anatomy
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         }
       ],
@@ -143,7 +227,22 @@ print("2 subplots created")`,
         {
           id: `distplot`,
           title: `Distribution Plots`,
-          content: `sns.histplot, kdeplot, displot for distributions. rugplot for individual observations.`,
+          content: `### Introduction
+
+sns.histplot, kdeplot, displot for distributions. rugplot for individual observations.
+
+### Distribution Plots
+
+### Key Ideas
+
+- kde overlays smooth density estimate
+- binwidth controls histogram granularity
+- displot is figure-level interface
+- Check distribution shape before modeling
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
@@ -157,12 +256,35 @@ print("Distribution plotted")`,
             `binwidth controls histogram granularity`,
             `displot is figure-level interface`,
             `Check distribution shape before modeling`
+          ],
+          diagram: `Distribution Plots
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Plotting before checking for missing values and outliers`
           ]
         },
         {
           id: `relplot`,
           title: `Relational Plots`,
-          content: `scatterplot, lineplot, relplot. hue for color grouping, size for third dimension.`,
+          content: `### Introduction
+
+scatterplot, lineplot, relplot. hue for color grouping, size for third dimension.
+
+### Relational Plots
+
+### Key Ideas
+
+- hue encodes categorical variable
+- size/style add more dimensions
+- relplot for faceted relational plots
+- Avoid overplotting with alpha/jitter
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -175,12 +297,35 @@ print("Scatter with hue")`,
             `size/style add more dimensions`,
             `relplot for faceted relational plots`,
             `Avoid overplotting with alpha/jitter`
+          ],
+          diagram: `Relational Plots
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Avoid overplotting with alpha/jitter.`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Avoid overplotting with alpha/jitter.`
           ]
         },
         {
           id: `catplot`,
           title: `Categorical Plots`,
-          content: `boxplot, violinplot, barplot, countplot. Compare distributions across categories.`,
+          content: `### Introduction
+
+boxplot, violinplot, barplot, countplot. Compare distributions across categories.
+
+### Categorical Plots
+
+### Key Ideas
+
+- boxplot shows quartiles and outliers
+- violinplot shows full distribution shape
+- barplot shows mean with confidence interval
+- order parameter controls x-axis order
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -192,12 +337,35 @@ print("Boxplot created")`,
             `violinplot shows full distribution shape`,
             `barplot shows mean with confidence interval`,
             `order parameter controls x-axis order`
+          ],
+          diagram: `Categorical Plots
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Parsing dates inconsistently across CSV columns`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         },
         {
           id: `heatmap`,
           title: `Heatmaps & Correlation`,
-          content: `sns.heatmap for correlation matrices. annot=True shows values. Essential for EDA in ML.`,
+          content: `### Introduction
+
+sns.heatmap for correlation matrices. annot=True shows values. Essential for EDA in ML.
+
+### Heatmaps & Correlation
+
+### Key Ideas
+
+- corr() computes pairwise correlation
+- heatmap reveals multicollinearity
+- coolwarm diverging palette for correlations
+- Cluster related features visually
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import seaborn as sns
 import pandas as pd
 
@@ -210,6 +378,14 @@ print("Correlation heatmap")`,
             `heatmap reveals multicollinearity`,
             `coolwarm diverging palette for correlations`,
             `Cluster related features visually`
+          ],
+          diagram: `Heatmaps & Correlation
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         }
       ],
@@ -281,7 +457,22 @@ print("done")`,
         {
           id: `plotly-express`,
           title: `Plotly Express`,
-          content: `px.scatter, px.line, px.bar — high-level API. Automatic interactivity: hover, zoom, pan.`,
+          content: `### Introduction
+
+px.scatter, px.line, px.bar — high-level API. Automatic interactivity: hover, zoom, pan.
+
+### Plotly Express
+
+### Key Ideas
+
+- Plotly Express for quick interactive plots
+- Hover tooltips automatic
+- Export to HTML for sharing
+- color/discrete_map for custom colors
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import plotly.express as px
 import pandas as pd
 
@@ -294,39 +485,104 @@ print(fig.data[0].type)`,
             `Hover tooltips automatic`,
             `Export to HTML for sharing`,
             `color/discrete_map for custom colors`
+          ],
+          diagram: `Plotly Express
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Plotting before checking for missing values and outliers`
           ]
         },
         {
           id: `plotly-graph`,
           title: `Graph Objects`,
-          content: `go.Figure, go.Scatter for fine control. Subplots with make_subplots. Animations with frames.`,
+          content: `### Introduction
+
+go.Figure, go.Scatter for fine control. Subplots with make_subplots. Animations with frames.
+
+### Graph Objects
+
+### Key Ideas
+
+- Graph Objects for custom charts
+- make_subplots for complex dashboards
+- Animation frames for time series
+- 3D scatter and surface plots available`,
           keyPoints: [
             `Graph Objects for custom charts`,
             `make_subplots for complex dashboards`,
             `Animation frames for time series`,
             `3D scatter and surface plots available`
+          ],
+          diagram: `Graph Objects
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `dash`,
           title: `Dash Preview`,
-          content: `Plotly Dash builds web dashboards in pure Python. Callbacks for interactivity.`,
+          content: `### Introduction
+
+Plotly Dash builds web dashboards in pure Python. Callbacks for interactivity.
+
+### Dash Preview
+
+### Key Ideas
+
+- Dash for production dashboards
+- dcc components for inputs
+- Callback decorators link inputs to outputs
+- Alternative: Streamlit for simpler apps`,
           keyPoints: [
             `Dash for production dashboards`,
             `dcc components for inputs`,
             `Callback decorators link inputs to outputs`,
             `Alternative: Streamlit for simpler apps`
+          ],
+          diagram: `Dash Preview
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         },
         {
           id: `when`,
           title: `When to Use Plotly`,
-          content: `Exploration and dashboards: Plotly. Publications: Matplotlib/Seaborn. Large data: datashader.`,
+          content: `### Introduction
+
+Exploration and dashboards: Plotly. Publications: Matplotlib/Seaborn. Large data: datashader.
+
+### When to Use Plotly
+
+### Key Ideas
+
+- Plotly for interactive exploration
+- Matplotlib for static publication figures
+- Consider audience and medium
+- Performance degrades with millions of points`,
           keyPoints: [
             `Plotly for interactive exploration`,
             `Matplotlib for static publication figures`,
             `Consider audience and medium`,
             `Performance degrades with millions of points`
+          ],
+          diagram: `When to Use Plotly
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         }
       ],
@@ -396,47 +652,123 @@ print(fig.layout.title.text)`,
         {
           id: `chart-selection`,
           title: `Choosing the Right Chart`,
-          content: `Comparison: bar. Distribution: histogram/violin. Relationship: scatter. Composition: stacked bar/pie (sparingly). Time: line.`,
+          content: `### Introduction
+
+Comparison: bar. Distribution: histogram/violin. Relationship: scatter. Composition: stacked bar/pie (sparingly). Time: line.
+
+### Choosing the Right Chart
+
+### Key Ideas
+
+- Match chart type to analytical question
+- Bar charts start at zero
+- Avoid pie charts for many categories
+- Small multiples for comparison across groups`,
           keyPoints: [
             `Match chart type to analytical question`,
             `Bar charts start at zero`,
             `Avoid pie charts for many categories`,
             `Small multiples for comparison across groups`
+          ],
+          diagram: `Choosing the Right Chart
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Avoid pie charts for many categories.`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         },
         {
           id: `color`,
           title: `Color Theory`,
-          content: `Diverging for deviation from midpoint. Categorical for distinct groups.
+          content: `### Introduction
 
-Max 6-8 categorical colors.`,
+Diverging for deviation from midpoint. Categorical for distinct groups.
+
+### Color Theory
+
+Max 6-8 categorical colors.
+
+### Key Ideas
+
+- Colorblind-safe: viridis, ColorBrewer
+- Never use color as only differentiator
+- Consistent color mapping across charts
+- Highlight key data with accent color`,
           keyPoints: [
             `Colorblind-safe: viridis, ColorBrewer`,
             `Never use color as only differentiator`,
             `Consistent color mapping across charts`,
             `Highlight key data with accent color`
+          ],
+          diagram: `Color Theory
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Never use color as only differentiator.`
           ]
         },
         {
           id: `storytelling`,
           title: `Data Storytelling`,
-          content: `Lead with insight, not chart. Annotate key points. Remove clutter. One message per visualization.`,
+          content: `### Introduction
+
+Lead with insight, not chart. Annotate key points. Remove clutter. One message per visualization.
+
+### Data Storytelling
+
+### Key Ideas
+
+- Title states the insight not the data
+- Remove gridlines and borders if not needed
+- Direct labeling beats legends
+- Guide viewer eye with annotations`,
           keyPoints: [
             `Title states the insight not the data`,
             `Remove gridlines and borders if not needed`,
             `Direct labeling beats legends`,
             `Guide viewer eye with annotations`
+          ],
+          diagram: `Data Storytelling
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         },
         {
           id: `eda-workflow`,
           title: `EDA Visualization Workflow`,
-          content: `Univariate → bivariate → multivariate. Check distributions, correlations, outliers, missing patterns before modeling.`,
+          content: `### Introduction
+
+Univariate → bivariate → multivariate. Check distributions, correlations, outliers, missing patterns before modeling.
+
+### EDA Visualization Workflow
+
+### Key Ideas
+
+- pairplot for multivariate overview
+- Check class balance in classification
+- Visualize residuals after modeling
+- Document findings for reproducibility`,
           keyPoints: [
             `pairplot for multivariate overview`,
             `Check class balance in classification`,
             `Visualize residuals after modeling`,
             `Document findings for reproducibility`
+          ],
+          diagram: `EDA Visualization Workflow
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],
@@ -503,29 +835,82 @@ print(len(eda_checklist))`,
         {
           id: `geopandas`,
           title: `Geospatial Visualization`,
-          content: `GeoPandas extends pandas with geometry. choropleth maps, point maps. folium for interactive maps.`,
+          content: `### Introduction
+
+GeoPandas extends pandas with geometry. choropleth maps, point maps. folium for interactive maps.
+
+### Geospatial Visualization
+
+### Key Ideas
+
+- GeoPandas for shapefile/GeoJSON data
+- folium for interactive Leaflet maps
+- Projections matter for accurate area comparison
+- Geopy for geocoding addresses`,
           keyPoints: [
             `GeoPandas for shapefile/GeoJSON data`,
             `folium for interactive Leaflet maps`,
             `Projections matter for accurate area comparison`,
             `Geopy for geocoding addresses`
+          ],
+          diagram: `Geospatial Visualization
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Broadcasting mistakes when array shapes do not align`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `network`,
           title: `Network Graphs`,
-          content: `networkx + matplotlib/plotly for graph visualization. Nodes and edges for relationship data.`,
+          content: `### Introduction
+
+networkx + matplotlib/plotly for graph visualization. Nodes and edges for relationship data.
+
+### Network Graphs
+
+### Key Ideas
+
+- networkx for graph algorithms
+- Layout algorithms affect readability
+- Node size/color encode attributes
+- Useful for social and knowledge graphs`,
           keyPoints: [
             `networkx for graph algorithms`,
             `Layout algorithms affect readability`,
             `Node size/color encode attributes`,
             `Useful for social and knowledge graphs`
+          ],
+          diagram: `Network Graphs
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `ml-viz`,
           title: `ML-Specific Visualizations`,
-          content: `Confusion matrix heatmap, ROC curves, learning curves, feature importance bar charts, decision boundaries.`,
+          content: `### Introduction
+
+Confusion matrix heatmap, ROC curves, learning curves, feature importance bar charts, decision boundaries.
+
+### ML-Specific Visualizations
+
+### Key Ideas
+
+- Confusion matrix for classification errors
+- ROC-AUC visualizes threshold tradeoffs
+- Learning curves diagnose bias/variance
+- SHAP summary plots for feature importance
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.metrics import confusion_matrix
 import numpy as np
 
@@ -539,17 +924,44 @@ print(confusion_matrix(y_true, y_pred))`,
             `ROC-AUC visualizes threshold tradeoffs`,
             `Learning curves diagnose bias/variance`,
             `SHAP summary plots for feature importance`
+          ],
+          diagram: `ML-Specific Visualizations
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Parsing dates inconsistently across CSV columns`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         },
         {
           id: `tools`,
           title: `Specialized Tools`,
-          content: `datashader for big data viz. plotnine (ggplot2 port). altair for declarative viz. Choose tool for scale and audience.`,
+          content: `### Introduction
+
+datashader for big data viz. plotnine (ggplot2 port). altair for declarative viz. Choose tool for scale and audience.
+
+### Specialized Tools
+
+### Key Ideas
+
+- datashader aggregates millions of points
+- Altair declarative grammar of graphics
+- plotnine familiar to R users
+- Tool choice depends on data scale and output medium`,
           keyPoints: [
             `datashader aggregates millions of points`,
             `Altair declarative grammar of graphics`,
             `plotnine familiar to R users`,
             `Tool choice depends on data scale and output medium`
+          ],
+          diagram: `Specialized Tools
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         }
       ],

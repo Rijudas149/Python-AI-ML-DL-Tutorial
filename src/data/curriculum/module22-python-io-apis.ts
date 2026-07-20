@@ -11,9 +11,24 @@ export const module22Topics: Topic[] = [
         {
           id: `pathlib`,
           title: `pathlib for Paths`,
-          content: `\`pathlib.Path\` replaces os.path string juggling. \`/\` operator joins: \`Path("data") / "file.csv"\`. Methods: \`.read_text()\`, \`.write_text()\`, \`.exists()\`, \`.mkdir(parents=True)\`, \`.glob("*.json")\`.
+          content: `### Introduction
 
-Use context managers or explicit encoding (\`encoding="utf-8"\`) for text. \`Path.home()\`, \`.resolve()\` for absolute normalized paths.`,
+\`pathlib.Path\` replaces os.path string juggling. \`/\` operator joins: \`Path("data") / "file.csv"\`. Methods: \`.read_text()\`, \`.write_text()\`, \`.exists()\`, \`.mkdir(parents=True)\`, \`.glob("*.json")\`.
+
+### pathlib for Paths
+
+Use context managers or explicit encoding (\`encoding="utf-8"\`) for text. \`Path.home()\`, \`.resolve()\` for absolute normalized paths.
+
+### Key Ideas
+
+- Path objects are immutable and expressive
+- Always specify encoding for text files
+- glob/rglob for pattern file discovery
+- resolve() removes .. and symlinks
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from pathlib import Path
 p = Path("sample.txt")
 p.write_text("hello", encoding="utf-8")
@@ -24,14 +39,35 @@ print(p.read_text(encoding="utf-8"))`,
             `Always specify encoding for text files`,
             `glob/rglob for pattern file discovery`,
             `resolve() removes .. and symlinks`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `json-csv`,
           title: `JSON & CSV`,
-          content: `\`json.load/dump\` for structured data—mind that JSON has no date type. **\`csv.DictReader/DictWriter\`** maps rows to dicts with column headers.
+          content: `### Introduction
 
-For large CSVs, iterate rows instead of loading all into memory. Handle malformed rows with error policies or validation layers.`,
+\`json.load/dump\` for structured data—mind that JSON has no date type. **\`csv.DictReader/DictWriter\`** maps rows to dicts with column headers.
+
+### JSON & CSV
+
+For large CSVs, iterate rows instead of loading all into memory. Handle malformed rows with error policies or validation layers.
+
+### Key Ideas
+
+- json serializes dict/list primitives only
+- DictReader uses first row as field names
+- Stream large files line by line
+- Validate types after reading CSV strings
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import json, csv, io
 buf = io.StringIO("name,score\\nAda,99\\n")
 rows = list(csv.DictReader(buf))
@@ -42,27 +78,69 @@ print(json.dumps(rows))`,
             `DictReader uses first row as field names`,
             `Stream large files line by line`,
             `Validate types after reading CSV strings`
+          ],
+          diagram: `JSON & CSV
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `pickle`,
           title: `Pickle & Security`,
-          content: `\`pickle\` serializes arbitrary Python objects quickly but **only load trusted files**—unpickling executes code paths. Prefer JSON or Parquet for interoperability.
+          content: `### Introduction
 
-Use pickle for ephemeral caches or sklearn joblib models in controlled environments. Version your objects or use schema migrations when formats change.`,
+\`pickle\` serializes arbitrary Python objects quickly but **only load trusted files**—unpickling executes code paths. Prefer JSON or Parquet for interoperability.
+
+### Pickle & Security
+
+Use pickle for ephemeral caches or sklearn joblib models in controlled environments. Version your objects or use schema migrations when formats change.
+
+### Key Ideas
+
+- Never unpickle untrusted data
+- pickle is Python-specific not portable
+- joblib better for large numpy arrays
+- Prefer open formats for long-term storage`,
           keyPoints: [
             `Never unpickle untrusted data`,
             `pickle is Python-specific not portable`,
             `joblib better for large numpy arrays`,
             `Prefer open formats for long-term storage`
+          ],
+          diagram: `Pickle & Security
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Never unpickle untrusted data.`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         },
         {
           id: `io-patterns`,
           title: `I/O Patterns & Error Handling`,
-          content: `Use \`with open(...) as f:\` for automatic close. Catch \`FileNotFoundError\`, \`PermissionError\`. Atomic writes: write to temp file then \`replace()\`.
+          content: `### Introduction
 
-Log paths on failure. On Windows mind path separators—pathlib abstracts this.`,
+Use \`with open(...) as f:\` for automatic close. Catch \`FileNotFoundError\`, \`PermissionError\`. Atomic writes: write to temp file then \`replace()\`.
+
+### I/O Patterns & Error Handling
+
+Log paths on failure. On Windows mind path separators—pathlib abstracts this.
+
+### Key Ideas
+
+- Context managers guarantee file closure
+- Atomic replace prevents partial writes
+- Handle missing files explicitly
+- pathlib works cross-platform
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from pathlib import Path
 def safe_read(path):
     p = Path(path)
@@ -77,6 +155,12 @@ print(safe_read("missing.txt") == "")`,
             `Atomic replace prevents partial writes`,
             `Handle missing files explicitly`,
             `pathlib works cross-platform`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -143,11 +227,26 @@ print(json.dumps({"x": 1}))`,
         {
           id: `requests-basics`,
           title: `requests Fundamentals`,
-          content: `\`requests.get(url, params={...}, timeout=10)\` returns **Response**. Check \`resp.status_code\` or \`resp.raise_for_status()\`.
+          content: `### Introduction
+
+\`requests.get(url, params={...}, timeout=10)\` returns **Response**. Check \`resp.status_code\` or \`resp.raise_for_status()\`.
+
+### requests Fundamentals
 
 Body: \`.text\`, \`.json()\`, \`.content\` bytes. Set headers: \`headers={"Authorization": "Bearer TOKEN"}\`.
 
-POST JSON: \`requests.post(url, json={"key": "val"})\`.`,
+POST JSON: \`requests.post(url, json={"key": "val"})\`.
+
+### Key Ideas
+
+- Always set timeouts on external calls
+- raise_for_status converts HTTP errors to exceptions
+- json= parameter sets Content-Type automatically
+- Session objects reuse TCP connections
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import requests
 resp = requests.get("https://httpbin.org/get", params={"q": "ml"}, timeout=10)
 resp.raise_for_status()
@@ -157,29 +256,69 @@ print(resp.json()["args"])  # requires network`,
             `raise_for_status converts HTTP errors to exceptions`,
             `json= parameter sets Content-Type automatically`,
             `Session objects reuse TCP connections`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `rest`,
           title: `REST Conventions`,
-          content: `REST maps resources to URLs. **GET** read, **POST** create, **PUT/PATCH** update, **DELETE** remove.
+          content: `### Introduction
 
-Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 429 Rate Limited, 500 Server Error. Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).`,
+REST maps resources to URLs. **GET** read, **POST** create, **PUT/PATCH** update, **DELETE** remove.
+
+### REST Conventions
+
+Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 429 Rate Limited, 500 Server Error. Design idempotent GET; use pagination query params (\`page\`, \`cursor\`).
+
+### Key Ideas
+
+- Respect HTTP semantics in client design
+- Handle 429 with exponential backoff
+- Version APIs in path or header
+- Document required headers and rate limits`,
           keyPoints: [
             `Respect HTTP semantics in client design`,
             `Handle 429 with exponential backoff`,
             `Version APIs in path or header`,
             `Document required headers and rate limits`
+          ],
+          diagram: `REST Conventions
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         },
         {
           id: `auth-errors`,
           title: `Authentication & Retries`,
-          content: `API keys in headers (never commit to git). OAuth flows for user-delegated access.
+          content: `### Introduction
+
+API keys in headers (never commit to git). OAuth flows for user-delegated access.
+
+### Authentication & Retries
 
 Retry transient 5xx/429 with **\`urllib3.util.retry\`** or \`tenacity\`. Validate response schema before use.
 
-Log correlation IDs from \`X-Request-ID\` headers for support tickets.`,
+Log correlation IDs from \`X-Request-ID\` headers for support tickets.
+
+### Key Ideas
+
+- Store secrets in environment variables
+- Retry only idempotent requests safely
+- Backoff reduces thundering herd
+- Validate JSON shape before accessing keys
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import requests
@@ -193,19 +332,44 @@ print(retry.total)`,
             `Retry only idempotent requests safely`,
             `Backoff reduces thundering herd`,
             `Validate JSON shape before accessing keys`
+          ],
+          diagram: `Authentication & Retries
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `testing-apis`,
           title: `Testing API Clients`,
-          content: `Mock HTTP with **\`responses\`** library or \`unittest.mock.patch("requests.get")\`. Record fixtures with **VCR.py** for integration tests.
+          content: `### Introduction
 
-Separate HTTP layer from business logic—pure functions parse JSON dicts; thin wrapper performs requests.`,
+Mock HTTP with **\`responses\`** library or \`unittest.mock.patch("requests.get")\`. Record fixtures with **VCR.py** for integration tests.
+
+### Testing API Clients
+
+Separate HTTP layer from business logic—pure functions parse JSON dicts; thin wrapper performs requests.
+
+### Key Ideas
+
+- Mock at HTTP boundary for unit tests
+- Integration tests hit sandboxes sparingly
+- Separate transport from parsing logic
+- Contract tests catch API drift early`,
           keyPoints: [
             `Mock at HTTP boundary for unit tests`,
             `Integration tests hit sandboxes sparingly`,
             `Separate transport from parsing logic`,
             `Contract tests catch API drift early`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         }
       ],
@@ -272,9 +436,24 @@ print(params["q"])`,
         {
           id: `bs4`,
           title: `BeautifulSoup Parsing`,
-          content: `Parse HTML with \`BeautifulSoup(html, "html.parser")\` (or **lxml** for speed). Navigate: \`soup.find("tag", class_="x")\`, \`.select("css.selector")\`, \`.get_text(strip=True)\`.
+          content: `### Introduction
 
-BeautifulSoup tolerates malformed markup—still not a browser; dynamic JS sites need Playwright/Selenium.`,
+Parse HTML with \`BeautifulSoup(html, "html.parser")\` (or **lxml** for speed). Navigate: \`soup.find("tag", class_="x")\`, \`.select("css.selector")\`, \`.get_text(strip=True)\`.
+
+### BeautifulSoup Parsing
+
+BeautifulSoup tolerates malformed markup—still not a browser; dynamic JS sites need Playwright/Selenium.
+
+### Key Ideas
+
+- CSS selectors scale better than manual loops
+- strip=True cleans whitespace in text extraction
+- Static HTML only—JS rendering needs browser automation
+- Handle missing elements with if/defaults
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from bs4 import BeautifulSoup
 html = "<html><body><p class=\\"item\\">A</p><p class=\\"item\\">B</p></body></html>"
 soup = BeautifulSoup(html, "html.parser")
@@ -285,31 +464,71 @@ print([p.get_text() for p in soup.select("p.item")])`,
             `strip=True cleans whitespace in text extraction`,
             `Static HTML only—JS rendering needs browser automation`,
             `Handle missing elements with if/defaults`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `fetch`,
           title: `Fetching Pages Responsibly`,
-          content: `Set **\`User-Agent\`** identifying your bot and contact. Honor **robots.txt** (\`urllib.robotparser\`).
+          content: `### Introduction
+
+Set **\`User-Agent\`** identifying your bot and contact. Honor **robots.txt** (\`urllib.robotparser\`).
+
+### Fetching Pages Responsibly
 
 Rate limit: \`time.sleep\` or token bucket between requests. Cache responses during development.
 
-Do not scrape personal data without legal basis (GDPR).`,
+Do not scrape personal data without legal basis (GDPR).
+
+### Key Ideas
+
+- Read Terms of Service before scraping
+- Throttle requests to avoid overloading servers
+- Identify your scraper in User-Agent string
+- Prefer official APIs when available`,
           keyPoints: [
             `Read Terms of Service before scraping`,
             `Throttle requests to avoid overloading servers`,
             `Identify your scraper in User-Agent string`,
             `Prefer official APIs when available`
+          ],
+          diagram: `Fetching Pages Responsibly
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Throttle requests to avoid overloading servers.`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `extract`,
           title: `Structured Extraction`,
-          content: `Normalize URLs with \`urllib.parse.urljoin\`. Extract tables with \`pandas.read_html\` when suitable.
+          content: `### Introduction
+
+Normalize URLs with \`urllib.parse.urljoin\`. Extract tables with \`pandas.read_html\` when suitable.
+
+### Structured Extraction
 
 Store raw HTML snapshots for reproducibility before parsing logic changes. Pipeline: fetch → parse → validate → persist.
 
-Log HTTP status and parse failures separately.`,
+Log HTTP status and parse failures separately.
+
+### Key Ideas
+
+- urljoin resolves relative links correctly
+- Validate extracted fields against schema
+- Keep raw snapshots for debugging parser changes
+- pandas.read_html quick for simple tables
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from urllib.parse import urljoin
 base = "https://example.com/courses/"
 print(urljoin(base, "../blog/post"))`,
@@ -318,19 +537,44 @@ print(urljoin(base, "../blog/post"))`,
             `Validate extracted fields against schema`,
             `Keep raw snapshots for debugging parser changes`,
             `pandas.read_html quick for simple tables`
+          ],
+          diagram: `Structured Extraction
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Broadcasting mistakes when array shapes do not align`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `ethics`,
           title: `Ethical & Legal Considerations`,
-          content: `Scraping public facts differs from bypassing paywalls or CAPTCHAs. Copyright may protect compiled databases.
+          content: `### Introduction
 
-**Computer Fraud and Abuse Act** (US) and similar laws penalize unauthorized access. When in doubt, request permission or purchase data from licensed providers.`,
+Scraping public facts differs from bypassing paywalls or CAPTCHAs. Copyright may protect compiled databases.
+
+### Ethical & Legal Considerations
+
+**Computer Fraud and Abuse Act** (US) and similar laws penalize unauthorized access. When in doubt, request permission or purchase data from licensed providers.
+
+### Key Ideas
+
+- Legal risk varies by jurisdiction and site ToS
+- Do not circumvent authentication or DRM
+- Anonymize and minimize collected personal data
+- Document purpose and retention policy`,
           keyPoints: [
             `Legal risk varies by jurisdiction and site ToS`,
             `Do not circumvent authentication or DRM`,
             `Anonymize and minimize collected personal data`,
             `Document purpose and retention policy`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Do not circumvent authentication or DRM.`
           ]
         }
       ],
@@ -398,9 +642,24 @@ print(len(s.select("li")))`,
         {
           id: `connect`,
           title: `Connecting & Cursors`,
-          content: `\`sqlite3.connect("app.db")\` creates file if missing. **Context manager** commits on success, rolls back on exception.
+          content: `### Introduction
 
-Cursor executes SQL: \`cur.execute(...)\`, \`cur.fetchall()\`. Row factory \`sqlite3.Row\` enables dict-like access: \`conn.row_factory = sqlite3.Row\`.`,
+\`sqlite3.connect("app.db")\` creates file if missing. **Context manager** commits on success, rolls back on exception.
+
+### Connecting & Cursors
+
+Cursor executes SQL: \`cur.execute(...)\`, \`cur.fetchall()\`. Row factory \`sqlite3.Row\` enables dict-like access: \`conn.row_factory = sqlite3.Row\`.
+
+### Key Ideas
+
+- :memory: database for tests
+- Context managers handle commit/rollback
+- Parameterized ? placeholders prevent SQL injection
+- Row factory improves readability
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.execute("CREATE TABLE t (id INTEGER PRIMARY KEY, name TEXT)")
@@ -412,16 +671,37 @@ print(conn.execute("SELECT name FROM t").fetchone()[0])`,
             `Context managers handle commit/rollback`,
             `Parameterized ? placeholders prevent SQL injection`,
             `Row factory improves readability`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `sql`,
           title: `SQL Essentials in Python`,
-          content: `DML: SELECT, INSERT, UPDATE, DELETE. **JOIN** combines tables on keys.
+          content: `### Introduction
+
+DML: SELECT, INSERT, UPDATE, DELETE. **JOIN** combines tables on keys.
+
+### SQL Essentials in Python
 
 **GROUP BY** aggregates; **HAVING** filters groups. Use transactions for multi-step consistency: \`BEGIN\` … \`COMMIT\`.
 
-SQLite supports limited ALTER—plan schemas upfront.`,
+SQLite supports limited ALTER—plan schemas upfront.
+
+### Key Ideas
+
+- Foreign keys require PRAGMA foreign_keys=ON
+- Indexes speed lookups on large tables
+- Avoid SELECT * in production queries
+- executescript for migrations/bootstrap
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import sqlite3
 conn = sqlite3.connect(":memory:")
 conn.executescript("""
@@ -438,32 +718,78 @@ print(row)`,
             `Indexes speed lookups on large tables`,
             `Avoid SELECT * in production queries`,
             `executescript for migrations/bootstrap`
+          ],
+          diagram: `SQL Essentials in Python
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Avoid SELECT * in production queries.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `orm-alt`,
           title: `When to Upgrade from SQLite`,
-          content: `SQLite suits local apps, prototypes, and tests. Concurrent writers serialize—use PostgreSQL/MySQL for multi-user web backends.
+          content: `### Introduction
 
-**SQLAlchemy** abstracts dialects; **Dataset** simplifies ad hoc exploration. Export with \`.dump\` or pandas \`read_sql\`.`,
+SQLite suits local apps, prototypes, and tests. Concurrent writers serialize—use PostgreSQL/MySQL for multi-user web backends.
+
+### When to Upgrade from SQLite
+
+**SQLAlchemy** abstracts dialects; **Dataset** simplifies ad hoc exploration. Export with \`.dump\` or pandas \`read_sql\`.
+
+### Key Ideas
+
+- SQLite single-writer limitation at scale
+- PostgreSQL for production web apps
+- SQLAlchemy eases migration between engines
+- Backup via sqlite3 .backup API or file copy`,
           keyPoints: [
             `SQLite single-writer limitation at scale`,
             `PostgreSQL for production web apps`,
             `SQLAlchemy eases migration between engines`,
             `Backup via sqlite3 .backup API or file copy`
+          ],
+          diagram: `When to Upgrade from SQLite
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Broadcasting mistakes when array shapes do not align`
           ]
         },
         {
           id: `security`,
           title: `SQL Safety`,
-          content: `Never interpolate user input into SQL strings. Validate types before insert.
+          content: `### Introduction
 
-Principle of least privilege—read-only connections for analytics. Encrypt sensitive columns at application level if needed—SQLite file encryption extensions exist but are not default.`,
+Never interpolate user input into SQL strings. Validate types before insert.
+
+### SQL Safety
+
+Principle of least privilege—read-only connections for analytics. Encrypt sensitive columns at application level if needed—SQLite file encryption extensions exist but are not default.
+
+### Key Ideas
+
+- Parameter binding stops SQL injection
+- Validate integers and enums before queries
+- Separate read replicas conceptually even locally
+- Do not store plaintext passwords—hash them`,
           keyPoints: [
             `Parameter binding stops SQL injection`,
             `Validate integers and enums before queries`,
             `Separate read replicas conceptually even locally`,
             `Do not store plaintext passwords—hash them`
+          ],
+          diagram: `SQL Safety
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Do not store plaintext passwords—hash them.`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -534,9 +860,24 @@ print(c.execute("SELECT COUNT(*) FROM t").fetchone()[0])`,
         {
           id: `json-schema`,
           title: `JSON Schema Validation`,
-          content: `**JSON Schema** describes allowed JSON structure: types, required fields, enums, nested objects. Validate with **\`jsonschema\`** library before processing external payloads.
+          content: `### Introduction
 
-Schemas serve as contracts between services—version them alongside APIs.`,
+**JSON Schema** describes allowed JSON structure: types, required fields, enums, nested objects. Validate with **\`jsonschema\`** library before processing external payloads.
+
+### JSON Schema Validation
+
+Schemas serve as contracts between services—version them alongside APIs.
+
+### Key Ideas
+
+- Validate at system boundaries
+- Schemas document API contracts
+- Combine with pydantic for Python models
+- Fail fast on malformed input
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from jsonschema import validate
 schema = {"type": "object", "required": ["id"], "properties": {"id": {"type": "integer"}}}
 validate({"id": 1}, schema)
@@ -547,14 +888,37 @@ print("valid")`,
             `Schemas document API contracts`,
             `Combine with pydantic for Python models`,
             `Fail fast on malformed input`
+          ],
+          diagram: `JSON Schema Validation
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `yaml`,
           title: `YAML Configuration`,
-          content: `**PyYAML** loads human-readable config: \`yaml.safe_load\` only—never \`load\` with default Loader on untrusted input. YAML supports nesting, lists, anchors (use sparingly).
+          content: `### Introduction
 
-Separate config from code; override with environment variables in twelve-factor apps.`,
+**PyYAML** loads human-readable config: \`yaml.safe_load\` only—never \`load\` with default Loader on untrusted input. YAML supports nesting, lists, anchors (use sparingly).
+
+### YAML Configuration
+
+Separate config from code; override with environment variables in twelve-factor apps.
+
+### Key Ideas
+
+- safe_load prevents arbitrary object construction
+- Keep secrets out of YAML in repos
+- Env var overrides for deployment-specific values
+- Lint config files in CI
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import yaml
 cfg = yaml.safe_load("model:\\n  name: rf\\n  trees: 100\\n")
 print(cfg["model"]["trees"])`,
@@ -564,14 +928,37 @@ print(cfg["model"]["trees"])`,
             `Keep secrets out of YAML in repos`,
             `Env var overrides for deployment-specific values`,
             `Lint config files in CI`
+          ],
+          diagram: `YAML Configuration
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `parquet`,
           title: `Parquet Introduction`,
-          content: `**Parquet** columnar format efficient for analytics—compression and predicate pushdown in Spark/DuckDB/pandas (\`read_parquet\`). Schema embedded; types preserved better than CSV.
+          content: `### Introduction
 
-Partition directories by date/key for large datasets. Not ideal for row-by-row OLTP.`,
+**Parquet** columnar format efficient for analytics—compression and predicate pushdown in Spark/DuckDB/pandas (\`read_parquet\`). Schema embedded; types preserved better than CSV.
+
+### Parquet Introduction
+
+Partition directories by date/key for large datasets. Not ideal for row-by-row OLTP.
+
+### Key Ideas
+
+- Columnar storage reduces I/O for analytics
+- Schema evolution requires careful migration
+- Combine with Snappy/Zstd compression
+- pandas/pyarrow common Python stack
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 df = pd.DataFrame({"a": [1, 2], "b": ["x", "y"]})
 # df.to_parquet("out.parquet"); df2 = pd.read_parquet("out.parquet")
@@ -582,19 +969,44 @@ print(list(df.columns))`,
             `Schema evolution requires careful migration`,
             `Combine with Snappy/Zstd compression`,
             `pandas/pyarrow common Python stack`
+          ],
+          diagram: `Parquet Introduction
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Broadcasting mistakes when array shapes do not align`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `formats-choose`,
           title: `Choosing a Format`,
-          content: `JSON for APIs and configs. CSV for human spreadsheet interchange. Parquet for ML datasets and warehouses.
+          content: `### Introduction
 
-Avro/Protobuf for streaming schemas. Pick based on readers, schema needs, and size. Document encoding, timezone, and null conventions in data catalogs.`,
+JSON for APIs and configs. CSV for human spreadsheet interchange. Parquet for ML datasets and warehouses.
+
+### Choosing a Format
+
+Avro/Protobuf for streaming schemas. Pick based on readers, schema needs, and size. Document encoding, timezone, and null conventions in data catalogs.
+
+### Key Ideas
+
+- Match format to consumer tooling
+- Columnar for read-heavy analytics
+- Row formats for transactional updates
+- Version datasets with DVC or similar`,
           keyPoints: [
             `Match format to consumer tooling`,
             `Columnar for read-heavy analytics`,
             `Row formats for transactional updates`,
             `Version datasets with DVC or similar`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
           ]
         }
       ],

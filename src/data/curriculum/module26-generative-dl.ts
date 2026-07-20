@@ -11,22 +11,56 @@ export const module26Topics: Topic[] = [
         {
           id: `gan-arch`,
           title: `GAN Architecture`,
-          content: `**Generator** G(z) maps noise z to fake samples. **Discriminator** D(x) classifies real vs fake.
+          content: `### Introduction
 
-Minimax game: G tries to fool D; D tries to detect fakes. Loss drives G to match data distribution implicitly without explicit likelihood.`,
+**Generator** G(z) maps noise z to fake samples. **Discriminator** D(x) classifies real vs fake.
+
+### GAN Architecture
+
+Minimax game: G tries to fool D; D tries to detect fakes. Loss drives G to match data distribution implicitly without explicit likelihood.
+
+### Key Ideas
+
+- Latent z usually Gaussian or uniform
+- D too strong prevents G learning—balance capacity
+- Non-saturation G loss log(1-D(G(z))) unstable—use -log D(G(z))
+- Mode collapse: G outputs limited variety`,
           keyPoints: [
             `Latent z usually Gaussian or uniform`,
             `D too strong prevents G learning—balance capacity`,
             `Non-saturation G loss log(1-D(G(z))) unstable—use -log D(G(z))`,
             `Mode collapse: G outputs limited variety`
+          ],
+          diagram: `GAN Architecture
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `dcgan`,
           title: `DCGAN & Convolutional GANs`,
-          content: `Guidelines: use strided conv not pooling; batchnorm in G and D; ReLU in G (except tanh output); LeakyReLU in D. **DCGAN** stable on 64×64 images.
+          content: `### Introduction
 
-Progressive growing and StyleGAN scale to photorealistic faces.`,
+Guidelines: use strided conv not pooling; batchnorm in G and D; ReLU in G (except tanh output); LeakyReLU in D. **DCGAN** stable on 64×64 images.
+
+### DCGAN & Convolutional GANs
+
+Progressive growing and StyleGAN scale to photorealistic faces.
+
+### Key Ideas
+
+- Tanh output matches normalized [-1,1] images
+- BatchNorm stabilizes deep GAN training
+- Label smoothing softens real targets
+- Spectral norm constrains D Lipschitz constant
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 z = torch.randn(4, 100)
 print(z.shape)`,
@@ -36,32 +70,78 @@ print(z.shape)`,
             `BatchNorm stabilizes deep GAN training`,
             `Label smoothing softens real targets`,
             `Spectral norm constrains D Lipschitz constant`
+          ],
+          diagram: `DCGAN & Convolutional GANs
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `training-tricks`,
           title: `Training Tricks`,
-          content: `Alternate G and D updates; sometimes 2:1 ratio. **Gradient penalty (WGAN-GP)** enforces Lipschitz constraint.
+          content: `### Introduction
 
-**Exponential moving average** of G weights (StyleGAN). Track FID during training; early stopping when FID degrades.`,
+Alternate G and D updates; sometimes 2:1 ratio. **Gradient penalty (WGAN-GP)** enforces Lipschitz constraint.
+
+### Training Tricks
+
+**Exponential moving average** of G weights (StyleGAN). Track FID during training; early stopping when FID degrades.
+
+### Key Ideas
+
+- WGAN-GP replaces weight clipping
+- EMA generator smoother outputs
+- DiffAugment regularizes D on limited data
+- Learning rate tuning critical`,
           keyPoints: [
             `WGAN-GP replaces weight clipping`,
             `EMA generator smoother outputs`,
             `DiffAugment regularizes D on limited data`,
             `Learning rate tuning critical`
+          ],
+          diagram: `Training Tricks
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `conditional`,
           title: `Conditional GANs`,
-          content: `Concatenate class label or embedding to G and D inputs. **cGAN** controls generated class.
+          content: `### Introduction
 
-**Pix2Pix** paired image translation with U-Net generator. **CycleGAN** unpaired translation via cycle consistency loss.`,
+Concatenate class label or embedding to G and D inputs. **cGAN** controls generated class.
+
+### Conditional GANs
+
+**Pix2Pix** paired image translation with U-Net generator. **CycleGAN** unpaired translation via cycle consistency loss.
+
+### Key Ideas
+
+- Projection discriminator injects class info
+- Pix2Pix needs aligned pairs
+- Cycle consistency L1 enforces invertibility
+- Attention gates improve long-range structure`,
           keyPoints: [
             `Projection discriminator injects class info`,
             `Pix2Pix needs aligned pairs`,
             `Cycle consistency L1 enforces invertibility`,
             `Attention gates improve long-range structure`
+          ],
+          diagram: `Conditional GANs
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`
           ]
         }
       ],
@@ -131,22 +211,56 @@ print(round(g_loss, 2))`,
         {
           id: `vae`,
           title: `VAE Framework`,
-          content: `Encoder outputs μ, σ of approximate posterior q(z|x). Reparameterization: z = μ + σ·ε, ε~N(0,1).
+          content: `### Introduction
 
-Decoder p(x|z) reconstructs x. Loss = reconstruction + KL(q(z|x) || p(z)) with prior p(z)=N(0,I).`,
+Encoder outputs μ, σ of approximate posterior q(z|x). Reparameterization: z = μ + σ·ε, ε~N(0,1).
+
+### VAE Framework
+
+Decoder p(x|z) reconstructs x. Loss = reconstruction + KL(q(z|x) || p(z)) with prior p(z)=N(0,I).
+
+### Key Ideas
+
+- Reparameterization enables backprop through sampling
+- KL regularizes latent space smoothness
+- β-VAE trades reconstruction vs disentanglement
+- Blurry reconstructions vs GAN sharpness`,
           keyPoints: [
             `Reparameterization enables backprop through sampling`,
             `KL regularizes latent space smoothness`,
             `β-VAE trades reconstruction vs disentanglement`,
             `Blurry reconstructions vs GAN sharpness`
+          ],
+          diagram: `VAE Framework
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Training generator and discriminator without balancing capacity — one dominates`
           ]
         },
         {
           id: `latent`,
           title: `Latent Space Geometry`,
-          content: `Smooth latent interpolations z1→z2 decode to plausible transitions. **Latent arithmetic**: z_smile - z_neutral + z_person.
+          content: `### Introduction
 
-Visualization with t-SNE/UMAP on encoded z for cluster structure.`,
+Smooth latent interpolations z1→z2 decode to plausible transitions. **Latent arithmetic**: z_smile - z_neutral + z_person.
+
+### Latent Space Geometry
+
+Visualization with t-SNE/UMAP on encoded z for cluster structure.
+
+### Key Ideas
+
+- Interpolate in latent not pixel space
+- Disentanglement metrics: MIG, SAP
+- Prior mismatch hurts generation quality
+- Conditional VAE adds label to encoder/decoder
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 mu = torch.zeros(1, 2)
 logvar = torch.zeros(1, 2)
@@ -159,32 +273,78 @@ print(z.shape)`,
             `Disentanglement metrics: MIG, SAP`,
             `Prior mismatch hurts generation quality`,
             `Conditional VAE adds label to encoder/decoder`
+          ],
+          diagram: `Latent Space Geometry
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `vae-variants`,
           title: `VAE Variants`,
-          content: `**VQ-VAE** discrete codebook latents for sharper outputs. **NVAE** deep hierarchical VAE.
+          content: `### Introduction
 
-VAEs provide approximate likelihood—useful for anomaly detection via reconstruction error.`,
+**VQ-VAE** discrete codebook latents for sharper outputs. **NVAE** deep hierarchical VAE.
+
+### VAE Variants
+
+VAEs provide approximate likelihood—useful for anomaly detection via reconstruction error.
+
+### Key Ideas
+
+- VQ-VAE enables autoregressive priors over codes
+- Hierarchical latents capture multi-scale structure
+- High reconstruction error flags anomalies
+- VAE+GAN hybrids (VAE-GAN) sharpen outputs`,
           keyPoints: [
             `VQ-VAE enables autoregressive priors over codes`,
             `Hierarchical latents capture multi-scale structure`,
             `High reconstruction error flags anomalies`,
             `VAE+GAN hybrids (VAE-GAN) sharpen outputs`
+          ],
+          diagram: `VAE Variants
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `sampling-vae`,
           title: `Sampling & Evaluation`,
-          content: `Sample z~N(0,I), decode to generate. Quality lower than GANs on images but stable training.
+          content: `### Introduction
 
-Evaluate log-likelihood estimates (ELBO) and reconstruction FID for comparisons.`,
+Sample z~N(0,I), decode to generate. Quality lower than GANs on images but stable training.
+
+### Sampling & Evaluation
+
+Evaluate log-likelihood estimates (ELBO) and reconstruction FID for comparisons.
+
+### Key Ideas
+
+- ELBO lower bound on log p(x)
+- Importance sampling tightens likelihood bound
+- Posterior collapse when KL vanishes
+- Use same FID pipeline as GANs for fairness`,
           keyPoints: [
             `ELBO lower bound on log p(x)`,
             `Importance sampling tightens likelihood bound`,
             `Posterior collapse when KL vanishes`,
             `Use same FID pipeline as GANs for fairness`
+          ],
+          diagram: `Sampling & Evaluation
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Training generator and discriminator without balancing capacity — one dominates`
           ]
         }
       ],
@@ -258,22 +418,56 @@ print(round(float(kl), 2))`,
         {
           id: `forward`,
           title: `Forward Diffusion Process`,
-          content: `Gradually add Gaussian noise over T steps: q(x_t|x_{t-1}) = N(√(1-β_t)x_{t-1}, β_t I). At t=T, x_T ≈ pure noise.
+          content: `### Introduction
 
-Schedule β_t linear or cosine controls noise injection rate.`,
+Gradually add Gaussian noise over T steps: q(x_t|x_{t-1}) = N(√(1-β_t)x_{t-1}, β_t I). At t=T, x_T ≈ pure noise.
+
+### Forward Diffusion Process
+
+Schedule β_t linear or cosine controls noise injection rate.
+
+### Key Ideas
+
+- Closed-form q(x_t|x_0) enables training targets
+- Cosine schedule often better than linear β
+- T typically 1000 steps in DDPM
+- Variance schedule affects sample quality`,
           keyPoints: [
             `Closed-form q(x_t|x_0) enables training targets`,
             `Cosine schedule often better than linear β`,
             `T typically 1000 steps in DDPM`,
             `Variance schedule affects sample quality`
+          ],
+          diagram: `Forward Diffusion Process
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `reverse`,
           title: `Reverse Denoising`,
-          content: `Learn p_θ(x_{t-1}|x_t) parameterized by neural net predicting noise ε or x_0. Training minimizes simplified objective ||ε - ε_θ(x_t,t)||².
+          content: `### Introduction
 
-Sampling iterates from x_T down to x_0.`,
+Learn p_θ(x_{t-1}|x_t) parameterized by neural net predicting noise ε or x_0. Training minimizes simplified objective ||ε - ε_θ(x_t,t)||².
+
+### Reverse Denoising
+
+Sampling iterates from x_T down to x_0.
+
+### Key Ideas
+
+- Predict noise ε equivalent to score matching
+- U-Net backbone with time embedding t
+- DDIM accelerates sampling fewer steps
+- Latent diffusion reduces spatial dimension
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 T = 1000
 t = torch.tensor([500])
@@ -284,32 +478,78 @@ print(t.item())`,
             `U-Net backbone with time embedding t`,
             `DDIM accelerates sampling fewer steps`,
             `Latent diffusion reduces spatial dimension`
+          ],
+          diagram: `Reverse Denoising
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `guidance`,
           title: `Classifier-Free Guidance`,
-          content: `Train conditional model with random label dropout. At sample time interpolate conditional and unconditional predictions: ε = ε_u + s(ε_c - ε_u).
+          content: `### Introduction
 
-Scale s>1 increases prompt adherence, may reduce diversity.`,
+Train conditional model with random label dropout. At sample time interpolate conditional and unconditional predictions: ε = ε_u + s(ε_c - ε_u).
+
+### Classifier-Free Guidance
+
+Scale s>1 increases prompt adherence, may reduce diversity.
+
+### Key Ideas
+
+- Guidance scale s trades fidelity vs diversity
+- Dropout rate ~10% during training
+- Negative prompts via unconditional branch
+- CFG standard in Stable Diffusion`,
           keyPoints: [
             `Guidance scale s trades fidelity vs diversity`,
             `Dropout rate ~10% during training`,
             `Negative prompts via unconditional branch`,
             `CFG standard in Stable Diffusion`
+          ],
+          diagram: `Classifier-Free Guidance
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `diffusion-apps`,
           title: `Applications & Tools`,
-          content: `Stable Diffusion, DALL·E 2 lineage, Imagen. Inpainting, super-resolution, video diffusion extensions.
+          content: `### Introduction
 
-Open weights enable local generation; safety filters and watermarking increasingly required.`,
+Stable Diffusion, DALL·E 2 lineage, Imagen. Inpainting, super-resolution, video diffusion extensions.
+
+### Applications & Tools
+
+Open weights enable local generation; safety filters and watermarking increasingly required.
+
+### Key Ideas
+
+- Latent diffusion runs in VAE compressed space
+- ControlNet adds spatial conditioning
+- Video models add temporal attention layers
+- Energy cost of long sampling chains`,
           keyPoints: [
             `Latent diffusion runs in VAE compressed space`,
             `ControlNet adds spatial conditioning`,
             `Video models add temporal attention layers`,
             `Energy cost of long sampling chains`
+          ],
+          diagram: `Applications & Tools
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         }
       ],
@@ -378,53 +618,129 @@ print(round(eps, 2))`,
         {
           id: `nst`,
           title: `Neural Style Transfer`,
-          content: `Gatys et al.: content loss from early CNN layers, style loss from Gram matrices of feature correlations across channels. Optimize pixel image or train fast feed-forward networks.
+          content: `### Introduction
 
-**AdaIN** adaptive instance norm enables arbitrary style in single forward pass.`,
+Gatys et al.: content loss from early CNN layers, style loss from Gram matrices of feature correlations across channels. Optimize pixel image or train fast feed-forward networks.
+
+### Neural Style Transfer
+
+**AdaIN** adaptive instance norm enables arbitrary style in single forward pass.
+
+### Key Ideas
+
+- Gram matrix captures texture statistics
+- Content/style weight tradeoff visual quality
+- Feed-forward net real-time after training
+- Instance norm removes content-specific bias`,
           keyPoints: [
             `Gram matrix captures texture statistics`,
             `Content/style weight tradeoff visual quality`,
             `Feed-forward net real-time after training`,
             `Instance norm removes content-specific bias`
+          ],
+          diagram: `Neural Style Transfer
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `cyclegan`,
           title: `CycleGAN`,
-          content: `Unpaired domains X and Y: G: X→Y, F: Y→X. Losses: adversarial + cycle ||F(G(x))-x|| + ||G(F(y))-y|| + identity optional.
+          content: `### Introduction
 
-Applications: horses↔zebras, summer↔winter, photo↔sketch.`,
+Unpaired domains X and Y: G: X→Y, F: Y→X. Losses: adversarial + cycle ||F(G(x))-x|| + ||G(F(y))-y|| + identity optional.
+
+### CycleGAN
+
+Applications: horses↔zebras, summer↔winter, photo↔sketch.
+
+### Key Ideas
+
+- Cycle loss enforces structural consistency
+- Patch discriminator for local realism
+- Identity loss preserves color when domains similar
+- Failure on large geometric changes`,
           keyPoints: [
             `Cycle loss enforces structural consistency`,
             `Patch discriminator for local realism`,
             `Identity loss preserves color when domains similar`,
             `Failure on large geometric changes`
+          ],
+          diagram: `CycleGAN
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `stylegan`,
           title: `StyleGAN Overview`,
-          content: `Style-based generator controls coarse-to-fine via **AdaIN** at multiple resolutions. Mapping network f(z) → w in W space smoother than Z.
+          content: `### Introduction
 
-Style mixing interpolates different w layers for disentangled control.`,
+Style-based generator controls coarse-to-fine via **AdaIN** at multiple resolutions. Mapping network f(z) → w in W space smoother than Z.
+
+### StyleGAN Overview
+
+Style mixing interpolates different w layers for disentangled control.
+
+### Key Ideas
+
+- W space more disentangled than Z
+- Progressive training grows resolution
+- Truncation trick trades diversity for quality
+- StyleGAN3 reduces texture sticking artifacts`,
           keyPoints: [
             `W space more disentangled than Z`,
             `Progressive training grows resolution`,
             `Truncation trick trades diversity for quality`,
             `StyleGAN3 reduces texture sticking artifacts`
+          ],
+          diagram: `StyleGAN Overview
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `applications`,
           title: `Creative Applications`,
-          content: `Film post-production, fashion design, data augmentation with domain shift. Ethical concerns: deepfakes, consent, copyright of style sources.
+          content: `### Introduction
 
-Watermarking and provenance metadata (C2PA) emerging standards.`,
+Film post-production, fashion design, data augmentation with domain shift. Ethical concerns: deepfakes, consent, copyright of style sources.
+
+### Creative Applications
+
+Watermarking and provenance metadata (C2PA) emerging standards.
+
+### Key Ideas
+
+- Disclose synthetic media in production pipelines
+- Style from living artists needs licensing
+- Augmentation helps sim-to-real with weather styles
+- Detection models race with generators`,
           keyPoints: [
             `Disclose synthetic media in production pipelines`,
             `Style from living artists needs licensing`,
             `Augmentation helps sim-to-real with weather styles`,
             `Detection models race with generators`
+          ],
+          diagram: `Creative Applications
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         }
       ],
@@ -495,53 +811,127 @@ print(round(float(np.abs(orig - recon).mean()), 2))`,
         {
           id: `fid`,
           title: `Fréchet Inception Distance (FID)`,
-          content: `Embed real and generated images in Inception-v3 pool layer; fit Gaussians to features; compute Fréchet distance between Gaussians. **Lower FID better**—sensitive to mode coverage and quality.
+          content: `### Introduction
 
-Requires sufficient sample count (50k common).`,
+Embed real and generated images in Inception-v3 pool layer; fit Gaussians to features; compute Fréchet distance between Gaussians. **Lower FID better**—sensitive to mode coverage and quality.
+
+### Fréchet Inception Distance (FID)
+
+Requires sufficient sample count (50k common).
+
+### Key Ideas
+
+- FID detects mode collapse better than IS
+- Inception features biased to ImageNet statistics
+- Compare same sample size and preprocessing
+- FID not meaningful across different datasets`,
           keyPoints: [
             `FID detects mode collapse better than IS`,
             `Inception features biased to ImageNet statistics`,
             `Compare same sample size and preprocessing`,
             `FID not meaningful across different datasets`
+          ],
+          diagram: `Fréchet Inception Distance (FID)
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `is`,
           title: `Inception Score (IS)`,
-          content: `IS = exp(E[KL(p(y|x) || p(y))]). Rewards confident class predictions with diverse marginal classes.
+          content: `### Introduction
 
-Less used alone—does not compare to real data directly.`,
+IS = exp(E[KL(p(y|x) || p(y))]). Rewards confident class predictions with diverse marginal classes.
+
+### Inception Score (IS)
+
+Less used alone—does not compare to real data directly.
+
+### Key Ideas
+
+- High IS can fool with sharp but unrealistic images
+- Splits IS into quality and diversity components
+- Prefer FID for research comparisons
+- Use clean-fid implementation for consistency`,
           keyPoints: [
             `High IS can fool with sharp but unrealistic images`,
             `Splits IS into quality and diversity components`,
             `Prefer FID for research comparisons`,
             `Use clean-fid implementation for consistency`
+          ],
+          diagram: `Inception Score (IS)
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `human`,
           title: `Human Evaluation`,
-          content: `MOS mean opinion score, pairwise preference A vs B, Turing-style fool rate. **HumanEval** protocols with calibrated raters.
+          content: `### Introduction
 
-LLM-as-judge emerging for text generation with bias caveats.`,
+MOS mean opinion score, pairwise preference A vs B, Turing-style fool rate. **HumanEval** protocols with calibrated raters.
+
+### Human Evaluation
+
+LLM-as-judge emerging for text generation with bias caveats.
+
+### Key Ideas
+
+- Human eval gold standard but expensive
+- Rater agreement metrics (Cohen's kappa)
+- Prompt consistency for LLM judges
+- Demographic bias in human preference datasets`,
           keyPoints: [
             `Human eval gold standard but expensive`,
             `Rater agreement metrics (Cohen's kappa)`,
             `Prompt consistency for LLM judges`,
             `Demographic bias in human preference datasets`
+          ],
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `other-metrics`,
           title: `Precision, Recall & CLIP Score`,
-          content: `**Precision/Recall for distributions** separate quality vs coverage. **CLIP score** text-image alignment for conditional models.
+          content: `### Introduction
 
-Track memorization metrics detecting training set copying.`,
+**Precision/Recall for distributions** separate quality vs coverage. **CLIP score** text-image alignment for conditional models.
+
+### Precision, Recall & CLIP Score
+
+Track memorization metrics detecting training set copying.
+
+### Key Ideas
+
+- High precision low recall indicates mode dropping
+- CLIP score correlates with caption match not aesthetics
+- Memorization audits for copyright compliance
+- Combine multiple metrics in eval suites`,
           keyPoints: [
             `High precision low recall indicates mode dropping`,
             `CLIP score correlates with caption match not aesthetics`,
             `Memorization audits for copyright compliance`,
             `Combine multiple metrics in eval suites`
+          ],
+          diagram: `Precision, Recall & CLIP Score
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         }
       ],

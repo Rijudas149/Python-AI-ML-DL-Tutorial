@@ -11,7 +11,11 @@ export const module01Topics: Topic[] = [
         {
           id: `vars-intro`,
           title: `What Are Variables?`,
-          content: `In Python, a **variable** is a name bound to an object in memory. Unlike statically typed languages, Python uses **dynamic typing** — the type is determined at runtime based on the value assigned.
+          content: `### Introduction
+
+In Python, a **variable** is a name bound to an object in memory. Unlike statically typed languages, Python uses **dynamic typing** — the type is determined at runtime based on the value assigned.
+
+### What Are Variables?
 
 Naming rules:
 - Start with a letter or underscore
@@ -23,7 +27,11 @@ Python has several core types:
 - \`float\` — decimal numbers
 - \`str\` — text
 - \`bool\` — True/False
-- \`NoneType\` — absence of value`,
+- \`NoneType\` — absence of value
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `x = 42
 pi = 3.14159
 name = "Alice"
@@ -37,17 +45,31 @@ print(type(x), type(pi), type(name))`,
             `Python is dynamically typed`,
             `Use snake_case for variable names`,
             `None represents absence of value`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `literals`,
           title: `Literals & Type Conversion`,
-          content: `**Literals** are fixed values written directly in code. Python supports integer literals (\`42\`), float literals (\`3.14\`), string literals (\`"hello"\`), and boolean literals (\`True\`, \`False\`).
+          content: `### Introduction
+
+**Literals** are fixed values written directly in code. Python supports integer literals (\`42\`), float literals (\`3.14\`), string literals (\`"hello"\`), and boolean literals (\`True\`, \`False\`).
+
+### Literals & Type Conversion
 
 Use built-in functions to convert between types:
 - \`int()\`, \`float()\`, \`str()\`, \`bool()\`
 
-Be careful: \`bool("False")\` is \`True\` because non-empty strings are truthy.`,
+Be careful: \`bool("False")\` is \`True\` because non-empty strings are truthy.
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `a = int("42")
 b = float("3.14")
 c = str(100)
@@ -60,18 +82,39 @@ print(a, b, c, d, e)`,
             `Type conversion is explicit via built-in functions`,
             `Empty strings and zero are falsy`,
             `Non-empty strings convert to True in bool()`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`
           ]
         },
         {
           id: `mutability`,
           title: `Mutable vs Immutable Types`,
-          content: `Python types fall into two categories:
+          content: `### Introduction
+
+Python types fall into two categories:
+
+### Mutable vs Immutable Types
 
 **Immutable** (cannot change in place): \`int\`, \`float\`, \`str\`, \`tuple\`, \`bool\`, \`frozenset\`. Reassignment creates a new object.
 
 **Mutable** (can change in place): \`list\`, \`dict\`, \`set\`. Operations modify the same object.
 
-Use \`id()\` to inspect object identity.`,
+Use \`id()\` to inspect object identity.
+
+### Key Ideas
+
+- Strings are immutable — concatenation creates new objects
+- Lists are mutable — methods modify in place
+- Assignment copies references, not values
+- Use id() to verify object identity
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `s = "hello"
 s2 = s
 s = s + " world"
@@ -88,14 +131,35 @@ print(lst2)  # same object modified`,
             `Lists are mutable — methods modify in place`,
             `Assignment copies references, not values`,
             `Use id() to verify object identity`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `type-checking`,
           title: `Type Checking & Best Practices`,
-          content: `Use \`type()\` for runtime type checks and \`isinstance()\` for inheritance-aware checks. Prefer \`isinstance(x, int)\` over \`type(x) == int\`.
+          content: `### Introduction
 
-For production code, use **type hints** (covered later) and tools like \`mypy\` for static analysis.`,
+Use \`type()\` for runtime type checks and \`isinstance()\` for inheritance-aware checks. Prefer \`isinstance(x, int)\` over \`type(x) == int\`.
+
+### Type Checking & Best Practices
+
+For production code, use **type hints** (covered later) and tools like \`mypy\` for static analysis.
+
+### Key Ideas
+
+- Prefer isinstance() over type() == 
+- Type hints improve readability and tooling
+- Validate inputs at function boundaries
+- Dynamic typing does not mean no types
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           pseudoCode: `IF isinstance(value, expected_type):
     PROCESS value
 ELSE:
@@ -112,6 +176,14 @@ print(greet("World"))`,
             `Type hints improve readability and tooling`,
             `Validate inputs at function boundaries`,
             `Dynamic typing does not mean no types`
+          ],
+          diagram: `Type Checking & Best Practices
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -182,13 +254,21 @@ print(result)`,
         {
           id: `arith`,
           title: `Arithmetic Operators`,
-          content: `Python supports standard arithmetic:
+          content: `### Introduction
+
+Python supports standard arithmetic:
 - \`+\` addition, \`-\` subtraction
 - \`*\` multiplication, \`/\` true division (always float)
 - \`//\` floor division, \`%\` modulo
 - \`**\` exponentiation
 
-Operator precedence follows PEMDAS. Use parentheses for clarity.`,
+### Arithmetic Operators
+
+Operator precedence follows PEMDAS. Use parentheses for clarity.
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `a, b = 17, 5
 print(a + b, a - b, a * b)
 print(a / b, a // b, a % b, a ** 2)`,
@@ -199,14 +279,35 @@ print(a / b, a // b, a % b, a ** 2)`,
             `Floor division truncates toward negative infinity`,
             `Modulo works with negative numbers`,
             `Use ** for powers, not ^`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `compare`,
           title: `Comparison & Logical Operators`,
-          content: `Comparison operators return \`bool\`: \`==\`, \`!=\`, \`<\`, \`>\`, \`<=\`, \`>=\`. Chain comparisons: \`1 < x < 10\`.
+          content: `### Introduction
 
-Logical: \`and\`, \`or\`, \`not\`. Short-circuit evaluation stops when result is determined.`,
+Comparison operators return \`bool\`: \`==\`, \`!=\`, \`<\`, \`>\`, \`<=\`, \`>=\`. Chain comparisons: \`1 < x < 10\`.
+
+### Comparison & Logical Operators
+
+Logical: \`and\`, \`or\`, \`not\`. Short-circuit evaluation stops when result is determined.
+
+### Key Ideas
+
+- Chained comparisons are idiomatic Python
+- and/or use short-circuit evaluation
+- Use == for equality, is for identity
+- not has lower precedence than comparisons
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `x = 7
 print(3 < x < 10)
 print(x > 5 and x < 8)
@@ -219,14 +320,35 @@ False`,
             `and/or use short-circuit evaluation`,
             `Use == for equality, is for identity`,
             `not has lower precedence than comparisons`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `assign`,
           title: `Assignment & Walrus Operator`,
-          content: `Basic assignment: \`x = 5\`. Compound: \`+=\`, \`-=\`, \`*=\`, etc.
+          content: `### Introduction
 
-The **walrus operator** \`:=\` assigns and returns value in expressions (Python 3.8+).`,
+Basic assignment: \`x = 5\`. Compound: \`+=\`, \`-=\`, \`*=\`, etc.
+
+### Assignment & Walrus Operator
+
+The **walrus operator** \`:=\` assigns and returns value in expressions (Python 3.8+).
+
+### Key Ideas
+
+- Compound operators modify and reassign
+- Walrus operator reduces duplication
+- Avoid overusing := — clarity first
+- Assignment is a statement, not expression (except :=)
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `data = [1, 2, 3, 4, 5]
 if (n := len(data)) > 3:
     print(f"List has {n} elements")`,
@@ -236,16 +358,37 @@ if (n := len(data)) > 3:
             `Walrus operator reduces duplication`,
             `Avoid overusing := — clarity first`,
             `Assignment is a statement, not expression (except :=)`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Avoid overusing := — clarity first.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `bitwise`,
           title: `Bitwise & Membership Operators`,
-          content: `Bitwise: \`&\`, \`|\`, \`^\`, \`~\`, \`<<\`, \`>>\` for integer manipulation.
+          content: `### Introduction
+
+Bitwise: \`&\`, \`|\`, \`^\`, \`~\`, \`<<\`, \`>>\` for integer manipulation.
+
+### Bitwise & Membership Operators
 
 Membership: \`in\`, \`not in\` test containment in sequences.
 
-Identity: \`is\`, \`is not\` compare object identity (same memory address).`,
+Identity: \`is\`, \`is not\` compare object identity (same memory address).
+
+### Key Ideas
+
+- Use is only for None, True, False, and singleton checks
+- in works on any iterable
+- Bitwise ops useful for flags and permissions
+- Never use is for value comparison
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `flags = 0b1010
 print(bin(flags | 0b0100))
 print(3 in [1, 2, 3])
@@ -260,6 +403,12 @@ True True`,
             `in works on any iterable`,
             `Bitwise ops useful for flags and permissions`,
             `Never use is for value comparison`
+          ],
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Never use is for value comparison.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -329,9 +478,24 @@ print(n % 3 == 0 and n % 5 == 0)`,
         {
           id: `str-basics`,
           title: `String Creation & Indexing`,
-          content: `Strings are immutable sequences of Unicode characters. Create with single, double, or triple quotes.
+          content: `### Introduction
 
-Indexing: \`s[0]\` first char, \`s[-1]\` last char. Slicing: \`s[start:stop:step]\`.`,
+Strings are immutable sequences of Unicode characters. Create with single, double, or triple quotes.
+
+### String Creation & Indexing
+
+Indexing: \`s[0]\` first char, \`s[-1]\` last char. Slicing: \`s[start:stop:step]\`.
+
+### Key Ideas
+
+- Strings are immutable sequences
+- Negative indices count from the end
+- Step in slicing enables reversal
+- Triple quotes for multiline strings
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `s = "Python"
 print(s[0], s[-1])
 print(s[1:4])
@@ -344,18 +508,32 @@ nohtyP`,
             `Negative indices count from the end`,
             `Step in slicing enables reversal`,
             `Triple quotes for multiline strings`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `str-methods`,
           title: `Essential String Methods`,
-          content: `Common methods:
+          content: `### Introduction
+
+Common methods:
 - \`.lower()\`, \`.upper()\`, \`.strip()\`
 - \`.split()\`, \`.join()\`
 - \`.replace()\`, \`.find()\`, \`.startswith()\`
 - \`.format()\` and f-strings
 
-Methods return new strings; originals unchanged.`,
+### Essential String Methods
+
+Methods return new strings; originals unchanged.
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `text = "  Hello, World!  "
 print(text.strip().lower())
 words = "a,b,c".split(",")
@@ -367,12 +545,35 @@ a-b-c`,
             `split/join are inverse operations`,
             `strip removes leading/trailing whitespace`,
             `Methods never modify original string`
+          ],
+          diagram: `Essential String Methods
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Methods never modify original string.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `str-format`,
           title: `f-strings & Formatting`,
-          content: `**f-strings** (Python 3.6+) embed expressions: \`f"{name} is {age}"\`. Format specifiers: \`f"{pi:.2f}"\` for 2 decimal places.`,
+          content: `### Introduction
+
+**f-strings** (Python 3.6+) embed expressions: \`f"{name} is {age}"\`. Format specifiers: \`f"{pi:.2f}"\` for 2 decimal places.
+
+### f-strings & Formatting
+
+### Key Ideas
+
+- f-strings are the preferred formatting method
+- Expressions evaluated at runtime inside {}
+- Format specifiers control precision and alignment
+- f-strings are faster than .format()
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `name, score = "Alice", 95.567
 print(f"{name} scored {score:.1f}%")
 print(f"{name} = {score:.0f}")`,
@@ -383,14 +584,37 @@ Alice = 96`,
             `Expressions evaluated at runtime inside {}`,
             `Format specifiers control precision and alignment`,
             `f-strings are faster than .format()`
+          ],
+          diagram: `f-strings & Formatting
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `str-unicode`,
           title: `Unicode & Encoding`,
-          content: `Python 3 strings are Unicode by default. Encode to bytes with \`.encode("utf-8")\`, decode with \`.decode()\`.
+          content: `### Introduction
 
-Critical for file I/O and network operations.`,
+Python 3 strings are Unicode by default. Encode to bytes with \`.encode("utf-8")\`, decode with \`.decode()\`.
+
+### Unicode & Encoding
+
+Critical for file I/O and network operations.
+
+### Key Ideas
+
+- str is Unicode, bytes is raw data
+- Always specify encoding for file I/O
+- UTF-8 handles all Unicode characters
+- len() counts characters, not bytes
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `s = "café ☕"
 b = s.encode("utf-8")
 print(len(s), len(b))
@@ -402,6 +626,12 @@ café ☕`,
             `Always specify encoding for file I/O`,
             `UTF-8 handles all Unicode characters`,
             `len() counts characters, not bytes`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -472,11 +702,19 @@ print(fruits[1])`,
         {
           id: `print`,
           title: `Print Function Deep Dive`,
-          content: `\`print()\` outputs to stdout. Parameters:
+          content: `### Introduction
+
+\`print()\` outputs to stdout. Parameters:
 - \`sep\` — separator between items (default space)
 - \`end\` — line ending (default newline)
 - \`file\` — output stream
-- \`flush\` — force buffer flush`,
+- \`flush\` — force buffer flush
+
+### Print Function Deep Dive
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `print("A", "B", "C", sep="-", end="!\\n")
 print("Done", flush=True)`,
           output: `A-B-C!
@@ -486,12 +724,33 @@ Done`,
             `sep and end customize formatting`,
             `Use file= for logging to files`,
             `flush=True for real-time output`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `input`,
           title: `Reading User Input`,
-          content: `\`input(prompt)\` reads a line from stdin as a string. Always validate and convert types explicitly.`,
+          content: `### Introduction
+
+\`input(prompt)\` reads a line from stdin as a string. Always validate and convert types explicitly.
+
+### Reading User Input
+
+### Key Ideas
+
+- input() always returns a string
+- Wrap in try/except for invalid input
+- Validate before converting types
+- Never trust user input blindly
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Simulated input handling
 user_input = "25"  # would come from input()
 age = int(user_input)
@@ -502,14 +761,37 @@ print(f"You are {age} years old")`,
             `Wrap in try/except for invalid input`,
             `Validate before converting types`,
             `Never trust user input blindly`
+          ],
+          diagram: `Reading User Input
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Never trust user input blindly.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `repl`,
           title: `The Python REPL`,
-          content: `The **REPL** (Read-Eval-Print Loop) is an interactive shell. Launch with \`python\` or \`ipython\`.
+          content: `### Introduction
 
-Use \`_\` for last result. \`%timeit\` in IPython benchmarks code.`,
+The **REPL** (Read-Eval-Print Loop) is an interactive shell. Launch with \`python\` or \`ipython\`.
+
+### The Python REPL
+
+Use \`_\` for last result. \`%timeit\` in IPython benchmarks code.
+
+### Key Ideas
+
+- REPL is ideal for quick experiments
+- _ holds the last evaluated result
+- IPython adds magic commands and tab completion
+- Use REPL before writing full scripts
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# In REPL:
 # >>> 2 + 2
 # 4
@@ -522,14 +804,35 @@ print("Use python or ipython for interactive exploration")`,
             `_ holds the last evaluated result`,
             `IPython adds magic commands and tab completion`,
             `Use REPL before writing full scripts`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `files-intro`,
           title: `Basic File I/O Preview`,
-          content: `Open files with \`open(path, mode)\`. Always use \`with\` statement for automatic cleanup.
+          content: `### Introduction
 
-Modes: \`"r"\`, \`"w"\`, \`"a"\`, \`"rb"\`, \`"wb"\`.`,
+Open files with \`open(path, mode)\`. Always use \`with\` statement for automatic cleanup.
+
+### Basic File I/O Preview
+
+Modes: \`"r"\`, \`"w"\`, \`"a"\`, \`"rb"\`, \`"wb"\`.
+
+### Key Ideas
+
+- Always use with open() as f:
+- Text mode vs binary mode matters
+- Specify encoding=utf-8 for text files
+- File I/O covered in depth later
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Writing and reading (conceptual)
 lines = ["line1\\n", "line2\\n"]
 content = "".join(lines)
@@ -541,6 +844,12 @@ line2`,
             `Text mode vs binary mode matters`,
             `Specify encoding=utf-8 for text files`,
             `File I/O covered in depth later`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         }
       ],
@@ -606,7 +915,22 @@ print(total)`,
         {
           id: `venv`,
           title: `Virtual Environments`,
-          content: `A **virtual environment** isolates project dependencies. Create with \`python -m venv .venv\`, activate with \`.venv\\Scripts\\activate\` (Windows) or \`source .venv/bin/activate\` (Unix).`,
+          content: `### Introduction
+
+A **virtual environment** isolates project dependencies. Create with \`python -m venv .venv\`, activate with \`.venv\\Scripts\\activate\` (Windows) or \`source .venv/bin/activate\` (Unix).
+
+### Virtual Environments
+
+### Key Ideas
+
+- One venv per project prevents dependency conflicts
+- Never install packages globally for projects
+- Add .venv to .gitignore
+- Use python -m pip not bare pip
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Shell commands (not Python):
 # python -m venv .venv
 # pip install numpy pandas
@@ -617,14 +941,37 @@ print("Always use venv per project")`,
             `Never install packages globally for projects`,
             `Add .venv to .gitignore`,
             `Use python -m pip not bare pip`
+          ],
+          diagram: `Virtual Environments
+State → Action → Reward → Next State → Update Policy`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Never install packages globally for projects.`
           ]
         },
         {
           id: `pip`,
           title: `Package Management with pip`,
-          content: `\`pip install package\` installs from PyPI. Pin versions: \`pip install numpy==1.26.0\`.
+          content: `### Introduction
 
-Export: \`pip freeze > requirements.txt\`. Install from file: \`pip install -r requirements.txt\`.`,
+\`pip install package\` installs from PyPI. Pin versions: \`pip install numpy==1.26.0\`.
+
+### Package Management with pip
+
+Export: \`pip freeze > requirements.txt\`. Install from file: \`pip install -r requirements.txt\`.
+
+### Key Ideas
+
+- Pin major versions for reproducibility
+- requirements.txt tracks dependencies
+- Use pip list to see installed packages
+- Consider pip-tools or poetry for advanced management
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# requirements.txt example:
 reqs = """numpy>=1.24
 pandas>=2.0
@@ -638,14 +985,35 @@ scikit-learn>=1.3`,
             `requirements.txt tracks dependencies`,
             `Use pip list to see installed packages`,
             `Consider pip-tools or poetry for advanced management`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Broadcasting mistakes when array shapes do not align`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `ide`,
           title: `IDEs & Running Scripts`,
-          content: `Run scripts: \`python script.py\`. Use VS Code, PyCharm, or Cursor with Python extension.
+          content: `### Introduction
 
-Configure linter (ruff/flake8) and formatter (black).`,
+Run scripts: \`python script.py\`. Use VS Code, PyCharm, or Cursor with Python extension.
+
+### IDEs & Running Scripts
+
+Configure linter (ruff/flake8) and formatter (black).
+
+### Key Ideas
+
+- if __name__ == "__main__" guards script execution
+- Configure linter and formatter in IDE
+- Use debugger for complex bugs
+- Jupyter for exploratory data work
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `if __name__ == "__main__":
     print("Script entry point")
     # Your code here`,
@@ -655,12 +1023,22 @@ Configure linter (ruff/flake8) and formatter (black).`,
             `Configure linter and formatter in IDE`,
             `Use debugger for complex bugs`,
             `Jupyter for exploratory data work`
+          ],
+          diagram: `IDEs & Running Scripts
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `project-structure`,
           title: `Project Structure Basics`,
-          content: `Standard layout:
+          content: `### Introduction
+
+Standard layout:
 \`\`\`
 project/
   src/
@@ -668,12 +1046,27 @@ project/
   requirements.txt
   README.md
 \`\`\`
-Keep code modular and testable from the start.`,
+Keep code modular and testable from the start.
+
+### Project Structure Basics
+
+### Key Ideas
+
+- Separate source, tests, and data
+- Use meaningful module names
+- Document setup in README
+- Version control with git from day one`,
           keyPoints: [
             `Separate source, tests, and data`,
             `Use meaningful module names`,
             `Document setup in README`,
             `Version control with git from day one`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],

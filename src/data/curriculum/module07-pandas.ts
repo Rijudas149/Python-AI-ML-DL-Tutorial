@@ -11,7 +11,22 @@ export const module07Topics: Topic[] = [
         {
           id: `series`,
           title: `Series`,
-          content: `Series is labeled 1D array. Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.`,
+          content: `### Introduction
+
+Series is labeled 1D array. Create from dict or list with index. .loc[] label-based, .iloc[] integer-based access.
+
+### Series
+
+### Key Ideas
+
+- Series has data and index
+- Index enables label-based access
+- Automatic alignment on operations
+- Series is column of DataFrame
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 s = pd.Series([10, 20, 30], index=["a", "b", "c"])
@@ -26,12 +41,33 @@ dtype: int64`,
             `Index enables label-based access`,
             `Automatic alignment on operations`,
             `Series is column of DataFrame`
+          ],
+          commonMistakes: [
+            `Parsing dates inconsistently across CSV columns`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         },
         {
           id: `dataframe`,
           title: `DataFrame Creation`,
-          content: `From dict of lists, CSV, JSON, SQL. Columns are Series. .head(), .info(), .describe() for exploration.`,
+          content: `### Introduction
+
+From dict of lists, CSV, JSON, SQL. Columns are Series. .head(), .info(), .describe() for exploration.
+
+### DataFrame Creation
+
+### Key Ideas
+
+- DataFrame is primary pandas structure
+- describe() gives numeric summary
+- info() shows dtypes and non-null counts
+- read_csv most common ingestion method
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -54,12 +90,35 @@ max    35.000000  95.000000`,
             `describe() gives numeric summary`,
             `info() shows dtypes and non-null counts`,
             `read_csv most common ingestion method`
+          ],
+          diagram: `DataFrame Creation
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Broadcasting mistakes when array shapes do not align`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         },
         {
           id: `selection`,
           title: `Column & Row Selection`,
-          content: `df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j]. Avoid chained indexing.`,
+          content: `### Introduction
+
+df["col"], df[["col1","col2"]], df.loc[rows, cols], df.iloc[i,j]. Avoid chained indexing.
+
+### Column & Row Selection
+
+### Key Ideas
+
+- Single brackets for column, double for multiple
+- loc is label-based inclusive
+- iloc is integer-based exclusive on stop
+- Avoid df[df.A > 0]["B"] chained indexing
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"A": [1,2,3], "B": [4,5,6], "C": [7,8,9]})
@@ -72,17 +131,40 @@ print(df.loc[0:1, ["A", "C"]])`,
             `loc is label-based inclusive`,
             `iloc is integer-based exclusive on stop`,
             `Avoid df[df.A > 0]["B"] chained indexing`
+          ],
+          commonMistakes: [
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Avoid df[df.A > 0]["B"] chained indexing.`
           ]
         },
         {
           id: `dtypes`,
           title: `Data Types`,
-          content: `object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.`,
+          content: `### Introduction
+
+object (strings), int64, float64, bool, datetime64, category. astype() for conversion. pd.to_numeric, pd.to_datetime.
+
+### Data Types
+
+### Key Ideas
+
+- category dtype saves memory for repeated strings
+- Parse dates early with to_datetime
+- Downcast numeric types to save memory
+- String dtype (StringDtype) in modern pandas`,
           keyPoints: [
             `category dtype saves memory for repeated strings`,
             `Parse dates early with to_datetime`,
             `Downcast numeric types to save memory`,
             `String dtype (StringDtype) in modern pandas`
+          ],
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         }
       ],
@@ -151,7 +233,22 @@ print(df[df["score"] > 86])`,
         {
           id: `boolean`,
           title: `Boolean Filtering`,
-          content: `df[df["col"] > value], combine with & | ~. Parentheses required: \`(df.A > 0) & (df.B < 10)\`.`,
+          content: `### Introduction
+
+df[df["col"] > value], combine with & | ~. Parentheses required: \`(df.A > 0) & (df.B < 10)\`.
+
+### Boolean Filtering
+
+### Key Ideas
+
+- Use & not and for element-wise logic
+- Wrap each condition in parentheses
+- isin() for membership tests
+- query() method for readable filters
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"age": [22, 35, 45, 28], "salary": [50000, 80000, 95000, 60000]})
@@ -164,12 +261,35 @@ print(df[(df["age"] > 25) & (df["salary"] > 55000)])`,
             `Wrap each condition in parentheses`,
             `isin() for membership tests`,
             `query() method for readable filters`
+          ],
+          diagram: `Boolean Filtering
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Parsing dates inconsistently across CSV columns`
           ]
         },
         {
           id: `query`,
           title: `query() Method`,
-          content: `df.query("age > 25 and salary > 55000") — cleaner for complex filters. Use @ for external variables.`,
+          content: `### Introduction
+
+df.query("age > 25 and salary > 55000") — cleaner for complex filters. Use @ for external variables.
+
+### query() Method
+
+### Key Ideas
+
+- query uses expression strings
+- @var references Python variable
+- Often faster for large DataFrames
+- Column names with spaces need backticks
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"x": [1, 5, 3, 8], "y": [2, 4, 6, 10]})
@@ -182,12 +302,35 @@ print(df.query("x > 2 and y < 10"))`,
             `@var references Python variable`,
             `Often faster for large DataFrames`,
             `Column names with spaces need backticks`
+          ],
+          diagram: `query() Method
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `assign`,
           title: `assign() & apply()`,
-          content: `assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.`,
+          content: `### Introduction
+
+assign() adds columns functionally. apply() row/column-wise — prefer vectorized ops when possible.
+
+### assign() & apply()
+
+### Key Ideas
+
+- assign returns new DataFrame — chainable
+- Lambda x refers to DataFrame
+- Vectorized ops beat apply() for speed
+- map() for element-wise dict/Series lookup
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"a": [1, 2, 3], "b": [4, 5, 6]})
@@ -202,12 +345,35 @@ print(df)`,
             `Lambda x refers to DataFrame`,
             `Vectorized ops beat apply() for speed`,
             `map() for element-wise dict/Series lookup`
+          ],
+          diagram: `assign() & apply()
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         },
         {
           id: `sort`,
           title: `Sorting & Ranking`,
-          content: `sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.`,
+          content: `### Introduction
+
+sort_values(by, ascending), sort_index(). rank() for ordinal ranking. nlargest, nsmallest shortcuts.
+
+### Sorting & Ranking
+
+### Key Ideas
+
+- sort_values for column sorting
+- rank handles ties with method parameter
+- nlargest efficient for top-k
+- Stable sort preserves equal element order
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"name": ["Bob", "Alice", "Charlie"], "score": [87, 95, 92]})
@@ -217,6 +383,14 @@ print(df.sort_values("score", ascending=False))`,
             `rank handles ties with method parameter`,
             `nlargest efficient for top-k`,
             `Stable sort preserves equal element order`
+          ],
+          diagram: `Sorting & Ranking
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         }
       ],
@@ -285,7 +459,22 @@ print(df.assign(double=lambda x: x["value"] * 2))`,
         {
           id: `groupby`,
           title: `groupby Basics`,
-          content: `df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate. Multiple columns: groupby(["a","b"]).`,
+          content: `### Introduction
+
+df.groupby("col") splits into groups. .agg(), .mean(), .sum(), .count() aggregate. Multiple columns: groupby(["a","b"]).
+
+### groupby Basics
+
+### Key Ideas
+
+- groupby is split-apply-combine
+- as_index=False keeps group columns
+- agg accepts dict or list of functions
+- size() counts rows per group
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -302,12 +491,35 @@ Name: salary, dtype: float64`,
             `as_index=False keeps group columns`,
             `agg accepts dict or list of functions`,
             `size() counts rows per group`
+          ],
+          diagram: `groupby Basics
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Parsing dates inconsistently across CSV columns`
           ]
         },
         {
           id: `agg`,
           title: `Multiple Aggregations`,
-          content: `.agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).`,
+          content: `### Introduction
+
+.agg({"col": ["mean", "std", "count"]}) or named aggregations: .agg(avg_salary=("salary", "mean")).
+
+### Multiple Aggregations
+
+### Key Ideas
+
+- Named aggregations produce clean column names
+- Multiple functions per column
+- transform() returns same shape as input
+- filter() filters groups by condition
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({"group": ["A","A","B","B"], "val": [10, 20, 30, 40]})
@@ -321,12 +533,35 @@ B           30       40  35.0`,
             `Multiple functions per column`,
             `transform() returns same shape as input`,
             `filter() filters groups by condition`
+          ],
+          diagram: `Multiple Aggregations
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Parsing dates inconsistently across CSV columns`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`
           ]
         },
         {
           id: `pivot`,
           title: `pivot_table & crosstab`,
-          content: `pivot_table for multidimensional summaries. pd.crosstab for frequency tables.`,
+          content: `### Introduction
+
+pivot_table for multidimensional summaries. pd.crosstab for frequency tables.
+
+### pivot_table & crosstab
+
+### Key Ideas
+
+- pivot_table handles duplicates via aggfunc
+- crosstab for categorical frequency analysis
+- margins=True adds row/column totals
+- melt() is inverse of pivot
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -340,17 +575,42 @@ print(pd.pivot_table(df, values="sales", index="date", columns="product", aggfun
             `crosstab for categorical frequency analysis`,
             `margins=True adds row/column totals`,
             `melt() is inverse of pivot`
+          ],
+          commonMistakes: [
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `window`,
           title: `Rolling & Expanding Windows`,
-          content: `rolling(window).mean() for moving averages. expanding() for cumulative stats. Essential for time series.`,
+          content: `### Introduction
+
+rolling(window).mean() for moving averages. expanding() for cumulative stats. Essential for time series.
+
+### Rolling & Expanding Windows
+
+### Key Ideas
+
+- rolling for sliding window statistics
+- expanding for cumulative metrics
+- ewm for exponential weighted
+- shift() for lag features in ML`,
           keyPoints: [
             `rolling for sliding window statistics`,
             `expanding for cumulative metrics`,
             `ewm for exponential weighted`,
             `shift() for lag features in ML`
+          ],
+          diagram: `Rolling & Expanding Windows
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         }
       ],
@@ -419,7 +679,22 @@ print(df.groupby("dept").agg(avg_score=("score", "mean")))`,
         {
           id: `merge`,
           title: `merge Operations`,
-          content: `pd.merge(left, right, on="key", how="inner|outer|left|right"). SQL-like joins on column values.`,
+          content: `### Introduction
+
+pd.merge(left, right, on="key", how="inner|outer|left|right"). SQL-like joins on column values.
+
+### merge Operations
+
+### Key Ideas
+
+- inner join keeps matching rows only
+- left join keeps all left rows
+- validate="one_to_many" catches bad joins
+- indicator=True shows join source
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 orders = pd.DataFrame({"id": [1, 2], "product_id": [101, 102]})
@@ -433,12 +708,35 @@ print(pd.merge(orders, products, on="product_id"))`,
             `left join keeps all left rows`,
             `validate="one_to_many" catches bad joins`,
             `indicator=True shows join source`
+          ],
+          diagram: `merge Operations
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Parsing dates inconsistently across CSV columns`
           ]
         },
         {
           id: `concat`,
           title: `concat & append`,
-          content: `pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.`,
+          content: `### Introduction
+
+pd.concat([df1, df2], axis=0) stacks vertically. axis=1 concatenates horizontally. ignore_index resets index.
+
+### concat & append
+
+### Key Ideas
+
+- concat for same-structure DataFrames
+- join="outer" handles different columns
+- keys parameter creates hierarchical index
+- Prefer concat over deprecated append
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df1 = pd.DataFrame({"A": [1, 2]})
@@ -454,28 +752,68 @@ print(pd.concat([df1, df2], ignore_index=True))`,
             `join="outer" handles different columns`,
             `keys parameter creates hierarchical index`,
             `Prefer concat over deprecated append`
+          ],
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Parsing dates inconsistently across CSV columns`
           ]
         },
         {
           id: `reshape`,
           title: `melt & pivot`,
-          content: `melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.`,
+          content: `### Introduction
+
+melt() wide-to-long. pivot() long-to-wide. stack/unstack for MultiIndex.
+
+### melt & pivot
+
+### Key Ideas
+
+- melt essential for tidy data format
+- Tidy data: one row per observation
+- stack/unstack for MultiIndex manipulation
+- get_dummies for one-hot encoding`,
           keyPoints: [
             `melt essential for tidy data format`,
             `Tidy data: one row per observation`,
             `stack/unstack for MultiIndex manipulation`,
             `get_dummies for one-hot encoding`
+          ],
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         },
         {
           id: `join-index`,
           title: `Index-based Joins`,
-          content: `df1.join(df2, on="key") or join on index. set_index before join for index alignment.`,
+          content: `### Introduction
+
+df1.join(df2, on="key") or join on index. set_index before join for index alignment.
+
+### Index-based Joins
+
+### Key Ideas
+
+- Set index for repeated join operations
+- join method on DataFrame uses indexes
+- align indices before arithmetic operations
+- reindex for explicit index alignment`,
           keyPoints: [
             `Set index for repeated join operations`,
             `join method on DataFrame uses indexes`,
             `align indices before arithmetic operations`,
             `reindex for explicit index alignment`
+          ],
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         }
       ],
@@ -546,7 +884,22 @@ print(pd.concat([df1, df2]))`,
         {
           id: `missing`,
           title: `Handling Missing Data`,
-          content: `isna(), notna(), dropna(), fillna(). interpolate() for gap filling. Missingness patterns matter for ML.`,
+          content: `### Introduction
+
+isna(), notna(), dropna(), fillna(). interpolate() for gap filling. Missingness patterns matter for ML.
+
+### Handling Missing Data
+
+### Key Ideas
+
+- Never drop all missing blindly in ML
+- Understand MCAR, MAR, MNAR missingness
+- fillna with mean/median/mode or model-based
+- isna().sum() counts missing per column
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -561,12 +914,33 @@ print(df.fillna({"A": df["A"].mean(), "B": 0}))`,
             `Understand MCAR, MAR, MNAR missingness`,
             `fillna with mean/median/mode or model-based`,
             `isna().sum() counts missing per column`
+          ],
+          commonMistakes: [
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Never drop all missing blindly in ML.`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         },
         {
           id: `datetime`,
           title: `Datetime Operations`,
-          content: `pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.`,
+          content: `### Introduction
+
+pd.to_datetime(), DatetimeIndex, .dt accessor for year/month/day. resample() for time aggregation.
+
+### Datetime Operations
+
+### Key Ideas
+
+- to_datetime parses various formats
+- dt accessor extracts date components
+- resample for time-based aggregation
+- shift/lag for time series features
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 
 df = pd.DataFrame({
@@ -580,28 +954,72 @@ print(df.resample("MS").mean())`,
             `dt accessor extracts date components`,
             `resample for time-based aggregation`,
             `shift/lag for time series features`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Plotting before checking for missing values and outliers`,
+            `Using test-set statistics to impute missing training data (leakage)`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`
           ]
         },
         {
           id: `tz`,
           title: `Timezones`,
-          content: `tz_localize and tz_convert for timezone-aware datetimes. Critical for global data pipelines.`,
+          content: `### Introduction
+
+tz_localize and tz_convert for timezone-aware datetimes. Critical for global data pipelines.
+
+### Timezones
+
+### Key Ideas
+
+- Store UTC, convert for display
+- tz_localize assigns timezone
+- tz_convert changes timezone
+- Ambiguous times during DST transitions`,
           keyPoints: [
             `Store UTC, convert for display`,
             `tz_localize assigns timezone`,
             `tz_convert changes timezone`,
             `Ambiguous times during DST transitions`
+          ],
+          diagram: `Timezones
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `ts-features`,
           title: `Time Series Features for ML`,
-          content: `Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.`,
+          content: `### Introduction
+
+Lag features, rolling stats, seasonal decomposition. pandas + statsmodels for analysis.
+
+### Time Series Features for ML
+
+### Key Ideas
+
+- Lag features capture temporal dependencies
+- Rolling windows for local trends
+- Seasonal patterns need explicit encoding
+- Train/test split must respect time order`,
           keyPoints: [
             `Lag features capture temporal dependencies`,
             `Rolling windows for local trends`,
             `Seasonal patterns need explicit encoding`,
             `Train/test split must respect time order`
+          ],
+          diagram: `Time Series Features for ML
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Saving a plot without calling \`plt.tight_layout()\` — labels get clipped`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Broadcasting mistakes when array shapes do not align`
           ]
         }
       ],

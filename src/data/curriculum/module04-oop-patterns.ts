@@ -11,7 +11,22 @@ export const module04Topics: Topic[] = [
         {
           id: `class-basics`,
           title: `Defining Classes`,
-          content: `A **class** is a blueprint; an **object** is an instance. \`__init__\` initializes instance state. \`self\` refers to the instance.`,
+          content: `### Introduction
+
+A **class** is a blueprint; an **object** is an instance. \`__init__\` initializes instance state. \`self\` refers to the instance.
+
+### Defining Classes
+
+### Key Ideas
+
+- __init__ is the constructor
+- self must be first parameter of instance methods
+- Instance attributes set in __init__ or elsewhere
+- Classes group data and behavior
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Dog:
     def __init__(self, name, breed):
         self.name = name
@@ -27,14 +42,35 @@ print(d.bark())`,
             `self must be first parameter of instance methods`,
             `Instance attributes set in __init__ or elsewhere`,
             `Classes group data and behavior`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `class-vs-instance`,
           title: `Class vs Instance Attributes`,
-          content: `Class attributes are shared across instances. Instance attributes are per-object.
+          content: `### Introduction
 
-Modify class attrs carefully — mutable shared state causes bugs.`,
+Class attributes are shared across instances. Instance attributes are per-object.
+
+### Class vs Instance Attributes
+
+Modify class attrs carefully — mutable shared state causes bugs.
+
+### Key Ideas
+
+- Class attributes shared by all instances
+- Instance attributes unique per object
+- Avoid mutable class-level defaults
+- Use class methods for factory patterns
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Counter:
     total = 0
     def __init__(self):
@@ -48,12 +84,33 @@ print(Counter.total)`,
             `Instance attributes unique per object`,
             `Avoid mutable class-level defaults`,
             `Use class methods for factory patterns`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Avoid mutable class-level defaults.`
           ]
         },
         {
           id: `methods`,
           title: `Instance, Class & Static Methods`,
-          content: `@classmethod receives cls; @staticmethod needs neither self nor cls. Use classmethod for alternative constructors.`,
+          content: `### Introduction
+
+@classmethod receives cls; @staticmethod needs neither self nor cls. Use classmethod for alternative constructors.
+
+### Instance, Class & Static Methods
+
+### Key Ideas
+
+- classmethod for alternative constructors
+- staticmethod for utility functions in class namespace
+- Instance methods most common
+- Choose based on what data method needs
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Date:
     def __init__(self, year, month, day):
         self.year, self.month, self.day = year, month, day
@@ -69,12 +126,33 @@ print(Date.from_string("2024-03-15").year)`,
             `staticmethod for utility functions in class namespace`,
             `Instance methods most common`,
             `Choose based on what data method needs`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `dunder`,
           title: `Special Methods (Dunder)`,
-          content: `Double-underscore methods customize behavior: \`__str__\`, \`__repr__\`, \`__len__\`, \`__eq__\`, \`__add__\`. Enable Pythonic interfaces.`,
+          content: `### Introduction
+
+Double-underscore methods customize behavior: \`__str__\`, \`__repr__\`, \`__len__\`, \`__eq__\`, \`__add__\`. Enable Pythonic interfaces.
+
+### Special Methods (Dunder)
+
+### Key Ideas
+
+- __repr__ for developers, __str__ for users
+- Operator overloading via dunder methods
+- __eq__ for equality comparison
+- Follow Python data model conventions
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Vector:
     def __init__(self, x, y):
         self.x, self.y = x, y
@@ -90,6 +168,12 @@ print(Vector(1, 2) + Vector(3, 4))`,
             `Operator overloading via dunder methods`,
             `__eq__ for equality comparison`,
             `Follow Python data model conventions`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -168,7 +252,22 @@ print(Rectangle(4, 5))`,
         {
           id: `inheritance`,
           title: `Basic Inheritance`,
-          content: `Subclass inherits parent attributes and methods. \`super()\` calls parent implementation. Override methods in child class.`,
+          content: `### Introduction
+
+Subclass inherits parent attributes and methods. \`super()\` calls parent implementation. Override methods in child class.
+
+### Basic Inheritance
+
+### Key Ideas
+
+- Inheritance enables code reuse
+- Override methods for specialized behavior
+- super() accesses parent methods
+- Polymorphism: same interface, different behavior
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Animal:
     def speak(self):
         return "..."
@@ -190,14 +289,35 @@ Woof`,
             `Override methods for specialized behavior`,
             `super() accesses parent methods`,
             `Polymorphism: same interface, different behavior`
+          ],
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `mro`,
           title: `Method Resolution Order (MRO)`,
-          content: `Python uses C3 linearization for MRO. Check with \`ClassName.mro()\`.
+          content: `### Introduction
 
-Multiple inheritance requires careful design.`,
+Python uses C3 linearization for MRO. Check with \`ClassName.mro()\`.
+
+### Method Resolution Order (MRO)
+
+Multiple inheritance requires careful design.
+
+### Key Ideas
+
+- MRO determines method lookup order
+- Diamond inheritance resolved by C3
+- Prefer composition over deep inheritance
+- Use mixins for shared behavior
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class A:
     def method(self): return "A"
 class B(A):
@@ -215,12 +335,33 @@ print([c.__name__ for c in D.mro()])`,
             `Diamond inheritance resolved by C3`,
             `Prefer composition over deep inheritance`,
             `Use mixins for shared behavior`
+          ],
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `abstract`,
           title: `Abstract Base Classes`,
-          content: `abc module defines interfaces. @abstractmethod forces subclass implementation. Enables contract-based design.`,
+          content: `### Introduction
+
+abc module defines interfaces. @abstractmethod forces subclass implementation. Enables contract-based design.
+
+### Abstract Base Classes
+
+### Key Ideas
+
+- ABC enforces interface contracts
+- Cannot instantiate ABC with abstract methods
+- Useful for plugin architectures
+- Protocol (typing) is duck-typing alternative
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from abc import ABC, abstractmethod
 
 class Shape(ABC):
@@ -241,19 +382,42 @@ print(Circle(5).area())`,
             `Cannot instantiate ABC with abstract methods`,
             `Useful for plugin architectures`,
             `Protocol (typing) is duck-typing alternative`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `composition`,
           title: `Composition Over Inheritance`,
-          content: `Favor **has-a** over **is-a**. Compose objects rather than deep inheritance hierarchies.
+          content: `### Introduction
 
-More flexible and testable.`,
+Favor **has-a** over **is-a**. Compose objects rather than deep inheritance hierarchies.
+
+### Composition Over Inheritance
+
+More flexible and testable.
+
+### Key Ideas
+
+- Composition reduces coupling
+- Easier to swap implementations
+- Inheritance for true is-a relationships only
+- Dependency injection supports composition`,
           keyPoints: [
             `Composition reduces coupling`,
             `Easier to swap implementations`,
             `Inheritance for true is-a relationships only`,
             `Dependency injection supports composition`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         }
       ],
@@ -334,9 +498,24 @@ print(Car().start())`,
         {
           id: `naming`,
           title: `Naming Conventions`,
-          content: `Single underscore \`_internal\` — convention for internal use. Double underscore \`__private\` triggers name mangling.
+          content: `### Introduction
 
-No true private access in Python.`,
+Single underscore \`_internal\` — convention for internal use. Double underscore \`__private\` triggers name mangling.
+
+### Naming Conventions
+
+No true private access in Python.
+
+### Key Ideas
+
+- Python uses convention, not enforcement
+- Name mangling prevents accidental override in subclasses
+- Public API should be minimal and stable
+- Document internal vs public attributes
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Account:
     def __init__(self, balance):
         self.__balance = balance
@@ -351,12 +530,33 @@ print(acc.get_balance())`,
             `Name mangling prevents accidental override in subclasses`,
             `Public API should be minimal and stable`,
             `Document internal vs public attributes`
+          ],
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `property`,
           title: `The @property Decorator`,
-          content: `@property creates getter; @name.setter and @name.deleter for setter/deleter. Clean attribute-like access with validation.`,
+          content: `### Introduction
+
+@property creates getter; @name.setter and @name.deleter for setter/deleter. Clean attribute-like access with validation.
+
+### The @property Decorator
+
+### Key Ideas
+
+- Properties enable computed attributes
+- Validation in setters protects invariants
+- Prefer properties over get/set methods
+- Use _prefix for backing storage
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Temperature:
     def __init__(self, celsius):
         self._celsius = celsius
@@ -375,23 +575,63 @@ print(t.fahrenheit)`,
             `Validation in setters protects invariants`,
             `Prefer properties over get/set methods`,
             `Use _prefix for backing storage`
+          ],
+          diagram: `The @property Decorator
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `slots`,
           title: `__slots__ for Memory`,
-          content: `__slots__ restricts attributes and saves memory. No __dict__ created. Useful for many small objects.`,
+          content: `### Introduction
+
+__slots__ restricts attributes and saves memory. No __dict__ created. Useful for many small objects.
+
+### __slots__ for Memory
+
+### Key Ideas
+
+- __slots__ reduces memory per instance
+- Fixes allowed attributes at class definition
+- Breaks if multiple inheritance conflicts
+- Rarely needed unless profiling shows benefit`,
           keyPoints: [
             `__slots__ reduces memory per instance`,
             `Fixes allowed attributes at class definition`,
             `Breaks if multiple inheritance conflicts`,
             `Rarely needed unless profiling shows benefit`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `dataclass-preview`,
           title: `dataclass Preview`,
-          content: `@dataclass auto-generates __init__, __repr__, __eq__. Modern alternative to boilerplate classes.`,
+          content: `### Introduction
+
+@dataclass auto-generates __init__, __repr__, __eq__. Modern alternative to boilerplate classes.
+
+### dataclass Preview
+
+### Key Ideas
+
+- dataclass reduces boilerplate
+- Type hints define fields
+- frozen=True for immutability
+- field(default_factory=list) for mutable defaults
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from dataclasses import dataclass
 
 @dataclass
@@ -406,6 +646,12 @@ print(Point(1.0, 2.0))`,
             `Type hints define fields`,
             `frozen=True for immutability`,
             `field(default_factory=list) for mutable defaults`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         }
       ],
@@ -490,7 +736,22 @@ print(Book("1984", "Orwell"))`,
         {
           id: `factory`,
           title: `Factory Pattern`,
-          content: `Factory method creates objects without specifying exact class. Decouples instantiation from usage.`,
+          content: `### Introduction
+
+Factory method creates objects without specifying exact class. Decouples instantiation from usage.
+
+### Factory Pattern
+
+### Key Ideas
+
+- Factory centralizes object creation
+- Easy to add new types
+- Registry pattern extends factory
+- Used heavily in ML model loading
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Dog:
     def speak(self): return "Woof"
 class Cat:
@@ -506,12 +767,33 @@ print(animal_factory("dog").speak())`,
             `Easy to add new types`,
             `Registry pattern extends factory`,
             `Used heavily in ML model loading`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `strategy`,
           title: `Strategy Pattern`,
-          content: `Encapsulate algorithms as interchangeable strategies. Pass strategy as parameter or inject at runtime.`,
+          content: `### Introduction
+
+Encapsulate algorithms as interchangeable strategies. Pass strategy as parameter or inject at runtime.
+
+### Strategy Pattern
+
+### Key Ideas
+
+- Strategy enables runtime algorithm selection
+- Open/closed principle — extend without modifying
+- Functions can serve as strategies in Python
+- Common in ML preprocessing pipelines
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class QuickSort:
     def sort(self, data): return sorted(data)
 
@@ -531,28 +813,72 @@ print(Sorter(ReverseSort()).sort([3,1,2]))`,
             `Open/closed principle — extend without modifying`,
             `Functions can serve as strategies in Python`,
             `Common in ML preprocessing pipelines`
+          ],
+          diagram: `Strategy Pattern
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Open/closed principle — extend without modifying.`
           ]
         },
         {
           id: `observer`,
           title: `Observer Pattern`,
-          content: `Subject notifies observers on state change. Basis for event systems and reactive programming.`,
+          content: `### Introduction
+
+Subject notifies observers on state change. Basis for event systems and reactive programming.
+
+### Observer Pattern
+
+### Key Ideas
+
+- Decouples subject from observers
+- Used in GUI event handling
+- Callbacks are lightweight Python observers
+- Consider asyncio for async event patterns`,
           keyPoints: [
             `Decouples subject from observers`,
             `Used in GUI event handling`,
             `Callbacks are lightweight Python observers`,
             `Consider asyncio for async event patterns`
+          ],
+          diagram: `Observer Pattern
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `singleton`,
           title: `Singleton & Module Pattern`,
-          content: `Python modules are natural singletons. For classes, use __new__ or decorator. Often modules suffice.`,
+          content: `### Introduction
+
+Python modules are natural singletons. For classes, use __new__ or decorator. Often modules suffice.
+
+### Singleton & Module Pattern
+
+### Key Ideas
+
+- Module-level objects are singletons by default
+- Avoid overusing Singleton pattern
+- Dependency injection preferred for testability
+- lru_cache can implement function singletons`,
           keyPoints: [
             `Module-level objects are singletons by default`,
             `Avoid overusing Singleton pattern`,
             `Dependency injection preferred for testability`,
             `lru_cache can implement function singletons`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Avoid overusing Singleton pattern.`
           ]
         }
       ],
@@ -628,7 +954,22 @@ print(analyze([3,1,4], MinStrategy()))`,
         {
           id: `protocol`,
           title: `typing.Protocol`,
-          content: `Protocol defines structural interface — if it walks like a duck... No inheritance required. \`@runtime_checkable\` enables isinstance().`,
+          content: `### Introduction
+
+Protocol defines structural interface — if it walks like a duck... No inheritance required. \`@runtime_checkable\` enables isinstance().
+
+### typing.Protocol
+
+### Key Ideas
+
+- Protocol enables duck typing with type checking
+- No need to inherit from Protocol
+- runtime_checkable for isinstance checks
+- Preferred over ABC for flexible interfaces
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from typing import Protocol
 
 class Drawable(Protocol):
@@ -647,25 +988,63 @@ print(render(Circle()))`,
             `No need to inherit from Protocol`,
             `runtime_checkable for isinstance checks`,
             `Preferred over ABC for flexible interfaces`
+          ],
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `abc-vs-protocol`,
           title: `ABC vs Protocol`,
-          content: `ABC: nominal subtyping — must inherit. Protocol: structural — must implement methods.
+          content: `### Introduction
 
-Choose based on design needs.`,
+ABC: nominal subtyping — must inherit. Protocol: structural — must implement methods.
+
+### ABC vs Protocol
+
+Choose based on design needs.
+
+### Key Ideas
+
+- ABC for strict hierarchies and shared implementation
+- Protocol for flexible third-party integration
+- Both supported by mypy and pyright
+- ML frameworks use Protocol for tensor-like objects`,
           keyPoints: [
             `ABC for strict hierarchies and shared implementation`,
             `Protocol for flexible third-party integration`,
             `Both supported by mypy and pyright`,
             `ML frameworks use Protocol for tensor-like objects`
+          ],
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `generic`,
           title: `Generic Classes`,
-          content: `typing.Generic enables type-parameterized classes: \`class Stack[T]:\`. Python 3.12+ simplified syntax.`,
+          content: `### Introduction
+
+typing.Generic enables type-parameterized classes: \`class Stack[T]:\`. Python 3.12+ simplified syntax.
+
+### Generic Classes
+
+### Key Ideas
+
+- Generics preserve type information
+- TypeVar defines type parameters
+- Python 3.12: class Box[T] syntax
+- Useful for containers and data structures
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from typing import TypeVar, Generic
 
 T = TypeVar("T")
@@ -682,17 +1061,44 @@ print(b.item)`,
             `TypeVar defines type parameters`,
             `Python 3.12: class Box[T] syntax`,
             `Useful for containers and data structures`
+          ],
+          diagram: `Generic Classes
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `solid`,
           title: `SOLID Principles`,
-          content: `Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion. Guide maintainable OOP design.`,
+          content: `### Introduction
+
+Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion. Guide maintainable OOP design.
+
+### SOLID Principles
+
+### Key Ideas
+
+- Single Responsibility: one reason to change
+- Open/Closed: extend without modifying
+- Liskov: subtypes must be substitutable
+- Apply pragmatically — not every class needs all five`,
           keyPoints: [
             `Single Responsibility: one reason to change`,
             `Open/Closed: extend without modifying`,
             `Liskov: subtypes must be substitutable`,
             `Apply pragmatically — not every class needs all five`
+          ],
+          diagram: `SOLID Principles
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         }
       ],

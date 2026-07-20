@@ -11,9 +11,24 @@ export const module13Topics: Topic[] = [
         {
           id: `scaling`,
           title: `Scaling Methods`,
-          content: `StandardScaler: zero mean unit variance. MinMaxScaler: [0,1] range.
+          content: `### Introduction
 
-RobustScaler: uses median/IQR, robust to outliers.`,
+StandardScaler: zero mean unit variance. MinMaxScaler: [0,1] range.
+
+### Scaling Methods
+
+RobustScaler: uses median/IQR, robust to outliers.
+
+### Key Ideas
+
+- Required for SVM, KNN, neural networks, PCA
+- Tree models invariant to scaling
+- Fit scaler on train only
+- RobustScaler for outlier-heavy data
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.preprocessing import StandardScaler
 import numpy as np
 
@@ -25,14 +40,35 @@ print(scaled.flatten().round(2))`,
             `Tree models invariant to scaling`,
             `Fit scaler on train only`,
             `RobustScaler for outlier-heavy data`
+          ],
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `encoding`,
           title: `Categorical Encoding`,
-          content: `OneHotEncoder for nominal categories. OrdinalEncoder for ordered categories.
+          content: `### Introduction
 
-Target encoding for high cardinality.`,
+OneHotEncoder for nominal categories. OrdinalEncoder for ordered categories.
+
+### Categorical Encoding
+
+Target encoding for high cardinality.
+
+### Key Ideas
+
+- One-hot for nominal — no ordinal assumption
+- drop="first" avoids multicollinearity
+- Target encoding risks leakage — use CV
+- Embedding layers for high cardinality in DL
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 
@@ -44,23 +80,63 @@ print(enc)`,
             `drop="first" avoids multicollinearity`,
             `Target encoding risks leakage — use CV`,
             `Embedding layers for high cardinality in DL`
+          ],
+          diagram: `Categorical Encoding
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `binning`,
           title: `Binning & Discretization`,
-          content: `KBinsDiscretizer converts continuous to ordinal bins. Can capture non-linear relationships for linear models.`,
+          content: `### Introduction
+
+KBinsDiscretizer converts continuous to ordinal bins. Can capture non-linear relationships for linear models.
+
+### Binning & Discretization
+
+### Key Ideas
+
+- Equal-width vs equal-frequency binning
+- Can improve linear model performance
+- Risk of losing information
+- Domain-driven bin boundaries often best`,
           keyPoints: [
             `Equal-width vs equal-frequency binning`,
             `Can improve linear model performance`,
             `Risk of losing information`,
             `Domain-driven bin boundaries often best`
+          ],
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `datetime-fe`,
           title: `Datetime Feature Engineering`,
-          content: `Extract hour, day, month, is_weekend, cyclical encoding (sin/cos). Critical for time series and transactional data.`,
+          content: `### Introduction
+
+Extract hour, day, month, is_weekend, cyclical encoding (sin/cos). Critical for time series and transactional data.
+
+### Datetime Feature Engineering
+
+### Key Ideas
+
+- Cyclical encoding preserves continuity at boundaries
+- Hour 23 and hour 0 are close with sin/cos
+- Extract domain-relevant time features
+- Lag features capture temporal dependencies
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pandas as pd
 import numpy as np
 
@@ -73,6 +149,14 @@ print(df.iloc[0].round(3).tolist())`,
             `Hour 23 and hour 0 are close with sin/cos`,
             `Extract domain-relevant time features`,
             `Lag features capture temporal dependencies`
+          ],
+          diagram: `Datetime Feature Engineering
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         }
       ],
@@ -141,7 +225,22 @@ print(OneHotEncoder(sparse_output=False).fit_transform([["A"],["B"],["A"]]))`,
         {
           id: `filter`,
           title: `Filter Methods`,
-          content: `Select features by statistical test independent of model. SelectKBest, chi2, mutual_info_classif, f_classif.`,
+          content: `### Introduction
+
+Select features by statistical test independent of model. SelectKBest, chi2, mutual_info_classif, f_classif.
+
+### Filter Methods
+
+### Key Ideas
+
+- Fast — no model training needed
+- Chi2 requires non-negative features
+- Mutual information captures non-linear relationships
+- Correlation filter removes redundant features
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.feature_selection import SelectKBest, f_classif
 from sklearn.datasets import load_iris
 
@@ -154,12 +253,35 @@ print(X_selected.shape)`,
             `Chi2 requires non-negative features`,
             `Mutual information captures non-linear relationships`,
             `Correlation filter removes redundant features`
+          ],
+          diagram: `Filter Methods
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`
           ]
         },
         {
           id: `wrapper`,
           title: `Wrapper Methods`,
-          content: `RFE (Recursive Feature Elimination) trains model and removes least important features iteratively.`,
+          content: `### Introduction
+
+RFE (Recursive Feature Elimination) trains model and removes least important features iteratively.
+
+### Wrapper Methods
+
+### Key Ideas
+
+- Model-dependent selection
+- RFE computationally expensive
+- Finds optimal subset for specific model
+- RFECV uses cross-validation for k
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -172,30 +294,76 @@ print(rfe.support_)`,
             `RFE computationally expensive`,
             `Finds optimal subset for specific model`,
             `RFECV uses cross-validation for k`
+          ],
+          diagram: `Wrapper Methods
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `embedded`,
           title: `Embedded Methods`,
-          content: `Feature selection during model training. Lasso zeroes coefficients.
+          content: `### Introduction
 
-Tree feature_importances_.`,
+Feature selection during model training. Lasso zeroes coefficients.
+
+### Embedded Methods
+
+Tree feature_importances_.
+
+### Key Ideas
+
+- L1 regularization built-in feature selection
+- Tree importance from split gain
+- SelectFromModel wraps any importance-based selector
+- Embedded methods most practical for production`,
           keyPoints: [
             `L1 regularization built-in feature selection`,
             `Tree importance from split gain`,
             `SelectFromModel wraps any importance-based selector`,
             `Embedded methods most practical for production`
+          ],
+          diagram: `Embedded Methods
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Using polynomial degree too high without regularization`
           ]
         },
         {
           id: `importance`,
           title: `Permutation Importance`,
-          content: `Shuffle feature values and measure performance drop. Model-agnostic, detects features model relies on.`,
+          content: `### Introduction
+
+Shuffle feature values and measure performance drop. Model-agnostic, detects features model relies on.
+
+### Permutation Importance
+
+### Key Ideas
+
+- More reliable than tree default importance
+- Computes drop in validation metric
+- Detects features used for splits but not predictive
+- sklearn.inspection.permutation_importance`,
           keyPoints: [
             `More reliable than tree default importance`,
             `Computes drop in validation metric`,
             `Detects features used for splits but not predictive`,
             `sklearn.inspection.permutation_importance`
+          ],
+          diagram: `Permutation Importance
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         }
       ],
@@ -267,7 +435,22 @@ print(sum(RFE(LogisticRegression(max_iter=200), n_features_to_select=1).fit(X, y
         {
           id: `grid`,
           title: `Grid Search`,
-          content: `Exhaustive search over parameter grid. GridSearchCV with cv for robust evaluation.`,
+          content: `### Introduction
+
+Exhaustive search over parameter grid. GridSearchCV with cv for robust evaluation.
+
+### Grid Search
+
+### Key Ideas
+
+- Exhaustive — expensive for large grids
+- Define sensible search ranges
+- Parallelize with n_jobs=-1
+- Refit best model on full training data
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -281,43 +464,108 @@ print(grid.best_score_.round(3))`,
             `Define sensible search ranges`,
             `Parallelize with n_jobs=-1`,
             `Refit best model on full training data`
+          ],
+          diagram: `Grid Search
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `random`,
           title: `Random Search`,
-          content: `RandomizedSearchCV samples from distributions. Often finds good params faster than grid search (Bergstra & Bengio, 2012).`,
+          content: `### Introduction
+
+RandomizedSearchCV samples from distributions. Often finds good params faster than grid search (Bergstra & Bengio, 2012).
+
+### Random Search
+
+### Key Ideas
+
+- Sample from log-uniform for learning rates
+- n_iter controls number of trials
+- More efficient exploration of large spaces
+- Optuna/Hyperopt for advanced optimization`,
           keyPoints: [
             `Sample from log-uniform for learning rates`,
             `n_iter controls number of trials`,
             `More efficient exploration of large spaces`,
             `Optuna/Hyperopt for advanced optimization`
+          ],
+          diagram: `Random Search
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `optuna`,
           title: `Bayesian Optimization`,
-          content: `Optuna, Hyperopt use past trials to guide search. TPE sampler models good regions.
+          content: `### Introduction
 
-State-of-the-art for DL hyperparameter tuning.`,
+Optuna, Hyperopt use past trials to guide search. TPE sampler models good regions.
+
+### Bayesian Optimization
+
+State-of-the-art for DL hyperparameter tuning.
+
+### Key Ideas
+
+- Bayesian methods learn from previous trials
+- Optuna easy API with pruning
+- Define objective function returning metric
+- Used extensively in DL and Kaggle`,
           keyPoints: [
             `Bayesian methods learn from previous trials`,
             `Optuna easy API with pruning`,
             `Define objective function returning metric`,
             `Used extensively in DL and Kaggle`
+          ],
+          diagram: `Bayesian Optimization
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `avoid-leakage`,
           title: `Avoiding Tuning Leakage`,
-          content: `Never peek at test set during tuning. Use nested CV or separate validation set.
+          content: `### Introduction
 
-Report final metric on held-out test only once.`,
+Never peek at test set during tuning. Use nested CV or separate validation set.
+
+### Avoiding Tuning Leakage
+
+Report final metric on held-out test only once.
+
+### Key Ideas
+
+- Test set touched only once at end
+- Validation set or CV for all tuning decisions
+- Data leakage inflates reported performance
+- Document all tuning choices for reproducibility`,
           keyPoints: [
             `Test set touched only once at end`,
             `Validation set or CV for all tuning decisions`,
             `Data leakage inflates reported performance`,
             `Document all tuning choices for reproducibility`
+          ],
+          diagram: `Avoiding Tuning Leakage
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         }
       ],
@@ -387,20 +635,52 @@ print(g.best_params_["n_estimators"])`,
         {
           id: `tradeoff`,
           title: `The Tradeoff`,
-          content: `Bias: error from wrong assumptions (underfitting). Variance: error from sensitivity to training data (overfitting).
+          content: `### Introduction
 
-Total error = bias² + variance + irreducible noise.`,
+Bias: error from wrong assumptions (underfitting). Variance: error from sensitivity to training data (overfitting).
+
+### The Tradeoff
+
+Total error = bias² + variance + irreducible noise.
+
+### Key Ideas
+
+- Simple models: high bias, low variance
+- Complex models: low bias, high variance
+- Goal: minimize total error not just training error
+- Irreducible error from inherent noise in data`,
           keyPoints: [
             `Simple models: high bias, low variance`,
             `Complex models: low bias, high variance`,
             `Goal: minimize total error not just training error`,
             `Irreducible error from inherent noise in data`
+          ],
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `learning-curves`,
           title: `Learning Curves`,
-          content: `Plot train/validation score vs training set size. High bias: both low. High variance: large gap between train and val.`,
+          content: `### Introduction
+
+Plot train/validation score vs training set size. High bias: both low. High variance: large gap between train and val.
+
+### Learning Curves
+
+### Key Ideas
+
+- Learning curves diagnose bias/variance
+- Converging curves suggest more data wont help (bias)
+- Diverging curves benefit from more data
+- validation_curve for hyperparameter diagnosis
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.model_selection import learning_curve
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
@@ -415,28 +695,74 @@ print(train_scores.mean(axis=1).round(3))`,
             `Converging curves suggest more data wont help (bias)`,
             `Diverging curves benefit from more data`,
             `validation_curve for hyperparameter diagnosis`
+          ],
+          diagram: `Learning Curves
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `regularization-bv`,
           title: `Regularization Effects`,
-          content: `Regularization increases bias slightly but reduces variance dramatically. Sweet spot via cross-validation.`,
+          content: `### Introduction
+
+Regularization increases bias slightly but reduces variance dramatically. Sweet spot via cross-validation.
+
+### Regularization Effects
+
+### Key Ideas
+
+- L2 ridge increases bias, reduces variance
+- Early stopping is implicit regularization
+- Dropout reduces co-adaptation (variance)
+- Ensemble methods reduce variance`,
           keyPoints: [
             `L2 ridge increases bias, reduces variance`,
             `Early stopping is implicit regularization`,
             `Dropout reduces co-adaptation (variance)`,
             `Ensemble methods reduce variance`
+          ],
+          diagram: `Regularization Effects
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `double-descent`,
           title: `Double Descent`,
-          content: `Modern overparameterized models can exhibit double descent — error decreases, increases, then decreases again beyond interpolation threshold.`,
+          content: `### Introduction
+
+Modern overparameterized models can exhibit double descent — error decreases, increases, then decreases again beyond interpolation threshold.
+
+### Double Descent
+
+### Key Ideas
+
+- Classical U-curve bias-variance tradeoff
+- Double descent in overparameterized regime
+- Explains why huge models can generalize
+- Active research area in ML theory`,
           keyPoints: [
             `Classical U-curve bias-variance tradeoff`,
             `Double descent in overparameterized regime`,
             `Explains why huge models can generalize`,
             `Active research area in ML theory`
+          ],
+          diagram: `Double Descent
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         }
       ],
@@ -502,7 +828,22 @@ print(diagnosis)`,
         {
           id: `shap`,
           title: `SHAP Values`,
-          content: `SHapley Additive exPlanations: fair allocation of prediction to each feature based on game theory. shap.TreeExplainer for tree models.`,
+          content: `### Introduction
+
+SHapley Additive exPlanations: fair allocation of prediction to each feature based on game theory. shap.TreeExplainer for tree models.
+
+### SHAP Values
+
+### Key Ideas
+
+- SHAP values sum to prediction minus base rate
+- Consistent and locally accurate explanations
+- TreeExplainer exact and fast for trees
+- Summary plots show global feature importance
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import shap
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -517,39 +858,102 @@ print(len(shap_values))`,
             `Consistent and locally accurate explanations`,
             `TreeExplainer exact and fast for trees`,
             `Summary plots show global feature importance`
+          ],
+          diagram: `SHAP Values
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not stratifying splits for classification tasks`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `lime`,
           title: `LIME`,
-          content: `Local Interpretable Model-agnostic Explanations. Perturb input, observe prediction changes, fit simple local model.`,
+          content: `### Introduction
+
+Local Interpretable Model-agnostic Explanations. Perturb input, observe prediction changes, fit simple local model.
+
+### LIME
+
+### Key Ideas
+
+- Model-agnostic — works on any black box
+- Local fidelity not global accuracy
+- Tabular, text, and image explanations
+- LIME can be unstable across runs`,
           keyPoints: [
             `Model-agnostic — works on any black box`,
             `Local fidelity not global accuracy`,
             `Tabular, text, and image explanations`,
             `LIME can be unstable across runs`
+          ],
+          diagram: `LIME
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `global`,
           title: `Global vs Local Interpretability`,
-          content: `Global: overall feature importance (permutation, SHAP summary). Local: why this specific prediction (SHAP force plot, LIME).`,
+          content: `### Introduction
+
+Global: overall feature importance (permutation, SHAP summary). Local: why this specific prediction (SHAP force plot, LIME).
+
+### Global vs Local Interpretability
+
+### Key Ideas
+
+- Global for model understanding and feature selection
+- Local for individual decision audit
+- Partial dependence plots show marginal effects
+- ICE plots show heterogeneous effects`,
           keyPoints: [
             `Global for model understanding and feature selection`,
             `Local for individual decision audit`,
             `Partial dependence plots show marginal effects`,
             `ICE plots show heterogeneous effects`
+          ],
+          diagram: `Global vs Local Interpretability
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `fairness`,
           title: `Interpretability for Fairness`,
-          content: `Explainability required for regulated domains. Detect proxy discrimination through feature importance analysis.`,
+          content: `### Introduction
+
+Explainability required for regulated domains. Detect proxy discrimination through feature importance analysis.
+
+### Interpretability for Fairness
+
+### Key Ideas
+
+- GDPR right to explanation in EU
+- Check if protected attributes drive predictions
+- Proxy variables encode protected information
+- Interpretability necessary not sufficient for fairness`,
           keyPoints: [
             `GDPR right to explanation in EU`,
             `Check if protected attributes drive predictions`,
             `Proxy variables encode protected information`,
             `Interpretability necessary not sufficient for fairness`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         }
       ],

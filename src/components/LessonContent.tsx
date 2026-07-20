@@ -244,7 +244,11 @@ export function LessonContent({ content }: { content: string }) {
               </div>
             );
           case 'heading':
-            return (
+            return block.level === 3 ? (
+              <h3 key={i} className="lesson-article-heading">
+                {block.text}
+              </h3>
+            ) : (
               <div key={i} className="lesson-section-divider">
                 <span className="lesson-section-divider-line" />
                 <h4 className="lesson-subheading">{block.text}</h4>

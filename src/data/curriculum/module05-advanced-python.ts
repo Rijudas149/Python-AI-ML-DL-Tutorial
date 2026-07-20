@@ -11,7 +11,22 @@ export const module05Topics: Topic[] = [
         {
           id: `decorator-basics`,
           title: `Function Decorators`,
-          content: `A decorator is \`@decorator\` syntax for \`func = decorator(func)\`. Decorators are higher-order functions that wrap callables.`,
+          content: `### Introduction
+
+A decorator is \`@decorator\` syntax for \`func = decorator(func)\`. Decorators are higher-order functions that wrap callables.
+
+### Function Decorators
+
+### Key Ideas
+
+- Decorators wrap functions transparently
+- @syntax is syntactic sugar
+- wrapper must use *args, **kwargs
+- functools.wraps preserves metadata
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def log_calls(func):
     def wrapper(*args, **kwargs):
         print(f"Calling {func.__name__}")
@@ -30,12 +45,35 @@ print(add(2, 3))`,
             `@syntax is syntactic sugar`,
             `wrapper must use *args, **kwargs`,
             `functools.wraps preserves metadata`
+          ],
+          diagram: `Function Decorators
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `functools-wraps`,
           title: `functools.wraps & functools`,
-          content: `Always use \`@wraps(func)\` on wrapper to preserve \`__name__\`, \`__doc__\`. functools.lru_cache, partial, reduce are essential tools.`,
+          content: `### Introduction
+
+Always use \`@wraps(func)\` on wrapper to preserve \`__name__\`, \`__doc__\`. functools.lru_cache, partial, reduce are essential tools.
+
+### functools.wraps & functools
+
+### Key Ideas
+
+- lru_cache memoizes function results
+- wraps preserves function identity
+- partial creates specialized functions
+- Decorators with args need decorator factory
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from functools import wraps, lru_cache
 
 @lru_cache(maxsize=128)
@@ -50,12 +88,35 @@ print(fib(30))`,
             `wraps preserves function identity`,
             `partial creates specialized functions`,
             `Decorators with args need decorator factory`
+          ],
+          diagram: `functools.wraps & functools
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         },
         {
           id: `param-decorator`,
           title: `Decorators with Parameters`,
-          content: `Three-level nesting: decorator factory → decorator → wrapper. \`@retry(times=3)\` pattern.`,
+          content: `### Introduction
+
+Three-level nesting: decorator factory → decorator → wrapper. \`@retry(times=3)\` pattern.
+
+### Decorators with Parameters
+
+### Key Ideas
+
+- Outer function receives decorator args
+- Middle function receives wrapped function
+- Inner function receives call args
+- Flask/FastAPI routes use parameterized decorators
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from functools import wraps
 
 def repeat(n):
@@ -81,17 +142,40 @@ Hello`,
             `Middle function receives wrapped function`,
             `Inner function receives call args`,
             `Flask/FastAPI routes use parameterized decorators`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `class-decorator`,
           title: `Class Decorators`,
-          content: `Decorators work on classes too. \`@dataclass\`, \`@property\` are built-in class decorators. Metaclasses are advanced alternative.`,
+          content: `### Introduction
+
+Decorators work on classes too. \`@dataclass\`, \`@property\` are built-in class decorators. Metaclasses are advanced alternative.
+
+### Class Decorators
+
+### Key Ideas
+
+- Class decorators modify or register classes
+- dataclass is a class decorator
+- Metaclasses customize class creation
+- Use decorators before metaclasses`,
           keyPoints: [
             `Class decorators modify or register classes`,
             `dataclass is a class decorator`,
             `Metaclasses customize class creation`,
             `Use decorators before metaclasses`
+          ],
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -179,7 +263,22 @@ print(fact(10))`,
         {
           id: `yield`,
           title: `Generator Functions`,
-          content: `\`yield\` pauses function and returns value. Resumes on next(). Generators are iterators — memory efficient.`,
+          content: `### Introduction
+
+\`yield\` pauses function and returns value. Resumes on next(). Generators are iterators — memory efficient.
+
+### Generator Functions
+
+### Key Ideas
+
+- yield transforms function to generator
+- State preserved between yields
+- Generators are single-pass iterators
+- Use for infinite sequences and pipelines
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def count_up(n):
     i = 0
     while i < n:
@@ -194,12 +293,35 @@ for x in count_up(5):
             `State preserved between yields`,
             `Generators are single-pass iterators`,
             `Use for infinite sequences and pipelines`
+          ],
+          diagram: `Generator Functions
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `yield-from`,
           title: `yield from & send`,
-          content: `\`yield from iterable\` delegates to sub-generator. \`.send(value)\` sends values into generator. Advanced coroutine patterns.`,
+          content: `### Introduction
+
+\`yield from iterable\` delegates to sub-generator. \`.send(value)\` sends values into generator. Advanced coroutine patterns.
+
+### yield from & send
+
+### Key Ideas
+
+- yield from simplifies generator delegation
+- send() enables two-way communication
+- throw() and close() control generator lifecycle
+- Foundation for async/await
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def chain(*iterables):
     for it in iterables:
         yield from it
@@ -211,12 +333,35 @@ print(list(chain([1,2], [3,4])))`,
             `send() enables two-way communication`,
             `throw() and close() control generator lifecycle`,
             `Foundation for async/await`
+          ],
+          diagram: `yield from & send
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `gen-expr`,
           title: `Generator Pipelines`,
-          content: `Chain generators for data pipelines: read → filter → transform → aggregate. Memory stays constant.`,
+          content: `### Introduction
+
+Chain generators for data pipelines: read → filter → transform → aggregate. Memory stays constant.
+
+### Generator Pipelines
+
+### Key Ideas
+
+- Pipeline stages are composable generators
+- Lazy evaluation — no intermediate lists
+- Pattern used in ETL and streaming ML
+- itertools.chain and tee assist pipelines
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def read_nums():
     for x in [1,2,3,4,5,6]:
         yield x
@@ -233,17 +378,44 @@ print(list(evens(read_nums())))`,
             `Lazy evaluation — no intermediate lists`,
             `Pattern used in ETL and streaming ML`,
             `itertools.chain and tee assist pipelines`
+          ],
+          diagram: `Generator Pipelines
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `infinite`,
           title: `Infinite Generators`,
-          content: `Generators can yield forever: \`while True: yield x\`. Use with break condition or itertools.islice to limit.`,
+          content: `### Introduction
+
+Generators can yield forever: \`while True: yield x\`. Use with break condition or itertools.islice to limit.
+
+### Infinite Generators
+
+### Key Ideas
+
+- Infinite generators model streams
+- islice limits consumption
+- cycle and repeat from itertools
+- Careful with memory on accidental materialization`,
           keyPoints: [
             `Infinite generators model streams`,
             `islice limits consumption`,
             `cycle and repeat from itertools`,
             `Careful with memory on accidental materialization`
+          ],
+          diagram: `Infinite Generators
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -319,7 +491,22 @@ print(next(g), next(g))`,
         {
           id: `with`,
           title: `The with Statement`,
-          content: `Context managers guarantee setup/teardown via \`__enter__\` and \`__exit__\`. Essential for files, locks, DB connections.`,
+          content: `### Introduction
+
+Context managers guarantee setup/teardown via \`__enter__\` and \`__exit__\`. Essential for files, locks, DB connections.
+
+### The with Statement
+
+### Key Ideas
+
+- with guarantees cleanup even on exceptions
+- __exit__ receives exception info
+- Return True from __exit__ to suppress exception
+- File handling primary use case
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `class Timer:
     def __enter__(self):
         import time
@@ -337,12 +524,33 @@ with Timer():
             `__exit__ receives exception info`,
             `Return True from __exit__ to suppress exception`,
             `File handling primary use case`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `contextlib`,
           title: `contextlib Utilities`,
-          content: `@contextmanager decorator turns generator into context manager. contextlib.suppress, ExitStack for multiple contexts.`,
+          content: `### Introduction
+
+@contextmanager decorator turns generator into context manager. contextlib.suppress, ExitStack for multiple contexts.
+
+### contextlib Utilities
+
+### Key Ideas
+
+- contextmanager decorator simplifies creation
+- yield separates enter and exit logic
+- ExitStack manages dynamic context count
+- suppress catches specific exceptions
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from contextlib import contextmanager
 
 @contextmanager
@@ -361,12 +569,35 @@ content
             `yield separates enter and exit logic`,
             `ExitStack manages dynamic context count`,
             `suppress catches specific exceptions`
+          ],
+          diagram: `contextlib Utilities
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `file-context`,
           title: `File Handling Pattern`,
-          content: `Always: \`with open(path, "r", encoding="utf-8") as f:\`. Automatic close even on error.`,
+          content: `### Introduction
+
+Always: \`with open(path, "r", encoding="utf-8") as f:\`. Automatic close even on error.
+
+### File Handling Pattern
+
+### Key Ideas
+
+- with open is the only correct file pattern
+- Specify encoding explicitly
+- Use json.load inside with block
+- Pathlib improves path handling
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Pattern demonstration
 content = "Hello, File!"
 lines = content.split("\\n")
@@ -377,17 +608,40 @@ print(len(lines), lines[0])`,
             `Specify encoding explicitly`,
             `Use json.load inside with block`,
             `Pathlib improves path handling`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `async-context`,
           title: `Async Context Managers`,
-          content: `async with for async __aenter__/__aexit__. Required for async DB sessions and HTTP clients.`,
+          content: `### Introduction
+
+async with for async __aenter__/__aexit__. Required for async DB sessions and HTTP clients.
+
+### Async Context Managers
+
+### Key Ideas
+
+- async with for asyncio resources
+- @asynccontextmanager decorator available
+- Used in FastAPI lifespan events
+- Ensure proper await in async contexts`,
           keyPoints: [
             `async with for asyncio resources`,
             `@asynccontextmanager decorator available`,
             `Used in FastAPI lifespan events`,
             `Ensure proper await in async contexts`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         }
       ],
@@ -466,9 +720,24 @@ print(result)`,
         {
           id: `hints`,
           title: `Type Annotations`,
-          content: `Annotate parameters and returns: \`def greet(name: str) -> str:\`. Use list[int], dict[str, float] (Python 3.9+).
+          content: `### Introduction
 
-Optional[X] or X | None for nullable.`,
+Annotate parameters and returns: \`def greet(name: str) -> str:\`. Use list[int], dict[str, float] (Python 3.9+).
+
+### Type Annotations
+
+Optional[X] or X | None for nullable.
+
+### Key Ideas
+
+- Type hints are not enforced at runtime
+- mypy/pyright check statically
+- Use from __future__ import annotations for forward refs
+- Gradual typing — add incrementally
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def process(items: list[int], threshold: float = 0.5) -> dict[str, int]:
     above = [x for x in items if x > threshold * max(items)]
     return {"count": len(above), "max": max(above) if above else 0}
@@ -480,12 +749,33 @@ print(process([1, 5, 3, 9, 2]))`,
             `mypy/pyright check statically`,
             `Use from __future__ import annotations for forward refs`,
             `Gradual typing — add incrementally`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `dataclass`,
           title: `dataclasses Module`,
-          content: `@dataclass generates boilerplate. field() for defaults. frozen, order, slots options.`,
+          content: `### Introduction
+
+@dataclass generates boilerplate. field() for defaults. frozen, order, slots options.
+
+### dataclasses Module
+
+### Key Ideas
+
+- default_factory for mutable defaults
+- frozen=True makes immutable
+- asdict() and astuple() for conversion
+- Preferred over namedtuple for mutable data
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from dataclasses import dataclass, field
 
 @dataclass
@@ -501,28 +791,70 @@ print(ModelConfig("mlp"))`,
             `frozen=True makes immutable`,
             `asdict() and astuple() for conversion`,
             `Preferred over namedtuple for mutable data`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `pydantic`,
           title: `Pydantic & Validation`,
-          content: `Pydantic BaseModel validates at runtime. Essential for API schemas, config, and ML pipeline configs.`,
+          content: `### Introduction
+
+Pydantic BaseModel validates at runtime. Essential for API schemas, config, and ML pipeline configs.
+
+### Pydantic & Validation
+
+### Key Ideas
+
+- Pydantic v2 uses Rust core — very fast
+- Automatic JSON serialization
+- Used in FastAPI request/response models
+- Validate ML experiment configs with Pydantic`,
           keyPoints: [
             `Pydantic v2 uses Rust core — very fast`,
             `Automatic JSON serialization`,
             `Used in FastAPI request/response models`,
             `Validate ML experiment configs with Pydantic`
+          ],
+          diagram: `Pydantic & Validation
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         },
         {
           id: `typing-advanced`,
           title: `Advanced Typing`,
-          content: `Union, Literal, TypedDict, Callable, TypeVar, Protocol. Enables precise interfaces for complex codebases.`,
+          content: `### Introduction
+
+Union, Literal, TypedDict, Callable, TypeVar, Protocol. Enables precise interfaces for complex codebases.
+
+### Advanced Typing
+
+### Key Ideas
+
+- TypedDict for structured dicts
+- Literal for fixed value sets
+- Callable[[int, str], bool] for function types
+- Essential for large ML codebases`,
           keyPoints: [
             `TypedDict for structured dicts`,
             `Literal for fixed value sets`,
             `Callable[[int, str], bool] for function types`,
             `Essential for large ML codebases`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],
@@ -598,7 +930,22 @@ print(mean([1.0, 2.0, 3.0, 4.0]))`,
         {
           id: `imports`,
           title: `Import System`,
-          content: `\`import module\`, \`from module import name\`, \`from package.sub import Class\`. __init__.py marks packages. Relative imports with dots.`,
+          content: `### Introduction
+
+\`import module\`, \`from module import name\`, \`from package.sub import Class\`. __init__.py marks packages. Relative imports with dots.
+
+### Import System
+
+### Key Ideas
+
+- One module per logical unit
+- Avoid import * — pollutes namespace
+- Use absolute imports in packages
+- __all__ controls from module import *
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Standard import patterns:
 # import numpy as np
 # from sklearn.model_selection import train_test_split
@@ -609,12 +956,20 @@ print("Organize code into focused modules")`,
             `Avoid import * — pollutes namespace`,
             `Use absolute imports in packages`,
             `__all__ controls from module import *`
+          ],
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Avoid import * — pollutes namespace.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `packages`,
           title: `Package Structure`,
-          content: `\`\`\`
+          content: `### Introduction
+
+\`\`\`
 mypackage/
   __init__.py
   core.py
@@ -622,36 +977,87 @@ mypackage/
     __init__.py
     helpers.py
 \`\`\`
-Use pyproject.toml for modern project config.`,
+Use pyproject.toml for modern project config.
+
+### Package Structure
+
+### Key Ideas
+
+- src/ layout prevents import confusion
+- pyproject.toml replaces setup.py
+- __init__.py can expose public API
+- Namespace packages for large projects`,
           keyPoints: [
             `src/ layout prevents import confusion`,
             `pyproject.toml replaces setup.py`,
             `__init__.py can expose public API`,
             `Namespace packages for large projects`
+          ],
+          commonMistakes: [
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `publishing`,
           title: `Publishing Packages`,
-          content: `Build with \`python -m build\`. Upload to PyPI with \`twine upload\`.
+          content: `### Introduction
 
-Semantic versioning: MAJOR.MINOR.PATCH.`,
+Build with \`python -m build\`. Upload to PyPI with \`twine upload\`.
+
+### Publishing Packages
+
+Semantic versioning: MAJOR.MINOR.PATCH.
+
+### Key Ideas
+
+- Follow semantic versioning
+- README and LICENSE required for PyPI
+- Test with TestPyPI first
+- Pin dependencies in published packages`,
           keyPoints: [
             `Follow semantic versioning`,
             `README and LICENSE required for PyPI`,
             `Test with TestPyPI first`,
             `Pin dependencies in published packages`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `stdlib`,
           title: `Essential Standard Library`,
-          content: `os, sys, pathlib, json, csv, datetime, collections, itertools, functools, argparse, logging, unittest.`,
+          content: `### Introduction
+
+os, sys, pathlib, json, csv, datetime, collections, itertools, functools, argparse, logging, unittest.
+
+### Essential Standard Library
+
+### Key Ideas
+
+- Know stdlib before adding dependencies
+- pathlib over os.path
+- logging over print for production
+- argparse or click for CLI tools`,
           keyPoints: [
             `Know stdlib before adding dependencies`,
             `pathlib over os.path`,
             `logging over print for production`,
             `argparse or click for CLI tools`
+          ],
+          diagram: `Essential Standard Library
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         }
       ],

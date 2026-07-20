@@ -11,9 +11,24 @@ export const module14Topics: Topic[] = [
         {
           id: `perceptron`,
           title: `The Perceptron`,
-          content: `Single neuron: output = activation(w·x + b). Stacked layers create MLP (Multi-Layer Perceptron).
+          content: `### Introduction
 
-Universal function approximator with enough hidden units.`,
+Single neuron: output = activation(w·x + b). Stacked layers create MLP (Multi-Layer Perceptron).
+
+### The Perceptron
+
+Universal function approximator with enough hidden units.
+
+### Key Ideas
+
+- Neural network = composed non-linear transformations
+- Hidden layers learn hierarchical features
+- Width and depth trade off for capacity
+- Start simple then increase complexity
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def forward(X, W, b, activation=np.tanh):
@@ -27,14 +42,31 @@ print(forward(X, W, np.array([0.1])))`,
             `Hidden layers learn hierarchical features`,
             `Width and depth trade off for capacity`,
             `Start simple then increase complexity`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `mlp`,
           title: `Multi-Layer Perceptron`,
-          content: `Input layer → hidden layer(s) → output layer. Each layer: linear transform + non-linear activation.
+          content: `### Introduction
 
-Depth enables hierarchical feature learning.`,
+Input layer → hidden layer(s) → output layer. Each layer: linear transform + non-linear activation.
+
+### Multi-Layer Perceptron
+
+Depth enables hierarchical feature learning.
+
+### Key Ideas
+
+- Depth: number of hidden layers
+- Width: neurons per layer
+- Too deep without skip connections hard to train
+- 1-2 hidden layers sufficient for many tabular tasks`,
           pseudoCode: `FOR each layer L:
     z = W_L @ a_{L-1} + b_L
     a_L = activation(z)`,
@@ -43,12 +75,35 @@ Depth enables hierarchical feature learning.`,
             `Width: neurons per layer`,
             `Too deep without skip connections hard to train`,
             `1-2 hidden layers sufficient for many tabular tasks`
+          ],
+          diagram: `Multi-Layer Perceptron
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `forward`,
           title: `Forward Propagation`,
-          content: `Pass input through network layer by layer to produce prediction. Matrix operations enable batch processing.`,
+          content: `### Introduction
+
+Pass input through network layer by layer to produce prediction. Matrix operations enable batch processing.
+
+### Forward Propagation
+
+### Key Ideas
+
+- Batch dimension enables parallel GPU computation
+- Output layer produces logits for classification
+- Softmax applied to logits for probabilities
+- Forward pass is inference/prediction
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -66,17 +121,42 @@ print(out.shape)`,
             `Output layer produces logits for classification`,
             `Softmax applied to logits for probabilities`,
             `Forward pass is inference/prediction`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `capacity`,
           title: `Network Capacity`,
-          content: `More parameters = more capacity to fit complex functions. Risk overfitting with too much capacity on small data.`,
+          content: `### Introduction
+
+More parameters = more capacity to fit complex functions. Risk overfitting with too much capacity on small data.
+
+### Network Capacity
+
+### Key Ideas
+
+- Parameters = weights + biases count
+- Capacity must match data complexity
+- Regularization controls effective capacity
+- Modern networks vastly overparameterized yet generalize`,
           keyPoints: [
             `Parameters = weights + biases count`,
             `Capacity must match data complexity`,
             `Regularization controls effective capacity`,
             `Modern networks vastly overparameterized yet generalize`
+          ],
+          diagram: `Network Capacity
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         }
       ],
@@ -143,7 +223,22 @@ print(relu(np.array([-1, 0, 2])))`,
         {
           id: `relu`,
           title: `ReLU & Variants`,
-          content: `ReLU: max(0, x). Default for hidden layers. Leaky ReLU, PReLU, ELU address dying ReLU problem.`,
+          content: `### Introduction
+
+ReLU: max(0, x). Default for hidden layers. Leaky ReLU, PReLU, ELU address dying ReLU problem.
+
+### ReLU & Variants
+
+### Key Ideas
+
+- ReLU sparse activation — efficient computation
+- Dying ReLU: neuron always outputs 0
+- Leaky ReLU keeps small gradient for negatives
+- GELU preferred in transformers
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def relu(z): return np.maximum(0, z)
@@ -159,14 +254,37 @@ print(leaky_relu(z))`,
             `Dying ReLU: neuron always outputs 0`,
             `Leaky ReLU keeps small gradient for negatives`,
             `GELU preferred in transformers`
+          ],
+          diagram: `ReLU & Variants
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `sigmoid-tanh`,
           title: `Sigmoid & Tanh`,
-          content: `Sigmoid: (0,1) for binary output. Tanh: (-1,1) zero-centered.
+          content: `### Introduction
 
-Vanishing gradient in deep networks limits hidden layer use.`,
+Sigmoid: (0,1) for binary output. Tanh: (-1,1) zero-centered.
+
+### Sigmoid & Tanh
+
+Vanishing gradient in deep networks limits hidden layer use.
+
+### Key Ideas
+
+- Sigmoid for binary classification output layer
+- Tanh zero-centered — faster convergence than sigmoid
+- Both saturate causing vanishing gradients
+- Avoid in hidden layers of deep networks
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def sigmoid(z): return 1 / (1 + np.exp(-z))
@@ -181,12 +299,35 @@ print(tanh(np.array([0, 2, -2])).round(3))`,
             `Tanh zero-centered — faster convergence than sigmoid`,
             `Both saturate causing vanishing gradients`,
             `Avoid in hidden layers of deep networks`
+          ],
+          diagram: `Sigmoid & Tanh
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Avoid in hidden layers of deep networks.`
           ]
         },
         {
           id: `softmax`,
           title: `Softmax`,
-          content: `Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ. Outputs sum to 1. Combined with cross-entropy loss.`,
+          content: `### Introduction
+
+Multi-class output: softmax(zᵢ) = e^zᵢ/Σe^zⱼ. Outputs sum to 1. Combined with cross-entropy loss.
+
+### Softmax
+
+### Key Ideas
+
+- Subtract max for numerical stability
+- Output layer only — not hidden layers
+- Cross-entropy + softmax gradient simplifies to p - y
+- Temperature scaling adjusts confidence
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def softmax(z):
@@ -200,17 +341,44 @@ print(softmax(np.array([2.0, 1.0, 0.1])).round(3))`,
             `Output layer only — not hidden layers`,
             `Cross-entropy + softmax gradient simplifies to p - y`,
             `Temperature scaling adjusts confidence`
+          ],
+          diagram: `Softmax
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `modern`,
           title: `Modern Activations`,
-          content: `GELU (Gaussian Error Linear Unit) in BERT/GPT. Swish/SiLU: x·sigmoid(x). Smooth activations help deep transformers.`,
+          content: `### Introduction
+
+GELU (Gaussian Error Linear Unit) in BERT/GPT. Swish/SiLU: x·sigmoid(x). Smooth activations help deep transformers.
+
+### Modern Activations
+
+### Key Ideas
+
+- GELU: x * Φ(x) where Φ is CDF of standard normal
+- Swish smooth near zero unlike ReLU
+- Activation choice less critical with good initialization
+- Match activation to architecture (GELU for transformers)`,
           keyPoints: [
             `GELU: x * Φ(x) where Φ is CDF of standard normal`,
             `Swish smooth near zero unlike ReLU`,
             `Activation choice less critical with good initialization`,
             `Match activation to architecture (GELU for transformers)`
+          ],
+          diagram: `Modern Activations
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],
@@ -282,7 +450,22 @@ print(round(x / (1 + np.exp(-1.702 * x)), 4))`,
         {
           id: `mse`,
           title: `MSE & MAE Loss`,
-          content: `MSE: mean((y-ŷ)²). Differentiable, penalizes large errors. MAE: mean(|y-ŷ|). Robust to outliers.`,
+          content: `### Introduction
+
+MSE: mean((y-ŷ)²). Differentiable, penalizes large errors. MAE: mean(|y-ŷ|). Robust to outliers.
+
+### MSE & MAE Loss
+
+### Key Ideas
+
+- MSE standard for regression
+- MAE when outliers are problematic
+- Huber loss combines MSE and MAE benefits
+- Loss choice must match task and output activation
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def mse_loss(y_true, y_pred):
@@ -295,14 +478,37 @@ print(mse_loss(np.array([1, 2, 3]), np.array([1.1, 2.2, 2.8])))`,
             `MAE when outliers are problematic`,
             `Huber loss combines MSE and MAE benefits`,
             `Loss choice must match task and output activation`
+          ],
+          diagram: `MSE & MAE Loss
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `ce`,
           title: `Cross-Entropy Loss`,
-          content: `Binary: -[y log(ŷ) + (1-y)log(1-ŷ)]. Categorical: -Σ yᵢ log(ŷᵢ).
+          content: `### Introduction
 
-Standard for classification.`,
+Binary: -[y log(ŷ) + (1-y)log(1-ŷ)]. Categorical: -Σ yᵢ log(ŷᵢ).
+
+### Cross-Entropy Loss
+
+Standard for classification.
+
+### Key Ideas
+
+- Use log-loss with sigmoid/softmax outputs
+- Label smoothing prevents overconfidence
+- Focal loss addresses class imbalance
+- Cross-entropy = negative log-likelihood
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def cross_entropy(y_true, y_pred):
@@ -316,30 +522,74 @@ print(round(cross_entropy(1.0, 0.9), 4))`,
             `Label smoothing prevents overconfidence`,
             `Focal loss addresses class imbalance`,
             `Cross-entropy = negative log-likelihood`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `multi-task`,
           title: `Multi-Task & Custom Losses`,
-          content: `Combine losses with weights: L = α·L₁ + β·L₂. Custom losses for ranking, contrastive learning, GANs.`,
+          content: `### Introduction
+
+Combine losses with weights: L = α·L₁ + β·L₂. Custom losses for ranking, contrastive learning, GANs.
+
+### Multi-Task & Custom Losses
+
+### Key Ideas
+
+- Weight task losses by importance or uncertainty
+- Contrastive loss for embeddings (SimCLR, triplet)
+- Perceptual loss for image generation
+- Design loss to match evaluation metric when possible`,
           keyPoints: [
             `Weight task losses by importance or uncertainty`,
             `Contrastive loss for embeddings (SimCLR, triplet)`,
             `Perceptual loss for image generation`,
             `Design loss to match evaluation metric when possible`
+          ],
+          diagram: `Multi-Task & Custom Losses
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `monitor`,
           title: `Monitoring Loss`,
-          content: `Track train and validation loss. Divergence indicates overfitting.
+          content: `### Introduction
 
-Plateau suggests learning rate adjustment needed.`,
+Track train and validation loss. Divergence indicates overfitting.
+
+### Monitoring Loss
+
+Plateau suggests learning rate adjustment needed.
+
+### Key Ideas
+
+- Loss should decrease during training
+- Val loss increasing while train decreases = overfit
+- ReduceLROnPlateau on val loss
+- Early stopping saves best val loss checkpoint`,
           keyPoints: [
             `Loss should decrease during training`,
             `Val loss increasing while train decreases = overfit`,
             `ReduceLROnPlateau on val loss`,
             `Early stopping saves best val loss checkpoint`
+          ],
+          diagram: `Monitoring Loss
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         }
       ],
@@ -406,9 +656,20 @@ print(-np.log(1 - 0.1))`,
         {
           id: `concept`,
           title: `Backpropagation Concept`,
-          content: `Forward pass computes output and loss. Backward pass applies chain rule from loss to each parameter.
+          content: `### Introduction
 
-Efficient via dynamic programming on computational graph.`,
+Forward pass computes output and loss. Backward pass applies chain rule from loss to each parameter.
+
+### Backpropagation Concept
+
+Efficient via dynamic programming on computational graph.
+
+### Key Ideas
+
+- Chain rule applied layer by layer
+- Computational graph tracks dependencies
+- Reverse mode AD efficient for many parameters
+- Same algorithm as autograd in PyTorch`,
           pseudoCode: `FOR layer L from output to input:
     dL/dz_L = upstream_gradient * activation_derivative
     dL/dW_L = dL/dz_L @ a_{L-1}^T
@@ -419,12 +680,35 @@ Efficient via dynamic programming on computational graph.`,
             `Computational graph tracks dependencies`,
             `Reverse mode AD efficient for many parameters`,
             `Same algorithm as autograd in PyTorch`
+          ],
+          diagram: `Backpropagation Concept
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `manual`,
           title: `Manual Backprop Example`,
-          content: `2-layer network backprop by hand builds intuition. Matrix calculus for weight gradients.`,
+          content: `### Introduction
+
+2-layer network backprop by hand builds intuition. Matrix calculus for weight gradients.
+
+### Manual Backprop Example
+
+### Key Ideas
+
+- Gradient points direction of steepest increase
+- Update in negative gradient direction
+- Manual backprop verifies autograd results
+- Vanishing gradient in deep sigmoid networks
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 # Simple gradient descent on f(w) = w^2
@@ -440,28 +724,74 @@ print(round(w, 6))`,
             `Update in negative gradient direction`,
             `Manual backprop verifies autograd results`,
             `Vanishing gradient in deep sigmoid networks`
+          ],
+          diagram: `Manual Backprop Example
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `autograd`,
           title: `Automatic Differentiation`,
-          content: `PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.`,
+          content: `### Introduction
+
+PyTorch autograd, TensorFlow GradientTape compute gradients automatically. reverse-mode AD for scalar loss.
+
+### Automatic Differentiation
+
+### Key Ideas
+
+- Autograd builds computational graph dynamically
+- tensor.backward() triggers reverse pass
+- requires_grad=True tracks gradients
+- No need for manual gradient derivation in practice`,
           keyPoints: [
             `Autograd builds computational graph dynamically`,
             `tensor.backward() triggers reverse pass`,
             `requires_grad=True tracks gradients`,
             `No need for manual gradient derivation in practice`
+          ],
+          diagram: `Automatic Differentiation
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `vanishing`,
           title: `Vanishing & Exploding Gradients`,
-          content: `Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially. Solutions: ReLU, residual connections, gradient clipping, proper initialization.`,
+          content: `### Introduction
+
+Deep networks: gradients shrink (sigmoid/tanh) or grow exponentially. Solutions: ReLU, residual connections, gradient clipping, proper initialization.
+
+### Vanishing & Exploding Gradients
+
+### Key Ideas
+
+- Vanishing: gradients near zero in early layers
+- Exploding: gradients overflow — clip to max norm
+- Batch normalization stabilizes gradients
+- ResNet skip connections enable very deep networks`,
           keyPoints: [
             `Vanishing: gradients near zero in early layers`,
             `Exploding: gradients overflow — clip to max norm`,
             `Batch normalization stabilizes gradients`,
             `ResNet skip connections enable very deep networks`
+          ],
+          diagram: `Vanishing & Exploding Gradients
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         }
       ],
@@ -530,9 +860,24 @@ print(round(x, 2))`,
         {
           id: `init`,
           title: `Weight Initialization`,
-          content: `Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid. He/Kaiming: scale by √(2/n_in) for ReLU.
+          content: `### Introduction
 
-Bad init slows or prevents convergence.`,
+Xavier/Glorot: scale by 1/√n_in for tanh/sigmoid. He/Kaiming: scale by √(2/n_in) for ReLU.
+
+### Weight Initialization
+
+Bad init slows or prevents convergence.
+
+### Key Ideas
+
+- Zero init breaks symmetry badly
+- Xavier for sigmoid/tanh activations
+- He/Kaiming for ReLU family
+- PyTorch nn.Linear uses Kaiming by default
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 n_in, n_out = 256, 128
@@ -544,12 +889,33 @@ print(W.std().round(4))`,
             `Xavier for sigmoid/tanh activations`,
             `He/Kaiming for ReLU family`,
             `PyTorch nn.Linear uses Kaiming by default`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`
           ]
         },
         {
           id: `dropout`,
           title: `Dropout`,
-          content: `Randomly zero neurons during training with probability p. Prevents co-adaptation. Scale by 1/(1-p) at inference or use inverted dropout.`,
+          content: `### Introduction
+
+Randomly zero neurons during training with probability p. Prevents co-adaptation. Scale by 1/(1-p) at inference or use inverted dropout.
+
+### Dropout
+
+### Key Ideas
+
+- Typical p=0.5 for hidden layers, 0.2 for input
+- Only active during training
+- MC dropout for uncertainty estimation
+- Less needed with batch norm in CNNs
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def dropout(x, p=0.5, training=True):
@@ -566,30 +932,76 @@ print(dropout(x, p=0.5).sum())`,
             `Only active during training`,
             `MC dropout for uncertainty estimation`,
             `Less needed with batch norm in CNNs`
+          ],
+          diagram: `Dropout
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `batchnorm`,
           title: `Batch Normalization`,
-          content: `Normalize layer inputs across batch: (x-μ)/σ. Learnable scale γ and shift β.
+          content: `### Introduction
 
-Stabilizes training, allows higher learning rates.`,
+Normalize layer inputs across batch: (x-μ)/σ. Learnable scale γ and shift β.
+
+### Batch Normalization
+
+Stabilizes training, allows higher learning rates.
+
+### Key Ideas
+
+- Normalizes intermediate activations
+- Acts as regularizer
+- Different behavior train vs eval — model.eval()
+- LayerNorm alternative for transformers/RNNs`,
           keyPoints: [
             `Normalizes intermediate activations`,
             `Acts as regularizer`,
             `Different behavior train vs eval — model.eval()`,
             `LayerNorm alternative for transformers/RNNs`
+          ],
+          diagram: `Batch Normalization
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `early-stop`,
           title: `Early Stopping & Data Augmentation`,
-          content: `Stop training when validation loss stops improving. Data augmentation artificially expands training set.`,
+          content: `### Introduction
+
+Stop training when validation loss stops improving. Data augmentation artificially expands training set.
+
+### Early Stopping & Data Augmentation
+
+### Key Ideas
+
+- Early stopping simplest regularization
+- Save checkpoint at best val loss
+- Augmentation: rotation, flip, crop for images
+- Mixup/CutMix advanced augmentation for classification`,
           keyPoints: [
             `Early stopping simplest regularization`,
             `Save checkpoint at best val loss`,
             `Augmentation: rotation, flip, crop for images`,
             `Mixup/CutMix advanced augmentation for classification`
+          ],
+          diagram: `Early Stopping & Data Augmentation
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         }
       ],

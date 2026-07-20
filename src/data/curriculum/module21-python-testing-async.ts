@@ -11,11 +11,26 @@ export const module21Topics: Topic[] = [
         {
           id: `pytest-basics`,
           title: `pytest Fundamentals`,
-          content: `**pytest** discovers tests named \`test_*\` or methods on \`Test*\` classes. Assertions use plain \`assert\`—no special assertion methods. Run with \`pytest -v\` for verbose output.
+          content: `### Introduction
+
+**pytest** discovers tests named \`test_*\` or methods on \`Test*\` classes. Assertions use plain \`assert\`—no special assertion methods. Run with \`pytest -v\` for verbose output.
+
+### pytest Fundamentals
 
 Test functions should be **isolated**: no shared mutable global state, no dependence on run order. Each test arranges inputs, acts on the system under test, and asserts outcomes (AAA pattern).
 
-pytest collects tests from files matching \`test_*.py\` or \`*_test.py\`. Use \`-k\` to filter by substring and \`-x\` to stop on first failure during debugging.`,
+pytest collects tests from files matching \`test_*.py\` or \`*_test.py\`. Use \`-k\` to filter by substring and \`-x\` to stop on first failure during debugging.
+
+### Key Ideas
+
+- Use plain assert — pytest rewrites failures richly
+- One logical behavior per test function
+- Tests must be deterministic and independent
+- Naming test_* enables automatic discovery
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def add(a, b):
     return a + b
 
@@ -30,16 +45,39 @@ def test_add():
             `One logical behavior per test function`,
             `Tests must be deterministic and independent`,
             `Naming test_* enables automatic discovery`
+          ],
+          diagram: `pytest Fundamentals
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `fixtures`,
           title: `Fixtures & Parametrize`,
-          content: `**Fixtures** inject setup/teardown via dependency injection. Decorate with \`@pytest.fixture\`; request by parameter name. Scope controls lifetime: \`function\` (default), \`class\`, \`module\`, \`session\`.
+          content: `### Introduction
+
+**Fixtures** inject setup/teardown via dependency injection. Decorate with \`@pytest.fixture\`; request by parameter name. Scope controls lifetime: \`function\` (default), \`class\`, \`module\`, \`session\`.
+
+### Fixtures & Parametrize
 
 \`@pytest.mark.parametrize("x,y,expected", [(1,2,3), (0,0,0)])\` runs the same test with multiple inputs—ideal for edge cases.
 
-Use \`yield\` in fixtures for teardown after tests complete. \`conftest.py\` shares fixtures across a directory tree.`,
+Use \`yield\` in fixtures for teardown after tests complete. \`conftest.py\` shares fixtures across a directory tree.
+
+### Key Ideas
+
+- Fixtures replace repetitive setup code
+- parametrize documents input/output cases explicitly
+- conftest.py centralizes shared fixtures
+- Choose fixture scope to balance speed vs isolation
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import pytest
 
 @pytest.fixture
@@ -54,16 +92,37 @@ def test_index(sample_list, idx, val):
             `parametrize documents input/output cases explicitly`,
             `conftest.py centralizes shared fixtures`,
             `Choose fixture scope to balance speed vs isolation`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `unittest-mock`,
           title: `unittest & Mocking`,
-          content: `The **unittest** module in the standard library uses class-based tests inheriting \`unittest.TestCase\` with methods like \`self.assertEqual\`. pytest can run unittest tests too.
+          content: `### Introduction
+
+The **unittest** module in the standard library uses class-based tests inheriting \`unittest.TestCase\` with methods like \`self.assertEqual\`. pytest can run unittest tests too.
+
+### unittest & Mocking
 
 **Mocking** isolates units from I/O: \`unittest.mock.patch\` replaces objects during a test. \`MagicMock\` records calls and return values. Patch where the name is **looked up**, not where it is defined.
 
-Verify interactions with \`mock.assert_called_once_with(...)\`. Avoid over-mocking—it hides integration defects.`,
+Verify interactions with \`mock.assert_called_once_with(...)\`. Avoid over-mocking—it hides integration defects.
+
+### Key Ideas
+
+- Patch at the import site used by code under test
+- Mocks verify both return values and call patterns
+- unittest.TestCase still valid; pytest is often preferred
+- Do not mock the function you are testing
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from unittest.mock import patch
 
 def fetch_url(url):
@@ -80,16 +139,39 @@ def test_fetch(mock_get):
             `Mocks verify both return values and call patterns`,
             `unittest.TestCase still valid; pytest is often preferred`,
             `Do not mock the function you are testing`
+          ],
+          diagram: `unittest & Mocking
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Do not mock the function you are testing.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `coverage-ci`,
           title: `Coverage & CI Integration`,
-          content: `**Coverage** measures which lines executed during tests: \`pytest --cov=mypackage --cov-report=term-missing\`. Aim for high coverage on critical paths, not vanity 100% on trivial getters.
+          content: `### Introduction
+
+**Coverage** measures which lines executed during tests: \`pytest --cov=mypackage --cov-report=term-missing\`. Aim for high coverage on critical paths, not vanity 100% on trivial getters.
+
+### Coverage & CI Integration
 
 CI (GitHub Actions, GitLab) runs \`pytest\` on every push. Fail builds on test failure or coverage regression. Cache dependencies for speed.
 
-Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_bar.py\`. Keep tests fast—mark slow integration tests with \`@pytest.mark.slow\`.`,
+Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_bar.py\`. Keep tests fast—mark slow integration tests with \`@pytest.mark.slow\`.
+
+### Key Ideas
+
+- Coverage highlights untested branches
+- CI gates prevent merging broken code
+- Separate fast unit from slow integration tests
+- Mirror source layout in tests/ directory
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# .github/workflows/test.yml snippet
 # - run: pip install pytest pytest-cov
 # - run: pytest --cov=app --cov-fail-under=80`,
@@ -98,6 +180,14 @@ Structure tests mirroring package layout: \`src/foo/bar.py\` → \`tests/test_ba
             `CI gates prevent merging broken code`,
             `Separate fast unit from slow integration tests`,
             `Mirror source layout in tests/ directory`
+          ],
+          diagram: `Coverage & CI Integration
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Not normalizing vectors when using dot product as cosine similarity`
           ]
         }
       ],
@@ -170,11 +260,26 @@ def test_double(inp, exp):
         {
           id: `pdb`,
           title: `Interactive Debugging with pdb`,
-          content: `Insert \`breakpoint()\` (Python 3.7+) or \`import pdb; pdb.set_trace()\` to pause execution. Commands: \`n\` (next line), \`s\` (step into), \`c\` (continue), \`p expr\` (print), \`l\` (list source), \`q\` (quit).
+          content: `### Introduction
+
+Insert \`breakpoint()\` (Python 3.7+) or \`import pdb; pdb.set_trace()\` to pause execution. Commands: \`n\` (next line), \`s\` (step into), \`c\` (continue), \`p expr\` (print), \`l\` (list source), \`q\` (quit).
+
+### Interactive Debugging with pdb
 
 Run scripts as \`python -m pdb script.py\` to start from the top. In pytest, use \`--pdb\` to drop into debugger on failure.
 
-Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if suspicious_condition\`.`,
+Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if suspicious_condition\`.
+
+### Key Ideas
+
+- breakpoint() is the modern pdb entry point
+- Step vs next controls function entry
+- pytest --pdb stops at assertion failures
+- Remove breakpoints before committing
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def divide(a, b):
     breakpoint()  # inspect a, b before division
     return a / b
@@ -185,16 +290,37 @@ Combine with conditional breakpoints by guarding \`breakpoint()\` with \`if susp
             `Step vs next controls function entry`,
             `pytest --pdb stops at assertion failures`,
             `Remove breakpoints before committing`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `logging`,
           title: `Structured Logging`,
-          content: `Replace \`print\` debugging with the **logging** module. Levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Configure once at app entry:
+          content: `### Introduction
+
+Replace \`print\` debugging with the **logging** module. Levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Configure once at app entry:
+
+### Structured Logging
 
 \`logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")\`
 
-Use module loggers: \`logger = logging.getLogger(__name__)\`. Libraries log to loggers; applications configure handlers (console, file, JSON for observability stacks).`,
+Use module loggers: \`logger = logging.getLogger(__name__)\`. Libraries log to loggers; applications configure handlers (console, file, JSON for observability stacks).
+
+### Key Ideas
+
+- Log levels filter noise in production
+- Use __name__ for hierarchical logger names
+- Lazy % formatting avoids string work when disabled
+- Never log secrets or PII at INFO level
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import logging
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -214,16 +340,39 @@ print(process(5))`,
             `Use __name__ for hierarchical logger names`,
             `Lazy % formatting avoids string work when disabled`,
             `Never log secrets or PII at INFO level`
+          ],
+          diagram: `Structured Logging
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Never log secrets or PII at INFO level.`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `tracebacks`,
           title: `Reading Tracebacks`,
-          content: `Tracebacks read **bottom-up**: the last line is the exception type and message. Each frame shows file, line, and calling context. The **root cause** is often in your code, not the deepest library frame.
+          content: `### Introduction
+
+Tracebacks read **bottom-up**: the last line is the exception type and message. Each frame shows file, line, and calling context. The **root cause** is often in your code, not the deepest library frame.
+
+### Reading Tracebacks
 
 \`traceback.format_exc()\` captures stack as string for logs. \`raise ... from e\` chains exceptions preserving context.
 
-For \`KeyError\`, print available keys. For \`TypeError\`, print \`type()\` of operands.`,
+For \`KeyError\`, print available keys. For \`TypeError\`, print \`type()\` of operands.
+
+### Key Ideas
+
+- Read traceback from bottom exception upward
+- Exception chaining preserves original cause
+- Inspect locals at failure line in pdb
+- Reproduce with minimal input before fixing
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `try:
     d = {"a": 1}
     print(d["b"])
@@ -238,21 +387,48 @@ keys: ['a']`,
             `Exception chaining preserves original cause`,
             `Inspect locals at failure line in pdb`,
             `Reproduce with minimal input before fixing`
+          ],
+          diagram: `Reading Tracebacks
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `debug-tools`,
           title: `Debug Tools & Practices`,
-          content: `IDEs (VS Code, PyCharm) offer visual breakpoints and variable watches. **ipdb** improves pdb with IPython syntax.
+          content: `### Introduction
+
+IDEs (VS Code, PyCharm) offer visual breakpoints and variable watches. **ipdb** improves pdb with IPython syntax.
+
+### Debug Tools & Practices
 
 **sentry** captures production exceptions with context. Maintain a debugging checklist: reproduce reliably, bisect git history (\`git bisect\`), add a failing test, fix, verify test passes.
 
-Rubber-duck explaining expected vs actual behavior.`,
+Rubber-duck explaining expected vs actual behavior.
+
+### Key Ideas
+
+- Always reproduce before attempting fixes
+- Add regression test for every bug fixed
+- git bisect finds introducing commit
+- Production errors need structured logs + traces`,
           keyPoints: [
             `Always reproduce before attempting fixes`,
             `Add regression test for every bug fixed`,
             `git bisect finds introducing commit`,
             `Production errors need structured logs + traces`
+          ],
+          diagram: `Debug Tools & Practices
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -323,9 +499,24 @@ except ZeroDivisionError as e:
         {
           id: `coroutines`,
           title: `Coroutines & Event Loop`,
-          content: `**async def** defines a coroutine function; calling it returns a coroutine object—it does not run until awaited. **await** suspends the coroutine until the awaited operation completes, yielding control to the event loop. \`asyncio.run(main())\` creates a loop, runs \`main\`, and closes cleanly (Python 3.7+).
+          content: `### Introduction
 
-The loop schedules ready coroutines and I/O callbacks cooperatively—no preemptive threads.`,
+**async def** defines a coroutine function; calling it returns a coroutine object—it does not run until awaited. **await** suspends the coroutine until the awaited operation completes, yielding control to the event loop. \`asyncio.run(main())\` creates a loop, runs \`main\`, and closes cleanly (Python 3.7+).
+
+### Coroutines & Event Loop
+
+The loop schedules ready coroutines and I/O callbacks cooperatively—no preemptive threads.
+
+### Key Ideas
+
+- async def creates coroutines; await drives them
+- asyncio.run is the standard entry point
+- sleep(0) yields to other tasks
+- CPU-bound code blocks the entire loop
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import asyncio
 
 async def greet(name):
@@ -343,14 +534,35 @@ asyncio.run(main())`,
             `asyncio.run is the standard entry point`,
             `sleep(0) yields to other tasks`,
             `CPU-bound code blocks the entire loop`
+          ],
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `gather-tasks`,
           title: `Tasks, gather & Timeouts`,
-          content: `\`asyncio.create_task(coro)\` schedules concurrent work. \`asyncio.gather(a, b)\` awaits multiple coroutines—results match input order. Exceptions propagate unless \`return_exceptions=True\`. \`asyncio.wait_for(coro, timeout=5)\` raises \`TimeoutError\` on overrun.
+          content: `### Introduction
 
-Use \`asyncio.Semaphore(n)\` to cap concurrent connections.`,
+\`asyncio.create_task(coro)\` schedules concurrent work. \`asyncio.gather(a, b)\` awaits multiple coroutines—results match input order. Exceptions propagate unless \`return_exceptions=True\`. \`asyncio.wait_for(coro, timeout=5)\` raises \`TimeoutError\` on overrun.
+
+### Tasks, gather & Timeouts
+
+Use \`asyncio.Semaphore(n)\` to cap concurrent connections.
+
+### Key Ideas
+
+- gather runs coroutines concurrently on one thread
+- Tasks enable background work while awaiting others
+- Always set timeouts on external I/O
+- Semaphore prevents resource exhaustion
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import asyncio
 
 async def work(n):
@@ -368,14 +580,35 @@ asyncio.run(main())`,
             `Tasks enable background work while awaiting others`,
             `Always set timeouts on external I/O`,
             `Semaphore prevents resource exhaustion`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `aiohttp`,
           title: `aiohttp HTTP Basics`,
-          content: `**aiohttp** provides async HTTP client/server. Reuse \`ClientSession\`—creating a session per request is slow. \`async with session.get(url) as resp:\` reads response; \`await resp.text()\` or \`.json()\`.
+          content: `### Introduction
 
-Respect rate limits and robots.txt when scraping. Handle \`aiohttp.ClientError\` and status codes explicitly.`,
+**aiohttp** provides async HTTP client/server. Reuse \`ClientSession\`—creating a session per request is slow. \`async with session.get(url) as resp:\` reads response; \`await resp.text()\` or \`.json()\`.
+
+### aiohttp HTTP Basics
+
+Respect rate limits and robots.txt when scraping. Handle \`aiohttp.ClientError\` and status codes explicitly.
+
+### Key Ideas
+
+- One ClientSession per application lifecycle
+- async with ensures connection cleanup
+- Check resp.status before parsing body
+- Combine with Semaphore for polite concurrency
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import asyncio
 import aiohttp
 
@@ -391,14 +624,37 @@ async def fetch_title():
             `async with ensures connection cleanup`,
             `Check resp.status before parsing body`,
             `Combine with Semaphore for polite concurrency`
+          ],
+          diagram: `aiohttp HTTP Basics
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `async-pitfalls`,
           title: `Async Anti-Patterns`,
-          content: `Never call **blocking** APIs (\`time.sleep\`, sync \`requests.get\`) inside async functions without \`asyncio.to_thread()\`. Forgetting \`await\` silently creates un-awaited coroutine warnings.
+          content: `### Introduction
 
-Mixing threads and asyncio requires \`loop.run_in_executor\`. For CPU work use **multiprocessing**, not more coroutines.`,
+Never call **blocking** APIs (\`time.sleep\`, sync \`requests.get\`) inside async functions without \`asyncio.to_thread()\`. Forgetting \`await\` silently creates un-awaited coroutine warnings.
+
+### Async Anti-Patterns
+
+Mixing threads and asyncio requires \`loop.run_in_executor\`. For CPU work use **multiprocessing**, not more coroutines.
+
+### Key Ideas
+
+- Blocking calls freeze all coroutines on the loop
+- Un-awaited coroutines do not run
+- asyncio is for I/O concurrency not CPU parallelism
+- Use to_thread or ProcessPool for blocking/CPU work
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import asyncio
 
 async def bad():
@@ -413,6 +669,12 @@ print(asyncio.run(bad()))`,
             `Un-awaited coroutines do not run`,
             `asyncio is for I/O concurrency not CPU parallelism`,
             `Use to_thread or ProcessPool for blocking/CPU work`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         }
       ],
@@ -487,9 +749,24 @@ asyncio.run(main())`,
         {
           id: `re-basics`,
           title: `re Module Basics`,
-          content: `**\`re.search(pattern, string)\`** finds first match; **\`re.match\`** only at start; **\`re.findall\`** returns all non-overlapping matches; **\`re.sub\`** replaces. Raw strings \`r"\\d+"\` avoid escaping backslashes.
+          content: `### Introduction
 
-Match objects expose \`.group()\`, \`.start()\`, \`.end()\`. Compile repeated patterns: \`pat = re.compile(r"...")\`.`,
+**\`re.search(pattern, string)\`** finds first match; **\`re.match\`** only at start; **\`re.findall\`** returns all non-overlapping matches; **\`re.sub\`** replaces. Raw strings \`r"\\d+"\` avoid escaping backslashes.
+
+### re Module Basics
+
+Match objects expose \`.group()\`, \`.start()\`, \`.end()\`. Compile repeated patterns: \`pat = re.compile(r"...")\`.
+
+### Key Ideas
+
+- Prefer raw strings for regex patterns
+- search scans entire string; match anchors at start
+- compile() amortizes parsing cost in loops
+- group(1) returns first capturing parenthesis
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import re
 text = "Order ID: 12345, total $67.89"
 id_match = re.search(r"ID: (\\d+)", text)
@@ -500,14 +777,37 @@ print(id_match.group(1) if id_match else None)`,
             `search scans entire string; match anchors at start`,
             `compile() amortizes parsing cost in loops`,
             `group(1) returns first capturing parenthesis`
+          ],
+          diagram: `re Module Basics
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `patterns`,
           title: `Common Pattern Building Blocks`,
-          content: `\`.**\` any char (use \`re.DOTALL\` for newlines); \`.+\` one or more; \`.?\` optional; \`\\d\` digit; \`\\w\` word char; \`\\s\` whitespace; \`[A-Za-z]+\` letter runs; \`{n,m}\` repetition bounds. **Anchors:** \`^\` start, \`$\` end, \`\\b\` word boundary.
+          content: `### Introduction
 
-**Groups:** \`( ... )\` capture, \`(?: ... )\` non-capture, \`(?<name> ... )\` named.`,
+\`.**\` any char (use \`re.DOTALL\` for newlines); \`.+\` one or more; \`.?\` optional; \`\\d\` digit; \`\\w\` word char; \`\\s\` whitespace; \`[A-Za-z]+\` letter runs; \`{n,m}\` repetition bounds. **Anchors:** \`^\` start, \`$\` end, \`\\b\` word boundary.
+
+### Common Pattern Building Blocks
+
+**Groups:** \`( ... )\` capture, \`(?: ... )\` non-capture, \`(?<name> ... )\` named.
+
+### Key Ideas
+
+- Validate patterns against edge cases
+- Non-capturing groups improve performance
+- Word boundaries prevent partial matches
+- Email regex is illustrative—not RFC-complete
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import re
 emails = ["a@b.co", "bad@", "c@d.org"]
 pat = re.compile(r"^[\\w.+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")
@@ -519,14 +819,37 @@ print(valid)`,
             `Non-capturing groups improve performance`,
             `Word boundaries prevent partial matches`,
             `Email regex is illustrative—not RFC-complete`
+          ],
+          diagram: `Common Pattern Building Blocks
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `flags-groups`,
           title: `Flags & Extraction`,
-          content: `Flags: \`re.IGNORECASE\`, \`re.MULTILINE\` (^/$ per line), \`re.VERBOSE\` (readable patterns). Pass to compile or as \`re.search(pat, s, flags)\`. \`re.split\` splits on pattern.
+          content: `### Introduction
 
-Named groups via \`(?P<name>...)\`. **\`re.finditer\`** yields match objects memory-efficiently over large texts.`,
+Flags: \`re.IGNORECASE\`, \`re.MULTILINE\` (^/$ per line), \`re.VERBOSE\` (readable patterns). Pass to compile or as \`re.search(pat, s, flags)\`. \`re.split\` splits on pattern.
+
+### Flags & Extraction
+
+Named groups via \`(?P<name>...)\`. **\`re.finditer\`** yields match objects memory-efficiently over large texts.
+
+### Key Ideas
+
+- MULTILINE changes anchor behavior
+- Named groups clarify extraction code
+- finditer scales better than findall on huge files
+- VERBOSE allows comments in complex patterns
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import re
 log = "2024-01-15 ERROR disk full\\n2024-01-16 INFO ok"
 for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
@@ -538,19 +861,46 @@ for m in re.finditer(r"(?P<date>\\d{4}-\\d{2}-\\d{2}) (?P<level>\\w+)", log):
             `Named groups clarify extraction code`,
             `finditer scales better than findall on huge files`,
             `VERBOSE allows comments in complex patterns`
+          ],
+          diagram: `Flags & Extraction
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         },
         {
           id: `regex-caveats`,
           title: `When Not to Use Regex`,
-          content: `Regex poorly parses nested HTML, JSON, or arbitrary code. Use **\`html.parser\`**, **\`json\`**, **\`ast\`**, or dedicated parsers.
+          content: `### Introduction
 
-Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on long strings—test performance. Prefer explicit string methods when sufficient.`,
+Regex poorly parses nested HTML, JSON, or arbitrary code. Use **\`html.parser\`**, **\`json\`**, **\`ast\`**, or dedicated parsers.
+
+### When Not to Use Regex
+
+Catastrophic backtracking happens with nested quantifiers like \`(a+)+$\` on long strings—test performance. Prefer explicit string methods when sufficient.
+
+### Key Ideas
+
+- Do not parse HTML/XML with regex alone
+- Watch catastrophic backtracking on evil input
+- str.split/strip often beats regex for simple tasks
+- Unit test regex with representative samples`,
           keyPoints: [
             `Do not parse HTML/XML with regex alone`,
             `Watch catastrophic backtracking on evil input`,
             `str.split/strip often beats regex for simple tasks`,
             `Unit test regex with representative samples`
+          ],
+          diagram: `When Not to Use Regex
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Do not parse HTML/XML with regex alone.`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],
@@ -617,22 +967,54 @@ print(re.sub(r" ", "_", "hello world"))`,
         {
           id: `gil`,
           title: `The Global Interpreter Lock`,
-          content: `CPython's **GIL** allows only one thread to execute Python bytecode at a time per process. Threads help **I/O-bound** work (waiting on network/disk) because threads release the GIL during I/O.
+          content: `### Introduction
 
-**CPU-bound** Python loops do not parallelize across threads. Multiprocessing spawns separate interpreters—each with its own GIL—enabling true CPU parallelism at the cost of memory and IPC overhead.`,
+CPython's **GIL** allows only one thread to execute Python bytecode at a time per process. Threads help **I/O-bound** work (waiting on network/disk) because threads release the GIL during I/O.
+
+### The Global Interpreter Lock
+
+**CPU-bound** Python loops do not parallelize across threads. Multiprocessing spawns separate interpreters—each with its own GIL—enabling true CPU parallelism at the cost of memory and IPC overhead.
+
+### Key Ideas
+
+- GIL limits parallel CPU-bound threads in CPython
+- I/O-bound tasks still benefit from threads
+- multiprocessing bypasses GIL with separate processes
+- NumPy/C extensions may release GIL in C code`,
           keyPoints: [
             `GIL limits parallel CPU-bound threads in CPython`,
             `I/O-bound tasks still benefit from threads`,
             `multiprocessing bypasses GIL with separate processes`,
             `NumPy/C extensions may release GIL in C code`
+          ],
+          commonMistakes: [
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Reading passively without typing and running a small variant of the example yourself`
           ]
         },
         {
           id: `threading`,
           title: `threading Module`,
-          content: `\`threading.Thread(target=func, args=(...))\` starts OS threads. **\`threading.Lock\`** protects shared mutable state.
+          content: `### Introduction
 
-Prefer **\`concurrent.futures.ThreadPoolExecutor\`** for pool-based submission: \`executor.submit(fn, arg)\` and \`future.result()\`. Avoid data races—use queues (\`queue.Queue\`) for producer-consumer patterns instead of manual locking when possible.`,
+\`threading.Thread(target=func, args=(...))\` starts OS threads. **\`threading.Lock\`** protects shared mutable state.
+
+### threading Module
+
+Prefer **\`concurrent.futures.ThreadPoolExecutor\`** for pool-based submission: \`executor.submit(fn, arg)\` and \`future.result()\`. Avoid data races—use queues (\`queue.Queue\`) for producer-consumer patterns instead of manual locking when possible.
+
+### Key Ideas
+
+- ThreadPoolExecutor simplifies thread pools
+- Protect shared mutable state with locks
+- queue.Queue is thread-safe for handoff
+- Daemon threads exit when main exits
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from concurrent.futures import ThreadPoolExecutor
 
 def fetch(n):
@@ -647,16 +1029,37 @@ print(results)`,
             `Protect shared mutable state with locks`,
             `queue.Queue is thread-safe for handoff`,
             `Daemon threads exit when main exits`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`,
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`
           ]
         },
         {
           id: `multiprocessing`,
           title: `multiprocessing Module`,
-          content: `\`multiprocessing.Process\` and **\`Pool\`** distribute work across processes. Arguments must be picklable.
+          content: `### Introduction
+
+\`multiprocessing.Process\` and **\`Pool\`** distribute work across processes. Arguments must be picklable.
+
+### multiprocessing Module
 
 **\`ProcessPoolExecutor\`** mirrors thread API. On Windows, guard entry with \`if __name__ == "__main__":\` to prevent spawn recursion.
 
-Shared state via \`multiprocessing.Value\`, \`Array\`, or **\`Manager\`**—prefer immutable message passing.`,
+Shared state via \`multiprocessing.Value\`, \`Array\`, or **\`Manager\`**—prefer immutable message passing.
+
+### Key Ideas
+
+- Processes have higher startup cost than threads
+- Pickle requirement limits shared objects
+- Pool.map is simple for embarrassingly parallel maps
+- Prefer executors over raw Process for clarity
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from multiprocessing import Pool
 
 def square(x):
@@ -671,21 +1074,44 @@ if __name__ == "__main__":
             `Pickle requirement limits shared objects`,
             `Pool.map is simple for embarrassingly parallel maps`,
             `Prefer executors over raw Process for clarity`
+          ],
+          commonMistakes: [
+            `Checking string equality with \`is\` instead of \`==\``,
+            `Reading or writing a file without \`with\` — leaks file handles on errors`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Copy-pasting the example without predicting the output first — run mentally, then verify`
           ]
         },
         {
           id: `choosing`,
           title: `Choosing a Concurrency Model`,
-          content: `**asyncio**: many concurrent I/O connections, single-thread clarity. **threading**: blocking I/O libraries without async support.
+          content: `### Introduction
+
+**asyncio**: many concurrent I/O connections, single-thread clarity. **threading**: blocking I/O libraries without async support.
+
+### Choosing a Concurrency Model
 
 **multiprocessing**: CPU-heavy pure Python computation. **C extensions / NumPy**: may parallelize internally.
 
-Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O concurrency with CPU offload via \`loop.run_in_executor\`.`,
+Profile before optimizing. \`asyncio\` + \`ProcessPoolExecutor\` combines I/O concurrency with CPU offload via \`loop.run_in_executor\`.
+
+### Key Ideas
+
+- Match model to bottleneck: I/O vs CPU
+- Do not mix models without clear boundaries
+- Measure speedup—overhead can dominate small tasks
+- Document thread/process safety of shared resources`,
           keyPoints: [
             `Match model to bottleneck: I/O vs CPU`,
             `Do not mix models without clear boundaries`,
             `Measure speedup—overhead can dominate small tasks`,
             `Document thread/process safety of shared resources`
+          ],
+          commonMistakes: [
+            `Broadcasting mistakes when array shapes do not align`,
+            `Do not mix models without clear boundaries.`,
+            `Reading passively without typing and running a small variant of the example yourself`,
+            `Checking string equality with \`is\` instead of \`==\``
           ]
         }
       ],

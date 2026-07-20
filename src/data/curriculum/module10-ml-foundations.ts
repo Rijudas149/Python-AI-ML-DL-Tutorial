@@ -11,7 +11,11 @@ export const module10Topics: Topic[] = [
         {
           id: `pipeline`,
           title: `The ML Workflow`,
-          content: `**The ML Workflow** breaks down into 9 steps:
+          content: `### Introduction
+
+**The ML Workflow** breaks down into 9 steps:
+
+### The ML Workflow
 
 1. **Define problem** — Clarify the business question, success metric, and constraints before touching data or models.
 2. **Collect data** — Gather representative data with documented provenance, consent, and versioning.
@@ -21,18 +25,48 @@ export const module10Topics: Topic[] = [
 6. **Train** — Fit parameters on training data with proper cross-validation and reproducible seeds.
 7. **Evaluate** — Measure generalization on held-out data using metrics aligned to business goals.
 8. **Deploy** — Package the model with monitoring, rollback plans, and latency/cost budgets.
-9. **Monitor** — Track drift, performance decay, and data quality in production over time.`,
+9. **Monitor** — Track drift, performance decay, and data quality in production over time.
+
+### Key Ideas
+
+- Start with problem definition not algorithms
+- Data quality determines ceiling performance
+- Always hold out test set until final evaluation
+- Iterate between EDA and feature engineering`,
           keyPoints: [
             `Start with problem definition not algorithms`,
             `Data quality determines ceiling performance`,
             `Always hold out test set until final evaluation`,
             `Iterate between EDA and feature engineering`
+          ],
+          diagram: `The ML Workflow
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `split`,
           title: `train_test_split`,
-          content: `Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).`,
+          content: `### Introduction
+
+Split data into train/validation/test. sklearn: train_test_split(X, y, test_size=0.2, random_state=42, stratify=y).
+
+### train_test_split
+
+### Key Ideas
+
+- Never train on test data — data leakage
+- stratify preserves class proportions
+- random_state for reproducibility
+- Typical split: 70-80% train, 20-30% test
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -48,12 +82,35 @@ print(len(X_train), len(X_test))`,
             `stratify preserves class proportions`,
             `random_state for reproducibility`,
             `Typical split: 70-80% train, 20-30% test`
+          ],
+          diagram: `train_test_split
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Never train on test data — data leakage.`
           ]
         },
         {
           id: `preprocessing`,
           title: `Preprocessing Pipeline`,
-          content: `StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model. Prevents leakage by fitting on train only.`,
+          content: `### Introduction
+
+StandardScaler, OneHotEncoder, Pipeline class chains preprocessing + model. Prevents leakage by fitting on train only.
+
+### Preprocessing Pipeline
+
+### Key Ideas
+
+- Fit preprocessor on training data only
+- Pipeline ensures consistent train/test processing
+- ColumnTransformer for mixed feature types
+- Preprocessing choices affect model performance
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -69,17 +126,42 @@ print(pipe.steps[0][0], pipe.steps[1][0])`,
             `Pipeline ensures consistent train/test processing`,
             `ColumnTransformer for mixed feature types`,
             `Preprocessing choices affect model performance`
+          ],
+          diagram: `Preprocessing Pipeline
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `baseline`,
           title: `Baseline Models`,
-          content: `Always establish baseline before complex models. Mean predictor for regression, majority class for classification. Beat baseline first.`,
+          content: `### Introduction
+
+Always establish baseline before complex models. Mean predictor for regression, majority class for classification. Beat baseline first.
+
+### Baseline Models
+
+### Key Ideas
+
+- DummyClassifier/DummyRegressor for baselines
+- Baseline sets minimum acceptable performance
+- Simple models often competitive with complex ones
+- Occams razor — prefer simpler when equal performance`,
           keyPoints: [
             `DummyClassifier/DummyRegressor for baselines`,
             `Baseline sets minimum acceptable performance`,
             `Simple models often competitive with complex ones`,
             `Occams razor — prefer simpler when equal performance`
+          ],
+          commonMistakes: [
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Using polynomial degree too high without regularization`
           ]
         }
       ],
@@ -151,7 +233,22 @@ print(len(pipe.steps))`,
         {
           id: `linear-reg`,
           title: `Linear Regression`,
-          content: `ŷ = wᵀx + b. Minimizes MSE. sklearn: LinearRegression(). Closed-form or iterative solution.`,
+          content: `### Introduction
+
+ŷ = wᵀx + b. Minimizes MSE. sklearn: LinearRegression(). Closed-form or iterative solution.
+
+### Linear Regression
+
+### Key Ideas
+
+- Assumes linear relationship
+- Interpretable coefficients
+- Sensitive to outliers — use HuberRegressor
+- Ridge/Lasso add regularization
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.linear_model import LinearRegression
 import numpy as np
 
@@ -165,12 +262,33 @@ print(model.coef_[0], model.intercept_)`,
             `Interpretable coefficients`,
             `Sensitive to outliers — use HuberRegressor`,
             `Ridge/Lasso add regularization`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `logistic`,
           title: `Logistic Regression`,
-          content: `Predicts P(y=1|x) via sigmoid: σ(wᵀx). Despite name, is classification algorithm. sklearn: LogisticRegression().`,
+          content: `### Introduction
+
+Predicts P(y=1|x) via sigmoid: σ(wᵀx). Despite name, is classification algorithm. sklearn: LogisticRegression().
+
+### Logistic Regression
+
+### Key Ideas
+
+- Outputs probabilities not just labels
+- Uses cross-entropy loss internally
+- Works well with linearly separable data
+- C parameter controls regularization strength
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.linear_model import LogisticRegression
 import numpy as np
 
@@ -184,12 +302,33 @@ print(clf.predict([[2.5], [3.5]]))`,
             `Uses cross-entropy loss internally`,
             `Works well with linearly separable data`,
             `C parameter controls regularization strength`
+          ],
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Not stratifying splits for classification tasks`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         },
         {
           id: `sigmoid`,
           title: `Sigmoid & Softmax`,
-          content: `Sigmoid: σ(z) = 1/(1+e⁻ᶻ). Maps to (0,1). Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.`,
+          content: `### Introduction
+
+Sigmoid: σ(z) = 1/(1+e⁻ᶻ). Maps to (0,1). Softmax generalizes to multi-class: softmax(zᵢ) = e^zᵢ/Σe^zⱼ.
+
+### Sigmoid & Softmax
+
+### Key Ideas
+
+- Sigmoid squashes to probability range
+- Softmax outputs sum to 1
+- Decision boundary at 0.5 for binary
+- Logistic regression learns linear decision boundary
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 
 def sigmoid(z):
@@ -202,19 +341,42 @@ print([round(sigmoid(x), 3) for x in [-2, 0, 2]])`,
             `Softmax outputs sum to 1`,
             `Decision boundary at 0.5 for binary`,
             `Logistic regression learns linear decision boundary`
+          ],
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `interpret`,
           title: `Interpretability`,
-          content: `Coefficients show feature importance and direction. Odds ratio = e^coefficient.
+          content: `### Introduction
 
-SHAP values for individual predictions.`,
+Coefficients show feature importance and direction. Odds ratio = e^coefficient.
+
+### Interpretability
+
+SHAP values for individual predictions.
+
+### Key Ideas
+
+- Positive coefficient increases log-odds of class 1
+- Feature scaling needed for coefficient comparison
+- Regularization shrinks coefficients toward zero
+- Linear models preferred when interpretability required`,
           keyPoints: [
             `Positive coefficient increases log-odds of class 1`,
             `Feature scaling needed for coefficient comparison`,
             `Regularization shrinks coefficients toward zero`,
             `Linear models preferred when interpretability required`
+          ],
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         }
       ],
@@ -283,7 +445,22 @@ print(sigmoid(0))`,
         {
           id: `dt`,
           title: `Decision Trees`,
-          content: `Split data by feature thresholds maximizing information gain. Non-parametric, handles non-linear relationships. Prone to overfitting.`,
+          content: `### Introduction
+
+Split data by feature thresholds maximizing information gain. Non-parametric, handles non-linear relationships. Prone to overfitting.
+
+### Decision Trees
+
+### Key Ideas
+
+- max_depth controls complexity
+- Handles mixed feature types naturally
+- Prone to overfitting without constraints
+- Fully interpretable — can visualize tree
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
@@ -297,12 +474,35 @@ print(clf.score(X, y))`,
             `Handles mixed feature types naturally`,
             `Prone to overfitting without constraints`,
             `Fully interpretable — can visualize tree`
+          ],
+          diagram: `Decision Trees
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Prone to overfitting without constraints.`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `rf`,
           title: `Random Forests`,
-          content: `Ensemble of trees on bootstrap samples with random feature subsets. Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).`,
+          content: `### Introduction
+
+Ensemble of trees on bootstrap samples with random feature subsets. Reduces variance. sklearn: RandomForestClassifier(n_estimators=100).
+
+### Random Forests
+
+### Key Ideas
+
+- Bagging reduces overfitting vs single tree
+- n_estimators more trees = lower variance
+- feature_importances_ for feature ranking
+- OOB score estimates generalization without validation set
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 
@@ -315,28 +515,74 @@ print(rf.score(X, y))`,
             `n_estimators more trees = lower variance`,
             `feature_importances_ for feature ranking`,
             `OOB score estimates generalization without validation set`
+          ],
+          diagram: `Random Forests
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `OOB score estimates generalization without validation set.`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `hyperparams`,
           title: `Tree Hyperparameters`,
-          content: `max_depth, min_samples_split, min_samples_leaf, max_features. Tune with GridSearchCV or RandomizedSearchCV.`,
+          content: `### Introduction
+
+max_depth, min_samples_split, min_samples_leaf, max_features. Tune with GridSearchCV or RandomizedSearchCV.
+
+### Tree Hyperparameters
+
+### Key Ideas
+
+- max_depth most impactful hyperparameter
+- min_samples_leaf prevents tiny leaves
+- max_features introduces randomness in RF
+- Pruning via cost-complexity parameter ccp_alpha`,
           keyPoints: [
             `max_depth most impactful hyperparameter`,
             `min_samples_leaf prevents tiny leaves`,
             `max_features introduces randomness in RF`,
             `Pruning via cost-complexity parameter ccp_alpha`
+          ],
+          diagram: `Tree Hyperparameters
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Not stratifying splits for classification tasks`
           ]
         },
         {
           id: `when`,
           title: `When to Use Trees`,
-          content: `Tabular data, mixed types, non-linear relationships, feature interactions. Often top performer with gradient boosting.`,
+          content: `### Introduction
+
+Tabular data, mixed types, non-linear relationships, feature interactions. Often top performer with gradient boosting.
+
+### When to Use Trees
+
+### Key Ideas
+
+- Trees excel on structured/tabular data
+- Less effective on raw images/text without features
+- XGBoost/LightGBM often win Kaggle tabular
+- Random Forest good default before tuning`,
           keyPoints: [
             `Trees excel on structured/tabular data`,
             `Less effective on raw images/text without features`,
             `XGBoost/LightGBM often win Kaggle tabular`,
             `Random Forest good default before tuning`
+          ],
+          diagram: `When to Use Trees
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],
@@ -409,7 +655,22 @@ print(len(rf.feature_importances_))`,
         {
           id: `classification`,
           title: `Classification Metrics`,
-          content: `Accuracy: correct/total. Precision: TP/(TP+FP). Recall: TP/(TP+FN). F1: harmonic mean of precision and recall.`,
+          content: `### Introduction
+
+Accuracy: correct/total. Precision: TP/(TP+FP). Recall: TP/(TP+FN). F1: harmonic mean of precision and recall.
+
+### Classification Metrics
+
+### Key Ideas
+
+- Accuracy misleading for imbalanced classes
+- Precision: of predicted positives, how many correct
+- Recall: of actual positives, how many found
+- F1 balances precision and recall
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.metrics import classification_report
 
 y_true = [0, 1, 1, 0, 1, 1, 0, 0]
@@ -428,25 +689,65 @@ weighted avg      0.714     0.714     0.714         7`,
             `Precision: of predicted positives, how many correct`,
             `Recall: of actual positives, how many found`,
             `F1 balances precision and recall`
+          ],
+          commonMistakes: [
+            `Not stratifying splits for classification tasks`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`
           ]
         },
         {
           id: `roc`,
           title: `ROC-AUC`,
-          content: `ROC plots TPR vs FPR at various thresholds. AUC = area under curve. 0.5 = random, 1.0 = perfect.
+          content: `### Introduction
 
-Threshold-independent metric.`,
+ROC plots TPR vs FPR at various thresholds. AUC = area under curve. 0.5 = random, 1.0 = perfect.
+
+### ROC-AUC
+
+Threshold-independent metric.
+
+### Key Ideas
+
+- AUC measures ranking quality of predictions
+- Good for imbalanced binary classification
+- Choose threshold based on business cost
+- PR curve better for highly imbalanced data`,
           keyPoints: [
             `AUC measures ranking quality of predictions`,
             `Good for imbalanced binary classification`,
             `Choose threshold based on business cost`,
             `PR curve better for highly imbalanced data`
+          ],
+          diagram: `ROC-AUC
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `regression`,
           title: `Regression Metrics`,
-          content: `MSE, RMSE, MAE, R². MAE robust to outliers. R² = 1 - SS_res/SS_tot. Negative R² means worse than mean predictor.`,
+          content: `### Introduction
+
+MSE, RMSE, MAE, R². MAE robust to outliers. R² = 1 - SS_res/SS_tot. Negative R² means worse than mean predictor.
+
+### Regression Metrics
+
+### Key Ideas
+
+- MSE penalizes large errors more than MAE
+- RMSE in same units as target
+- R² proportion of variance explained
+- Use domain-appropriate metrics
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
@@ -461,17 +762,42 @@ print(round(r2_score(y_true, y_pred), 3))`,
             `RMSE in same units as target`,
             `R² proportion of variance explained`,
             `Use domain-appropriate metrics`
+          ],
+          commonMistakes: [
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Using polynomial degree too high without regularization`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `confusion`,
           title: `Confusion Matrix`,
-          content: `2×2 (or n×n) table of predicted vs actual. Derive all classification metrics from it.`,
+          content: `### Introduction
+
+2×2 (or n×n) table of predicted vs actual. Derive all classification metrics from it.
+
+### Confusion Matrix
+
+### Key Ideas
+
+- TN, FP, FN, TP for binary case
+- Normalize for class imbalance visualization
+- Multi-class extends to n×n matrix
+- Cost-sensitive learning weights error types differently`,
           keyPoints: [
             `TN, FP, FN, TP for binary case`,
             `Normalize for class imbalance visualization`,
             `Multi-class extends to n×n matrix`,
             `Cost-sensitive learning weights error types differently`
+          ],
+          diagram: `Confusion Matrix
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         }
       ],
@@ -538,7 +864,22 @@ print(round(mean_squared_error([1,2,3], [1.1, 2.2, 2.8]), 3))`,
         {
           id: `kfold`,
           title: `K-Fold Cross-Validation`,
-          content: `Split data into k folds. Train on k-1, validate on 1. Repeat k times. cross_val_score reports mean ± std.`,
+          content: `### Introduction
+
+Split data into k folds. Train on k-1, validate on 1. Repeat k times. cross_val_score reports mean ± std.
+
+### K-Fold Cross-Validation
+
+### Key Ideas
+
+- cv=5 or cv=10 common choices
+- StratifiedKFold for classification
+- Mean score estimates generalization
+- Std indicates stability across folds
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
@@ -552,12 +893,35 @@ print(round(scores.mean(), 3), round(scores.std(), 3))`,
             `StratifiedKFold for classification`,
             `Mean score estimates generalization`,
             `Std indicates stability across folds`
+          ],
+          diagram: `K-Fold Cross-Validation
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `gridsearch`,
           title: `GridSearchCV`,
-          content: `Exhaustive search over hyperparameter grid with cross-validation. Returns best params and score.`,
+          content: `### Introduction
+
+Exhaustive search over hyperparameter grid with cross-validation. Returns best params and score.
+
+### GridSearchCV
+
+### Key Ideas
+
+- Search space size affects compute cost
+- RandomizedSearchCV for large spaces
+- Nested CV for unbiased performance estimate
+- Never tune on test set
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.datasets import load_iris
@@ -572,12 +936,35 @@ print(grid.best_params_)`,
             `RandomizedSearchCV for large spaces`,
             `Nested CV for unbiased performance estimate`,
             `Never tune on test set`
+          ],
+          diagram: `GridSearchCV
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Never tune on test set.`
           ]
         },
         {
           id: `pipeline-cv`,
           title: `Pipeline + CV Together`,
-          content: `Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.`,
+          content: `### Introduction
+
+Pipeline ensures preprocessing refit each fold — prevents data leakage in CV.
+
+### Pipeline + CV Together
+
+### Key Ideas
+
+- Pipeline + CV prevents preprocessing leakage
+- Each fold fits scaler on train fold only
+- Same pipeline used for final model training
+- joblib.dump saves fitted pipeline
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
@@ -593,17 +980,44 @@ print(round(cross_val_score(pipe, X, y, cv=5).mean(), 3))`,
             `Each fold fits scaler on train fold only`,
             `Same pipeline used for final model training`,
             `joblib.dump saves fitted pipeline`
+          ],
+          diagram: `Pipeline + CV Together
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`,
+            `Target encoding without inner cross-validation — label leakage`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`
           ]
         },
         {
           id: `nested`,
           title: `Nested Cross-Validation`,
-          content: `Outer loop for evaluation, inner loop for hyperparameter tuning. Unbiased estimate of generalization.`,
+          content: `### Introduction
+
+Outer loop for evaluation, inner loop for hyperparameter tuning. Unbiased estimate of generalization.
+
+### Nested Cross-Validation
+
+### Key Ideas
+
+- Outer CV estimates model performance
+- Inner CV selects hyperparameters
+- Prevents optimistic bias from tuning on same data
+- Computationally expensive but rigorous`,
           keyPoints: [
             `Outer CV estimates model performance`,
             `Inner CV selects hyperparameters`,
             `Prevents optimistic bias from tuning on same data`,
             `Computationally expensive but rigorous`
+          ],
+          diagram: `Nested Cross-Validation
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Optimizing accuracy on imbalanced classes instead of precision/recall/F1`,
+            `Tuning hyperparameters on the test set instead of a validation fold`
           ]
         }
       ],

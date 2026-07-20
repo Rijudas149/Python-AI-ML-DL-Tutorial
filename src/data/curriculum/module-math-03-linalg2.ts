@@ -11,11 +11,31 @@ export const moduleMath03Topics: Topic[] = [
         {
           id: `det-def`,
           title: `Determinant Definition`,
-          content: `The **determinant** det(A) is a scalar for square A∈ℝ^{n×n}. det(A) measures signed volume scaling factor of linear transform A. det(A)=0 iff A is singular (non-invertible). For 2×2: det[[a,b],[c,d]]=ad−bc. det(Aᵀ)=det(A). det(AB)=det(A)det(B).
+          content: `### Introduction
+
+The **determinant** det(A) is a scalar for square A∈ℝ^{n×n}. det(A) measures signed volume scaling factor of linear transform A. det(A)=0 iff A is singular (non-invertible). For 2×2: det[[a,b],[c,d]]=ad−bc. det(Aᵀ)=det(A). det(AB)=det(A)det(B).
+
+### Determinant Definition
 
 Swapping two rows flips sign.
 
-Multiplying row by k multiplies det by k. Cofactor expansion works recursively. Determinants appear in change of variables in integrals and multivariate Gaussian normalization.`,
+Multiplying row by k multiplies det by k. Cofactor expansion works recursively. Determinants appear in change of variables in integrals and multivariate Gaussian normalization.
+
+### Key Ideas
+
+- Determinant = volume scale factor
+- Zero det → not invertible
+- Product rule for det of product
+- Sign indicates orientation flip
+- Used in Jacobian determinants
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `det(I) = 1`,
             `det(AB) = det(A)det(B)`,
@@ -40,16 +60,42 @@ A = np.array([[3.,1.],[2.,4.]])
 print("det:", np.linalg.det(A))
 print("manual:", 3*4-1*2)`,
           output: `det: 10.0
-manual: 10.0`
+manual: 10.0`,
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`
+          ]
         },
         {
           id: `det-geom`,
           title: `Geometric Meaning`,
-          content: `Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves orientation. In 3D, |det| = volume of parallelepiped.
+          content: `### Introduction
+
+Parallelogram area spanned by columns = |det([v₁ v₂])|. Signed det preserves orientation. In 3D, |det| = volume of parallelepiped.
+
+### Geometric Meaning
 
 Linear map collapsing space has det=0 (e.g., projection). det(A)<0 implies reflection component. Absolute det in change of variables: ∫f(g(x))|det J|dx.
 
-Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.`,
+Understanding geometry helps debug why singular covariance matrices break multivariate Gaussian density formulas.
+
+### Key Ideas
+
+- Columns as spanning vectors
+- Zero volume → dependent columns
+- Jacobian det for coordinate change
+- Sign matters in oriented integrals
+- Covariance det in MVN density
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `|det([v1 v2])| = parallelogram area`,
             `3D: |det| = volume`,
@@ -71,16 +117,42 @@ Understanding geometry helps debug why singular covariance matrices break multiv
           example: `import numpy as np
 v1 = np.array([2.,0.]); v2 = np.array([1.,3.])
 print("area:", abs(np.linalg.det(np.column_stack([v1,v2]))))`,
-          output: `area: 6.0`
+          output: `area: 6.0`,
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         },
         {
           id: `det-prop`,
           title: `Properties & Computation`,
-          content: `Triangular matrix: det = product of diagonal entries. Row operations: adding multiple of row doesn't change det; swapping flips sign; scaling row scales det.
+          content: `### Introduction
+
+Triangular matrix: det = product of diagonal entries. Row operations: adding multiple of row doesn't change det; swapping flips sign; scaling row scales det.
+
+### Properties & Computation
 
 LU: det(A)=det(L)det(U)=∏U_ii. O(n³) via elimination vs O(n!) naive cofactor. log(det(A)) via log-sum for positive definite matrices in likelihoods. np.linalg.slogdet returns sign and log-abs-det stably.
 
-For large PD matrices, Cholesky gives log det = 2∑log(diag(L)).`,
+For large PD matrices, Cholesky gives log det = 2∑log(diag(L)).
+
+### Key Ideas
+
+- Triangular det is easy product
+- LU factorization for large n
+- log det avoids overflow
+- slogdet stable in numpy
+- Cholesky for SPD matrices
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Triangular: det = ∏ diagonal`,
             `Row swap → multiply det by −1`,
@@ -104,16 +176,42 @@ For large PD matrices, Cholesky gives log det = 2∑log(diag(L)).`,
 A = np.array([[2.,1.,0.],[0.,3.,1.],[0.,0.,4.]])
 sign, logdet = np.linalg.slogdet(A)
 print("sign:", sign, "log|det|:", logdet)`,
-          output: `sign: 1.0 log|det|: 2.484...`
+          output: `sign: 1.0 log|det|: 2.484...`,
+          commonMistakes: [
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`
+          ]
         },
         {
           id: `det-ml`,
           title: `Determinants in ML`,
-          content: `Multivariate Gaussian: p(x)=exp(−½(x−μ)ᵀΣ⁻¹(x−μ))/√((2π)ⁿdet Σ). Zero det Σ → degenerate distribution. Normalizing flows track log|det ∂f/∂x| for density transformation.
+          content: `### Introduction
+
+Multivariate Gaussian: p(x)=exp(−½(x−μ)ᵀΣ⁻¹(x−μ))/√((2π)ⁿdet Σ). Zero det Σ → degenerate distribution. Normalizing flows track log|det ∂f/∂x| for density transformation.
+
+### Determinants in ML
 
 Volume preservation in invertible nets requires |det J|=1. PCA uses det(Σ) related to product of eigenvalues. Regularization adds λI ensuring det(Σ+λI)>0.
 
-Matrix determinant lemma useful in Gaussian process updates.`,
+Matrix determinant lemma useful in Gaussian process updates.
+
+### Key Ideas
+
+- MVN needs positive det Σ
+- Eigenvalue product = determinant
+- Flows use Jacobian determinant
+- Ridge adds to diagonal for stability
+- Singular cov → PCA rank drop
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `MVN norm: (2π)^(−n/2) |Σ|^(−1/2)`,
             `det(Σ) = ∏ λ_i`,
@@ -137,7 +235,13 @@ Sigma = np.array([[2.,1.],[1.,2.]])
 print("det Sigma:", np.linalg.det(Sigma))
 print("eig prod:", np.prod(np.linalg.eigvalsh(Sigma)))`,
           output: `det Sigma: 3.0
-eig prod: 3.0`
+eig prod: 3.0`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Applying log to zero or negative values without a shift`
+          ]
         }
       ],
       exercises: [
@@ -204,11 +308,31 @@ print(np.allclose(np.linalg.det(A@B), np.linalg.det(A)*np.linalg.det(B)))`,
         {
           id: `inv-def`,
           title: `Inverse Definition`,
-          content: `A⁻¹ satisfies AA⁻¹=A⁻¹A=I for square invertible A. (AB)⁻¹=B⁻¹A⁻¹ reverse order like transpose. Inverse undoes linear transform: if y=Ax then x=A⁻¹y.
+          content: `### Introduction
+
+A⁻¹ satisfies AA⁻¹=A⁻¹A=I for square invertible A. (AB)⁻¹=B⁻¹A⁻¹ reverse order like transpose. Inverse undoes linear transform: if y=Ax then x=A⁻¹y.
+
+### Inverse Definition
 
 Not all matrices invert—singular when det=0. Never invert large dense matrices explicitly in production; prefer solve(A,b). Inverse of orthogonal Q is Qᵀ.
 
-Diagonal inverse inverts diagonal entries.`,
+Diagonal inverse inverts diagonal entries.
+
+### Key Ideas
+
+- Inverse unique if exists
+- Reverse order for product inverse
+- Never invert ill-conditioned A
+- Use solve for Ax=b
+- Orthogonal: inverse = transpose
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `AA⁻¹ = A⁻¹A = I`,
             `(AB)⁻¹ = B⁻¹A⁻¹`,
@@ -231,16 +355,42 @@ Diagonal inverse inverts diagonal entries.`,
 A = np.array([[1.,2.],[3.,4.]])
 Ainv = np.linalg.inv(A)
 print("A@Ainv:\\n", A@Ainv)`,
-          output: `A@Ainv: identity`
+          output: `A@Ainv: identity`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Never invert ill-conditioned A.`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `inv-2x2`,
           title: `2×2 Inverse Formula`,
-          content: `For A=[[a,b],[c,d]], A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]] when det≠0. Adjugate divided by determinant. Quick hand calculation useful for intuition.
+          content: `### Introduction
+
+For A=[[a,b],[c,d]], A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]] when det≠0. Adjugate divided by determinant. Quick hand calculation useful for intuition.
+
+### 2×2 Inverse Formula
 
 Cofactor matrix transpose divided by det generalizes to n×n. Singular when rows proportional: [1,2] and [2,4]. Near-singular when det≈0 causes huge entries in A⁻¹—ill-conditioning.
 
-Always check cond(A) before trusting explicit inverse.`,
+Always check cond(A) before trusting explicit inverse.
+
+### Key Ideas
+
+- Memorize 2×2 formula for speed
+- Determinant in denominator critical
+- Small det → unstable inverse
+- Cofactor method generalizes
+- Check condition number
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A⁻¹ = (1/det) [[d,−b], [−c,a]]`,
             `det = ad − bc`,
@@ -264,14 +414,40 @@ A=np.array([[a,b],[c,d]])
 det=a*d-b*c
 Ainv=(1/det)*np.array([[d,-b],[-c,a]])
 print(Ainv)`,
-          output: `matches np.linalg.inv`
+          output: `matches np.linalg.inv`,
+          commonMistakes: [
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`,
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         },
         {
           id: `inv-pinv`,
           title: `Pseudo-Inverse`,
-          content: `**Moore-Penrose pseudo-inverse** A⁺ generalizes inverse for non-square or singular A. SVD: A=UΣVᵀ, A⁺=VΣ⁺Uᵀ where Σ⁺ inverts non-zero singular values. Least squares minimum-norm: x=A⁺b. np.linalg.pinv uses SVD.
+          content: `### Introduction
 
-Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular.`,
+**Moore-Penrose pseudo-inverse** A⁺ generalizes inverse for non-square or singular A. SVD: A=UΣVᵀ, A⁺=VΣ⁺Uᵀ where Σ⁺ inverts non-zero singular values. Least squares minimum-norm: x=A⁺b. np.linalg.pinv uses SVD.
+
+### Pseudo-Inverse
+
+Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ gives smallest ||x|| solution. Important for overdetermined regression when XᵀX singular.
+
+### Key Ideas
+
+- SVD basis for pseudo-inverse
+- Works for non-square matrices
+- Minimum norm solution
+- Stable vs normal equations
+- Used in lstsq implementations
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A⁺ via SVD: V Σ⁺ Uᵀ`,
             `Least squares: x = A⁺b`,
@@ -293,16 +469,42 @@ Handles rank deficiency gracefully. In underdetermined consistent systems, A⁺ 
           example: `import numpy as np
 A = np.array([[1.,1.],[2.,2.],[1.,0.]])
 print("pinv@b:", np.linalg.pinv(A) @ np.array([3.,6.,1.]))`,
-          output: `least squares solution`
+          output: `least squares solution`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         },
         {
           id: `inv-ml`,
           title: `Inverse in Regression`,
-          content: `Closed-form OLS: β=(XᵀX)⁻¹Xᵀy when XᵀX invertible. Ridge: β=(XᵀX+λI)⁻¹Xᵀy always invertible for λ>0. Newton step: Δθ=H⁻¹∇L uses Hessian inverse.
+          content: `### Introduction
+
+Closed-form OLS: β=(XᵀX)⁻¹Xᵀy when XᵀX invertible. Ridge: β=(XᵀX+λI)⁻¹Xᵀy always invertible for λ>0. Newton step: Δθ=H⁻¹∇L uses Hessian inverse.
+
+### Inverse in Regression
 
 Fisher information inverse gives Cramér-Rao bound. Avoid explicit inverse—use np.linalg.solve(XTX, XTy). Woodbury matrix identity efficient for low-rank updates.
 
-Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD.`,
+Ill-conditioned X causes unstable (XᵀX)⁻¹—use regularization or SVD.
+
+### Key Ideas
+
+- OLS needs full rank X
+- Ridge guarantees invertibility
+- Newton uses Hessian inverse
+- solve() numerically superior
+- Regularize ill-conditioned problems
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `OLS: β = (XᵀX)⁻¹ Xᵀy`,
             `Ridge: (XᵀX + λI)⁻¹ Xᵀy`,
@@ -327,7 +529,13 @@ y = np.array([1.,2.,2.])
 lam = 0.1
 beta = np.linalg.solve(X.T@X + lam*np.eye(2), X.T@y)
 print("ridge beta:", beta)`,
-          output: `ridge beta: ...`
+          output: `ridge beta: ...`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         }
       ],
       exercises: [
@@ -394,9 +602,29 @@ print(np.linalg.pinv(X)@y)`,
         {
           id: `eig-def`,
           title: `Eigenvalue Problem`,
-          content: `Av = λv: v≠0 is **eigenvector**, λ is **eigenvalue**. A acts on eigenvector by scaling only. det(A−λI)=0 characteristic polynomial roots give eigenvalues. Sum of eigenvalues = tr(A).
+          content: `### Introduction
 
-For symmetric A, real eigenvalues and orthogonal eigenvectors (spectral theorem). Power iteration finds dominant eigenvalue. Eigenvalues determine stability of linear dynamical systems x_{t+1}=Ax_t: |λ|<1 stable.`,
+Av = λv: v≠0 is **eigenvector**, λ is **eigenvalue**. A acts on eigenvector by scaling only. det(A−λI)=0 characteristic polynomial roots give eigenvalues. Sum of eigenvalues = tr(A).
+
+### Eigenvalue Problem
+
+For symmetric A, real eigenvalues and orthogonal eigenvectors (spectral theorem). Power iteration finds dominant eigenvalue. Eigenvalues determine stability of linear dynamical systems x_{t+1}=Ax_t: |λ|<1 stable.
+
+### Key Ideas
+
+- Eigenvectors unchanged in direction
+- Characteristic polynomial for λ
+- Symmetric case always real
+- Trace and det from eigenvalues
+- Stability from |λ| in dynamics
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Av = λv`,
             `det(A − λI) = 0`,
@@ -421,16 +649,42 @@ A = np.array([[2.,1.],[1.,2.]])
 w, v = np.linalg.eig(A)
 print("λ:", w)
 print("Av:", A@v[:,0], "λv:", w[0]*v[:,0])`,
-          output: `Av ≈ λv verified`
+          output: `Av ≈ λv verified`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `eig-diag`,
           title: `Diagonalization`,
-          content: `If A has n independent eigenvectors, A=VΛV⁻¹ with Λ diagonal eigenvalues, V columns eigenvectors. A^k = VΛ^k V⁻¹ simplifies matrix powers. Symmetric: A=QΛQᵀ with Q orthogonal.
+          content: `### Introduction
+
+If A has n independent eigenvectors, A=VΛV⁻¹ with Λ diagonal eigenvalues, V columns eigenvectors. A^k = VΛ^k V⁻¹ simplifies matrix powers. Symmetric: A=QΛQᵀ with Q orthogonal.
+
+### Diagonalization
 
 Not all matrices diagonalizable—defective Jordan form needed. Similar matrices share eigenvalues. PCA covariance diagonalized by eigenvectors.
 
-Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A.`,
+Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A.
+
+### Key Ideas
+
+- Diagonalization simplifies powers
+- Orthogonal Q for symmetric A
+- Independent eigenvectors required
+- PCA = eigen decomposition Σ
+- e^A via diagonal Λ
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A = V Λ V⁻¹`,
             `Λ = diag(λ₁,...,λₙ)`,
@@ -453,16 +707,42 @@ Matrix exponential e^A = Ve^Λ V⁻¹ for diagonalizable A.`,
 A = np.array([[1.,2.],[0.,3.]])
 w,v = np.linalg.eig(A)
 print("reconstruct:", v @ np.diag(w) @ np.linalg.inv(v))`,
-          output: `reconstructs A`
+          output: `reconstructs A`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Running K-Means without scaling — features with large ranges dominate`
+          ]
         },
         {
           id: `eig-pca`,
           title: `Eigenvalues in PCA`,
-          content: `Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions.
+          content: `### Introduction
+
+Covariance Σ eigenvalues λ_i = variance along principal axis i. Eigenvectors = principal directions.
+
+### Eigenvalues in PCA
 
 Sort λ descending; keep top k for dimensionality reduction. Explained variance ratio λ_i/∑λ. Σ = QΛQᵀ with Q columns PC directions. np.linalg.eigh for symmetric—faster and stable than eig.
 
-Zero eigenvalues indicate redundant features or rank deficiency.`,
+Zero eigenvalues indicate redundant features or rank deficiency.
+
+### Key Ideas
+
+- Largest λ = most variance direction
+- eigh preferred for covariance
+- Whitening divides by √λ
+- Zero λ = constant/redundant feature
+- Explained ratio guides k choice
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Σ v_i = λ_i v_i`,
             `λ_i = variance along PC i`,
@@ -488,14 +768,40 @@ X -= X.mean(0)
 Sigma = X.T@X/100
 w, Q = np.linalg.eigh(Sigma)
 print("λ desc:", np.sort(w)[::-1])`,
-          output: `eigenvalues descending`
+          output: `eigenvalues descending`,
+          commonMistakes: [
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         },
         {
           id: `eig-markov`,
           title: `Eigenvalues in Markov & PageRank`,
-          content: `Stochastic matrix P (rows sum 1): largest eigenvalue λ₁=1 with stationary distribution π as eigenvector Pᵀπ=π. Power method: repeat v←Pv/||Pv|| converges to dominant eigenvector. Google PageRank solves eigenvalue problem on web graph.
+          content: `### Introduction
 
-Markov chain mixing time related to second eigenvalue magnitude. Reversible chains have real eigenvalues. Spectral clustering uses eigenvectors of graph Laplacian—connects linear algebra to unsupervised learning.`,
+Stochastic matrix P (rows sum 1): largest eigenvalue λ₁=1 with stationary distribution π as eigenvector Pᵀπ=π. Power method: repeat v←Pv/||Pv|| converges to dominant eigenvector. Google PageRank solves eigenvalue problem on web graph.
+
+### Eigenvalues in Markov & PageRank
+
+Markov chain mixing time related to second eigenvalue magnitude. Reversible chains have real eigenvalues. Spectral clustering uses eigenvectors of graph Laplacian—connects linear algebra to unsupervised learning.
+
+### Key Ideas
+
+- λ=1 for stochastic matrices
+- Power method simple but slow
+- Second λ controls mixing
+- Graph Laplacian eigenvectors cluster
+- Dominant mode = long-run behavior
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `P 1 = 1 for stochastic P`,
             `π: Pᵀπ = π (stationary)`,
@@ -520,7 +826,13 @@ P = np.array([[0.9,0.5],[0.1,0.5]])
 v = np.array([0.5,0.5])
 for _ in range(20): v = P@v; v /= v.sum()
 print("stationary:", v)`,
-          output: `stationary: [0.833 0.167] approx`
+          output: `stationary: [0.833 0.167] approx`,
+          commonMistakes: [
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Not normalizing vectors when using dot product as cosine similarity`
+          ]
         }
       ],
       exercises: [
@@ -588,11 +900,31 @@ print(np.allclose(np.trace(A), w.sum()))`,
         {
           id: `svd-def`,
           title: `SVD Definition`,
-          content: `Any A∈ℝ^{m×n} factors as A=UΣVᵀ where U∈ℝ^{m×m} orthogonal, V∈ℝ^{n×n} orthogonal, Σ∈ℝ^{m×n} diagonal with σ₁≥σ₂≥...≥0 **singular values**. Compact SVD uses only positive σ columns.
+          content: `### Introduction
+
+Any A∈ℝ^{m×n} factors as A=UΣVᵀ where U∈ℝ^{m×m} orthogonal, V∈ℝ^{n×n} orthogonal, Σ∈ℝ^{m×n} diagonal with σ₁≥σ₂≥...≥0 **singular values**. Compact SVD uses only positive σ columns.
+
+### SVD Definition
 
 SVD always exists—more general than eigendecomposition. σ_i² = eigenvalues of AᵀA (and AAᵀ). First right singular vector maximizes ||Av||/||v||.
 
-Foundation for PCA, recommender systems, and latent semantic analysis.`,
+Foundation for PCA, recommender systems, and latent semantic analysis.
+
+### Key Ideas
+
+- SVD always exists
+- Singular values non-negative
+- Rank from nonzero σ count
+- Related to AᵀA eigenvalues
+- Orthogonal U,V rotate space
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A = U Σ Vᵀ`,
             `σ₁ ≥ σ₂ ≥ ... ≥ 0`,
@@ -616,16 +948,42 @@ A = np.array([[1.,2.],[3.,4.],[5.,6.]])
 U,s,VT = np.linalg.svd(A, full_matrices=False)
 print("σ:", s)
 print("rank:", (s>1e-10).sum())`,
-          output: `σ: [9.5, 0.77] approx`
+          output: `σ: [9.5, 0.77] approx`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `svd-lowrank`,
           title: `Low-Rank Approximation`,
-          content: `Eckart-Young: best rank-k approximation A_k = ∑_{i=1}^k σ_i u_i v_iᵀ minimizes ||A−A_k||_F. Truncate small σ for compression/denoising. **Effective rank** from σ decay.
+          content: `### Introduction
+
+Eckart-Young: best rank-k approximation A_k = ∑_{i=1}^k σ_i u_i v_iᵀ minimizes ||A−A_k||_F. Truncate small σ for compression/denoising. **Effective rank** from σ decay.
+
+### Low-Rank Approximation
 
 Image compression keeps top k singular values. Noise often in small σ components. Recommender matrix factorization approximates R≈UVᵀ low rank.
 
-Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ².`,
+Choose k via scree plot of σ or cumulative energy ∑σ_i²/∑σ².
+
+### Key Ideas
+
+- Best low-rank in Frobenius norm
+- Scree plot guides k
+- Energy fraction from σ²
+- Denoise by truncating tail
+- Netflix-style factorization
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A_k = ∑_{i=1}^k σ_i u_i v_iᵀ`,
             `min ||A − A_k||_F over rank k`,
@@ -652,14 +1010,40 @@ U,s,VT = np.linalg.svd(A, full_matrices=False)
 k=5
 Ak = (U[:,:k]*s[:k]) @ VT[:k]
 print("Fro err:", np.linalg.norm(A-Ak,"fro"))`,
-          output: `Fro err: minimized for rank 5`
+          output: `Fro err: minimized for rank 5`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
+          ]
         },
         {
           id: `svd-pinv`,
           title: `SVD & Pseudo-Inverse`,
-          content: `A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition number κ(A)=σ_max/σ_min.
+          content: `### Introduction
 
-Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences.`,
+A⁺=VΣ⁺Uᵀ inverts nonzero σ. Solves least squares stably. Condition number κ(A)=σ_max/σ_min.
+
+### SVD & Pseudo-Inverse
+
+Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg.lstsq uses SVD internally. Solve Ax=b for rank-deficient via pinv. Compare solve vs pinv on well-conditioned vs ill-conditioned systems to see numerical differences.
+
+### Key Ideas
+
+- Condition number from σ ratio
+- Pinv inverts only large σ
+- Truncate = regularized inverse
+- Prefer lstsq over normal eq
+- SVD reveals numerical rank
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `A⁺ = V Σ⁺ Uᵀ`,
             `κ(A) = σ_max / σ_min`,
@@ -682,14 +1066,40 @@ Tiny σ_min → ill-conditioned—regularize via Tikhonov or truncate. np.linalg
 A = np.array([[1,1],[1,1.0001],[1,0]])
 print("cond:", np.linalg.cond(A))
 print("pinv solve:", np.linalg.pinv(A)@[3,3,1])`,
-          output: `ill-conditioned demo`
+          output: `ill-conditioned demo`,
+          commonMistakes: [
+            `Using correlation when variables are non-linear — relationship may be missed`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Treating matrix multiplication as element-wise (\`*\` vs \`@\` in NumPy)`
+          ]
         },
         {
           id: `svd-ml`,
           title: `SVD in ML Pipelines`,
-          content: `Latent Semantic Analysis: SVD on term-document matrix. Collaborative filtering: SVD on rating matrix. PCA via SVD of centered X: faster than XᵀX for tall matrices. np.linalg.svd(X, full_matrices=False) on n×p data.
+          content: `### Introduction
 
-Neural network weight SVD for compression. Randomized SVD (sklearn) for huge sparse matrices. Understanding SVD clarifies why truncated decompositions reduce parameters while preserving structure.`,
+Latent Semantic Analysis: SVD on term-document matrix. Collaborative filtering: SVD on rating matrix. PCA via SVD of centered X: faster than XᵀX for tall matrices. np.linalg.svd(X, full_matrices=False) on n×p data.
+
+### SVD in ML Pipelines
+
+Neural network weight SVD for compression. Randomized SVD (sklearn) for huge sparse matrices. Understanding SVD clarifies why truncated decompositions reduce parameters while preserving structure.
+
+### Key Ideas
+
+- SVD faster than XᵀX for tall X
+- TruncatedSVD for dimension reduction
+- Matrix completion uses low rank
+- Compress neural weights with SVD
+- Randomized algorithms for big data
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `PCA via SVD of centered X`,
             `TruncatedSVD in sklearn`,
@@ -714,7 +1124,13 @@ X -= X.mean(0)
 U,s,VT = np.linalg.svd(X, full_matrices=False)
 X2 = (U[:,:3]*s[:3]) @ VT[:3]
 print("shape reduced:", X2.shape, "var kept:", (s[:3]**2).sum()/(s**2).sum())`,
-          output: `variance retained`
+          output: `variance retained`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
+          ]
         }
       ],
       exercises: [
@@ -781,11 +1197,31 @@ A1=s[0]*np.outer(U[:,0],VT[0]); print(np.round(A1,2))`,
         {
           id: `pca-goal`,
           title: `Variance Maximization`,
-          content: `PCA finds unit vector w maximizing Var(Xw)=wᵀΣw subject to ||w||=1. Solution: w = top eigenvector of covariance Σ. Second PC orthogonal to first, maximizes remaining variance.
+          content: `### Introduction
+
+PCA finds unit vector w maximizing Var(Xw)=wᵀΣw subject to ||w||=1. Solution: w = top eigenvector of covariance Σ. Second PC orthogonal to first, maximizes remaining variance.
+
+### Variance Maximization
 
 Iteratively: eigenvectors of Σ sorted by λ. Equivalent to SVD of centered data matrix. Minimizes reconstruction error of rank-k projection.
 
-Geometric: rotate to align with max spread axes. No labels needed—unsupervised linear dimensionality reduction.`,
+Geometric: rotate to align with max spread axes. No labels needed—unsupervised linear dimensionality reduction.
+
+### Key Ideas
+
+- First PC = max variance direction
+- Covariance eigenvectors = PCs
+- Orthogonal PCs decorrelate
+- Unsupervised—no labels
+- SVD on X avoids Σ explicitly
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `max wᵀΣw s.t. ||w||=1`,
             `Solution w = eigenvector of Σ`,
@@ -810,16 +1246,42 @@ X -= X.mean(0)
 C = X.T@X/200
 w, v = np.linalg.eigh(C)
 print("top PC:", v[:,np.argmax(w)])`,
-          output: `top PC direction`
+          output: `top PC direction`,
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`
+          ]
         },
         {
           id: `pca-proj`,
           title: `Projection & Reconstruction`,
-          content: `Project x to k dims: z = W_kᵀ x where W_k columns top k eigenvectors. Reconstruct x̂ = W_k z = W_k W_kᵀ x. Reconstruction error ||x−x̂||² sum of trailing eigenvalues ∑_{i>k}λ_i.
+          content: `### Introduction
+
+Project x to k dims: z = W_kᵀ x where W_k columns top k eigenvectors. Reconstruct x̂ = W_k z = W_k W_kᵀ x. Reconstruction error ||x−x̂||² sum of trailing eigenvalues ∑_{i>k}λ_i.
+
+### Projection & Reconstruction
 
 Mean centering essential before PCA. Explained variance ratio guides k. Whitened coords: z_i = w_iᵀx/√λ_i have unit variance.
 
-Biplot visualizes samples and feature loadings together.`,
+Biplot visualizes samples and feature loadings together.
+
+### Key Ideas
+
+- Center data first
+- Lower k → more compression
+- Reconstruction error measurable
+- Whitening for ML inputs
+- Loadings show feature weights
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `z = W_kᵀ x (projection)`,
             `x̂ = W_k W_kᵀ x (reconstruction)`,
@@ -844,16 +1306,42 @@ W = VT[:2].T
 Z = X@W
 Xhat = Z@W.T
 print("MSE:", np.mean((X-Xhat)**2))`,
-          output: `MSE from truncated`
+          output: `MSE from truncated`,
+          commonMistakes: [
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Not normalizing vectors when using dot product as cosine similarity`
+          ]
         },
         {
           id: `pca-kernel`,
           title: `Kernel PCA Preview`,
-          content: `Kernel PCA applies PCA in feature space via kernel matrix K_ij=K(x_i,x_j) without explicit φ(x). Center K: K̃ = H K H with H=I−11ᵀ/n. Eigenvectors of K̃ give nonlinear PCs.
+          content: `### Introduction
+
+Kernel PCA applies PCA in feature space via kernel matrix K_ij=K(x_i,x_j) without explicit φ(x). Center K: K̃ = H K H with H=I−11ᵀ/n. Eigenvectors of K̃ give nonlinear PCs.
+
+### Kernel PCA Preview
 
 Captures nonlinear structure linear PCA misses. Computationally O(n³)— costly for large n. Connection to spectral methods and graph embeddings.
 
-Choose kernel (RBF, polynomial) controls implicit feature space geometry.`,
+Choose kernel (RBF, polynomial) controls implicit feature space geometry.
+
+### Key Ideas
+
+- Kernel avoids explicit φ
+- Center kernel matrix
+- Nonlinear structure capture
+- Scales poorly with n
+- Related to RBF embeddings
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `K_ij = K(x_i, x_j)`,
             `K̃ = H K H (centered kernel)`,
@@ -879,16 +1367,42 @@ H = np.eye(30) - np.ones((30,30))/30
 Kc = H@K@H
 w = np.linalg.eigh(Kc)[0]
 print("top eig:", np.sort(w)[-3:])`,
-          output: `top kernel eigenvalues`
+          output: `top kernel eigenvalues`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`
+          ]
         },
         {
           id: `pca-practice`,
           title: `PCA Practical Considerations`,
-          content: `Scale features before PCA if units differ—or PCA chases largest-scale feature. Correlation matrix PCA when variables standardized. Incremental PCA for streaming/large data.
+          content: `### Introduction
+
+Scale features before PCA if units differ—or PCA chases largest-scale feature. Correlation matrix PCA when variables standardized. Incremental PCA for streaming/large data.
+
+### PCA Practical Considerations
 
 Randomized PCA approximate top components fast. Interpret loadings: which features drive each PC. Beware PCA on mixed categorical/numeric without encoding.
 
-For visualization, project to PC1-PC2. Cumulative variance plot selects k for 95% retention common in pipelines.`,
+For visualization, project to PC1-PC2. Cumulative variance plot selects k for 95% retention common in pipelines.
+
+### Key Ideas
+
+- Always consider scaling
+- Loadings aid interpretation
+- Incremental for memory limits
+- 95% rule common default
+- PCA linear—nonlinear needs kernel
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.
+
+### Visual Reference
+
+Refer to the **diagram** and **formulas** below while reading this section.`,
           formulas: [
             `Standardize if scales differ`,
             `Correlation PCA after z-score`,
@@ -913,7 +1427,13 @@ from sklearn.preprocessing import StandardScaler
 X = np.column_stack([np.random.rand(100), np.random.rand(100)*1000])
 Xs = StandardScaler().fit_transform(X)
 print("PC1 loadings raw vs scaled differ greatly")`,
-          output: `scaling matters`
+          output: `scaling matters`,
+          commonMistakes: [
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Applying log to zero or negative values without a shift`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Running K-Means without scaling — features with large ranges dominate`
+          ]
         }
       ],
       exercises: [

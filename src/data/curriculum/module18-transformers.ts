@@ -11,7 +11,22 @@ export const module18Topics: Topic[] = [
         {
           id: `attention`,
           title: `Attention Intuition`,
-          content: `Attention weighs relevance of each input element when producing output. Query, Key, Value framework from information retrieval.`,
+          content: `### Introduction
+
+Attention weighs relevance of each input element when producing output. Query, Key, Value framework from information retrieval.
+
+### Attention Intuition
+
+### Key Ideas
+
+- Query: what am I looking for
+- Key: what do I contain
+- Value: what information do I provide
+- Softmax weights sum to 1 over keys
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn.functional as F
 
@@ -29,12 +44,31 @@ print(output.shape)`,
             `Key: what do I contain`,
             `Value: what information do I provide`,
             `Softmax weights sum to 1 over keys`
+          ],
+          diagram: `Attention Intuition
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`
           ]
         },
         {
           id: `scaled`,
           title: `Scaled Dot-Product Attention`,
-          content: `Attention(Q,K,V) = softmax(QK^T/√d_k)V. Scaling prevents softmax saturation with large d_k.`,
+          content: `### Introduction
+
+Attention(Q,K,V) = softmax(QK^T/√d_k)V. Scaling prevents softmax saturation with large d_k.
+
+### Scaled Dot-Product Attention
+
+### Key Ideas
+
+- Scaling by sqrt(d_k) stabilizes gradients
+- QK^T computes pairwise similarity
+- Softmax produces attention weights
+- Output is weighted sum of values`,
           pseudoCode: `scores = Q @ K.T / sqrt(d_k)
 weights = softmax(scores)
 output = weights @ V`,
@@ -43,14 +77,37 @@ output = weights @ V`,
             `QK^T computes pairwise similarity`,
             `Softmax produces attention weights`,
             `Output is weighted sum of values`
+          ],
+          diagram: `Scaled Dot-Product Attention
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `self-attn`,
           title: `Self-Attention`,
-          content: `In **self-attention**, Q, K, and V all come from the same sequence. Each token builds a query ("what am I looking for?"), compares it against every key ("what does each token offer?"), and aggregates values weighted by those similarities.
+          content: `### Introduction
 
-This lets token 5 directly attend to token 100 with one hop—unlike RNNs that need 95 sequential steps. The cost is O(n²) memory and compute in sequence length, which is why long-context models invest heavily in sparse attention, sliding windows, and KV-cache optimization.`,
+In **self-attention**, Q, K, and V all come from the same sequence. Each token builds a query ("what am I looking for?"), compares it against every key ("what does each token offer?"), and aggregates values weighted by those similarities.
+
+### Self-Attention
+
+This lets token 5 directly attend to token 100 with one hop—unlike RNNs that need 95 sequential steps. The cost is O(n²) memory and compute in sequence length, which is why long-context models invest heavily in sparse attention, sliding windows, and KV-cache optimization.
+
+### Key Ideas
+
+- Self-attention replaces recurrence
+- Parallel computation over sequence
+- O(n²) memory and compute in sequence length
+- Long-range dependencies in constant path length
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn.functional as F
 
@@ -66,12 +123,35 @@ print(out.shape)`,
             `Parallel computation over sequence`,
             `O(n²) memory and compute in sequence length`,
             `Long-range dependencies in constant path length`
+          ],
+          diagram: `Self-Attention
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `multi-head`,
           title: `Multi-Head Attention`,
-          content: `Multiple attention heads in parallel with different learned projections. Concatenate and project output. h heads, d_model/h dimensions each.`,
+          content: `### Introduction
+
+Multiple attention heads in parallel with different learned projections. Concatenate and project output. h heads, d_model/h dimensions each.
+
+### Multi-Head Attention
+
+### Key Ideas
+
+- Multiple heads capture different relationship types
+- Concat heads then linear projection
+- num_heads divides embed_dim evenly
+- Attention weights interpretable per head
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch.nn as nn
 
 mha = nn.MultiheadAttention(embed_dim=64, num_heads=8, batch_first=True)
@@ -84,6 +164,14 @@ print(out.shape, weights.shape)`,
             `Concat heads then linear projection`,
             `num_heads divides embed_dim evenly`,
             `Attention weights interpretable per head`
+          ],
+          diagram: `Multi-Head Attention
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],
@@ -151,7 +239,18 @@ print(2*2 / math.sqrt(4))`,
         {
           id: `encoder`,
           title: `Transformer Encoder`,
-          content: `Stack of identical layers: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. FFN: Linear → ReLU → Linear.`,
+          content: `### Introduction
+
+Stack of identical layers: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. FFN: Linear → ReLU → Linear.
+
+### Transformer Encoder
+
+### Key Ideas
+
+- Pre-norm vs post-norm variants exist
+- FFN expands then contracts dimensions
+- Residual connections around each sublayer
+- Stack N layers (6 in original paper)`,
           pseudoCode: `FOR each encoder layer:
     x = LayerNorm(x + MultiHeadSelfAttention(x))
     x = LayerNorm(x + FeedForward(x))`,
@@ -160,39 +259,104 @@ print(2*2 / math.sqrt(4))`,
             `FFN expands then contracts dimensions`,
             `Residual connections around each sublayer`,
             `Stack N layers (6 in original paper)`
+          ],
+          diagram: `Transformer Encoder
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `decoder`,
           title: `Transformer Decoder`,
-          content: `Masked self-attention (causal) → cross-attention to encoder → FFN. Mask prevents attending to future tokens.`,
+          content: `### Introduction
+
+Masked self-attention (causal) → cross-attention to encoder → FFN. Mask prevents attending to future tokens.
+
+### Transformer Decoder
+
+### Key Ideas
+
+- Causal mask for autoregressive generation
+- Cross-attention connects encoder to decoder
+- Decoder self-attention is masked
+- Encoder-only models (BERT) skip decoder`,
           keyPoints: [
             `Causal mask for autoregressive generation`,
             `Cross-attention connects encoder to decoder`,
             `Decoder self-attention is masked`,
             `Encoder-only models (BERT) skip decoder`
+          ],
+          diagram: `Transformer Decoder
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `ffn`,
           title: `Feed-Forward Network`,
-          content: `FFN(x) = max(0, xW₁+b₁)W₂+b₂. Applied position-wise. Typically 4× expansion: d_model → 4·d_model → d_model.`,
+          content: `### Introduction
+
+FFN(x) = max(0, xW₁+b₁)W₂+b₂. Applied position-wise. Typically 4× expansion: d_model → 4·d_model → d_model.
+
+### Feed-Forward Network
+
+### Key Ideas
+
+- Same FFN applied to each position independently
+- Majority of transformer parameters in FFN
+- GELU activation in modern transformers
+- MoE replaces FFN with mixture of experts at scale`,
           keyPoints: [
             `Same FFN applied to each position independently`,
             `Majority of transformer parameters in FFN`,
             `GELU activation in modern transformers`,
             `MoE replaces FFN with mixture of experts at scale`
+          ],
+          diagram: `Feed-Forward Network
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `layer-norm`,
           title: `Layer Normalization`,
-          content: `Normalizes across features per token. Pre-norm (before sublayer) more stable for deep transformers.`,
+          content: `### Introduction
+
+Normalizes across features per token. Pre-norm (before sublayer) more stable for deep transformers.
+
+### Layer Normalization
+
+### Key Ideas
+
+- LayerNorm not BatchNorm in transformers
+- Normalizes last dimension (features)
+- Pre-norm enables deeper networks
+- RMSNorm simpler alternative used in LLaMA`,
           keyPoints: [
             `LayerNorm not BatchNorm in transformers`,
             `Normalizes last dimension (features)`,
             `Pre-norm enables deeper networks`,
             `RMSNorm simpler alternative used in LLaMA`
+          ],
+          diagram: `Layer Normalization
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         }
       ],
@@ -263,7 +427,22 @@ print(mask.int().tolist())`,
         {
           id: `sinusoidal`,
           title: `Sinusoidal Positional Encoding`,
-          content: `PE(pos,2i) = sin(pos/10000^(2i/d)). PE(pos,2i+1) = cos(...). Fixed, not learned. Generalizes to unseen lengths.`,
+          content: `### Introduction
+
+PE(pos,2i) = sin(pos/10000^(2i/d)). PE(pos,2i+1) = cos(...). Fixed, not learned. Generalizes to unseen lengths.
+
+### Sinusoidal Positional Encoding
+
+### Key Ideas
+
+- Sinusoidal encoding from original transformer paper
+- Each dimension different wavelength
+- Added to input embeddings
+- Can extrapolate beyond training length somewhat
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import math
 
@@ -282,43 +461,108 @@ print(sinusoidal_pe(4, 8).shape)`,
             `Each dimension different wavelength`,
             `Added to input embeddings`,
             `Can extrapolate beyond training length somewhat`
+          ],
+          diagram: `Sinusoidal Positional Encoding
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `learned`,
           title: `Learned Positional Embeddings`,
-          content: `nn.Embedding(max_seq_len, d_model). GPT uses learned positions.
+          content: `### Introduction
 
-Limited to max_seq_len seen during training.`,
+nn.Embedding(max_seq_len, d_model). GPT uses learned positions.
+
+### Learned Positional Embeddings
+
+Limited to max_seq_len seen during training.
+
+### Key Ideas
+
+- Learned positions standard in GPT models
+- Cannot exceed max position embeddings
+- Rotary (RoPE) and ALiBi extend context
+- Position embeddings added to token embeddings`,
           keyPoints: [
             `Learned positions standard in GPT models`,
             `Cannot exceed max position embeddings`,
             `Rotary (RoPE) and ALiBi extend context`,
             `Position embeddings added to token embeddings`
+          ],
+          diagram: `Learned Positional Embeddings
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `rope`,
           title: `Rotary Position Embedding (RoPE)`,
-          content: `Rotates query and key vectors by position-dependent angle. Relative position encoding.
+          content: `### Introduction
 
-Used in LLaMA, Mistral, GPT-NeoX.`,
+Rotates query and key vectors by position-dependent angle. Relative position encoding.
+
+### Rotary Position Embedding (RoPE)
+
+Used in LLaMA, Mistral, GPT-NeoX.
+
+### Key Ideas
+
+- RoPE encodes relative not absolute position
+- Better length extrapolation than learned
+- Standard in modern open-source LLMs
+- Applied to Q and K before attention`,
           keyPoints: [
             `RoPE encodes relative not absolute position`,
             `Better length extrapolation than learned`,
             `Standard in modern open-source LLMs`,
             `Applied to Q and K before attention`
+          ],
+          diagram: `Rotary Position Embedding (RoPE)
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `alibi`,
           title: `ALiBi & Relative Positions`,
-          content: `Attention with Linear Biases: add linear penalty based on distance. No explicit position embeddings needed.`,
+          content: `### Introduction
+
+Attention with Linear Biases: add linear penalty based on distance. No explicit position embeddings needed.
+
+### ALiBi & Relative Positions
+
+### Key Ideas
+
+- ALiBi simple and effective
+- Strong length extrapolation
+- Relative position bias in attention scores
+- Multiple approaches coexist in modern models`,
           keyPoints: [
             `ALiBi simple and effective`,
             `Strong length extrapolation`,
             `Relative position bias in attention scores`,
             `Multiple approaches coexist in modern models`
+          ],
+          diagram: `ALiBi & Relative Positions
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Using polynomial degree too high without regularization`,
+            `Wrong sequence length after tokenization — truncating critical context`
           ]
         }
       ],
@@ -384,7 +628,22 @@ print(nn.Embedding(8, 16)(torch.arange(8)).shape)`,
         {
           id: `bert`,
           title: `BERT Architecture`,
-          content: `Encoder-only transformer. Pre-trained with MLM (Masked Language Model) and NSP. Fine-tune for classification, NER, QA.`,
+          content: `### Introduction
+
+Encoder-only transformer. Pre-trained with MLM (Masked Language Model) and NSP. Fine-tune for classification, NER, QA.
+
+### BERT Architecture
+
+### Key Ideas
+
+- [CLS] token representation for classification
+- [MASK] token for MLM pretraining
+- Bidirectional context — sees left and right
+- Fine-tune with task-specific head on top
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from transformers import BertTokenizer, BertModel
 
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
@@ -397,25 +656,67 @@ print(outputs.last_hidden_state.shape)`,
             `[MASK] token for MLM pretraining`,
             `Bidirectional context — sees left and right`,
             `Fine-tune with task-specific head on top`
+          ],
+          diagram: `BERT Architecture
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `mlm`,
           title: `Masked Language Modeling`,
-          content: `Randomly mask 15% of tokens, predict masked tokens. Learns deep bidirectional representations.`,
+          content: `### Introduction
+
+Randomly mask 15% of tokens, predict masked tokens. Learns deep bidirectional representations.
+
+### Masked Language Modeling
+
+### Key Ideas
+
+- 80% replace with [MASK], 10% random, 10% unchanged
+- Forces model to understand context
+- MLM objective is denoising autoencoder
+- RoBERTa improves BERT training recipe`,
           keyPoints: [
             `80% replace with [MASK], 10% random, 10% unchanged`,
             `Forces model to understand context`,
             `MLM objective is denoising autoencoder`,
             `RoBERTa improves BERT training recipe`
+          ],
+          diagram: `Masked Language Modeling
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `fine-tune`,
           title: `Fine-Tuning BERT`,
-          content: `Add classification head on [CLS]. Train with small LR (2e-5 to 5e-5).
+          content: `### Introduction
 
-Few epochs often sufficient.`,
+Add classification head on [CLS]. Train with small LR (2e-5 to 5e-5).
+
+### Fine-Tuning BERT
+
+Few epochs often sufficient.
+
+### Key Ideas
+
+- Use AdamW optimizer with weight decay
+- Small learning rate critical for fine-tuning
+- Freeze early layers for very small datasets
+- HuggingFace Trainer simplifies fine-tuning
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from transformers import BertForSequenceClassification
 
 model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
@@ -425,17 +726,44 @@ print(model.classifier)`,
             `Small learning rate critical for fine-tuning`,
             `Freeze early layers for very small datasets`,
             `HuggingFace Trainer simplifies fine-tuning`
+          ],
+          diagram: `Fine-Tuning BERT
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `encoder-models`,
           title: `Modern Encoder Models`,
-          content: `RoBERTa, DeBERTa, ELECTRA, DistilBERT. Encoder models for understanding tasks, not generation.`,
+          content: `### Introduction
+
+RoBERTa, DeBERTa, ELECTRA, DistilBERT. Encoder models for understanding tasks, not generation.
+
+### Modern Encoder Models
+
+### Key Ideas
+
+- RoBERTa: optimized BERT training
+- DeBERTa: disentangled attention
+- DistilBERT: 40% smaller, 97% performance
+- Encoder models for classification and retrieval`,
           keyPoints: [
             `RoBERTa: optimized BERT training`,
             `DeBERTa: disentangled attention`,
             `DistilBERT: 40% smaller, 97% performance`,
             `Encoder models for classification and retrieval`
+          ],
+          diagram: `Modern Encoder Models
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],
@@ -505,9 +833,24 @@ print(n_masked)`,
         {
           id: `gpt`,
           title: `GPT Architecture`,
-          content: `Decoder-only transformer with causal masking. Predict next token autoregressively.
+          content: `### Introduction
 
-Pre-train on large text corpus.`,
+Decoder-only transformer with causal masking. Predict next token autoregressively.
+
+### GPT Architecture
+
+Pre-train on large text corpus.
+
+### Key Ideas
+
+- Causal/autoregressive: predict P(x_t | x_<t)
+- Decoder-only for generation tasks
+- Scaling laws: bigger = better performance
+- GPT-2, GPT-3, GPT-4 evolution
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
@@ -520,41 +863,104 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True)[:50])`,
             `Decoder-only for generation tasks`,
             `Scaling laws: bigger = better performance`,
             `GPT-2, GPT-3, GPT-4 evolution`
+          ],
+          diagram: `GPT Architecture
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `generation`,
           title: `Text Generation Strategies`,
-          content: `Greedy, beam search, top-k sampling, nucleus (top-p) sampling, temperature scaling. Control randomness vs quality.`,
+          content: `### Introduction
+
+Greedy, beam search, top-k sampling, nucleus (top-p) sampling, temperature scaling. Control randomness vs quality.
+
+### Text Generation Strategies
+
+### Key Ideas
+
+- Temperature < 1 sharpens, > 1 flattens distribution
+- top-p (nucleus): sample from smallest set with cumulative prob p
+- top-k: sample from k most likely tokens
+- Repetition penalty reduces loops`,
           keyPoints: [
             `Temperature < 1 sharpens, > 1 flattens distribution`,
             `top-p (nucleus): sample from smallest set with cumulative prob p`,
             `top-k: sample from k most likely tokens`,
             `Repetition penalty reduces loops`
+          ],
+          diagram: `Text Generation Strategies
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `causal`,
           title: `Causal Language Modeling`,
-          content: `Train to predict next token. Loss on all positions simultaneously with causal mask.
+          content: `### Introduction
 
-Foundation of all LLM pretraining.`,
+Train to predict next token. Loss on all positions simultaneously with causal mask.
+
+### Causal Language Modeling
+
+Foundation of all LLM pretraining.
+
+### Key Ideas
+
+- CLM loss computed on all token positions
+- Causal mask prevents cheating (seeing future)
+- Cross-entropy loss on vocabulary
+- Trillions of tokens for frontier models`,
           keyPoints: [
             `CLM loss computed on all token positions`,
             `Causal mask prevents cheating (seeing future)`,
             `Cross-entropy loss on vocabulary`,
             `Trillions of tokens for frontier models`
+          ],
+          diagram: `Causal Language Modeling
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `scaling`,
           title: `Scaling Laws`,
-          content: `Performance scales predictably with compute, data, and parameters. Chinchilla: optimal tokens ≈ 20× parameters.`,
+          content: `### Introduction
+
+Performance scales predictably with compute, data, and parameters. Chinchilla: optimal tokens ≈ 20× parameters.
+
+### Scaling Laws
+
+### Key Ideas
+
+- Kaplan scaling laws (OpenAI 2020)
+- Chinchilla optimal compute allocation
+- Emergent abilities at scale debated
+- Efficiency improvements (MoE, quantization) extend scaling`,
           keyPoints: [
             `Kaplan scaling laws (OpenAI 2020)`,
             `Chinchilla optimal compute allocation`,
             `Emergent abilities at scale debated`,
             `Efficiency improvements (MoE, quantization) extend scaling`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],

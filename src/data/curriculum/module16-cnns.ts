@@ -11,7 +11,22 @@ export const module16Topics: Topic[] = [
         {
           id: `conv2d`,
           title: `Convolution Operation`,
-          content: `Filter slides over input computing dot products. Learns local patterns: edges, textures, shapes. nn.Conv2d(in_channels, out_channels, kernel_size).`,
+          content: `### Introduction
+
+Filter slides over input computing dot products. Learns local patterns: edges, textures, shapes. nn.Conv2d(in_channels, out_channels, kernel_size).
+
+### Convolution Operation
+
+### Key Ideas
+
+- padding preserves spatial dimensions
+- stride reduces spatial size
+- Channels = feature maps (depth)
+- Parameter sharing: same filter across spatial locations
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -25,12 +40,35 @@ print(out.shape)`,
             `stride reduces spatial size`,
             `Channels = feature maps (depth)`,
             `Parameter sharing: same filter across spatial locations`
+          ],
+          diagram: `Convolution Operation
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `pooling`,
           title: `Pooling Layers`,
-          content: `MaxPool2d: takes maximum in window. AvgPool2d: average. Reduces spatial dimensions, provides translation invariance.`,
+          content: `### Introduction
+
+MaxPool2d: takes maximum in window. AvgPool2d: average. Reduces spatial dimensions, provides translation invariance.
+
+### Pooling Layers
+
+### Key Ideas
+
+- Pooling reduces computation and overfitting
+- Max pooling most common
+- Global Average Pooling replaces flatten + FC
+- AdaptiveAvgPool2d for variable input sizes
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -43,25 +81,67 @@ print(pool(x).shape)`,
             `Max pooling most common`,
             `Global Average Pooling replaces flatten + FC`,
             `AdaptiveAvgPool2d for variable input sizes`
+          ],
+          diagram: `Pooling Layers
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `receptive`,
           title: `Receptive Field`,
-          content: `Each neuron sees a region of input. Receptive field grows with depth and pooling.
+          content: `### Introduction
 
-Deep layers capture global context.`,
+Each neuron sees a region of input. Receptive field grows with depth and pooling.
+
+### Receptive Field
+
+Deep layers capture global context.
+
+### Key Ideas
+
+- Stacking conv layers expands receptive field
+- Dilated convolutions expand field without pooling
+- Large receptive field needed for global context
+- Feature hierarchy: edges → parts → objects`,
           keyPoints: [
             `Stacking conv layers expands receptive field`,
             `Dilated convolutions expand field without pooling`,
             `Large receptive field needed for global context`,
             `Feature hierarchy: edges → parts → objects`
+          ],
+          diagram: `Receptive Field
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Dilated convolutions expand field without pooling.`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `cnn-arch`,
           title: `Basic CNN Architecture`,
-          content: `Conv → ReLU → Pool repeated, then Flatten → FC → output. Modern: all conv without large FC layers.`,
+          content: `### Introduction
+
+Conv → ReLU → Pool repeated, then Flatten → FC → output. Modern: all conv without large FC layers.
+
+### Basic CNN Architecture
+
+### Key Ideas
+
+- Feature extractor + classifier pattern
+- Spatial dimensions shrink with pooling
+- BatchNorm after conv stabilizes training
+- Data augmentation critical for small datasets
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch.nn as nn
 
 class SimpleCNN(nn.Module):
@@ -80,6 +160,14 @@ class SimpleCNN(nn.Module):
             `Spatial dimensions shrink with pooling`,
             `BatchNorm after conv stabilizes training`,
             `Data augmentation critical for small datasets`
+          ],
+          diagram: `Basic CNN Architecture
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         }
       ],
@@ -148,20 +236,54 @@ print(nn.MaxPool2d(2)(torch.randn(1,16,32,32)).shape)`,
         {
           id: `vgg`,
           title: `VGG`,
-          content: `Small 3×3 filters stacked deeply. Simple uniform architecture.
+          content: `### Introduction
 
-VGG16/19 widely used for transfer learning baseline.`,
+Small 3×3 filters stacked deeply. Simple uniform architecture.
+
+### VGG
+
+VGG16/19 widely used for transfer learning baseline.
+
+### Key Ideas
+
+- 3x3 conv stacks replace large filters
+- Simplicity aids understanding and transfer
+- Very parameter-heavy in FC layers
+- Superseded by ResNet but good baseline`,
           keyPoints: [
             `3x3 conv stacks replace large filters`,
             `Simplicity aids understanding and transfer`,
             `Very parameter-heavy in FC layers`,
             `Superseded by ResNet but good baseline`
+          ],
+          diagram: `VGG
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `resnet`,
           title: `ResNet & Skip Connections`,
-          content: `Residual blocks: output = F(x) + x. Skip connections solve vanishing gradient, enable 100+ layer networks.`,
+          content: `### Introduction
+
+Residual blocks: output = F(x) + x. Skip connections solve vanishing gradient, enable 100+ layer networks.
+
+### ResNet & Skip Connections
+
+### Key Ideas
+
+- Identity skip when dimensions match
+- 1x1 conv projection when dimensions differ
+- ResNet-50/101 standard for transfer learning
+- BatchNorm before activation in modern variants
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -181,23 +303,65 @@ print(ResBlock(64)(torch.randn(1, 64, 32, 32)).shape)`,
             `1x1 conv projection when dimensions differ`,
             `ResNet-50/101 standard for transfer learning`,
             `BatchNorm before activation in modern variants`
+          ],
+          diagram: `ResNet & Skip Connections
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `modern`,
           title: `EfficientNet, ConvNeXt`,
-          content: `EfficientNet scales depth/width/resolution jointly. ConvNeXt modernizes ResNet with transformer-inspired design.`,
+          content: `### Introduction
+
+EfficientNet scales depth/width/resolution jointly. ConvNeXt modernizes ResNet with transformer-inspired design.
+
+### EfficientNet, ConvNeXt
+
+### Key Ideas
+
+- Compound scaling balances model dimensions
+- EfficientNet-B0 to B7 for different compute budgets
+- ConvNeXt competitive with vision transformers
+- Architecture search automates design`,
           keyPoints: [
             `Compound scaling balances model dimensions`,
             `EfficientNet-B0 to B7 for different compute budgets`,
             `ConvNeXt competitive with vision transformers`,
             `Architecture search automates design`
+          ],
+          diagram: `EfficientNet, ConvNeXt
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `torchvision`,
           title: `torchvision.models`,
-          content: `Pretrained models: resnet50, efficientnet_b0, vit_b_16. weights=ResNet50_Weights.IMAGENET1K_V2.`,
+          content: `### Introduction
+
+Pretrained models: resnet50, efficientnet_b0, vit_b_16. weights=ResNet50_Weights.IMAGENET1K_V2.
+
+### torchvision.models
+
+### Key Ideas
+
+- Pretrained weights from ImageNet
+- Replace final FC for your num_classes
+- Feature extraction: remove classifier head
+- Fine-tune all or freeze early layers
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from torchvision import models
 
 model = models.resnet18(weights=None)
@@ -208,6 +372,14 @@ print(model.fc.in_features)  # 512 for resnet18`,
             `Replace final FC for your num_classes`,
             `Feature extraction: remove classifier head`,
             `Fine-tune all or freeze early layers`
+          ],
+          diagram: `torchvision.models
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
           ]
         }
       ],
@@ -276,9 +448,24 @@ print((F_x + x).tolist())`,
         {
           id: `strategy`,
           title: `Transfer Learning Strategies`,
-          content: `Feature extraction: freeze backbone, train head. Fine-tuning: unfreeze some/all layers with low LR.
+          content: `### Introduction
 
-More data → more fine-tuning.`,
+Feature extraction: freeze backbone, train head. Fine-tuning: unfreeze some/all layers with low LR.
+
+### Transfer Learning Strategies
+
+More data → more fine-tuning.
+
+### Key Ideas
+
+- Freeze backbone when data is very small
+- Fine-tune later layers with small LR
+- Pretrain on similar domain when possible
+- Replace classifier head always
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch.nn as nn
 from torchvision import models
 
@@ -293,39 +480,104 @@ print(model.fc.weight.requires_grad)`,
             `Fine-tune later layers with small LR`,
             `Pretrain on similar domain when possible`,
             `Replace classifier head always`
+          ],
+          diagram: `Transfer Learning Strategies
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `finetune`,
           title: `Fine-Tuning Best Practices`,
-          content: `Discriminative learning rates: lower LR for early layers. Gradual unfreezing. Monitor val loss carefully.`,
+          content: `### Introduction
+
+Discriminative learning rates: lower LR for early layers. Gradual unfreezing. Monitor val loss carefully.
+
+### Fine-Tuning Best Practices
+
+### Key Ideas
+
+- LR for backbone << LR for head (10-100x)
+- Unfreeze gradually from top to bottom
+- Strong augmentation when fine-tuning
+- Early stopping essential — overfits quickly`,
           keyPoints: [
             `LR for backbone << LR for head (10-100x)`,
             `Unfreeze gradually from top to bottom`,
             `Strong augmentation when fine-tuning`,
             `Early stopping essential — overfits quickly`
+          ],
+          diagram: `Fine-Tuning Best Practices
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `domain`,
           title: `Domain Adaptation`,
-          content: `Pretrained on ImageNet, fine-tune on medical/satellite/etc. Domain gap affects transfer quality.`,
+          content: `### Introduction
+
+Pretrained on ImageNet, fine-tune on medical/satellite/etc. Domain gap affects transfer quality.
+
+### Domain Adaptation
+
+### Key Ideas
+
+- Large domain gap reduces transfer benefit
+- Self-supervised pretraining on target domain helps
+- SimCLR, MoCo for unsupervised pretraining
+- Foundation models reduce need for task-specific pretraining`,
           keyPoints: [
             `Large domain gap reduces transfer benefit`,
             `Self-supervised pretraining on target domain helps`,
             `SimCLR, MoCo for unsupervised pretraining`,
             `Foundation models reduce need for task-specific pretraining`
+          ],
+          diagram: `Domain Adaptation
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
           ]
         },
         {
           id: `hub`,
           title: `PyTorch Hub & timm`,
-          content: `torch.hub.load for pretrained models. timm (PyTorch Image Models) library with 500+ architectures.`,
+          content: `### Introduction
+
+torch.hub.load for pretrained models. timm (PyTorch Image Models) library with 500+ architectures.
+
+### PyTorch Hub & timm
+
+### Key Ideas
+
+- timm unified API for many architectures
+- timm.create_model with pretrained=True
+- Easy model ensembling with timm
+- Check license for commercial pretrained weights`,
           keyPoints: [
             `timm unified API for many architectures`,
             `timm.create_model with pretrained=True`,
             `Easy model ensembling with timm`,
             `Check license for commercial pretrained weights`
+          ],
+          diagram: `PyTorch Hub & timm
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],
@@ -397,7 +649,22 @@ print(all(not p.requires_grad for p in m.parameters()))`,
         {
           id: `metrics-det`,
           title: `Detection Metrics`,
-          content: `IoU (Intersection over Union) measures box overlap. mAP (mean Average Precision) standard benchmark metric.`,
+          content: `### Introduction
+
+IoU (Intersection over Union) measures box overlap. mAP (mean Average Precision) standard benchmark metric.
+
+### Detection Metrics
+
+### Key Ideas
+
+- IoU > 0.5 typically considered match
+- mAP averaged over classes and IoU thresholds
+- Precision-recall tradeoff at confidence threshold
+- COCO dataset standard benchmark
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def iou(box1, box2):
     x1 = max(box1[0], box2[0]); y1 = max(box1[1], box2[1])
     x2 = min(box1[2], box2[2]); y2 = min(box1[3], box2[3])
@@ -413,43 +680,106 @@ print(round(iou([0,0,10,10], [5,5,15,15]), 3))`,
             `mAP averaged over classes and IoU thresholds`,
             `Precision-recall tradeoff at confidence threshold`,
             `COCO dataset standard benchmark`
+          ],
+          diagram: `Detection Metrics
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Not normalizing vectors when using dot product as cosine similarity`
           ]
         },
         {
           id: `rcnn`,
           title: `R-CNN Family`,
-          content: `Two-stage: RPN proposes regions, classifier refines. Faster R-CNN real-time capable.
+          content: `### Introduction
 
-Mask R-CNN adds segmentation.`,
+Two-stage: RPN proposes regions, classifier refines. Faster R-CNN real-time capable.
+
+### R-CNN Family
+
+Mask R-CNN adds segmentation.
+
+### Key Ideas
+
+- Two-stage: propose then classify
+- Faster R-CNN shares backbone with RPN
+- Anchor boxes at multiple scales/aspect ratios
+- Accurate but slower than one-stage`,
           keyPoints: [
             `Two-stage: propose then classify`,
             `Faster R-CNN shares backbone with RPN`,
             `Anchor boxes at multiple scales/aspect ratios`,
             `Accurate but slower than one-stage`
+          ],
+          diagram: `R-CNN Family
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `yolo`,
           title: `YOLO & One-Stage Detectors`,
-          content: `YOLO: single pass prediction grid. SSD, RetinaNet with focal loss.
+          content: `### Introduction
 
-Faster, good for real-time applications.`,
+YOLO: single pass prediction grid. SSD, RetinaNet with focal loss.
+
+### YOLO & One-Stage Detectors
+
+Faster, good for real-time applications.
+
+### Key Ideas
+
+- One-stage: direct bounding box prediction
+- YOLO v8/v9/v10 state-of-the-art speed/accuracy
+- Real-time on edge devices possible
+- Trade accuracy for speed vs two-stage`,
           keyPoints: [
             `One-stage: direct bounding box prediction`,
             `YOLO v8/v9/v10 state-of-the-art speed/accuracy`,
             `Real-time on edge devices possible`,
             `Trade accuracy for speed vs two-stage`
+          ],
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `tools`,
           title: `Detection Tools`,
-          content: `torchvision.models.detection, ultralytics YOLO, Detectron2 (Meta). Pretrained on COCO.`,
+          content: `### Introduction
+
+torchvision.models.detection, ultralytics YOLO, Detectron2 (Meta). Pretrained on COCO.
+
+### Detection Tools
+
+### Key Ideas
+
+- Detectron2 research platform from Meta
+- Ultralytics YOLO easy API for training/inference
+- Export to ONNX/TensorRT for deployment
+- Custom dataset in COCO JSON format`,
           keyPoints: [
             `Detectron2 research platform from Meta`,
             `Ultralytics YOLO easy API for training/inference`,
             `Export to ONNX/TensorRT for deployment`,
             `Custom dataset in COCO JSON format`
+          ],
+          diagram: `Detection Tools
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],
@@ -518,31 +848,84 @@ print(iou([0,0,10,10],[0,0,10,10]))`,
         {
           id: `semantic`,
           title: `Semantic Segmentation`,
-          content: `Classify every pixel. FCN, U-Net, DeepLab architectures. Encoder-decoder with skip connections.`,
+          content: `### Introduction
+
+Classify every pixel. FCN, U-Net, DeepLab architectures. Encoder-decoder with skip connections.
+
+### Semantic Segmentation
+
+### Key Ideas
+
+- U-Net skip connections preserve spatial detail
+- Encoder downsamples, decoder upsamples
+- Dice loss common for imbalanced segmentation
+- Medical imaging primary application`,
           keyPoints: [
             `U-Net skip connections preserve spatial detail`,
             `Encoder downsamples, decoder upsamples`,
             `Dice loss common for imbalanced segmentation`,
             `Medical imaging primary application`
+          ],
+          diagram: `Semantic Segmentation
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `instance`,
           title: `Instance Segmentation`,
-          content: `Detect and segment each object instance separately. Mask R-CNN: detection + mask head per ROI.`,
+          content: `### Introduction
+
+Detect and segment each object instance separately. Mask R-CNN: detection + mask head per ROI.
+
+### Instance Segmentation
+
+### Key Ideas
+
+- Combines detection and segmentation
+- Mask R-CNN adds mask branch to Faster R-CNN
+- Each instance gets unique mask
+- Panoptic segmentation: semantic + instance`,
           keyPoints: [
             `Combines detection and segmentation`,
             `Mask R-CNN adds mask branch to Faster R-CNN`,
             `Each instance gets unique mask`,
             `Panoptic segmentation: semantic + instance`
+          ],
+          diagram: `Instance Segmentation
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `unet`,
           title: `U-Net Architecture`,
-          content: `Symmetric encoder-decoder with skip connections. Concatenates encoder features to decoder.
+          content: `### Introduction
 
-Excellent for biomedical segmentation.`,
+Symmetric encoder-decoder with skip connections. Concatenates encoder features to decoder.
+
+### U-Net Architecture
+
+Excellent for biomedical segmentation.
+
+### Key Ideas
+
+- Skip connections recover fine spatial details
+- Works well with limited training data
+- segmentation_models_pytorch library
+- Augment with elastic deformations for medical
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# U-Net concept: encoder path downsamples, decoder upsamples
 # Skip connections concatenate features at each level
 print("Encoder -> Bottleneck -> Decoder + Skips")`,
@@ -552,17 +935,44 @@ print("Encoder -> Bottleneck -> Decoder + Skips")`,
             `Works well with limited training data`,
             `segmentation_models_pytorch library`,
             `Augment with elastic deformations for medical`
+          ],
+          diagram: `U-Net Architecture
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `metrics-seg`,
           title: `Segmentation Metrics`,
-          content: `IoU per class (Jaccard index). Dice coefficient. Pixel accuracy misleading with class imbalance.`,
+          content: `### Introduction
+
+IoU per class (Jaccard index). Dice coefficient. Pixel accuracy misleading with class imbalance.
+
+### Segmentation Metrics
+
+### Key Ideas
+
+- Mean IoU averaged over classes
+- Dice = 2|A∩B|/(|A|+|B|)
+- Boundary F1 for precise edge evaluation
+- Report per-class metrics not just mean`,
           keyPoints: [
             `Mean IoU averaged over classes`,
             `Dice = 2|A∩B|/(|A|+|B|)`,
             `Boundary F1 for precise edge evaluation`,
             `Report per-class metrics not just mean`
+          ],
+          diagram: `Segmentation Metrics
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         }
       ],

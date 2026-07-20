@@ -11,7 +11,22 @@ export const module17Topics: Topic[] = [
         {
           id: `clean`,
           title: `Text Cleaning`,
-          content: `Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace. Domain-specific rules matter.`,
+          content: `### Introduction
+
+Lowercase, remove punctuation, handle URLs/emojis, normalize whitespace. Domain-specific rules matter.
+
+### Text Cleaning
+
+### Key Ideas
+
+- Cleaning rules depend on task and domain
+- Preserve meaningful punctuation for sentiment
+- Handle unicode and encoding issues
+- Modern tokenizers often skip manual cleaning
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import re
 
 def clean_text(text):
@@ -26,25 +41,67 @@ print(clean_text("Hello, World! Visit https://example.com"))`,
             `Preserve meaningful punctuation for sentiment`,
             `Handle unicode and encoding issues`,
             `Modern tokenizers often skip manual cleaning`
+          ],
+          diagram: `Text Cleaning
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `tokenize`,
           title: `Tokenization Strategies`,
-          content: `Word-level, subword (BPE, WordPiece, SentencePiece), character-level. Subword balances vocabulary size and OOV handling.`,
+          content: `### Introduction
+
+Word-level, subword (BPE, WordPiece, SentencePiece), character-level. Subword balances vocabulary size and OOV handling.
+
+### Tokenization Strategies
+
+### Key Ideas
+
+- Word tokenization simple but huge vocabularies
+- BPE used in GPT — merges frequent pairs
+- WordPiece used in BERT — likelihood-based merges
+- SentencePiece language-agnostic tokenization`,
           keyPoints: [
             `Word tokenization simple but huge vocabularies`,
             `BPE used in GPT — merges frequent pairs`,
             `WordPiece used in BERT — likelihood-based merges`,
             `SentencePiece language-agnostic tokenization`
+          ],
+          diagram: `Tokenization Strategies
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `hf-tokenizer`,
           title: `HuggingFace Tokenizers`,
-          content: `AutoTokenizer.from_pretrained("bert-base-uncased"). Returns input_ids, attention_mask.
+          content: `### Introduction
 
-Handles padding and truncation.`,
+AutoTokenizer.from_pretrained("bert-base-uncased"). Returns input_ids, attention_mask.
+
+### HuggingFace Tokenizers
+
+Handles padding and truncation.
+
+### Key Ideas
+
+- Pretrained tokenizers match model vocabularies
+- attention_mask ignores padding tokens
+- truncation and max_length for fixed input
+- Batch encoding with padding=True
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
@@ -55,17 +112,44 @@ print(encoded["input_ids"].shape)`,
             `attention_mask ignores padding tokens`,
             `truncation and max_length for fixed input`,
             `Batch encoding with padding=True`
+          ],
+          diagram: `HuggingFace Tokenizers
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `vocab`,
           title: `Vocabulary & Special Tokens`,
-          content: `[CLS], [SEP], [PAD], [UNK], [MASK]. Vocabulary maps tokens to integer IDs.`,
+          content: `### Introduction
+
+[CLS], [SEP], [PAD], [UNK], [MASK]. Vocabulary maps tokens to integer IDs.
+
+### Vocabulary & Special Tokens
+
+### Key Ideas
+
+- [PAD] token enables batch processing
+- Special tokens have semantic roles in models
+- Vocab size affects embedding matrix size
+- Extend vocab for domain-specific tokens`,
           keyPoints: [
             `[PAD] token enables batch processing`,
             `Special tokens have semantic roles in models`,
             `Vocab size affects embedding matrix size`,
             `Extend vocab for domain-specific tokens`
+          ],
+          diagram: `Vocabulary & Special Tokens
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         }
       ],
@@ -132,31 +216,84 @@ print(re.sub(r"[^a-z0-9\\s]", "", t))`,
         {
           id: `word2vec`,
           title: `Word2Vec`,
-          content: `Skip-gram: predict context from word. CBOW: predict word from context.
+          content: `### Introduction
 
-Similar words have similar vectors.`,
+Skip-gram: predict context from word. CBOW: predict word from context.
+
+### Word2Vec
+
+Similar words have similar vectors.
+
+### Key Ideas
+
+- Distributional hypothesis: context defines meaning
+- Skip-gram better for rare words
+- Negative sampling speeds training
+- king - man + woman ≈ queen classic example`,
           keyPoints: [
             `Distributional hypothesis: context defines meaning`,
             `Skip-gram better for rare words`,
             `Negative sampling speeds training`,
             `king - man + woman ≈ queen classic example`
+          ],
+          diagram: `Word2Vec
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `glove`,
           title: `GloVe`,
-          content: `Global Vectors: factorizes co-occurrence matrix. Combines global statistics with local context methods.`,
+          content: `### Introduction
+
+Global Vectors: factorizes co-occurrence matrix. Combines global statistics with local context methods.
+
+### GloVe
+
+### Key Ideas
+
+- GloVe uses global co-occurrence counts
+- Often comparable to Word2Vec quality
+- Pretrained GloVe vectors widely available
+- Static embeddings — one vector per word regardless of context`,
           keyPoints: [
             `GloVe uses global co-occurrence counts`,
             `Often comparable to Word2Vec quality`,
             `Pretrained GloVe vectors widely available`,
             `Static embeddings — one vector per word regardless of context`
+          ],
+          diagram: `GloVe
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Not normalizing vectors when using dot product as cosine similarity`
           ]
         },
         {
           id: `nn-embed`,
           title: `nn.Embedding Layer`,
-          content: `torch.nn.Embedding(vocab_size, embed_dim). Lookup table learned during training. Padding index for [PAD].`,
+          content: `### Introduction
+
+torch.nn.Embedding(vocab_size, embed_dim). Lookup table learned during training. Padding index for [PAD].
+
+### nn.Embedding Layer
+
+### Key Ideas
+
+- Embedding layer is lookup table of vectors
+- Random init then learned via backprop
+- Pretrained embeddings can initialize layer
+- embed_dim typically 100-768
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -169,17 +306,44 @@ print(embed(input_ids).shape)`,
             `Random init then learned via backprop`,
             `Pretrained embeddings can initialize layer`,
             `embed_dim typically 100-768`
+          ],
+          diagram: `nn.Embedding Layer
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `contextual`,
           title: `Contextual Embeddings`,
-          content: `ELMo, BERT produce different vectors per context. "bank" (river) vs "bank" (financial) get different embeddings.`,
+          content: `### Introduction
+
+ELMo, BERT produce different vectors per context. "bank" (river) vs "bank" (financial) get different embeddings.
+
+### Contextual Embeddings
+
+### Key Ideas
+
+- Static embeddings one vector per word type
+- Contextual embeddings depend on sentence
+- BERT embeddings revolutionized NLP
+- Modern NLP uses contextual embeddings exclusively`,
           keyPoints: [
             `Static embeddings one vector per word type`,
             `Contextual embeddings depend on sentence`,
             `BERT embeddings revolutionized NLP`,
             `Modern NLP uses contextual embeddings exclusively`
+          ],
+          diagram: `Contextual Embeddings
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],
@@ -247,9 +411,24 @@ print(e(torch.tensor([1, 5, 3])).shape)`,
         {
           id: `rnn`,
           title: `Vanilla RNN`,
-          content: `Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t). Processes sequences step by step.
+          content: `### Introduction
 
-Vanishing gradient limits long sequences.`,
+Hidden state h_t = tanh(W_h h_{t-1} + W_x x_t). Processes sequences step by step.
+
+### Vanilla RNN
+
+Vanishing gradient limits long sequences.
+
+### Key Ideas
+
+- batch_first=True for intuitive dimensions
+- out contains all hidden states
+- h_n is final hidden state
+- Vanilla RNN rarely used — LSTM/GRU preferred
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -263,12 +442,35 @@ print(out.shape, h_n.shape)`,
             `out contains all hidden states`,
             `h_n is final hidden state`,
             `Vanilla RNN rarely used — LSTM/GRU preferred`
+          ],
+          diagram: `Vanilla RNN
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `lstm`,
           title: `LSTM`,
-          content: `Long Short-Term Memory: cell state + gates (forget, input, output). Solves vanishing gradient for longer sequences.`,
+          content: `### Introduction
+
+Long Short-Term Memory: cell state + gates (forget, input, output). Solves vanishing gradient for longer sequences.
+
+### LSTM
+
+### Key Ideas
+
+- Cell state carries long-term memory
+- Gates control information flow
+- num_layers stacks LSTM layers
+- dropout between LSTM layers when num_layers > 1
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch
 import torch.nn as nn
 
@@ -282,23 +484,63 @@ print(out.shape)`,
             `Gates control information flow`,
             `num_layers stacks LSTM layers`,
             `dropout between LSTM layers when num_layers > 1`
+          ],
+          diagram: `LSTM
+Forward → Loss → Backward → Update Weights`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `gru`,
           title: `GRU`,
-          content: `Gated Recurrent Unit: simplified LSTM with 2 gates. Fewer parameters, often comparable performance.`,
+          content: `### Introduction
+
+Gated Recurrent Unit: simplified LSTM with 2 gates. Fewer parameters, often comparable performance.
+
+### GRU
+
+### Key Ideas
+
+- GRU merges cell and hidden state
+- Fewer parameters than LSTM
+- Often preferred when compute limited
+- Try both — dataset dependent performance`,
           keyPoints: [
             `GRU merges cell and hidden state`,
             `Fewer parameters than LSTM`,
             `Often preferred when compute limited`,
             `Try both — dataset dependent performance`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `bidirectional`,
           title: `Bidirectional RNNs`,
-          content: `Process sequence forward and backward. Concatenate outputs. Captures past and future context.`,
+          content: `### Introduction
+
+Process sequence forward and backward. Concatenate outputs. Captures past and future context.
+
+### Bidirectional RNNs
+
+### Key Ideas
+
+- Output dimension doubles with bidirectional
+- Not suitable for autoregressive generation
+- Standard for sequence classification
+- pack_padded_sequence for variable length
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import torch.nn as nn
 
 bilstm = nn.LSTM(10, 16, batch_first=True, bidirectional=True)
@@ -310,6 +552,12 @@ print(out.shape)  # hidden dim doubled`,
             `Not suitable for autoregressive generation`,
             `Standard for sequence classification`,
             `pack_padded_sequence for variable length`
+          ],
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         }
       ],
@@ -377,9 +625,20 @@ print(out.shape)`,
         {
           id: `seq2seq`,
           title: `Encoder-Decoder`,
-          content: `Encoder RNN compresses input to context vector. Decoder RNN generates output sequence.
+          content: `### Introduction
 
-Bottleneck problem with long sequences.`,
+Encoder RNN compresses input to context vector. Decoder RNN generates output sequence.
+
+### Encoder-Decoder
+
+Bottleneck problem with long sequences.
+
+### Key Ideas
+
+- Context vector bottlenecks information
+- Teacher forcing: feed gold previous token during training
+- BLEU score for translation quality
+- Attention solves bottleneck — see next module`,
           pseudoCode: `encoder_hidden = encode(input_sequence)
 FOR each output step t:
     decoder_hidden, output_t = decode(decoder_hidden, encoder_hidden)`,
@@ -388,39 +647,104 @@ FOR each output step t:
             `Teacher forcing: feed gold previous token during training`,
             `BLEU score for translation quality`,
             `Attention solves bottleneck — see next module`
+          ],
+          diagram: `Encoder-Decoder
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         },
         {
           id: `teacher`,
           title: `Teacher Forcing`,
-          content: `During training, feed ground truth previous token as decoder input. At inference, feed model own prediction.`,
+          content: `### Introduction
+
+During training, feed ground truth previous token as decoder input. At inference, feed model own prediction.
+
+### Teacher Forcing
+
+### Key Ideas
+
+- Teacher forcing speeds convergence
+- Exposure bias: train/inference mismatch
+- Scheduled sampling gradually uses model predictions
+- Beam search for better inference decoding`,
           keyPoints: [
             `Teacher forcing speeds convergence`,
             `Exposure bias: train/inference mismatch`,
             `Scheduled sampling gradually uses model predictions`,
             `Beam search for better inference decoding`
+          ],
+          diagram: `Teacher Forcing
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `beam`,
           title: `Beam Search Decoding`,
-          content: `Keep top-k partial sequences at each step. Balance exploration vs greedy decoding. beam_width typically 4-8.`,
+          content: `### Introduction
+
+Keep top-k partial sequences at each step. Balance exploration vs greedy decoding. beam_width typically 4-8.
+
+### Beam Search Decoding
+
+### Key Ideas
+
+- Greedy decoding may miss global optimum
+- Beam search explores multiple hypotheses
+- Larger beam improves quality but slower
+- Length normalization prevents short outputs`,
           keyPoints: [
             `Greedy decoding may miss global optimum`,
             `Beam search explores multiple hypotheses`,
             `Larger beam improves quality but slower`,
             `Length normalization prevents short outputs`
+          ],
+          diagram: `Beam Search Decoding
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         },
         {
           id: `apps`,
           title: `Seq2Seq Applications`,
-          content: `Machine translation, text summarization, chatbots, code generation. Mostly replaced by transformers but conceptually important.`,
+          content: `### Introduction
+
+Machine translation, text summarization, chatbots, code generation. Mostly replaced by transformers but conceptually important.
+
+### Seq2Seq Applications
+
+### Key Ideas
+
+- Transformers dominate seq2seq tasks now
+- Understanding seq2seq helps understand attention
+- Encoder-decoder pattern persists in T5, BART
+- Autoregressive generation core of LLMs`,
           keyPoints: [
             `Transformers dominate seq2seq tasks now`,
             `Understanding seq2seq helps understand attention`,
             `Encoder-decoder pattern persists in T5, BART`,
             `Autoregressive generation core of LLMs`
+          ],
+          diagram: `Seq2Seq Applications
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`
           ]
         }
       ],
@@ -485,7 +809,22 @@ FOR each output step t:
         {
           id: `ner-task`,
           title: `NER Task Definition`,
-          content: `Identify and classify entities: PERSON, ORG, LOC, DATE. BIO tagging: B-PER (begin), I-PER (inside), O (outside).`,
+          content: `### Introduction
+
+Identify and classify entities: PERSON, ORG, LOC, DATE. BIO tagging: B-PER (begin), I-PER (inside), O (outside).
+
+### NER Task Definition
+
+### Key Ideas
+
+- BIO/BIOES tagging schemes standard
+- Token-level classification with sequence context
+- CRF layer enforces valid tag transitions
+- spaCy provides production NER pipelines
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# BIO tags for "John works at Google"
 # John: B-PER, works: O, at: O, Google: B-ORG
 sentence = ["John", "works", "at", "Google"]
@@ -496,41 +835,104 @@ print(list(zip(sentence, tags)))`,
             `Token-level classification with sequence context`,
             `CRF layer enforces valid tag transitions`,
             `spaCy provides production NER pipelines`
+          ],
+          diagram: `NER Task Definition
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `bi-lstm`,
           title: `BiLSTM-CRF`,
-          content: `Classic NER architecture: embeddings → BiLSTM → CRF. CRF learns transition constraints between tags.`,
+          content: `### Introduction
+
+Classic NER architecture: embeddings → BiLSTM → CRF. CRF learns transition constraints between tags.
+
+### BiLSTM-CRF
+
+### Key Ideas
+
+- CRF prevents invalid tag sequences
+- BiLSTM captures context from both directions
+- Superseded by BERT fine-tuning for NER
+- Still useful for low-resource languages`,
           keyPoints: [
             `CRF prevents invalid tag sequences`,
             `BiLSTM captures context from both directions`,
             `Superseded by BERT fine-tuning for NER`,
             `Still useful for low-resource languages`
+          ],
+          diagram: `BiLSTM-CRF
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`
           ]
         },
         {
           id: `bert-ner`,
           title: `BERT for NER`,
-          content: `Fine-tune BERT with token classification head. Align subword tokens to labels.
+          content: `### Introduction
 
-State-of-the-art on CoNLL benchmarks.`,
+Fine-tune BERT with token classification head. Align subword tokens to labels.
+
+### BERT for NER
+
+State-of-the-art on CoNLL benchmarks.
+
+### Key Ideas
+
+- Fine-tune pretrained BERT on labeled NER data
+- Handle subword tokenization alignment
+- HuggingFace token-classification pipeline
+- Few-shot NER with LLM prompting emerging`,
           keyPoints: [
             `Fine-tune pretrained BERT on labeled NER data`,
             `Handle subword tokenization alignment`,
             `HuggingFace token-classification pipeline`,
             `Few-shot NER with LLM prompting emerging`
+          ],
+          diagram: `BERT for NER
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`,
+            `Not moving tensors and model to the same device (CPU vs CUDA)`,
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``
           ]
         },
         {
           id: `applications`,
           title: `NER Applications`,
-          content: `Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).`,
+          content: `### Introduction
+
+Information extraction, knowledge graphs, document understanding, clinical NLP (entity: drug, disease).
+
+### NER Applications
+
+### Key Ideas
+
+- Build knowledge graphs from extracted entities
+- PII detection is privacy-focused NER
+- Clinical NER requires domain-specific models
+- Combine NER with relation extraction`,
           keyPoints: [
             `Build knowledge graphs from extracted entities`,
             `PII detection is privacy-focused NER`,
             `Clinical NER requires domain-specific models`,
             `Combine NER with relation extraction`
+          ],
+          commonMistakes: [
+            `Using softmax outputs with \`BCELoss\` instead of logits with \`BCEWithLogitsLoss\``,
+            `Gradient explosion without clipping or learning-rate tuning`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong input tensor shape (batch, channels, height, width) for Conv2d`
           ]
         }
       ],

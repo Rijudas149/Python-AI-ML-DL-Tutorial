@@ -11,11 +11,26 @@ export const module28Topics: Topic[] = [
         {
           id: `structure`,
           title: `Project Structure`,
-          content: `A strong portfolio project tells a complete story in under two minutes: **problem** (who cares and why), **data** (source, size, limitations), **approach** (EDA → features → model → evaluation), **results** (metrics tied to the problem), and **deployment** (demo link or API).
+          content: `### Introduction
+
+A strong portfolio project tells a complete story in under two minutes: **problem** (who cares and why), **data** (source, size, limitations), **approach** (EDA → features → model → evaluation), **results** (metrics tied to the problem), and **deployment** (demo link or API).
+
+### Project Structure
 
 Make it **reproducible**: pin dependencies in \`requirements.txt\` or \`pyproject.toml\`, add a \`Makefile\` or single \`run.sh\`, and include a Dockerfile if you serve a model. Refactor notebook experiments into importable modules with tests on data loading and preprocessing.
 
-Include an architecture diagram in the README—reviewers skim repos quickly and visuals anchor the narrative.`,
+Include an architecture diagram in the README—reviewers skim repos quickly and visuals anchor the narrative.
+
+### Key Ideas
+
+- README answers what/why/how/results in 2 minutes
+- Makefile or script reproduces end-to-end run
+- Avoid notebook-only without refactored modules
+- Live demo or Streamlit increases impact
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Minimal reproducible project layout
 # my-ml-project/
 #   README.md          # problem, results, how to run
@@ -30,47 +45,112 @@ print(["README", "requirements.txt", "src/", "tests/"])`,
             `Makefile or script reproduces end-to-end run`,
             `Avoid notebook-only without refactored modules`,
             `Live demo or Streamlit increases impact`
+          ],
+          diagram: `Project Structure
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Avoid notebook-only without refactored modules.`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `ideas`,
           title: `Project Ideas by Track`,
-          content: `Tabular: churn prediction with SHAP. CV: custom object detector.
+          content: `### Introduction
+
+Tabular: churn prediction with SHAP. CV: custom object detector.
+
+### Project Ideas by Track
 
 NLP: RAG chatbot on domain docs. DL: fine-tune small LLM with LoRA.
 
-Pick problems you can discuss deeply in interviews—not tutorial clones without twist.`,
+Pick problems you can discuss deeply in interviews—not tutorial clones without twist.
+
+### Key Ideas
+
+- Add unique angle: new dataset or metric
+- Show MLOps: logging, config, CI
+- Document failures and iterations
+- Open datasets with clear license`,
           keyPoints: [
             `Add unique angle: new dataset or metric`,
             `Show MLOps: logging, config, CI`,
             `Document failures and iterations`,
             `Open datasets with clear license`
+          ],
+          diagram: `Project Ideas by Track
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Not normalizing vectors when using dot product as cosine similarity`
           ]
         },
         {
           id: `presentation`,
           title: `Presenting Results`,
-          content: `Lead with business metric movement not only accuracy. Visualize errors—confusion matrix slices, failure cases.
+          content: `### Introduction
 
-Link to blog post walking through decisions. Quantify: "Reduced false negatives 18% at same precision."`,
+Lead with business metric movement not only accuracy. Visualize errors—confusion matrix slices, failure cases.
+
+### Presenting Results
+
+Link to blog post walking through decisions. Quantify: "Reduced false negatives 18% at same precision."
+
+### Key Ideas
+
+- Tailor narrative to audience technical level
+- Before/after comparisons resonate
+- Honest limitations build credibility
+- Short demo video for busy reviewers`,
           keyPoints: [
             `Tailor narrative to audience technical level`,
             `Before/after comparisons resonate`,
             `Honest limitations build credibility`,
             `Short demo video for busy reviewers`
+          ],
+          diagram: `Presenting Results
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `open-source`,
           title: `Contributing to Open Source`,
-          content: `Start with docs fixes, tests, small bugs in libraries you use (sklearn, HF transformers). **Good first issue** labels welcome newcomers.
+          content: `### Introduction
 
-Contributions signal collaboration skills beyond solo Kaggle.`,
+Start with docs fixes, tests, small bugs in libraries you use (sklearn, HF transformers). **Good first issue** labels welcome newcomers.
+
+### Contributing to Open Source
+
+Contributions signal collaboration skills beyond solo Kaggle.
+
+### Key Ideas
+
+- Read CONTRIBUTING.md before PR
+- One focused PR better than giant dump
+- Discuss design in issue before large change
+- Link contributions on resume and LinkedIn`,
           keyPoints: [
             `Read CONTRIBUTING.md before PR`,
             `One focused PR better than giant dump`,
             `Discuss design in issue before large change`,
             `Link contributions on resume and LinkedIn`
+          ],
+          diagram: `Contributing to Open Source
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`
           ]
         }
       ],
@@ -138,53 +218,129 @@ print(name, version)`,
         {
           id: `workflow`,
           title: `Competition Workflow`,
-          content: `Read data description thoroughly. EDA notebook → baseline submission → feature engineering → model ensemble.
+          content: `### Introduction
 
-**Public LB** can overfit—trust local CV. Discussion forum gold for domain tips; verify leaks independently.`,
+Read data description thoroughly. EDA notebook → baseline submission → feature engineering → model ensemble.
+
+### Competition Workflow
+
+**Public LB** can overfit—trust local CV. Discussion forum gold for domain tips; verify leaks independently.
+
+### Key Ideas
+
+- Replicate baseline before complex models
+- Local CV strategy mirrors test if possible
+- Time-box EDA before endless plots
+- Submit early to verify format`,
           keyPoints: [
             `Replicate baseline before complex models`,
             `Local CV strategy mirrors test if possible`,
             `Time-box EDA before endless plots`,
             `Submit early to verify format`
+          ],
+          diagram: `Competition Workflow
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `features`,
           title: `Feature Engineering on Kaggle`,
-          content: `Tabular: target encoding with CV to prevent leak, interactions, aggregations by group. Text: TF-IDF, transformers.
+          content: `### Introduction
 
-Image: augmentations, pseudo-labeling. **Leakage** from future information top killer of trust in CV score.`,
+Tabular: target encoding with CV to prevent leak, interactions, aggregations by group. Text: TF-IDF, transformers.
+
+### Feature Engineering on Kaggle
+
+Image: augmentations, pseudo-labeling. **Leakage** from future information top killer of trust in CV score.
+
+### Key Ideas
+
+- GroupKFold when groups in data
+- Target encode with inner CV folds
+- External data check competition rules
+- Adversarial validation detect train/test shift`,
           keyPoints: [
             `GroupKFold when groups in data`,
             `Target encode with inner CV folds`,
             `External data check competition rules`,
             `Adversarial validation detect train/test shift`
+          ],
+          diagram: `Feature Engineering on Kaggle
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
           ]
         },
         {
           id: `ensemble`,
           title: `Ensembling & Stacking`,
-          content: `Blend diverse models: GBDT + neural net + linear. **Stacking** meta-learner on out-of-fold preds.
+          content: `### Introduction
 
-Rank averaging for robustness. Diminishing returns after 4-5 uncorrelated strong models—know when to stop.`,
+Blend diverse models: GBDT + neural net + linear. **Stacking** meta-learner on out-of-fold preds.
+
+### Ensembling & Stacking
+
+Rank averaging for robustness. Diminishing returns after 4-5 uncorrelated strong models—know when to stop.
+
+### Key Ideas
+
+- Diversity beats ten similar GBDTs
+- OOF predictions prevent stack leakage
+- Weighted average by CV score simple baseline
+- Seed averaging stabilizes neural submissions`,
           keyPoints: [
             `Diversity beats ten similar GBDTs`,
             `OOF predictions prevent stack leakage`,
             `Weighted average by CV score simple baseline`,
             `Seed averaging stabilizes neural submissions`
+          ],
+          diagram: `Ensembling & Stacking
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Using polynomial degree too high without regularization`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `mindset`,
           title: `Learning Mindset`,
-          content: `Top placements optional—learning transferable. Study winning solutions post-competition.
+          content: `### Introduction
 
-Reimplement core trick in clean repo. Team up to split EDA and modeling; communicate daily during crunch.`,
+Top placements optional—learning transferable. Study winning solutions post-competition.
+
+### Learning Mindset
+
+Reimplement core trick in clean repo. Team up to split EDA and modeling; communicate daily during crunch.
+
+### Key Ideas
+
+- Post-mortem writeups solidify learning
+- Do not burn out on leaderboard chasing
+- Reusable code > one-off notebook
+- Networking in competitions opens jobs`,
           keyPoints: [
             `Post-mortem writeups solidify learning`,
             `Do not burn out on leaderboard chasing`,
             `Reusable code > one-off notebook`,
             `Networking in competitions opens jobs`
+          ],
+          diagram: `Learning Mindset
+Load → Profile → Visualize → Hypothesis → Transform`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Do not burn out on leaderboard chasing.`
           ]
         }
       ],
@@ -257,22 +413,56 @@ print([round(x, 2) for x in blend])`,
         {
           id: `ml-fundamentals`,
           title: `ML Concept Questions`,
-          content: `Expect bias-variance, regularization, gradient descent variants, evaluation metrics, precision-recall tradeoff, ROC vs PR curves. Derive logistic loss intuitively.
+          content: `### Introduction
 
-**Whiteboard**: explain random forest, backprop sketch, transformer attention O(n²).`,
+Expect bias-variance, regularization, gradient descent variants, evaluation metrics, precision-recall tradeoff, ROC vs PR curves. Derive logistic loss intuitively.
+
+### ML Concept Questions
+
+**Whiteboard**: explain random forest, backprop sketch, transformer attention O(n²).
+
+### Key Ideas
+
+- Explain simply then add nuance if prompted
+- Connect formulas to use cases
+- Know when linear models beat deep learning
+- Practice explaining projects in 3 minutes`,
           keyPoints: [
             `Explain simply then add nuance if prompted`,
             `Connect formulas to use cases`,
             `Know when linear models beat deep learning`,
             `Practice explaining projects in 3 minutes`
+          ],
+          diagram: `ML Concept Questions
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not stratifying splits for classification tasks`,
+            `Wrong sequence length after tokenization — truncating critical context`
           ]
         },
         {
           id: `coding`,
           title: `ML Coding Interviews`,
-          content: `Implement k-means, softmax, batch norm forward pass, BFS. pandas/sklearn snippets: groupby, merge, train_test_split with stratify.
+          content: `### Introduction
 
-LeetCode medium arrays/strings still common for MLE roles at big tech.`,
+Implement k-means, softmax, batch norm forward pass, BFS. pandas/sklearn snippets: groupby, merge, train_test_split with stratify.
+
+### ML Coding Interviews
+
+LeetCode medium arrays/strings still common for MLE roles at big tech.
+
+### Key Ideas
+
+- Numerically stable softmax subtracts max
+- Clarify input sizes and edge cases aloud
+- Vectorized numpy over loops when possible
+- Test with small example before optimizing
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def softmax(x):
     import numpy as np
     e = np.exp(x - np.max(x))
@@ -284,32 +474,78 @@ print(round(softmax([1.0,2.0])[1], 3))`,
             `Clarify input sizes and edge cases aloud`,
             `Vectorized numpy over loops when possible`,
             `Test with small example before optimizing`
+          ],
+          diagram: `ML Coding Interviews
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Running K-Means without scaling — features with large ranges dominate`,
+            `Broadcasting mistakes when array shapes do not align`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `system-design`,
           title: `ML System Design`,
-          content: `Design recommendation feed, fraud detection, search ranking. Cover data, features, model, serving, monitoring, A/B test, failure modes.
+          content: `### Introduction
 
-Scale: batch vs online features, approximate NN retrieval, cache hot predictions.`,
+Design recommendation feed, fraud detection, search ranking. Cover data, features, model, serving, monitoring, A/B test, failure modes.
+
+### ML System Design
+
+Scale: batch vs online features, approximate NN retrieval, cache hot predictions.
+
+### Key Ideas
+
+- Start from requirements and SLAs
+- Draw data flow diagram
+- Discuss label delay and feedback loops
+- Mention fairness and privacy proactively`,
           keyPoints: [
             `Start from requirements and SLAs`,
             `Draw data flow diagram`,
             `Discuss label delay and feedback loops`,
             `Mention fairness and privacy proactively`
+          ],
+          diagram: `ML System Design
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Not normalizing vectors when using dot product as cosine similarity`
           ]
         },
         {
           id: `behavioral`,
           title: `Behavioral & STAR`,
-          content: `**STAR** (Situation, Task, Action, Result) for conflict, failure, leadership stories. Prepare "tell me about a project" with metrics.
+          content: `### Introduction
 
-Ask interviewers about team ML maturity, deployment frequency, research vs product balance.`,
+**STAR** (Situation, Task, Action, Result) for conflict, failure, leadership stories. Prepare "tell me about a project" with metrics.
+
+### Behavioral & STAR
+
+Ask interviewers about team ML maturity, deployment frequency, research vs product balance.
+
+### Key Ideas
+
+- Quantify impact in STAR results
+- Failure stories show growth
+- Prepare thoughtful questions for them
+- Mock interviews reduce anxiety`,
           keyPoints: [
             `Quantify impact in STAR results`,
             `Failure stories show growth`,
             `Prepare thoughtful questions for them`,
             `Mock interviews reduce anxiety`
+          ],
+          diagram: `Behavioral & STAR
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -379,53 +615,129 @@ print(sorted(y_tr), sorted(y_te))`,
         {
           id: `reading`,
           title: `How to Read a Paper`,
-          content: `First pass: title, abstract, figures, conclusion. Second: intro, method skim, experiments.
+          content: `### Introduction
 
-Third: full math and related work. **Annotate** assumptions and simplifications—what breaks in production?`,
+First pass: title, abstract, figures, conclusion. Second: intro, method skim, experiments.
+
+### How to Read a Paper
+
+Third: full math and related work. **Annotate** assumptions and simplifications—what breaks in production?
+
+### Key Ideas
+
+- Abstract claims vs evidence in experiments
+- Compare to prior SOTA tables fairly
+- Check dataset size and compute budget
+- Supplementary often has critical details`,
           keyPoints: [
             `Abstract claims vs evidence in experiments`,
             `Compare to prior SOTA tables fairly`,
             `Check dataset size and compute budget`,
             `Supplementary often has critical details`
+          ],
+          diagram: `How to Read a Paper
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `venues`,
           title: `Venues & Preprints`,
-          content: `**NeurIPS, ICML, ICLR, CVPR, ACL** peer-reviewed. **arXiv** preprints unreviewed—verify before citing as fact.
+          content: `### Introduction
 
-**Papers With Code** links implementations and leaderboards.`,
+**NeurIPS, ICML, ICLR, CVPR, ACL** peer-reviewed. **arXiv** preprints unreviewed—verify before citing as fact.
+
+### Venues & Preprints
+
+**Papers With Code** links implementations and leaderboards.
+
+### Key Ideas
+
+- Peer review not perfect but filters noise
+- arXiv version may update—note date
+- Benchmark cherry-picking common—read fine print
+- Twitter hype ≠ validated result`,
           keyPoints: [
             `Peer review not perfect but filters noise`,
             `arXiv version may update—note date`,
             `Benchmark cherry-picking common—read fine print`,
             `Twitter hype ≠ validated result`
+          ],
+          diagram: `Venues & Preprints
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `reproduce`,
           title: `Reproducing Results`,
-          content: `Start from official repo if exists; pin commits and seeds. Match hardware expectations—some papers need 8×GPU.
+          content: `### Introduction
 
-**Minimal reproduction**: core algorithm on subset before full scale.`,
+Start from official repo if exists; pin commits and seeds. Match hardware expectations—some papers need 8×GPU.
+
+### Reproducing Results
+
+**Minimal reproduction**: core algorithm on subset before full scale.
+
+### Key Ideas
+
+- Hidden hyperparameters in appendix or code
+- Data preprocessing must match exactly
+- Report what you could not reproduce
+- Contact authors politely for missing details`,
           keyPoints: [
             `Hidden hyperparameters in appendix or code`,
             `Data preprocessing must match exactly`,
             `Report what you could not reproduce`,
             `Contact authors politely for missing details`
+          ],
+          diagram: `Reproducing Results
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `contribute`,
           title: `From Reading to Contributing`,
-          content: `Identify extension: new dataset, ablation, efficiency improvement. Write reproducible experiment script; open source with clear README.
+          content: `### Introduction
 
-Workshop and short papers valid first publication paths.`,
+Identify extension: new dataset, ablation, efficiency improvement. Write reproducible experiment script; open source with clear README.
+
+### From Reading to Contributing
+
+Workshop and short papers valid first publication paths.
+
+### Key Ideas
+
+- Negative results valuable if well executed
+- Collaborate via Twitter/Discord research groups
+- Lit review before starting saves months
+- Ethics review for human subjects data`,
           keyPoints: [
             `Negative results valuable if well executed`,
             `Collaborate via Twitter/Discord research groups`,
             `Lit review before starting saves months`,
             `Ethics review for human subjects data`
+          ],
+          diagram: `From Reading to Contributing
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -493,53 +805,127 @@ print("code" in links)`,
         {
           id: `roles`,
           title: `Role Definitions`,
-          content: `**Data Scientist**: analysis, experimentation, stakeholder communication. **MLE**: production models, pipelines, serving.
+          content: `### Introduction
 
-**Research Scientist**: novel methods, publications, long horizons. Titles vary—read job descriptions not only labels.`,
+**Data Scientist**: analysis, experimentation, stakeholder communication. **MLE**: production models, pipelines, serving.
+
+### Role Definitions
+
+**Research Scientist**: novel methods, publications, long horizons. Titles vary—read job descriptions not only labels.
+
+### Key Ideas
+
+- DS leans stats and product analytics
+- MLE leans software and systems
+- Research needs strong math and paper track
+- Hybrid roles common at startups`,
           keyPoints: [
             `DS leans stats and product analytics`,
             `MLE leans software and systems`,
             `Research needs strong math and paper track`,
             `Hybrid roles common at startups`
+          ],
+          diagram: `Role Definitions
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `skills`,
           title: `Skill Progression`,
-          content: `Foundation: Python, SQL, ML basics. Mid: deep learning, cloud, experiment tracking.
+          content: `### Introduction
 
-Senior: system design, mentoring, cross-team influence. **T-shaped**: deep in one area (NLP), broad awareness elsewhere.`,
+Foundation: Python, SQL, ML basics. Mid: deep learning, cloud, experiment tracking.
+
+### Skill Progression
+
+Senior: system design, mentoring, cross-team influence. **T-shaped**: deep in one area (NLP), broad awareness elsewhere.
+
+### Key Ideas
+
+- Communication as important as coding
+- Business context distinguishes senior ICs
+- Specialize after solid general base
+- Continuous learning non-optional in AI`,
           keyPoints: [
             `Communication as important as coding`,
             `Business context distinguishes senior ICs`,
             `Specialize after solid general base`,
             `Continuous learning non-optional in AI`
+          ],
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `job-search`,
           title: `Job Search Tactics`,
-          content: `Tailor resume bullets to metrics. LinkedIn + referrals strongest channel.
+          content: `### Introduction
 
-Portfolio and GitHub linked prominently. Prepare 30-second pitch and 2-minute project deep dive.`,
+Tailor resume bullets to metrics. LinkedIn + referrals strongest channel.
+
+### Job Search Tactics
+
+Portfolio and GitHub linked prominently. Prepare 30-second pitch and 2-minute project deep dive.
+
+### Key Ideas
+
+- Referrals bypass resume filters
+- Apply to teams not only companies
+- Negotiate total comp not only salary
+- Rejections normal—iterate resume`,
           keyPoints: [
             `Referrals bypass resume filters`,
             `Apply to teams not only companies`,
             `Negotiate total comp not only salary`,
             `Rejections normal—iterate resume`
+          ],
+          diagram: `Job Search Tactics
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `growth`,
           title: `Long-Term Growth`,
-          content: `Staff/principal paths: technical leadership without people management optional. Manager track: team delivery and hiring.
+          content: `### Introduction
 
-Contribute to standards, RFCs, internal platforms—impact multiplier.`,
+Staff/principal paths: technical leadership without people management optional. Manager track: team delivery and hiring.
+
+### Long-Term Growth
+
+Contribute to standards, RFCs, internal platforms—impact multiplier.
+
+### Key Ideas
+
+- Document and teach to scale influence
+- Balance depth with organizational awareness
+- Ethics and responsible AI increasingly valued
+- Mentorship accelerates junior careers`,
           keyPoints: [
             `Document and teach to scale influence`,
             `Balance depth with organizational awareness`,
             `Ethics and responsible AI increasingly valued`,
             `Mentorship accelerates junior careers`
+          ],
+          diagram: `Long-Term Growth
+Noise → Generator → Fake Sample → Discriminator → Loss`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         }
       ],

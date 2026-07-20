@@ -11,9 +11,24 @@ export const module27Topics: Topic[] = [
         {
           id: `embeddings`,
           title: `Text Embeddings`,
-          content: `Models map text to dense vectors preserving semantic similarity. **OpenAI text-embedding-3**, **sentence-transformers** (all-MiniLM-L6-v2) popular.
+          content: `### Introduction
 
-Cosine similarity standard; normalize vectors for dot product equivalence.`,
+Models map text to dense vectors preserving semantic similarity. **OpenAI text-embedding-3**, **sentence-transformers** (all-MiniLM-L6-v2) popular.
+
+### Text Embeddings
+
+Cosine similarity standard; normalize vectors for dot product equivalence.
+
+### Key Ideas
+
+- Normalize embeddings for cosine via dot product
+- Domain-specific embedding models improve retrieval
+- Dimensionality affects storage and speed
+- Batch encode for throughput
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `import numpy as np
 a = np.array([1.0, 0.0]); b = np.array([0.9, 0.1])
 a /= np.linalg.norm(a); b /= np.linalg.norm(b)
@@ -24,45 +39,110 @@ print(round(float(a@b), 2))`,
             `Domain-specific embedding models improve retrieval`,
             `Dimensionality affects storage and speed`,
             `Batch encode for throughput`
+          ],
+          diagram: `Text Embeddings
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `faiss`,
           title: `FAISS & ANN Search`,
-          content: `**FAISS** (Facebook) builds IVF, HNSW, PQ indexes for billion-scale search. Trade recall vs latency via nprobe, efSearch parameters.
+          content: `### Introduction
 
-**Chroma**, **Pinecone**, **Weaviate** managed vector DBs add metadata filtering and persistence.`,
+**FAISS** (Facebook) builds IVF, HNSW, PQ indexes for billion-scale search. Trade recall vs latency via nprobe, efSearch parameters.
+
+### FAISS & ANN Search
+
+**Chroma**, **Pinecone**, **Weaviate** managed vector DBs add metadata filtering and persistence.
+
+### Key Ideas
+
+- HNSW good default for many workloads
+- Product quantization compresses vectors
+- Metadata filters pre-filter before ANN
+- Rebuild index when embedding model changes`,
           keyPoints: [
             `HNSW good default for many workloads`,
             `Product quantization compresses vectors`,
             `Metadata filters pre-filter before ANN`,
             `Rebuild index when embedding model changes`
+          ],
+          diagram: `FAISS & ANN Search
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `hybrid`,
           title: `Hybrid Search`,
-          content: `Combine **BM25** keyword with dense retrieval—handles exact token matches (SKUs, error codes) plus semantic paraphrase.
+          content: `### Introduction
 
-Reciprocal rank fusion merges ranked lists from multiple retrievers.`,
+Combine **BM25** keyword with dense retrieval—handles exact token matches (SKUs, error codes) plus semantic paraphrase.
+
+### Hybrid Search
+
+Reciprocal rank fusion merges ranked lists from multiple retrievers.
+
+### Key Ideas
+
+- Hybrid reduces failure modes of either alone
+- RRF simple robust fusion without tuning
+- Learned sparse retrieval (SPLADE) middle ground
+- Query expansion improves recall`,
           keyPoints: [
             `Hybrid reduces failure modes of either alone`,
             `RRF simple robust fusion without tuning`,
             `Learned sparse retrieval (SPLADE) middle ground`,
             `Query expansion improves recall`
+          ],
+          diagram: `Hybrid Search
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `RRF simple robust fusion without tuning.`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `ops`,
           title: `Operational Concerns`,
-          content: `Chunk documents, embed, upsert with metadata (source, date). Monitor query latency p95, recall@k on eval set, index size growth.
+          content: `### Introduction
 
-Version embedding model in index metadata for migrations.`,
+Chunk documents, embed, upsert with metadata (source, date). Monitor query latency p95, recall@k on eval set, index size growth.
+
+### Operational Concerns
+
+Version embedding model in index metadata for migrations.
+
+### Key Ideas
+
+- Chunk size 256-512 tokens typical starting point
+- Stale index when source docs update
+- Access control on metadata fields
+- Cost scales with dimensions × vectors`,
           keyPoints: [
             `Chunk size 256-512 tokens typical starting point`,
             `Stale index when source docs update`,
             `Access control on metadata fields`,
             `Cost scales with dimensions × vectors`
+          ],
+          diagram: `Operational Concerns
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -133,53 +213,129 @@ print(len(chunks))`,
         {
           id: `clip`,
           title: `CLIP Architecture`,
-          content: `Contrastive pretraining on (image, text) pairs from web. Image encoder (ViT/ResNet) and text encoder (Transformer) map to shared space; maximize cosine of matching pairs vs negatives in batch.
+          content: `### Introduction
 
-Zero-shot classification: embed class text prompts and image; pick highest similarity.`,
+Contrastive pretraining on (image, text) pairs from web. Image encoder (ViT/ResNet) and text encoder (Transformer) map to shared space; maximize cosine of matching pairs vs negatives in batch.
+
+### CLIP Architecture
+
+Zero-shot classification: embed class text prompts and image; pick highest similarity.
+
+### Key Ideas
+
+- Contrastive learning on large noisy web data
+- Prompt engineering affects zero-shot accuracy
+- ViT variants scale with compute
+- OpenCLIP reproduces with open data`,
           keyPoints: [
             `Contrastive learning on large noisy web data`,
             `Prompt engineering affects zero-shot accuracy`,
             `ViT variants scale with compute`,
             `OpenCLIP reproduces with open data`
+          ],
+          diagram: `CLIP Architecture
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`
           ]
         },
         {
           id: `vlm`,
           title: `Vision-Language Models`,
-          content: `**LLaVA**, **GPT-4V**, **Gemini** fuse visual tokens with language model for captioning, VQA, document understanding.
+          content: `### Introduction
 
-Project image patches through adapter into LLM token stream.`,
+**LLaVA**, **GPT-4V**, **Gemini** fuse visual tokens with language model for captioning, VQA, document understanding.
+
+### Vision-Language Models
+
+Project image patches through adapter into LLM token stream.
+
+### Key Ideas
+
+- Visual tokens increase context length cost
+- OCR and chart reasoning common enterprise uses
+- Hallucination on fine visual details persists
+- Resolution limits affect small text reading`,
           keyPoints: [
             `Visual tokens increase context length cost`,
             `OCR and chart reasoning common enterprise uses`,
             `Hallucination on fine visual details persists`,
             `Resolution limits affect small text reading`
+          ],
+          diagram: `Vision-Language Models
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `tasks`,
           title: `Downstream Tasks`,
-          content: `Image captioning, visual QA, grounding (point to object), document AI (invoices, forms). **Segment anything (SAM)** pairs with language for open-vocabulary segmentation.
+          content: `### Introduction
 
-Multimodal RAG embeds images and text jointly in knowledge bases.`,
+Image captioning, visual QA, grounding (point to object), document AI (invoices, forms). **Segment anything (SAM)** pairs with language for open-vocabulary segmentation.
+
+### Downstream Tasks
+
+Multimodal RAG embeds images and text jointly in knowledge bases.
+
+### Key Ideas
+
+- Grounding links words to bounding boxes
+- Doc AI needs layout-aware encoders (LayoutLM)
+- Multimodal RAG stores image+text chunks
+- Evaluate task-specific not only caption BLEU`,
           keyPoints: [
             `Grounding links words to bounding boxes`,
             `Doc AI needs layout-aware encoders (LayoutLM)`,
             `Multimodal RAG stores image+text chunks`,
             `Evaluate task-specific not only caption BLEU`
+          ],
+          diagram: `Downstream Tasks
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `limits`,
           title: `Limitations & Bias`,
-          content: `Training data biases affect demographic descriptions. Adversarial patches fool classifiers.
+          content: `### Introduction
 
-Synthetic image detection arms race. Accessibility: alt-text generation must be verified before publishing.`,
+Training data biases affect demographic descriptions. Adversarial patches fool classifiers.
+
+### Limitations & Bias
+
+Synthetic image detection arms race. Accessibility: alt-text generation must be verified before publishing.
+
+### Key Ideas
+
+- Audit gender/race bias in captions
+- Adversarial robustness weak vs imperceptible noise
+- Watermark detectors imperfect
+- Human review for high-stakes descriptions`,
           keyPoints: [
             `Audit gender/race bias in captions`,
             `Adversarial robustness weak vs imperceptible noise`,
             `Watermark detectors imperfect`,
             `Human review for high-stakes descriptions`
+          ],
+          diagram: `Limitations & Bias
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Not stratifying splits for classification tasks`
           ]
         }
       ],
@@ -250,53 +406,129 @@ print(labels[int(sims.argmax())])`,
         {
           id: `whisper`,
           title: `Whisper ASR`,
-          content: `OpenAI **Whisper** encoder-decoder Transformer trained on weakly supervised multilingual audio. Transcribes and translates; robust accents and noise.
+          content: `### Introduction
 
-Use \`whisper\` or \`faster-whisper\` for local inference; segment long audio.`,
+OpenAI **Whisper** encoder-decoder Transformer trained on weakly supervised multilingual audio. Transcribes and translates; robust accents and noise.
+
+### Whisper ASR
+
+Use \`whisper\` or \`faster-whisper\` for local inference; segment long audio.
+
+### Key Ideas
+
+- Multilingual 99 languages in large models
+- Word-level timestamps in some implementations
+- Hallucinations on silence or noise-only segments
+- VRAM scales with model size (tiny to large)`,
           keyPoints: [
             `Multilingual 99 languages in large models`,
             `Word-level timestamps in some implementations`,
             `Hallucinations on silence or noise-only segments`,
             `VRAM scales with model size (tiny to large)`
+          ],
+          diagram: `Whisper ASR
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `tts`,
           title: `Text-to-Speech Overview`,
-          content: `Pipeline: text normalization → acoustic model → vocoder (WaveNet, HiFi-GAN). **Neural TTS** (Tacotron, VITS) end-to-end variants.
+          content: `### Introduction
 
-**Voice cloning** requires consent and deepfake safeguards.`,
+Pipeline: text normalization → acoustic model → vocoder (WaveNet, HiFi-GAN). **Neural TTS** (Tacotron, VITS) end-to-end variants.
+
+### Text-to-Speech Overview
+
+**Voice cloning** requires consent and deepfake safeguards.
+
+### Key Ideas
+
+- Prosody control via SSML or reference audio
+- Real-time TTS needs streaming architectures
+- Speaker embedding conditions multi-speaker models
+- Evaluate MOS and intelligibility (WER round-trip)`,
           keyPoints: [
             `Prosody control via SSML or reference audio`,
             `Real-time TTS needs streaming architectures`,
             `Speaker embedding conditions multi-speaker models`,
             `Evaluate MOS and intelligibility (WER round-trip)`
+          ],
+          diagram: `Text-to-Speech Overview
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Training generator and discriminator without balancing capacity — one dominates`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `audio-llm`,
           title: `Audio + LLM Integration`,
-          content: `Speech-to-text feeds LLM; LLM response to TTS for voice assistants. **Audio tokens** in unified multimodal models (GPT-4o audio).
+          content: `### Introduction
 
-Latency budget: ASR + LLM + TTS sequential pipeline optimization.`,
+Speech-to-text feeds LLM; LLM response to TTS for voice assistants. **Audio tokens** in unified multimodal models (GPT-4o audio).
+
+### Audio + LLM Integration
+
+Latency budget: ASR + LLM + TTS sequential pipeline optimization.
+
+### Key Ideas
+
+- End-to-end speech LLMs reduce cascade errors
+- Partial ASR streaming lowers time-to-first-token
+- Barge-in handling needs voice activity detection
+- Privacy: on-device ASR for sensitive domains`,
           keyPoints: [
             `End-to-end speech LLMs reduce cascade errors`,
             `Partial ASR streaming lowers time-to-first-token`,
             `Barge-in handling needs voice activity detection`,
             `Privacy: on-device ASR for sensitive domains`
+          ],
+          diagram: `Audio + LLM Integration
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         },
         {
           id: `deploy-speech`,
           title: `Deployment Considerations`,
-          content: `16kHz mono common input; noise suppression preprocessing. GPU for batch; CPU quantized models for edge.
+          content: `### Introduction
 
-Compliance: call recording consent, biometric voice data regulations.`,
+16kHz mono common input; noise suppression preprocessing. GPU for batch; CPU quantized models for edge.
+
+### Deployment Considerations
+
+Compliance: call recording consent, biometric voice data regulations.
+
+### Key Ideas
+
+- VAD reduces wasted ASR compute
+- Quantization INT8 for mobile TTS
+- Log retention policies for transcripts
+- Accent fairness evaluation across demographics`,
           keyPoints: [
             `VAD reduces wasted ASR compute`,
             `Quantization INT8 for mobile TTS`,
             `Log retention policies for transcripts`,
             `Accent fairness evaluation across demographics`
+          ],
+          diagram: `Deployment Considerations
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`
           ]
         }
       ],
@@ -364,22 +596,54 @@ print(errors / words)`,
         {
           id: `mmlu`,
           title: `MMLU & Knowledge Benchmarks`,
-          content: `**MMLU** (Massive Multitask Language Understanding) multiple-choice across 57 subjects tests breadth. **GPQA**, **ARC** science reasoning.
+          content: `### Introduction
 
-Leaderboard chasing risks overfitting benchmarks—hold out private eval sets.`,
+**MMLU** (Massive Multitask Language Understanding) multiple-choice across 57 subjects tests breadth. **GPQA**, **ARC** science reasoning.
+
+### MMLU & Knowledge Benchmarks
+
+Leaderboard chasing risks overfitting benchmarks—hold out private eval sets.
+
+### Key Ideas
+
+- Multiple-choice format simplifies scoring
+- Contamination when benchmark in training data
+- Chain-of-thought improves reasoning scores
+- Domain-specific evals matter for products`,
           keyPoints: [
             `Multiple-choice format simplifies scoring`,
             `Contamination when benchmark in training data`,
             `Chain-of-thought improves reasoning scores`,
             `Domain-specific evals matter for products`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `humaneval`,
           title: `HumanEval & Code Benchmarks`,
-          content: `**HumanEval** functional correctness on Python programming problems. **MBPP**, **SWE-bench** (real GitHub issues) harder.
+          content: `### Introduction
 
-Pass@k metric: any of k samples passes tests.`,
+**HumanEval** functional correctness on Python programming problems. **MBPP**, **SWE-bench** (real GitHub issues) harder.
+
+### HumanEval & Code Benchmarks
+
+Pass@k metric: any of k samples passes tests.
+
+### Key Ideas
+
+- Pass@k increases with more samples
+- Unit tests must cover edge cases
+- SWE-bench tests full repo context
+- Code execution sandbox security essential
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `def pass_at_k(n, c, k):
     # n problems, c correct, k samples — simplified
     return 1.0 if c > 0 else 0.0
@@ -390,32 +654,74 @@ print(pass_at_k(1, 1, 5))`,
             `Unit tests must cover edge cases`,
             `SWE-bench tests full repo context`,
             `Code execution sandbox security essential`
+          ],
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `red-team`,
           title: `Red Teaming LLMs`,
-          content: `Adversarial prompts elicit harmful, biased, or policy-violating outputs. **Jailbreaks** override system instructions via roleplay or encoding tricks.
+          content: `### Introduction
 
-Automated red teaming with attacker LLMs scales coverage; human red team for subtle failures.`,
+Adversarial prompts elicit harmful, biased, or policy-violating outputs. **Jailbreaks** override system instructions via roleplay or encoding tricks.
+
+### Red Teaming LLMs
+
+Automated red teaming with attacker LLMs scales coverage; human red team for subtle failures.
+
+### Key Ideas
+
+- Prompt injection in RAG poisons context
+- Unicode homoglyph attacks bypass filters
+- Continuous red teaming as models update
+- Document findings in model cards`,
           keyPoints: [
             `Prompt injection in RAG poisons context`,
             `Unicode homoglyph attacks bypass filters`,
             `Continuous red teaming as models update`,
             `Document findings in model cards`
+          ],
+          diagram: `Red Teaming LLMs
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `eval-practice`,
           title: `Evaluation Best Practices`,
-          content: `Combine automatic metrics with human eval. Track regression suites in CI for model updates.
+          content: `### Introduction
 
-Slice by language, domain, difficulty. **LLM-as-judge** correlates with humans but biased toward verbose outputs.`,
+Combine automatic metrics with human eval. Track regression suites in CI for model updates.
+
+### Evaluation Best Practices
+
+Slice by language, domain, difficulty. **LLM-as-judge** correlates with humans but biased toward verbose outputs.
+
+### Key Ideas
+
+- Golden set regression on every model release
+- Statistical significance on metric deltas
+- Calibration eval for classification outputs
+- Cost/latency metrics alongside quality`,
           keyPoints: [
             `Golden set regression on every model release`,
             `Statistical significance on metric deltas`,
             `Calibration eval for classification outputs`,
             `Cost/latency metrics alongside quality`
+          ],
+          commonMistakes: [
+            `Using polynomial degree too high without regularization`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -483,53 +789,127 @@ print(correct / total)`,
         {
           id: `alignment`,
           title: `Alignment Overview`,
-          content: `**RLHF** and **DPO** align models with human preferences—helpful, honest, harmless. **Constitutional AI** self-critiques against principles.
+          content: `### Introduction
 
-Alignment reduces but does not eliminate all failure modes.`,
+**RLHF** and **DPO** align models with human preferences—helpful, honest, harmless. **Constitutional AI** self-critiques against principles.
+
+### Alignment Overview
+
+Alignment reduces but does not eliminate all failure modes.
+
+### Key Ideas
+
+- Reward hacking when proxy rewards misaligned
+- DPO simpler pipeline than full RLHF
+- Constitutional principles need domain tailoring
+- Superhuman models may be hard to align`,
           keyPoints: [
             `Reward hacking when proxy rewards misaligned`,
             `DPO simpler pipeline than full RLHF`,
             `Constitutional principles need domain tailoring`,
             `Superhuman models may be hard to align`
+          ],
+          diagram: `Alignment Overview
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `jailbreaks`,
           title: `Jailbreaks & Prompt Injection`,
-          content: `Attacks: DAN prompts, base64 encoding, multi-turn gradual escalation, indirect injection via retrieved documents.
+          content: `### Introduction
 
-Defenses: input/output filters, Llama Guard classifiers, structured prompts isolating user content.`,
+Attacks: DAN prompts, base64 encoding, multi-turn gradual escalation, indirect injection via retrieved documents.
+
+### Jailbreaks & Prompt Injection
+
+Defenses: input/output filters, Llama Guard classifiers, structured prompts isolating user content.
+
+### Key Ideas
+
+- Defense in depth—no single filter sufficient
+- Sanitize retrieved RAG documents
+- Monitor for repeated policy violations
+- Adversarial training on attack corpus`,
           keyPoints: [
             `Defense in depth—no single filter sufficient`,
             `Sanitize retrieved RAG documents`,
             `Monitor for repeated policy violations`,
             `Adversarial training on attack corpus`
+          ],
+          diagram: `Jailbreaks & Prompt Injection
+Image → Conv → ReLU → Pool → Flatten → Dense → Class`,
+          commonMistakes: [
+            `Not stratifying splits for classification tasks`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `guardrails`,
           title: `Guardrails & Moderation APIs`,
-          content: `OpenAI Moderation, NeMo Guardrails, Azure Content Safety classify toxicity, violence, PII. **Allow/block lists** for enterprise policies.
+          content: `### Introduction
 
-Log moderation decisions for audit; appeal process for false positives.`,
+OpenAI Moderation, NeMo Guardrails, Azure Content Safety classify toxicity, violence, PII. **Allow/block lists** for enterprise policies.
+
+### Guardrails & Moderation APIs
+
+Log moderation decisions for audit; appeal process for false positives.
+
+### Key Ideas
+
+- Tune thresholds per product risk appetite
+- PII detection before logging conversations
+- Human escalation for edge cases
+- Multilingual moderation harder than English`,
           keyPoints: [
             `Tune thresholds per product risk appetite`,
             `PII detection before logging conversations`,
             `Human escalation for edge cases`,
             `Multilingual moderation harder than English`
+          ],
+          commonMistakes: [
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         },
         {
           id: `governance`,
           title: `Safety Governance`,
-          content: `Pre-deployment risk assessment, incident response playbooks, bug bounty for safety issues. **EU AI Act** high-risk requirements.
+          content: `### Introduction
 
-Transparency: system cards document limitations and intended use boundaries.`,
+Pre-deployment risk assessment, incident response playbooks, bug bounty for safety issues. **EU AI Act** high-risk requirements.
+
+### Safety Governance
+
+Transparency: system cards document limitations and intended use boundaries.
+
+### Key Ideas
+
+- Kill switch for production LLM features
+- Version control prompts and model weights
+- Third-party audits for high-risk deployments
+- User education on AI limitations`,
           keyPoints: [
             `Kill switch for production LLM features`,
             `Version control prompts and model weights`,
             `Third-party audits for high-risk deployments`,
             `User education on AI limitations`
+          ],
+          diagram: `Safety Governance
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         }
       ],

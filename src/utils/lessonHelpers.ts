@@ -77,7 +77,7 @@ export function buildStudySheet(topic: {
   description: string;
   track: string;
   level: string;
-  sections: Array<{ title: string; keyPoints?: string[]; formulas?: string[] }>;
+  sections: Array<{ title: string; keyPoints?: string[]; formulas?: string[]; commonMistakes?: string[] }>;
 }): string {
   const lines = [
     `# ${topic.title} — Study Sheet`,
@@ -100,10 +100,18 @@ export function buildStudySheet(topic: {
     }
     if (section.keyPoints?.length) {
       lines.push('');
+      lines.push('**Quick recap:**');
       for (const kp of section.keyPoints) {
         lines.push(`- ${kp}`);
       }
-    } else if (!section.formulas?.length) {
+    }
+    if (section.commonMistakes?.length) {
+      lines.push('');
+      lines.push('**Common mistakes:**');
+      for (const m of section.commonMistakes) {
+        lines.push(`- ${m}`);
+      }
+    } else if (!section.formulas?.length && !section.keyPoints?.length) {
       lines.push('- Review explanation and run the code example.');
     }
     lines.push('');

@@ -10,6 +10,7 @@ import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES, resolveTopicReferen
 import { deepenTopicContent } from './content-deepening.mjs';
 import { expandTopicContent } from './content-expansion.mjs';
 import { applySqlTeacherStyle } from './sql-teacher-style.mjs';
+import { applyArticleStyle } from './article-style.mjs';
 import { ADDITIONAL_MODULES } from './additional-curriculum.mjs';
 import { MATH_MODULES } from './math-curriculum.mjs';
 
@@ -43,7 +44,8 @@ function serializeValue(value, indent = 0) {
 }
 
 function enrichSection(section, topic) {
-  return applySqlTeacherStyle(section, topic);
+  const styled = applySqlTeacherStyle(section, topic);
+  return applyArticleStyle(styled, topic);
 }
 
 function enrichTopic(topic) {

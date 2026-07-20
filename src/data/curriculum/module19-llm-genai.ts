@@ -11,7 +11,11 @@ export const module19Topics: Topic[] = [
         {
           id: `landscape`,
           title: `LLM Landscape`,
-          content: `Large Language Models (LLMs) are neural networks trained on vast text corpora to predict the next token. They exhibit emergent capabilities — reasoning, coding, translation — at sufficient scale.
+          content: `### Introduction
+
+Large Language Models (LLMs) are neural networks trained on vast text corpora to predict the next token. They exhibit emergent capabilities — reasoning, coding, translation — at sufficient scale.
+
+### LLM Landscape
 
 **Closed-source frontier models:** GPT-4 (OpenAI), Claude (Anthropic), Gemini (Google). Accessed via API; weights not public.
 
@@ -19,33 +23,82 @@ export const module19Topics: Topic[] = [
 
 **Multimodal LLMs:** GPT-4V, Gemini process images alongside text. The boundary between NLP and computer vision is dissolving.
 
-Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabling entire codebases or books as input.`,
+Context windows have grown from 2K tokens (early GPT) to 128K–1M tokens, enabling entire codebases or books as input.
+
+### Key Ideas
+
+- Frontier models from OpenAI, Anthropic, Google
+- Open weights: LLaMA, Mistral, Qwen enable local deployment
+- Multimodal: GPT-4V, Gemini process images too
+- Context windows growing: 128K-1M tokens`,
           keyPoints: [
             `Frontier models from OpenAI, Anthropic, Google`,
             `Open weights: LLaMA, Mistral, Qwen enable local deployment`,
             `Multimodal: GPT-4V, Gemini process images too`,
             `Context windows growing: 128K-1M tokens`
+          ],
+          diagram: `LLM Landscape
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`
           ]
         },
         {
           id: `capabilities`,
           title: `Capabilities & Limitations`,
-          content: `**Strengths:** Summarization, translation, code generation, question answering, creative writing, structured data extraction. LLMs compress patterns from training data into useful general-purpose behavior.
+          content: `### Introduction
+
+**Strengths:** Summarization, translation, code generation, question answering, creative writing, structured data extraction. LLMs compress patterns from training data into useful general-purpose behavior.
+
+### Capabilities & Limitations
 
 **Weaknesses:** Factual accuracy without retrieval (hallucination), reliable arithmetic without tools, long-horizon planning, real-time knowledge. They predict plausible text, not verified truth.
 
-**Mitigations:** RAG grounds responses in documents; tool use (calculator, search) extends capabilities; chain-of-thought prompting improves reasoning; human-in-the-loop for high-stakes decisions.`,
+**Mitigations:** RAG grounds responses in documents; tool use (calculator, search) extends capabilities; chain-of-thought prompting improves reasoning; human-in-the-loop for high-stakes decisions.
+
+### Key Ideas
+
+- LLMs predict likely text not verified facts
+- Hallucination: confident but incorrect outputs
+- Tool use and RAG mitigate knowledge gaps
+- Reasoning improves with chain-of-thought`,
           keyPoints: [
             `LLMs predict likely text not verified facts`,
             `Hallucination: confident but incorrect outputs`,
             `Tool use and RAG mitigate knowledge gaps`,
             `Reasoning improves with chain-of-thought`
+          ],
+          diagram: `Capabilities & Limitations
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `tokens`,
           title: `Token Economics`,
-          content: `Pricing by input/output tokens. Context window limits. Tokenization affects cost and effective context usage.`,
+          content: `### Introduction
+
+Pricing by input/output tokens. Context window limits. Tokenization affects cost and effective context usage.
+
+### Token Economics
+
+### Key Ideas
+
+- Tokens not words — subword units
+- Input + output tokens both billed
+- Longer context = higher cost and latency
+- Count tokens before API calls
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# Rough token estimate: 1 token ≈ 4 characters in English
 # "Hello world" ≈ 2 tokens
 # GPT-4 pricing varies by model tier
@@ -57,19 +110,42 @@ print(f"Approx tokens: {len(text) // 4}")`,
             `Input + output tokens both billed`,
             `Longer context = higher cost and latency`,
             `Count tokens before API calls`
+          ],
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `eval`,
           title: `LLM Evaluation`,
-          content: `MMLU, HumanEval, MT-Bench benchmarks. Custom eval sets for domain tasks.
+          content: `### Introduction
 
-LLM-as-judge for subjective quality.`,
+MMLU, HumanEval, MT-Bench benchmarks. Custom eval sets for domain tasks.
+
+### LLM Evaluation
+
+LLM-as-judge for subjective quality.
+
+### Key Ideas
+
+- No single benchmark captures all capabilities
+- HumanEval for code generation quality
+- Build domain-specific eval sets
+- Automated eval with stronger model as judge`,
           keyPoints: [
             `No single benchmark captures all capabilities`,
             `HumanEval for code generation quality`,
             `Build domain-specific eval sets`,
             `Automated eval with stronger model as judge`
+          ],
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         }
       ],
@@ -134,7 +210,22 @@ LLM-as-judge for subjective quality.`,
         {
           id: `basics`,
           title: `Prompt Structure`,
-          content: `System message (role/behavior) + user message (task) + optional examples. Clear, specific instructions outperform vague requests.`,
+          content: `### Introduction
+
+System message (role/behavior) + user message (task) + optional examples. Clear, specific instructions outperform vague requests.
+
+### Prompt Structure
+
+### Key Ideas
+
+- System prompt sets behavior and constraints
+- Be specific about format, length, tone
+- Include examples for complex formats (few-shot)
+- Iterate and refine prompts empirically
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `prompt = """System: You are a Python tutor. Explain concepts simply.
 
 User: Explain list comprehensions with an example.
@@ -146,12 +237,33 @@ print(len(prompt))`,
             `Be specific about format, length, tone`,
             `Include examples for complex formats (few-shot)`,
             `Iterate and refine prompts empirically`
+          ],
+          commonMistakes: [
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `cot`,
           title: `Chain-of-Thought (CoT)`,
-          content: `Add "Let's think step by step" or demonstrate reasoning steps. Dramatically improves math and logic performance.`,
+          content: `### Introduction
+
+Add "Let's think step by step" or demonstrate reasoning steps. Dramatically improves math and logic performance.
+
+### Chain-of-Thought (CoT)
+
+### Key Ideas
+
+- Zero-shot CoT: add "think step by step"
+- Few-shot CoT: provide reasoning examples
+- Self-consistency: sample multiple chains, majority vote
+- Tree-of-thought for complex planning
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `prompt = "Q: A store has 23 apples. They buy 6 boxes of 12 apples. How many now?\\nA: Let's think step by step.\\n23 + (6 * 12) = 23 + 72 = 95\\n\\nQ: ..."
 print("CoT improves reasoning")`,
           output: `CoT improves reasoning`,
@@ -160,30 +272,72 @@ print("CoT improves reasoning")`,
             `Few-shot CoT: provide reasoning examples`,
             `Self-consistency: sample multiple chains, majority vote`,
             `Tree-of-thought for complex planning`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `few-shot`,
           title: `Few-Shot Learning`,
-          content: `Provide 2-5 input-output examples in prompt. Model learns pattern without weight updates.
+          content: `### Introduction
 
-Example selection matters.`,
+Provide 2-5 input-output examples in prompt. Model learns pattern without weight updates.
+
+### Few-Shot Learning
+
+Example selection matters.
+
+### Key Ideas
+
+- Examples should be diverse and representative
+- Order of examples affects performance
+- More examples help up to a point
+- Dynamic example retrieval from database`,
           keyPoints: [
             `Examples should be diverse and representative`,
             `Order of examples affects performance`,
             `More examples help up to a point`,
             `Dynamic example retrieval from database`
+          ],
+          diagram: `Few-Shot Learning
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `advanced-prompt`,
           title: `Advanced Techniques`,
-          content: `ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.`,
+          content: `### Introduction
+
+ReAct (reasoning + acting), structured output (JSON mode), role prompting, prompt chaining, constitutional AI principles.
+
+### Advanced Techniques
+
+### Key Ideas
+
+- JSON mode ensures parseable output
+- Prompt chaining breaks complex tasks into steps
+- ReAct interleaves reasoning and tool calls
+- Test prompts systematically with eval sets`,
           keyPoints: [
             `JSON mode ensures parseable output`,
             `Prompt chaining breaks complex tasks into steps`,
             `ReAct interleaves reasoning and tool calls`,
             `Test prompts systematically with eval sets`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         }
       ],
@@ -250,7 +404,18 @@ print("step by step" in q)`,
         {
           id: `rag-arch`,
           title: `RAG Architecture`,
-          content: `Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.`,
+          content: `### Introduction
+
+Query → retrieve relevant documents from vector DB → augment prompt with context → LLM generates grounded answer.
+
+### RAG Architecture
+
+### Key Ideas
+
+- RAG reduces hallucination on domain knowledge
+- Retrieval quality determines answer quality
+- Chunk size and overlap affect retrieval
+- Hybrid search: dense + keyword (BM25)`,
           pseudoCode: `query = user_question
 chunks = vector_db.search(embed(query), top_k=5)
 context = join(chunks)
@@ -261,12 +426,35 @@ answer = llm.generate(prompt)`,
             `Retrieval quality determines answer quality`,
             `Chunk size and overlap affect retrieval`,
             `Hybrid search: dense + keyword (BM25)`
+          ],
+          diagram: `RAG Architecture
+Query → Embed → Retrieve → Augment Prompt → Generate`,
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `embeddings-rag`,
           title: `Embeddings for Retrieval`,
-          content: `Embed documents and queries with embedding model (OpenAI, sentence-transformers). Store in vector DB (Pinecone, Chroma, FAISS).`,
+          content: `### Introduction
+
+Embed documents and queries with embedding model (OpenAI, sentence-transformers). Store in vector DB (Pinecone, Chroma, FAISS).
+
+### Embeddings for Retrieval
+
+### Key Ideas
+
+- Choose embedding model matching domain
+- Chunk documents 256-512 tokens typically
+- Metadata filtering narrows search space
+- Re-rank retrieved results with cross-encoder
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -278,30 +466,76 @@ print(embeddings.shape)`,
             `Chunk documents 256-512 tokens typically`,
             `Metadata filtering narrows search space`,
             `Re-rank retrieved results with cross-encoder`
+          ],
+          diagram: `Embeddings for Retrieval
+Tokens → Embedding → Self-Attention → FFN → Output`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `chunking`,
           title: `Document Chunking`,
-          content: `Split documents into retrievable chunks. Recursive character splitting, semantic chunking.
+          content: `### Introduction
 
-Overlap preserves context at boundaries.`,
+Split documents into retrievable chunks. Recursive character splitting, semantic chunking.
+
+### Document Chunking
+
+Overlap preserves context at boundaries.
+
+### Key Ideas
+
+- Too small chunks lose context
+- Too large chunks dilute relevance
+- 10-20% overlap between chunks common
+- Parent-child chunking for hierarchical retrieval`,
           keyPoints: [
             `Too small chunks lose context`,
             `Too large chunks dilute relevance`,
             `10-20% overlap between chunks common`,
             `Parent-child chunking for hierarchical retrieval`
+          ],
+          diagram: `Document Chunking
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`
           ]
         },
         {
           id: `eval-rag`,
           title: `Evaluating RAG Systems`,
-          content: `Retrieval metrics: recall@k, MRR. Generation metrics: faithfulness, relevance, answer correctness. RAGAS framework.`,
+          content: `### Introduction
+
+Retrieval metrics: recall@k, MRR. Generation metrics: faithfulness, relevance, answer correctness. RAGAS framework.
+
+### Evaluating RAG Systems
+
+### Key Ideas
+
+- Evaluate retrieval and generation separately
+- Faithfulness: answer grounded in retrieved context
+- RAGAS automated RAG evaluation
+- Human eval for production quality assurance`,
           keyPoints: [
             `Evaluate retrieval and generation separately`,
             `Faithfulness: answer grounded in retrieved context`,
             `RAGAS automated RAG evaluation`,
             `Human eval for production quality assurance`
+          ],
+          diagram: `Evaluating RAG Systems
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`
           ]
         }
       ],
@@ -367,20 +601,52 @@ print(steps)`,
         {
           id: `finetune`,
           title: `Full Fine-Tuning`,
-          content: `Update all model weights on domain dataset. Expensive — requires significant GPU memory.
+          content: `### Introduction
 
-Best for large domain shift.`,
+Update all model weights on domain dataset. Expensive — requires significant GPU memory.
+
+### Full Fine-Tuning
+
+Best for large domain shift.
+
+### Key Ideas
+
+- Requires labeled instruction-response pairs
+- Risk of catastrophic forgetting
+- Multi-GPU needed for 7B+ models
+- Learning rate much smaller than pretraining`,
           keyPoints: [
             `Requires labeled instruction-response pairs`,
             `Risk of catastrophic forgetting`,
             `Multi-GPU needed for 7B+ models`,
             `Learning rate much smaller than pretraining`
+          ],
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `lora`,
           title: `LoRA (Low-Rank Adaptation)`,
-          content: `Freeze base model, add low-rank decomposition matrices to attention layers. Trains ~0.1% of parameters. PEFT standard.`,
+          content: `### Introduction
+
+Freeze base model, add low-rank decomposition matrices to attention layers. Trains ~0.1% of parameters. PEFT standard.
+
+### LoRA (Low-Rank Adaptation)
+
+### Key Ideas
+
+- LoRA rank r controls capacity vs efficiency
+- Target q_proj, v_proj in attention layers
+- QLoRA: 4-bit quantized base + LoRA adapters
+- Merge adapters into base for deployment
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `# LoRA concept: W' = W + BA where B is d×r, A is r×d, r << d
 # r=8 or r=16 typical rank
 # Only train A and B matrices
@@ -391,28 +657,72 @@ print("LoRA: W + B@A with low rank r")`,
             `Target q_proj, v_proj in attention layers`,
             `QLoRA: 4-bit quantized base + LoRA adapters`,
             `Merge adapters into base for deployment`
+          ],
+          diagram: `LoRA (Low-Rank Adaptation)
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Deploying without output moderation on user-facing endpoints`,
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `instruction`,
           title: `Instruction Tuning`,
-          content: `Fine-tune on (instruction, response) pairs. Alpaca, Dolly datasets. Aligns model to follow user instructions.`,
+          content: `### Introduction
+
+Fine-tune on (instruction, response) pairs. Alpaca, Dolly datasets. Aligns model to follow user instructions.
+
+### Instruction Tuning
+
+### Key Ideas
+
+- Instruction format: ### Instruction / ### Response
+- Quality over quantity for instruction data
+- Covers diverse task types
+- Foundation for chat model behavior`,
           keyPoints: [
             `Instruction format: ### Instruction / ### Response`,
             `Quality over quantity for instruction data`,
             `Covers diverse task types`,
             `Foundation for chat model behavior`
+          ],
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `rlhf`,
           title: `RLHF & DPO`,
-          content: `Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO. DPO simpler alternative without reward model.`,
+          content: `### Introduction
+
+Reinforcement Learning from Human Feedback: train reward model on preferences, optimize with PPO. DPO simpler alternative without reward model.
+
+### RLHF & DPO
+
+### Key Ideas
+
+- RLHF makes models helpful and harmless
+- Reward model trained on human preference comparisons
+- PPO fine-tunes against reward model
+- DPO direct preference optimization — simpler pipeline`,
           keyPoints: [
             `RLHF makes models helpful and harmless`,
             `Reward model trained on human preference comparisons`,
             `PPO fine-tunes against reward model`,
             `DPO direct preference optimization — simpler pipeline`
+          ],
+          diagram: `RLHF & DPO
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Infinite loops when the loop variable never moves toward the exit condition`,
+            `Exploration rate ε set to 0 too early — agent never discovers better actions`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
@@ -477,7 +787,18 @@ print("LoRA: W + B@A with low rank r")`,
         {
           id: `agents`,
           title: `LLM Agent Architecture`,
-          content: `Agent loop: observe → think → act (tool call) → observe result → repeat. LangChain, LlamaIndex frameworks.`,
+          content: `### Introduction
+
+Agent loop: observe → think → act (tool call) → observe result → repeat. LangChain, LlamaIndex frameworks.
+
+### LLM Agent Architecture
+
+### Key Ideas
+
+- ReAct pattern: Reason + Act interleaved
+- Tool definitions in prompt or function calling API
+- Memory: short-term (conversation) + long-term (vector store)
+- Max iterations prevent infinite loops`,
           pseudoCode: `WHILE not done:
     thought = llm.reason(observation, goal)
     IF thought.requires_action:
@@ -490,14 +811,37 @@ print("LoRA: W + B@A with low rank r")`,
             `Tool definitions in prompt or function calling API`,
             `Memory: short-term (conversation) + long-term (vector store)`,
             `Max iterations prevent infinite loops`
+          ],
+          diagram: `LLM Agent Architecture
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Wrong sequence length after tokenization — truncating critical context`,
+            `Serving a model trained on preprocessed data without the same pipeline in production`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         },
         {
           id: `tools`,
           title: `Function Calling / Tool Use`,
-          content: `Define tools with name, description, parameters (JSON schema). Model selects tool and arguments.
+          content: `### Introduction
 
-OpenAI function calling, Anthropic tool use.`,
+Define tools with name, description, parameters (JSON schema). Model selects tool and arguments.
+
+### Function Calling / Tool Use
+
+OpenAI function calling, Anthropic tool use.
+
+### Key Ideas
+
+- Clear tool descriptions critical for selection
+- JSON schema defines valid parameters
+- Execute tool and return result to model
+- Multiple tools enable complex workflows
+
+### Example
+
+Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.`,
           example: `tools = [{
     "name": "search",
     "description": "Search the web for information",
@@ -510,30 +854,76 @@ print(tools[0]["name"])`,
             `JSON schema defines valid parameters`,
             `Execute tool and return result to model`,
             `Multiple tools enable complex workflows`
+          ],
+          diagram: `Function Calling / Tool Use
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`,
+            `Deploying without output moderation on user-facing endpoints`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `frameworks`,
           title: `Agent Frameworks`,
-          content: `LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG.
+          content: `### Introduction
 
-AutoGen: multi-agent conversations. CrewAI: role-based agents.`,
+LangChain: chains, agents, memory. LlamaIndex: data ingestion and RAG.
+
+### Agent Frameworks
+
+AutoGen: multi-agent conversations. CrewAI: role-based agents.
+
+### Key Ideas
+
+- LangChain most popular orchestration framework
+- LlamaIndex optimized for data-connected apps
+- Multi-agent: specialized agents collaborate
+- Evaluate agent reliability before production`,
           keyPoints: [
             `LangChain most popular orchestration framework`,
             `LlamaIndex optimized for data-connected apps`,
             `Multi-agent: specialized agents collaborate`,
             `Evaluate agent reliability before production`
+          ],
+          diagram: `Agent Frameworks
+Raw Data → Clean → Features → Train → Evaluate → Deploy → Monitor`,
+          commonMistakes: [
+            `Feeding NHWC tensors into PyTorch NCHW layers without permuting`,
+            `Wrong padding/stride — output spatial size shrinks unexpectedly`,
+            `Not normalizing vectors when using dot product as cosine similarity`,
+            `Trusting LLM outputs as facts without retrieval or verification`
           ]
         },
         {
           id: `safety`,
           title: `Agent Safety`,
-          content: `Sandbox tool execution. Validate tool inputs. Limit permissions. Human-in-the-loop for high-stakes actions.`,
+          content: `### Introduction
+
+Sandbox tool execution. Validate tool inputs. Limit permissions. Human-in-the-loop for high-stakes actions.
+
+### Agent Safety
+
+### Key Ideas
+
+- Never give agents unrestricted system access
+- Validate and sanitize tool inputs/outputs
+- Human approval for irreversible actions
+- Monitor agent trajectories for unexpected behavior`,
           keyPoints: [
             `Never give agents unrestricted system access`,
             `Validate and sanitize tool inputs/outputs`,
             `Human approval for irreversible actions`,
             `Monitor agent trajectories for unexpected behavior`
+          ],
+          diagram: `Agent Safety
+Dataset → Train Fold → Validation Fold → Test Holdout`,
+          commonMistakes: [
+            `Calling \`Parent.method()\` without passing \`self\` correctly in overrides`,
+            `Never give agents unrestricted system access.`,
+            `Trusting LLM outputs as facts without retrieval or verification`,
+            `Measuring only fluency — not factual accuracy or task success`
           ]
         }
       ],
