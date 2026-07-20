@@ -3,6 +3,7 @@
  * structured headings, in-article bullet lists, visuals, and common-mistake pointers.
  */
 
+import { buildLongArticle, estimateArticleMinutes } from './article-expansion.mjs';
 import { sanitizeDiagramText } from './diagram-sanitize.mjs';
 
 const TRACK_MISTAKES = {
@@ -77,71 +78,8 @@ const KEYWORD_MISTAKES = [
   { re: /embedding|vector|rag|retriev/i, items: ['Chunk size too large for embeddings — retrieval returns irrelevant passages', 'Not normalizing vectors when using dot product as cosine similarity'] },
 ];
 
-function extractFirstParagraph(content) {
-  const chunk = content.split(/\n\n+/)[0]?.trim() ?? '';
-  if (!chunk || /^###\s/.test(chunk)) {
-    return `This section explains **${content.slice(0, 40)}…** in practical terms.`;
-  }
-  return chunk.replace(/^#{1,6}\s+/gm, '').trim();
-}
-
-function contentHasBullets(content) {
-  return /^-\s/m.test(content);
-}
-
 function formatArticleContent(section, topic) {
-  const raw = (section.content ?? '').trim();
-  if (!raw) return raw;
-
-  const headingCount = (raw.match(/^###\s/gm) || []).length;
-  if (headingCount >= 3 && /### Introduction/i.test(raw)) {
-    return raw;
-  }
-
-  const intro = extractFirstParagraph(raw);
-  const bodyChunks = raw.split(/\n\n+/).map((c) => c.trim()).filter(Boolean).slice(1);
-
-  const parts = [
-    `### Introduction`,
-    '',
-    intro,
-    '',
-    `### ${section.title}`,
-    '',
-  ];
-
-  if (bodyChunks.length > 0) {
-    parts.push(bodyChunks.join('\n\n'));
-  }
-
-  const keyPoints = (section.keyPoints ?? []).filter((p) => p.length > 12);
-  if (keyPoints.length > 0 && !hasHeading(raw, 'Key Ideas') && !contentHasBullets(raw)) {
-    parts.push('', '### Key Ideas', '', ...keyPoints.map((p) => `- ${p}`));
-  }
-
-  if (section.example && !hasHeading(raw, 'Example')) {
-    parts.push(
-      '',
-      '### Example',
-      '',
-      'Study the **code example** below, predict the output, then run it in Python or Jupyter. Compare your result with the **output** panel.',
-    );
-  }
-
-  if ((section.diagram || section.formulas?.length) && !hasHeading(raw, 'Visual')) {
-    parts.push(
-      '',
-      '### Visual Reference',
-      '',
-      'Refer to the **diagram** and **formulas** below while reading this section.',
-    );
-  }
-
-  return parts.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-}
-
-function hasHeading(content, label) {
-  return new RegExp(`^###\\s+${label}`, 'im').test(content);
+  return buildLongArticle(section, topic);
 }
 
 function suggestDiagram(section, topic) {
@@ -243,6 +181,7 @@ export function applyArticleStyle(section, topic) {
   const diagramRaw = suggestDiagram(section, topic);
   const diagram = diagramRaw ? sanitizeDiagramText(diagramRaw) : section.diagram;
   const commonMistakes = generateCommonMistakes(section, topic);
+  const readingMinutes = estimateArticleMinutes(section, topic);
 
   const next = {
     ...section,
@@ -252,6 +191,18 @@ export function applyArticleStyle(section, topic) {
 
   if (diagram) next.diagram = diagram;
   return next;
+}
+
+/** Sum expanded article minutes for a topic (sections + exercises buffer). */
+export function estimateTopicMinutes(topic) {
+  const track = topic.track ?? 'python';
+  const topicCtx = { ...topic, track };
+  const sectionMins = topic.sections.reduce(
+    (sum, s) => sum + estimateArticleMinutes(s, topicCtx),
+    0,
+  );
+  const exerciseMins = (topic.exercises?.length ?? 0) * 5;
+  return Math.max(topic.estimatedMinutes ?? 30, sectionMins + exerciseMins);
 }
 
 /**

@@ -54,7 +54,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 20,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -76,7 +76,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -98,7 +98,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -120,7 +120,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -142,7 +142,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Fundamentals`,
           moduleId: `module-01`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -172,7 +172,7 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -194,7 +194,7 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -216,7 +216,7 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -238,7 +238,7 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -260,7 +260,7 @@ export const modules: ModuleCatalog[] = [
           module: `Control Flow & Functions`,
           moduleId: `module-02`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -290,7 +290,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -312,7 +312,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -334,7 +334,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -356,7 +356,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -378,7 +378,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Structures`,
           moduleId: `module-03`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -408,7 +408,7 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -430,7 +430,7 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -452,7 +452,7 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -474,7 +474,7 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -496,7 +496,7 @@ export const modules: ModuleCatalog[] = [
           module: `OOP & Design Patterns`,
           moduleId: `module-04`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -526,7 +526,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -548,7 +548,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -570,7 +570,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -592,7 +592,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -614,7 +614,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced Python`,
           moduleId: `module-05`,
           track: `python`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -644,7 +644,7 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 51,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -666,7 +666,7 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 50,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -688,7 +688,7 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 50,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -710,7 +710,7 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 50,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -732,7 +732,7 @@ export const modules: ModuleCatalog[] = [
           module: `Algebra & Functions`,
           moduleId: `module-math-01`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 50,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -762,7 +762,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 50,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -784,7 +784,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 50,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -806,7 +806,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 49,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -828,7 +828,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -850,7 +850,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra I`,
           moduleId: `module-math-02`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -880,7 +880,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -902,7 +902,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -924,7 +924,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 48,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -946,7 +946,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -968,7 +968,7 @@ export const modules: ModuleCatalog[] = [
           module: `Linear Algebra II`,
           moduleId: `module-math-03`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 49,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -998,7 +998,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 45,
+          estimatedMinutes: 61,
           sectionCount: 5,
           exerciseCount: 3,
           sectionIds: [
@@ -1022,7 +1022,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1044,7 +1044,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1066,7 +1066,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1088,7 +1088,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus I`,
           moduleId: `module-math-04`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1118,7 +1118,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1140,7 +1140,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1162,7 +1162,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1184,7 +1184,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1206,7 +1206,7 @@ export const modules: ModuleCatalog[] = [
           module: `Calculus II & Multivariate`,
           moduleId: `module-math-05`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1236,7 +1236,7 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1258,7 +1258,7 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1280,7 +1280,7 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1302,7 +1302,7 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1324,7 +1324,7 @@ export const modules: ModuleCatalog[] = [
           module: `Probability`,
           moduleId: `module-math-06`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1354,7 +1354,7 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1376,7 +1376,7 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1398,7 +1398,7 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 48,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1420,7 +1420,7 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1442,7 +1442,7 @@ export const modules: ModuleCatalog[] = [
           module: `Statistics`,
           moduleId: `module-math-07`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1472,7 +1472,7 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1494,7 +1494,7 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1516,7 +1516,7 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1538,7 +1538,7 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 46,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1560,7 +1560,7 @@ export const modules: ModuleCatalog[] = [
           module: `Optimization & Information Theory`,
           moduleId: `module-math-08`,
           track: `math`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 47,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1590,7 +1590,7 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1612,7 +1612,7 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1634,7 +1634,7 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1656,7 +1656,7 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1678,7 +1678,7 @@ export const modules: ModuleCatalog[] = [
           module: `NumPy & Scientific Computing`,
           moduleId: `module-06`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1708,7 +1708,7 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1730,7 +1730,7 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1752,7 +1752,7 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1774,7 +1774,7 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1796,7 +1796,7 @@ export const modules: ModuleCatalog[] = [
           module: `Pandas & Data Wrangling`,
           moduleId: `module-07`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1826,7 +1826,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1848,7 +1848,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1870,7 +1870,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1892,7 +1892,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1914,7 +1914,7 @@ export const modules: ModuleCatalog[] = [
           module: `Data Visualization`,
           moduleId: `module-08`,
           track: `data`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1944,7 +1944,7 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1966,7 +1966,7 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -1988,7 +1988,7 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2010,7 +2010,7 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2032,7 +2032,7 @@ export const modules: ModuleCatalog[] = [
           module: `Math for Machine Learning`,
           moduleId: `module-09`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2062,7 +2062,7 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2084,7 +2084,7 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2106,7 +2106,7 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2128,7 +2128,7 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2150,7 +2150,7 @@ export const modules: ModuleCatalog[] = [
           module: `ML Foundations & Scikit-learn`,
           moduleId: `module-10`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2180,7 +2180,7 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2202,7 +2202,7 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2224,7 +2224,7 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2246,7 +2246,7 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2268,7 +2268,7 @@ export const modules: ModuleCatalog[] = [
           module: `Supervised Learning`,
           moduleId: `module-11`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2298,7 +2298,7 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2320,7 +2320,7 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2342,7 +2342,7 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2364,7 +2364,7 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2386,7 +2386,7 @@ export const modules: ModuleCatalog[] = [
           module: `Unsupervised Learning`,
           moduleId: `module-12`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2416,7 +2416,7 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2438,7 +2438,7 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2460,7 +2460,7 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2482,7 +2482,7 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2504,7 +2504,7 @@ export const modules: ModuleCatalog[] = [
           module: `Feature Engineering & Model Selection`,
           moduleId: `module-13`,
           track: `ml`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2534,7 +2534,7 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2556,7 +2556,7 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2578,7 +2578,7 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2600,7 +2600,7 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2622,7 +2622,7 @@ export const modules: ModuleCatalog[] = [
           module: `Deep Learning Fundamentals`,
           moduleId: `module-14`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2652,7 +2652,7 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2674,7 +2674,7 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2696,7 +2696,7 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2718,7 +2718,7 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2740,7 +2740,7 @@ export const modules: ModuleCatalog[] = [
           module: `PyTorch & Neural Networks`,
           moduleId: `module-15`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2770,7 +2770,7 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2792,7 +2792,7 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2814,7 +2814,7 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2836,7 +2836,7 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2858,7 +2858,7 @@ export const modules: ModuleCatalog[] = [
           module: `CNNs & Computer Vision`,
           moduleId: `module-16`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2888,7 +2888,7 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2910,7 +2910,7 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2932,7 +2932,7 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2954,7 +2954,7 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -2976,7 +2976,7 @@ export const modules: ModuleCatalog[] = [
           module: `NLP, RNNs & Sequence Models`,
           moduleId: `module-17`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3006,7 +3006,7 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3028,7 +3028,7 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3050,7 +3050,7 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3072,7 +3072,7 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3094,7 +3094,7 @@ export const modules: ModuleCatalog[] = [
           module: `Transformers & Attention`,
           moduleId: `module-18`,
           track: `dl`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3124,7 +3124,7 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 30,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3146,7 +3146,7 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3168,7 +3168,7 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3190,7 +3190,7 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3212,7 +3212,7 @@ export const modules: ModuleCatalog[] = [
           module: `LLMs, GenAI & Prompt Engineering`,
           moduleId: `module-19`,
           track: `ai`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3242,7 +3242,7 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3264,7 +3264,7 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3286,7 +3286,7 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3308,7 +3308,7 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3330,7 +3330,7 @@ export const modules: ModuleCatalog[] = [
           module: `MLOps, Deployment & AI Ethics`,
           moduleId: `module-20`,
           track: `ai`,
-          estimatedMinutes: 25,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3360,7 +3360,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3382,7 +3382,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 30,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3404,7 +3404,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3426,7 +3426,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 30,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3448,7 +3448,7 @@ export const modules: ModuleCatalog[] = [
           module: `Python Testing, Debugging & Async`,
           moduleId: `module-21`,
           track: `python`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3478,7 +3478,7 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 30,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3500,7 +3500,7 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3522,7 +3522,7 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3544,7 +3544,7 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3566,7 +3566,7 @@ export const modules: ModuleCatalog[] = [
           module: `File I/O, APIs & Data Formats`,
           moduleId: `module-22`,
           track: `python`,
-          estimatedMinutes: 30,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3596,7 +3596,7 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3618,7 +3618,7 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3640,7 +3640,7 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3662,7 +3662,7 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3684,7 +3684,7 @@ export const modules: ModuleCatalog[] = [
           module: `SciPy & Statistical Computing`,
           moduleId: `module-23`,
           track: `data`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3736,7 +3736,7 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3758,7 +3758,7 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3780,7 +3780,7 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3802,7 +3802,7 @@ export const modules: ModuleCatalog[] = [
           module: `Time Series & Recommender Systems`,
           moduleId: `module-24`,
           track: `ml`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3832,7 +3832,7 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 43,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3920,7 +3920,7 @@ export const modules: ModuleCatalog[] = [
           module: `Reinforcement Learning`,
           moduleId: `module-25`,
           track: `ml`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -3972,7 +3972,7 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4016,7 +4016,7 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4038,7 +4038,7 @@ export const modules: ModuleCatalog[] = [
           module: `Generative Deep Learning`,
           moduleId: `module-26`,
           track: `dl`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4068,7 +4068,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4090,7 +4090,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4112,7 +4112,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4134,7 +4134,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4156,7 +4156,7 @@ export const modules: ModuleCatalog[] = [
           module: `Advanced AI Systems`,
           moduleId: `module-27`,
           track: `ai`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4186,7 +4186,7 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4208,7 +4208,7 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 40,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4252,7 +4252,7 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 35,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4274,7 +4274,7 @@ export const modules: ModuleCatalog[] = [
           module: `Capstone & Career`,
           moduleId: `module-28`,
           track: `ai`,
-          estimatedMinutes: 30,
+          estimatedMinutes: 42,
           sectionCount: 4,
           exerciseCount: 2,
           sectionIds: [
@@ -4301,7 +4301,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 20,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4323,7 +4323,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4345,7 +4345,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4367,7 +4367,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4389,7 +4389,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Fundamentals`,
     moduleId: `module-01`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4411,7 +4411,7 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4433,7 +4433,7 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4455,7 +4455,7 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4477,7 +4477,7 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4499,7 +4499,7 @@ export const allTopics: TopicSummary[] = [
     module: `Control Flow & Functions`,
     moduleId: `module-02`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4521,7 +4521,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4543,7 +4543,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4565,7 +4565,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4587,7 +4587,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4609,7 +4609,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Structures`,
     moduleId: `module-03`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4631,7 +4631,7 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4653,7 +4653,7 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4675,7 +4675,7 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4697,7 +4697,7 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4719,7 +4719,7 @@ export const allTopics: TopicSummary[] = [
     module: `OOP & Design Patterns`,
     moduleId: `module-04`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4741,7 +4741,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4763,7 +4763,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4785,7 +4785,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4807,7 +4807,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4829,7 +4829,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced Python`,
     moduleId: `module-05`,
     track: `python`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4851,7 +4851,7 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 51,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4873,7 +4873,7 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 50,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4895,7 +4895,7 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 50,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4917,7 +4917,7 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 50,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4939,7 +4939,7 @@ export const allTopics: TopicSummary[] = [
     module: `Algebra & Functions`,
     moduleId: `module-math-01`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 50,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4961,7 +4961,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 50,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -4983,7 +4983,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 50,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5005,7 +5005,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 49,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5027,7 +5027,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5049,7 +5049,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra I`,
     moduleId: `module-math-02`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5071,7 +5071,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5093,7 +5093,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5115,7 +5115,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 48,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5137,7 +5137,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5159,7 +5159,7 @@ export const allTopics: TopicSummary[] = [
     module: `Linear Algebra II`,
     moduleId: `module-math-03`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 49,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5181,7 +5181,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 45,
+    estimatedMinutes: 61,
     sectionCount: 5,
     exerciseCount: 3,
     sectionIds: [
@@ -5205,7 +5205,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5227,7 +5227,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5249,7 +5249,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5271,7 +5271,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus I`,
     moduleId: `module-math-04`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5293,7 +5293,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5315,7 +5315,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5337,7 +5337,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5359,7 +5359,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5381,7 +5381,7 @@ export const allTopics: TopicSummary[] = [
     module: `Calculus II & Multivariate`,
     moduleId: `module-math-05`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5403,7 +5403,7 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5425,7 +5425,7 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5447,7 +5447,7 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5469,7 +5469,7 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5491,7 +5491,7 @@ export const allTopics: TopicSummary[] = [
     module: `Probability`,
     moduleId: `module-math-06`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5513,7 +5513,7 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5535,7 +5535,7 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5557,7 +5557,7 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 48,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5579,7 +5579,7 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5601,7 +5601,7 @@ export const allTopics: TopicSummary[] = [
     module: `Statistics`,
     moduleId: `module-math-07`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5623,7 +5623,7 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5645,7 +5645,7 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5667,7 +5667,7 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5689,7 +5689,7 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 46,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5711,7 +5711,7 @@ export const allTopics: TopicSummary[] = [
     module: `Optimization & Information Theory`,
     moduleId: `module-math-08`,
     track: `math`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 47,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5733,7 +5733,7 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5755,7 +5755,7 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5777,7 +5777,7 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5799,7 +5799,7 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5821,7 +5821,7 @@ export const allTopics: TopicSummary[] = [
     module: `NumPy & Scientific Computing`,
     moduleId: `module-06`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5843,7 +5843,7 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5865,7 +5865,7 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5887,7 +5887,7 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5909,7 +5909,7 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5931,7 +5931,7 @@ export const allTopics: TopicSummary[] = [
     module: `Pandas & Data Wrangling`,
     moduleId: `module-07`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5953,7 +5953,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5975,7 +5975,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -5997,7 +5997,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6019,7 +6019,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6041,7 +6041,7 @@ export const allTopics: TopicSummary[] = [
     module: `Data Visualization`,
     moduleId: `module-08`,
     track: `data`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6063,7 +6063,7 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6085,7 +6085,7 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6107,7 +6107,7 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6129,7 +6129,7 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6151,7 +6151,7 @@ export const allTopics: TopicSummary[] = [
     module: `Math for Machine Learning`,
     moduleId: `module-09`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6173,7 +6173,7 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6195,7 +6195,7 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6217,7 +6217,7 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6239,7 +6239,7 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6261,7 +6261,7 @@ export const allTopics: TopicSummary[] = [
     module: `ML Foundations & Scikit-learn`,
     moduleId: `module-10`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6283,7 +6283,7 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6305,7 +6305,7 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6327,7 +6327,7 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6349,7 +6349,7 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6371,7 +6371,7 @@ export const allTopics: TopicSummary[] = [
     module: `Supervised Learning`,
     moduleId: `module-11`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6393,7 +6393,7 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6415,7 +6415,7 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6437,7 +6437,7 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6459,7 +6459,7 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6481,7 +6481,7 @@ export const allTopics: TopicSummary[] = [
     module: `Unsupervised Learning`,
     moduleId: `module-12`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6503,7 +6503,7 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6525,7 +6525,7 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6547,7 +6547,7 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6569,7 +6569,7 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6591,7 +6591,7 @@ export const allTopics: TopicSummary[] = [
     module: `Feature Engineering & Model Selection`,
     moduleId: `module-13`,
     track: `ml`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6613,7 +6613,7 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6635,7 +6635,7 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6657,7 +6657,7 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6679,7 +6679,7 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6701,7 +6701,7 @@ export const allTopics: TopicSummary[] = [
     module: `Deep Learning Fundamentals`,
     moduleId: `module-14`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6723,7 +6723,7 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6745,7 +6745,7 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6767,7 +6767,7 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6789,7 +6789,7 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6811,7 +6811,7 @@ export const allTopics: TopicSummary[] = [
     module: `PyTorch & Neural Networks`,
     moduleId: `module-15`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6833,7 +6833,7 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6855,7 +6855,7 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6877,7 +6877,7 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6899,7 +6899,7 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6921,7 +6921,7 @@ export const allTopics: TopicSummary[] = [
     module: `CNNs & Computer Vision`,
     moduleId: `module-16`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6943,7 +6943,7 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6965,7 +6965,7 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -6987,7 +6987,7 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7009,7 +7009,7 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7031,7 +7031,7 @@ export const allTopics: TopicSummary[] = [
     module: `NLP, RNNs & Sequence Models`,
     moduleId: `module-17`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7053,7 +7053,7 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7075,7 +7075,7 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7097,7 +7097,7 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7119,7 +7119,7 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7141,7 +7141,7 @@ export const allTopics: TopicSummary[] = [
     module: `Transformers & Attention`,
     moduleId: `module-18`,
     track: `dl`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7163,7 +7163,7 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 30,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7185,7 +7185,7 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7207,7 +7207,7 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7229,7 +7229,7 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7251,7 +7251,7 @@ export const allTopics: TopicSummary[] = [
     module: `LLMs, GenAI & Prompt Engineering`,
     moduleId: `module-19`,
     track: `ai`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7273,7 +7273,7 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7295,7 +7295,7 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7317,7 +7317,7 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7339,7 +7339,7 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7361,7 +7361,7 @@ export const allTopics: TopicSummary[] = [
     module: `MLOps, Deployment & AI Ethics`,
     moduleId: `module-20`,
     track: `ai`,
-    estimatedMinutes: 25,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7383,7 +7383,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7405,7 +7405,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 30,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7427,7 +7427,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7449,7 +7449,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 30,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7471,7 +7471,7 @@ export const allTopics: TopicSummary[] = [
     module: `Python Testing, Debugging & Async`,
     moduleId: `module-21`,
     track: `python`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7493,7 +7493,7 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 30,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7515,7 +7515,7 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7537,7 +7537,7 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7559,7 +7559,7 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7581,7 +7581,7 @@ export const allTopics: TopicSummary[] = [
     module: `File I/O, APIs & Data Formats`,
     moduleId: `module-22`,
     track: `python`,
-    estimatedMinutes: 30,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7603,7 +7603,7 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7625,7 +7625,7 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7647,7 +7647,7 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7669,7 +7669,7 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7691,7 +7691,7 @@ export const allTopics: TopicSummary[] = [
     module: `SciPy & Statistical Computing`,
     moduleId: `module-23`,
     track: `data`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7735,7 +7735,7 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7757,7 +7757,7 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7779,7 +7779,7 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7801,7 +7801,7 @@ export const allTopics: TopicSummary[] = [
     module: `Time Series & Recommender Systems`,
     moduleId: `module-24`,
     track: `ml`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7823,7 +7823,7 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 43,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7911,7 +7911,7 @@ export const allTopics: TopicSummary[] = [
     module: `Reinforcement Learning`,
     moduleId: `module-25`,
     track: `ml`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7955,7 +7955,7 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -7999,7 +7999,7 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8021,7 +8021,7 @@ export const allTopics: TopicSummary[] = [
     module: `Generative Deep Learning`,
     moduleId: `module-26`,
     track: `dl`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8043,7 +8043,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8065,7 +8065,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8087,7 +8087,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8109,7 +8109,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8131,7 +8131,7 @@ export const allTopics: TopicSummary[] = [
     module: `Advanced AI Systems`,
     moduleId: `module-27`,
     track: `ai`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8153,7 +8153,7 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8175,7 +8175,7 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 40,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8219,7 +8219,7 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 35,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8241,7 +8241,7 @@ export const allTopics: TopicSummary[] = [
     module: `Capstone & Career`,
     moduleId: `module-28`,
     track: `ai`,
-    estimatedMinutes: 30,
+    estimatedMinutes: 42,
     sectionCount: 4,
     exerciseCount: 2,
     sectionIds: [
@@ -8266,7 +8266,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 20,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8288,7 +8288,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8310,7 +8310,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8332,7 +8332,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8354,7 +8354,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Fundamentals`,
       moduleId: `module-01`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8376,7 +8376,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8398,7 +8398,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8420,7 +8420,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8442,7 +8442,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8464,7 +8464,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Control Flow & Functions`,
       moduleId: `module-02`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8486,7 +8486,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8508,7 +8508,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8530,7 +8530,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8552,7 +8552,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8574,7 +8574,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Structures`,
       moduleId: `module-03`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8596,7 +8596,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8618,7 +8618,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8640,7 +8640,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8662,7 +8662,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8684,7 +8684,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `OOP & Design Patterns`,
       moduleId: `module-04`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8706,7 +8706,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8728,7 +8728,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8750,7 +8750,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8772,7 +8772,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8794,7 +8794,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced Python`,
       moduleId: `module-05`,
       track: `python`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8816,7 +8816,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 51,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8838,7 +8838,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 50,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8860,7 +8860,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 50,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8882,7 +8882,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 50,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8904,7 +8904,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Algebra & Functions`,
       moduleId: `module-math-01`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 50,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8926,7 +8926,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 50,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8948,7 +8948,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 50,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8970,7 +8970,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 49,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -8992,7 +8992,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9014,7 +9014,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra I`,
       moduleId: `module-math-02`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9036,7 +9036,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9058,7 +9058,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9080,7 +9080,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 48,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9102,7 +9102,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9124,7 +9124,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Linear Algebra II`,
       moduleId: `module-math-03`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 49,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9146,7 +9146,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 45,
+      estimatedMinutes: 61,
       sectionCount: 5,
       exerciseCount: 3,
       sectionIds: [
@@ -9170,7 +9170,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9192,7 +9192,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9214,7 +9214,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9236,7 +9236,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus I`,
       moduleId: `module-math-04`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9258,7 +9258,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9280,7 +9280,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9302,7 +9302,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9324,7 +9324,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9346,7 +9346,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Calculus II & Multivariate`,
       moduleId: `module-math-05`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9368,7 +9368,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9390,7 +9390,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9412,7 +9412,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9434,7 +9434,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9456,7 +9456,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Probability`,
       moduleId: `module-math-06`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9478,7 +9478,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9500,7 +9500,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9522,7 +9522,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 48,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9544,7 +9544,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9566,7 +9566,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Statistics`,
       moduleId: `module-math-07`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9588,7 +9588,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9610,7 +9610,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9632,7 +9632,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9654,7 +9654,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 46,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9676,7 +9676,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Optimization & Information Theory`,
       moduleId: `module-math-08`,
       track: `math`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 47,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9698,7 +9698,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9720,7 +9720,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9742,7 +9742,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9764,7 +9764,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9786,7 +9786,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NumPy & Scientific Computing`,
       moduleId: `module-06`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9808,7 +9808,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9830,7 +9830,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9852,7 +9852,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9874,7 +9874,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9896,7 +9896,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Pandas & Data Wrangling`,
       moduleId: `module-07`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9918,7 +9918,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9940,7 +9940,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9962,7 +9962,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -9984,7 +9984,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10006,7 +10006,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Data Visualization`,
       moduleId: `module-08`,
       track: `data`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10028,7 +10028,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10050,7 +10050,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10072,7 +10072,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10094,7 +10094,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10116,7 +10116,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Math for Machine Learning`,
       moduleId: `module-09`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10138,7 +10138,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10160,7 +10160,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10182,7 +10182,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10204,7 +10204,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10226,7 +10226,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `ML Foundations & Scikit-learn`,
       moduleId: `module-10`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10248,7 +10248,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10270,7 +10270,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10292,7 +10292,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10314,7 +10314,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10336,7 +10336,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Supervised Learning`,
       moduleId: `module-11`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10358,7 +10358,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10380,7 +10380,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10402,7 +10402,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10424,7 +10424,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10446,7 +10446,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Unsupervised Learning`,
       moduleId: `module-12`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10468,7 +10468,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10490,7 +10490,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10512,7 +10512,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10534,7 +10534,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10556,7 +10556,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Feature Engineering & Model Selection`,
       moduleId: `module-13`,
       track: `ml`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10578,7 +10578,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10600,7 +10600,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10622,7 +10622,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10644,7 +10644,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10666,7 +10666,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Deep Learning Fundamentals`,
       moduleId: `module-14`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10688,7 +10688,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10710,7 +10710,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10732,7 +10732,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10754,7 +10754,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10776,7 +10776,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `PyTorch & Neural Networks`,
       moduleId: `module-15`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10798,7 +10798,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10820,7 +10820,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10842,7 +10842,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10864,7 +10864,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10886,7 +10886,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `CNNs & Computer Vision`,
       moduleId: `module-16`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10908,7 +10908,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10930,7 +10930,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10952,7 +10952,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10974,7 +10974,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -10996,7 +10996,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `NLP, RNNs & Sequence Models`,
       moduleId: `module-17`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11018,7 +11018,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11040,7 +11040,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11062,7 +11062,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11084,7 +11084,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11106,7 +11106,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Transformers & Attention`,
       moduleId: `module-18`,
       track: `dl`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11128,7 +11128,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 30,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11150,7 +11150,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11172,7 +11172,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11194,7 +11194,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11216,7 +11216,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `LLMs, GenAI & Prompt Engineering`,
       moduleId: `module-19`,
       track: `ai`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11238,7 +11238,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11260,7 +11260,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11282,7 +11282,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11304,7 +11304,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11326,7 +11326,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `MLOps, Deployment & AI Ethics`,
       moduleId: `module-20`,
       track: `ai`,
-      estimatedMinutes: 25,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11348,7 +11348,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11370,7 +11370,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 30,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11392,7 +11392,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11414,7 +11414,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 30,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11436,7 +11436,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Python Testing, Debugging & Async`,
       moduleId: `module-21`,
       track: `python`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11458,7 +11458,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 30,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11480,7 +11480,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11502,7 +11502,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11524,7 +11524,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11546,7 +11546,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `File I/O, APIs & Data Formats`,
       moduleId: `module-22`,
       track: `python`,
-      estimatedMinutes: 30,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11568,7 +11568,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11590,7 +11590,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11612,7 +11612,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11634,7 +11634,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11656,7 +11656,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `SciPy & Statistical Computing`,
       moduleId: `module-23`,
       track: `data`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11700,7 +11700,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11722,7 +11722,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11744,7 +11744,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11766,7 +11766,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Time Series & Recommender Systems`,
       moduleId: `module-24`,
       track: `ml`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11788,7 +11788,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 43,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11876,7 +11876,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Reinforcement Learning`,
       moduleId: `module-25`,
       track: `ml`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11920,7 +11920,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11964,7 +11964,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -11986,7 +11986,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Generative Deep Learning`,
       moduleId: `module-26`,
       track: `dl`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12008,7 +12008,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12030,7 +12030,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12052,7 +12052,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12074,7 +12074,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12096,7 +12096,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Advanced AI Systems`,
       moduleId: `module-27`,
       track: `ai`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12118,7 +12118,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12140,7 +12140,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 40,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12184,7 +12184,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 35,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [
@@ -12206,7 +12206,7 @@ export const topicById: Record<string, TopicSummary> = {
       module: `Capstone & Career`,
       moduleId: `module-28`,
       track: `ai`,
-      estimatedMinutes: 30,
+      estimatedMinutes: 42,
       sectionCount: 4,
       exerciseCount: 2,
       sectionIds: [

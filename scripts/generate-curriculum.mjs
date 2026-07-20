@@ -10,7 +10,7 @@ import { TOPIC_REFERENCES, TRACK_REFERENCES, ALL_REFERENCES, resolveTopicReferen
 import { deepenTopicContent } from './content-deepening.mjs';
 import { expandTopicContent } from './content-expansion.mjs';
 import { applySqlTeacherStyle } from './sql-teacher-style.mjs';
-import { applyArticleStyle } from './article-style.mjs';
+import { applyArticleStyle, estimateTopicMinutes } from './article-style.mjs';
 import { ADDITIONAL_MODULES } from './additional-curriculum.mjs';
 import { MATH_MODULES } from './math-curriculum.mjs';
 
@@ -56,6 +56,7 @@ function enrichTopic(topic) {
   const withSections = {
     ...deepened,
     sections: deepened.sections.map((s) => enrichSection(s, topicCtx)),
+    estimatedMinutes: estimateTopicMinutes(deepened),
   };
   return {
     ...withSections,
